@@ -334,7 +334,7 @@ return table.freeze({
 					behavior = "moving",
 					behavior_params = {
 						path = "linear",
-						axis = "depth",
+						axis = "width",
 						travel_studs = 12,
 						cycle_seconds = 9,
 						pause_at_each_end_seconds = 1.2,
@@ -793,7 +793,7 @@ return table.freeze({
 				{
 					id = "pool_beach_ball",
 					name = "Ballon de plage écrasé",
-					size_studs = { 7, 7, 5 },
+					size_studs = { 7, 7, 4 },
 					behavior = "bounce",
 					behavior_params = {
 						vertical_impulse_multiplier = 1.2,
@@ -841,7 +841,7 @@ return table.freeze({
 				{
 					id = "pool_cooler",
 					name = "Glacière rigolote",
-					size_studs = { 10, 7, 6 },
+					size_studs = { 10, 7, 5 },
 					behavior = "stable",
 					collider = {
 						shape = "box",

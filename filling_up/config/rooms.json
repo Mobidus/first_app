@@ -537,7 +537,7 @@
           "behavior": "moving",
           "behavior_params": {
             "path": "linear",
-            "axis": "depth",
+            "axis": "width",
             "travel_studs": 12,
             "cycle_seconds": 9,
             "pause_at_each_end_seconds": 1.2
@@ -1357,7 +1357,7 @@
           "size_studs": [
             7,
             7,
-            5
+            4
           ],
           "behavior": "bounce",
           "behavior_params": {
@@ -1441,7 +1441,7 @@
           "size_studs": [
             10,
             7,
-            6
+            5
           ],
           "behavior": "stable",
           "deformation_profile": null,

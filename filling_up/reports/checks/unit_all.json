@@ -1,9 +1,9 @@
 {
   "status": "PASS",
   "suite": "all",
-  "passed": 199,
+  "passed": 200,
   "failed": 0,
-  "seconds": 411.08097840700066,
+  "seconds": 399.35318397800074,
   "executed": [
     "config > Generated config > matches the canonical JSON values (no manual duplication)",
     "config > Generated config > canonical invariants: no room timer, no room cap, no fill KO",
@@ -193,6 +193,7 @@
     "fun > Fun intruders > mixed families (kitchen): about the configured share of drops are fun intruders; toy and pool keep their own",
     "fun > Fun intruders > intruders appear from room 1 and respect their unlock depth",
     "fun > Fun intruders > drop positions are unchanged by the intruder swap (separate random stream)",
+    "fun > Fun intruders > duck line: 5 forms, 15 droppable variants with accessories, the giant captain never falls",
     "fun > Fun intruders > the pool family builds valid rooms in every format with every exit",
     "integration > Server flow on the fake engine (integration) > first session: tutorial 65, Radar 50 -> 15, used in room 1, exit pays band + discovery once",
     "integration > Server flow on the fake engine (integration) > 30 room transitions: no Heartbeat/instance growth, <= 2 room models + sas resident",
@@ -208,7 +209,7 @@
   "failures": [],
   "not_run": [],
   "scope": "Pure Luau logic under Lune (no Roblox engine services).",
-  "date_utc": "2026-11-02T14:13:25.510700+00:00",
+  "date_utc": "2026-11-02T14:22:02.987591+00:00",
   "versions": {
     "python": "3.13.18",
     "rojo": "Rojo 7.5.1",

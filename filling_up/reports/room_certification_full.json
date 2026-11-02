@@ -1266,9 +1266,9 @@
     },
     "pool/S/floor_hatch": {
       "certified": true,
-      "fallback": 1,
+      "fallback": 0,
       "key": "pool/S/floor_hatch",
-      "primary_ok": 119,
+      "primary_ok": 120,
       "tested": 120,
       "unbuildable": 0
     },
@@ -2029,12 +2029,6 @@
       "depth": 25,
       "reason": "primary_rejected_fallback_used",
       "seed": 356975
-    },
-    {
-      "combo": "pool/S/floor_hatch",
-      "depth": 90,
-      "reason": "primary_rejected_fallback_used",
-      "seed": 182695
     },
     {
       "combo": "kitchen/S/door",
@@ -3111,8 +3105,8 @@
       "seed": 705318
     }
   ],
-  "fallback": 182,
-  "primary_ok": 30058,
+  "fallback": 181,
+  "primary_ok": 30059,
   "profile": "v1",
   "seeds_per_combo": 120,
   "total": 30240,
