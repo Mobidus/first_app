@@ -111,12 +111,9 @@ describe("Fun intruders", function()
 					droppable += 1
 					expect(isIntruder(p.id)).toBe(true)
 				end
-				if
-					p.duck_form ~= "mini" and p.duck_form ~= "lilo"
-					or p.id ~= "pool_duck_mini_classic" and p.id ~= "pool_duck_lilo_classic"
-				then
-					expect(#p.accessories >= 1 or p.id == "pool_duck_mini_classic" or p.id == "pool_duck_lilo_classic").toBe(true)
-				end
+				-- every variant but the two classics wears at least one accessory
+				local classic = p.id == "pool_duck_mini_classic" or p.id == "pool_duck_lilo_classic"
+				expect(classic or #p.accessories >= 1).toBe(true)
 			end
 		end
 		expect(forms.mini).toBe(4)
