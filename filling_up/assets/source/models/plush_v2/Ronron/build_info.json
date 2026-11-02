@@ -1,0 +1,94 @@
+{
+  "asset_id": "toy_plush_ronron",
+  "name": "Chat Ronron",
+  "size_tier": "large",
+  "blend": "assets/source/models/plush_v2/Ronron/Ronron.blend",
+  "exports": [
+    "assets/import/models/toy_plush_ronron.glb",
+    "assets/import/models/toy_plush_ronron_lod1.glb",
+    "assets/import/models/toy_plush_ronron.fbx"
+  ],
+  "method": "SDF (union lisse de primitives) -> surface nets (numpy) -> décimation collapse -> UV smart project -> albédo évalué par texel sur la surface SDF (Blender ne cuit rien) -> rig 1+9+n",
+  "voxel_size_studs": 0.07,
+  "voxel_choice": "0,07 stud pour les grandes (grille ~5,6 M points, ~1 min) ; 0,10 pour la géante (~6,5 M points). Les détails fins (coutures, broderies) ne dépendent pas du voxel : ils sont évalués par texel. 0,05 doublerait la mémoire (x2,7) sans gain après décimation.",
+  "highres_quads": 308444,
+  "lod0_tris": 4600,
+  "lod1_tris": 860,
+  "lod0_bbox_studs_wdh": [
+    16.068,
+    13.038,
+    7.903
+  ],
+  "design_to_pivot_shift_studs": [
+    0.0846,
+    -0.0157,
+    0.0
+  ],
+  "top_clamp_lod0": {
+    "vertices_clamped": 4,
+    "max_excess_before_clamp_studs": 0.0072
+  },
+  "top_clamp_lod1": {
+    "vertices_clamped": 4,
+    "max_excess_before_clamp_studs": 0.005
+  },
+  "bones": [
+    "Root",
+    "Belly_00",
+    "Belly_10",
+    "Belly_20",
+    "Belly_01",
+    "Belly_11",
+    "Belly_21",
+    "Belly_02",
+    "Belly_12",
+    "Belly_22",
+    "Head",
+    "Ear_L",
+    "Ear_R",
+    "Tail"
+  ],
+  "secondary_bones": [
+    "Head",
+    "Ear_L",
+    "Ear_R",
+    "Tail"
+  ],
+  "weights": {
+    "Ronron_LOD0": {
+      "vertices": 2300,
+      "max_influences": 4,
+      "weight_sum_max_error": 2.220446049250313e-16,
+      "unweighted_vertices": 0
+    },
+    "Ronron_LOD1": {
+      "vertices": 430,
+      "max_influences": 4,
+      "weight_sum_max_error": 2.220446049250313e-16,
+      "unweighted_vertices": 0
+    }
+  },
+  "materials_per_mesh": 1,
+  "textures": [
+    "toy_plush_ronron_albedo_1024.png",
+    "toy_plush_ronron_albedo_256.png"
+  ],
+  "texture_cover_fraction": {
+    "lod0": 0.352,
+    "lod1": 0.49
+  },
+  "uv_overlap_fraction": {
+    "lod0": 3e-05,
+    "lod1": 3e-05
+  },
+  "top_texel_density_px_per_stud_lod0": 32.2,
+  "seed": 20261102,
+  "blender_version": "5.2.3 LTS",
+  "sha256": {
+    "assets/import/models/toy_plush_ronron.glb": "881623addb8252042b5a2f96bbeb9c1b8d677c5ff2e424cd110cddc1d719bf74",
+    "assets/import/models/toy_plush_ronron_lod1.glb": "bb4a7b82b1c30c197a4d19233fd1fa888edaa33f6affa721a5ce2e16dfb1a221",
+    "assets/import/models/toy_plush_ronron.fbx": "fdb8c846baa12f9fc7c6a75fc39ec681f20187d472539ac27004c2e512be3d1c",
+    "assets/source/models/plush_v2/Ronron/textures/toy_plush_ronron_albedo_1024.png": "bc92eb20c58d434ce4e92eb71858ba7cdbfa8a4752d3d68e0f92b72d587ae64c",
+    "assets/source/models/plush_v2/Ronron/textures/toy_plush_ronron_albedo_256.png": "9dc5fbc3376c4bbf4e26d85edfd4f1827bc77b7865917d2f2714f287cd468a66"
+  }
+}

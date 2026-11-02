@@ -1,0 +1,86 @@
+{
+  "asset_id": "toy_plush_bobine",
+  "authority": "server_collider_separate_from_visual_mesh",
+  "pivot": "bottom_center",
+  "forward_axis": "-Z",
+  "dimensions_order_config": "width_depth_height",
+  "size_tier": "giant",
+  "collider": {
+    "shape": "box",
+    "size_studs_config": [
+      18.0,
+      16.0,
+      8.0
+    ],
+    "size_vector3_roblox": [
+      18.0,
+      8.0,
+      16.0
+    ],
+    "offset_from_pivot_roblox": [
+      -0.0,
+      4.0,
+      -1.1037
+    ],
+    "tags": [
+      "FillCollider"
+    ],
+    "can_collide": true,
+    "anchor_after_settle": true
+  },
+  "walkable_top": {
+    "size_studs": [
+      18.0,
+      16.0
+    ],
+    "height_studs": 8.0,
+    "center_roblox": [
+      -0.0,
+      8.0,
+      -1.1037
+    ],
+    "marker": "safe_mint_footprint (affiché après stabilisation)"
+  },
+  "support_sockets_roblox": [
+    [
+      -4.5,
+      8.0,
+      2.8963
+    ],
+    [
+      -4.5,
+      8.0,
+      -5.1037
+    ],
+    [
+      4.5,
+      8.0,
+      2.8963
+    ],
+    [
+      4.5,
+      8.0,
+      -5.1037
+    ],
+    [
+      -0.0,
+      8.0,
+      -1.1037
+    ]
+  ],
+  "visual_mesh": {
+    "can_collide": false,
+    "can_query": false,
+    "can_touch": false,
+    "follows_root_client_side": true,
+    "anchored_weld_to_falling_root": false
+  },
+  "visual_envelope_studs": [
+    24.0,
+    20.0,
+    11.0
+  ],
+  "behavior": "stable",
+  "deformation_profile": "plush_soft",
+  "notes": "Les grandes compressions précèdent l'activation de l'appui garanti ; le visuel déformé n'altère jamais ce collider. Tête, membres, queue et jet d'eau dépassent sur les côtés (enveloppe visuelle) hors du rectangle praticable."
+}

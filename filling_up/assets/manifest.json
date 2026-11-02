@@ -7762,10 +7762,181 @@
       ],
       "head_end": "-Z",
       "max_triangles_far": 1200
+    },
+    {
+      "id": "toy_plush_balto",
+      "name": "Morse Balto",
+      "category": "room_prop",
+      "release_stage": "v1",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/plush_v2/Balto/Balto.blend",
+      "export_path": "assets/import/models/toy_plush_balto.glb",
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        16.0,
+        15.0,
+        8.0
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Grand morse couché à plat, velours bleu ciel grisé, plateau plus clair cerné d'un passepoil crème : tête relevée à l'avant avec moustache touffue brodée, gros coussinets crème piqués de points, défenses en tissu ivoire pointant vers le bas, yeux et sourcils brodés navy, joues rosées. Nageoires avant aux coins avant, nageoire caudale en deux lobes à l'arrière, plis de lard piqués sur les flancs, patch vichy corail cousu sur le flanc droit, pansement sur la nageoire gauche, étiquette cousue à l'arrière. Dos plat praticable à 6 studs.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          12.0,
+          12.0,
+          6.0
+        ],
+        "walkable_top": [
+          12.0,
+          12.0
+        ],
+        "top_visible": true
+      },
+      "deformation_profile": "plush_soft",
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 5000,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "assets/source/models/plush_v2/Balto/build_info.json",
+        "assets/source/models/plush_v2/Balto/collision.json",
+        "assets/source/models/plush_v2/Balto/pose_library.json",
+        "reports/T03/plush_v2_big_verify.json#assets.toy_plush_balto",
+        "reports/T03/plush_v2_big_verify_log.txt",
+        "reports/T03/renders/toy_plush_balto_3q.png",
+        "reports/T03/renders/toy_plush_balto_front.png",
+        "reports/T03/renders/toy_plush_balto_silhouette.png",
+        "reports/T03/renders/plush_v2_big_sheet.png",
+        "reports/T03/renders/plush_v2_big_lineup.png"
+      ],
+      "design_reference_paths": null,
+      "additional_exports": [
+        "assets/import/models/toy_plush_balto.fbx",
+        "assets/import/models/toy_plush_balto_lod1.glb"
+      ],
+      "size_tier": "large"
+    },
+    {
+      "id": "toy_plush_ronron",
+      "name": "Chat Ronron",
+      "category": "room_prop",
+      "release_stage": "v1",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/plush_v2/Ronron/Ronron.blend",
+      "export_path": "assets/import/models/toy_plush_ronron.glb",
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        16.0,
+        13.0,
+        8.0
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Grand chat tigré caramel endormi en position « pain », dos plat praticable à 6 studs cerné d'un passepoil crème : rayures par texture, tête à l'avant avec yeux fermés brodés en arcs, nez rose, bouche en w et vibrisses piquées, joues rosées, oreilles dressées à intérieur rose, poitrail et pattes crème aux orteils piqués, collier corail en tissu avec grelot doré cousu, longue queue annelée enroulée le long du flanc gauche, patch lune lilas sur la cuisse droite, « z z » brodés, étiquette cousue à l'arrière.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          12.0,
+          10.0,
+          6.0
+        ],
+        "walkable_top": [
+          12.0,
+          10.0
+        ],
+        "top_visible": true
+      },
+      "deformation_profile": "plush_soft",
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 5000,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "assets/source/models/plush_v2/Ronron/build_info.json",
+        "assets/source/models/plush_v2/Ronron/collision.json",
+        "assets/source/models/plush_v2/Ronron/pose_library.json",
+        "reports/T03/plush_v2_big_verify.json#assets.toy_plush_ronron",
+        "reports/T03/plush_v2_big_verify_log.txt",
+        "reports/T03/renders/toy_plush_ronron_3q.png",
+        "reports/T03/renders/toy_plush_ronron_front.png",
+        "reports/T03/renders/toy_plush_ronron_silhouette.png",
+        "reports/T03/renders/plush_v2_big_sheet.png",
+        "reports/T03/renders/plush_v2_big_lineup.png"
+      ],
+      "design_reference_paths": null,
+      "additional_exports": [
+        "assets/import/models/toy_plush_ronron.fbx",
+        "assets/import/models/toy_plush_ronron_lod1.glb"
+      ],
+      "size_tier": "large"
+    },
+    {
+      "id": "toy_plush_bobine",
+      "name": "Baleine Bobine",
+      "category": "room_prop",
+      "release_stage": "v1",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/plush_v2/Bobine/Bobine.blend",
+      "export_path": "assets/import/models/toy_plush_bobine.glb",
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        24.0,
+        20.0,
+        11.0
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Baleine géante navy et crème (pièces XL) : corps dodu au dos plat matelassé en losanges (rainures douces <= 0,12 stud, piqûres crème, petites étoiles brodées) cerné d'un passepoil, ventre crème visible sur les flancs avec liseré ondulé et sillons de gorge piqués, grands yeux brodés blanc et navy à cils, sourire brodé, joues corail, nageoires latérales à bord crème (pansement sur la gauche), grande nageoire caudale relevée à l'arrière hors zone utile, jet d'eau en tissu bleu ciel au bord avant, poche cousue bleu ciel à cœur corail sur le flanc droit, étiquette cousue à l'arrière.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          18.0,
+          16.0,
+          8.0
+        ],
+        "walkable_top": [
+          18.0,
+          16.0
+        ],
+        "top_visible": true
+      },
+      "deformation_profile": "plush_soft",
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 7000,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "assets/source/models/plush_v2/Bobine/build_info.json",
+        "assets/source/models/plush_v2/Bobine/collision.json",
+        "assets/source/models/plush_v2/Bobine/pose_library.json",
+        "reports/T03/plush_v2_big_verify.json#assets.toy_plush_bobine",
+        "reports/T03/plush_v2_big_verify_log.txt",
+        "reports/T03/renders/toy_plush_bobine_3q.png",
+        "reports/T03/renders/toy_plush_bobine_front.png",
+        "reports/T03/renders/toy_plush_bobine_silhouette.png",
+        "reports/T03/renders/plush_v2_big_sheet.png",
+        "reports/T03/renders/plush_v2_big_lineup.png"
+      ],
+      "design_reference_paths": null,
+      "additional_exports": [
+        "assets/import/models/toy_plush_bobine.fbx",
+        "assets/import/models/toy_plush_bobine_lod1.glb"
+      ],
+      "size_tier": "giant"
     }
   ],
   "status_counts": {
-    "modeled": 55,
+    "modeled": 58,
     "planned": 138,
     "designed": 13
   }
