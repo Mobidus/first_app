@@ -11,7 +11,8 @@
         "d": 24,
         "h": 16,
         "w": 24
-      }
+      },
+      "decor": 0
     },
     {
       "file": "01_reception_S_door_d1.png",
@@ -23,19 +24,21 @@
         "d": 32,
         "h": 20,
         "w": 36
-      }
+      },
+      "decor": 5
     },
     {
-      "file": "02_reception_M_window_d2.png",
+      "file": "02_reception_XL_window_d2.png",
       "depth": 2,
-      "template": "reception_M_window",
+      "template": "reception_XL_window",
       "fallback": false,
-      "nodes": 6,
+      "nodes": 9,
       "size": {
-        "d": 48,
-        "h": 30,
-        "w": 56
-      }
+        "d": 88,
+        "h": 48,
+        "w": 104
+      },
+      "decor": 14
     },
     {
       "file": "03_toy_S_door_d3.png",
@@ -47,19 +50,21 @@
         "d": 36,
         "h": 24,
         "w": 40
-      }
+      },
+      "decor": 5
     },
     {
-      "file": "04_toy_M_roof_d4.png",
+      "file": "04_toy_XL_roof_d4.png",
       "depth": 4,
-      "template": "toy_M_roof",
+      "template": "toy_XL_roof",
       "fallback": false,
-      "nodes": 12,
+      "nodes": 17,
       "size": {
-        "d": 56,
-        "h": 36,
-        "w": 64
-      }
+        "d": 100,
+        "h": 56,
+        "w": 112
+      },
+      "decor": 16
     },
     {
       "file": "05_bureau_S_door_d5.png",
@@ -71,31 +76,34 @@
         "d": 32,
         "h": 24,
         "w": 40
-      }
+      },
+      "decor": 5
     },
     {
-      "file": "06_reception_V_window_d6.png",
+      "file": "06_reception_XV_window_d6.png",
       "depth": 6,
-      "template": "reception_V_window",
+      "template": "reception_XV_window",
       "fallback": false,
-      "nodes": 10,
+      "nodes": 17,
       "size": {
-        "d": 40,
-        "h": 56,
-        "w": 40
-      }
+        "d": 60,
+        "h": 88,
+        "w": 60
+      },
+      "decor": 9
     },
     {
-      "file": "07_bureau_M_window_d7.png",
+      "file": "07_bureau_XL_window_d7.png",
       "depth": 7,
-      "template": "bureau_M_window",
+      "template": "bureau_XL_window",
       "fallback": false,
-      "nodes": 9,
+      "nodes": 12,
       "size": {
-        "d": 48,
-        "h": 36,
-        "w": 64
-      }
+        "d": 92,
+        "h": 56,
+        "w": 112
+      },
+      "decor": 15
     },
     {
       "file": "08_toy_S_window_d8.png",
@@ -107,91 +115,99 @@
         "d": 36,
         "h": 24,
         "w": 40
-      }
+      },
+      "decor": 5
     },
     {
-      "file": "09_bureau_M_door_d9.png",
+      "file": "09_bureau_XL_door_d9.png",
       "depth": 9,
-      "template": "bureau_M_door",
-      "fallback": false,
-      "nodes": 8,
-      "size": {
-        "d": 48,
-        "h": 36,
-        "w": 64
-      }
-    },
-    {
-      "file": "10_toy_V_window_d10.png",
-      "depth": 10,
-      "template": "toy_V_window",
+      "template": "bureau_XL_door",
       "fallback": false,
       "nodes": 10,
       "size": {
-        "d": 44,
-        "h": 64,
-        "w": 44
-      }
-    },
-    {
-      "file": "11_reception_V_window_d25.png",
-      "depth": 25,
-      "template": "reception_V_window",
-      "fallback": false,
-      "nodes": 8,
-      "size": {
-        "d": 40,
+        "d": 92,
         "h": 56,
-        "w": 40
-      }
+        "w": 112
+      },
+      "decor": 15
     },
     {
-      "file": "12_bureau_V_window_d60.png",
-      "depth": 60,
-      "template": "bureau_V_window",
+      "file": "10_toy_XV_window_d10.png",
+      "depth": 10,
+      "template": "toy_XV_window",
       "fallback": false,
-      "nodes": 11,
+      "nodes": 15,
+      "size": {
+        "d": 64,
+        "h": 100,
+        "w": 64
+      },
+      "decor": 9
+    },
+    {
+      "file": "11_bureau_XL_door_d25.png",
+      "depth": 25,
+      "template": "bureau_XL_door",
+      "fallback": false,
+      "nodes": 9,
+      "size": {
+        "d": 92,
+        "h": 56,
+        "w": 112
+      },
+      "decor": 15
+    },
+    {
+      "file": "12_reception_XV_roof_d60.png",
+      "depth": 60,
+      "template": "reception_XV_roof",
+      "fallback": false,
+      "nodes": 25,
+      "size": {
+        "d": 60,
+        "h": 88,
+        "w": 60
+      },
+      "decor": 9
+    },
+    {
+      "file": "13_bureau_V_roof_d150.png",
+      "depth": 150,
+      "template": "bureau_V_roof",
+      "fallback": false,
+      "nodes": 15,
       "size": {
         "d": 40,
         "h": 60,
         "w": 40
-      }
+      },
+      "decor": 4
     },
     {
-      "file": "13_reception_M_door_d150.png",
-      "depth": 150,
-      "template": "reception_M_door",
-      "fallback": false,
-      "nodes": 6,
-      "size": {
-        "d": 48,
-        "h": 30,
-        "w": 56
-      }
-    },
-    {
-      "file": "14_bureau_S_window_d30.png",
+      "file": "14_bureau_L_door_d30.png",
       "depth": 30,
-      "template": "bureau_S_window",
+      "template": "bureau_L_door",
       "fallback": false,
-      "nodes": 5,
+      "nodes": 8,
       "size": {
-        "d": 32,
-        "h": 24,
-        "w": 40
-      }
+        "d": 64,
+        "h": 44,
+        "w": 80
+      },
+      "decor": 11
     },
     {
-      "file": "15_toy_S_floor_hatch_d90.png",
+      "file": "15_bin_XV_tailgate_d90.png",
       "depth": 90,
-      "template": "toy_S_floor_hatch",
+      "template": "bin_XV_tailgate",
       "fallback": false,
-      "nodes": 6,
+      "nodes": 18,
       "size": {
-        "d": 36,
-        "h": 24,
-        "w": 40
-      }
+        "d": 72,
+        "h": 112,
+        "w": 76
+      },
+      "decor": 11
     }
   ],
   "note": "Geometry review renders from validated RoomDefinitions; not Roblox screenshots."
