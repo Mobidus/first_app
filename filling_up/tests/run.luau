@@ -43,8 +43,16 @@ local ORDER = {
 	"burial",
 	"plush",
 	"continuity",
+	"dressing",
 	"integration",
 }
+
+-- guard: a suite declared in SUITES but missing from ORDER would silently never run under "all"
+for name in SUITES do
+	if not table.find(ORDER, name) then
+		error("suite '" .. name .. "' is not listed in ORDER (tests/run.luau)")
+	end
+end
 
 local suite = process.args[1] or "all"
 local selected = {}

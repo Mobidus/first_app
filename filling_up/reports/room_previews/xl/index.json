@@ -1,0 +1,110 @@
+{
+  "runSeed": 1702,
+  "renders": [
+    {
+      "file": "00_reception_XL_window_d2.png",
+      "depth": 2,
+      "template": "reception_XL_window",
+      "fallback": false,
+      "nodes": 9,
+      "size": {
+        "d": 88,
+        "h": 48,
+        "w": 104
+      },
+      "decor": 14
+    },
+    {
+      "file": "01_toy_XL_roof_d4.png",
+      "depth": 4,
+      "template": "toy_XL_roof",
+      "fallback": false,
+      "nodes": 16,
+      "size": {
+        "d": 100,
+        "h": 56,
+        "w": 112
+      },
+      "decor": 16
+    },
+    {
+      "file": "02_reception_XV_window_d6.png",
+      "depth": 6,
+      "template": "reception_XV_window",
+      "fallback": false,
+      "nodes": 16,
+      "size": {
+        "d": 60,
+        "h": 88,
+        "w": 60
+      },
+      "decor": 9
+    },
+    {
+      "file": "03_bureau_XL_door_d9.png",
+      "depth": 9,
+      "template": "bureau_XL_door",
+      "fallback": false,
+      "nodes": 10,
+      "size": {
+        "d": 92,
+        "h": 56,
+        "w": 112
+      },
+      "decor": 15
+    },
+    {
+      "file": "04_toy_XV_window_d10.png",
+      "depth": 10,
+      "template": "toy_XV_window",
+      "fallback": false,
+      "nodes": 19,
+      "size": {
+        "d": 64,
+        "h": 100,
+        "w": 64
+      },
+      "decor": 9
+    },
+    {
+      "file": "05_bureau_XV_roof_d35.png",
+      "depth": 35,
+      "template": "bureau_XV_roof",
+      "fallback": false,
+      "nodes": 25,
+      "size": {
+        "d": 60,
+        "h": 96,
+        "w": 60
+      },
+      "decor": 9
+    },
+    {
+      "file": "06_garage_XL_tailgate_d40.png",
+      "depth": 40,
+      "template": "garage_XL_tailgate",
+      "fallback": false,
+      "nodes": 12,
+      "size": {
+        "d": 100,
+        "h": 64,
+        "w": 124
+      },
+      "decor": 16
+    },
+    {
+      "file": "07_bin_XV_roof_d90.png",
+      "depth": 90,
+      "template": "bin_XV_roof",
+      "fallback": false,
+      "nodes": 28,
+      "size": {
+        "d": 72,
+        "h": 112,
+        "w": 76
+      },
+      "decor": 11
+    }
+  ],
+  "note": "Geometry review renders from validated RoomDefinitions; not Roblox screenshots."
+}

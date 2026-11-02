@@ -1,0 +1,20 @@
+/home/user/first_app/filling_up/tools/render_rooms.py:84: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  sc.world.use_nodes = True
+/home/user/first_app/filling_up/tools/render_rooms.py:45: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m.use_nodes = True
+00:18.897  render           | Saved: '/home/user/first_app/filling_up/reports/room_previews/xl/00_reception_XL_window_d2.png'
+rendered 00_reception_XL_window_d2.png
+00:33.326  render           | Saved: '/home/user/first_app/filling_up/reports/room_previews/xl/01_toy_XL_roof_d4.png'
+rendered 01_toy_XL_roof_d4.png
+00:51.448  render           | Saved: '/home/user/first_app/filling_up/reports/room_previews/xl/02_reception_XV_window_d6.png'
+rendered 02_reception_XV_window_d6.png
+01:03.297  render           | Saved: '/home/user/first_app/filling_up/reports/room_previews/xl/03_bureau_XL_door_d9.png'
+rendered 03_bureau_XL_door_d9.png
+01:20.633  render           | Saved: '/home/user/first_app/filling_up/reports/room_previews/xl/04_toy_XV_window_d10.png'
+rendered 04_toy_XV_window_d10.png
+01:41.699  render           | Saved: '/home/user/first_app/filling_up/reports/room_previews/xl/05_bureau_XV_roof_d35.png'
+rendered 05_bureau_XV_roof_d35.png
+01:54.382  render           | Saved: '/home/user/first_app/filling_up/reports/room_previews/xl/06_garage_XL_tailgate_d40.png'
+rendered 06_garage_XL_tailgate_d40.png
+02:15.617  render           | Saved: '/home/user/first_app/filling_up/reports/room_previews/xl/07_bin_XV_roof_d90.png'
+rendered 07_bin_XV_roof_d90.png
