@@ -1,0 +1,863 @@
+{
+  "family": "bureau",
+  "blender_version": "5.2.3 LTS",
+  "seed": 4207,
+  "atlas": "assets/source/models/bureau/textures/bureau_atlas_1024.png",
+  "atlas_px": 1024,
+  "materials_per_mesh": 1,
+  "units": "1 BU = 1 stud ; X largeur, Y profondeur (avant Roblox -Z = +Y Blender), Z hauteur",
+  "palette_sources": [
+    "config/rooms.json families[bureau].palette",
+    "docs/02 tokens",
+    "assets/source/design/canvas/project/Room_Office.dc.html"
+  ],
+  "assets": {
+    "bureau_paper_ream": {
+      "name": "Ramette géante",
+      "size_studs_config": [
+        10,
+        8,
+        3
+      ],
+      "bbox_studs_width_depth_height": [
+        10.08,
+        8.0,
+        3.0
+      ],
+      "bbox_lod1": [
+        10.05,
+        8.0,
+        3.0
+      ],
+      "bbox_min": [
+        -5.0,
+        -4.0,
+        0.0
+      ],
+      "lod0_tris": 952,
+      "lod1_tris": 36,
+      "visual_brief": "Bloc de feuilles crème, liserés bleus imprimés sur les côtés.",
+      "collision": {
+        "authority": "server_collider_separate_from_visual_mesh",
+        "pivot": "bottom_center",
+        "forward_axis": "-Z",
+        "dimensions_order_config": "width_depth_height",
+        "shape": "box",
+        "size_studs_config": [
+          10,
+          8,
+          3
+        ],
+        "size_vector3_roblox": [
+          10,
+          3,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0.0,
+          1.5,
+          0.0
+        ],
+        "walkable_top": {
+          "size_studs": [
+            10,
+            8
+          ],
+          "height_studs": 3,
+          "center_roblox": [
+            0.0,
+            3,
+            0.0
+          ]
+        },
+        "support_sockets_roblox": [
+          [
+            -2.5,
+            3,
+            -2.0
+          ],
+          [
+            -2.5,
+            3,
+            2.0
+          ],
+          [
+            2.5,
+            3,
+            -2.0
+          ],
+          [
+            2.5,
+            3,
+            2.0
+          ],
+          [
+            0.0,
+            3,
+            0.0
+          ]
+        ],
+        "visual_mesh": {
+          "can_collide": false,
+          "can_query": false,
+          "can_touch": false
+        },
+        "behavior": "stable",
+        "behavior_params": null
+      },
+      "exports": [
+        "assets/import/models/bureau_paper_ream.glb",
+        "assets/import/models/bureau_paper_ream_lod1.glb",
+        "assets/import/models/bureau_paper_ream.fbx"
+      ]
+    },
+    "bureau_binder_stack": {
+      "name": "Classeurs empilés",
+      "size_studs_config": [
+        8,
+        8,
+        5
+      ],
+      "bbox_studs_width_depth_height": [
+        8.0,
+        8.02,
+        5.0
+      ],
+      "bbox_lod1": [
+        8.0,
+        8.0,
+        5.0
+      ],
+      "bbox_min": [
+        -4.0,
+        -4.0,
+        0.0
+      ],
+      "lod0_tris": 1312,
+      "lod1_tris": 224,
+      "visual_brief": "Classeurs lavande et rose assemblés en bloc stable.",
+      "collision": {
+        "authority": "server_collider_separate_from_visual_mesh",
+        "pivot": "bottom_center",
+        "forward_axis": "-Z",
+        "dimensions_order_config": "width_depth_height",
+        "shape": "box",
+        "size_studs_config": [
+          8,
+          8,
+          5
+        ],
+        "size_vector3_roblox": [
+          8,
+          5,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0.0,
+          2.5,
+          0.0
+        ],
+        "walkable_top": {
+          "size_studs": [
+            8,
+            8
+          ],
+          "height_studs": 5,
+          "center_roblox": [
+            0.0,
+            5,
+            0.0
+          ]
+        },
+        "support_sockets_roblox": [
+          [
+            -2.0,
+            5,
+            -2.0
+          ],
+          [
+            -2.0,
+            5,
+            2.0
+          ],
+          [
+            2.0,
+            5,
+            -2.0
+          ],
+          [
+            2.0,
+            5,
+            2.0
+          ],
+          [
+            0.0,
+            5,
+            0.0
+          ]
+        ],
+        "visual_mesh": {
+          "can_collide": false,
+          "can_query": false,
+          "can_touch": false
+        },
+        "behavior": "stable",
+        "behavior_params": null
+      },
+      "exports": [
+        "assets/import/models/bureau_binder_stack.glb",
+        "assets/import/models/bureau_binder_stack_lod1.glb",
+        "assets/import/models/bureau_binder_stack.fbx"
+      ]
+    },
+    "bureau_desk": {
+      "name": "Bureau",
+      "size_studs_config": [
+        16,
+        10,
+        7
+      ],
+      "bbox_studs_width_depth_height": [
+        16.0,
+        10.0,
+        7.0
+      ],
+      "bbox_lod1": [
+        16.0,
+        10.0,
+        7.0
+      ],
+      "bbox_min": [
+        -8.0,
+        -5.0,
+        0.0
+      ],
+      "lod0_tris": 2286,
+      "lod1_tris": 322,
+      "visual_brief": "Bureau turquoise à caissons pleins afin de matérialiser tout le collider.",
+      "collision": {
+        "authority": "server_collider_separate_from_visual_mesh",
+        "pivot": "bottom_center",
+        "forward_axis": "-Z",
+        "dimensions_order_config": "width_depth_height",
+        "shape": "box",
+        "size_studs_config": [
+          16,
+          10,
+          7
+        ],
+        "size_vector3_roblox": [
+          16,
+          7,
+          10
+        ],
+        "offset_from_pivot_roblox": [
+          0.0,
+          3.5,
+          0.0
+        ],
+        "walkable_top": {
+          "size_studs": [
+            16,
+            10
+          ],
+          "height_studs": 7,
+          "center_roblox": [
+            0.0,
+            7,
+            0.0
+          ]
+        },
+        "support_sockets_roblox": [
+          [
+            -4.0,
+            7,
+            -2.5
+          ],
+          [
+            -4.0,
+            7,
+            2.5
+          ],
+          [
+            4.0,
+            7,
+            -2.5
+          ],
+          [
+            4.0,
+            7,
+            2.5
+          ],
+          [
+            0.0,
+            7,
+            0.0
+          ]
+        ],
+        "visual_mesh": {
+          "can_collide": false,
+          "can_query": false,
+          "can_touch": false
+        },
+        "behavior": "stable",
+        "behavior_params": null
+      },
+      "exports": [
+        "assets/import/models/bureau_desk.glb",
+        "assets/import/models/bureau_desk_lod1.glb",
+        "assets/import/models/bureau_desk.fbx"
+      ]
+    },
+    "bureau_locker": {
+      "name": "Casier couché",
+      "size_studs_config": [
+        12,
+        8,
+        6
+      ],
+      "bbox_studs_width_depth_height": [
+        12.0,
+        8.004,
+        6.0
+      ],
+      "bbox_lod1": [
+        12.0,
+        8.0,
+        6.0
+      ],
+      "bbox_min": [
+        -6.0,
+        -4.0,
+        0.0
+      ],
+      "lod0_tris": 1384,
+      "lod1_tris": 188,
+      "visual_brief": "Casier lavande couché, poignées peu saillantes sans collision séparée.",
+      "collision": {
+        "authority": "server_collider_separate_from_visual_mesh",
+        "pivot": "bottom_center",
+        "forward_axis": "-Z",
+        "dimensions_order_config": "width_depth_height",
+        "shape": "box",
+        "size_studs_config": [
+          12,
+          8,
+          6
+        ],
+        "size_vector3_roblox": [
+          12,
+          6,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0.0,
+          3.0,
+          0.0
+        ],
+        "walkable_top": {
+          "size_studs": [
+            12,
+            8
+          ],
+          "height_studs": 6,
+          "center_roblox": [
+            0.0,
+            6,
+            0.0
+          ]
+        },
+        "support_sockets_roblox": [
+          [
+            -3.0,
+            6,
+            -2.0
+          ],
+          [
+            -3.0,
+            6,
+            2.0
+          ],
+          [
+            3.0,
+            6,
+            -2.0
+          ],
+          [
+            3.0,
+            6,
+            2.0
+          ],
+          [
+            0.0,
+            6,
+            0.0
+          ]
+        ],
+        "visual_mesh": {
+          "can_collide": false,
+          "can_query": false,
+          "can_touch": false
+        },
+        "behavior": "stable",
+        "behavior_params": null
+      },
+      "exports": [
+        "assets/import/models/bureau_locker.glb",
+        "assets/import/models/bureau_locker_lod1.glb",
+        "assets/import/models/bureau_locker.fbx"
+      ]
+    },
+    "bureau_keyboard": {
+      "name": "Clavier géant",
+      "size_studs_config": [
+        14,
+        7,
+        2
+      ],
+      "bbox_studs_width_depth_height": [
+        14.0,
+        7.0,
+        2.0
+      ],
+      "bbox_lod1": [
+        14.0,
+        7.0,
+        2.0
+      ],
+      "bbox_min": [
+        -7.0,
+        -3.5,
+        0.0
+      ],
+      "lod0_tris": 1782,
+      "lod1_tris": 96,
+      "visual_brief": "Touches crème affleurantes sur socle jaune, aucun trou entre touches.",
+      "collision": {
+        "authority": "server_collider_separate_from_visual_mesh",
+        "pivot": "bottom_center",
+        "forward_axis": "-Z",
+        "dimensions_order_config": "width_depth_height",
+        "shape": "box",
+        "size_studs_config": [
+          14,
+          7,
+          2
+        ],
+        "size_vector3_roblox": [
+          14,
+          2,
+          7
+        ],
+        "offset_from_pivot_roblox": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "walkable_top": {
+          "size_studs": [
+            14,
+            7
+          ],
+          "height_studs": 2,
+          "center_roblox": [
+            0.0,
+            2,
+            0.0
+          ]
+        },
+        "support_sockets_roblox": [
+          [
+            -3.5,
+            2,
+            -1.75
+          ],
+          [
+            -3.5,
+            2,
+            1.75
+          ],
+          [
+            3.5,
+            2,
+            -1.75
+          ],
+          [
+            3.5,
+            2,
+            1.75
+          ],
+          [
+            0.0,
+            2,
+            0.0
+          ]
+        ],
+        "visual_mesh": {
+          "can_collide": false,
+          "can_query": false,
+          "can_touch": false
+        },
+        "behavior": "stable",
+        "behavior_params": null
+      },
+      "exports": [
+        "assets/import/models/bureau_keyboard.glb",
+        "assets/import/models/bureau_keyboard_lod1.glb",
+        "assets/import/models/bureau_keyboard.fbx"
+      ]
+    },
+    "bureau_rail_chair": {
+      "name": "Chaise sur rail",
+      "size_studs_config": [
+        9,
+        9,
+        6
+      ],
+      "bbox_studs_width_depth_height": [
+        9.0,
+        9.0,
+        6.0
+      ],
+      "bbox_lod1": [
+        9.0,
+        9.0,
+        6.0
+      ],
+      "bbox_min": [
+        -4.5,
+        -4.5,
+        0.0
+      ],
+      "lod0_tris": 2752,
+      "lod1_tris": 372,
+      "visual_brief": "Fauteuil-cube à assise plate, soubassement plein et dossier décoratif rejeté en dehors de la réception.",
+      "collision": {
+        "authority": "server_collider_separate_from_visual_mesh",
+        "pivot": "bottom_center",
+        "forward_axis": "-Z",
+        "dimensions_order_config": "width_depth_height",
+        "shape": "box",
+        "size_studs_config": [
+          9,
+          9,
+          6
+        ],
+        "size_vector3_roblox": [
+          9,
+          6,
+          9
+        ],
+        "offset_from_pivot_roblox": [
+          0.0,
+          3.0,
+          0.0
+        ],
+        "walkable_top": {
+          "size_studs": [
+            9,
+            9
+          ],
+          "height_studs": 6,
+          "center_roblox": [
+            0.0,
+            6,
+            0.0
+          ]
+        },
+        "support_sockets_roblox": [
+          [
+            -2.25,
+            6,
+            -2.25
+          ],
+          [
+            -2.25,
+            6,
+            2.25
+          ],
+          [
+            2.25,
+            6,
+            -2.25
+          ],
+          [
+            2.25,
+            6,
+            2.25
+          ],
+          [
+            0.0,
+            6,
+            0.0
+          ]
+        ],
+        "visual_mesh": {
+          "can_collide": false,
+          "can_query": false,
+          "can_touch": false
+        },
+        "behavior": "moving",
+        "behavior_params": {
+          "path": "linear",
+          "axis": "width",
+          "travel_studs": 10,
+          "cycle_seconds": 9,
+          "pause_at_each_end_seconds": 1.5,
+          "variants": {
+            "lift": {
+              "minimum_depth": 9,
+              "axis": "height",
+              "travel_studs": 6,
+              "cycle_seconds": 9,
+              "pause_at_each_end_seconds": 1.5
+            }
+          }
+        }
+      },
+      "exports": [
+        "assets/import/models/bureau_rail_chair.glb",
+        "assets/import/models/bureau_rail_chair_lod1.glb",
+        "assets/import/models/bureau_rail_chair.fbx"
+      ]
+    },
+    "bureau_spring_phone": {
+      "name": "Téléphone à ressort",
+      "size_studs_config": [
+        10,
+        8,
+        4
+      ],
+      "bbox_studs_width_depth_height": [
+        10.0,
+        8.02,
+        4.0
+      ],
+      "bbox_lod1": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "bbox_min": [
+        -5.0,
+        -4.0,
+        0.0
+      ],
+      "lod0_tris": 2992,
+      "lod1_tris": 396,
+      "visual_brief": "Téléphone rose à pavé jaune plat, combiné latéral décoratif.",
+      "collision": {
+        "authority": "server_collider_separate_from_visual_mesh",
+        "pivot": "bottom_center",
+        "forward_axis": "-Z",
+        "dimensions_order_config": "width_depth_height",
+        "shape": "box",
+        "size_studs_config": [
+          10,
+          8,
+          4
+        ],
+        "size_vector3_roblox": [
+          10,
+          4,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0.0,
+          2.0,
+          0.0
+        ],
+        "walkable_top": {
+          "size_studs": [
+            10,
+            8
+          ],
+          "height_studs": 4,
+          "center_roblox": [
+            0.0,
+            4,
+            0.0
+          ]
+        },
+        "support_sockets_roblox": [
+          [
+            -2.5,
+            4,
+            -2.0
+          ],
+          [
+            -2.5,
+            4,
+            2.0
+          ],
+          [
+            2.5,
+            4,
+            -2.0
+          ],
+          [
+            2.5,
+            4,
+            2.0
+          ],
+          [
+            0.0,
+            4,
+            0.0
+          ]
+        ],
+        "visual_mesh": {
+          "can_collide": false,
+          "can_query": false,
+          "can_touch": false
+        },
+        "behavior": "bounce",
+        "behavior_params": {
+          "vertical_impulse_multiplier": 1.25
+        }
+      },
+      "exports": [
+        "assets/import/models/bureau_spring_phone.glb",
+        "assets/import/models/bureau_spring_phone_lod1.glb",
+        "assets/import/models/bureau_spring_phone.fbx"
+      ]
+    },
+    "bureau_loose_files": {
+      "name": "Dossiers libres",
+      "size_studs_config": [
+        10,
+        8,
+        5
+      ],
+      "bbox_studs_width_depth_height": [
+        10.0,
+        8.0,
+        5.0
+      ],
+      "bbox_lod1": [
+        10.0,
+        8.0,
+        5.0
+      ],
+      "bbox_min": [
+        -5.0,
+        -4.0,
+        0.0
+      ],
+      "lod0_tris": 1792,
+      "lod1_tris": 276,
+      "visual_brief": "Pile de dossiers à tranche rose, feuilles animées et sablier avant tassement.",
+      "collision": {
+        "authority": "server_collider_separate_from_visual_mesh",
+        "pivot": "bottom_center",
+        "forward_axis": "-Z",
+        "dimensions_order_config": "width_depth_height",
+        "shape": "box",
+        "size_studs_config": [
+          10,
+          8,
+          5
+        ],
+        "size_vector3_roblox": [
+          10,
+          5,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0.0,
+          2.5,
+          0.0
+        ],
+        "walkable_top": {
+          "size_studs": [
+            10,
+            8
+          ],
+          "height_studs": 5,
+          "center_roblox": [
+            0.0,
+            5,
+            0.0
+          ]
+        },
+        "support_sockets_roblox": [
+          [
+            -2.5,
+            5,
+            -2.0
+          ],
+          [
+            -2.5,
+            5,
+            2.0
+          ],
+          [
+            2.5,
+            5,
+            -2.0
+          ],
+          [
+            2.5,
+            5,
+            2.0
+          ],
+          [
+            0.0,
+            5,
+            0.0
+          ]
+        ],
+        "visual_mesh": {
+          "can_collide": false,
+          "can_query": false,
+          "can_touch": false
+        },
+        "behavior": "temporary",
+        "behavior_params": {
+          "seconds_after_contact": 3,
+          "effect": "collapse_to_lower_recovery_level"
+        }
+      },
+      "exports": [
+        "assets/import/models/bureau_loose_files.glb",
+        "assets/import/models/bureau_loose_files_lod1.glb",
+        "assets/import/models/bureau_loose_files.fbx"
+      ]
+    },
+    "machine_bureau_copier": {
+      "name": "Copieur Panique",
+      "size_studs_config": [
+        22,
+        14,
+        18
+      ],
+      "bbox_studs_width_depth_height": [
+        22.0,
+        14.0,
+        18.0
+      ],
+      "bbox_lod1": [
+        22.0,
+        14.0,
+        18.0
+      ],
+      "bbox_min": [
+        -11.0,
+        -7.0,
+        0.0
+      ],
+      "lod0_tris": 3778,
+      "lod1_tris": 368,
+      "visual_brief": "Photocopieuse jaune géante, écran exprimant la panique de BOB et sortie de papier turquoise.",
+      "collision": {
+        "shape": "separate_architecture_proxy",
+        "note": "Machine décorative : collision du parcours séparée (manifest), aucun dessus praticable."
+      },
+      "exports": [
+        "assets/import/models/machine_bureau_copier.glb",
+        "assets/import/models/machine_bureau_copier_lod1.glb",
+        "assets/import/models/machine_bureau_copier.fbx"
+      ]
+    }
+  }
+}

@@ -129,8 +129,8 @@
     {
       "task": "T02",
       "id": "machine_toy_spinner",
-      "from": "designed",
-      "to": "designed"
+      "from": "modeled",
+      "to": "modeled"
     },
     {
       "task": "T02",
@@ -207,20 +207,20 @@
     {
       "task": "T02",
       "id": "toy_domino",
-      "from": "designed",
-      "to": "designed"
+      "from": "modeled",
+      "to": "modeled"
     },
     {
       "task": "T02",
       "id": "toy_drum",
-      "from": "designed",
-      "to": "designed"
+      "from": "modeled",
+      "to": "modeled"
     },
     {
       "task": "T02",
       "id": "toy_flat_duck",
-      "from": "designed",
-      "to": "designed"
+      "from": "modeled",
+      "to": "modeled"
     },
     {
       "task": "T02",
@@ -243,14 +243,14 @@
     {
       "task": "T02",
       "id": "toy_shape_cube",
-      "from": "designed",
-      "to": "designed"
+      "from": "modeled",
+      "to": "modeled"
     },
     {
       "task": "T02",
       "id": "toy_train",
-      "from": "designed",
-      "to": "designed"
+      "from": "modeled",
+      "to": "modeled"
     },
     {
       "task": "T02",
@@ -328,6 +328,60 @@
     },
     {
       "task": "T03",
+      "id": "bureau_paper_ream",
+      "from": "designed",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "bureau_binder_stack",
+      "from": "designed",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "bureau_desk",
+      "from": "designed",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "bureau_locker",
+      "from": "designed",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "bureau_keyboard",
+      "from": "designed",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "bureau_rail_chair",
+      "from": "designed",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "bureau_spring_phone",
+      "from": "designed",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "bureau_loose_files",
+      "from": "designed",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "machine_bureau_copier",
+      "from": "designed",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
       "id": "reception_carton",
       "from": "modeled",
       "to": "modeled"
@@ -383,37 +437,37 @@
     {
       "task": "T03",
       "id": "toy_flat_duck",
-      "from": "designed",
+      "from": "modeled",
       "to": "modeled"
     },
     {
       "task": "T03",
       "id": "toy_train",
-      "from": "designed",
+      "from": "modeled",
       "to": "modeled"
     },
     {
       "task": "T03",
       "id": "toy_drum",
-      "from": "designed",
+      "from": "modeled",
       "to": "modeled"
     },
     {
       "task": "T03",
       "id": "toy_domino",
-      "from": "designed",
+      "from": "modeled",
       "to": "modeled"
     },
     {
       "task": "T03",
       "id": "toy_shape_cube",
-      "from": "designed",
+      "from": "modeled",
       "to": "modeled"
     },
     {
       "task": "T03",
       "id": "machine_toy_spinner",
-      "from": "designed",
+      "from": "modeled",
       "to": "modeled"
     },
     {
@@ -437,8 +491,8 @@
   ],
   "rejected": [],
   "status_counts": {
-    "modeled": 21,
-    "designed": 22,
-    "planned": 138
+    "modeled": 30,
+    "planned": 138,
+    "designed": 13
   }
 }

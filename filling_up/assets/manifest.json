@@ -1033,10 +1033,10 @@
       "name": "Ramette géante",
       "category": "room_prop",
       "release_stage": "MVP",
-      "status": "designed",
+      "status": "modeled",
       "roblox_asset_id": null,
-      "source_path": "assets/source/generators/bureau_paper_ream.luau",
-      "export_path": "assets/import/models/bureau_paper_ream.rbxm",
+      "source_path": "assets/source/models/bureau/bureau_props.blend",
+      "export_path": "assets/import/models/bureau_paper_ream.glb",
       "dimensions_order": "width_depth_height",
       "size_studs": [
         10,
@@ -1067,24 +1067,34 @@
       "image_export_pixels": null,
       "provenance": "original_creation_required",
       "validation_evidence": [
-        "assets/source/design/canvas/project/Room_Office.dc.html"
+        "assets/source/design/canvas/project/Room_Office.dc.html",
+        "reports/T03/props_bureau_verify.json#assets.bureau_paper_ream",
+        "reports/T03/props_bureau_verify_log.txt",
+        "reports/T03/renders/bureau_paper_ream_3q.png",
+        "reports/T03/renders/bureau_paper_ream_silhouette.png",
+        "reports/T03/renders/bureau_paper_ream_silhouette_low.png",
+        "reports/T03/renders/props_bureau_sheet.png"
       ],
       "design_reference_paths": [
         "assets/source/generators/bureau_paper_ream.luau",
         "assets/import/models/bureau_paper_ream.rbxm"
       ],
       "proxy_export_path": "assets/import/models/bureau_paper_ream.rbxm",
-      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged",
+      "additional_exports": [
+        "assets/import/models/bureau_paper_ream_lod1.glb",
+        "assets/import/models/bureau_paper_ream.fbx"
+      ]
     },
     {
       "id": "bureau_binder_stack",
       "name": "Classeurs empilés",
       "category": "room_prop",
       "release_stage": "MVP",
-      "status": "designed",
+      "status": "modeled",
       "roblox_asset_id": null,
-      "source_path": "assets/source/generators/bureau_binder_stack.luau",
-      "export_path": "assets/import/models/bureau_binder_stack.rbxm",
+      "source_path": "assets/source/models/bureau/bureau_props.blend",
+      "export_path": "assets/import/models/bureau_binder_stack.glb",
       "dimensions_order": "width_depth_height",
       "size_studs": [
         8,
@@ -1115,24 +1125,34 @@
       "image_export_pixels": null,
       "provenance": "original_creation_required",
       "validation_evidence": [
-        "assets/source/design/canvas/project/Room_Office.dc.html"
+        "assets/source/design/canvas/project/Room_Office.dc.html",
+        "reports/T03/props_bureau_verify.json#assets.bureau_binder_stack",
+        "reports/T03/props_bureau_verify_log.txt",
+        "reports/T03/renders/bureau_binder_stack_3q.png",
+        "reports/T03/renders/bureau_binder_stack_silhouette.png",
+        "reports/T03/renders/bureau_binder_stack_silhouette_low.png",
+        "reports/T03/renders/props_bureau_sheet.png"
       ],
       "design_reference_paths": [
         "assets/source/generators/bureau_binder_stack.luau",
         "assets/import/models/bureau_binder_stack.rbxm"
       ],
       "proxy_export_path": "assets/import/models/bureau_binder_stack.rbxm",
-      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged",
+      "additional_exports": [
+        "assets/import/models/bureau_binder_stack_lod1.glb",
+        "assets/import/models/bureau_binder_stack.fbx"
+      ]
     },
     {
       "id": "bureau_desk",
       "name": "Bureau",
       "category": "room_prop",
       "release_stage": "MVP",
-      "status": "designed",
+      "status": "modeled",
       "roblox_asset_id": null,
-      "source_path": "assets/source/generators/bureau_desk.luau",
-      "export_path": "assets/import/models/bureau_desk.rbxm",
+      "source_path": "assets/source/models/bureau/bureau_props.blend",
+      "export_path": "assets/import/models/bureau_desk.glb",
       "dimensions_order": "width_depth_height",
       "size_studs": [
         16,
@@ -1163,24 +1183,34 @@
       "image_export_pixels": null,
       "provenance": "original_creation_required",
       "validation_evidence": [
-        "assets/source/design/canvas/project/Room_Office.dc.html"
+        "assets/source/design/canvas/project/Room_Office.dc.html",
+        "reports/T03/props_bureau_verify.json#assets.bureau_desk",
+        "reports/T03/props_bureau_verify_log.txt",
+        "reports/T03/renders/bureau_desk_3q.png",
+        "reports/T03/renders/bureau_desk_silhouette.png",
+        "reports/T03/renders/bureau_desk_silhouette_low.png",
+        "reports/T03/renders/props_bureau_sheet.png"
       ],
       "design_reference_paths": [
         "assets/source/generators/bureau_desk.luau",
         "assets/import/models/bureau_desk.rbxm"
       ],
       "proxy_export_path": "assets/import/models/bureau_desk.rbxm",
-      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged",
+      "additional_exports": [
+        "assets/import/models/bureau_desk_lod1.glb",
+        "assets/import/models/bureau_desk.fbx"
+      ]
     },
     {
       "id": "bureau_locker",
       "name": "Casier couché",
       "category": "room_prop",
       "release_stage": "MVP",
-      "status": "designed",
+      "status": "modeled",
       "roblox_asset_id": null,
-      "source_path": "assets/source/generators/bureau_locker.luau",
-      "export_path": "assets/import/models/bureau_locker.rbxm",
+      "source_path": "assets/source/models/bureau/bureau_props.blend",
+      "export_path": "assets/import/models/bureau_locker.glb",
       "dimensions_order": "width_depth_height",
       "size_studs": [
         12,
@@ -1211,23 +1241,33 @@
       "image_export_pixels": null,
       "provenance": "original_creation_required",
       "validation_evidence": [
-        "assets/source/design/canvas/project/Room_Office.dc.html"
+        "assets/source/design/canvas/project/Room_Office.dc.html",
+        "reports/T03/props_bureau_verify.json#assets.bureau_locker",
+        "reports/T03/props_bureau_verify_log.txt",
+        "reports/T03/renders/bureau_locker_3q.png",
+        "reports/T03/renders/bureau_locker_silhouette.png",
+        "reports/T03/renders/bureau_locker_silhouette_low.png",
+        "reports/T03/renders/props_bureau_sheet.png"
       ],
       "design_reference_paths": [
         "assets/source/generators/bureau_locker.luau",
         "assets/import/models/bureau_locker.rbxm"
       ],
       "proxy_export_path": "assets/import/models/bureau_locker.rbxm",
-      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged",
+      "additional_exports": [
+        "assets/import/models/bureau_locker_lod1.glb",
+        "assets/import/models/bureau_locker.fbx"
+      ]
     },
     {
       "id": "bureau_keyboard",
       "name": "Clavier géant",
       "category": "room_prop",
       "release_stage": "MVP",
-      "status": "designed",
+      "status": "modeled",
       "roblox_asset_id": null,
-      "source_path": "assets/source/models/bureau_keyboard.blend",
+      "source_path": "assets/source/models/bureau/bureau_props.blend",
       "export_path": "assets/import/models/bureau_keyboard.glb",
       "dimensions_order": "width_depth_height",
       "size_studs": [
@@ -1259,23 +1299,33 @@
       "image_export_pixels": null,
       "provenance": "original_creation_required",
       "validation_evidence": [
-        "assets/source/design/canvas/project/Room_Office.dc.html"
+        "assets/source/design/canvas/project/Room_Office.dc.html",
+        "reports/T03/props_bureau_verify.json#assets.bureau_keyboard",
+        "reports/T03/props_bureau_verify_log.txt",
+        "reports/T03/renders/bureau_keyboard_3q.png",
+        "reports/T03/renders/bureau_keyboard_silhouette.png",
+        "reports/T03/renders/bureau_keyboard_silhouette_low.png",
+        "reports/T03/renders/props_bureau_sheet.png"
       ],
       "design_reference_paths": [
         "assets/source/models/bureau_keyboard.blend",
         "assets/import/models/bureau_keyboard.glb"
       ],
       "proxy_export_path": "assets/import/models/bureau_keyboard.rbxm",
-      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged",
+      "additional_exports": [
+        "assets/import/models/bureau_keyboard_lod1.glb",
+        "assets/import/models/bureau_keyboard.fbx"
+      ]
     },
     {
       "id": "bureau_rail_chair",
       "name": "Chaise sur rail",
       "category": "room_prop",
       "release_stage": "MVP",
-      "status": "designed",
+      "status": "modeled",
       "roblox_asset_id": null,
-      "source_path": "assets/source/models/bureau_rail_chair.blend",
+      "source_path": "assets/source/models/bureau/bureau_props.blend",
       "export_path": "assets/import/models/bureau_rail_chair.glb",
       "dimensions_order": "width_depth_height",
       "size_studs": [
@@ -1307,23 +1357,33 @@
       "image_export_pixels": null,
       "provenance": "original_creation_required",
       "validation_evidence": [
-        "assets/source/design/canvas/project/Room_Office.dc.html"
+        "assets/source/design/canvas/project/Room_Office.dc.html",
+        "reports/T03/props_bureau_verify.json#assets.bureau_rail_chair",
+        "reports/T03/props_bureau_verify_log.txt",
+        "reports/T03/renders/bureau_rail_chair_3q.png",
+        "reports/T03/renders/bureau_rail_chair_silhouette.png",
+        "reports/T03/renders/bureau_rail_chair_silhouette_low.png",
+        "reports/T03/renders/props_bureau_sheet.png"
       ],
       "design_reference_paths": [
         "assets/source/models/bureau_rail_chair.blend",
         "assets/import/models/bureau_rail_chair.glb"
       ],
       "proxy_export_path": "assets/import/models/bureau_rail_chair.rbxm",
-      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged",
+      "additional_exports": [
+        "assets/import/models/bureau_rail_chair_lod1.glb",
+        "assets/import/models/bureau_rail_chair.fbx"
+      ]
     },
     {
       "id": "bureau_spring_phone",
       "name": "Téléphone à ressort",
       "category": "room_prop",
       "release_stage": "MVP",
-      "status": "designed",
+      "status": "modeled",
       "roblox_asset_id": null,
-      "source_path": "assets/source/models/bureau_spring_phone.blend",
+      "source_path": "assets/source/models/bureau/bureau_props.blend",
       "export_path": "assets/import/models/bureau_spring_phone.glb",
       "dimensions_order": "width_depth_height",
       "size_studs": [
@@ -1355,23 +1415,33 @@
       "image_export_pixels": null,
       "provenance": "original_creation_required",
       "validation_evidence": [
-        "assets/source/design/canvas/project/Room_Office.dc.html"
+        "assets/source/design/canvas/project/Room_Office.dc.html",
+        "reports/T03/props_bureau_verify.json#assets.bureau_spring_phone",
+        "reports/T03/props_bureau_verify_log.txt",
+        "reports/T03/renders/bureau_spring_phone_3q.png",
+        "reports/T03/renders/bureau_spring_phone_silhouette.png",
+        "reports/T03/renders/bureau_spring_phone_silhouette_low.png",
+        "reports/T03/renders/props_bureau_sheet.png"
       ],
       "design_reference_paths": [
         "assets/source/models/bureau_spring_phone.blend",
         "assets/import/models/bureau_spring_phone.glb"
       ],
       "proxy_export_path": "assets/import/models/bureau_spring_phone.rbxm",
-      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged",
+      "additional_exports": [
+        "assets/import/models/bureau_spring_phone_lod1.glb",
+        "assets/import/models/bureau_spring_phone.fbx"
+      ]
     },
     {
       "id": "bureau_loose_files",
       "name": "Dossiers libres",
       "category": "room_prop",
       "release_stage": "MVP",
-      "status": "designed",
+      "status": "modeled",
       "roblox_asset_id": null,
-      "source_path": "assets/source/models/bureau_loose_files.blend",
+      "source_path": "assets/source/models/bureau/bureau_props.blend",
       "export_path": "assets/import/models/bureau_loose_files.glb",
       "dimensions_order": "width_depth_height",
       "size_studs": [
@@ -1403,23 +1473,33 @@
       "image_export_pixels": null,
       "provenance": "original_creation_required",
       "validation_evidence": [
-        "assets/source/design/canvas/project/Room_Office.dc.html"
+        "assets/source/design/canvas/project/Room_Office.dc.html",
+        "reports/T03/props_bureau_verify.json#assets.bureau_loose_files",
+        "reports/T03/props_bureau_verify_log.txt",
+        "reports/T03/renders/bureau_loose_files_3q.png",
+        "reports/T03/renders/bureau_loose_files_silhouette.png",
+        "reports/T03/renders/bureau_loose_files_silhouette_low.png",
+        "reports/T03/renders/props_bureau_sheet.png"
       ],
       "design_reference_paths": [
         "assets/source/models/bureau_loose_files.blend",
         "assets/import/models/bureau_loose_files.glb"
       ],
       "proxy_export_path": "assets/import/models/bureau_loose_files.rbxm",
-      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged",
+      "additional_exports": [
+        "assets/import/models/bureau_loose_files_lod1.glb",
+        "assets/import/models/bureau_loose_files.fbx"
+      ]
     },
     {
       "id": "machine_bureau_copier",
       "name": "Copieur Panique",
       "category": "signature_machine",
       "release_stage": "MVP",
-      "status": "designed",
+      "status": "modeled",
       "roblox_asset_id": null,
-      "source_path": "assets/source/models/machine_bureau_copier.blend",
+      "source_path": "assets/source/models/bureau/bureau_props.blend",
       "export_path": "assets/import/models/machine_bureau_copier.glb",
       "dimensions_order": "width_depth_height",
       "size_studs": [
@@ -1441,11 +1521,21 @@
       "image_export_pixels": null,
       "provenance": "original_creation_required",
       "validation_evidence": [
-        "assets/source/design/canvas/project/Room_Office.dc.html"
+        "assets/source/design/canvas/project/Room_Office.dc.html",
+        "reports/T03/props_bureau_verify.json#assets.machine_bureau_copier",
+        "reports/T03/props_bureau_verify_log.txt",
+        "reports/T03/renders/machine_bureau_copier_3q.png",
+        "reports/T03/renders/machine_bureau_copier_silhouette.png",
+        "reports/T03/renders/machine_bureau_copier_silhouette_low.png",
+        "reports/T03/renders/props_bureau_sheet.png"
       ],
       "design_reference_paths": [
         "assets/source/models/machine_bureau_copier.blend",
         "assets/import/models/machine_bureau_copier.glb"
+      ],
+      "additional_exports": [
+        "assets/import/models/machine_bureau_copier_lod1.glb",
+        "assets/import/models/machine_bureau_copier.fbx"
       ]
     },
     {
@@ -6079,8 +6169,8 @@
     }
   ],
   "status_counts": {
-    "modeled": 21,
-    "designed": 22,
-    "planned": 138
+    "modeled": 30,
+    "planned": 138,
+    "designed": 13
   }
 }

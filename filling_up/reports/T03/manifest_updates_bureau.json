@@ -1,0 +1,1001 @@
+{
+  "task": "T03",
+  "family": "bureau",
+  "generated_at_utc": "2026-11-02T14:19:51.897106+00:00",
+  "rule": "Statut proposé au plus 'modeled' ; jamais imported/validated sans import Roblox réel. roblox_asset_id reste null.",
+  "apply_by": "agent principal (ce lot ne modifie pas assets/manifest.json)",
+  "budget_note": "Consigne utilisateur « objets de grande qualité » : LOD0 800-3000 triangles par prop (machine <= 8000), LOD1 <= 700 ; remplace le budget initial 100-800 du manifeste.",
+  "updates": [
+    {
+      "id": "bureau_paper_ream",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/bureau/bureau_props.blend",
+      "source_path_manifest_current": "assets/source/generators/bureau_paper_ream.luau",
+      "source_path_change_proposed": true,
+      "export_path": "assets/import/models/bureau_paper_ream.glb",
+      "export_path_manifest_current": "assets/import/models/bureau_paper_ream.rbxm",
+      "additional_exports": [
+        "assets/import/models/bureau_paper_ream_lod1.glb",
+        "assets/import/models/bureau_paper_ream.fbx"
+      ],
+      "supporting_files": [
+        "assets/source/models/bureau/textures/bureau_atlas_1024.png",
+        "assets/source/models/bureau/build_info.json"
+      ],
+      "generator_script": "assets/source/blender/build_props_bureau.py",
+      "production_method_proposed": "blender_mesh_static",
+      "production_method_manifest_current": "roblox_parametric_primitives",
+      "max_triangles_near_proposed": 3000,
+      "max_triangles_near_manifest_current": 800,
+      "validation_evidence": [
+        "reports/T03/props_bureau_verify.json#assets.bureau_paper_ream",
+        "reports/T03/props_bureau_verify_log.txt",
+        "reports/T03/renders/bureau_paper_ream_3q.png",
+        "reports/T03/renders/bureau_paper_ream_silhouette.png",
+        "reports/T03/renders/bureau_paper_ream_silhouette_low.png",
+        "reports/T03/renders/props_bureau_sheet.png"
+      ],
+      "measured": {
+        "bbox_studs_width_depth_height": [
+          10.08,
+          8.0,
+          3.0
+        ],
+        "triangles_lod0": 952,
+        "triangles_lod1": 36,
+        "materials_per_mesh": 1,
+        "walkable_top_max_abs_dev_studs": 0.092,
+        "blender_checks_failed": []
+      },
+      "collision": {
+        "authority": "server_collider_separate_from_visual_mesh",
+        "pivot": "bottom_center",
+        "forward_axis": "-Z",
+        "dimensions_order_config": "width_depth_height",
+        "shape": "box",
+        "size_studs_config": [
+          10,
+          8,
+          3
+        ],
+        "size_vector3_roblox": [
+          10,
+          3,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0.0,
+          1.5,
+          0.0
+        ],
+        "walkable_top": {
+          "size_studs": [
+            10,
+            8
+          ],
+          "height_studs": 3,
+          "center_roblox": [
+            0.0,
+            3,
+            0.0
+          ]
+        },
+        "support_sockets_roblox": [
+          [
+            -2.5,
+            3,
+            -2.0
+          ],
+          [
+            -2.5,
+            3,
+            2.0
+          ],
+          [
+            2.5,
+            3,
+            -2.0
+          ],
+          [
+            2.5,
+            3,
+            2.0
+          ],
+          [
+            0.0,
+            3,
+            0.0
+          ]
+        ],
+        "visual_mesh": {
+          "can_collide": false,
+          "can_query": false,
+          "can_touch": false
+        },
+        "behavior": "stable",
+        "behavior_params": null
+      },
+      "not_validated_because": [
+        "Import Roblox Studio non réalisé (Studio/Open Cloud indisponibles) : unités, axes et aspect à mesurer",
+        "Test d'identification en silhouette auprès de testeurs non réalisé"
+      ]
+    },
+    {
+      "id": "bureau_binder_stack",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/bureau/bureau_props.blend",
+      "source_path_manifest_current": "assets/source/generators/bureau_binder_stack.luau",
+      "source_path_change_proposed": true,
+      "export_path": "assets/import/models/bureau_binder_stack.glb",
+      "export_path_manifest_current": "assets/import/models/bureau_binder_stack.rbxm",
+      "additional_exports": [
+        "assets/import/models/bureau_binder_stack_lod1.glb",
+        "assets/import/models/bureau_binder_stack.fbx"
+      ],
+      "supporting_files": [
+        "assets/source/models/bureau/textures/bureau_atlas_1024.png",
+        "assets/source/models/bureau/build_info.json"
+      ],
+      "generator_script": "assets/source/blender/build_props_bureau.py",
+      "production_method_proposed": "blender_mesh_static",
+      "production_method_manifest_current": "roblox_parametric_primitives",
+      "max_triangles_near_proposed": 3000,
+      "max_triangles_near_manifest_current": 800,
+      "validation_evidence": [
+        "reports/T03/props_bureau_verify.json#assets.bureau_binder_stack",
+        "reports/T03/props_bureau_verify_log.txt",
+        "reports/T03/renders/bureau_binder_stack_3q.png",
+        "reports/T03/renders/bureau_binder_stack_silhouette.png",
+        "reports/T03/renders/bureau_binder_stack_silhouette_low.png",
+        "reports/T03/renders/props_bureau_sheet.png"
+      ],
+      "measured": {
+        "bbox_studs_width_depth_height": [
+          8.0,
+          8.02,
+          5.0
+        ],
+        "triangles_lod0": 1312,
+        "triangles_lod1": 224,
+        "materials_per_mesh": 1,
+        "walkable_top_max_abs_dev_studs": 0.075,
+        "blender_checks_failed": []
+      },
+      "collision": {
+        "authority": "server_collider_separate_from_visual_mesh",
+        "pivot": "bottom_center",
+        "forward_axis": "-Z",
+        "dimensions_order_config": "width_depth_height",
+        "shape": "box",
+        "size_studs_config": [
+          8,
+          8,
+          5
+        ],
+        "size_vector3_roblox": [
+          8,
+          5,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0.0,
+          2.5,
+          0.0
+        ],
+        "walkable_top": {
+          "size_studs": [
+            8,
+            8
+          ],
+          "height_studs": 5,
+          "center_roblox": [
+            0.0,
+            5,
+            0.0
+          ]
+        },
+        "support_sockets_roblox": [
+          [
+            -2.0,
+            5,
+            -2.0
+          ],
+          [
+            -2.0,
+            5,
+            2.0
+          ],
+          [
+            2.0,
+            5,
+            -2.0
+          ],
+          [
+            2.0,
+            5,
+            2.0
+          ],
+          [
+            0.0,
+            5,
+            0.0
+          ]
+        ],
+        "visual_mesh": {
+          "can_collide": false,
+          "can_query": false,
+          "can_touch": false
+        },
+        "behavior": "stable",
+        "behavior_params": null
+      },
+      "not_validated_because": [
+        "Import Roblox Studio non réalisé (Studio/Open Cloud indisponibles) : unités, axes et aspect à mesurer",
+        "Test d'identification en silhouette auprès de testeurs non réalisé"
+      ]
+    },
+    {
+      "id": "bureau_desk",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/bureau/bureau_props.blend",
+      "source_path_manifest_current": "assets/source/generators/bureau_desk.luau",
+      "source_path_change_proposed": true,
+      "export_path": "assets/import/models/bureau_desk.glb",
+      "export_path_manifest_current": "assets/import/models/bureau_desk.rbxm",
+      "additional_exports": [
+        "assets/import/models/bureau_desk_lod1.glb",
+        "assets/import/models/bureau_desk.fbx"
+      ],
+      "supporting_files": [
+        "assets/source/models/bureau/textures/bureau_atlas_1024.png",
+        "assets/source/models/bureau/build_info.json"
+      ],
+      "generator_script": "assets/source/blender/build_props_bureau.py",
+      "production_method_proposed": "blender_mesh_static",
+      "production_method_manifest_current": "roblox_parametric_primitives",
+      "max_triangles_near_proposed": 3000,
+      "max_triangles_near_manifest_current": 800,
+      "validation_evidence": [
+        "reports/T03/props_bureau_verify.json#assets.bureau_desk",
+        "reports/T03/props_bureau_verify_log.txt",
+        "reports/T03/renders/bureau_desk_3q.png",
+        "reports/T03/renders/bureau_desk_silhouette.png",
+        "reports/T03/renders/bureau_desk_silhouette_low.png",
+        "reports/T03/renders/props_bureau_sheet.png"
+      ],
+      "measured": {
+        "bbox_studs_width_depth_height": [
+          16.0,
+          10.0,
+          7.0
+        ],
+        "triangles_lod0": 2286,
+        "triangles_lod1": 322,
+        "materials_per_mesh": 1,
+        "walkable_top_max_abs_dev_studs": 0.068,
+        "blender_checks_failed": []
+      },
+      "collision": {
+        "authority": "server_collider_separate_from_visual_mesh",
+        "pivot": "bottom_center",
+        "forward_axis": "-Z",
+        "dimensions_order_config": "width_depth_height",
+        "shape": "box",
+        "size_studs_config": [
+          16,
+          10,
+          7
+        ],
+        "size_vector3_roblox": [
+          16,
+          7,
+          10
+        ],
+        "offset_from_pivot_roblox": [
+          0.0,
+          3.5,
+          0.0
+        ],
+        "walkable_top": {
+          "size_studs": [
+            16,
+            10
+          ],
+          "height_studs": 7,
+          "center_roblox": [
+            0.0,
+            7,
+            0.0
+          ]
+        },
+        "support_sockets_roblox": [
+          [
+            -4.0,
+            7,
+            -2.5
+          ],
+          [
+            -4.0,
+            7,
+            2.5
+          ],
+          [
+            4.0,
+            7,
+            -2.5
+          ],
+          [
+            4.0,
+            7,
+            2.5
+          ],
+          [
+            0.0,
+            7,
+            0.0
+          ]
+        ],
+        "visual_mesh": {
+          "can_collide": false,
+          "can_query": false,
+          "can_touch": false
+        },
+        "behavior": "stable",
+        "behavior_params": null
+      },
+      "not_validated_because": [
+        "Import Roblox Studio non réalisé (Studio/Open Cloud indisponibles) : unités, axes et aspect à mesurer",
+        "Test d'identification en silhouette auprès de testeurs non réalisé"
+      ]
+    },
+    {
+      "id": "bureau_locker",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/bureau/bureau_props.blend",
+      "source_path_manifest_current": "assets/source/generators/bureau_locker.luau",
+      "source_path_change_proposed": true,
+      "export_path": "assets/import/models/bureau_locker.glb",
+      "export_path_manifest_current": "assets/import/models/bureau_locker.rbxm",
+      "additional_exports": [
+        "assets/import/models/bureau_locker_lod1.glb",
+        "assets/import/models/bureau_locker.fbx"
+      ],
+      "supporting_files": [
+        "assets/source/models/bureau/textures/bureau_atlas_1024.png",
+        "assets/source/models/bureau/build_info.json"
+      ],
+      "generator_script": "assets/source/blender/build_props_bureau.py",
+      "production_method_proposed": "blender_mesh_static",
+      "production_method_manifest_current": "roblox_parametric_primitives",
+      "max_triangles_near_proposed": 3000,
+      "max_triangles_near_manifest_current": 800,
+      "validation_evidence": [
+        "reports/T03/props_bureau_verify.json#assets.bureau_locker",
+        "reports/T03/props_bureau_verify_log.txt",
+        "reports/T03/renders/bureau_locker_3q.png",
+        "reports/T03/renders/bureau_locker_silhouette.png",
+        "reports/T03/renders/bureau_locker_silhouette_low.png",
+        "reports/T03/renders/props_bureau_sheet.png"
+      ],
+      "measured": {
+        "bbox_studs_width_depth_height": [
+          12.0,
+          8.004,
+          6.0
+        ],
+        "triangles_lod0": 1384,
+        "triangles_lod1": 188,
+        "materials_per_mesh": 1,
+        "walkable_top_max_abs_dev_studs": 0.021,
+        "blender_checks_failed": []
+      },
+      "collision": {
+        "authority": "server_collider_separate_from_visual_mesh",
+        "pivot": "bottom_center",
+        "forward_axis": "-Z",
+        "dimensions_order_config": "width_depth_height",
+        "shape": "box",
+        "size_studs_config": [
+          12,
+          8,
+          6
+        ],
+        "size_vector3_roblox": [
+          12,
+          6,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0.0,
+          3.0,
+          0.0
+        ],
+        "walkable_top": {
+          "size_studs": [
+            12,
+            8
+          ],
+          "height_studs": 6,
+          "center_roblox": [
+            0.0,
+            6,
+            0.0
+          ]
+        },
+        "support_sockets_roblox": [
+          [
+            -3.0,
+            6,
+            -2.0
+          ],
+          [
+            -3.0,
+            6,
+            2.0
+          ],
+          [
+            3.0,
+            6,
+            -2.0
+          ],
+          [
+            3.0,
+            6,
+            2.0
+          ],
+          [
+            0.0,
+            6,
+            0.0
+          ]
+        ],
+        "visual_mesh": {
+          "can_collide": false,
+          "can_query": false,
+          "can_touch": false
+        },
+        "behavior": "stable",
+        "behavior_params": null
+      },
+      "not_validated_because": [
+        "Import Roblox Studio non réalisé (Studio/Open Cloud indisponibles) : unités, axes et aspect à mesurer",
+        "Test d'identification en silhouette auprès de testeurs non réalisé"
+      ]
+    },
+    {
+      "id": "bureau_keyboard",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/bureau/bureau_props.blend",
+      "source_path_manifest_current": "assets/source/models/bureau_keyboard.blend",
+      "source_path_change_proposed": true,
+      "export_path": "assets/import/models/bureau_keyboard.glb",
+      "export_path_manifest_current": "assets/import/models/bureau_keyboard.glb",
+      "additional_exports": [
+        "assets/import/models/bureau_keyboard_lod1.glb",
+        "assets/import/models/bureau_keyboard.fbx"
+      ],
+      "supporting_files": [
+        "assets/source/models/bureau/textures/bureau_atlas_1024.png",
+        "assets/source/models/bureau/build_info.json"
+      ],
+      "generator_script": "assets/source/blender/build_props_bureau.py",
+      "production_method_proposed": "blender_mesh_static",
+      "production_method_manifest_current": "blender_mesh_and_optional_rig",
+      "max_triangles_near_proposed": 3000,
+      "max_triangles_near_manifest_current": 800,
+      "validation_evidence": [
+        "reports/T03/props_bureau_verify.json#assets.bureau_keyboard",
+        "reports/T03/props_bureau_verify_log.txt",
+        "reports/T03/renders/bureau_keyboard_3q.png",
+        "reports/T03/renders/bureau_keyboard_silhouette.png",
+        "reports/T03/renders/bureau_keyboard_silhouette_low.png",
+        "reports/T03/renders/props_bureau_sheet.png"
+      ],
+      "measured": {
+        "bbox_studs_width_depth_height": [
+          14.0,
+          7.0,
+          2.0
+        ],
+        "triangles_lod0": 1782,
+        "triangles_lod1": 96,
+        "materials_per_mesh": 1,
+        "walkable_top_max_abs_dev_studs": 0.12,
+        "blender_checks_failed": []
+      },
+      "collision": {
+        "authority": "server_collider_separate_from_visual_mesh",
+        "pivot": "bottom_center",
+        "forward_axis": "-Z",
+        "dimensions_order_config": "width_depth_height",
+        "shape": "box",
+        "size_studs_config": [
+          14,
+          7,
+          2
+        ],
+        "size_vector3_roblox": [
+          14,
+          2,
+          7
+        ],
+        "offset_from_pivot_roblox": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "walkable_top": {
+          "size_studs": [
+            14,
+            7
+          ],
+          "height_studs": 2,
+          "center_roblox": [
+            0.0,
+            2,
+            0.0
+          ]
+        },
+        "support_sockets_roblox": [
+          [
+            -3.5,
+            2,
+            -1.75
+          ],
+          [
+            -3.5,
+            2,
+            1.75
+          ],
+          [
+            3.5,
+            2,
+            -1.75
+          ],
+          [
+            3.5,
+            2,
+            1.75
+          ],
+          [
+            0.0,
+            2,
+            0.0
+          ]
+        ],
+        "visual_mesh": {
+          "can_collide": false,
+          "can_query": false,
+          "can_touch": false
+        },
+        "behavior": "stable",
+        "behavior_params": null
+      },
+      "not_validated_because": [
+        "Import Roblox Studio non réalisé (Studio/Open Cloud indisponibles) : unités, axes et aspect à mesurer",
+        "Test d'identification en silhouette auprès de testeurs non réalisé"
+      ]
+    },
+    {
+      "id": "bureau_rail_chair",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/bureau/bureau_props.blend",
+      "source_path_manifest_current": "assets/source/models/bureau_rail_chair.blend",
+      "source_path_change_proposed": true,
+      "export_path": "assets/import/models/bureau_rail_chair.glb",
+      "export_path_manifest_current": "assets/import/models/bureau_rail_chair.glb",
+      "additional_exports": [
+        "assets/import/models/bureau_rail_chair_lod1.glb",
+        "assets/import/models/bureau_rail_chair.fbx"
+      ],
+      "supporting_files": [
+        "assets/source/models/bureau/textures/bureau_atlas_1024.png",
+        "assets/source/models/bureau/build_info.json"
+      ],
+      "generator_script": "assets/source/blender/build_props_bureau.py",
+      "production_method_proposed": "blender_mesh_static",
+      "production_method_manifest_current": "blender_mesh_and_optional_rig",
+      "max_triangles_near_proposed": 3000,
+      "max_triangles_near_manifest_current": 800,
+      "validation_evidence": [
+        "reports/T03/props_bureau_verify.json#assets.bureau_rail_chair",
+        "reports/T03/props_bureau_verify_log.txt",
+        "reports/T03/renders/bureau_rail_chair_3q.png",
+        "reports/T03/renders/bureau_rail_chair_silhouette.png",
+        "reports/T03/renders/bureau_rail_chair_silhouette_low.png",
+        "reports/T03/renders/props_bureau_sheet.png"
+      ],
+      "measured": {
+        "bbox_studs_width_depth_height": [
+          9.0,
+          9.0,
+          6.0
+        ],
+        "triangles_lod0": 2752,
+        "triangles_lod1": 372,
+        "materials_per_mesh": 1,
+        "walkable_top_max_abs_dev_studs": 0.231,
+        "blender_checks_failed": []
+      },
+      "collision": {
+        "authority": "server_collider_separate_from_visual_mesh",
+        "pivot": "bottom_center",
+        "forward_axis": "-Z",
+        "dimensions_order_config": "width_depth_height",
+        "shape": "box",
+        "size_studs_config": [
+          9,
+          9,
+          6
+        ],
+        "size_vector3_roblox": [
+          9,
+          6,
+          9
+        ],
+        "offset_from_pivot_roblox": [
+          0.0,
+          3.0,
+          0.0
+        ],
+        "walkable_top": {
+          "size_studs": [
+            9,
+            9
+          ],
+          "height_studs": 6,
+          "center_roblox": [
+            0.0,
+            6,
+            0.0
+          ]
+        },
+        "support_sockets_roblox": [
+          [
+            -2.25,
+            6,
+            -2.25
+          ],
+          [
+            -2.25,
+            6,
+            2.25
+          ],
+          [
+            2.25,
+            6,
+            -2.25
+          ],
+          [
+            2.25,
+            6,
+            2.25
+          ],
+          [
+            0.0,
+            6,
+            0.0
+          ]
+        ],
+        "visual_mesh": {
+          "can_collide": false,
+          "can_query": false,
+          "can_touch": false
+        },
+        "behavior": "moving",
+        "behavior_params": {
+          "path": "linear",
+          "axis": "width",
+          "travel_studs": 10,
+          "cycle_seconds": 9,
+          "pause_at_each_end_seconds": 1.5,
+          "variants": {
+            "lift": {
+              "minimum_depth": 9,
+              "axis": "height",
+              "travel_studs": 6,
+              "cycle_seconds": 9,
+              "pause_at_each_end_seconds": 1.5
+            }
+          }
+        }
+      },
+      "not_validated_because": [
+        "Import Roblox Studio non réalisé (Studio/Open Cloud indisponibles) : unités, axes et aspect à mesurer",
+        "Test d'identification en silhouette auprès de testeurs non réalisé"
+      ]
+    },
+    {
+      "id": "bureau_spring_phone",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/bureau/bureau_props.blend",
+      "source_path_manifest_current": "assets/source/models/bureau_spring_phone.blend",
+      "source_path_change_proposed": true,
+      "export_path": "assets/import/models/bureau_spring_phone.glb",
+      "export_path_manifest_current": "assets/import/models/bureau_spring_phone.glb",
+      "additional_exports": [
+        "assets/import/models/bureau_spring_phone_lod1.glb",
+        "assets/import/models/bureau_spring_phone.fbx"
+      ],
+      "supporting_files": [
+        "assets/source/models/bureau/textures/bureau_atlas_1024.png",
+        "assets/source/models/bureau/build_info.json"
+      ],
+      "generator_script": "assets/source/blender/build_props_bureau.py",
+      "production_method_proposed": "blender_mesh_static",
+      "production_method_manifest_current": "blender_mesh_and_optional_rig",
+      "max_triangles_near_proposed": 3000,
+      "max_triangles_near_manifest_current": 800,
+      "validation_evidence": [
+        "reports/T03/props_bureau_verify.json#assets.bureau_spring_phone",
+        "reports/T03/props_bureau_verify_log.txt",
+        "reports/T03/renders/bureau_spring_phone_3q.png",
+        "reports/T03/renders/bureau_spring_phone_silhouette.png",
+        "reports/T03/renders/bureau_spring_phone_silhouette_low.png",
+        "reports/T03/renders/props_bureau_sheet.png"
+      ],
+      "measured": {
+        "bbox_studs_width_depth_height": [
+          10.0,
+          8.02,
+          4.0
+        ],
+        "triangles_lod0": 2992,
+        "triangles_lod1": 396,
+        "materials_per_mesh": 1,
+        "walkable_top_max_abs_dev_studs": 0.145,
+        "blender_checks_failed": []
+      },
+      "collision": {
+        "authority": "server_collider_separate_from_visual_mesh",
+        "pivot": "bottom_center",
+        "forward_axis": "-Z",
+        "dimensions_order_config": "width_depth_height",
+        "shape": "box",
+        "size_studs_config": [
+          10,
+          8,
+          4
+        ],
+        "size_vector3_roblox": [
+          10,
+          4,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0.0,
+          2.0,
+          0.0
+        ],
+        "walkable_top": {
+          "size_studs": [
+            10,
+            8
+          ],
+          "height_studs": 4,
+          "center_roblox": [
+            0.0,
+            4,
+            0.0
+          ]
+        },
+        "support_sockets_roblox": [
+          [
+            -2.5,
+            4,
+            -2.0
+          ],
+          [
+            -2.5,
+            4,
+            2.0
+          ],
+          [
+            2.5,
+            4,
+            -2.0
+          ],
+          [
+            2.5,
+            4,
+            2.0
+          ],
+          [
+            0.0,
+            4,
+            0.0
+          ]
+        ],
+        "visual_mesh": {
+          "can_collide": false,
+          "can_query": false,
+          "can_touch": false
+        },
+        "behavior": "bounce",
+        "behavior_params": {
+          "vertical_impulse_multiplier": 1.25
+        }
+      },
+      "not_validated_because": [
+        "Import Roblox Studio non réalisé (Studio/Open Cloud indisponibles) : unités, axes et aspect à mesurer",
+        "Test d'identification en silhouette auprès de testeurs non réalisé"
+      ]
+    },
+    {
+      "id": "bureau_loose_files",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/bureau/bureau_props.blend",
+      "source_path_manifest_current": "assets/source/models/bureau_loose_files.blend",
+      "source_path_change_proposed": true,
+      "export_path": "assets/import/models/bureau_loose_files.glb",
+      "export_path_manifest_current": "assets/import/models/bureau_loose_files.glb",
+      "additional_exports": [
+        "assets/import/models/bureau_loose_files_lod1.glb",
+        "assets/import/models/bureau_loose_files.fbx"
+      ],
+      "supporting_files": [
+        "assets/source/models/bureau/textures/bureau_atlas_1024.png",
+        "assets/source/models/bureau/build_info.json"
+      ],
+      "generator_script": "assets/source/blender/build_props_bureau.py",
+      "production_method_proposed": "blender_mesh_static",
+      "production_method_manifest_current": "blender_mesh_and_optional_rig",
+      "max_triangles_near_proposed": 3000,
+      "max_triangles_near_manifest_current": 800,
+      "validation_evidence": [
+        "reports/T03/props_bureau_verify.json#assets.bureau_loose_files",
+        "reports/T03/props_bureau_verify_log.txt",
+        "reports/T03/renders/bureau_loose_files_3q.png",
+        "reports/T03/renders/bureau_loose_files_silhouette.png",
+        "reports/T03/renders/bureau_loose_files_silhouette_low.png",
+        "reports/T03/renders/props_bureau_sheet.png"
+      ],
+      "measured": {
+        "bbox_studs_width_depth_height": [
+          10.0,
+          8.0,
+          5.0
+        ],
+        "triangles_lod0": 1792,
+        "triangles_lod1": 276,
+        "materials_per_mesh": 1,
+        "walkable_top_max_abs_dev_studs": 0.1,
+        "blender_checks_failed": []
+      },
+      "collision": {
+        "authority": "server_collider_separate_from_visual_mesh",
+        "pivot": "bottom_center",
+        "forward_axis": "-Z",
+        "dimensions_order_config": "width_depth_height",
+        "shape": "box",
+        "size_studs_config": [
+          10,
+          8,
+          5
+        ],
+        "size_vector3_roblox": [
+          10,
+          5,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0.0,
+          2.5,
+          0.0
+        ],
+        "walkable_top": {
+          "size_studs": [
+            10,
+            8
+          ],
+          "height_studs": 5,
+          "center_roblox": [
+            0.0,
+            5,
+            0.0
+          ]
+        },
+        "support_sockets_roblox": [
+          [
+            -2.5,
+            5,
+            -2.0
+          ],
+          [
+            -2.5,
+            5,
+            2.0
+          ],
+          [
+            2.5,
+            5,
+            -2.0
+          ],
+          [
+            2.5,
+            5,
+            2.0
+          ],
+          [
+            0.0,
+            5,
+            0.0
+          ]
+        ],
+        "visual_mesh": {
+          "can_collide": false,
+          "can_query": false,
+          "can_touch": false
+        },
+        "behavior": "temporary",
+        "behavior_params": {
+          "seconds_after_contact": 3,
+          "effect": "collapse_to_lower_recovery_level"
+        }
+      },
+      "not_validated_because": [
+        "Import Roblox Studio non réalisé (Studio/Open Cloud indisponibles) : unités, axes et aspect à mesurer",
+        "Test d'identification en silhouette auprès de testeurs non réalisé"
+      ]
+    },
+    {
+      "id": "machine_bureau_copier",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/bureau/bureau_props.blend",
+      "source_path_manifest_current": "assets/source/models/machine_bureau_copier.blend",
+      "source_path_change_proposed": true,
+      "export_path": "assets/import/models/machine_bureau_copier.glb",
+      "export_path_manifest_current": "assets/import/models/machine_bureau_copier.glb",
+      "additional_exports": [
+        "assets/import/models/machine_bureau_copier_lod1.glb",
+        "assets/import/models/machine_bureau_copier.fbx"
+      ],
+      "supporting_files": [
+        "assets/source/models/bureau/textures/bureau_atlas_1024.png",
+        "assets/source/models/bureau/build_info.json"
+      ],
+      "generator_script": "assets/source/blender/build_props_bureau.py",
+      "production_method_proposed": "blender_mesh_static",
+      "production_method_manifest_current": "blender_mesh_and_optional_rig",
+      "max_triangles_near_proposed": 8000,
+      "max_triangles_near_manifest_current": 8000,
+      "validation_evidence": [
+        "reports/T03/props_bureau_verify.json#assets.machine_bureau_copier",
+        "reports/T03/props_bureau_verify_log.txt",
+        "reports/T03/renders/machine_bureau_copier_3q.png",
+        "reports/T03/renders/machine_bureau_copier_silhouette.png",
+        "reports/T03/renders/machine_bureau_copier_silhouette_low.png",
+        "reports/T03/renders/props_bureau_sheet.png"
+      ],
+      "measured": {
+        "bbox_studs_width_depth_height": [
+          22.0,
+          14.0,
+          18.0
+        ],
+        "triangles_lod0": 3778,
+        "triangles_lod1": 368,
+        "materials_per_mesh": 1,
+        "walkable_top_max_abs_dev_studs": null,
+        "blender_checks_failed": []
+      },
+      "collision": {
+        "shape": "separate_architecture_proxy",
+        "note": "Machine décorative : collision du parcours séparée (manifest), aucun dessus praticable."
+      },
+      "not_validated_because": [
+        "Import Roblox Studio non réalisé (Studio/Open Cloud indisponibles) : unités, axes et aspect à mesurer",
+        "Test d'identification en silhouette auprès de testeurs non réalisé"
+      ]
+    }
+  ]
+}
