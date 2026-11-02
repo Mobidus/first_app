@@ -1,0 +1,352 @@
+{
+  "family": "pool",
+  "seed": 20261102,
+  "blender_version": "5.2.3 LTS",
+  "units": "1 BU = 1 stud (décision 0003)",
+  "atlas": "assets/source/models/pool/textures/pool_atlas_1024.png",
+  "atlas_roughness_metal": "assets/source/models/pool/textures/pool_atlas_rough_1024.png",
+  "assets": {
+    "pool_inflatable_duck": {
+      "lod0_object": "pool_inflatable_duck_LOD0",
+      "lod1_object": "pool_inflatable_duck_LOD1",
+      "lod0_tris": 2716,
+      "lod1_tris": 516,
+      "lod0_dims_wdh": [
+        12.018,
+        10.0538,
+        7.97
+      ],
+      "lod1_dims_wdh": [
+        12.0,
+        10.02,
+        7.97
+      ],
+      "bbox_min": [
+        -6.009,
+        -4.5338,
+        0.0
+      ],
+      "bbox_max": [
+        6.009,
+        5.52,
+        7.97
+      ],
+      "materials": [
+        "M_pool_vinyl"
+      ],
+      "exports": [
+        "assets/import/models/pool_inflatable_duck.glb",
+        "assets/import/models/pool_inflatable_duck_lod1.glb",
+        "assets/import/models/pool_inflatable_duck.fbx"
+      ]
+    },
+    "pool_flamingo_float": {
+      "lod0_object": "pool_flamingo_float_LOD0",
+      "lod1_object": "pool_flamingo_float_LOD1",
+      "lod0_tris": 2994,
+      "lod1_tris": 652,
+      "lod0_dims_wdh": [
+        12.018,
+        10.03,
+        9.96
+      ],
+      "lod1_dims_wdh": [
+        12.0,
+        10.03,
+        9.96
+      ],
+      "bbox_min": [
+        -6.009,
+        -4.85,
+        0.0
+      ],
+      "bbox_max": [
+        6.009,
+        5.18,
+        9.96
+      ],
+      "materials": [
+        "M_pool_vinyl"
+      ],
+      "exports": [
+        "assets/import/models/pool_flamingo_float.glb",
+        "assets/import/models/pool_flamingo_float_lod1.glb",
+        "assets/import/models/pool_flamingo_float.fbx"
+      ]
+    },
+    "pool_beach_ball": {
+      "lod0_object": "pool_beach_ball_LOD0",
+      "lod1_object": "pool_beach_ball_LOD1",
+      "lod0_tris": 1016,
+      "lod1_tris": 330,
+      "lod0_dims_wdh": [
+        7.0,
+        7.015,
+        4.0
+      ],
+      "lod1_dims_wdh": [
+        7.0,
+        7.0076,
+        4.0
+      ],
+      "bbox_min": [
+        -3.5,
+        -3.5,
+        0.0
+      ],
+      "bbox_max": [
+        3.5,
+        3.515,
+        4.0
+      ],
+      "materials": [
+        "M_pool_vinyl"
+      ],
+      "exports": [
+        "assets/import/models/pool_beach_ball.glb",
+        "assets/import/models/pool_beach_ball_lod1.glb",
+        "assets/import/models/pool_beach_ball.fbx"
+      ]
+    },
+    "pool_donut_ring": {
+      "lod0_object": "pool_donut_ring_LOD0",
+      "lod1_object": "pool_donut_ring_LOD1",
+      "lod0_tris": 1680,
+      "lod1_tris": 544,
+      "lod0_dims_wdh": [
+        9.0,
+        9.013,
+        3.0
+      ],
+      "lod1_dims_wdh": [
+        9.0,
+        9.0086,
+        3.0
+      ],
+      "bbox_min": [
+        -4.5,
+        -4.5,
+        0.0
+      ],
+      "bbox_max": [
+        4.5,
+        4.513,
+        3.0
+      ],
+      "materials": [
+        "M_pool_vinyl"
+      ],
+      "exports": [
+        "assets/import/models/pool_donut_ring.glb",
+        "assets/import/models/pool_donut_ring_lod1.glb",
+        "assets/import/models/pool_donut_ring.fbx"
+      ]
+    },
+    "pool_unicorn_float": {
+      "lod0_object": "pool_unicorn_float_LOD0",
+      "lod1_object": "pool_unicorn_float_LOD1",
+      "lod0_tris": 2968,
+      "lod1_tris": 630,
+      "lod0_dims_wdh": [
+        14.0612,
+        9.1492,
+        9.9799
+      ],
+      "lod1_dims_wdh": [
+        13.999,
+        9.14,
+        9.9799
+      ],
+      "bbox_min": [
+        -7.0,
+        -4.18,
+        0.0
+      ],
+      "bbox_max": [
+        7.0612,
+        4.9692,
+        9.9799
+      ],
+      "materials": [
+        "M_pool_vinyl"
+      ],
+      "exports": [
+        "assets/import/models/pool_unicorn_float.glb",
+        "assets/import/models/pool_unicorn_float_lod1.glb",
+        "assets/import/models/pool_unicorn_float.fbx"
+      ]
+    },
+    "pool_cooler": {
+      "lod0_object": "pool_cooler_LOD0",
+      "lod1_object": "pool_cooler_LOD1",
+      "lod0_tris": 1648,
+      "lod1_tris": 604,
+      "lod0_dims_wdh": [
+        10.0,
+        7.0,
+        5.0
+      ],
+      "lod1_dims_wdh": [
+        10.0,
+        7.0,
+        5.0
+      ],
+      "bbox_min": [
+        -5.0,
+        -3.5,
+        0.0
+      ],
+      "bbox_max": [
+        5.0,
+        3.5,
+        5.0
+      ],
+      "materials": [
+        "M_pool_vinyl"
+      ],
+      "exports": [
+        "assets/import/models/pool_cooler.glb",
+        "assets/import/models/pool_cooler_lod1.glb",
+        "assets/import/models/pool_cooler.fbx"
+      ]
+    },
+    "pool_croc_float": {
+      "lod0_object": "pool_croc_float_LOD0",
+      "lod1_object": "pool_croc_float_LOD1",
+      "lod0_tris": 2954,
+      "lod1_tris": 608,
+      "lod0_dims_wdh": [
+        16.08,
+        8.028,
+        6.0
+      ],
+      "lod1_dims_wdh": [
+        16.0,
+        8.028,
+        6.0
+      ],
+      "bbox_min": [
+        -8.08,
+        -3.67,
+        0.0
+      ],
+      "bbox_max": [
+        8.0,
+        4.358,
+        6.0
+      ],
+      "materials": [
+        "M_pool_vinyl"
+      ],
+      "exports": [
+        "assets/import/models/pool_croc_float.glb",
+        "assets/import/models/pool_croc_float_lod1.glb",
+        "assets/import/models/pool_croc_float.fbx"
+      ]
+    },
+    "pool_air_mattress": {
+      "lod0_object": "pool_air_mattress_LOD0",
+      "lod1_object": "pool_air_mattress_LOD1",
+      "lod0_tris": 1518,
+      "lod1_tris": 374,
+      "lod0_dims_wdh": [
+        12.0,
+        7.04,
+        2.03
+      ],
+      "lod1_dims_wdh": [
+        12.0,
+        7.04,
+        2.02
+      ],
+      "bbox_min": [
+        -6.0,
+        -3.5,
+        0.0
+      ],
+      "bbox_max": [
+        6.0,
+        3.54,
+        2.03
+      ],
+      "materials": [
+        "M_pool_vinyl"
+      ],
+      "exports": [
+        "assets/import/models/pool_air_mattress.glb",
+        "assets/import/models/pool_air_mattress_lod1.glb",
+        "assets/import/models/pool_air_mattress.fbx"
+      ]
+    },
+    "pool_air_mattress_deflated": {
+      "lod0_object": "pool_air_mattress_deflated_LOD0",
+      "lod1_object": "pool_air_mattress_deflated_LOD1",
+      "lod0_tris": 1856,
+      "lod1_tris": 388,
+      "lod0_dims_wdh": [
+        12.0,
+        7.0,
+        0.6
+      ],
+      "lod1_dims_wdh": [
+        12.0,
+        7.0,
+        0.5998
+      ],
+      "bbox_min": [
+        -6.0,
+        -3.5,
+        0.0
+      ],
+      "bbox_max": [
+        6.0,
+        3.5,
+        0.6
+      ],
+      "materials": [
+        "M_pool_vinyl"
+      ],
+      "exports": [
+        "assets/import/models/pool_air_mattress_deflated.glb",
+        "assets/import/models/pool_air_mattress_deflated_lod1.glb",
+        "assets/import/models/pool_air_mattress_deflated.fbx"
+      ]
+    },
+    "machine_pool_pump": {
+      "lod0_object": "machine_pool_pump_LOD0",
+      "lod1_object": "machine_pool_pump_LOD1",
+      "lod0_tris": 5112,
+      "lod1_tris": 1114,
+      "lod0_dims_wdh": [
+        21.7916,
+        15.8,
+        18.07
+      ],
+      "lod1_dims_wdh": [
+        21.7588,
+        15.8,
+        18.07
+      ],
+      "bbox_min": [
+        -10.8958,
+        -7.9,
+        0.0
+      ],
+      "bbox_max": [
+        10.8958,
+        7.9,
+        18.07
+      ],
+      "materials": [
+        "M_pool_vinyl",
+        "M_pool_glass"
+      ],
+      "exports": [
+        "assets/import/models/machine_pool_pump.glb",
+        "assets/import/models/machine_pool_pump_lod1.glb",
+        "assets/import/models/machine_pool_pump.fbx"
+      ]
+    }
+  },
+  "blend": "assets/source/models/pool/pool_props.blend"
+}

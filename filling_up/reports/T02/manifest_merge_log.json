@@ -27,50 +27,50 @@
     {
       "task": "T02",
       "id": "bureau_binder_stack",
-      "from": "designed",
-      "to": "designed"
+      "from": "modeled",
+      "to": "modeled"
     },
     {
       "task": "T02",
       "id": "bureau_desk",
-      "from": "designed",
-      "to": "designed"
+      "from": "modeled",
+      "to": "modeled"
     },
     {
       "task": "T02",
       "id": "bureau_keyboard",
-      "from": "designed",
-      "to": "designed"
+      "from": "modeled",
+      "to": "modeled"
     },
     {
       "task": "T02",
       "id": "bureau_locker",
-      "from": "designed",
-      "to": "designed"
+      "from": "modeled",
+      "to": "modeled"
     },
     {
       "task": "T02",
       "id": "bureau_loose_files",
-      "from": "designed",
-      "to": "designed"
+      "from": "modeled",
+      "to": "modeled"
     },
     {
       "task": "T02",
       "id": "bureau_paper_ream",
-      "from": "designed",
-      "to": "designed"
+      "from": "modeled",
+      "to": "modeled"
     },
     {
       "task": "T02",
       "id": "bureau_rail_chair",
-      "from": "designed",
-      "to": "designed"
+      "from": "modeled",
+      "to": "modeled"
     },
     {
       "task": "T02",
       "id": "bureau_spring_phone",
-      "from": "designed",
-      "to": "designed"
+      "from": "modeled",
+      "to": "modeled"
     },
     {
       "task": "T02",
@@ -117,8 +117,8 @@
     {
       "task": "T02",
       "id": "machine_bureau_copier",
-      "from": "designed",
-      "to": "designed"
+      "from": "modeled",
+      "to": "modeled"
     },
     {
       "task": "T02",
@@ -329,55 +329,55 @@
     {
       "task": "T03",
       "id": "bureau_paper_ream",
-      "from": "designed",
+      "from": "modeled",
       "to": "modeled"
     },
     {
       "task": "T03",
       "id": "bureau_binder_stack",
-      "from": "designed",
+      "from": "modeled",
       "to": "modeled"
     },
     {
       "task": "T03",
       "id": "bureau_desk",
-      "from": "designed",
+      "from": "modeled",
       "to": "modeled"
     },
     {
       "task": "T03",
       "id": "bureau_locker",
-      "from": "designed",
+      "from": "modeled",
       "to": "modeled"
     },
     {
       "task": "T03",
       "id": "bureau_keyboard",
-      "from": "designed",
+      "from": "modeled",
       "to": "modeled"
     },
     {
       "task": "T03",
       "id": "bureau_rail_chair",
-      "from": "designed",
+      "from": "modeled",
       "to": "modeled"
     },
     {
       "task": "T03",
       "id": "bureau_spring_phone",
-      "from": "designed",
+      "from": "modeled",
       "to": "modeled"
     },
     {
       "task": "T03",
       "id": "bureau_loose_files",
-      "from": "designed",
+      "from": "modeled",
       "to": "modeled"
     },
     {
       "task": "T03",
       "id": "machine_bureau_copier",
-      "from": "designed",
+      "from": "modeled",
       "to": "modeled"
     },
     {
@@ -487,11 +487,81 @@
       "id": "toy_plush_octo",
       "from": "modeled",
       "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "pool_inflatable_duck",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_pool.json"
+    },
+    {
+      "task": "T03",
+      "id": "pool_flamingo_float",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_pool.json"
+    },
+    {
+      "task": "T03",
+      "id": "pool_beach_ball",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_pool.json"
+    },
+    {
+      "task": "T03",
+      "id": "pool_donut_ring",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_pool.json"
+    },
+    {
+      "task": "T03",
+      "id": "pool_unicorn_float",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_pool.json"
+    },
+    {
+      "task": "T03",
+      "id": "pool_cooler",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_pool.json"
+    },
+    {
+      "task": "T03",
+      "id": "pool_croc_float",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_pool.json"
+    },
+    {
+      "task": "T03",
+      "id": "pool_air_mattress",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_pool.json"
+    },
+    {
+      "task": "T03",
+      "id": "pool_air_mattress_deflated",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_pool.json"
+    },
+    {
+      "task": "T03",
+      "id": "machine_pool_pump",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_pool.json"
     }
   ],
   "rejected": [],
   "status_counts": {
-    "modeled": 30,
+    "modeled": 40,
     "planned": 138,
     "designed": 13
   }

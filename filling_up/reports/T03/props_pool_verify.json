@@ -1,0 +1,2476 @@
+{
+  "task": "T03",
+  "family": "pool",
+  "checked_at_utc": "2026-11-02T14:43:13.797141+00:00",
+  "blender_version": "5.2.3 LTS",
+  "method": "Réimport de chaque GLB/FBX dans une scène vide (Blender) ; lancers de rayons verticaux pour le dessus.",
+  "criteria": {
+    "envelope": "dimensions = enveloppe (SPECS) à ±2 % sur chaque axe (LOD0, LOD1, FBX)",
+    "pivot": "origine au sol ; props : centre du bas du collider (collider contenu dans la boîte du maillage, décalage rapporté) ; machine et variante dégonflée : centre du bas de la boîte englobante",
+    "walkable_top": "rectangle walkable centré, grille 0,25, retrait 0,25 : aucun raté, |écart| ≤ 0,25 au collider, rien au-dessus de +0,05 (LOD0 et LOD1)",
+    "triangles": "props LOD0 800–3 000, LOD1 ≤ 700 ; machine LOD0 3 000–8 000, LOD1 ≤ 1 200",
+    "materials": "props : 1 matériau par maillage ; machine ≤ 2",
+    "textures": "UV + images embarquées dans le GLB (couleur de base + metallicRoughness)",
+    "front": "décor frontal (tuile d'atlas réservée) en moyenne côté +Y Blender = -Z Roblox",
+    "determinism": "seconde construction complète : empreintes SHA-256 identiques de tous les GLB",
+    "axes": "1 BU = 1 stud ; glTF X largeur, Y haut (min 0), Z profondeur ; avant Roblox -Z (décision 0003)"
+  },
+  "summary": {
+    "assets": 10,
+    "checks": 134,
+    "pass": 134,
+    "fail": 0
+  },
+  "determinism": {
+    "method": "seconde exécution complète de build_props_pool.py (POOL_IMPORT_DIR temporaire), SHA-256",
+    "rebuild_returncode": 0,
+    "glb": {
+      "pool_inflatable_duck.glb": {
+        "sha256": "6e5f1c6038d74f54b773753e6436b97f8b2e41dc5de3397856d681b09eccf9f1",
+        "rebuild_sha256": "6e5f1c6038d74f54b773753e6436b97f8b2e41dc5de3397856d681b09eccf9f1",
+        "identical": true
+      },
+      "pool_inflatable_duck_lod1.glb": {
+        "sha256": "dc90936920d5a4b60995bdf0c331e085c40556568dcbbb5f4f233ee99ad1c95c",
+        "rebuild_sha256": "dc90936920d5a4b60995bdf0c331e085c40556568dcbbb5f4f233ee99ad1c95c",
+        "identical": true
+      },
+      "pool_flamingo_float.glb": {
+        "sha256": "6a31a9883d7a5a09bebcc0571c3f3f32f68c9240fc1ea1f58ce74ca37e481179",
+        "rebuild_sha256": "6a31a9883d7a5a09bebcc0571c3f3f32f68c9240fc1ea1f58ce74ca37e481179",
+        "identical": true
+      },
+      "pool_flamingo_float_lod1.glb": {
+        "sha256": "5863e523cf758e081ace6a04129b0cce6f3de25d63f4ca0afcbee5b6155b47a0",
+        "rebuild_sha256": "5863e523cf758e081ace6a04129b0cce6f3de25d63f4ca0afcbee5b6155b47a0",
+        "identical": true
+      },
+      "pool_beach_ball.glb": {
+        "sha256": "5627809819b1f1cc54bc67f2f23e36a799f4eec5af466dce32321ddabe2eb40e",
+        "rebuild_sha256": "5627809819b1f1cc54bc67f2f23e36a799f4eec5af466dce32321ddabe2eb40e",
+        "identical": true
+      },
+      "pool_beach_ball_lod1.glb": {
+        "sha256": "b3553095bba5bbdef3df3eb143db672b2df95ed7e0e8e27035f5d2d5c70b5261",
+        "rebuild_sha256": "b3553095bba5bbdef3df3eb143db672b2df95ed7e0e8e27035f5d2d5c70b5261",
+        "identical": true
+      },
+      "pool_donut_ring.glb": {
+        "sha256": "c000355e0b8499e429432d13a99f7b187f734803bd31e4739c8b6853391c1170",
+        "rebuild_sha256": "c000355e0b8499e429432d13a99f7b187f734803bd31e4739c8b6853391c1170",
+        "identical": true
+      },
+      "pool_donut_ring_lod1.glb": {
+        "sha256": "1732e1b39e269d99e071e7a0877b976c3dc316658386832fca986f3b86bd0a4f",
+        "rebuild_sha256": "1732e1b39e269d99e071e7a0877b976c3dc316658386832fca986f3b86bd0a4f",
+        "identical": true
+      },
+      "pool_unicorn_float.glb": {
+        "sha256": "88c9b16acf0106b16dec71dcbe5bbfa5a7ae9ed5ba97040e1384308b70d740d6",
+        "rebuild_sha256": "88c9b16acf0106b16dec71dcbe5bbfa5a7ae9ed5ba97040e1384308b70d740d6",
+        "identical": true
+      },
+      "pool_unicorn_float_lod1.glb": {
+        "sha256": "b67b60fe8c782279a41121b3a0517dcaf2446bf24fff34750647f61391029f06",
+        "rebuild_sha256": "b67b60fe8c782279a41121b3a0517dcaf2446bf24fff34750647f61391029f06",
+        "identical": true
+      },
+      "pool_cooler.glb": {
+        "sha256": "ce505a2f55b3eb04936f85961763afe165a2514be0d98ff94a5fb4100aa351fd",
+        "rebuild_sha256": "ce505a2f55b3eb04936f85961763afe165a2514be0d98ff94a5fb4100aa351fd",
+        "identical": true
+      },
+      "pool_cooler_lod1.glb": {
+        "sha256": "04134760bf41a24b67904a8e466a65f07ea12ab05f47285b0a8451eb5414bda7",
+        "rebuild_sha256": "04134760bf41a24b67904a8e466a65f07ea12ab05f47285b0a8451eb5414bda7",
+        "identical": true
+      },
+      "pool_croc_float.glb": {
+        "sha256": "5054ba7989eaff90d5542e6f5978bf680df02ff9cca98e020c08bf90fb0ee41b",
+        "rebuild_sha256": "5054ba7989eaff90d5542e6f5978bf680df02ff9cca98e020c08bf90fb0ee41b",
+        "identical": true
+      },
+      "pool_croc_float_lod1.glb": {
+        "sha256": "70b871cb84391a922b444b308d97263005c899e1afda7fbefd9d1365fd98bb54",
+        "rebuild_sha256": "70b871cb84391a922b444b308d97263005c899e1afda7fbefd9d1365fd98bb54",
+        "identical": true
+      },
+      "pool_air_mattress.glb": {
+        "sha256": "0af63d4bee517cc1d99965d73538f4f9bc7970aafe0472dc42d60854d68c2f9c",
+        "rebuild_sha256": "0af63d4bee517cc1d99965d73538f4f9bc7970aafe0472dc42d60854d68c2f9c",
+        "identical": true
+      },
+      "pool_air_mattress_lod1.glb": {
+        "sha256": "b91ff47ce1f0482a5c3eaf2386a4b46a2d1760936525d70a68c0640a3d17efdc",
+        "rebuild_sha256": "b91ff47ce1f0482a5c3eaf2386a4b46a2d1760936525d70a68c0640a3d17efdc",
+        "identical": true
+      },
+      "pool_air_mattress_deflated.glb": {
+        "sha256": "468f86d488536e77d89646e06acf6b5ea3eb9c8c821b40ece6cb157b0bef7e5f",
+        "rebuild_sha256": "468f86d488536e77d89646e06acf6b5ea3eb9c8c821b40ece6cb157b0bef7e5f",
+        "identical": true
+      },
+      "pool_air_mattress_deflated_lod1.glb": {
+        "sha256": "20f42b6e6ecb10a2a0e4a8c25ee83e3d7aebb6449ee84b91da1fa6eafec00e47",
+        "rebuild_sha256": "20f42b6e6ecb10a2a0e4a8c25ee83e3d7aebb6449ee84b91da1fa6eafec00e47",
+        "identical": true
+      },
+      "machine_pool_pump.glb": {
+        "sha256": "d5bd7673195205610326c48bf64a8ec75c57864697f0dff5ba6982221ea1fbf8",
+        "rebuild_sha256": "d5bd7673195205610326c48bf64a8ec75c57864697f0dff5ba6982221ea1fbf8",
+        "identical": true
+      },
+      "machine_pool_pump_lod1.glb": {
+        "sha256": "131b5cd58a2877f38c0bae2e877afa57ff7c80108c33a04fc29a116e321d62ce",
+        "rebuild_sha256": "131b5cd58a2877f38c0bae2e877afa57ff7c80108c33a04fc29a116e321d62ce",
+        "identical": true
+      }
+    },
+    "all_glb_identical": true,
+    "fbx_identical_informational": {
+      "pool_inflatable_duck.fbx": false,
+      "pool_flamingo_float.fbx": false,
+      "pool_beach_ball.fbx": false,
+      "pool_donut_ring.fbx": false,
+      "pool_unicorn_float.fbx": false,
+      "pool_cooler.fbx": false,
+      "pool_croc_float.fbx": false,
+      "pool_air_mattress.fbx": false,
+      "pool_air_mattress_deflated.fbx": false,
+      "machine_pool_pump.fbx": false
+    }
+  },
+  "import_status": "blocked",
+  "import_blocker": "Roblox Studio / Open Cloud indisponibles : aucun MeshPart importé, roblox_asset_id = null.",
+  "assets": {
+    "pool_inflatable_duck": {
+      "asset_id": "pool_inflatable_duck",
+      "kind": "prop",
+      "behavior": "stable",
+      "envelope_studs_wdh": [
+        12.0,
+        10.0,
+        8.0
+      ],
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_pool_vinyl"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -6.009,
+          0.0,
+          -5.52
+        ],
+        "gltf_position_max_xyz": [
+          6.009,
+          7.97,
+          4.5338
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/pool_inflatable_duck.glb",
+        "mesh_objects": 1,
+        "triangles": 2716,
+        "dims_studs_wdh": [
+          12.018,
+          10.0538,
+          7.97
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          10.0,
+          8.0
+        ],
+        "dims_rel_error": [
+          0.0015,
+          0.0054,
+          -0.0038
+        ],
+        "bbox_min": [
+          -6.009,
+          -4.5338,
+          0.0
+        ],
+        "bbox_max": [
+          6.009,
+          5.52,
+          7.97
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0,
+          0.4931
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "collider": {
+        "size_studs_wdh": [
+          9,
+          8,
+          4
+        ],
+        "walkable_top": [
+          9,
+          8
+        ],
+        "top_height": 4.0
+      },
+      "top_lod0": {
+        "grid_studs": 0.25,
+        "inset_studs": 0.25,
+        "samples": 1085,
+        "misses": 0,
+        "max_abs_dev_studs": 0.0,
+        "max_above_studs": 0.0,
+        "max_below_studs": -0.0,
+        "mean_dev_studs": -0.0,
+        "worst_sample_blender_xy_dev": [
+          4.25,
+          3.75,
+          0.0
+        ],
+        "within_tolerance_fraction": 1.0
+      },
+      "front_axis": {
+        "tile": "duck_face",
+        "found": true,
+        "loops": 618,
+        "mean_blender_y": 4.846,
+        "roblox_z": -4.846,
+        "is_front_minus_z_roblox": true
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/pool_inflatable_duck_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 516,
+        "dims_studs_wdh": [
+          12.0,
+          10.02,
+          7.97
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          10.0,
+          8.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.002,
+          -0.0038
+        ],
+        "bbox_min": [
+          -6.0,
+          -4.5,
+          0.0
+        ],
+        "bbox_max": [
+          6.0,
+          5.52,
+          7.97
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0,
+          0.51
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "grid_studs": 0.25,
+        "inset_studs": 0.25,
+        "samples": 1085,
+        "misses": 0,
+        "max_abs_dev_studs": 0.0,
+        "max_above_studs": 0.0,
+        "max_below_studs": -0.0,
+        "mean_dev_studs": -0.0,
+        "worst_sample_blender_xy_dev": [
+          4.25,
+          3.75,
+          0.0
+        ],
+        "within_tolerance_fraction": 1.0
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/pool_inflatable_duck.fbx",
+        "mesh_objects": 1,
+        "triangles": 2716,
+        "dims_studs_wdh": [
+          12.018,
+          10.0538,
+          7.97
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          10.0,
+          8.0
+        ],
+        "dims_rel_error": [
+          0.0015,
+          0.0054,
+          -0.0038
+        ],
+        "bbox_min": [
+          -6.009,
+          -4.5337,
+          -0.0
+        ],
+        "bbox_max": [
+          6.009,
+          5.52,
+          7.97
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0,
+          0.4931
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "pivot": {
+        "definition": "origine = centre du bas du collider ; collider contenu dans la boîte du maillage",
+        "mesh_bbox_center_from_pivot_roblox": [
+          0.0,
+          3.985,
+          -0.4931
+        ]
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "tris_lod0_800_3000": "PASS",
+        "tris_lod1_le_700": "PASS",
+        "materials_eq_1_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS",
+        "front_decals_face_minus_z_roblox": "PASS",
+        "walkable_top_flat_lod0_le_0_25": "PASS",
+        "walkable_top_flat_lod1_le_0_25": "PASS",
+        "walkable_top_nothing_above_plus_0_05": "PASS"
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "pool_flamingo_float": {
+      "asset_id": "pool_flamingo_float",
+      "kind": "prop",
+      "behavior": "bounce",
+      "envelope_studs_wdh": [
+        12.0,
+        10.0,
+        10.0
+      ],
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_pool_vinyl"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -6.009,
+          0.0,
+          -5.18
+        ],
+        "gltf_position_max_xyz": [
+          6.009,
+          9.96,
+          4.85
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/pool_flamingo_float.glb",
+        "mesh_objects": 1,
+        "triangles": 2994,
+        "dims_studs_wdh": [
+          12.018,
+          10.03,
+          9.96
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          10.0,
+          10.0
+        ],
+        "dims_rel_error": [
+          0.0015,
+          0.003,
+          -0.004
+        ],
+        "bbox_min": [
+          -6.009,
+          -4.85,
+          0.0
+        ],
+        "bbox_max": [
+          6.009,
+          5.18,
+          9.96
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0,
+          0.165
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "collider": {
+        "size_studs_wdh": [
+          9,
+          8,
+          3
+        ],
+        "walkable_top": [
+          9,
+          8
+        ],
+        "top_height": 3.0
+      },
+      "top_lod0": {
+        "grid_studs": 0.25,
+        "inset_studs": 0.25,
+        "samples": 1085,
+        "misses": 0,
+        "max_abs_dev_studs": 0.0,
+        "max_above_studs": 0.0,
+        "max_below_studs": -0.0,
+        "mean_dev_studs": -0.0,
+        "worst_sample_blender_xy_dev": [
+          4.25,
+          2.5,
+          -0.0
+        ],
+        "within_tolerance_fraction": 1.0
+      },
+      "front_axis": {
+        "tile": "eye",
+        "found": true,
+        "loops": 210,
+        "mean_blender_y": 5.092,
+        "roblox_z": -5.092,
+        "is_front_minus_z_roblox": true
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/pool_flamingo_float_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 652,
+        "dims_studs_wdh": [
+          12.0,
+          10.03,
+          9.96
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          10.0,
+          10.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.003,
+          -0.004
+        ],
+        "bbox_min": [
+          -6.0,
+          -4.85,
+          0.0
+        ],
+        "bbox_max": [
+          6.0,
+          5.18,
+          9.96
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0,
+          0.165
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "grid_studs": 0.25,
+        "inset_studs": 0.25,
+        "samples": 1085,
+        "misses": 0,
+        "max_abs_dev_studs": 0.0,
+        "max_above_studs": 0.0,
+        "max_below_studs": -0.0,
+        "mean_dev_studs": -0.0,
+        "worst_sample_blender_xy_dev": [
+          4.25,
+          1.25,
+          -0.0
+        ],
+        "within_tolerance_fraction": 1.0
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/pool_flamingo_float.fbx",
+        "mesh_objects": 1,
+        "triangles": 2994,
+        "dims_studs_wdh": [
+          12.018,
+          10.03,
+          9.96
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          10.0,
+          10.0
+        ],
+        "dims_rel_error": [
+          0.0015,
+          0.003,
+          -0.004
+        ],
+        "bbox_min": [
+          -6.009,
+          -4.85,
+          -0.0
+        ],
+        "bbox_max": [
+          6.009,
+          5.18,
+          9.96
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0,
+          0.165
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "pivot": {
+        "definition": "origine = centre du bas du collider ; collider contenu dans la boîte du maillage",
+        "mesh_bbox_center_from_pivot_roblox": [
+          0.0,
+          4.98,
+          -0.165
+        ]
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "tris_lod0_800_3000": "PASS",
+        "tris_lod1_le_700": "PASS",
+        "materials_eq_1_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS",
+        "front_decals_face_minus_z_roblox": "PASS",
+        "walkable_top_flat_lod0_le_0_25": "PASS",
+        "walkable_top_flat_lod1_le_0_25": "PASS",
+        "walkable_top_nothing_above_plus_0_05": "PASS"
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "pool_beach_ball": {
+      "asset_id": "pool_beach_ball",
+      "kind": "prop",
+      "behavior": "bounce",
+      "envelope_studs_wdh": [
+        7.0,
+        7.0,
+        4.0
+      ],
+      "brief_envelope_studs_wdh": [
+        7,
+        7,
+        5
+      ],
+      "envelope_note": "Brief 7 x 7 x 5 incompatible : walkable 7 x 7 = toute l'emprise et rien ne doit dépasser 4,05 ; hauteur ramenée à 4.",
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_pool_vinyl"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -3.5,
+          0.0,
+          -3.515
+        ],
+        "gltf_position_max_xyz": [
+          3.5,
+          4.0,
+          3.5
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/pool_beach_ball.glb",
+        "mesh_objects": 1,
+        "triangles": 1016,
+        "dims_studs_wdh": [
+          7.0,
+          7.015,
+          4.0
+        ],
+        "expected_size_studs_wdh": [
+          7.0,
+          7.0,
+          4.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0021,
+          0.0
+        ],
+        "bbox_min": [
+          -3.5,
+          -3.5,
+          0.0
+        ],
+        "bbox_max": [
+          3.5,
+          3.515,
+          4.0
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0,
+          0.0075
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "collider": {
+        "size_studs_wdh": [
+          7,
+          7,
+          4
+        ],
+        "walkable_top": [
+          7,
+          7
+        ],
+        "top_height": 4.0
+      },
+      "top_lod0": {
+        "grid_studs": 0.25,
+        "inset_studs": 0.25,
+        "samples": 729,
+        "misses": 0,
+        "max_abs_dev_studs": 0.0,
+        "max_above_studs": 0.0,
+        "max_below_studs": -0.0,
+        "mean_dev_studs": 0.0,
+        "worst_sample_blender_xy_dev": [
+          3.25,
+          3.0,
+          -0.0
+        ],
+        "within_tolerance_fraction": 1.0
+      },
+      "front_axis": {
+        "tile": "badge_sun",
+        "found": true,
+        "loops": 186,
+        "mean_blender_y": 3.501,
+        "roblox_z": -3.501,
+        "is_front_minus_z_roblox": true
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/pool_beach_ball_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 330,
+        "dims_studs_wdh": [
+          7.0,
+          7.0076,
+          4.0
+        ],
+        "expected_size_studs_wdh": [
+          7.0,
+          7.0,
+          4.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0011,
+          0.0
+        ],
+        "bbox_min": [
+          -3.5,
+          -3.5,
+          0.0
+        ],
+        "bbox_max": [
+          3.5,
+          3.5076,
+          4.0
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0,
+          0.0038
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "grid_studs": 0.25,
+        "inset_studs": 0.25,
+        "samples": 729,
+        "misses": 0,
+        "max_abs_dev_studs": 0.0,
+        "max_above_studs": 0.0,
+        "max_below_studs": -0.0,
+        "mean_dev_studs": 0.0,
+        "worst_sample_blender_xy_dev": [
+          3.25,
+          3.25,
+          -0.0
+        ],
+        "within_tolerance_fraction": 1.0
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/pool_beach_ball.fbx",
+        "mesh_objects": 1,
+        "triangles": 1016,
+        "dims_studs_wdh": [
+          7.0,
+          7.015,
+          4.0
+        ],
+        "expected_size_studs_wdh": [
+          7.0,
+          7.0,
+          4.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0021,
+          0.0
+        ],
+        "bbox_min": [
+          -3.5,
+          -3.5,
+          -0.0
+        ],
+        "bbox_max": [
+          3.5,
+          3.515,
+          4.0
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0,
+          0.0075
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "pivot": {
+        "definition": "origine = centre du bas du collider ; collider contenu dans la boîte du maillage",
+        "mesh_bbox_center_from_pivot_roblox": [
+          0.0,
+          2.0,
+          -0.0075
+        ]
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "tris_lod0_800_3000": "PASS",
+        "tris_lod1_le_700": "PASS",
+        "materials_eq_1_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS",
+        "front_decals_face_minus_z_roblox": "PASS",
+        "walkable_top_flat_lod0_le_0_25": "PASS",
+        "walkable_top_flat_lod1_le_0_25": "PASS",
+        "walkable_top_nothing_above_plus_0_05": "PASS"
+      },
+      "informational": {
+        "dims_rel_error_vs_brief_envelope": [
+          0.0,
+          0.0021,
+          -0.2
+        ],
+        "note": "Brief 7 x 7 x 5 incompatible : walkable 7 x 7 = toute l'emprise et rien ne doit dépasser 4,05 ; hauteur ramenée à 4."
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "pool_donut_ring": {
+      "asset_id": "pool_donut_ring",
+      "kind": "prop",
+      "behavior": "bounce",
+      "envelope_studs_wdh": [
+        9.0,
+        9.0,
+        3.0
+      ],
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_pool_vinyl"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -4.5,
+          0.0,
+          -4.513
+        ],
+        "gltf_position_max_xyz": [
+          4.5,
+          3.0,
+          4.5
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/pool_donut_ring.glb",
+        "mesh_objects": 1,
+        "triangles": 1680,
+        "dims_studs_wdh": [
+          9.0,
+          9.013,
+          3.0
+        ],
+        "expected_size_studs_wdh": [
+          9.0,
+          9.0,
+          3.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0014,
+          0.0
+        ],
+        "bbox_min": [
+          -4.5,
+          -4.5,
+          0.0
+        ],
+        "bbox_max": [
+          4.5,
+          4.513,
+          3.0
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0,
+          0.0065
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "collider": {
+        "size_studs_wdh": [
+          8,
+          8,
+          3
+        ],
+        "walkable_top": [
+          8,
+          8
+        ],
+        "top_height": 3.0
+      },
+      "top_lod0": {
+        "grid_studs": 0.25,
+        "inset_studs": 0.25,
+        "samples": 961,
+        "misses": 0,
+        "max_abs_dev_studs": 0.14,
+        "max_above_studs": 0.0,
+        "max_below_studs": -0.14,
+        "mean_dev_studs": -0.0237,
+        "worst_sample_blender_xy_dev": [
+          1.5,
+          0.0,
+          -0.14
+        ],
+        "within_tolerance_fraction": 1.0
+      },
+      "front_axis": {
+        "tile": "donut_face",
+        "found": true,
+        "loops": 36,
+        "mean_blender_y": 4.449,
+        "roblox_z": -4.449,
+        "is_front_minus_z_roblox": true
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/pool_donut_ring_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 544,
+        "dims_studs_wdh": [
+          9.0,
+          9.0086,
+          3.0
+        ],
+        "expected_size_studs_wdh": [
+          9.0,
+          9.0,
+          3.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.001,
+          0.0
+        ],
+        "bbox_min": [
+          -4.5,
+          -4.5,
+          0.0
+        ],
+        "bbox_max": [
+          4.5,
+          4.5086,
+          3.0
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0,
+          0.0043
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "grid_studs": 0.25,
+        "inset_studs": 0.25,
+        "samples": 961,
+        "misses": 0,
+        "max_abs_dev_studs": 0.14,
+        "max_above_studs": 0.0,
+        "max_below_studs": -0.14,
+        "mean_dev_studs": -0.0246,
+        "worst_sample_blender_xy_dev": [
+          1.5,
+          0.5,
+          -0.14
+        ],
+        "within_tolerance_fraction": 1.0
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/pool_donut_ring.fbx",
+        "mesh_objects": 1,
+        "triangles": 1680,
+        "dims_studs_wdh": [
+          9.0,
+          9.013,
+          3.0
+        ],
+        "expected_size_studs_wdh": [
+          9.0,
+          9.0,
+          3.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0014,
+          0.0
+        ],
+        "bbox_min": [
+          -4.5,
+          -4.5,
+          -0.0
+        ],
+        "bbox_max": [
+          4.5,
+          4.513,
+          3.0
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0,
+          0.0065
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "pivot": {
+        "definition": "origine = centre du bas du collider ; collider contenu dans la boîte du maillage",
+        "mesh_bbox_center_from_pivot_roblox": [
+          0.0,
+          1.5,
+          -0.0065
+        ]
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "tris_lod0_800_3000": "PASS",
+        "tris_lod1_le_700": "PASS",
+        "materials_eq_1_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS",
+        "front_decals_face_minus_z_roblox": "PASS",
+        "walkable_top_flat_lod0_le_0_25": "PASS",
+        "walkable_top_flat_lod1_le_0_25": "PASS",
+        "walkable_top_nothing_above_plus_0_05": "PASS"
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "pool_unicorn_float": {
+      "asset_id": "pool_unicorn_float",
+      "kind": "prop",
+      "behavior": "stable",
+      "envelope_studs_wdh": [
+        14.0,
+        9.0,
+        10.0
+      ],
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_pool_vinyl"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -7.0,
+          0.0,
+          -4.9692
+        ],
+        "gltf_position_max_xyz": [
+          7.0612,
+          9.9799,
+          4.18
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/pool_unicorn_float.glb",
+        "mesh_objects": 1,
+        "triangles": 2968,
+        "dims_studs_wdh": [
+          14.0612,
+          9.1492,
+          9.9799
+        ],
+        "expected_size_studs_wdh": [
+          14.0,
+          9.0,
+          10.0
+        ],
+        "dims_rel_error": [
+          0.0044,
+          0.0166,
+          -0.002
+        ],
+        "bbox_min": [
+          -7.0,
+          -4.18,
+          0.0
+        ],
+        "bbox_max": [
+          7.0612,
+          4.9692,
+          9.9799
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0306,
+          0.3946
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "collider": {
+        "size_studs_wdh": [
+          12,
+          8,
+          4
+        ],
+        "walkable_top": [
+          12,
+          8
+        ],
+        "top_height": 4.0
+      },
+      "top_lod0": {
+        "grid_studs": 0.25,
+        "inset_studs": 0.25,
+        "samples": 1457,
+        "misses": 0,
+        "max_abs_dev_studs": 0.0152,
+        "max_above_studs": 0.0,
+        "max_below_studs": -0.0152,
+        "mean_dev_studs": -0.0,
+        "worst_sample_blender_xy_dev": [
+          5.75,
+          3.75,
+          -0.0152
+        ],
+        "within_tolerance_fraction": 1.0
+      },
+      "front_axis": {
+        "tile": "unicorn_face",
+        "found": true,
+        "loops": 1392,
+        "mean_blender_y": 4.5,
+        "roblox_z": -4.5,
+        "is_front_minus_z_roblox": true
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/pool_unicorn_float_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 630,
+        "dims_studs_wdh": [
+          13.999,
+          9.14,
+          9.9799
+        ],
+        "expected_size_studs_wdh": [
+          14.0,
+          9.0,
+          10.0
+        ],
+        "dims_rel_error": [
+          -0.0001,
+          0.0156,
+          -0.002
+        ],
+        "bbox_min": [
+          -6.979,
+          -4.18,
+          0.0
+        ],
+        "bbox_max": [
+          7.02,
+          4.96,
+          9.9799
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0205,
+          0.39
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "grid_studs": 0.25,
+        "inset_studs": 0.25,
+        "samples": 1457,
+        "misses": 0,
+        "max_abs_dev_studs": 0.0,
+        "max_above_studs": 0.0,
+        "max_below_studs": -0.0,
+        "mean_dev_studs": 0.0,
+        "worst_sample_blender_xy_dev": [
+          5.75,
+          3.25,
+          0.0
+        ],
+        "within_tolerance_fraction": 1.0
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/pool_unicorn_float.fbx",
+        "mesh_objects": 1,
+        "triangles": 2968,
+        "dims_studs_wdh": [
+          14.0612,
+          9.1492,
+          9.9799
+        ],
+        "expected_size_studs_wdh": [
+          14.0,
+          9.0,
+          10.0
+        ],
+        "dims_rel_error": [
+          0.0044,
+          0.0166,
+          -0.002
+        ],
+        "bbox_min": [
+          -7.0,
+          -4.18,
+          -0.0
+        ],
+        "bbox_max": [
+          7.0612,
+          4.9692,
+          9.9799
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0306,
+          0.3946
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "pivot": {
+        "definition": "origine = centre du bas du collider ; collider contenu dans la boîte du maillage",
+        "mesh_bbox_center_from_pivot_roblox": [
+          0.0306,
+          4.99,
+          -0.3946
+        ]
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "tris_lod0_800_3000": "PASS",
+        "tris_lod1_le_700": "PASS",
+        "materials_eq_1_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS",
+        "front_decals_face_minus_z_roblox": "PASS",
+        "walkable_top_flat_lod0_le_0_25": "PASS",
+        "walkable_top_flat_lod1_le_0_25": "PASS",
+        "walkable_top_nothing_above_plus_0_05": "PASS"
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "pool_cooler": {
+      "asset_id": "pool_cooler",
+      "kind": "prop",
+      "behavior": "stable",
+      "envelope_studs_wdh": [
+        10.0,
+        7.0,
+        5.0
+      ],
+      "brief_envelope_studs_wdh": [
+        10,
+        7,
+        6
+      ],
+      "envelope_note": "Brief 10 x 7 x 6 incompatible : walkable 10 x 7 = toute l'emprise, collider 5 ; hauteur ramenée à 5.",
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_pool_vinyl"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -5.0,
+          0.0,
+          -3.5
+        ],
+        "gltf_position_max_xyz": [
+          5.0,
+          5.0,
+          3.5
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/pool_cooler.glb",
+        "mesh_objects": 1,
+        "triangles": 1648,
+        "dims_studs_wdh": [
+          10.0,
+          7.0,
+          5.0
+        ],
+        "expected_size_studs_wdh": [
+          10.0,
+          7.0,
+          5.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -5.0,
+          -3.5,
+          0.0
+        ],
+        "bbox_max": [
+          5.0,
+          3.5,
+          5.0
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "collider": {
+        "size_studs_wdh": [
+          10,
+          7,
+          5
+        ],
+        "walkable_top": [
+          10,
+          7
+        ],
+        "top_height": 5.0
+      },
+      "top_lod0": {
+        "grid_studs": 0.25,
+        "inset_studs": 0.25,
+        "samples": 1053,
+        "misses": 0,
+        "max_abs_dev_studs": 0.0094,
+        "max_above_studs": 0.0,
+        "max_below_studs": -0.0094,
+        "mean_dev_studs": -0.0,
+        "worst_sample_blender_xy_dev": [
+          -4.75,
+          -3.25,
+          -0.0094
+        ],
+        "within_tolerance_fraction": 1.0
+      },
+      "front_axis": {
+        "tile": "cooler_face",
+        "found": true,
+        "loops": 30,
+        "mean_blender_y": 3.106,
+        "roblox_z": -3.106,
+        "is_front_minus_z_roblox": true
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/pool_cooler_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 604,
+        "dims_studs_wdh": [
+          10.0,
+          7.0,
+          5.0
+        ],
+        "expected_size_studs_wdh": [
+          10.0,
+          7.0,
+          5.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -5.0,
+          -3.5,
+          0.0
+        ],
+        "bbox_max": [
+          5.0,
+          3.5,
+          5.0
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "grid_studs": 0.25,
+        "inset_studs": 0.25,
+        "samples": 1053,
+        "misses": 0,
+        "max_abs_dev_studs": 0.035,
+        "max_above_studs": 0.0,
+        "max_below_studs": -0.035,
+        "mean_dev_studs": -0.0001,
+        "worst_sample_blender_xy_dev": [
+          -4.75,
+          -3.25,
+          -0.035
+        ],
+        "within_tolerance_fraction": 1.0
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/pool_cooler.fbx",
+        "mesh_objects": 1,
+        "triangles": 1648,
+        "dims_studs_wdh": [
+          10.0,
+          7.0,
+          5.0
+        ],
+        "expected_size_studs_wdh": [
+          10.0,
+          7.0,
+          5.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -5.0,
+          -3.5,
+          -0.0
+        ],
+        "bbox_max": [
+          5.0,
+          3.5,
+          5.0
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "pivot": {
+        "definition": "origine = centre du bas du collider ; collider contenu dans la boîte du maillage",
+        "mesh_bbox_center_from_pivot_roblox": [
+          0.0,
+          2.5,
+          -0.0
+        ]
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "tris_lod0_800_3000": "PASS",
+        "tris_lod1_le_700": "PASS",
+        "materials_eq_1_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS",
+        "front_decals_face_minus_z_roblox": "PASS",
+        "walkable_top_flat_lod0_le_0_25": "PASS",
+        "walkable_top_flat_lod1_le_0_25": "PASS",
+        "walkable_top_nothing_above_plus_0_05": "PASS"
+      },
+      "informational": {
+        "dims_rel_error_vs_brief_envelope": [
+          0.0,
+          0.0,
+          -0.1667
+        ],
+        "note": "Brief 10 x 7 x 6 incompatible : walkable 10 x 7 = toute l'emprise, collider 5 ; hauteur ramenée à 5."
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "pool_croc_float": {
+      "asset_id": "pool_croc_float",
+      "kind": "prop",
+      "behavior": "moving",
+      "envelope_studs_wdh": [
+        16.0,
+        8.0,
+        6.0
+      ],
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_pool_vinyl"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -8.08,
+          0.0,
+          -4.358
+        ],
+        "gltf_position_max_xyz": [
+          8.0,
+          6.0,
+          3.67
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/pool_croc_float.glb",
+        "mesh_objects": 1,
+        "triangles": 2954,
+        "dims_studs_wdh": [
+          16.08,
+          8.028,
+          6.0
+        ],
+        "expected_size_studs_wdh": [
+          16.0,
+          8.0,
+          6.0
+        ],
+        "dims_rel_error": [
+          0.005,
+          0.0035,
+          0.0
+        ],
+        "bbox_min": [
+          -8.08,
+          -3.67,
+          0.0
+        ],
+        "bbox_max": [
+          8.0,
+          4.358,
+          6.0
+        ],
+        "bbox_center_offset_xy_blender": [
+          -0.04,
+          0.344
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "collider": {
+        "size_studs_wdh": [
+          14,
+          7,
+          3
+        ],
+        "walkable_top": [
+          14,
+          7
+        ],
+        "top_height": 3.0
+      },
+      "top_lod0": {
+        "grid_studs": 0.25,
+        "inset_studs": 0.25,
+        "samples": 1485,
+        "misses": 0,
+        "max_abs_dev_studs": 0.0228,
+        "max_above_studs": 0.0,
+        "max_below_studs": -0.0228,
+        "mean_dev_studs": -0.0001,
+        "worst_sample_blender_xy_dev": [
+          -6.75,
+          -3.25,
+          -0.0228
+        ],
+        "within_tolerance_fraction": 1.0
+      },
+      "front_axis": {
+        "tile": "croc_face",
+        "found": true,
+        "loops": 1368,
+        "mean_blender_y": 3.95,
+        "roblox_z": -3.95,
+        "is_front_minus_z_roblox": true
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/pool_croc_float_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 608,
+        "dims_studs_wdh": [
+          16.0,
+          8.028,
+          6.0
+        ],
+        "expected_size_studs_wdh": [
+          16.0,
+          8.0,
+          6.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0035,
+          0.0
+        ],
+        "bbox_min": [
+          -8.0,
+          -3.67,
+          0.0
+        ],
+        "bbox_max": [
+          8.0,
+          4.358,
+          6.0
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0,
+          0.344
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "grid_studs": 0.25,
+        "inset_studs": 0.25,
+        "samples": 1485,
+        "misses": 0,
+        "max_abs_dev_studs": 0.0,
+        "max_above_studs": 0.0,
+        "max_below_studs": -0.0,
+        "mean_dev_studs": -0.0,
+        "worst_sample_blender_xy_dev": [
+          6.75,
+          2.75,
+          0.0
+        ],
+        "within_tolerance_fraction": 1.0
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/pool_croc_float.fbx",
+        "mesh_objects": 1,
+        "triangles": 2954,
+        "dims_studs_wdh": [
+          16.08,
+          8.028,
+          6.0
+        ],
+        "expected_size_studs_wdh": [
+          16.0,
+          8.0,
+          6.0
+        ],
+        "dims_rel_error": [
+          0.005,
+          0.0035,
+          -0.0
+        ],
+        "bbox_min": [
+          -8.08,
+          -3.67,
+          -0.0
+        ],
+        "bbox_max": [
+          8.0,
+          4.358,
+          6.0
+        ],
+        "bbox_center_offset_xy_blender": [
+          -0.04,
+          0.344
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "pivot": {
+        "definition": "origine = centre du bas du collider ; collider contenu dans la boîte du maillage",
+        "mesh_bbox_center_from_pivot_roblox": [
+          -0.04,
+          3.0,
+          -0.344
+        ]
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "tris_lod0_800_3000": "PASS",
+        "tris_lod1_le_700": "PASS",
+        "materials_eq_1_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS",
+        "front_decals_face_minus_z_roblox": "PASS",
+        "walkable_top_flat_lod0_le_0_25": "PASS",
+        "walkable_top_flat_lod1_le_0_25": "PASS",
+        "walkable_top_nothing_above_plus_0_05": "PASS"
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "pool_air_mattress": {
+      "asset_id": "pool_air_mattress",
+      "kind": "prop",
+      "behavior": "temporary",
+      "envelope_studs_wdh": [
+        12.0,
+        7.0,
+        2.0
+      ],
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_pool_vinyl"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -6.0,
+          0.0,
+          -3.54
+        ],
+        "gltf_position_max_xyz": [
+          6.0,
+          2.03,
+          3.5
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/pool_air_mattress.glb",
+        "mesh_objects": 1,
+        "triangles": 1518,
+        "dims_studs_wdh": [
+          12.0,
+          7.04,
+          2.03
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          7.0,
+          2.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0057,
+          0.015
+        ],
+        "bbox_min": [
+          -6.0,
+          -3.5,
+          0.0
+        ],
+        "bbox_max": [
+          6.0,
+          3.54,
+          2.03
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0,
+          0.02
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "collider": {
+        "size_studs_wdh": [
+          12,
+          7,
+          2
+        ],
+        "walkable_top": [
+          12,
+          7
+        ],
+        "top_height": 2.0
+      },
+      "top_lod0": {
+        "grid_studs": 0.25,
+        "inset_studs": 0.25,
+        "samples": 1269,
+        "misses": 0,
+        "max_abs_dev_studs": 0.2,
+        "max_above_studs": 0.03,
+        "max_below_studs": -0.2,
+        "mean_dev_studs": -0.0675,
+        "worst_sample_blender_xy_dev": [
+          5.75,
+          2.75,
+          -0.2
+        ],
+        "within_tolerance_fraction": 1.0
+      },
+      "front_axis": {
+        "tile": "valve_label",
+        "found": true,
+        "loops": 18,
+        "mean_blender_y": 3.508,
+        "roblox_z": -3.508,
+        "is_front_minus_z_roblox": true
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/pool_air_mattress_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 374,
+        "dims_studs_wdh": [
+          12.0,
+          7.04,
+          2.02
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          7.0,
+          2.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0057,
+          0.01
+        ],
+        "bbox_min": [
+          -6.0,
+          -3.5,
+          0.0
+        ],
+        "bbox_max": [
+          6.0,
+          3.54,
+          2.02
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0,
+          0.02
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "grid_studs": 0.25,
+        "inset_studs": 0.25,
+        "samples": 1269,
+        "misses": 0,
+        "max_abs_dev_studs": 0.2,
+        "max_above_studs": 0.02,
+        "max_below_studs": -0.2,
+        "mean_dev_studs": -0.0772,
+        "worst_sample_blender_xy_dev": [
+          5.75,
+          2.75,
+          -0.2
+        ],
+        "within_tolerance_fraction": 1.0
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/pool_air_mattress.fbx",
+        "mesh_objects": 1,
+        "triangles": 1518,
+        "dims_studs_wdh": [
+          12.0,
+          7.04,
+          2.03
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          7.0,
+          2.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0057,
+          0.015
+        ],
+        "bbox_min": [
+          -6.0,
+          -3.5,
+          -0.0
+        ],
+        "bbox_max": [
+          6.0,
+          3.54,
+          2.03
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0,
+          0.02
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "pivot": {
+        "definition": "origine = centre du bas du collider ; collider contenu dans la boîte du maillage",
+        "mesh_bbox_center_from_pivot_roblox": [
+          0.0,
+          1.015,
+          -0.02
+        ]
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "tris_lod0_800_3000": "PASS",
+        "tris_lod1_le_700": "PASS",
+        "materials_eq_1_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS",
+        "front_decals_face_minus_z_roblox": "PASS",
+        "walkable_top_flat_lod0_le_0_25": "PASS",
+        "walkable_top_flat_lod1_le_0_25": "PASS",
+        "walkable_top_nothing_above_plus_0_05": "PASS"
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "pool_air_mattress_deflated": {
+      "asset_id": "pool_air_mattress_deflated",
+      "kind": "prop",
+      "behavior": "temporary_collapsed",
+      "envelope_studs_wdh": [
+        12.0,
+        7.0,
+        0.6
+      ],
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_pool_vinyl"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -6.0,
+          0.0,
+          -3.5
+        ],
+        "gltf_position_max_xyz": [
+          6.0,
+          0.6,
+          3.5
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/pool_air_mattress_deflated.glb",
+        "mesh_objects": 1,
+        "triangles": 1856,
+        "dims_studs_wdh": [
+          12.0,
+          7.0,
+          0.6
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          7.0,
+          0.6
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          -0.0001
+        ],
+        "bbox_min": [
+          -6.0,
+          -3.5,
+          0.0
+        ],
+        "bbox_max": [
+          6.0,
+          3.5,
+          0.6
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/pool_air_mattress_deflated_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 388,
+        "dims_studs_wdh": [
+          12.0,
+          7.0,
+          0.5998
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          7.0,
+          0.6
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          -0.0003
+        ],
+        "bbox_min": [
+          -6.0,
+          -3.5,
+          0.0
+        ],
+        "bbox_max": [
+          6.0,
+          3.5,
+          0.5998
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/pool_air_mattress_deflated.fbx",
+        "mesh_objects": 1,
+        "triangles": 1856,
+        "dims_studs_wdh": [
+          12.0,
+          7.0,
+          0.6
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          7.0,
+          0.6
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          -0.0001
+        ],
+        "bbox_min": [
+          -6.0,
+          -3.5,
+          -0.0
+        ],
+        "bbox_max": [
+          6.0,
+          3.5,
+          0.6
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "pivot": {
+        "definition": "origine = centre du bas de la boîte englobante"
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "tris_lod0_800_3000": "PASS",
+        "tris_lod1_le_700": "PASS",
+        "materials_eq_1_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS"
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "machine_pool_pump": {
+      "asset_id": "machine_pool_pump",
+      "kind": "machine",
+      "behavior": null,
+      "envelope_studs_wdh": [
+        22.0,
+        16.0,
+        18.0
+      ],
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 2,
+        "materials": [
+          "M_pool_vinyl",
+          "M_pool_glass"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -10.8958,
+          0.0,
+          -7.9
+        ],
+        "gltf_position_max_xyz": [
+          10.8958,
+          18.07,
+          7.9
+        ],
+        "alpha_modes": [
+          "OPAQUE",
+          "BLEND"
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/machine_pool_pump.glb",
+        "mesh_objects": 1,
+        "triangles": 5112,
+        "dims_studs_wdh": [
+          21.7916,
+          15.8,
+          18.07
+        ],
+        "expected_size_studs_wdh": [
+          22.0,
+          16.0,
+          18.0
+        ],
+        "dims_rel_error": [
+          -0.0095,
+          -0.0125,
+          0.0039
+        ],
+        "bbox_min": [
+          -10.8958,
+          -7.9,
+          0.0
+        ],
+        "bbox_max": [
+          10.8958,
+          7.9,
+          18.07
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 2,
+        "material_names": [
+          "M_pool_glass",
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "front_axis": {
+        "tile": "pump_face",
+        "found": true,
+        "loops": 660,
+        "mean_blender_y": 2.913,
+        "roblox_z": -2.913,
+        "is_front_minus_z_roblox": true
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/machine_pool_pump_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 1114,
+        "dims_studs_wdh": [
+          21.7588,
+          15.8,
+          18.07
+        ],
+        "expected_size_studs_wdh": [
+          22.0,
+          16.0,
+          18.0
+        ],
+        "dims_rel_error": [
+          -0.011,
+          -0.0125,
+          0.0039
+        ],
+        "bbox_min": [
+          -10.8955,
+          -7.9,
+          0.0
+        ],
+        "bbox_max": [
+          10.8632,
+          7.9,
+          18.07
+        ],
+        "bbox_center_offset_xy_blender": [
+          -0.0161,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/machine_pool_pump.fbx",
+        "mesh_objects": 1,
+        "triangles": 5112,
+        "dims_studs_wdh": [
+          21.7916,
+          15.8,
+          18.07
+        ],
+        "expected_size_studs_wdh": [
+          22.0,
+          16.0,
+          18.0
+        ],
+        "dims_rel_error": [
+          -0.0095,
+          -0.0125,
+          0.0039
+        ],
+        "bbox_min": [
+          -10.8958,
+          -7.9,
+          -0.0
+        ],
+        "bbox_max": [
+          10.8958,
+          7.9,
+          18.07
+        ],
+        "bbox_center_offset_xy_blender": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 2,
+        "material_names": [
+          "M_pool_glass",
+          "M_pool_vinyl"
+        ],
+        "uv_layers": 1
+      },
+      "pivot": {
+        "definition": "origine = centre du bas de la boîte englobante"
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "tris_lod0_3000_8000": "PASS",
+        "tris_lod1_le_1200": "PASS",
+        "materials_le_2_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS",
+        "front_decals_face_minus_z_roblox": "PASS"
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    }
+  }
+}

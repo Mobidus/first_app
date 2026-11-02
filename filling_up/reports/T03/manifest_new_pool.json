@@ -1,0 +1,591 @@
+{
+  "task": "T03",
+  "batch": "pool",
+  "new_assets": [
+    {
+      "id": "pool_inflatable_duck",
+      "name": "Canard gonflable géant",
+      "category": "room_prop",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/pool/pool_props.blend",
+      "export_path": "assets/import/models/pool_inflatable_duck.glb",
+      "additional_exports": [
+        "assets/import/models/pool_inflatable_duck_lod1.glb",
+        "assets/import/models/pool_inflatable_duck.fbx"
+      ],
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        12,
+        10,
+        8
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Canard jaune à chevaucher : pont-selle plat matelassé, tête et cou soudés à l'avant (-Z) hors du plateau, bec orange, grands yeux imprimés, ailes bombées sur les flancs, petite queue relevée.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          9,
+          8,
+          4
+        ],
+        "walkable_top": [
+          9,
+          8
+        ],
+        "top_visible": true,
+        "mesh_bbox_center_from_pivot_roblox": [
+          0.0,
+          3.985,
+          -0.4931
+        ]
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 3000,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/props_pool_verify.json#assets.pool_inflatable_duck",
+        "reports/T03/props_pool_verify_log.txt",
+        "assets/source/models/pool/build_info.json",
+        "assets/source/models/pool/collision_pool.json",
+        "reports/T03/renders/pool_inflatable_duck_3q.png",
+        "reports/T03/renders/pool_inflatable_duck_silhouette.png",
+        "reports/T03/renders/props_pool_sheet.png",
+        "reports/T03/renders/props_pool_silhouettes_sheet.png",
+        "reports/T03/renders/props_pool_lineup.png"
+      ],
+      "design_reference_paths": [],
+      "note": "Collider 9 x 8 x 4 (mise à jour orchestrateur : remplace le carton du tutoriel)."
+    },
+    {
+      "id": "pool_flamingo_float",
+      "name": "Bouée flamant rose",
+      "category": "room_prop",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/pool/pool_props.blend",
+      "export_path": "assets/import/models/pool_flamingo_float.glb",
+      "additional_exports": [
+        "assets/import/models/pool_flamingo_float_lod1.glb",
+        "assets/import/models/pool_flamingo_float.fbx"
+      ],
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        12,
+        10,
+        10
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Île flottante flamant rose : pont plat à vagues, long cou en S et tête à bec noir à l'avant, ailes repliées festonnées, plumes de queue.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          9,
+          8,
+          3
+        ],
+        "walkable_top": [
+          9,
+          8
+        ],
+        "top_visible": true,
+        "mesh_bbox_center_from_pivot_roblox": [
+          0.0,
+          4.98,
+          -0.165
+        ]
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 3000,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/props_pool_verify.json#assets.pool_flamingo_float",
+        "reports/T03/props_pool_verify_log.txt",
+        "assets/source/models/pool/build_info.json",
+        "assets/source/models/pool/collision_pool.json",
+        "reports/T03/renders/pool_flamingo_float_3q.png",
+        "reports/T03/renders/pool_flamingo_float_silhouette.png",
+        "reports/T03/renders/props_pool_sheet.png",
+        "reports/T03/renders/props_pool_silhouettes_sheet.png",
+        "reports/T03/renders/props_pool_lineup.png"
+      ],
+      "design_reference_paths": []
+    },
+    {
+      "id": "pool_beach_ball",
+      "name": "Ballon de plage écrasé",
+      "category": "room_prop",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/pool/pool_props.blend",
+      "export_path": "assets/import/models/pool_beach_ball.glb",
+      "additional_exports": [
+        "assets/import/models/pool_beach_ball_lod1.glb",
+        "assets/import/models/pool_beach_ball.fbx"
+      ],
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        7,
+        7,
+        4
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Ballon de plage écrasé en coussin : six fuseaux (blanc, rouge, jaune, bleu, vert, orange), calottes blanches, valve et autocollant soleil à l'avant ; dessus aplati.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          7,
+          7,
+          4
+        ],
+        "walkable_top": [
+          7,
+          7
+        ],
+        "top_visible": true,
+        "mesh_bbox_center_from_pivot_roblox": [
+          0.0,
+          2.0,
+          -0.0075
+        ]
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 3000,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/props_pool_verify.json#assets.pool_beach_ball",
+        "reports/T03/props_pool_verify_log.txt",
+        "assets/source/models/pool/build_info.json",
+        "assets/source/models/pool/collision_pool.json",
+        "reports/T03/renders/pool_beach_ball_3q.png",
+        "reports/T03/renders/pool_beach_ball_silhouette.png",
+        "reports/T03/renders/props_pool_sheet.png",
+        "reports/T03/renders/props_pool_silhouettes_sheet.png",
+        "reports/T03/renders/props_pool_lineup.png"
+      ],
+      "design_reference_paths": [],
+      "brief_size_studs": [
+        7,
+        7,
+        5
+      ],
+      "size_note": "Brief 7 x 7 x 5 incompatible : walkable 7 x 7 = toute l'emprise et rien ne doit dépasser 4,05 ; hauteur ramenée à 4."
+    },
+    {
+      "id": "pool_donut_ring",
+      "name": "Bouée donut",
+      "category": "room_prop",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/pool/pool_props.blend",
+      "export_path": "assets/import/models/pool_donut_ring.glb",
+      "additional_exports": [
+        "assets/import/models/pool_donut_ring_lod1.glb",
+        "assets/import/models/pool_donut_ring.fbx"
+      ],
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        9,
+        9,
+        3
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Bouée donut glaçage rose à vermicelles et coulures, pâte dorée, frimousse sur la face avant ; trou couvert d'un filet trampoline blanc tendu au niveau du pont.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          8,
+          8,
+          3
+        ],
+        "walkable_top": [
+          8,
+          8
+        ],
+        "top_visible": true,
+        "mesh_bbox_center_from_pivot_roblox": [
+          0.0,
+          1.5,
+          -0.0065
+        ]
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 3000,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/props_pool_verify.json#assets.pool_donut_ring",
+        "reports/T03/props_pool_verify_log.txt",
+        "assets/source/models/pool/build_info.json",
+        "assets/source/models/pool/collision_pool.json",
+        "reports/T03/renders/pool_donut_ring_3q.png",
+        "reports/T03/renders/pool_donut_ring_silhouette.png",
+        "reports/T03/renders/props_pool_sheet.png",
+        "reports/T03/renders/props_pool_silhouettes_sheet.png",
+        "reports/T03/renders/props_pool_lineup.png"
+      ],
+      "design_reference_paths": []
+    },
+    {
+      "id": "pool_unicorn_float",
+      "name": "Licorne gonflable",
+      "category": "room_prop",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/pool/pool_props.blend",
+      "export_path": "assets/import/models/pool_unicorn_float.glb",
+      "additional_exports": [
+        "assets/import/models/pool_unicorn_float_lod1.glb",
+        "assets/import/models/pool_unicorn_float.fbx"
+      ],
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        14,
+        9,
+        10
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Licorne blanche nacrée : pont plat arc-en-ciel, tête de profil soudée à l'avant (-Z), crinière arc-en-ciel le long du cou, corne spirale dorée, queue arc-en-ciel, sabots dorés.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          12,
+          8,
+          4
+        ],
+        "walkable_top": [
+          12,
+          8
+        ],
+        "top_visible": true,
+        "mesh_bbox_center_from_pivot_roblox": [
+          0.0306,
+          4.99,
+          -0.3946
+        ]
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 3000,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/props_pool_verify.json#assets.pool_unicorn_float",
+        "reports/T03/props_pool_verify_log.txt",
+        "assets/source/models/pool/build_info.json",
+        "assets/source/models/pool/collision_pool.json",
+        "reports/T03/renders/pool_unicorn_float_3q.png",
+        "reports/T03/renders/pool_unicorn_float_silhouette.png",
+        "reports/T03/renders/props_pool_sheet.png",
+        "reports/T03/renders/props_pool_silhouettes_sheet.png",
+        "reports/T03/renders/props_pool_lineup.png"
+      ],
+      "design_reference_paths": []
+    },
+    {
+      "id": "pool_cooler",
+      "name": "Glacière rigolote",
+      "category": "room_prop",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/pool/pool_props.blend",
+      "export_path": "assets/import/models/pool_cooler.glb",
+      "additional_exports": [
+        "assets/import/models/pool_cooler_lod1.glb",
+        "assets/import/models/pool_cooler.fbx"
+      ],
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        10,
+        7,
+        5
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Glacière bleue à couvercle blanc plat, grand sourire, langue tirée et yeux ronds à l'avant, poignées latérales sous le couvercle, glaçons imprimés.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          10,
+          7,
+          5
+        ],
+        "walkable_top": [
+          10,
+          7
+        ],
+        "top_visible": true,
+        "mesh_bbox_center_from_pivot_roblox": [
+          0.0,
+          2.5,
+          -0.0
+        ]
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 3000,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/props_pool_verify.json#assets.pool_cooler",
+        "reports/T03/props_pool_verify_log.txt",
+        "assets/source/models/pool/build_info.json",
+        "assets/source/models/pool/collision_pool.json",
+        "reports/T03/renders/pool_cooler_3q.png",
+        "reports/T03/renders/pool_cooler_silhouette.png",
+        "reports/T03/renders/props_pool_sheet.png",
+        "reports/T03/renders/props_pool_silhouettes_sheet.png",
+        "reports/T03/renders/props_pool_lineup.png"
+      ],
+      "design_reference_paths": [],
+      "brief_size_studs": [
+        10,
+        7,
+        6
+      ],
+      "size_note": "Brief 10 x 7 x 6 incompatible : walkable 10 x 7 = toute l'emprise, collider 5 ; hauteur ramenée à 5."
+    },
+    {
+      "id": "pool_croc_float",
+      "name": "Crocodile gonflable",
+      "category": "room_prop",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/pool/pool_props.blend",
+      "export_path": "assets/import/models/pool_croc_float.glb",
+      "additional_exports": [
+        "assets/import/models/pool_croc_float_lod1.glb",
+        "assets/import/models/pool_croc_float.fbx"
+      ],
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        16,
+        8,
+        6
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Crocodile vert : dos plat à écailles imprimées, grosse tête de profil à l'avant (-Z) avec dents dessinées au feutre et deux yeux globuleux qui louchent, ventre vert clair, pattes, queue relevée.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          14,
+          7,
+          3
+        ],
+        "walkable_top": [
+          14,
+          7
+        ],
+        "top_visible": true,
+        "mesh_bbox_center_from_pivot_roblox": [
+          -0.04,
+          3.0,
+          -0.344
+        ]
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 3000,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/props_pool_verify.json#assets.pool_croc_float",
+        "reports/T03/props_pool_verify_log.txt",
+        "assets/source/models/pool/build_info.json",
+        "assets/source/models/pool/collision_pool.json",
+        "reports/T03/renders/pool_croc_float_3q.png",
+        "reports/T03/renders/pool_croc_float_silhouette.png",
+        "reports/T03/renders/props_pool_sheet.png",
+        "reports/T03/renders/props_pool_silhouettes_sheet.png",
+        "reports/T03/renders/props_pool_lineup.png"
+      ],
+      "design_reference_paths": []
+    },
+    {
+      "id": "pool_air_mattress",
+      "name": "Matelas qui se dégonfle",
+      "category": "room_prop",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/pool/pool_props.blend",
+      "export_path": "assets/import/models/pool_air_mattress.glb",
+      "additional_exports": [
+        "assets/import/models/pool_air_mattress_lod1.glb",
+        "assets/import/models/pool_air_mattress.fbx"
+      ],
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        12,
+        7,
+        2
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Matelas pneumatique à boudins alternés jaune/bleu, oreiller à vagues au bout -X, valve et étiquette à l'avant.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          12,
+          7,
+          2
+        ],
+        "walkable_top": [
+          12,
+          7
+        ],
+        "top_visible": true,
+        "mesh_bbox_center_from_pivot_roblox": [
+          0.0,
+          1.015,
+          -0.02
+        ]
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 3000,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/props_pool_verify.json#assets.pool_air_mattress",
+        "reports/T03/props_pool_verify_log.txt",
+        "assets/source/models/pool/build_info.json",
+        "assets/source/models/pool/collision_pool.json",
+        "reports/T03/renders/pool_air_mattress_3q.png",
+        "reports/T03/renders/pool_air_mattress_silhouette.png",
+        "reports/T03/renders/props_pool_sheet.png",
+        "reports/T03/renders/props_pool_silhouettes_sheet.png",
+        "reports/T03/renders/props_pool_lineup.png"
+      ],
+      "design_reference_paths": []
+    },
+    {
+      "id": "pool_air_mattress_deflated",
+      "name": "Matelas dégonflé (visuel d'effondrement)",
+      "category": "room_prop",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/pool/pool_props.blend",
+      "export_path": "assets/import/models/pool_air_mattress_deflated.glb",
+      "additional_exports": [
+        "assets/import/models/pool_air_mattress_deflated_lod1.glb",
+        "assets/import/models/pool_air_mattress_deflated.fbx"
+      ],
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        12,
+        7,
+        0.6
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Même matelas affaissé et froissé, oreiller encore à moitié gonflé ; visuel seulement.",
+      "collision": {
+        "shape": "none_visual_only",
+        "note": "Visuel d'effondrement de pool_air_mattress (comportement temporary) ; la collision reste celle gérée par le comportement, pas ce maillage."
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 3000,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/props_pool_verify.json#assets.pool_air_mattress_deflated",
+        "reports/T03/props_pool_verify_log.txt",
+        "assets/source/models/pool/build_info.json",
+        "assets/source/models/pool/collision_pool.json",
+        "reports/T03/renders/pool_air_mattress_deflated_3q.png",
+        "reports/T03/renders/pool_air_mattress_deflated_silhouette.png",
+        "reports/T03/renders/props_pool_sheet.png",
+        "reports/T03/renders/props_pool_silhouettes_sheet.png",
+        "reports/T03/renders/props_pool_lineup.png"
+      ],
+      "design_reference_paths": []
+    },
+    {
+      "id": "machine_pool_pump",
+      "name": "La Pompe à Bouées",
+      "category": "signature_machine",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/pool/pool_props.blend",
+      "export_path": "assets/import/models/machine_pool_pump.glb",
+      "additional_exports": [
+        "assets/import/models/machine_pool_pump_lod1.glb",
+        "assets/import/models/machine_pool_pump.fbx"
+      ],
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        22,
+        16,
+        18
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Pompe à pied géante jaune : soufflet accordéon à visage, pédale à empreinte, manomètre à aiguille dans le rouge, deux tuyaux (l'un gonfle une bouée canard à moitié gonflée), pieds caoutchouc.",
+      "collision": {
+        "shape": "separate_architecture_proxy",
+        "note": "Décor seulement (alcôve) : aucune collision de parcours portée par le maillage."
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 8000,
+      "max_materials": 2,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/props_pool_verify.json#assets.machine_pool_pump",
+        "reports/T03/props_pool_verify_log.txt",
+        "assets/source/models/pool/build_info.json",
+        "assets/source/models/pool/collision_pool.json",
+        "reports/T03/renders/machine_pool_pump_3q.png",
+        "reports/T03/renders/machine_pool_pump_silhouette.png",
+        "reports/T03/renders/props_pool_sheet.png",
+        "reports/T03/renders/props_pool_silhouettes_sheet.png",
+        "reports/T03/renders/props_pool_lineup.png"
+      ],
+      "design_reference_paths": []
+    }
+  ]
+}

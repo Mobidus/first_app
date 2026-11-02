@@ -1,0 +1,527 @@
+{
+  "family": "pool",
+  "units": "studs",
+  "axes": "roblox_model_space (X largeur, Y haut, Z profondeur ; avant = -Z)",
+  "authority": "server_collider_separate_from_visual_mesh",
+  "pivot_note": "Origine des fichiers = centre du bas du collider de jeu. Les têtes débordent à l'avant : le centre de la boîte englobante du maillage est décalé de mesh_bbox_center_from_pivot_roblox (à appliquer si l'import recentre le MeshPart).",
+  "props": [
+    {
+      "asset_id": "pool_inflatable_duck",
+      "behavior": "stable",
+      "behavior_params": {},
+      "pivot": "bottom_center_of_gameplay_collider",
+      "forward_axis": "-Z",
+      "visual_envelope_studs_wdh": [
+        12,
+        10,
+        8
+      ],
+      "mesh_bbox_center_from_pivot_roblox": [
+        0.0,
+        3.985,
+        -0.493
+      ],
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      },
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          9,
+          8,
+          4
+        ],
+        "size_vector3_roblox": [
+          9,
+          4,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          2.0,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          9,
+          8
+        ],
+        "height_studs": 4,
+        "center_roblox": [
+          0,
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "asset_id": "pool_flamingo_float",
+      "behavior": "bounce",
+      "behavior_params": {
+        "profile": "springy"
+      },
+      "pivot": "bottom_center_of_gameplay_collider",
+      "forward_axis": "-Z",
+      "visual_envelope_studs_wdh": [
+        12,
+        10,
+        10
+      ],
+      "mesh_bbox_center_from_pivot_roblox": [
+        0.0,
+        4.98,
+        -0.165
+      ],
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      },
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          9,
+          8,
+          3
+        ],
+        "size_vector3_roblox": [
+          9,
+          3,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          1.5,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          9,
+          8
+        ],
+        "height_studs": 3,
+        "center_roblox": [
+          0,
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "asset_id": "pool_beach_ball",
+      "behavior": "bounce",
+      "behavior_params": {},
+      "pivot": "bottom_center_of_gameplay_collider",
+      "forward_axis": "-Z",
+      "visual_envelope_studs_wdh": [
+        7,
+        7,
+        4
+      ],
+      "mesh_bbox_center_from_pivot_roblox": [
+        0.0,
+        2.0,
+        -0.008
+      ],
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      },
+      "brief_envelope_studs_wdh": [
+        7,
+        7,
+        5
+      ],
+      "envelope_note": "Brief 7 x 7 x 5 incompatible : walkable 7 x 7 = toute l'emprise et rien ne doit dépasser 4,05 ; hauteur ramenée à 4.",
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          7,
+          7,
+          4
+        ],
+        "size_vector3_roblox": [
+          7,
+          4,
+          7
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          2.0,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          7,
+          7
+        ],
+        "height_studs": 4,
+        "center_roblox": [
+          0,
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "asset_id": "pool_donut_ring",
+      "behavior": "bounce",
+      "behavior_params": {},
+      "pivot": "bottom_center_of_gameplay_collider",
+      "forward_axis": "-Z",
+      "visual_envelope_studs_wdh": [
+        9,
+        9,
+        3
+      ],
+      "mesh_bbox_center_from_pivot_roblox": [
+        0.0,
+        1.5,
+        -0.007
+      ],
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      },
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          8,
+          8,
+          3
+        ],
+        "size_vector3_roblox": [
+          8,
+          3,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          1.5,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          8,
+          8
+        ],
+        "height_studs": 3,
+        "center_roblox": [
+          0,
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "asset_id": "pool_unicorn_float",
+      "behavior": "stable",
+      "behavior_params": {},
+      "pivot": "bottom_center_of_gameplay_collider",
+      "forward_axis": "-Z",
+      "visual_envelope_studs_wdh": [
+        14,
+        9,
+        10
+      ],
+      "mesh_bbox_center_from_pivot_roblox": [
+        0.031,
+        4.99,
+        -0.395
+      ],
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      },
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          12,
+          8,
+          4
+        ],
+        "size_vector3_roblox": [
+          12,
+          4,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          2.0,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          12,
+          8
+        ],
+        "height_studs": 4,
+        "center_roblox": [
+          0,
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "asset_id": "pool_cooler",
+      "behavior": "stable",
+      "behavior_params": {},
+      "pivot": "bottom_center_of_gameplay_collider",
+      "forward_axis": "-Z",
+      "visual_envelope_studs_wdh": [
+        10,
+        7,
+        5
+      ],
+      "mesh_bbox_center_from_pivot_roblox": [
+        0.0,
+        2.5,
+        -0.0
+      ],
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      },
+      "brief_envelope_studs_wdh": [
+        10,
+        7,
+        6
+      ],
+      "envelope_note": "Brief 10 x 7 x 6 incompatible : walkable 10 x 7 = toute l'emprise, collider 5 ; hauteur ramenée à 5.",
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          10,
+          7,
+          5
+        ],
+        "size_vector3_roblox": [
+          10,
+          5,
+          7
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          2.5,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          10,
+          7
+        ],
+        "height_studs": 5,
+        "center_roblox": [
+          0,
+          5,
+          0
+        ]
+      }
+    },
+    {
+      "asset_id": "pool_croc_float",
+      "behavior": "moving",
+      "behavior_params": {
+        "path": "linear_back_and_forth"
+      },
+      "pivot": "bottom_center_of_gameplay_collider",
+      "forward_axis": "-Z",
+      "visual_envelope_studs_wdh": [
+        16,
+        8,
+        6
+      ],
+      "mesh_bbox_center_from_pivot_roblox": [
+        -0.04,
+        3.0,
+        -0.344
+      ],
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      },
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          14,
+          7,
+          3
+        ],
+        "size_vector3_roblox": [
+          14,
+          3,
+          7
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          1.5,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          14,
+          7
+        ],
+        "height_studs": 3,
+        "center_roblox": [
+          0,
+          3,
+          0
+        ]
+      }
+    },
+    {
+      "asset_id": "pool_air_mattress",
+      "behavior": "temporary",
+      "behavior_params": {
+        "effect": "deflate_after_contact",
+        "collapse_visual": "pool_air_mattress_deflated"
+      },
+      "pivot": "bottom_center_of_gameplay_collider",
+      "forward_axis": "-Z",
+      "visual_envelope_studs_wdh": [
+        12,
+        7,
+        2
+      ],
+      "mesh_bbox_center_from_pivot_roblox": [
+        0.0,
+        1.015,
+        -0.02
+      ],
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      },
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          12,
+          7,
+          2
+        ],
+        "size_vector3_roblox": [
+          12,
+          2,
+          7
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          1.0,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          12,
+          7
+        ],
+        "height_studs": 2,
+        "center_roblox": [
+          0,
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "asset_id": "pool_air_mattress_deflated",
+      "behavior": "temporary_collapsed",
+      "behavior_params": {
+        "variant_of": "pool_air_mattress"
+      },
+      "pivot": "bottom_center_of_gameplay_collider",
+      "forward_axis": "-Z",
+      "visual_envelope_studs_wdh": [
+        12,
+        7,
+        0.6
+      ],
+      "mesh_bbox_center_from_pivot_roblox": [
+        0.0,
+        0.3,
+        -0.0
+      ],
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      },
+      "collider": null,
+      "walkable_top": null
+    }
+  ],
+  "machine": {
+    "asset_id": "machine_pool_pump",
+    "behavior": null,
+    "behavior_params": {},
+    "pivot": "bottom_center_of_gameplay_collider",
+    "forward_axis": "-Z",
+    "visual_envelope_studs_wdh": [
+      22,
+      16,
+      18
+    ],
+    "mesh_bbox_center_from_pivot_roblox": [
+      0.0,
+      9.035,
+      -0.0
+    ],
+    "visual_mesh": {
+      "can_collide": false,
+      "can_query": false,
+      "can_touch": false
+    },
+    "collider": null,
+    "walkable_top": null,
+    "note": "Décor seulement (alcôve) : aucune collision de parcours portée par le maillage."
+  }
+}
