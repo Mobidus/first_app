@@ -1,0 +1,118 @@
+{
+  "asset_id": "toy_plush_grumf",
+  "name": "Dino Grumf",
+  "size_tier": "medium",
+  "builder": "assets/source/blender/build_plush_v2_small.py",
+  "specs": "assets/source/blender/plush_v2_small_specs.py",
+  "blend": "assets/source/models/plush_v2/Grumf/Grumf.blend",
+  "exports": [
+    "assets/import/models/toy_plush_grumf.glb",
+    "assets/import/models/toy_plush_grumf_lod1.glb",
+    "assets/import/models/toy_plush_grumf.fbx"
+  ],
+  "method": "SDF (union lisse de primitives) -> surface nets + projection de Newton -> décimation -> découpe/plafonnement du rectangle utile -> UV smart project -> peinture procédurale par texel",
+  "grid_step_studs": 0.05,
+  "highres_tris": 322778,
+  "highres_bbox_blender": [
+    [
+      -6.0244,
+      -5.117,
+      0.0
+    ],
+    [
+      6.0244,
+      5.0183,
+      5.9905
+    ]
+  ],
+  "lod0_tris": 3248,
+  "lod1_tris": 670,
+  "lod0_bbox_blender": [
+    [
+      -6.0407,
+      -5.1138,
+      0.0
+    ],
+    [
+      6.0267,
+      5.0153,
+      5.9951
+    ]
+  ],
+  "top_clamped_vertices": {
+    "Grumf_LOD0": 0,
+    "Grumf_LOD1": 0
+  },
+  "lod_decimation_tries": {
+    "Grumf_LOD0": [
+      {
+        "target": 3250,
+        "symmetric": false,
+        "tris": 3248,
+        "top_worst": 0.0156
+      }
+    ],
+    "Grumf_LOD1": [
+      {
+        "target": 670,
+        "symmetric": false,
+        "tris": 670,
+        "top_worst": 0.0293
+      }
+    ]
+  },
+  "bones": [
+    "Root",
+    "Belly_00",
+    "Belly_10",
+    "Belly_20",
+    "Belly_01",
+    "Belly_11",
+    "Belly_21",
+    "Belly_02",
+    "Belly_12",
+    "Belly_22",
+    "Head",
+    "Tail",
+    "Leg_FL",
+    "Leg_FR",
+    "Leg_BL",
+    "Leg_BR"
+  ],
+  "weights": {
+    "Grumf_LOD0": {
+      "vertices": 1619,
+      "max_influences": 4,
+      "weight_sum_max_error": 2.220446049250313e-16,
+      "unweighted_vertices": 0
+    },
+    "Grumf_LOD1": {
+      "vertices": 330,
+      "max_influences": 4,
+      "weight_sum_max_error": 2.220446049250313e-16,
+      "unweighted_vertices": 0
+    }
+  },
+  "materials_per_mesh": 1,
+  "textures": {
+    "toy_plush_grumf_albedo_1024.png": {
+      "size": 1024,
+      "uv_coverage": 0.6587,
+      "studs_per_texel": 0.02192
+    },
+    "toy_plush_grumf_albedo_256.png": {
+      "size": 256,
+      "uv_coverage": 0.5737,
+      "studs_per_texel": 0.09416
+    }
+  },
+  "sha256": {
+    "assets/import/models/toy_plush_grumf.glb": "8199064f7ec411384c37d93b315569c9051573d2a15bc309aa7ffa1ca8df7afc",
+    "assets/import/models/toy_plush_grumf_lod1.glb": "3ae52e8b797e1cf756a3c392127502cdaefeedd45db7c963973b2ffe2822aeab",
+    "assets/import/models/toy_plush_grumf.fbx": "2299c6ee4a8560891cf1b156fdb121d66634e76f120171b73f3e4712700cca94",
+    "assets/source/models/plush_v2/Grumf/textures/toy_plush_grumf_albedo_1024.png": "db6bf9fb2a0a6b577aa7cde085181edd3c224bf48657f1e86e677a7af7453192",
+    "assets/source/models/plush_v2/Grumf/textures/toy_plush_grumf_albedo_256.png": "f294dee1c566ddc44828ea274e101d1462468d5f493d80f0bceba6e6af151640"
+  },
+  "seed": 20261102,
+  "blender_version": "5.2.3 LTS"
+}

@@ -1,0 +1,116 @@
+{
+  "asset_id": "toy_plush_nuage",
+  "name": "Mouton Nuage",
+  "size_tier": "medium",
+  "builder": "assets/source/blender/build_plush_v2_small.py",
+  "specs": "assets/source/blender/plush_v2_small_specs.py",
+  "blend": "assets/source/models/plush_v2/Nuage/Nuage.blend",
+  "exports": [
+    "assets/import/models/toy_plush_nuage.glb",
+    "assets/import/models/toy_plush_nuage_lod1.glb",
+    "assets/import/models/toy_plush_nuage.fbx"
+  ],
+  "method": "SDF (union lisse de primitives) -> surface nets + projection de Newton -> décimation -> découpe/plafonnement du rectangle utile -> UV smart project -> peinture procédurale par texel",
+  "grid_step_studs": 0.05,
+  "highres_tris": 270096,
+  "highres_bbox_blender": [
+    [
+      -5.02,
+      -4.5628,
+      0.0
+    ],
+    [
+      5.02,
+      4.5354,
+      6.0193
+    ]
+  ],
+  "lod0_tris": 3250,
+  "lod1_tris": 670,
+  "lod0_bbox_blender": [
+    [
+      -5.0231,
+      -4.567,
+      0.0
+    ],
+    [
+      5.0248,
+      4.5396,
+      6.0224
+    ]
+  ],
+  "top_clamped_vertices": {
+    "Nuage_LOD0": 0,
+    "Nuage_LOD1": 0
+  },
+  "lod_decimation_tries": {
+    "Nuage_LOD0": [
+      {
+        "target": 3250,
+        "symmetric": false,
+        "tris": 3250,
+        "top_worst": 0.1046
+      }
+    ],
+    "Nuage_LOD1": [
+      {
+        "target": 670,
+        "symmetric": false,
+        "tris": 670,
+        "top_worst": 0.1163
+      }
+    ]
+  },
+  "bones": [
+    "Root",
+    "Belly_00",
+    "Belly_10",
+    "Belly_20",
+    "Belly_01",
+    "Belly_11",
+    "Belly_21",
+    "Belly_02",
+    "Belly_12",
+    "Belly_22",
+    "Head",
+    "Ear_L",
+    "Ear_R",
+    "Bow"
+  ],
+  "weights": {
+    "Nuage_LOD0": {
+      "vertices": 1627,
+      "max_influences": 4,
+      "weight_sum_max_error": 2.220446049250313e-16,
+      "unweighted_vertices": 0
+    },
+    "Nuage_LOD1": {
+      "vertices": 337,
+      "max_influences": 4,
+      "weight_sum_max_error": 2.220446049250313e-16,
+      "unweighted_vertices": 0
+    }
+  },
+  "materials_per_mesh": 1,
+  "textures": {
+    "toy_plush_nuage_albedo_1024.png": {
+      "size": 1024,
+      "uv_coverage": 0.7498,
+      "studs_per_texel": 0.01853
+    },
+    "toy_plush_nuage_albedo_256.png": {
+      "size": 256,
+      "uv_coverage": 0.6594,
+      "studs_per_texel": 0.0791
+    }
+  },
+  "sha256": {
+    "assets/import/models/toy_plush_nuage.glb": "9448c4ce7e062407d4ffca3d8729aa7aa3aec9f1029c18a77166558c9e94e23e",
+    "assets/import/models/toy_plush_nuage_lod1.glb": "047fd25892cd515b54d07a618cb7dc28ce56999481f61b9e15d3a6d7e3831296",
+    "assets/import/models/toy_plush_nuage.fbx": "7365b3ffb8272531dae3408aad94e5b1b03701f47db05c5d988606c3de5c09f2",
+    "assets/source/models/plush_v2/Nuage/textures/toy_plush_nuage_albedo_1024.png": "65a895e4299ff66eeb343ec1ee8562732ee94cb4f8ae7cbe055055f1a2841b34",
+    "assets/source/models/plush_v2/Nuage/textures/toy_plush_nuage_albedo_256.png": "2549ef2f2365b4189779f0010bcea7124a29f491e8c607da9ac62f69fe2dae4c"
+  },
+  "seed": 20261102,
+  "blender_version": "5.2.3 LTS"
+}

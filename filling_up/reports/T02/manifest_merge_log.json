@@ -490,24 +490,38 @@
     },
     {
       "task": "T03",
-      "id": "toy_plush_balto",
+      "id": "toy_plush_pipou",
       "from": null,
       "to": "modeled",
-      "source": "reports/T03/manifest_new_plush_v2_big.json"
+      "source": "reports/T03/manifest_new_plush_v2_small.json"
     },
     {
       "task": "T03",
-      "id": "toy_plush_ronron",
+      "id": "toy_plush_mochi",
       "from": null,
       "to": "modeled",
-      "source": "reports/T03/manifest_new_plush_v2_big.json"
+      "source": "reports/T03/manifest_new_plush_v2_small.json"
     },
     {
       "task": "T03",
-      "id": "toy_plush_bobine",
+      "id": "toy_plush_bulle",
       "from": null,
       "to": "modeled",
-      "source": "reports/T03/manifest_new_plush_v2_big.json"
+      "source": "reports/T03/manifest_new_plush_v2_small.json"
+    },
+    {
+      "task": "T03",
+      "id": "toy_plush_grumf",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_plush_v2_small.json"
+    },
+    {
+      "task": "T03",
+      "id": "toy_plush_nuage",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_plush_v2_small.json"
     }
   ],
   "rejected": [
@@ -603,6 +617,24 @@
     },
     {
       "task": "T03",
+      "id": "toy_plush_balto",
+      "reason": "already in manifest",
+      "source": "reports/T03/manifest_new_plush_v2_big.json"
+    },
+    {
+      "task": "T03",
+      "id": "toy_plush_ronron",
+      "reason": "already in manifest",
+      "source": "reports/T03/manifest_new_plush_v2_big.json"
+    },
+    {
+      "task": "T03",
+      "id": "toy_plush_bobine",
+      "reason": "already in manifest",
+      "source": "reports/T03/manifest_new_plush_v2_big.json"
+    },
+    {
+      "task": "T03",
       "id": "pool_inflatable_duck",
       "reason": "already in manifest",
       "source": "reports/T03/manifest_new_pool.json"
@@ -663,7 +695,7 @@
     }
   ],
   "status_counts": {
-    "modeled": 58,
+    "modeled": 63,
     "planned": 138,
     "designed": 13
   }

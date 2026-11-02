@@ -1,0 +1,116 @@
+{
+  "asset_id": "toy_plush_mochi",
+  "name": "Hamster Mochi",
+  "size_tier": "mini",
+  "builder": "assets/source/blender/build_plush_v2_small.py",
+  "specs": "assets/source/blender/plush_v2_small_specs.py",
+  "blend": "assets/source/models/plush_v2/Mochi/Mochi.blend",
+  "exports": [
+    "assets/import/models/toy_plush_mochi.glb",
+    "assets/import/models/toy_plush_mochi_lod1.glb",
+    "assets/import/models/toy_plush_mochi.fbx"
+  ],
+  "method": "SDF (union lisse de primitives) -> surface nets + projection de Newton -> décimation -> découpe/plafonnement du rectangle utile -> UV smart project -> peinture procédurale par texel",
+  "grid_step_studs": 0.032,
+  "highres_tris": 234220,
+  "highres_bbox_blender": [
+    [
+      -3.0053,
+      -2.498,
+      0.0
+    ],
+    [
+      3.0053,
+      2.4797,
+      3.9923
+    ]
+  ],
+  "lod0_tris": 1520,
+  "lod1_tris": 380,
+  "lod0_bbox_blender": [
+    [
+      -3.0045,
+      -2.5024,
+      0.0
+    ],
+    [
+      3.0045,
+      2.4855,
+      3.9992
+    ]
+  ],
+  "top_clamped_vertices": {
+    "Mochi_LOD0": 0,
+    "Mochi_LOD1": 0
+  },
+  "lod_decimation_tries": {
+    "Mochi_LOD0": [
+      {
+        "target": 1520,
+        "symmetric": true,
+        "tris": 1520,
+        "top_worst": 0.0044
+      }
+    ],
+    "Mochi_LOD1": [
+      {
+        "target": 380,
+        "symmetric": true,
+        "tris": 380,
+        "top_worst": 0.0189
+      }
+    ]
+  },
+  "bones": [
+    "Root",
+    "Belly_00",
+    "Belly_10",
+    "Belly_20",
+    "Belly_01",
+    "Belly_11",
+    "Belly_21",
+    "Belly_02",
+    "Belly_12",
+    "Belly_22",
+    "Ear_L",
+    "Ear_R",
+    "Paw_L",
+    "Paw_R"
+  ],
+  "weights": {
+    "Mochi_LOD0": {
+      "vertices": 765,
+      "max_influences": 4,
+      "weight_sum_max_error": 2.220446049250313e-16,
+      "unweighted_vertices": 0
+    },
+    "Mochi_LOD1": {
+      "vertices": 195,
+      "max_influences": 4,
+      "weight_sum_max_error": 2.220446049250313e-16,
+      "unweighted_vertices": 0
+    }
+  },
+  "materials_per_mesh": 1,
+  "textures": {
+    "toy_plush_mochi_albedo_1024.png": {
+      "size": 1024,
+      "uv_coverage": 0.7748,
+      "studs_per_texel": 0.01123
+    },
+    "toy_plush_mochi_albedo_256.png": {
+      "size": 256,
+      "uv_coverage": 0.5379,
+      "studs_per_texel": 0.0541
+    }
+  },
+  "sha256": {
+    "assets/import/models/toy_plush_mochi.glb": "6b33319b4e01231bcdc24a5065c3609567e461280f0017d9ca8a1e22ad7fd6e3",
+    "assets/import/models/toy_plush_mochi_lod1.glb": "52c08493a4db742517f16577fb1fe3b16b1b3d312fe2ff34534df1a61982f4b4",
+    "assets/import/models/toy_plush_mochi.fbx": "4daf99a01f38a95f4112de3349263bbc69b0dd3ad40eff8ab49e04b15ce214da",
+    "assets/source/models/plush_v2/Mochi/textures/toy_plush_mochi_albedo_1024.png": "a652e8f0c767bc7e5d6d9b76817b948dc1c10f92625b158d3ed494d439a46b98",
+    "assets/source/models/plush_v2/Mochi/textures/toy_plush_mochi_albedo_256.png": "176d2c8c90faac1628e0dfba51fba7454713b7b837aeabf9bb11dd5768b2bdff"
+  },
+  "seed": 20261102,
+  "blender_version": "5.2.3 LTS"
+}

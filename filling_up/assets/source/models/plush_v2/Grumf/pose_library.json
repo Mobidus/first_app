@@ -1,0 +1,551 @@
+{
+  "asset_id": "toy_plush_grumf",
+  "axes": "roblox_model_space (X largeur, Y haut, Z profondeur ; avant = -Z)",
+  "units": "studs",
+  "usage": "Pose = translation et rotation (axe, angle en degrés, autour de la tête du bone au repos) exprimées en espace modèle Roblox, à convertir dans l'espace parent de chaque Bone. Toujours recalculer depuis la pose de référence (Transform = identité) ; ne jamais cumuler. Aucune échelle : Bone.Transform est un CFrame.",
+  "reference_pose": "rest (toutes transformations identité)",
+  "static_bones": [
+    "Root"
+  ],
+  "lattice_bones": [
+    "Belly_00",
+    "Belly_10",
+    "Belly_20",
+    "Belly_01",
+    "Belly_11",
+    "Belly_21",
+    "Belly_02",
+    "Belly_12",
+    "Belly_22"
+  ],
+  "secondary_bones": [
+    "Head",
+    "Tail",
+    "Leg_FL",
+    "Leg_FR",
+    "Leg_BL",
+    "Leg_BR"
+  ],
+  "side_convention": "*_L côté -X, *_R côté +X (le personnage regarde -Z)",
+  "bone_rest_heads": {
+    "Root": [
+      0,
+      0,
+      0
+    ],
+    "Belly_00": [
+      -3.0,
+      3.0,
+      4.0
+    ],
+    "Belly_10": [
+      0.0,
+      3.0,
+      4.0
+    ],
+    "Belly_20": [
+      3.0,
+      3.0,
+      4.0
+    ],
+    "Belly_01": [
+      -3.0,
+      3.0,
+      1.0
+    ],
+    "Belly_11": [
+      0.0,
+      3.0,
+      1.0
+    ],
+    "Belly_21": [
+      3.0,
+      3.0,
+      1.0
+    ],
+    "Belly_02": [
+      -3.0,
+      3.0,
+      -2.0
+    ],
+    "Belly_12": [
+      0.0,
+      3.0,
+      -2.0
+    ],
+    "Belly_22": [
+      3.0,
+      3.0,
+      -2.0
+    ],
+    "Head": [
+      0.0,
+      3.6,
+      -3.2
+    ],
+    "Tail": [
+      3.6,
+      1.5,
+      3.8
+    ],
+    "Leg_FL": [
+      -3.9,
+      1.0,
+      -1.6
+    ],
+    "Leg_FR": [
+      3.9,
+      1.0,
+      -1.6
+    ],
+    "Leg_BL": [
+      -3.9,
+      1.0,
+      3.2
+    ],
+    "Leg_BR": [
+      3.75,
+      0.9,
+      3.35
+    ]
+  },
+  "poses": {
+    "rest": {},
+    "fall": {
+      "Belly_00": {
+        "translation": [
+          0.2,
+          0.46,
+          -0.2
+        ]
+      },
+      "Belly_10": {
+        "translation": [
+          0.0,
+          0.46,
+          -0.2
+        ]
+      },
+      "Belly_20": {
+        "translation": [
+          -0.2,
+          0.46,
+          -0.2
+        ]
+      },
+      "Belly_01": {
+        "translation": [
+          0.2,
+          0.46,
+          0.0
+        ]
+      },
+      "Belly_11": {
+        "translation": [
+          0.0,
+          0.46,
+          0.0
+        ]
+      },
+      "Belly_21": {
+        "translation": [
+          -0.2,
+          0.46,
+          0.0
+        ]
+      },
+      "Belly_02": {
+        "translation": [
+          0.2,
+          0.46,
+          0.2
+        ]
+      },
+      "Belly_12": {
+        "translation": [
+          0.0,
+          0.46,
+          0.2
+        ]
+      },
+      "Belly_22": {
+        "translation": [
+          -0.2,
+          0.46,
+          0.2
+        ]
+      },
+      "Head": {
+        "translation": [
+          0.0,
+          0.3,
+          0.0
+        ],
+        "rotation_axis": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "rotation_degrees": 8.0
+      },
+      "Tail": {
+        "translation": [
+          0.0,
+          0.22,
+          0.0
+        ],
+        "rotation_axis": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "rotation_degrees": -8.0
+      },
+      "Leg_FL": {
+        "translation": [
+          0.0,
+          0.16,
+          0.0
+        ],
+        "rotation_axis": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "rotation_degrees": 10.0
+      },
+      "Leg_FR": {
+        "translation": [
+          0.0,
+          0.16,
+          0.0
+        ],
+        "rotation_axis": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "rotation_degrees": -10.0
+      },
+      "Leg_BL": {
+        "translation": [
+          0.0,
+          0.14,
+          0.0
+        ],
+        "rotation_axis": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "rotation_degrees": 10.0
+      },
+      "Leg_BR": {
+        "translation": [
+          0.0,
+          0.14,
+          0.0
+        ],
+        "rotation_axis": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "rotation_degrees": -10.0
+      }
+    },
+    "impact": {
+      "Belly_00": {
+        "translation": [
+          -0.6,
+          -1.1,
+          0.45
+        ]
+      },
+      "Belly_10": {
+        "translation": [
+          0.0,
+          -1.1,
+          0.45
+        ]
+      },
+      "Belly_20": {
+        "translation": [
+          0.6,
+          -1.1,
+          0.45
+        ]
+      },
+      "Belly_01": {
+        "translation": [
+          -0.6,
+          -1.1,
+          0.0
+        ]
+      },
+      "Belly_11": {
+        "translation": [
+          0.0,
+          -1.1,
+          0.0
+        ]
+      },
+      "Belly_21": {
+        "translation": [
+          0.6,
+          -1.1,
+          0.0
+        ]
+      },
+      "Belly_02": {
+        "translation": [
+          -0.6,
+          -1.1,
+          -0.45
+        ]
+      },
+      "Belly_12": {
+        "translation": [
+          0.0,
+          -1.1,
+          -0.45
+        ]
+      },
+      "Belly_22": {
+        "translation": [
+          0.6,
+          -1.1,
+          -0.45
+        ]
+      },
+      "Head": {
+        "translation": [
+          0.0,
+          -0.85,
+          -0.22
+        ],
+        "rotation_axis": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "rotation_degrees": -9.0
+      },
+      "Tail": {
+        "translation": [
+          0.35,
+          -0.25,
+          0.0
+        ],
+        "rotation_axis": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "rotation_degrees": 6.0
+      },
+      "Leg_FL": {
+        "translation": [
+          -0.32,
+          -0.3,
+          -0.12
+        ],
+        "rotation_axis": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "rotation_degrees": -8.0
+      },
+      "Leg_FR": {
+        "translation": [
+          0.32,
+          -0.3,
+          -0.12
+        ],
+        "rotation_axis": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "rotation_degrees": 8.0
+      },
+      "Leg_BL": {
+        "translation": [
+          -0.32,
+          -0.3,
+          0.1
+        ],
+        "rotation_axis": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "rotation_degrees": -8.0
+      },
+      "Leg_BR": {
+        "translation": [
+          0.28,
+          -0.26,
+          0.12
+        ],
+        "rotation_axis": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "rotation_degrees": 8.0
+      }
+    },
+    "rebound": {
+      "Belly_00": {
+        "translation": [
+          0.1,
+          0.2,
+          -0.1
+        ]
+      },
+      "Belly_10": {
+        "translation": [
+          0.0,
+          0.2,
+          -0.1
+        ]
+      },
+      "Belly_20": {
+        "translation": [
+          -0.1,
+          0.2,
+          -0.1
+        ]
+      },
+      "Belly_01": {
+        "translation": [
+          0.1,
+          0.2,
+          0.0
+        ]
+      },
+      "Belly_11": {
+        "translation": [
+          0.0,
+          0.2,
+          0.0
+        ]
+      },
+      "Belly_21": {
+        "translation": [
+          -0.1,
+          0.2,
+          0.0
+        ]
+      },
+      "Belly_02": {
+        "translation": [
+          0.1,
+          0.2,
+          0.1
+        ]
+      },
+      "Belly_12": {
+        "translation": [
+          0.0,
+          0.2,
+          0.1
+        ]
+      },
+      "Belly_22": {
+        "translation": [
+          -0.1,
+          0.2,
+          0.1
+        ]
+      },
+      "Head": {
+        "translation": [
+          0.0,
+          0.16,
+          0.0
+        ],
+        "rotation_axis": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "rotation_degrees": 4.0
+      },
+      "Tail": {
+        "translation": [
+          0.0,
+          0.1,
+          0.0
+        ]
+      }
+    },
+    "player_landing": {
+      "Belly_00": {
+        "translation": [
+          0.0,
+          -0.08,
+          0.0
+        ]
+      },
+      "Belly_10": {
+        "translation": [
+          0.0,
+          -0.08,
+          0.0
+        ]
+      },
+      "Belly_20": {
+        "translation": [
+          0.0,
+          -0.08,
+          0.0
+        ]
+      },
+      "Belly_01": {
+        "translation": [
+          0.0,
+          -0.08,
+          0.0
+        ]
+      },
+      "Belly_11": {
+        "translation": [
+          0.0,
+          -0.15,
+          0.0
+        ]
+      },
+      "Belly_21": {
+        "translation": [
+          0.0,
+          -0.08,
+          0.0
+        ]
+      },
+      "Belly_02": {
+        "translation": [
+          0.0,
+          -0.08,
+          0.0
+        ]
+      },
+      "Belly_12": {
+        "translation": [
+          0.0,
+          -0.08,
+          0.0
+        ]
+      },
+      "Belly_22": {
+        "translation": [
+          0.0,
+          -0.08,
+          0.0
+        ]
+      }
+    }
+  }
+}

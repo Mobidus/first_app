@@ -1,0 +1,294 @@
+{
+  "task": "T03",
+  "batch": "plush_v2_small",
+  "new_assets": [
+    {
+      "id": "toy_plush_pipou",
+      "name": "Poussin Pipou",
+      "category": "room_prop",
+      "release_stage": "v1",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/plush_v2/Pipou/Pipou.blend",
+      "export_path": "assets/import/models/toy_plush_pipou.glb",
+      "additional_exports": [
+        "assets/import/models/toy_plush_pipou.fbx",
+        "assets/import/models/toy_plush_pipou_lod1.glb"
+      ],
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        5,
+        5,
+        4
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Poussin rond jaune en velours ras, petit bec et pattes corail, deux ailerons cousus, houppette de trois plumes plantée sur la face avant (hors rectangle utile). Yeux brodés marine, joues en feutrine rosée, ventre clair au point de feston, panneau de dessus plat cousu à hauteur 3. Mini peluche de remplissage : trop petite pour un appui obligatoire.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          4,
+          4,
+          3
+        ],
+        "walkable_top": [
+          4,
+          4
+        ],
+        "top_visible": true
+      },
+      "deformation_profile": "plush_soft",
+      "production_method": "blender_mesh_and_rig_generated_from_code",
+      "requires_external_import": true,
+      "max_triangles_near": 1600,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/plush_v2_small_verify.json#assets.pipou",
+        "reports/T03/plush_v2_small_verify_log.txt",
+        "assets/source/models/plush_v2/Pipou/build_info.json",
+        "assets/source/models/plush_v2/Pipou/collision.json",
+        "assets/source/models/plush_v2/Pipou/pose_library.json",
+        "reports/T03/renders/toy_plush_pipou_v2_3q.png",
+        "reports/T03/renders/toy_plush_pipou_v2_front.png",
+        "reports/T03/renders/toy_plush_pipou_v2_silhouette.png",
+        "reports/T03/renders/plush_v2_small_sheet.png",
+        "reports/T03/renders/plush_v2_small_lineup.png"
+      ],
+      "size_tier": "mini",
+      "verification_all_pass": true
+    },
+    {
+      "id": "toy_plush_mochi",
+      "name": "Hamster Mochi",
+      "category": "room_prop",
+      "release_stage": "v1",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/plush_v2/Mochi/Mochi.blend",
+      "export_path": "assets/import/models/toy_plush_mochi.glb",
+      "additional_exports": [
+        "assets/import/models/toy_plush_mochi.fbx",
+        "assets/import/models/toy_plush_mochi_lod1.glb"
+      ],
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        6,
+        5,
+        4
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Hamster caramel et crème en petit pain dodu : grosses abajoues sur les côtés, oreilles rondes à intérieur rose plantées sur l'avant (hors rectangle utile), pattes roses à l'avant, liste crème sur le museau, moustaches et bouche brodées marine. Dessus plat cousu à hauteur 3. Mini peluche de remplissage.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          5,
+          4,
+          3
+        ],
+        "walkable_top": [
+          5,
+          4
+        ],
+        "top_visible": true
+      },
+      "deformation_profile": "plush_soft",
+      "production_method": "blender_mesh_and_rig_generated_from_code",
+      "requires_external_import": true,
+      "max_triangles_near": 1600,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/plush_v2_small_verify.json#assets.mochi",
+        "reports/T03/plush_v2_small_verify_log.txt",
+        "assets/source/models/plush_v2/Mochi/build_info.json",
+        "assets/source/models/plush_v2/Mochi/collision.json",
+        "assets/source/models/plush_v2/Mochi/pose_library.json",
+        "reports/T03/renders/toy_plush_mochi_v2_3q.png",
+        "reports/T03/renders/toy_plush_mochi_v2_front.png",
+        "reports/T03/renders/toy_plush_mochi_v2_silhouette.png",
+        "reports/T03/renders/plush_v2_small_sheet.png",
+        "reports/T03/renders/plush_v2_small_lineup.png"
+      ],
+      "size_tier": "mini",
+      "verification_all_pass": true
+    },
+    {
+      "id": "toy_plush_bulle",
+      "name": "Poisson Bulle",
+      "category": "room_prop",
+      "release_stage": "v1",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/plush_v2/Bulle/Bulle.blend",
+      "export_path": "assets/import/models/toy_plush_bulle.glb",
+      "additional_exports": [
+        "assets/import/models/toy_plush_bulle.fbx",
+        "assets/import/models/toy_plush_bulle_lod1.glb"
+      ],
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        6,
+        4,
+        4
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Poisson-globe menthe vu de face : grands yeux brodés, bouche en « o » corail, piquants de tissu courts et doux uniquement sur les côtés, nageoires latérales et queue en éventail corail relevée derrière (hors rectangle utile). Ventre crème cousu, taches menthe, écailles brodées. Dessus plat cousu à hauteur 3. Mini peluche de remplissage.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          5,
+          3,
+          3
+        ],
+        "walkable_top": [
+          5,
+          3
+        ],
+        "top_visible": true
+      },
+      "deformation_profile": "plush_soft",
+      "production_method": "blender_mesh_and_rig_generated_from_code",
+      "requires_external_import": true,
+      "max_triangles_near": 1600,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/plush_v2_small_verify.json#assets.bulle",
+        "reports/T03/plush_v2_small_verify_log.txt",
+        "assets/source/models/plush_v2/Bulle/build_info.json",
+        "assets/source/models/plush_v2/Bulle/collision.json",
+        "assets/source/models/plush_v2/Bulle/pose_library.json",
+        "reports/T03/renders/toy_plush_bulle_v2_3q.png",
+        "reports/T03/renders/toy_plush_bulle_v2_front.png",
+        "reports/T03/renders/toy_plush_bulle_v2_silhouette.png",
+        "reports/T03/renders/plush_v2_small_sheet.png",
+        "reports/T03/renders/plush_v2_small_lineup.png"
+      ],
+      "size_tier": "mini",
+      "verification_all_pass": true
+    },
+    {
+      "id": "toy_plush_grumf",
+      "name": "Dino Grumf",
+      "category": "room_prop",
+      "release_stage": "v1",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/plush_v2/Grumf/Grumf.blend",
+      "export_path": "assets/import/models/toy_plush_grumf.glb",
+      "additional_exports": [
+        "assets/import/models/toy_plush_grumf.fbx",
+        "assets/import/models/toy_plush_grumf_lod1.glb"
+      ],
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        12,
+        10,
+        6
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Bébé dinosaure lilas allongé à plat, grosse tête ronde relevée à l'avant (hors rectangle utile), yeux et sourire brodés marine, gorge menthe cousue, joues rosées. Queue enroulée le long du flanc droit portant cinq plaques arrondies menthe (plaques uniquement sur la queue), quatre pattes courtes écartées à griffes crème. Dos plat à hauteur 4 avec taches menthe appliquées au point de feston et panneau cousu.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          8,
+          8,
+          4
+        ],
+        "walkable_top": [
+          8,
+          8
+        ],
+        "top_visible": true
+      },
+      "deformation_profile": "plush_soft",
+      "production_method": "blender_mesh_and_rig_generated_from_code",
+      "requires_external_import": true,
+      "max_triangles_near": 3400,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/plush_v2_small_verify.json#assets.grumf",
+        "reports/T03/plush_v2_small_verify_log.txt",
+        "assets/source/models/plush_v2/Grumf/build_info.json",
+        "assets/source/models/plush_v2/Grumf/collision.json",
+        "assets/source/models/plush_v2/Grumf/pose_library.json",
+        "reports/T03/renders/toy_plush_grumf_v2_3q.png",
+        "reports/T03/renders/toy_plush_grumf_v2_front.png",
+        "reports/T03/renders/toy_plush_grumf_v2_silhouette.png",
+        "reports/T03/renders/plush_v2_small_sheet.png",
+        "reports/T03/renders/plush_v2_small_lineup.png"
+      ],
+      "size_tier": "medium",
+      "verification_all_pass": true
+    },
+    {
+      "id": "toy_plush_nuage",
+      "name": "Mouton Nuage",
+      "category": "room_prop",
+      "release_stage": "v1",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/plush_v2/Nuage/Nuage.blend",
+      "export_path": "assets/import/models/toy_plush_nuage.glb",
+      "additional_exports": [
+        "assets/import/models/toy_plush_nuage.fbx",
+        "assets/import/models/toy_plush_nuage_lod1.glb"
+      ],
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        10,
+        9,
+        6
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Mouton crème en nuage de pompons matelassés : couronne de pompons festonnés sur les côtés, pompons du dessus aplatis à hauteur 4 (matelassage cousu, dessus plat). Tête marine relevée à l'avant (hors rectangle utile) avec houppette de laine, yeux fermés brodés crème, nez corail, oreilles marine à intérieur rose, petit nœud corail ; quatre sabots marine. Rebond moelleux.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          8,
+          7,
+          4
+        ],
+        "walkable_top": [
+          8,
+          7
+        ],
+        "top_visible": true
+      },
+      "deformation_profile": "plush_soft",
+      "production_method": "blender_mesh_and_rig_generated_from_code",
+      "requires_external_import": true,
+      "max_triangles_near": 3400,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/plush_v2_small_verify.json#assets.nuage",
+        "reports/T03/plush_v2_small_verify_log.txt",
+        "assets/source/models/plush_v2/Nuage/build_info.json",
+        "assets/source/models/plush_v2/Nuage/collision.json",
+        "assets/source/models/plush_v2/Nuage/pose_library.json",
+        "reports/T03/renders/toy_plush_nuage_v2_3q.png",
+        "reports/T03/renders/toy_plush_nuage_v2_front.png",
+        "reports/T03/renders/toy_plush_nuage_v2_silhouette.png",
+        "reports/T03/renders/plush_v2_small_sheet.png",
+        "reports/T03/renders/plush_v2_small_lineup.png"
+      ],
+      "size_tier": "medium",
+      "verification_all_pass": true,
+      "behavior_params": {
+        "vertical_impulse_multiplier": 1.12
+      }
+    }
+  ]
+}

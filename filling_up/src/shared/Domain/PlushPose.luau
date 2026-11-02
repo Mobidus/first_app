@@ -52,9 +52,13 @@ local function isSecondary(name: string): boolean
 	return string.sub(name, 1, 6) ~= "Belly_"
 end
 
+-- Right-side bones mirror the secondary swing. Side = last letter of an upper-case suffix:
+-- Arm_R, Ear_R, Fin_R, but also Leg_FR / Leg_BR (front/back right, plush_v2 rigs).
 local function sideSign(name: string): number
-	return if string.sub(name, -2) == "_R" then -1 else 1
+	local suffix = string.match(name, "_(%u+)$")
+	return if suffix ~= nil and string.sub(suffix, -1) == "R" then -1 else 1
 end
+Pose.sideSign = sideSign
 
 function Pose.mallowRig(): { BoneRest }
 	local bones = {}

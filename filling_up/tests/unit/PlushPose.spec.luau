@@ -24,6 +24,15 @@ local function scan(strength)
 end
 
 describe("PlushPose", function()
+	it("side sign: _R, _FR and _BR are right-side; _L, _FL, Head, Tail, Belly are not", function()
+		for _, n in { "Arm_R", "Ear_R", "Fin_R", "Leg_FR", "Leg_BR" } do
+			expect(Pose.sideSign(n)).toBe(-1)
+		end
+		for _, n in { "Arm_L", "Leg_FL", "Leg_BL", "Head", "Tail", "Spout", "Belly_22", "Bow" } do
+			expect(Pose.sideSign(n)).toBe(1)
+		end
+	end)
+
 	it("rig: non-deforming root implied, 9 belly lattice bones, <= 6 secondary", function()
 		local belly, sec = 0, 0
 		for _, b in rig do

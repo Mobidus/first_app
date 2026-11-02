@@ -1,0 +1,115 @@
+{
+  "asset_id": "toy_plush_pipou",
+  "name": "Poussin Pipou",
+  "size_tier": "mini",
+  "builder": "assets/source/blender/build_plush_v2_small.py",
+  "specs": "assets/source/blender/plush_v2_small_specs.py",
+  "blend": "assets/source/models/plush_v2/Pipou/Pipou.blend",
+  "exports": [
+    "assets/import/models/toy_plush_pipou.glb",
+    "assets/import/models/toy_plush_pipou_lod1.glb",
+    "assets/import/models/toy_plush_pipou.fbx"
+  ],
+  "method": "SDF (union lisse de primitives) -> surface nets + projection de Newton -> décimation -> découpe/plafonnement du rectangle utile -> UV smart project -> peinture procédurale par texel",
+  "grid_step_studs": 0.032,
+  "highres_tris": 194788,
+  "highres_bbox_blender": [
+    [
+      -2.5072,
+      -2.5502,
+      0.0045
+    ],
+    [
+      2.5072,
+      2.4938,
+      4.0097
+    ]
+  ],
+  "lod0_tris": 1520,
+  "lod1_tris": 380,
+  "lod0_bbox_blender": [
+    [
+      -2.5151,
+      -2.5508,
+      0.002
+    ],
+    [
+      2.5139,
+      2.481,
+      4.0063
+    ]
+  ],
+  "top_clamped_vertices": {
+    "Pipou_LOD0": 0,
+    "Pipou_LOD1": 0
+  },
+  "lod_decimation_tries": {
+    "Pipou_LOD0": [
+      {
+        "target": 1520,
+        "symmetric": true,
+        "tris": 1520,
+        "top_worst": 0.0025
+      }
+    ],
+    "Pipou_LOD1": [
+      {
+        "target": 380,
+        "symmetric": true,
+        "tris": 380,
+        "top_worst": 0.0134
+      }
+    ]
+  },
+  "bones": [
+    "Root",
+    "Belly_00",
+    "Belly_10",
+    "Belly_20",
+    "Belly_01",
+    "Belly_11",
+    "Belly_21",
+    "Belly_02",
+    "Belly_12",
+    "Belly_22",
+    "Wing_L",
+    "Wing_R",
+    "Tuft"
+  ],
+  "weights": {
+    "Pipou_LOD0": {
+      "vertices": 758,
+      "max_influences": 4,
+      "weight_sum_max_error": 2.220446049250313e-16,
+      "unweighted_vertices": 0
+    },
+    "Pipou_LOD1": {
+      "vertices": 188,
+      "max_influences": 4,
+      "weight_sum_max_error": 2.220446049250313e-16,
+      "unweighted_vertices": 0
+    }
+  },
+  "materials_per_mesh": 1,
+  "textures": {
+    "toy_plush_pipou_albedo_1024.png": {
+      "size": 1024,
+      "uv_coverage": 0.6593,
+      "studs_per_texel": 0.01066
+    },
+    "toy_plush_pipou_albedo_256.png": {
+      "size": 256,
+      "uv_coverage": 0.5574,
+      "studs_per_texel": 0.04652
+    }
+  },
+  "sha256": {
+    "assets/import/models/toy_plush_pipou.glb": "c710f9ebbaa71f13fe893d2363dc10216244b9c997a4ff369a17e0a8fecbd84c",
+    "assets/import/models/toy_plush_pipou_lod1.glb": "8d1ba2b9af7a1431155d7529c4dc860786ae22903caaea6d811e6b2aa62961d9",
+    "assets/import/models/toy_plush_pipou.fbx": "7ff725c7bfb722397a1cefb84d6abebfb9c7e51196ed50193a7ceaee6607a958",
+    "assets/source/models/plush_v2/Pipou/textures/toy_plush_pipou_albedo_1024.png": "60374fa965888264903bc27a41df722cdaa52663077374b399dcd4fe39c31251",
+    "assets/source/models/plush_v2/Pipou/textures/toy_plush_pipou_albedo_256.png": "2b31db09d48608dcdd3f0e36fd48e88f7b99e24fd4b58ead1e1c81e89c04c9e8"
+  },
+  "seed": 20261102,
+  "blender_version": "5.2.3 LTS"
+}

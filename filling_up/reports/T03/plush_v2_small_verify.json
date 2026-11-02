@@ -1,0 +1,4953 @@
+{
+  "task": "T03",
+  "batch": "plush_v2_small",
+  "generated_at_utc": "2026-11-02T16:02:27.912289+00:00",
+  "blender_version": "5.2.3 LTS",
+  "root": "/home/user/first_app/filling_up",
+  "roblox_studio_import": "NOT_RUN (Studio indisponible)",
+  "assets": {
+    "pipou": {
+      "asset_id": "toy_plush_pipou",
+      "size_tier": "mini",
+      "envelope_wdh": [
+        5,
+        5,
+        4
+      ],
+      "collider_wdh": [
+        4,
+        4,
+        3
+      ],
+      "collider_center_blender_xy": [
+        0.0,
+        -0.4
+      ],
+      "glb_raw": {
+        "mesh_count": 1,
+        "primitive_count": 1,
+        "mesh_node_transforms": [
+          {}
+        ],
+        "position_min_xyz": [
+          -2.5151,
+          0.002,
+          -2.481
+        ],
+        "position_max_xyz": [
+          2.5139,
+          4.0063,
+          2.5508
+        ],
+        "accessor_minmax_present": true,
+        "front_probe": {
+          "what": "œil droit brodé (côté +X)",
+          "ray_origin_roblox": [
+            0.7,
+            2.17,
+            -100.0
+          ],
+          "ray_dir": [
+            0,
+            0,
+            1
+          ],
+          "hit_roblox_xyz": [
+            0.7,
+            2.17,
+            -1.9058
+          ],
+          "texel_rgb": [
+            0.1207,
+            0.1808,
+            0.3224
+          ],
+          "expected_rgb": [
+            0.1255,
+            0.1882,
+            0.3333
+          ],
+          "max_channel_diff": 0.011,
+          "threshold": 0.16,
+          "back_ray_hit_roblox_xyz": [
+            0.7,
+            2.17,
+            2.492
+          ],
+          "back_ray_texel_rgb": [
+            0.9987,
+            0.8318,
+            0.3603
+          ],
+          "back_ray_max_channel_diff": 0.873
+        },
+        "roblox_axes": {
+          "status": "PASS",
+          "measured": {
+            "extent_xyz": [
+              5.029,
+              4.0043,
+              5.0317
+            ],
+            "expected_xyz": [
+              5,
+              4,
+              5
+            ],
+            "y_min": 0.002,
+            "front_probe_hit_z": -1.9058
+          },
+          "limit": "X = largeur, Y = hauteur (min 0), Z = profondeur (±2 %) ; rayon depuis -Z : couleur du visage attendue (écart canal <= 0,16 LOD0 / 0,33 LOD1) et rayon depuis +Z nettement différent (dos)"
+        },
+        "embedded_texture": {
+          "status": "PASS",
+          "measured": {
+            "embedded_bufferView": true,
+            "size": [
+              1024,
+              1024
+            ],
+            "mime": "image/png"
+          },
+          "limit": "PNG embarqué 1024 px"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": {
+            "materials": 1,
+            "primitives": 1
+          },
+          "limit": "1 matériau, 1 primitive"
+        },
+        "raw_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 1.1920928955078125e-07,
+            "max_influences": 4,
+            "vertices": 1356
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences"
+        },
+        "joint_names": [
+          "Root",
+          "Belly_00",
+          "Belly_01",
+          "Belly_02",
+          "Belly_10",
+          "Belly_11",
+          "Belly_12",
+          "Belly_20",
+          "Belly_21",
+          "Belly_22",
+          "Tuft",
+          "Wing_L",
+          "Wing_R"
+        ]
+      },
+      "glb_lod1_raw": {
+        "mesh_count": 1,
+        "primitive_count": 1,
+        "mesh_node_transforms": [
+          {}
+        ],
+        "position_min_xyz": [
+          -2.5151,
+          0.0038,
+          -2.4528
+        ],
+        "position_max_xyz": [
+          2.5012,
+          3.9964,
+          2.5488
+        ],
+        "accessor_minmax_present": true,
+        "front_probe": {
+          "what": "œil droit brodé (côté +X)",
+          "ray_origin_roblox": [
+            0.7,
+            2.17,
+            -100.0
+          ],
+          "ray_dir": [
+            0,
+            0,
+            1
+          ],
+          "hit_roblox_xyz": [
+            0.7,
+            2.17,
+            -1.9039
+          ],
+          "texel_rgb": [
+            0.1194,
+            0.1808,
+            0.3203
+          ],
+          "expected_rgb": [
+            0.1255,
+            0.1882,
+            0.3333
+          ],
+          "max_channel_diff": 0.013,
+          "threshold": 0.33,
+          "back_ray_hit_roblox_xyz": [
+            0.7,
+            2.17,
+            2.4936
+          ],
+          "back_ray_texel_rgb": [
+            0.9991,
+            0.8331,
+            0.3612
+          ],
+          "back_ray_max_channel_diff": 0.874
+        },
+        "roblox_axes": {
+          "status": "PASS",
+          "measured": {
+            "extent_xyz": [
+              5.0163,
+              3.9926,
+              5.0016
+            ],
+            "expected_xyz": [
+              5,
+              4,
+              5
+            ],
+            "y_min": 0.0038,
+            "front_probe_hit_z": -1.9039
+          },
+          "limit": "X = largeur, Y = hauteur (min 0), Z = profondeur (±2 %) ; rayon depuis -Z : couleur du visage attendue (écart canal <= 0,16 LOD0 / 0,33 LOD1) et rayon depuis +Z nettement différent (dos)"
+        },
+        "embedded_texture": {
+          "status": "PASS",
+          "measured": {
+            "embedded_bufferView": true,
+            "size": [
+              256,
+              256
+            ],
+            "mime": "image/png"
+          },
+          "limit": "PNG embarqué 256 px"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": {
+            "materials": 1,
+            "primitives": 1
+          },
+          "limit": "1 matériau, 1 primitive"
+        },
+        "raw_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 1.0264921002089977e-07,
+            "max_influences": 4,
+            "vertices": 495
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences"
+        },
+        "joint_names": [
+          "Root",
+          "Belly_00",
+          "Belly_01",
+          "Belly_02",
+          "Belly_10",
+          "Belly_11",
+          "Belly_12",
+          "Belly_20",
+          "Belly_21",
+          "Belly_22",
+          "Tuft",
+          "Wing_L",
+          "Wing_R"
+        ]
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/toy_plush_pipou.glb",
+        "opened": {
+          "status": "PASS",
+          "measured": "Pipou_LOD0",
+          "limit": "maillage présent"
+        },
+        "dims_vs_envelope": {
+          "status": "PASS",
+          "measured": {
+            "width_x": 5.029,
+            "depth": 5.0317,
+            "height": 4.0043,
+            "ratios_w_d_h": [
+              1.0058,
+              1.0063,
+              1.0011
+            ]
+          },
+          "limit": "enveloppe 5 x 5 x 4 ±2 %"
+        },
+        "pivot_bottom_center": {
+          "status": "PASS",
+          "measured": {
+            "min_height": 0.002,
+            "bbox_center_plan": [
+              -0.0006,
+              -0.0349
+            ]
+          },
+          "limit": "min hauteur 0 ±0,01 ; centre en plan ±0,1"
+        },
+        "triangles": {
+          "status": "PASS",
+          "measured": 1520,
+          "limit": "800..1600"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": 1,
+          "limit": "1 matériau"
+        },
+        "uv_texture": {
+          "status": "PASS",
+          "measured": {
+            "uv_layers": 1,
+            "image_nodes": 1,
+            "image_size": [
+              1024,
+              1024
+            ],
+            "packed": true
+          },
+          "limit": "UV + texture embarquée"
+        },
+        "armature": {
+          "status": "PASS",
+          "measured": {
+            "bones": [
+              "Belly_00",
+              "Belly_01",
+              "Belly_02",
+              "Belly_10",
+              "Belly_11",
+              "Belly_12",
+              "Belly_20",
+              "Belly_21",
+              "Belly_22",
+              "Root",
+              "Tuft",
+              "Wing_L",
+              "Wing_R"
+            ],
+            "missing": [],
+            "extra": [],
+            "armature_modifier": true
+          },
+          "limit": "Root + Belly_00..22 + Wing_L, Wing_R, Tuft"
+        },
+        "skin_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 1.1920928955078125e-07,
+            "max_influences": 4,
+            "unweighted": 0
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences, aucun orphelin"
+        },
+        "top_flatness": {
+          "status": "PASS",
+          "measured": {
+            "samples_inset": 225,
+            "misses": 0,
+            "max_abs_deviation": 0.0025,
+            "mean_top": 2.9994,
+            "min_top": 2.9975,
+            "dense_samples": 1670,
+            "max_above_top_dense": -0.0,
+            "max_vertex_z_in_rect": 3.0
+          },
+          "limit": "|dessus - collider| <= 0,25 (retrait 0,25) ; rien > dessus + 0,05"
+        },
+        "poses": {
+          "bone_heads_match_library": {
+            "status": "PASS",
+            "measured": {
+              "max_error_studs": 0.0
+            },
+            "limit": "<= 0,01 stud"
+          },
+          "rest": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                5.029,
+                5.0317,
+                4.0043
+              ],
+              "extent_ratio_w_d_h": [
+                1.0058,
+                1.0063,
+                1.0011
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.006,
+                1.0203,
+                1.0016
+              ],
+              "top_scale_y": 1.0,
+              "body_scale_x": 1.0,
+              "body_scale_depth": 1.0,
+              "min_height": 0.002,
+              "max_rotation_deg": 0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "fall": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                4.9101,
+                4.9305,
+                4.3478
+              ],
+              "extent_ratio_w_d_h": [
+                0.982,
+                0.9861,
+                1.0869
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                0.9825,
+                1.003,
+                1.0875
+              ],
+              "top_scale_y": 1.1132,
+              "body_scale_x": 0.9764,
+              "body_scale_depth": 0.9803,
+              "min_height": 0.0022,
+              "max_rotation_deg": 16.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "impact": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                5.3601,
+                5.4298,
+                3.1288
+              ],
+              "extent_ratio_w_d_h": [
+                1.072,
+                1.086,
+                0.7822
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0726,
+                1.1188,
+                0.7826
+              ],
+              "top_scale_y": 0.7268,
+              "body_scale_x": 1.0658,
+              "body_scale_depth": 1.0482,
+              "min_height": 0.0014,
+              "max_rotation_deg": 12.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "rebound": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                4.9839,
+                4.9788,
+                4.1873
+              ],
+              "extent_ratio_w_d_h": [
+                0.9968,
+                0.9958,
+                1.0468
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                0.9973,
+                1.0107,
+                1.0474
+              ],
+              "top_scale_y": 1.05,
+              "body_scale_x": 0.991,
+              "body_scale_depth": 0.9885,
+              "min_height": 0.0021,
+              "max_rotation_deg": 7.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "player_landing": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                5.029,
+                5.0317,
+                4.0043
+              ],
+              "extent_ratio_w_d_h": [
+                1.0058,
+                1.0063,
+                1.0011
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.006,
+                1.0203,
+                1.0016
+              ],
+              "top_scale_y": 0.98,
+              "body_scale_x": 1.0,
+              "body_scale_depth": 1.0,
+              "min_height": 0.002,
+              "max_rotation_deg": 0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "return_to_reference_drift": {
+            "status": "PASS",
+            "measured": 0.0,
+            "limit": "<= 1e-5 stud"
+          }
+        }
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/toy_plush_pipou_lod1.glb",
+        "opened": {
+          "status": "PASS",
+          "measured": "Pipou_LOD1",
+          "limit": "maillage présent"
+        },
+        "dims_vs_envelope": {
+          "status": "PASS",
+          "measured": {
+            "width_x": 5.0163,
+            "depth": 5.0016,
+            "height": 3.9926,
+            "ratios_w_d_h": [
+              1.0033,
+              1.0003,
+              0.9982
+            ]
+          },
+          "limit": "enveloppe 5 x 5 x 4 ±2 %"
+        },
+        "pivot_bottom_center": {
+          "status": "PASS",
+          "measured": {
+            "min_height": 0.0038,
+            "bbox_center_plan": [
+              -0.007,
+              -0.048
+            ]
+          },
+          "limit": "min hauteur 0 ±0,01 ; centre en plan ±0,1"
+        },
+        "triangles": {
+          "status": "PASS",
+          "measured": 380,
+          "limit": "<= 400"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": 1,
+          "limit": "1 matériau"
+        },
+        "uv_texture": {
+          "status": "PASS",
+          "measured": {
+            "uv_layers": 1,
+            "image_nodes": 1,
+            "image_size": [
+              256,
+              256
+            ],
+            "packed": true
+          },
+          "limit": "UV + texture embarquée"
+        },
+        "armature": {
+          "status": "PASS",
+          "measured": {
+            "bones": [
+              "Belly_00",
+              "Belly_01",
+              "Belly_02",
+              "Belly_10",
+              "Belly_11",
+              "Belly_12",
+              "Belly_20",
+              "Belly_21",
+              "Belly_22",
+              "Root",
+              "Tuft",
+              "Wing_L",
+              "Wing_R"
+            ],
+            "missing": [],
+            "extra": [],
+            "armature_modifier": true
+          },
+          "limit": "Root + Belly_00..22 + Wing_L, Wing_R, Tuft"
+        },
+        "skin_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 1.0264921002089977e-07,
+            "max_influences": 4,
+            "unweighted": 0
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences, aucun orphelin"
+        },
+        "top_flatness": {
+          "status": "PASS",
+          "measured": {
+            "samples_inset": 225,
+            "misses": 0,
+            "max_abs_deviation": 0.0134,
+            "mean_top": 2.9995,
+            "min_top": 2.9866,
+            "dense_samples": 1671,
+            "max_above_top_dense": 0.0009,
+            "max_vertex_z_in_rect": 3.001
+          },
+          "limit": "|dessus - collider| <= 0,25 (retrait 0,25) ; rien > dessus + 0,05"
+        },
+        "poses": {
+          "bone_heads_match_library": {
+            "status": "PASS",
+            "measured": {
+              "max_error_studs": 0.0
+            },
+            "limit": "<= 0,01 stud"
+          },
+          "rest": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                5.0163,
+                5.0016,
+                3.9926
+              ],
+              "extent_ratio_w_d_h": [
+                1.0033,
+                1.0003,
+                0.9982
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.006,
+                1.0195,
+                0.9991
+              ],
+              "top_scale_y": 1.0,
+              "body_scale_x": 1.0,
+              "body_scale_depth": 1.0,
+              "min_height": 0.0038,
+              "max_rotation_deg": 0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "fall": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                4.9022,
+                4.8947,
+                4.3469
+              ],
+              "extent_ratio_w_d_h": [
+                0.9804,
+                0.9789,
+                1.0867
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                0.9812,
+                0.9998,
+                1.0878
+              ],
+              "top_scale_y": 1.1132,
+              "body_scale_x": 0.9773,
+              "body_scale_depth": 0.984,
+              "min_height": 0.0043,
+              "max_rotation_deg": 16.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "impact": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                5.3182,
+                5.4366,
+                3.0986
+              ],
+              "extent_ratio_w_d_h": [
+                1.0636,
+                1.0873,
+                0.7747
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0716,
+                1.1215,
+                0.7754
+              ],
+              "top_scale_y": 0.7269,
+              "body_scale_x": 1.0602,
+              "body_scale_depth": 1.0416,
+              "min_height": 0.0028,
+              "max_rotation_deg": 12.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "rebound": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                4.9752,
+                4.9448,
+                4.1824
+              ],
+              "extent_ratio_w_d_h": [
+                0.995,
+                0.989,
+                1.0456
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                0.9963,
+                1.0083,
+                1.0466
+              ],
+              "top_scale_y": 1.05,
+              "body_scale_x": 0.9918,
+              "body_scale_depth": 0.9912,
+              "min_height": 0.004,
+              "max_rotation_deg": 7.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "player_landing": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                5.0163,
+                5.0016,
+                3.9927
+              ],
+              "extent_ratio_w_d_h": [
+                1.0033,
+                1.0003,
+                0.9982
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.006,
+                1.0195,
+                0.9991
+              ],
+              "top_scale_y": 0.98,
+              "body_scale_x": 1.0,
+              "body_scale_depth": 1.0,
+              "min_height": 0.0038,
+              "max_rotation_deg": 0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "return_to_reference_drift": {
+            "status": "PASS",
+            "measured": 0.0,
+            "limit": "<= 1e-5 stud"
+          }
+        }
+      },
+      "fbx": {
+        "file": "assets/import/models/toy_plush_pipou.fbx",
+        "opened": {
+          "status": "PASS",
+          "measured": "Pipou_LOD0",
+          "limit": "maillage présent"
+        },
+        "dims_vs_envelope": {
+          "status": "PASS",
+          "measured": {
+            "width_x": 5.029,
+            "depth": 5.0317,
+            "height": 4.0043,
+            "ratios_w_d_h": [
+              1.0058,
+              1.0063,
+              1.0011
+            ]
+          },
+          "limit": "enveloppe 5 x 5 x 4 ±2 %"
+        },
+        "pivot_bottom_center": {
+          "status": "PASS",
+          "measured": {
+            "min_height": 0.002,
+            "bbox_center_plan": [
+              -0.0006,
+              -0.0349
+            ]
+          },
+          "limit": "min hauteur 0 ±0,01 ; centre en plan ±0,1"
+        },
+        "triangles": {
+          "status": "PASS",
+          "measured": 1520,
+          "limit": "800..1600"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": 1,
+          "limit": "1 matériau"
+        },
+        "uv_texture": {
+          "status": "PASS",
+          "measured": {
+            "uv_layers": 1,
+            "image_nodes": 1,
+            "image_size": [
+              1024,
+              1024
+            ],
+            "png_streams_in_fbx": 1
+          },
+          "limit": "UV + texture PNG embarquée"
+        },
+        "armature": {
+          "status": "PASS",
+          "measured": {
+            "bones": [
+              "Belly_00",
+              "Belly_01",
+              "Belly_02",
+              "Belly_10",
+              "Belly_11",
+              "Belly_12",
+              "Belly_20",
+              "Belly_21",
+              "Belly_22",
+              "Root",
+              "Tuft",
+              "Wing_L",
+              "Wing_R"
+            ],
+            "missing": [],
+            "extra": [],
+            "armature_modifier": true
+          },
+          "limit": "Root + Belly_00..22 + Wing_L, Wing_R, Tuft"
+        },
+        "skin_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 4.470348358154297e-08,
+            "max_influences": 4,
+            "unweighted": 0
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences, aucun orphelin"
+        },
+        "top_flatness": {
+          "status": "PASS",
+          "measured": {
+            "samples_inset": 225,
+            "misses": 0,
+            "max_abs_deviation": 0.0025,
+            "mean_top": 2.9994,
+            "min_top": 2.9975,
+            "dense_samples": 1670,
+            "max_above_top_dense": -0.0,
+            "max_vertex_z_in_rect": 3.0
+          },
+          "limit": "|dessus - collider| <= 0,25 (retrait 0,25) ; rien > dessus + 0,05"
+        }
+      },
+      "collision_json": {
+        "status": "PASS",
+        "measured": {
+          "collision_json": [
+            4,
+            4,
+            3
+          ],
+          "walkable": [
+            4,
+            4
+          ],
+          "config": {
+            "shape": "box",
+            "size_studs": [
+              4,
+              4,
+              3
+            ],
+            "walkable_top": [
+              4,
+              4
+            ],
+            "top_visible": true
+          },
+          "config_size_studs": [
+            5,
+            5,
+            4
+          ]
+        },
+        "limit": "collider, walkable_top et enveloppe = config/rooms.json"
+      },
+      "determinism": {
+        "status": "PASS",
+        "measured": {
+          "assets/import/models/toy_plush_pipou.glb": {
+            "sha256_repo": "c710f9ebbaa71f13fe893d2363dc10216244b9c997a4ff369a17e0a8fecbd84c",
+            "sha256_fresh_build_1": "c710f9ebbaa71f13fe893d2363dc10216244b9c997a4ff369a17e0a8fecbd84c",
+            "sha256_fresh_build_2": "c710f9ebbaa71f13fe893d2363dc10216244b9c997a4ff369a17e0a8fecbd84c",
+            "equal": true
+          },
+          "assets/import/models/toy_plush_pipou_lod1.glb": {
+            "sha256_repo": "8d1ba2b9af7a1431155d7529c4dc860786ae22903caaea6d811e6b2aa62961d9",
+            "sha256_fresh_build_1": "8d1ba2b9af7a1431155d7529c4dc860786ae22903caaea6d811e6b2aa62961d9",
+            "sha256_fresh_build_2": "8d1ba2b9af7a1431155d7529c4dc860786ae22903caaea6d811e6b2aa62961d9",
+            "equal": true
+          },
+          "assets/source/models/plush_v2/Pipou/textures/toy_plush_pipou_albedo_1024.png": {
+            "sha256_repo": "60374fa965888264903bc27a41df722cdaa52663077374b399dcd4fe39c31251",
+            "sha256_fresh_build_1": "60374fa965888264903bc27a41df722cdaa52663077374b399dcd4fe39c31251",
+            "sha256_fresh_build_2": "60374fa965888264903bc27a41df722cdaa52663077374b399dcd4fe39c31251",
+            "equal": true
+          },
+          "assets/source/models/plush_v2/Pipou/textures/toy_plush_pipou_albedo_256.png": {
+            "sha256_repo": "2b31db09d48608dcdd3f0e36fd48e88f7b99e24fd4b58ead1e1c81e89c04c9e8",
+            "sha256_fresh_build_1": "2b31db09d48608dcdd3f0e36fd48e88f7b99e24fd4b58ead1e1c81e89c04c9e8",
+            "sha256_fresh_build_2": "2b31db09d48608dcdd3f0e36fd48e88f7b99e24fd4b58ead1e1c81e89c04c9e8",
+            "equal": true
+          },
+          "assets/import/models/toy_plush_pipou.fbx": {
+            "identical_bytes": false,
+            "differing_bytes": 3,
+            "all_diffs_within_timestamp_fields": true,
+            "compared": "build #1 vs build #2, même chemin de sortie"
+          }
+        },
+        "limit": "SHA-256 identiques (dépôt = reconstruction 1 = reconstruction 2) pour GLB, LOD1 et textures ; FBX identique hors champs d'horodatage",
+        "note": "FBX : identique hors horodatage",
+        "fbx_equal_masked": true
+      },
+      "summary": {
+        "glb_raw.roblox_axes": "PASS",
+        "glb_raw.embedded_texture": "PASS",
+        "glb_raw.materials": "PASS",
+        "glb_raw.raw_weights": "PASS",
+        "glb_lod1_raw.roblox_axes": "PASS",
+        "glb_lod1_raw.embedded_texture": "PASS",
+        "glb_lod1_raw.materials": "PASS",
+        "glb_lod1_raw.raw_weights": "PASS",
+        "glb_lod0.opened": "PASS",
+        "glb_lod0.dims_vs_envelope": "PASS",
+        "glb_lod0.pivot_bottom_center": "PASS",
+        "glb_lod0.triangles": "PASS",
+        "glb_lod0.materials": "PASS",
+        "glb_lod0.uv_texture": "PASS",
+        "glb_lod0.armature": "PASS",
+        "glb_lod0.skin_weights": "PASS",
+        "glb_lod0.top_flatness": "PASS",
+        "glb_lod0.poses.bone_heads_match_library": "PASS",
+        "glb_lod0.poses.rest": "PASS",
+        "glb_lod0.poses.fall": "PASS",
+        "glb_lod0.poses.impact": "PASS",
+        "glb_lod0.poses.rebound": "PASS",
+        "glb_lod0.poses.player_landing": "PASS",
+        "glb_lod0.poses.return_to_reference_drift": "PASS",
+        "glb_lod1.opened": "PASS",
+        "glb_lod1.dims_vs_envelope": "PASS",
+        "glb_lod1.pivot_bottom_center": "PASS",
+        "glb_lod1.triangles": "PASS",
+        "glb_lod1.materials": "PASS",
+        "glb_lod1.uv_texture": "PASS",
+        "glb_lod1.armature": "PASS",
+        "glb_lod1.skin_weights": "PASS",
+        "glb_lod1.top_flatness": "PASS",
+        "glb_lod1.poses.bone_heads_match_library": "PASS",
+        "glb_lod1.poses.rest": "PASS",
+        "glb_lod1.poses.fall": "PASS",
+        "glb_lod1.poses.impact": "PASS",
+        "glb_lod1.poses.rebound": "PASS",
+        "glb_lod1.poses.player_landing": "PASS",
+        "glb_lod1.poses.return_to_reference_drift": "PASS",
+        "fbx.opened": "PASS",
+        "fbx.dims_vs_envelope": "PASS",
+        "fbx.pivot_bottom_center": "PASS",
+        "fbx.triangles": "PASS",
+        "fbx.materials": "PASS",
+        "fbx.uv_texture": "PASS",
+        "fbx.armature": "PASS",
+        "fbx.skin_weights": "PASS",
+        "fbx.top_flatness": "PASS",
+        "collision_json": "PASS",
+        "determinism": "PASS"
+      },
+      "all_pass": true
+    },
+    "mochi": {
+      "asset_id": "toy_plush_mochi",
+      "size_tier": "mini",
+      "envelope_wdh": [
+        6,
+        5,
+        4
+      ],
+      "collider_wdh": [
+        5,
+        4,
+        3
+      ],
+      "collider_center_blender_xy": [
+        0.0,
+        -0.4
+      ],
+      "glb_raw": {
+        "mesh_count": 1,
+        "primitive_count": 1,
+        "mesh_node_transforms": [
+          {}
+        ],
+        "position_min_xyz": [
+          -3.0045,
+          0.0,
+          -2.4855
+        ],
+        "position_max_xyz": [
+          3.0045,
+          3.9992,
+          2.5024
+        ],
+        "accessor_minmax_present": true,
+        "front_probe": {
+          "what": "œil droit brodé (côté +X)",
+          "ray_origin_roblox": [
+            0.8,
+            2.16,
+            -100.0
+          ],
+          "ray_dir": [
+            0,
+            0,
+            1
+          ],
+          "hit_roblox_xyz": [
+            0.8,
+            2.16,
+            -2.0204
+          ],
+          "texel_rgb": [
+            0.1229,
+            0.1843,
+            0.3268
+          ],
+          "expected_rgb": [
+            0.1255,
+            0.1882,
+            0.3333
+          ],
+          "max_channel_diff": 0.007,
+          "threshold": 0.16,
+          "back_ray_hit_roblox_xyz": [
+            0.8,
+            2.16,
+            2.4304
+          ],
+          "back_ray_texel_rgb": [
+            0.8623,
+            0.5956,
+            0.3577
+          ],
+          "back_ray_max_channel_diff": 0.737
+        },
+        "roblox_axes": {
+          "status": "PASS",
+          "measured": {
+            "extent_xyz": [
+              6.0091,
+              3.9992,
+              4.9878
+            ],
+            "expected_xyz": [
+              6,
+              4,
+              5
+            ],
+            "y_min": 0.0,
+            "front_probe_hit_z": -2.0204
+          },
+          "limit": "X = largeur, Y = hauteur (min 0), Z = profondeur (±2 %) ; rayon depuis -Z : couleur du visage attendue (écart canal <= 0,16 LOD0 / 0,33 LOD1) et rayon depuis +Z nettement différent (dos)"
+        },
+        "embedded_texture": {
+          "status": "PASS",
+          "measured": {
+            "embedded_bufferView": true,
+            "size": [
+              1024,
+              1024
+            ],
+            "mime": "image/png"
+          },
+          "limit": "PNG embarqué 1024 px"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": {
+            "materials": 1,
+            "primitives": 1
+          },
+          "limit": "1 matériau, 1 primitive"
+        },
+        "raw_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 1.2293457984924316e-07,
+            "max_influences": 4,
+            "vertices": 1189
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences"
+        },
+        "joint_names": [
+          "Root",
+          "Belly_00",
+          "Belly_01",
+          "Belly_02",
+          "Belly_10",
+          "Belly_11",
+          "Belly_12",
+          "Belly_20",
+          "Belly_21",
+          "Belly_22",
+          "Ear_L",
+          "Ear_R",
+          "Paw_L",
+          "Paw_R"
+        ]
+      },
+      "glb_lod1_raw": {
+        "mesh_count": 1,
+        "primitive_count": 1,
+        "mesh_node_transforms": [
+          {}
+        ],
+        "position_min_xyz": [
+          -3.0221,
+          0.0037,
+          -2.5327
+        ],
+        "position_max_xyz": [
+          3.0221,
+          3.983,
+          2.5023
+        ],
+        "accessor_minmax_present": true,
+        "front_probe": {
+          "what": "œil droit brodé (côté +X)",
+          "ray_origin_roblox": [
+            0.8,
+            2.16,
+            -100.0
+          ],
+          "ray_dir": [
+            0,
+            0,
+            1
+          ],
+          "hit_roblox_xyz": [
+            0.8,
+            2.16,
+            -2.0338
+          ],
+          "texel_rgb": [
+            0.1808,
+            0.2318,
+            0.3556
+          ],
+          "expected_rgb": [
+            0.1255,
+            0.1882,
+            0.3333
+          ],
+          "max_channel_diff": 0.055,
+          "threshold": 0.33,
+          "back_ray_hit_roblox_xyz": [
+            0.8,
+            2.16,
+            2.4318
+          ],
+          "back_ray_texel_rgb": [
+            0.8549,
+            0.5913,
+            0.3551
+          ],
+          "back_ray_max_channel_diff": 0.729
+        },
+        "roblox_axes": {
+          "status": "PASS",
+          "measured": {
+            "extent_xyz": [
+              6.0441,
+              3.9792,
+              5.0351
+            ],
+            "expected_xyz": [
+              6,
+              4,
+              5
+            ],
+            "y_min": 0.0037,
+            "front_probe_hit_z": -2.0338
+          },
+          "limit": "X = largeur, Y = hauteur (min 0), Z = profondeur (±2 %) ; rayon depuis -Z : couleur du visage attendue (écart canal <= 0,16 LOD0 / 0,33 LOD1) et rayon depuis +Z nettement différent (dos)"
+        },
+        "embedded_texture": {
+          "status": "PASS",
+          "measured": {
+            "embedded_bufferView": true,
+            "size": [
+              256,
+              256
+            ],
+            "mime": "image/png"
+          },
+          "limit": "PNG embarqué 256 px"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": {
+            "materials": 1,
+            "primitives": 1
+          },
+          "limit": "1 matériau, 1 primitive"
+        },
+        "raw_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 1.1455267667770386e-07,
+            "max_influences": 4,
+            "vertices": 517
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences"
+        },
+        "joint_names": [
+          "Root",
+          "Belly_00",
+          "Belly_01",
+          "Belly_02",
+          "Belly_10",
+          "Belly_11",
+          "Belly_12",
+          "Belly_20",
+          "Belly_21",
+          "Belly_22",
+          "Ear_L",
+          "Ear_R",
+          "Paw_L",
+          "Paw_R"
+        ]
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/toy_plush_mochi.glb",
+        "opened": {
+          "status": "PASS",
+          "measured": "Mochi_LOD0",
+          "limit": "maillage présent"
+        },
+        "dims_vs_envelope": {
+          "status": "PASS",
+          "measured": {
+            "width_x": 6.0091,
+            "depth": 4.9878,
+            "height": 3.9992,
+            "ratios_w_d_h": [
+              1.0015,
+              0.9976,
+              0.9998
+            ]
+          },
+          "limit": "enveloppe 6 x 5 x 4 ±2 %"
+        },
+        "pivot_bottom_center": {
+          "status": "PASS",
+          "measured": {
+            "min_height": 0.0,
+            "bbox_center_plan": [
+              0.0,
+              -0.0085
+            ]
+          },
+          "limit": "min hauteur 0 ±0,01 ; centre en plan ±0,1"
+        },
+        "triangles": {
+          "status": "PASS",
+          "measured": 1520,
+          "limit": "800..1600"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": 1,
+          "limit": "1 matériau"
+        },
+        "uv_texture": {
+          "status": "PASS",
+          "measured": {
+            "uv_layers": 1,
+            "image_nodes": 1,
+            "image_size": [
+              1024,
+              1024
+            ],
+            "packed": true
+          },
+          "limit": "UV + texture embarquée"
+        },
+        "armature": {
+          "status": "PASS",
+          "measured": {
+            "bones": [
+              "Belly_00",
+              "Belly_01",
+              "Belly_02",
+              "Belly_10",
+              "Belly_11",
+              "Belly_12",
+              "Belly_20",
+              "Belly_21",
+              "Belly_22",
+              "Ear_L",
+              "Ear_R",
+              "Paw_L",
+              "Paw_R",
+              "Root"
+            ],
+            "missing": [],
+            "extra": [],
+            "armature_modifier": true
+          },
+          "limit": "Root + Belly_00..22 + Ear_L, Ear_R, Paw_L, Paw_R"
+        },
+        "skin_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 1.2293457984924316e-07,
+            "max_influences": 4,
+            "unweighted": 0
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences, aucun orphelin"
+        },
+        "top_flatness": {
+          "status": "PASS",
+          "measured": {
+            "samples_inset": 285,
+            "misses": 0,
+            "max_abs_deviation": 0.0044,
+            "mean_top": 2.9996,
+            "min_top": 2.9956,
+            "dense_samples": 2077,
+            "max_above_top_dense": -0.0,
+            "max_vertex_z_in_rect": 3.0
+          },
+          "limit": "|dessus - collider| <= 0,25 (retrait 0,25) ; rien > dessus + 0,05"
+        },
+        "poses": {
+          "bone_heads_match_library": {
+            "status": "PASS",
+            "measured": {
+              "max_error_studs": 0.0
+            },
+            "limit": "<= 0,01 stud"
+          },
+          "rest": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                6.0091,
+                4.9878,
+                3.9992
+              ],
+              "extent_ratio_w_d_h": [
+                1.0015,
+                0.9976,
+                0.9998
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0015,
+                1.0009,
+                0.9998
+              ],
+              "top_scale_y": 1.0,
+              "body_scale_x": 1.0,
+              "body_scale_depth": 1.0,
+              "min_height": 0.0,
+              "max_rotation_deg": 0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "fall": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                5.9303,
+                4.9032,
+                4.2986
+              ],
+              "extent_ratio_w_d_h": [
+                0.9884,
+                0.9806,
+                1.0746
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                0.9884,
+                0.9886,
+                1.0746
+              ],
+              "top_scale_y": 1.1133,
+              "body_scale_x": 0.9869,
+              "body_scale_depth": 0.9847,
+              "min_height": 0.0,
+              "max_rotation_deg": 10.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "impact": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                6.2587,
+                5.3161,
+                3.154
+              ],
+              "extent_ratio_w_d_h": [
+                1.0431,
+                1.0632,
+                0.7885
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0432,
+                1.0743,
+                0.7885
+              ],
+              "top_scale_y": 0.7266,
+              "body_scale_x": 1.0415,
+              "body_scale_depth": 1.0978,
+              "min_height": 0.0,
+              "max_rotation_deg": 14.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "rebound": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                5.9697,
+                4.9455,
+                4.1429
+              ],
+              "extent_ratio_w_d_h": [
+                0.995,
+                0.9891,
+                1.0357
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                0.995,
+                0.9948,
+                1.0357
+              ],
+              "top_scale_y": 1.05,
+              "body_scale_x": 0.9934,
+              "body_scale_depth": 0.9921,
+              "min_height": 0.0,
+              "max_rotation_deg": 5.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "player_landing": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                6.0091,
+                4.9878,
+                3.9992
+              ],
+              "extent_ratio_w_d_h": [
+                1.0015,
+                0.9976,
+                0.9998
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0015,
+                1.0009,
+                0.9998
+              ],
+              "top_scale_y": 0.9801,
+              "body_scale_x": 1.0,
+              "body_scale_depth": 1.0,
+              "min_height": 0.0,
+              "max_rotation_deg": 0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "return_to_reference_drift": {
+            "status": "PASS",
+            "measured": 0.0,
+            "limit": "<= 1e-5 stud"
+          }
+        }
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/toy_plush_mochi_lod1.glb",
+        "opened": {
+          "status": "PASS",
+          "measured": "Mochi_LOD1",
+          "limit": "maillage présent"
+        },
+        "dims_vs_envelope": {
+          "status": "PASS",
+          "measured": {
+            "width_x": 6.0441,
+            "depth": 5.0351,
+            "height": 3.9792,
+            "ratios_w_d_h": [
+              1.0074,
+              1.007,
+              0.9948
+            ]
+          },
+          "limit": "enveloppe 6 x 5 x 4 ±2 %"
+        },
+        "pivot_bottom_center": {
+          "status": "PASS",
+          "measured": {
+            "min_height": 0.0037,
+            "bbox_center_plan": [
+              0.0,
+              0.0152
+            ]
+          },
+          "limit": "min hauteur 0 ±0,01 ; centre en plan ±0,1"
+        },
+        "triangles": {
+          "status": "PASS",
+          "measured": 380,
+          "limit": "<= 400"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": 1,
+          "limit": "1 matériau"
+        },
+        "uv_texture": {
+          "status": "PASS",
+          "measured": {
+            "uv_layers": 1,
+            "image_nodes": 1,
+            "image_size": [
+              256,
+              256
+            ],
+            "packed": true
+          },
+          "limit": "UV + texture embarquée"
+        },
+        "armature": {
+          "status": "PASS",
+          "measured": {
+            "bones": [
+              "Belly_00",
+              "Belly_01",
+              "Belly_02",
+              "Belly_10",
+              "Belly_11",
+              "Belly_12",
+              "Belly_20",
+              "Belly_21",
+              "Belly_22",
+              "Ear_L",
+              "Ear_R",
+              "Paw_L",
+              "Paw_R",
+              "Root"
+            ],
+            "missing": [],
+            "extra": [],
+            "armature_modifier": true
+          },
+          "limit": "Root + Belly_00..22 + Ear_L, Ear_R, Paw_L, Paw_R"
+        },
+        "skin_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 1.1455267667770386e-07,
+            "max_influences": 4,
+            "unweighted": 0
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences, aucun orphelin"
+        },
+        "top_flatness": {
+          "status": "PASS",
+          "measured": {
+            "samples_inset": 285,
+            "misses": 0,
+            "max_abs_deviation": 0.0189,
+            "mean_top": 2.995,
+            "min_top": 2.9811,
+            "dense_samples": 2077,
+            "max_above_top_dense": -0.0001,
+            "max_vertex_z_in_rect": 2.9999
+          },
+          "limit": "|dessus - collider| <= 0,25 (retrait 0,25) ; rien > dessus + 0,05"
+        },
+        "poses": {
+          "bone_heads_match_library": {
+            "status": "PASS",
+            "measured": {
+              "max_error_studs": 0.0
+            },
+            "limit": "<= 0,01 stud"
+          },
+          "rest": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                6.0441,
+                5.0351,
+                3.9792
+              ],
+              "extent_ratio_w_d_h": [
+                1.0074,
+                1.007,
+                0.9948
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0074,
+                1.0131,
+                0.9957
+              ],
+              "top_scale_y": 1.0,
+              "body_scale_x": 1.0,
+              "body_scale_depth": 1.0,
+              "min_height": 0.0037,
+              "max_rotation_deg": 0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "fall": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                5.9494,
+                4.9402,
+                4.2993
+              ],
+              "extent_ratio_w_d_h": [
+                0.9916,
+                0.988,
+                1.0748
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                0.9916,
+                0.9918,
+                1.0759
+              ],
+              "top_scale_y": 1.1138,
+              "body_scale_x": 0.9843,
+              "body_scale_depth": 0.9843,
+              "min_height": 0.0042,
+              "max_rotation_deg": 10.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "impact": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                6.3284,
+                5.3656,
+                3.1682
+              ],
+              "extent_ratio_w_d_h": [
+                1.0547,
+                1.0731,
+                0.792
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0547,
+                1.0756,
+                0.7927
+              ],
+              "top_scale_y": 0.7258,
+              "body_scale_x": 1.047,
+              "body_scale_depth": 1.0827,
+              "min_height": 0.0027,
+              "max_rotation_deg": 14.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "rebound": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                5.9968,
+                4.9876,
+                4.1162
+              ],
+              "extent_ratio_w_d_h": [
+                0.9995,
+                0.9975,
+                1.0291
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                0.9995,
+                1.0024,
+                1.03
+              ],
+              "top_scale_y": 1.0503,
+              "body_scale_x": 0.9922,
+              "body_scale_depth": 0.9915,
+              "min_height": 0.0039,
+              "max_rotation_deg": 5.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "player_landing": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                6.0441,
+                5.0351,
+                3.9793
+              ],
+              "extent_ratio_w_d_h": [
+                1.0074,
+                1.007,
+                0.9948
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0074,
+                1.0131,
+                0.9957
+              ],
+              "top_scale_y": 0.9803,
+              "body_scale_x": 1.0,
+              "body_scale_depth": 1.0,
+              "min_height": 0.0037,
+              "max_rotation_deg": 0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "return_to_reference_drift": {
+            "status": "PASS",
+            "measured": 0.0,
+            "limit": "<= 1e-5 stud"
+          }
+        }
+      },
+      "fbx": {
+        "file": "assets/import/models/toy_plush_mochi.fbx",
+        "opened": {
+          "status": "PASS",
+          "measured": "Mochi_LOD0",
+          "limit": "maillage présent"
+        },
+        "dims_vs_envelope": {
+          "status": "PASS",
+          "measured": {
+            "width_x": 6.0091,
+            "depth": 4.9878,
+            "height": 3.9992,
+            "ratios_w_d_h": [
+              1.0015,
+              0.9976,
+              0.9998
+            ]
+          },
+          "limit": "enveloppe 6 x 5 x 4 ±2 %"
+        },
+        "pivot_bottom_center": {
+          "status": "PASS",
+          "measured": {
+            "min_height": -0.0,
+            "bbox_center_plan": [
+              0.0,
+              -0.0085
+            ]
+          },
+          "limit": "min hauteur 0 ±0,01 ; centre en plan ±0,1"
+        },
+        "triangles": {
+          "status": "PASS",
+          "measured": 1520,
+          "limit": "800..1600"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": 1,
+          "limit": "1 matériau"
+        },
+        "uv_texture": {
+          "status": "PASS",
+          "measured": {
+            "uv_layers": 1,
+            "image_nodes": 1,
+            "image_size": [
+              1024,
+              1024
+            ],
+            "png_streams_in_fbx": 1
+          },
+          "limit": "UV + texture PNG embarquée"
+        },
+        "armature": {
+          "status": "PASS",
+          "measured": {
+            "bones": [
+              "Belly_00",
+              "Belly_01",
+              "Belly_02",
+              "Belly_10",
+              "Belly_11",
+              "Belly_12",
+              "Belly_20",
+              "Belly_21",
+              "Belly_22",
+              "Ear_L",
+              "Ear_R",
+              "Paw_L",
+              "Paw_R",
+              "Root"
+            ],
+            "missing": [],
+            "extra": [],
+            "armature_modifier": true
+          },
+          "limit": "Root + Belly_00..22 + Ear_L, Ear_R, Paw_L, Paw_R"
+        },
+        "skin_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 4.0512531995773315e-08,
+            "max_influences": 4,
+            "unweighted": 0
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences, aucun orphelin"
+        },
+        "top_flatness": {
+          "status": "PASS",
+          "measured": {
+            "samples_inset": 285,
+            "misses": 0,
+            "max_abs_deviation": 0.0044,
+            "mean_top": 2.9996,
+            "min_top": 2.9956,
+            "dense_samples": 2077,
+            "max_above_top_dense": -0.0,
+            "max_vertex_z_in_rect": 3.0
+          },
+          "limit": "|dessus - collider| <= 0,25 (retrait 0,25) ; rien > dessus + 0,05"
+        }
+      },
+      "collision_json": {
+        "status": "PASS",
+        "measured": {
+          "collision_json": [
+            5,
+            4,
+            3
+          ],
+          "walkable": [
+            5,
+            4
+          ],
+          "config": {
+            "shape": "box",
+            "size_studs": [
+              5,
+              4,
+              3
+            ],
+            "walkable_top": [
+              5,
+              4
+            ],
+            "top_visible": true
+          },
+          "config_size_studs": [
+            6,
+            5,
+            4
+          ]
+        },
+        "limit": "collider, walkable_top et enveloppe = config/rooms.json"
+      },
+      "determinism": {
+        "status": "PASS",
+        "measured": {
+          "assets/import/models/toy_plush_mochi.glb": {
+            "sha256_repo": "6b33319b4e01231bcdc24a5065c3609567e461280f0017d9ca8a1e22ad7fd6e3",
+            "sha256_fresh_build_1": "6b33319b4e01231bcdc24a5065c3609567e461280f0017d9ca8a1e22ad7fd6e3",
+            "sha256_fresh_build_2": "6b33319b4e01231bcdc24a5065c3609567e461280f0017d9ca8a1e22ad7fd6e3",
+            "equal": true
+          },
+          "assets/import/models/toy_plush_mochi_lod1.glb": {
+            "sha256_repo": "52c08493a4db742517f16577fb1fe3b16b1b3d312fe2ff34534df1a61982f4b4",
+            "sha256_fresh_build_1": "52c08493a4db742517f16577fb1fe3b16b1b3d312fe2ff34534df1a61982f4b4",
+            "sha256_fresh_build_2": "52c08493a4db742517f16577fb1fe3b16b1b3d312fe2ff34534df1a61982f4b4",
+            "equal": true
+          },
+          "assets/source/models/plush_v2/Mochi/textures/toy_plush_mochi_albedo_1024.png": {
+            "sha256_repo": "a652e8f0c767bc7e5d6d9b76817b948dc1c10f92625b158d3ed494d439a46b98",
+            "sha256_fresh_build_1": "a652e8f0c767bc7e5d6d9b76817b948dc1c10f92625b158d3ed494d439a46b98",
+            "sha256_fresh_build_2": "a652e8f0c767bc7e5d6d9b76817b948dc1c10f92625b158d3ed494d439a46b98",
+            "equal": true
+          },
+          "assets/source/models/plush_v2/Mochi/textures/toy_plush_mochi_albedo_256.png": {
+            "sha256_repo": "176d2c8c90faac1628e0dfba51fba7454713b7b837aeabf9bb11dd5768b2bdff",
+            "sha256_fresh_build_1": "176d2c8c90faac1628e0dfba51fba7454713b7b837aeabf9bb11dd5768b2bdff",
+            "sha256_fresh_build_2": "176d2c8c90faac1628e0dfba51fba7454713b7b837aeabf9bb11dd5768b2bdff",
+            "equal": true
+          },
+          "assets/import/models/toy_plush_mochi.fbx": {
+            "identical_bytes": false,
+            "differing_bytes": 4,
+            "all_diffs_within_timestamp_fields": true,
+            "compared": "build #1 vs build #2, même chemin de sortie"
+          }
+        },
+        "limit": "SHA-256 identiques (dépôt = reconstruction 1 = reconstruction 2) pour GLB, LOD1 et textures ; FBX identique hors champs d'horodatage",
+        "note": "FBX : identique hors horodatage",
+        "fbx_equal_masked": true
+      },
+      "summary": {
+        "glb_raw.roblox_axes": "PASS",
+        "glb_raw.embedded_texture": "PASS",
+        "glb_raw.materials": "PASS",
+        "glb_raw.raw_weights": "PASS",
+        "glb_lod1_raw.roblox_axes": "PASS",
+        "glb_lod1_raw.embedded_texture": "PASS",
+        "glb_lod1_raw.materials": "PASS",
+        "glb_lod1_raw.raw_weights": "PASS",
+        "glb_lod0.opened": "PASS",
+        "glb_lod0.dims_vs_envelope": "PASS",
+        "glb_lod0.pivot_bottom_center": "PASS",
+        "glb_lod0.triangles": "PASS",
+        "glb_lod0.materials": "PASS",
+        "glb_lod0.uv_texture": "PASS",
+        "glb_lod0.armature": "PASS",
+        "glb_lod0.skin_weights": "PASS",
+        "glb_lod0.top_flatness": "PASS",
+        "glb_lod0.poses.bone_heads_match_library": "PASS",
+        "glb_lod0.poses.rest": "PASS",
+        "glb_lod0.poses.fall": "PASS",
+        "glb_lod0.poses.impact": "PASS",
+        "glb_lod0.poses.rebound": "PASS",
+        "glb_lod0.poses.player_landing": "PASS",
+        "glb_lod0.poses.return_to_reference_drift": "PASS",
+        "glb_lod1.opened": "PASS",
+        "glb_lod1.dims_vs_envelope": "PASS",
+        "glb_lod1.pivot_bottom_center": "PASS",
+        "glb_lod1.triangles": "PASS",
+        "glb_lod1.materials": "PASS",
+        "glb_lod1.uv_texture": "PASS",
+        "glb_lod1.armature": "PASS",
+        "glb_lod1.skin_weights": "PASS",
+        "glb_lod1.top_flatness": "PASS",
+        "glb_lod1.poses.bone_heads_match_library": "PASS",
+        "glb_lod1.poses.rest": "PASS",
+        "glb_lod1.poses.fall": "PASS",
+        "glb_lod1.poses.impact": "PASS",
+        "glb_lod1.poses.rebound": "PASS",
+        "glb_lod1.poses.player_landing": "PASS",
+        "glb_lod1.poses.return_to_reference_drift": "PASS",
+        "fbx.opened": "PASS",
+        "fbx.dims_vs_envelope": "PASS",
+        "fbx.pivot_bottom_center": "PASS",
+        "fbx.triangles": "PASS",
+        "fbx.materials": "PASS",
+        "fbx.uv_texture": "PASS",
+        "fbx.armature": "PASS",
+        "fbx.skin_weights": "PASS",
+        "fbx.top_flatness": "PASS",
+        "collision_json": "PASS",
+        "determinism": "PASS"
+      },
+      "all_pass": true
+    },
+    "bulle": {
+      "asset_id": "toy_plush_bulle",
+      "size_tier": "mini",
+      "envelope_wdh": [
+        6,
+        4,
+        4
+      ],
+      "collider_wdh": [
+        5,
+        3,
+        3
+      ],
+      "collider_center_blender_xy": [
+        0.0,
+        0.25
+      ],
+      "glb_raw": {
+        "mesh_count": 1,
+        "primitive_count": 1,
+        "mesh_node_transforms": [
+          {}
+        ],
+        "position_min_xyz": [
+          -3.0006,
+          0.0,
+          -2.0308
+        ],
+        "position_max_xyz": [
+          3.0062,
+          3.9899,
+          1.9379
+        ],
+        "accessor_minmax_present": true,
+        "front_probe": {
+          "what": "pupille droite brodée (côté +X)",
+          "ray_origin_roblox": [
+            1.11,
+            2.03,
+            -100.0
+          ],
+          "ray_dir": [
+            0,
+            0,
+            1
+          ],
+          "hit_roblox_xyz": [
+            1.11,
+            2.03,
+            -1.9691
+          ],
+          "texel_rgb": [
+            0.122,
+            0.183,
+            0.3251
+          ],
+          "expected_rgb": [
+            0.1255,
+            0.1882,
+            0.3333
+          ],
+          "max_channel_diff": 0.008,
+          "threshold": 0.16,
+          "back_ray_hit_roblox_xyz": [
+            1.11,
+            2.03,
+            1.3424
+          ],
+          "back_ray_texel_rgb": [
+            0.6218,
+            0.9046,
+            0.7634
+          ],
+          "back_ray_max_channel_diff": 0.716
+        },
+        "roblox_axes": {
+          "status": "PASS",
+          "measured": {
+            "extent_xyz": [
+              6.0067,
+              3.9899,
+              3.9687
+            ],
+            "expected_xyz": [
+              6,
+              4,
+              4
+            ],
+            "y_min": 0.0,
+            "front_probe_hit_z": -1.9691
+          },
+          "limit": "X = largeur, Y = hauteur (min 0), Z = profondeur (±2 %) ; rayon depuis -Z : couleur du visage attendue (écart canal <= 0,16 LOD0 / 0,33 LOD1) et rayon depuis +Z nettement différent (dos)"
+        },
+        "embedded_texture": {
+          "status": "PASS",
+          "measured": {
+            "embedded_bufferView": true,
+            "size": [
+              1024,
+              1024
+            ],
+            "mime": "image/png"
+          },
+          "limit": "PNG embarqué 1024 px"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": {
+            "materials": 1,
+            "primitives": 1
+          },
+          "limit": "1 matériau, 1 primitive"
+        },
+        "raw_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 1.0640360414981842e-07,
+            "max_influences": 4,
+            "vertices": 1542
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences"
+        },
+        "joint_names": [
+          "Root",
+          "Belly_00",
+          "Belly_01",
+          "Belly_02",
+          "Belly_10",
+          "Belly_11",
+          "Belly_12",
+          "Belly_20",
+          "Belly_21",
+          "Belly_22",
+          "Fin_L",
+          "Fin_R",
+          "Tail"
+        ]
+      },
+      "glb_lod1_raw": {
+        "mesh_count": 1,
+        "primitive_count": 1,
+        "mesh_node_transforms": [
+          {}
+        ],
+        "position_min_xyz": [
+          -3.0174,
+          0.0,
+          -2.0255
+        ],
+        "position_max_xyz": [
+          3.0216,
+          3.934,
+          1.9459
+        ],
+        "accessor_minmax_present": true,
+        "front_probe": {
+          "what": "pupille droite brodée (côté +X)",
+          "ray_origin_roblox": [
+            1.11,
+            2.03,
+            -100.0
+          ],
+          "ray_dir": [
+            0,
+            0,
+            1
+          ],
+          "hit_roblox_xyz": [
+            1.11,
+            2.03,
+            -1.9702
+          ],
+          "texel_rgb": [
+            0.1599,
+            0.2144,
+            0.3486
+          ],
+          "expected_rgb": [
+            0.1255,
+            0.1882,
+            0.3333
+          ],
+          "max_channel_diff": 0.034,
+          "threshold": 0.33,
+          "back_ray_hit_roblox_xyz": [
+            1.11,
+            2.03,
+            1.3395
+          ],
+          "back_ray_texel_rgb": [
+            0.6192,
+            0.9002,
+            0.7595
+          ],
+          "back_ray_max_channel_diff": 0.712
+        },
+        "roblox_axes": {
+          "status": "PASS",
+          "measured": {
+            "extent_xyz": [
+              6.039,
+              3.934,
+              3.9714
+            ],
+            "expected_xyz": [
+              6,
+              4,
+              4
+            ],
+            "y_min": 0.0,
+            "front_probe_hit_z": -1.9702
+          },
+          "limit": "X = largeur, Y = hauteur (min 0), Z = profondeur (±2 %) ; rayon depuis -Z : couleur du visage attendue (écart canal <= 0,16 LOD0 / 0,33 LOD1) et rayon depuis +Z nettement différent (dos)"
+        },
+        "embedded_texture": {
+          "status": "PASS",
+          "measured": {
+            "embedded_bufferView": true,
+            "size": [
+              256,
+              256
+            ],
+            "mime": "image/png"
+          },
+          "limit": "PNG embarqué 256 px"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": {
+            "materials": 1,
+            "primitives": 1
+          },
+          "limit": "1 matériau, 1 primitive"
+        },
+        "raw_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 8.940696716308594e-08,
+            "max_influences": 4,
+            "vertices": 491
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences"
+        },
+        "joint_names": [
+          "Root",
+          "Belly_00",
+          "Belly_01",
+          "Belly_02",
+          "Belly_10",
+          "Belly_11",
+          "Belly_12",
+          "Belly_20",
+          "Belly_21",
+          "Belly_22",
+          "Fin_L",
+          "Fin_R",
+          "Tail"
+        ]
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/toy_plush_bulle.glb",
+        "opened": {
+          "status": "PASS",
+          "measured": "Bulle_LOD0",
+          "limit": "maillage présent"
+        },
+        "dims_vs_envelope": {
+          "status": "PASS",
+          "measured": {
+            "width_x": 6.0067,
+            "depth": 3.9687,
+            "height": 3.9899,
+            "ratios_w_d_h": [
+              1.0011,
+              0.9922,
+              0.9975
+            ]
+          },
+          "limit": "enveloppe 6 x 4 x 4 ±2 %"
+        },
+        "pivot_bottom_center": {
+          "status": "PASS",
+          "measured": {
+            "min_height": 0.0,
+            "bbox_center_plan": [
+              0.0028,
+              0.0464
+            ]
+          },
+          "limit": "min hauteur 0 ±0,01 ; centre en plan ±0,1"
+        },
+        "triangles": {
+          "status": "PASS",
+          "measured": 1520,
+          "limit": "800..1600"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": 1,
+          "limit": "1 matériau"
+        },
+        "uv_texture": {
+          "status": "PASS",
+          "measured": {
+            "uv_layers": 1,
+            "image_nodes": 1,
+            "image_size": [
+              1024,
+              1024
+            ],
+            "packed": true
+          },
+          "limit": "UV + texture embarquée"
+        },
+        "armature": {
+          "status": "PASS",
+          "measured": {
+            "bones": [
+              "Belly_00",
+              "Belly_01",
+              "Belly_02",
+              "Belly_10",
+              "Belly_11",
+              "Belly_12",
+              "Belly_20",
+              "Belly_21",
+              "Belly_22",
+              "Fin_L",
+              "Fin_R",
+              "Root",
+              "Tail"
+            ],
+            "missing": [],
+            "extra": [],
+            "armature_modifier": true
+          },
+          "limit": "Root + Belly_00..22 + Fin_L, Fin_R, Tail"
+        },
+        "skin_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 1.0640360414981842e-07,
+            "max_influences": 4,
+            "unweighted": 0
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences, aucun orphelin"
+        },
+        "top_flatness": {
+          "status": "PASS",
+          "measured": {
+            "samples_inset": 209,
+            "misses": 0,
+            "max_abs_deviation": 0.056,
+            "mean_top": 2.9988,
+            "min_top": 2.944,
+            "dense_samples": 1545,
+            "max_above_top_dense": 0.0003,
+            "max_vertex_z_in_rect": 3.0003
+          },
+          "limit": "|dessus - collider| <= 0,25 (retrait 0,25) ; rien > dessus + 0,05"
+        },
+        "poses": {
+          "bone_heads_match_library": {
+            "status": "PASS",
+            "measured": {
+              "max_error_studs": 0.0
+            },
+            "limit": "<= 0,01 stud"
+          },
+          "rest": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                6.0067,
+                3.9687,
+                3.9899
+              ],
+              "extent_ratio_w_d_h": [
+                1.0011,
+                0.9922,
+                0.9975
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0021,
+                1.0154,
+                0.9975
+              ],
+              "top_scale_y": 1.0,
+              "body_scale_x": 1.0,
+              "body_scale_depth": 1.0,
+              "min_height": 0.0,
+              "max_rotation_deg": 0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "fall": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                5.8043,
+                3.6839,
+                4.2201
+              ],
+              "extent_ratio_w_d_h": [
+                0.9674,
+                0.921,
+                1.055
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                0.9679,
+                1.0044,
+                1.055
+              ],
+              "top_scale_y": 1.1133,
+              "body_scale_x": 0.9663,
+              "body_scale_depth": 0.9817,
+              "min_height": 0.0,
+              "max_rotation_deg": 14.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "impact": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                6.1914,
+                4.0275,
+                3.4281
+              ],
+              "extent_ratio_w_d_h": [
+                1.0319,
+                1.0069,
+                0.857
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.033,
+                1.0448,
+                0.857
+              ],
+              "top_scale_y": 0.7267,
+              "body_scale_x": 1.0308,
+              "body_scale_depth": 1.0318,
+              "min_height": 0.0,
+              "max_rotation_deg": 12.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "rebound": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                5.9247,
+                3.956,
+                4.0809
+              ],
+              "extent_ratio_w_d_h": [
+                0.9874,
+                0.989,
+                1.0202
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                0.9883,
+                1.009,
+                1.0202
+              ],
+              "top_scale_y": 1.05,
+              "body_scale_x": 0.9863,
+              "body_scale_depth": 0.9967,
+              "min_height": 0.0,
+              "max_rotation_deg": 6.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "player_landing": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                6.0067,
+                3.9687,
+                3.9899
+              ],
+              "extent_ratio_w_d_h": [
+                1.0011,
+                0.9922,
+                0.9975
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0021,
+                1.0154,
+                0.9975
+              ],
+              "top_scale_y": 0.98,
+              "body_scale_x": 1.0,
+              "body_scale_depth": 1.0,
+              "min_height": 0.0,
+              "max_rotation_deg": 0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "return_to_reference_drift": {
+            "status": "PASS",
+            "measured": 0.0,
+            "limit": "<= 1e-5 stud"
+          }
+        }
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/toy_plush_bulle_lod1.glb",
+        "opened": {
+          "status": "PASS",
+          "measured": "Bulle_LOD1",
+          "limit": "maillage présent"
+        },
+        "dims_vs_envelope": {
+          "status": "PASS",
+          "measured": {
+            "width_x": 6.039,
+            "depth": 3.9714,
+            "height": 3.934,
+            "ratios_w_d_h": [
+              1.0065,
+              0.9929,
+              0.9835
+            ]
+          },
+          "limit": "enveloppe 6 x 4 x 4 ±2 %"
+        },
+        "pivot_bottom_center": {
+          "status": "PASS",
+          "measured": {
+            "min_height": 0.0,
+            "bbox_center_plan": [
+              0.0021,
+              0.0398
+            ]
+          },
+          "limit": "min hauteur 0 ±0,01 ; centre en plan ±0,1"
+        },
+        "triangles": {
+          "status": "PASS",
+          "measured": 380,
+          "limit": "<= 400"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": 1,
+          "limit": "1 matériau"
+        },
+        "uv_texture": {
+          "status": "PASS",
+          "measured": {
+            "uv_layers": 1,
+            "image_nodes": 1,
+            "image_size": [
+              256,
+              256
+            ],
+            "packed": true
+          },
+          "limit": "UV + texture embarquée"
+        },
+        "armature": {
+          "status": "PASS",
+          "measured": {
+            "bones": [
+              "Belly_00",
+              "Belly_01",
+              "Belly_02",
+              "Belly_10",
+              "Belly_11",
+              "Belly_12",
+              "Belly_20",
+              "Belly_21",
+              "Belly_22",
+              "Fin_L",
+              "Fin_R",
+              "Root",
+              "Tail"
+            ],
+            "missing": [],
+            "extra": [],
+            "armature_modifier": true
+          },
+          "limit": "Root + Belly_00..22 + Fin_L, Fin_R, Tail"
+        },
+        "skin_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 8.940696716308594e-08,
+            "max_influences": 4,
+            "unweighted": 0
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences, aucun orphelin"
+        },
+        "top_flatness": {
+          "status": "PASS",
+          "measured": {
+            "samples_inset": 209,
+            "misses": 0,
+            "max_abs_deviation": 0.0561,
+            "mean_top": 2.9925,
+            "min_top": 2.9439,
+            "dense_samples": 1546,
+            "max_above_top_dense": -0.0001,
+            "max_vertex_z_in_rect": 2.9997
+          },
+          "limit": "|dessus - collider| <= 0,25 (retrait 0,25) ; rien > dessus + 0,05"
+        },
+        "poses": {
+          "bone_heads_match_library": {
+            "status": "PASS",
+            "measured": {
+              "max_error_studs": 0.0
+            },
+            "limit": "<= 0,01 stud"
+          },
+          "rest": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                6.039,
+                3.9714,
+                3.934
+              ],
+              "extent_ratio_w_d_h": [
+                1.0065,
+                0.9929,
+                0.9835
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0072,
+                1.0127,
+                0.9835
+              ],
+              "top_scale_y": 1.0,
+              "body_scale_x": 1.0,
+              "body_scale_depth": 1.0,
+              "min_height": 0.0,
+              "max_rotation_deg": 0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "fall": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                5.8984,
+                3.6682,
+                4.1688
+              ],
+              "extent_ratio_w_d_h": [
+                0.9831,
+                0.917,
+                1.0422
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                0.9838,
+                0.9998,
+                1.0422
+              ],
+              "top_scale_y": 1.1131,
+              "body_scale_x": 0.9767,
+              "body_scale_depth": 0.9791,
+              "min_height": 0.0,
+              "max_rotation_deg": 14.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "impact": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                6.3002,
+                4.0331,
+                3.3794
+              ],
+              "extent_ratio_w_d_h": [
+                1.05,
+                1.0083,
+                0.8448
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.051,
+                1.0436,
+                0.8448
+              ],
+              "top_scale_y": 0.7268,
+              "body_scale_x": 1.0432,
+              "body_scale_depth": 1.0384,
+              "min_height": 0.0,
+              "max_rotation_deg": 12.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "rebound": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                5.9619,
+                3.956,
+                4.0218
+              ],
+              "extent_ratio_w_d_h": [
+                0.9936,
+                0.989,
+                1.0055
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                0.9952,
+                1.005,
+                1.0055
+              ],
+              "top_scale_y": 1.0499,
+              "body_scale_x": 0.9872,
+              "body_scale_depth": 0.9914,
+              "min_height": 0.0,
+              "max_rotation_deg": 6.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "player_landing": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                6.039,
+                3.9714,
+                3.934
+              ],
+              "extent_ratio_w_d_h": [
+                1.0065,
+                0.9929,
+                0.9835
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0072,
+                1.0127,
+                0.9835
+              ],
+              "top_scale_y": 0.98,
+              "body_scale_x": 1.0,
+              "body_scale_depth": 1.0,
+              "min_height": 0.0,
+              "max_rotation_deg": 0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "return_to_reference_drift": {
+            "status": "PASS",
+            "measured": 0.0,
+            "limit": "<= 1e-5 stud"
+          }
+        }
+      },
+      "fbx": {
+        "file": "assets/import/models/toy_plush_bulle.fbx",
+        "opened": {
+          "status": "PASS",
+          "measured": "Bulle_LOD0",
+          "limit": "maillage présent"
+        },
+        "dims_vs_envelope": {
+          "status": "PASS",
+          "measured": {
+            "width_x": 6.0067,
+            "depth": 3.9687,
+            "height": 3.9899,
+            "ratios_w_d_h": [
+              1.0011,
+              0.9922,
+              0.9975
+            ]
+          },
+          "limit": "enveloppe 6 x 4 x 4 ±2 %"
+        },
+        "pivot_bottom_center": {
+          "status": "PASS",
+          "measured": {
+            "min_height": -0.0,
+            "bbox_center_plan": [
+              0.0028,
+              0.0464
+            ]
+          },
+          "limit": "min hauteur 0 ±0,01 ; centre en plan ±0,1"
+        },
+        "triangles": {
+          "status": "PASS",
+          "measured": 1520,
+          "limit": "800..1600"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": 1,
+          "limit": "1 matériau"
+        },
+        "uv_texture": {
+          "status": "PASS",
+          "measured": {
+            "uv_layers": 1,
+            "image_nodes": 1,
+            "image_size": [
+              1024,
+              1024
+            ],
+            "png_streams_in_fbx": 1
+          },
+          "limit": "UV + texture PNG embarquée"
+        },
+        "armature": {
+          "status": "PASS",
+          "measured": {
+            "bones": [
+              "Belly_00",
+              "Belly_01",
+              "Belly_02",
+              "Belly_10",
+              "Belly_11",
+              "Belly_12",
+              "Belly_20",
+              "Belly_21",
+              "Belly_22",
+              "Fin_L",
+              "Fin_R",
+              "Root",
+              "Tail"
+            ],
+            "missing": [],
+            "extra": [],
+            "armature_modifier": true
+          },
+          "limit": "Root + Belly_00..22 + Fin_L, Fin_R, Tail"
+        },
+        "skin_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 4.371395334601402e-08,
+            "max_influences": 4,
+            "unweighted": 0
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences, aucun orphelin"
+        },
+        "top_flatness": {
+          "status": "PASS",
+          "measured": {
+            "samples_inset": 209,
+            "misses": 0,
+            "max_abs_deviation": 0.056,
+            "mean_top": 2.9988,
+            "min_top": 2.944,
+            "dense_samples": 1545,
+            "max_above_top_dense": 0.0003,
+            "max_vertex_z_in_rect": 3.0003
+          },
+          "limit": "|dessus - collider| <= 0,25 (retrait 0,25) ; rien > dessus + 0,05"
+        }
+      },
+      "collision_json": {
+        "status": "PASS",
+        "measured": {
+          "collision_json": [
+            5,
+            3,
+            3
+          ],
+          "walkable": [
+            5,
+            3
+          ],
+          "config": {
+            "shape": "box",
+            "size_studs": [
+              5,
+              3,
+              3
+            ],
+            "walkable_top": [
+              5,
+              3
+            ],
+            "top_visible": true
+          },
+          "config_size_studs": [
+            6,
+            4,
+            4
+          ]
+        },
+        "limit": "collider, walkable_top et enveloppe = config/rooms.json"
+      },
+      "determinism": {
+        "status": "PASS",
+        "measured": {
+          "assets/import/models/toy_plush_bulle.glb": {
+            "sha256_repo": "7b0d48b01a1934c9cca7f67f6d6d1457fdb7c7273780a77938c930652c822039",
+            "sha256_fresh_build_1": "7b0d48b01a1934c9cca7f67f6d6d1457fdb7c7273780a77938c930652c822039",
+            "sha256_fresh_build_2": "7b0d48b01a1934c9cca7f67f6d6d1457fdb7c7273780a77938c930652c822039",
+            "equal": true
+          },
+          "assets/import/models/toy_plush_bulle_lod1.glb": {
+            "sha256_repo": "48ffecb360c6ff91564b1be39836b00b8d8944e6cdf8ccf3d1a9a5024cda330a",
+            "sha256_fresh_build_1": "48ffecb360c6ff91564b1be39836b00b8d8944e6cdf8ccf3d1a9a5024cda330a",
+            "sha256_fresh_build_2": "48ffecb360c6ff91564b1be39836b00b8d8944e6cdf8ccf3d1a9a5024cda330a",
+            "equal": true
+          },
+          "assets/source/models/plush_v2/Bulle/textures/toy_plush_bulle_albedo_1024.png": {
+            "sha256_repo": "93f6a55569a002a1b9ca25f3df44af3260ff896fe4756c218b8d069e32fd5458",
+            "sha256_fresh_build_1": "93f6a55569a002a1b9ca25f3df44af3260ff896fe4756c218b8d069e32fd5458",
+            "sha256_fresh_build_2": "93f6a55569a002a1b9ca25f3df44af3260ff896fe4756c218b8d069e32fd5458",
+            "equal": true
+          },
+          "assets/source/models/plush_v2/Bulle/textures/toy_plush_bulle_albedo_256.png": {
+            "sha256_repo": "0f7db19f0dd94d242d076dcaa07576a8e9c2f1e1a240129c4e6f61f84dbdba5f",
+            "sha256_fresh_build_1": "0f7db19f0dd94d242d076dcaa07576a8e9c2f1e1a240129c4e6f61f84dbdba5f",
+            "sha256_fresh_build_2": "0f7db19f0dd94d242d076dcaa07576a8e9c2f1e1a240129c4e6f61f84dbdba5f",
+            "equal": true
+          },
+          "assets/import/models/toy_plush_bulle.fbx": {
+            "identical_bytes": false,
+            "differing_bytes": 4,
+            "all_diffs_within_timestamp_fields": true,
+            "compared": "build #1 vs build #2, même chemin de sortie"
+          }
+        },
+        "limit": "SHA-256 identiques (dépôt = reconstruction 1 = reconstruction 2) pour GLB, LOD1 et textures ; FBX identique hors champs d'horodatage",
+        "note": "FBX : identique hors horodatage",
+        "fbx_equal_masked": true
+      },
+      "summary": {
+        "glb_raw.roblox_axes": "PASS",
+        "glb_raw.embedded_texture": "PASS",
+        "glb_raw.materials": "PASS",
+        "glb_raw.raw_weights": "PASS",
+        "glb_lod1_raw.roblox_axes": "PASS",
+        "glb_lod1_raw.embedded_texture": "PASS",
+        "glb_lod1_raw.materials": "PASS",
+        "glb_lod1_raw.raw_weights": "PASS",
+        "glb_lod0.opened": "PASS",
+        "glb_lod0.dims_vs_envelope": "PASS",
+        "glb_lod0.pivot_bottom_center": "PASS",
+        "glb_lod0.triangles": "PASS",
+        "glb_lod0.materials": "PASS",
+        "glb_lod0.uv_texture": "PASS",
+        "glb_lod0.armature": "PASS",
+        "glb_lod0.skin_weights": "PASS",
+        "glb_lod0.top_flatness": "PASS",
+        "glb_lod0.poses.bone_heads_match_library": "PASS",
+        "glb_lod0.poses.rest": "PASS",
+        "glb_lod0.poses.fall": "PASS",
+        "glb_lod0.poses.impact": "PASS",
+        "glb_lod0.poses.rebound": "PASS",
+        "glb_lod0.poses.player_landing": "PASS",
+        "glb_lod0.poses.return_to_reference_drift": "PASS",
+        "glb_lod1.opened": "PASS",
+        "glb_lod1.dims_vs_envelope": "PASS",
+        "glb_lod1.pivot_bottom_center": "PASS",
+        "glb_lod1.triangles": "PASS",
+        "glb_lod1.materials": "PASS",
+        "glb_lod1.uv_texture": "PASS",
+        "glb_lod1.armature": "PASS",
+        "glb_lod1.skin_weights": "PASS",
+        "glb_lod1.top_flatness": "PASS",
+        "glb_lod1.poses.bone_heads_match_library": "PASS",
+        "glb_lod1.poses.rest": "PASS",
+        "glb_lod1.poses.fall": "PASS",
+        "glb_lod1.poses.impact": "PASS",
+        "glb_lod1.poses.rebound": "PASS",
+        "glb_lod1.poses.player_landing": "PASS",
+        "glb_lod1.poses.return_to_reference_drift": "PASS",
+        "fbx.opened": "PASS",
+        "fbx.dims_vs_envelope": "PASS",
+        "fbx.pivot_bottom_center": "PASS",
+        "fbx.triangles": "PASS",
+        "fbx.materials": "PASS",
+        "fbx.uv_texture": "PASS",
+        "fbx.armature": "PASS",
+        "fbx.skin_weights": "PASS",
+        "fbx.top_flatness": "PASS",
+        "collision_json": "PASS",
+        "determinism": "PASS"
+      },
+      "all_pass": true
+    },
+    "grumf": {
+      "asset_id": "toy_plush_grumf",
+      "size_tier": "medium",
+      "envelope_wdh": [
+        12,
+        10,
+        6
+      ],
+      "collider_wdh": [
+        8,
+        8,
+        4
+      ],
+      "collider_center_blender_xy": [
+        0.0,
+        -1.0
+      ],
+      "glb_raw": {
+        "mesh_count": 1,
+        "primitive_count": 1,
+        "mesh_node_transforms": [
+          {}
+        ],
+        "position_min_xyz": [
+          -6.0407,
+          0.0,
+          -5.0153
+        ],
+        "position_max_xyz": [
+          6.0267,
+          5.9951,
+          5.1138
+        ],
+        "accessor_minmax_present": true,
+        "front_probe": {
+          "what": "œil droit brodé (côté +X)",
+          "ray_origin_roblox": [
+            1.15,
+            4.62,
+            -100.0
+          ],
+          "ray_dir": [
+            0,
+            0,
+            1
+          ],
+          "hit_roblox_xyz": [
+            1.15,
+            4.62,
+            -4.9363
+          ],
+          "texel_rgb": [
+            0.1259,
+            0.1882,
+            0.3329
+          ],
+          "expected_rgb": [
+            0.1255,
+            0.1882,
+            0.3333
+          ],
+          "max_channel_diff": 0.0,
+          "threshold": 0.16,
+          "back_ray_hit_roblox_xyz": [
+            1.15,
+            4.62,
+            -3.2362
+          ],
+          "back_ray_texel_rgb": [
+            0.7656,
+            0.6553,
+            0.9338
+          ],
+          "back_ray_max_channel_diff": 0.64
+        },
+        "roblox_axes": {
+          "status": "PASS",
+          "measured": {
+            "extent_xyz": [
+              12.0675,
+              5.9951,
+              10.1291
+            ],
+            "expected_xyz": [
+              12,
+              6,
+              10
+            ],
+            "y_min": 0.0,
+            "front_probe_hit_z": -4.9363
+          },
+          "limit": "X = largeur, Y = hauteur (min 0), Z = profondeur (±2 %) ; rayon depuis -Z : couleur du visage attendue (écart canal <= 0,16 LOD0 / 0,33 LOD1) et rayon depuis +Z nettement différent (dos)"
+        },
+        "embedded_texture": {
+          "status": "PASS",
+          "measured": {
+            "embedded_bufferView": true,
+            "size": [
+              1024,
+              1024
+            ],
+            "mime": "image/png"
+          },
+          "limit": "PNG embarqué 1024 px"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": {
+            "materials": 1,
+            "primitives": 1
+          },
+          "limit": "1 matériau, 1 primitive"
+        },
+        "raw_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 1.2665987014770508e-07,
+            "max_influences": 4,
+            "vertices": 2565
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences"
+        },
+        "joint_names": [
+          "Root",
+          "Belly_00",
+          "Belly_01",
+          "Belly_02",
+          "Belly_10",
+          "Belly_11",
+          "Belly_12",
+          "Belly_20",
+          "Belly_21",
+          "Belly_22",
+          "Head",
+          "Leg_BL",
+          "Leg_BR",
+          "Leg_FL",
+          "Leg_FR",
+          "Tail"
+        ]
+      },
+      "glb_lod1_raw": {
+        "mesh_count": 1,
+        "primitive_count": 1,
+        "mesh_node_transforms": [
+          {}
+        ],
+        "position_min_xyz": [
+          -6.0175,
+          0.0,
+          -5.0375
+        ],
+        "position_max_xyz": [
+          5.9493,
+          5.9989,
+          5.126
+        ],
+        "accessor_minmax_present": true,
+        "front_probe": {
+          "what": "œil droit brodé (côté +X)",
+          "ray_origin_roblox": [
+            1.15,
+            4.62,
+            -100.0
+          ],
+          "ray_dir": [
+            0,
+            0,
+            1
+          ],
+          "hit_roblox_xyz": [
+            1.15,
+            4.62,
+            -4.9354
+          ],
+          "texel_rgb": [
+            0.2266,
+            0.2754,
+            0.393
+          ],
+          "expected_rgb": [
+            0.1255,
+            0.1882,
+            0.3333
+          ],
+          "max_channel_diff": 0.101,
+          "threshold": 0.33,
+          "back_ray_hit_roblox_xyz": [
+            1.15,
+            4.62,
+            -3.2457
+          ],
+          "back_ray_texel_rgb": [
+            0.7643,
+            0.6553,
+            0.9329
+          ],
+          "back_ray_max_channel_diff": 0.639
+        },
+        "roblox_axes": {
+          "status": "PASS",
+          "measured": {
+            "extent_xyz": [
+              11.9668,
+              5.9989,
+              10.1635
+            ],
+            "expected_xyz": [
+              12,
+              6,
+              10
+            ],
+            "y_min": 0.0,
+            "front_probe_hit_z": -4.9354
+          },
+          "limit": "X = largeur, Y = hauteur (min 0), Z = profondeur (±2 %) ; rayon depuis -Z : couleur du visage attendue (écart canal <= 0,16 LOD0 / 0,33 LOD1) et rayon depuis +Z nettement différent (dos)"
+        },
+        "embedded_texture": {
+          "status": "PASS",
+          "measured": {
+            "embedded_bufferView": true,
+            "size": [
+              256,
+              256
+            ],
+            "mime": "image/png"
+          },
+          "limit": "PNG embarqué 256 px"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": {
+            "materials": 1,
+            "primitives": 1
+          },
+          "limit": "1 matériau, 1 primitive"
+        },
+        "raw_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 1.2596137821674347e-07,
+            "max_influences": 4,
+            "vertices": 793
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences"
+        },
+        "joint_names": [
+          "Root",
+          "Belly_00",
+          "Belly_01",
+          "Belly_02",
+          "Belly_10",
+          "Belly_11",
+          "Belly_12",
+          "Belly_20",
+          "Belly_21",
+          "Belly_22",
+          "Head",
+          "Leg_BL",
+          "Leg_BR",
+          "Leg_FL",
+          "Leg_FR",
+          "Tail"
+        ]
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/toy_plush_grumf.glb",
+        "opened": {
+          "status": "PASS",
+          "measured": "Grumf_LOD0",
+          "limit": "maillage présent"
+        },
+        "dims_vs_envelope": {
+          "status": "PASS",
+          "measured": {
+            "width_x": 12.0675,
+            "depth": 10.1291,
+            "height": 5.9951,
+            "ratios_w_d_h": [
+              1.0056,
+              1.0129,
+              0.9992
+            ]
+          },
+          "limit": "enveloppe 12 x 10 x 6 ±2 %"
+        },
+        "pivot_bottom_center": {
+          "status": "PASS",
+          "measured": {
+            "min_height": 0.0,
+            "bbox_center_plan": [
+              -0.007,
+              -0.0492
+            ]
+          },
+          "limit": "min hauteur 0 ±0,01 ; centre en plan ±0,1"
+        },
+        "triangles": {
+          "status": "PASS",
+          "measured": 3248,
+          "limit": "2000..3400"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": 1,
+          "limit": "1 matériau"
+        },
+        "uv_texture": {
+          "status": "PASS",
+          "measured": {
+            "uv_layers": 1,
+            "image_nodes": 1,
+            "image_size": [
+              1024,
+              1024
+            ],
+            "packed": true
+          },
+          "limit": "UV + texture embarquée"
+        },
+        "armature": {
+          "status": "PASS",
+          "measured": {
+            "bones": [
+              "Belly_00",
+              "Belly_01",
+              "Belly_02",
+              "Belly_10",
+              "Belly_11",
+              "Belly_12",
+              "Belly_20",
+              "Belly_21",
+              "Belly_22",
+              "Head",
+              "Leg_BL",
+              "Leg_BR",
+              "Leg_FL",
+              "Leg_FR",
+              "Root",
+              "Tail"
+            ],
+            "missing": [],
+            "extra": [],
+            "armature_modifier": true
+          },
+          "limit": "Root + Belly_00..22 + Head, Tail, Leg_FL, Leg_FR, Leg_BL, Leg_BR"
+        },
+        "skin_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 1.2665987014770508e-07,
+            "max_influences": 4,
+            "unweighted": 0
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences, aucun orphelin"
+        },
+        "top_flatness": {
+          "status": "PASS",
+          "measured": {
+            "samples_inset": 961,
+            "misses": 0,
+            "max_abs_deviation": 0.0156,
+            "mean_top": 3.9996,
+            "min_top": 3.9844,
+            "dense_samples": 6537,
+            "max_above_top_dense": 0.0,
+            "max_vertex_z_in_rect": 4.0
+          },
+          "limit": "|dessus - collider| <= 0,25 (retrait 0,25) ; rien > dessus + 0,05"
+        },
+        "poses": {
+          "bone_heads_match_library": {
+            "status": "PASS",
+            "measured": {
+              "max_error_studs": 0.0
+            },
+            "limit": "<= 0,01 stud"
+          },
+          "rest": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                12.0675,
+                10.1291,
+                5.9951
+              ],
+              "extent_ratio_w_d_h": [
+                1.0056,
+                1.0129,
+                0.9992
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0068,
+                1.0228,
+                0.9992
+              ],
+              "top_scale_y": 1.0,
+              "body_scale_x": 1.0,
+              "body_scale_depth": 1.0,
+              "min_height": 0.0,
+              "max_rotation_deg": 0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "fall": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                12.1585,
+                10.0329,
+                6.4045
+              ],
+              "extent_ratio_w_d_h": [
+                1.0132,
+                1.0033,
+                1.0674
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0143,
+                1.0056,
+                1.0674
+              ],
+              "top_scale_y": 1.1149,
+              "body_scale_x": 0.9992,
+              "body_scale_depth": 0.9861,
+              "min_height": 0.0,
+              "max_rotation_deg": 10.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "impact": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                12.441,
+                10.846,
+                4.9664
+              ],
+              "extent_ratio_w_d_h": [
+                1.0367,
+                1.0846,
+                0.8277
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0415,
+                1.0854,
+                0.8277
+              ],
+              "top_scale_y": 0.725,
+              "body_scale_x": 1.0926,
+              "body_scale_depth": 1.0768,
+              "min_height": 0.0,
+              "max_rotation_deg": 8.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "rebound": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                12.0675,
+                10.0553,
+                6.2158
+              ],
+              "extent_ratio_w_d_h": [
+                1.0056,
+                1.0055,
+                1.036
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0068,
+                1.0141,
+                1.036
+              ],
+              "top_scale_y": 1.05,
+              "body_scale_x": 0.9999,
+              "body_scale_depth": 0.9928,
+              "min_height": 0.0,
+              "max_rotation_deg": 4.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "player_landing": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                12.0675,
+                10.1291,
+                5.9951
+              ],
+              "extent_ratio_w_d_h": [
+                1.0056,
+                1.0129,
+                0.9992
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0068,
+                1.0228,
+                0.9992
+              ],
+              "top_scale_y": 0.98,
+              "body_scale_x": 1.0,
+              "body_scale_depth": 1.0,
+              "min_height": 0.0,
+              "max_rotation_deg": 0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "return_to_reference_drift": {
+            "status": "PASS",
+            "measured": 0.0,
+            "limit": "<= 1e-5 stud"
+          }
+        }
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/toy_plush_grumf_lod1.glb",
+        "opened": {
+          "status": "PASS",
+          "measured": "Grumf_LOD1",
+          "limit": "maillage présent"
+        },
+        "dims_vs_envelope": {
+          "status": "PASS",
+          "measured": {
+            "width_x": 11.9668,
+            "depth": 10.1635,
+            "height": 5.9989,
+            "ratios_w_d_h": [
+              0.9972,
+              1.0163,
+              0.9998
+            ]
+          },
+          "limit": "enveloppe 12 x 10 x 6 ±2 %"
+        },
+        "pivot_bottom_center": {
+          "status": "PASS",
+          "measured": {
+            "min_height": 0.0,
+            "bbox_center_plan": [
+              -0.0341,
+              -0.0443
+            ]
+          },
+          "limit": "min hauteur 0 ±0,01 ; centre en plan ±0,1"
+        },
+        "triangles": {
+          "status": "PASS",
+          "measured": 670,
+          "limit": "<= 700"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": 1,
+          "limit": "1 matériau"
+        },
+        "uv_texture": {
+          "status": "PASS",
+          "measured": {
+            "uv_layers": 1,
+            "image_nodes": 1,
+            "image_size": [
+              256,
+              256
+            ],
+            "packed": true
+          },
+          "limit": "UV + texture embarquée"
+        },
+        "armature": {
+          "status": "PASS",
+          "measured": {
+            "bones": [
+              "Belly_00",
+              "Belly_01",
+              "Belly_02",
+              "Belly_10",
+              "Belly_11",
+              "Belly_12",
+              "Belly_20",
+              "Belly_21",
+              "Belly_22",
+              "Head",
+              "Leg_BL",
+              "Leg_BR",
+              "Leg_FL",
+              "Leg_FR",
+              "Root",
+              "Tail"
+            ],
+            "missing": [],
+            "extra": [],
+            "armature_modifier": true
+          },
+          "limit": "Root + Belly_00..22 + Head, Tail, Leg_FL, Leg_FR, Leg_BL, Leg_BR"
+        },
+        "skin_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 1.2596137821674347e-07,
+            "max_influences": 4,
+            "unweighted": 0
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences, aucun orphelin"
+        },
+        "top_flatness": {
+          "status": "PASS",
+          "measured": {
+            "samples_inset": 961,
+            "misses": 0,
+            "max_abs_deviation": 0.0293,
+            "mean_top": 3.9934,
+            "min_top": 3.9707,
+            "dense_samples": 6536,
+            "max_above_top_dense": -0.0,
+            "max_vertex_z_in_rect": 3.9907
+          },
+          "limit": "|dessus - collider| <= 0,25 (retrait 0,25) ; rien > dessus + 0,05"
+        },
+        "poses": {
+          "bone_heads_match_library": {
+            "status": "PASS",
+            "measured": {
+              "max_error_studs": 0.0
+            },
+            "limit": "<= 0,01 stud"
+          },
+          "rest": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                11.9668,
+                10.1635,
+                5.9989
+              ],
+              "extent_ratio_w_d_h": [
+                0.9972,
+                1.0163,
+                0.9998
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0029,
+                1.0252,
+                0.9998
+              ],
+              "top_scale_y": 1.0,
+              "body_scale_x": 1.0,
+              "body_scale_depth": 1.0,
+              "min_height": 0.0,
+              "max_rotation_deg": 0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "fall": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                12.0465,
+                10.0427,
+                6.4007
+              ],
+              "extent_ratio_w_d_h": [
+                1.0039,
+                1.0043,
+                1.0668
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0084,
+                1.0048,
+                1.0668
+              ],
+              "top_scale_y": 1.1147,
+              "body_scale_x": 1.0027,
+              "body_scale_depth": 0.9844,
+              "min_height": 0.0,
+              "max_rotation_deg": 10.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "impact": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                12.4478,
+                10.8606,
+                4.9787
+              ],
+              "extent_ratio_w_d_h": [
+                1.0373,
+                1.0861,
+                0.8298
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0441,
+                1.0864,
+                0.8298
+              ],
+              "top_scale_y": 0.725,
+              "body_scale_x": 1.0733,
+              "body_scale_depth": 1.0726,
+              "min_height": 0.0,
+              "max_rotation_deg": 8.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "rebound": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                11.9668,
+                10.0816,
+                6.2158
+              ],
+              "extent_ratio_w_d_h": [
+                0.9972,
+                1.0082,
+                1.036
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0029,
+                1.015,
+                1.036
+              ],
+              "top_scale_y": 1.05,
+              "body_scale_x": 0.9999,
+              "body_scale_depth": 0.9918,
+              "min_height": 0.0,
+              "max_rotation_deg": 4.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "player_landing": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                11.9668,
+                10.1635,
+                5.9989
+              ],
+              "extent_ratio_w_d_h": [
+                0.9972,
+                1.0163,
+                0.9998
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0029,
+                1.0252,
+                0.9998
+              ],
+              "top_scale_y": 0.98,
+              "body_scale_x": 1.0,
+              "body_scale_depth": 1.0,
+              "min_height": 0.0,
+              "max_rotation_deg": 0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "return_to_reference_drift": {
+            "status": "PASS",
+            "measured": 0.0,
+            "limit": "<= 1e-5 stud"
+          }
+        }
+      },
+      "fbx": {
+        "file": "assets/import/models/toy_plush_grumf.fbx",
+        "opened": {
+          "status": "PASS",
+          "measured": "Grumf_LOD0",
+          "limit": "maillage présent"
+        },
+        "dims_vs_envelope": {
+          "status": "PASS",
+          "measured": {
+            "width_x": 12.0675,
+            "depth": 10.1291,
+            "height": 5.9951,
+            "ratios_w_d_h": [
+              1.0056,
+              1.0129,
+              0.9992
+            ]
+          },
+          "limit": "enveloppe 12 x 10 x 6 ±2 %"
+        },
+        "pivot_bottom_center": {
+          "status": "PASS",
+          "measured": {
+            "min_height": 0.0,
+            "bbox_center_plan": [
+              -0.007,
+              -0.0492
+            ]
+          },
+          "limit": "min hauteur 0 ±0,01 ; centre en plan ±0,1"
+        },
+        "triangles": {
+          "status": "PASS",
+          "measured": 3248,
+          "limit": "2000..3400"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": 1,
+          "limit": "1 matériau"
+        },
+        "uv_texture": {
+          "status": "PASS",
+          "measured": {
+            "uv_layers": 1,
+            "image_nodes": 1,
+            "image_size": [
+              1024,
+              1024
+            ],
+            "png_streams_in_fbx": 1
+          },
+          "limit": "UV + texture PNG embarquée"
+        },
+        "armature": {
+          "status": "PASS",
+          "measured": {
+            "bones": [
+              "Belly_00",
+              "Belly_01",
+              "Belly_02",
+              "Belly_10",
+              "Belly_11",
+              "Belly_12",
+              "Belly_20",
+              "Belly_21",
+              "Belly_22",
+              "Head",
+              "Leg_BL",
+              "Leg_BR",
+              "Leg_FL",
+              "Leg_FR",
+              "Root",
+              "Tail"
+            ],
+            "missing": [],
+            "extra": [],
+            "armature_modifier": true
+          },
+          "limit": "Root + Belly_00..22 + Head, Tail, Leg_FL, Leg_FR, Leg_BL, Leg_BR"
+        },
+        "skin_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 4.276807885617018e-08,
+            "max_influences": 4,
+            "unweighted": 0
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences, aucun orphelin"
+        },
+        "top_flatness": {
+          "status": "PASS",
+          "measured": {
+            "samples_inset": 961,
+            "misses": 0,
+            "max_abs_deviation": 0.0156,
+            "mean_top": 3.9996,
+            "min_top": 3.9844,
+            "dense_samples": 6537,
+            "max_above_top_dense": 0.0,
+            "max_vertex_z_in_rect": 4.0
+          },
+          "limit": "|dessus - collider| <= 0,25 (retrait 0,25) ; rien > dessus + 0,05"
+        }
+      },
+      "collision_json": {
+        "status": "PASS",
+        "measured": {
+          "collision_json": [
+            8,
+            8,
+            4
+          ],
+          "walkable": [
+            8,
+            8
+          ],
+          "config": {
+            "shape": "box",
+            "size_studs": [
+              8,
+              8,
+              4
+            ],
+            "walkable_top": [
+              8,
+              8
+            ],
+            "top_visible": true
+          },
+          "config_size_studs": [
+            12,
+            10,
+            6
+          ]
+        },
+        "limit": "collider, walkable_top et enveloppe = config/rooms.json"
+      },
+      "determinism": {
+        "status": "PASS",
+        "measured": {
+          "assets/import/models/toy_plush_grumf.glb": {
+            "sha256_repo": "8199064f7ec411384c37d93b315569c9051573d2a15bc309aa7ffa1ca8df7afc",
+            "sha256_fresh_build_1": "8199064f7ec411384c37d93b315569c9051573d2a15bc309aa7ffa1ca8df7afc",
+            "sha256_fresh_build_2": "8199064f7ec411384c37d93b315569c9051573d2a15bc309aa7ffa1ca8df7afc",
+            "equal": true
+          },
+          "assets/import/models/toy_plush_grumf_lod1.glb": {
+            "sha256_repo": "3ae52e8b797e1cf756a3c392127502cdaefeedd45db7c963973b2ffe2822aeab",
+            "sha256_fresh_build_1": "3ae52e8b797e1cf756a3c392127502cdaefeedd45db7c963973b2ffe2822aeab",
+            "sha256_fresh_build_2": "3ae52e8b797e1cf756a3c392127502cdaefeedd45db7c963973b2ffe2822aeab",
+            "equal": true
+          },
+          "assets/source/models/plush_v2/Grumf/textures/toy_plush_grumf_albedo_1024.png": {
+            "sha256_repo": "db6bf9fb2a0a6b577aa7cde085181edd3c224bf48657f1e86e677a7af7453192",
+            "sha256_fresh_build_1": "db6bf9fb2a0a6b577aa7cde085181edd3c224bf48657f1e86e677a7af7453192",
+            "sha256_fresh_build_2": "db6bf9fb2a0a6b577aa7cde085181edd3c224bf48657f1e86e677a7af7453192",
+            "equal": true
+          },
+          "assets/source/models/plush_v2/Grumf/textures/toy_plush_grumf_albedo_256.png": {
+            "sha256_repo": "f294dee1c566ddc44828ea274e101d1462468d5f493d80f0bceba6e6af151640",
+            "sha256_fresh_build_1": "f294dee1c566ddc44828ea274e101d1462468d5f493d80f0bceba6e6af151640",
+            "sha256_fresh_build_2": "f294dee1c566ddc44828ea274e101d1462468d5f493d80f0bceba6e6af151640",
+            "equal": true
+          },
+          "assets/import/models/toy_plush_grumf.fbx": {
+            "identical_bytes": false,
+            "differing_bytes": 5,
+            "all_diffs_within_timestamp_fields": true,
+            "compared": "build #1 vs build #2, même chemin de sortie"
+          }
+        },
+        "limit": "SHA-256 identiques (dépôt = reconstruction 1 = reconstruction 2) pour GLB, LOD1 et textures ; FBX identique hors champs d'horodatage",
+        "note": "FBX : identique hors horodatage",
+        "fbx_equal_masked": true
+      },
+      "summary": {
+        "glb_raw.roblox_axes": "PASS",
+        "glb_raw.embedded_texture": "PASS",
+        "glb_raw.materials": "PASS",
+        "glb_raw.raw_weights": "PASS",
+        "glb_lod1_raw.roblox_axes": "PASS",
+        "glb_lod1_raw.embedded_texture": "PASS",
+        "glb_lod1_raw.materials": "PASS",
+        "glb_lod1_raw.raw_weights": "PASS",
+        "glb_lod0.opened": "PASS",
+        "glb_lod0.dims_vs_envelope": "PASS",
+        "glb_lod0.pivot_bottom_center": "PASS",
+        "glb_lod0.triangles": "PASS",
+        "glb_lod0.materials": "PASS",
+        "glb_lod0.uv_texture": "PASS",
+        "glb_lod0.armature": "PASS",
+        "glb_lod0.skin_weights": "PASS",
+        "glb_lod0.top_flatness": "PASS",
+        "glb_lod0.poses.bone_heads_match_library": "PASS",
+        "glb_lod0.poses.rest": "PASS",
+        "glb_lod0.poses.fall": "PASS",
+        "glb_lod0.poses.impact": "PASS",
+        "glb_lod0.poses.rebound": "PASS",
+        "glb_lod0.poses.player_landing": "PASS",
+        "glb_lod0.poses.return_to_reference_drift": "PASS",
+        "glb_lod1.opened": "PASS",
+        "glb_lod1.dims_vs_envelope": "PASS",
+        "glb_lod1.pivot_bottom_center": "PASS",
+        "glb_lod1.triangles": "PASS",
+        "glb_lod1.materials": "PASS",
+        "glb_lod1.uv_texture": "PASS",
+        "glb_lod1.armature": "PASS",
+        "glb_lod1.skin_weights": "PASS",
+        "glb_lod1.top_flatness": "PASS",
+        "glb_lod1.poses.bone_heads_match_library": "PASS",
+        "glb_lod1.poses.rest": "PASS",
+        "glb_lod1.poses.fall": "PASS",
+        "glb_lod1.poses.impact": "PASS",
+        "glb_lod1.poses.rebound": "PASS",
+        "glb_lod1.poses.player_landing": "PASS",
+        "glb_lod1.poses.return_to_reference_drift": "PASS",
+        "fbx.opened": "PASS",
+        "fbx.dims_vs_envelope": "PASS",
+        "fbx.pivot_bottom_center": "PASS",
+        "fbx.triangles": "PASS",
+        "fbx.materials": "PASS",
+        "fbx.uv_texture": "PASS",
+        "fbx.armature": "PASS",
+        "fbx.skin_weights": "PASS",
+        "fbx.top_flatness": "PASS",
+        "collision_json": "PASS",
+        "determinism": "PASS"
+      },
+      "all_pass": true
+    },
+    "nuage": {
+      "asset_id": "toy_plush_nuage",
+      "size_tier": "medium",
+      "envelope_wdh": [
+        10,
+        9,
+        6
+      ],
+      "collider_wdh": [
+        8,
+        7,
+        4
+      ],
+      "collider_center_blender_xy": [
+        0.0,
+        -1.0
+      ],
+      "glb_raw": {
+        "mesh_count": 1,
+        "primitive_count": 1,
+        "mesh_node_transforms": [
+          {}
+        ],
+        "position_min_xyz": [
+          -5.0231,
+          0.0,
+          -4.5396
+        ],
+        "position_max_xyz": [
+          5.0248,
+          6.0224,
+          4.567
+        ],
+        "accessor_minmax_present": true,
+        "front_probe": {
+          "what": "visage marine entre les yeux et le nez",
+          "ray_origin_roblox": [
+            0.0,
+            3.95,
+            -100.0
+          ],
+          "ray_dir": [
+            0,
+            0,
+            1
+          ],
+          "hit_roblox_xyz": [
+            0.0,
+            3.95,
+            -4.4855
+          ],
+          "texel_rgb": [
+            0.1756,
+            0.234,
+            0.4179
+          ],
+          "expected_rgb": [
+            0.1765,
+            0.2353,
+            0.4196
+          ],
+          "max_channel_diff": 0.002,
+          "threshold": 0.16,
+          "back_ray_hit_roblox_xyz": [
+            0.0,
+            3.95,
+            4.1787
+          ],
+          "back_ray_texel_rgb": [
+            0.9878,
+            0.9451,
+            0.8597
+          ],
+          "back_ray_max_channel_diff": 0.811
+        },
+        "roblox_axes": {
+          "status": "PASS",
+          "measured": {
+            "extent_xyz": [
+              10.0479,
+              6.0224,
+              9.1066
+            ],
+            "expected_xyz": [
+              10,
+              6,
+              9
+            ],
+            "y_min": 0.0,
+            "front_probe_hit_z": -4.4855
+          },
+          "limit": "X = largeur, Y = hauteur (min 0), Z = profondeur (±2 %) ; rayon depuis -Z : couleur du visage attendue (écart canal <= 0,16 LOD0 / 0,33 LOD1) et rayon depuis +Z nettement différent (dos)"
+        },
+        "embedded_texture": {
+          "status": "PASS",
+          "measured": {
+            "embedded_bufferView": true,
+            "size": [
+              1024,
+              1024
+            ],
+            "mime": "image/png"
+          },
+          "limit": "PNG embarqué 1024 px"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": {
+            "materials": 1,
+            "primitives": 1
+          },
+          "limit": "1 matériau, 1 primitive"
+        },
+        "raw_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 1.1827796697616577e-07,
+            "max_influences": 4,
+            "vertices": 2347
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences"
+        },
+        "joint_names": [
+          "Root",
+          "Belly_00",
+          "Belly_01",
+          "Belly_02",
+          "Belly_10",
+          "Belly_11",
+          "Belly_12",
+          "Belly_20",
+          "Belly_21",
+          "Belly_22",
+          "Bow",
+          "Ear_L",
+          "Ear_R",
+          "Head"
+        ]
+      },
+      "glb_lod1_raw": {
+        "mesh_count": 1,
+        "primitive_count": 1,
+        "mesh_node_transforms": [
+          {}
+        ],
+        "position_min_xyz": [
+          -5.0532,
+          0.0025,
+          -4.5217
+        ],
+        "position_max_xyz": [
+          5.059,
+          6.0341,
+          4.5784
+        ],
+        "accessor_minmax_present": true,
+        "front_probe": {
+          "what": "visage marine entre les yeux et le nez",
+          "ray_origin_roblox": [
+            0.0,
+            3.95,
+            -100.0
+          ],
+          "ray_dir": [
+            0,
+            0,
+            1
+          ],
+          "hit_roblox_xyz": [
+            0.0,
+            3.95,
+            -4.4897
+          ],
+          "texel_rgb": [
+            0.5002,
+            0.4972,
+            0.5468
+          ],
+          "expected_rgb": [
+            0.1765,
+            0.2353,
+            0.4196
+          ],
+          "max_channel_diff": 0.324,
+          "threshold": 0.33,
+          "back_ray_hit_roblox_xyz": [
+            0.0,
+            3.95,
+            4.1162
+          ],
+          "back_ray_texel_rgb": [
+            0.9891,
+            0.946,
+            0.8614
+          ],
+          "back_ray_max_channel_diff": 0.813
+        },
+        "roblox_axes": {
+          "status": "PASS",
+          "measured": {
+            "extent_xyz": [
+              10.1122,
+              6.0316,
+              9.1002
+            ],
+            "expected_xyz": [
+              10,
+              6,
+              9
+            ],
+            "y_min": 0.0025,
+            "front_probe_hit_z": -4.4897
+          },
+          "limit": "X = largeur, Y = hauteur (min 0), Z = profondeur (±2 %) ; rayon depuis -Z : couleur du visage attendue (écart canal <= 0,16 LOD0 / 0,33 LOD1) et rayon depuis +Z nettement différent (dos)"
+        },
+        "embedded_texture": {
+          "status": "PASS",
+          "measured": {
+            "embedded_bufferView": true,
+            "size": [
+              256,
+              256
+            ],
+            "mime": "image/png"
+          },
+          "limit": "PNG embarqué 256 px"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": {
+            "materials": 1,
+            "primitives": 1
+          },
+          "limit": "1 matériau, 1 primitive"
+        },
+        "raw_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 1.0151416063308716e-07,
+            "max_influences": 4,
+            "vertices": 655
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences"
+        },
+        "joint_names": [
+          "Root",
+          "Belly_00",
+          "Belly_01",
+          "Belly_02",
+          "Belly_10",
+          "Belly_11",
+          "Belly_12",
+          "Belly_20",
+          "Belly_21",
+          "Belly_22",
+          "Bow",
+          "Ear_L",
+          "Ear_R",
+          "Head"
+        ]
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/toy_plush_nuage.glb",
+        "opened": {
+          "status": "PASS",
+          "measured": "Nuage_LOD0",
+          "limit": "maillage présent"
+        },
+        "dims_vs_envelope": {
+          "status": "PASS",
+          "measured": {
+            "width_x": 10.0479,
+            "depth": 9.1066,
+            "height": 6.0224,
+            "ratios_w_d_h": [
+              1.0048,
+              1.0118,
+              1.0037
+            ]
+          },
+          "limit": "enveloppe 10 x 9 x 6 ±2 %"
+        },
+        "pivot_bottom_center": {
+          "status": "PASS",
+          "measured": {
+            "min_height": 0.0,
+            "bbox_center_plan": [
+              0.0009,
+              -0.0137
+            ]
+          },
+          "limit": "min hauteur 0 ±0,01 ; centre en plan ±0,1"
+        },
+        "triangles": {
+          "status": "PASS",
+          "measured": 3250,
+          "limit": "2000..3400"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": 1,
+          "limit": "1 matériau"
+        },
+        "uv_texture": {
+          "status": "PASS",
+          "measured": {
+            "uv_layers": 1,
+            "image_nodes": 1,
+            "image_size": [
+              1024,
+              1024
+            ],
+            "packed": true
+          },
+          "limit": "UV + texture embarquée"
+        },
+        "armature": {
+          "status": "PASS",
+          "measured": {
+            "bones": [
+              "Belly_00",
+              "Belly_01",
+              "Belly_02",
+              "Belly_10",
+              "Belly_11",
+              "Belly_12",
+              "Belly_20",
+              "Belly_21",
+              "Belly_22",
+              "Bow",
+              "Ear_L",
+              "Ear_R",
+              "Head",
+              "Root"
+            ],
+            "missing": [],
+            "extra": [],
+            "armature_modifier": true
+          },
+          "limit": "Root + Belly_00..22 + Head, Ear_L, Ear_R, Bow"
+        },
+        "skin_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 1.1827796697616577e-07,
+            "max_influences": 4,
+            "unweighted": 0
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences, aucun orphelin"
+        },
+        "top_flatness": {
+          "status": "PASS",
+          "measured": {
+            "samples_inset": 837,
+            "misses": 0,
+            "max_abs_deviation": 0.1046,
+            "mean_top": 3.9737,
+            "min_top": 3.8954,
+            "dense_samples": 5730,
+            "max_above_top_dense": 0.0006,
+            "max_vertex_z_in_rect": 4.0008
+          },
+          "limit": "|dessus - collider| <= 0,25 (retrait 0,25) ; rien > dessus + 0,05"
+        },
+        "poses": {
+          "bone_heads_match_library": {
+            "status": "PASS",
+            "measured": {
+              "max_error_studs": 0.0
+            },
+            "limit": "<= 0,01 stud"
+          },
+          "rest": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                10.0479,
+                9.1066,
+                6.0224
+              ],
+              "extent_ratio_w_d_h": [
+                1.0048,
+                1.0118,
+                1.0037
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.005,
+                1.0149,
+                1.0037
+              ],
+              "top_scale_y": 1.0,
+              "body_scale_x": 1.0,
+              "body_scale_depth": 1.0,
+              "min_height": 0.0,
+              "max_rotation_deg": 0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "fall": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                9.869,
+                9.0652,
+                6.3426
+              ],
+              "extent_ratio_w_d_h": [
+                0.9869,
+                1.0072,
+                1.0571
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                0.9874,
+                1.0203,
+                1.0571
+              ],
+              "top_scale_y": 1.1137,
+              "body_scale_x": 0.9864,
+              "body_scale_depth": 0.9878,
+              "min_height": 0.0,
+              "max_rotation_deg": 11.397
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "impact": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                10.619,
+                9.5522,
+                5.0275
+              ],
+              "extent_ratio_w_d_h": [
+                1.0619,
+                1.0614,
+                0.8379
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0621,
+                1.0859,
+                0.8379
+              ],
+              "top_scale_y": 0.7261,
+              "body_scale_x": 1.0713,
+              "body_scale_depth": 1.0834,
+              "min_height": 0.0,
+              "max_rotation_deg": 12.036
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "rebound": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                9.9572,
+                9.0776,
+                6.195
+              ],
+              "extent_ratio_w_d_h": [
+                0.9957,
+                1.0086,
+                1.0325
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                0.9958,
+                1.0143,
+                1.0325
+              ],
+              "top_scale_y": 1.0497,
+              "body_scale_x": 0.993,
+              "body_scale_depth": 0.9913,
+              "min_height": 0.0,
+              "max_rotation_deg": 5.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "player_landing": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                10.0479,
+                9.1066,
+                6.0224
+              ],
+              "extent_ratio_w_d_h": [
+                1.0048,
+                1.0118,
+                1.0037
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.005,
+                1.0149,
+                1.0037
+              ],
+              "top_scale_y": 0.978,
+              "body_scale_x": 1.0,
+              "body_scale_depth": 1.0,
+              "min_height": 0.0,
+              "max_rotation_deg": 0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "return_to_reference_drift": {
+            "status": "PASS",
+            "measured": 0.0,
+            "limit": "<= 1e-5 stud"
+          }
+        }
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/toy_plush_nuage_lod1.glb",
+        "opened": {
+          "status": "PASS",
+          "measured": "Nuage_LOD1",
+          "limit": "maillage présent"
+        },
+        "dims_vs_envelope": {
+          "status": "PASS",
+          "measured": {
+            "width_x": 10.1122,
+            "depth": 9.1002,
+            "height": 6.0316,
+            "ratios_w_d_h": [
+              1.0112,
+              1.0111,
+              1.0053
+            ]
+          },
+          "limit": "enveloppe 10 x 9 x 6 ±2 %"
+        },
+        "pivot_bottom_center": {
+          "status": "PASS",
+          "measured": {
+            "min_height": 0.0025,
+            "bbox_center_plan": [
+              0.0029,
+              -0.0283
+            ]
+          },
+          "limit": "min hauteur 0 ±0,01 ; centre en plan ±0,1"
+        },
+        "triangles": {
+          "status": "PASS",
+          "measured": 670,
+          "limit": "<= 700"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": 1,
+          "limit": "1 matériau"
+        },
+        "uv_texture": {
+          "status": "PASS",
+          "measured": {
+            "uv_layers": 1,
+            "image_nodes": 1,
+            "image_size": [
+              256,
+              256
+            ],
+            "packed": true
+          },
+          "limit": "UV + texture embarquée"
+        },
+        "armature": {
+          "status": "PASS",
+          "measured": {
+            "bones": [
+              "Belly_00",
+              "Belly_01",
+              "Belly_02",
+              "Belly_10",
+              "Belly_11",
+              "Belly_12",
+              "Belly_20",
+              "Belly_21",
+              "Belly_22",
+              "Bow",
+              "Ear_L",
+              "Ear_R",
+              "Head",
+              "Root"
+            ],
+            "missing": [],
+            "extra": [],
+            "armature_modifier": true
+          },
+          "limit": "Root + Belly_00..22 + Head, Ear_L, Ear_R, Bow"
+        },
+        "skin_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 1.0151416063308716e-07,
+            "max_influences": 4,
+            "unweighted": 0
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences, aucun orphelin"
+        },
+        "top_flatness": {
+          "status": "PASS",
+          "measured": {
+            "samples_inset": 837,
+            "misses": 0,
+            "max_abs_deviation": 0.1163,
+            "mean_top": 3.9693,
+            "min_top": 3.8837,
+            "dense_samples": 5738,
+            "max_above_top_dense": 0.0127,
+            "max_vertex_z_in_rect": 4.0145
+          },
+          "limit": "|dessus - collider| <= 0,25 (retrait 0,25) ; rien > dessus + 0,05"
+        },
+        "poses": {
+          "bone_heads_match_library": {
+            "status": "PASS",
+            "measured": {
+              "max_error_studs": 0.0
+            },
+            "limit": "<= 0,01 stud"
+          },
+          "rest": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                10.1122,
+                9.1002,
+                6.0316
+              ],
+              "extent_ratio_w_d_h": [
+                1.0112,
+                1.0111,
+                1.0053
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0118,
+                1.0174,
+                1.0057
+              ],
+              "top_scale_y": 1.0,
+              "body_scale_x": 1.0,
+              "body_scale_depth": 1.0,
+              "min_height": 0.0025,
+              "max_rotation_deg": 0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "fall": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                9.9387,
+                9.0641,
+                6.3125
+              ],
+              "extent_ratio_w_d_h": [
+                0.9939,
+                1.0071,
+                1.0521
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                0.9944,
+                1.02,
+                1.0526
+              ],
+              "top_scale_y": 1.1112,
+              "body_scale_x": 0.9831,
+              "body_scale_depth": 0.9806,
+              "min_height": 0.0028,
+              "max_rotation_deg": 11.397
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "impact": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                10.6329,
+                9.577,
+                5.0649
+              ],
+              "extent_ratio_w_d_h": [
+                1.0633,
+                1.0641,
+                0.8441
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0671,
+                1.0863,
+                0.8445
+              ],
+              "top_scale_y": 0.727,
+              "body_scale_x": 1.0723,
+              "body_scale_depth": 1.0772,
+              "min_height": 0.0018,
+              "max_rotation_deg": 12.036
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "rebound": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                10.0255,
+                9.0554,
+                6.1874
+              ],
+              "extent_ratio_w_d_h": [
+                1.0025,
+                1.0062,
+                1.0312
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0026,
+                1.008,
+                1.0317
+              ],
+              "top_scale_y": 1.0491,
+              "body_scale_x": 0.9913,
+              "body_scale_depth": 0.99,
+              "min_height": 0.0027,
+              "max_rotation_deg": 5.0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "player_landing": {
+            "status": "PASS",
+            "measured": {
+              "bbox_extent": [
+                10.1122,
+                9.1002,
+                6.0316
+              ],
+              "extent_ratio_w_d_h": [
+                1.0112,
+                1.0111,
+                1.0053
+              ],
+              "envelope_ratio_about_pivot_w_d_h": [
+                1.0118,
+                1.0174,
+                1.0057
+              ],
+              "top_scale_y": 0.9782,
+              "body_scale_x": 1.0,
+              "body_scale_depth": 1.0,
+              "min_height": 0.0025,
+              "max_rotation_deg": 0
+            },
+            "limit": "boîte englobante <= 110 % de l'enveloppe ; jamais sous le sol ; chute <= 1,12 ; impact >= 0,72 et élargissement <= 1,18 ; rotations <= 18°"
+          },
+          "return_to_reference_drift": {
+            "status": "PASS",
+            "measured": 0.0,
+            "limit": "<= 1e-5 stud"
+          }
+        }
+      },
+      "fbx": {
+        "file": "assets/import/models/toy_plush_nuage.fbx",
+        "opened": {
+          "status": "PASS",
+          "measured": "Nuage_LOD0",
+          "limit": "maillage présent"
+        },
+        "dims_vs_envelope": {
+          "status": "PASS",
+          "measured": {
+            "width_x": 10.0479,
+            "depth": 9.1066,
+            "height": 6.0224,
+            "ratios_w_d_h": [
+              1.0048,
+              1.0118,
+              1.0037
+            ]
+          },
+          "limit": "enveloppe 10 x 9 x 6 ±2 %"
+        },
+        "pivot_bottom_center": {
+          "status": "PASS",
+          "measured": {
+            "min_height": -0.0,
+            "bbox_center_plan": [
+              0.0009,
+              -0.0137
+            ]
+          },
+          "limit": "min hauteur 0 ±0,01 ; centre en plan ±0,1"
+        },
+        "triangles": {
+          "status": "PASS",
+          "measured": 3250,
+          "limit": "2000..3400"
+        },
+        "materials": {
+          "status": "PASS",
+          "measured": 1,
+          "limit": "1 matériau"
+        },
+        "uv_texture": {
+          "status": "PASS",
+          "measured": {
+            "uv_layers": 1,
+            "image_nodes": 1,
+            "image_size": [
+              1024,
+              1024
+            ],
+            "png_streams_in_fbx": 1
+          },
+          "limit": "UV + texture PNG embarquée"
+        },
+        "armature": {
+          "status": "PASS",
+          "measured": {
+            "bones": [
+              "Belly_00",
+              "Belly_01",
+              "Belly_02",
+              "Belly_10",
+              "Belly_11",
+              "Belly_12",
+              "Belly_20",
+              "Belly_21",
+              "Belly_22",
+              "Bow",
+              "Ear_L",
+              "Ear_R",
+              "Head",
+              "Root"
+            ],
+            "missing": [],
+            "extra": [],
+            "armature_modifier": true
+          },
+          "limit": "Root + Belly_00..22 + Head, Ear_L, Ear_R, Bow"
+        },
+        "skin_weights": {
+          "status": "PASS",
+          "measured": {
+            "sum_max_error": 4.470348358154297e-08,
+            "max_influences": 4,
+            "unweighted": 0
+          },
+          "limit": "somme 1 ±1e-3, <= 4 influences, aucun orphelin"
+        },
+        "top_flatness": {
+          "status": "PASS",
+          "measured": {
+            "samples_inset": 837,
+            "misses": 0,
+            "max_abs_deviation": 0.1046,
+            "mean_top": 3.9737,
+            "min_top": 3.8954,
+            "dense_samples": 5730,
+            "max_above_top_dense": 0.0006,
+            "max_vertex_z_in_rect": 4.0008
+          },
+          "limit": "|dessus - collider| <= 0,25 (retrait 0,25) ; rien > dessus + 0,05"
+        }
+      },
+      "collision_json": {
+        "status": "PASS",
+        "measured": {
+          "collision_json": [
+            8,
+            7,
+            4
+          ],
+          "walkable": [
+            8,
+            7
+          ],
+          "config": {
+            "shape": "box",
+            "size_studs": [
+              8,
+              7,
+              4
+            ],
+            "walkable_top": [
+              8,
+              7
+            ],
+            "top_visible": true
+          },
+          "config_size_studs": [
+            10,
+            9,
+            6
+          ]
+        },
+        "limit": "collider, walkable_top et enveloppe = config/rooms.json"
+      },
+      "determinism": {
+        "status": "PASS",
+        "measured": {
+          "assets/import/models/toy_plush_nuage.glb": {
+            "sha256_repo": "9448c4ce7e062407d4ffca3d8729aa7aa3aec9f1029c18a77166558c9e94e23e",
+            "sha256_fresh_build_1": "9448c4ce7e062407d4ffca3d8729aa7aa3aec9f1029c18a77166558c9e94e23e",
+            "sha256_fresh_build_2": "9448c4ce7e062407d4ffca3d8729aa7aa3aec9f1029c18a77166558c9e94e23e",
+            "equal": true
+          },
+          "assets/import/models/toy_plush_nuage_lod1.glb": {
+            "sha256_repo": "047fd25892cd515b54d07a618cb7dc28ce56999481f61b9e15d3a6d7e3831296",
+            "sha256_fresh_build_1": "047fd25892cd515b54d07a618cb7dc28ce56999481f61b9e15d3a6d7e3831296",
+            "sha256_fresh_build_2": "047fd25892cd515b54d07a618cb7dc28ce56999481f61b9e15d3a6d7e3831296",
+            "equal": true
+          },
+          "assets/source/models/plush_v2/Nuage/textures/toy_plush_nuage_albedo_1024.png": {
+            "sha256_repo": "65a895e4299ff66eeb343ec1ee8562732ee94cb4f8ae7cbe055055f1a2841b34",
+            "sha256_fresh_build_1": "65a895e4299ff66eeb343ec1ee8562732ee94cb4f8ae7cbe055055f1a2841b34",
+            "sha256_fresh_build_2": "65a895e4299ff66eeb343ec1ee8562732ee94cb4f8ae7cbe055055f1a2841b34",
+            "equal": true
+          },
+          "assets/source/models/plush_v2/Nuage/textures/toy_plush_nuage_albedo_256.png": {
+            "sha256_repo": "2549ef2f2365b4189779f0010bcea7124a29f491e8c607da9ac62f69fe2dae4c",
+            "sha256_fresh_build_1": "2549ef2f2365b4189779f0010bcea7124a29f491e8c607da9ac62f69fe2dae4c",
+            "sha256_fresh_build_2": "2549ef2f2365b4189779f0010bcea7124a29f491e8c607da9ac62f69fe2dae4c",
+            "equal": true
+          },
+          "assets/import/models/toy_plush_nuage.fbx": {
+            "identical_bytes": false,
+            "differing_bytes": 5,
+            "all_diffs_within_timestamp_fields": true,
+            "compared": "build #1 vs build #2, même chemin de sortie"
+          }
+        },
+        "limit": "SHA-256 identiques (dépôt = reconstruction 1 = reconstruction 2) pour GLB, LOD1 et textures ; FBX identique hors champs d'horodatage",
+        "note": "FBX : identique hors horodatage",
+        "fbx_equal_masked": true
+      },
+      "summary": {
+        "glb_raw.roblox_axes": "PASS",
+        "glb_raw.embedded_texture": "PASS",
+        "glb_raw.materials": "PASS",
+        "glb_raw.raw_weights": "PASS",
+        "glb_lod1_raw.roblox_axes": "PASS",
+        "glb_lod1_raw.embedded_texture": "PASS",
+        "glb_lod1_raw.materials": "PASS",
+        "glb_lod1_raw.raw_weights": "PASS",
+        "glb_lod0.opened": "PASS",
+        "glb_lod0.dims_vs_envelope": "PASS",
+        "glb_lod0.pivot_bottom_center": "PASS",
+        "glb_lod0.triangles": "PASS",
+        "glb_lod0.materials": "PASS",
+        "glb_lod0.uv_texture": "PASS",
+        "glb_lod0.armature": "PASS",
+        "glb_lod0.skin_weights": "PASS",
+        "glb_lod0.top_flatness": "PASS",
+        "glb_lod0.poses.bone_heads_match_library": "PASS",
+        "glb_lod0.poses.rest": "PASS",
+        "glb_lod0.poses.fall": "PASS",
+        "glb_lod0.poses.impact": "PASS",
+        "glb_lod0.poses.rebound": "PASS",
+        "glb_lod0.poses.player_landing": "PASS",
+        "glb_lod0.poses.return_to_reference_drift": "PASS",
+        "glb_lod1.opened": "PASS",
+        "glb_lod1.dims_vs_envelope": "PASS",
+        "glb_lod1.pivot_bottom_center": "PASS",
+        "glb_lod1.triangles": "PASS",
+        "glb_lod1.materials": "PASS",
+        "glb_lod1.uv_texture": "PASS",
+        "glb_lod1.armature": "PASS",
+        "glb_lod1.skin_weights": "PASS",
+        "glb_lod1.top_flatness": "PASS",
+        "glb_lod1.poses.bone_heads_match_library": "PASS",
+        "glb_lod1.poses.rest": "PASS",
+        "glb_lod1.poses.fall": "PASS",
+        "glb_lod1.poses.impact": "PASS",
+        "glb_lod1.poses.rebound": "PASS",
+        "glb_lod1.poses.player_landing": "PASS",
+        "glb_lod1.poses.return_to_reference_drift": "PASS",
+        "fbx.opened": "PASS",
+        "fbx.dims_vs_envelope": "PASS",
+        "fbx.pivot_bottom_center": "PASS",
+        "fbx.triangles": "PASS",
+        "fbx.materials": "PASS",
+        "fbx.uv_texture": "PASS",
+        "fbx.armature": "PASS",
+        "fbx.skin_weights": "PASS",
+        "fbx.top_flatness": "PASS",
+        "collision_json": "PASS",
+        "determinism": "PASS"
+      },
+      "all_pass": true
+    }
+  },
+  "determinism_run": {
+    "returncode": [
+      0,
+      0
+    ],
+    "tmp_root": "/tmp/plush_v2_det_wzje255e"
+  },
+  "all_pass": true
+}

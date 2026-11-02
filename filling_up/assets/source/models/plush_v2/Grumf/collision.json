@@ -1,0 +1,81 @@
+{
+  "asset_id": "toy_plush_grumf",
+  "authority": "server_collider_separate_from_visual_mesh",
+  "pivot": "bottom_center",
+  "forward_axis": "-Z",
+  "dimensions_order_config": "width_depth_height",
+  "collider": {
+    "shape": "box",
+    "size_studs_config": [
+      8,
+      8,
+      4
+    ],
+    "size_vector3_roblox": [
+      8,
+      4,
+      8
+    ],
+    "offset_from_pivot_roblox": [
+      0.0,
+      2.0,
+      1.0
+    ],
+    "tags": [
+      "FillCollider"
+    ],
+    "can_collide": true,
+    "anchor_after_settle": true
+  },
+  "walkable_top": {
+    "size_studs": [
+      8,
+      8
+    ],
+    "height_studs": 4,
+    "center_roblox": [
+      0.0,
+      4.0,
+      1.0
+    ],
+    "marker": "safe_mint_footprint (affiché après stabilisation)"
+  },
+  "support_sockets_roblox": [
+    [
+      -2.0,
+      4.0,
+      3.0
+    ],
+    [
+      -2.0,
+      4.0,
+      -1.0
+    ],
+    [
+      2.0,
+      4.0,
+      3.0
+    ],
+    [
+      2.0,
+      4.0,
+      -1.0
+    ],
+    [
+      0.0,
+      4.0,
+      1.0
+    ]
+  ],
+  "visual_mesh": {
+    "can_collide": false,
+    "can_query": false,
+    "can_touch": false,
+    "follows_root_client_side": true,
+    "anchored_weld_to_falling_root": false
+  },
+  "behavior": "stable",
+  "deformation_profile": "plush_soft",
+  "size_tier": "medium",
+  "notes": "Les grandes compressions précèdent l'activation de l'appui garanti ; le visuel déformé n'altère jamais ce collider."
+}

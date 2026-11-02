@@ -1,0 +1,115 @@
+{
+  "asset_id": "toy_plush_bulle",
+  "name": "Poisson Bulle",
+  "size_tier": "mini",
+  "builder": "assets/source/blender/build_plush_v2_small.py",
+  "specs": "assets/source/blender/plush_v2_small_specs.py",
+  "blend": "assets/source/models/plush_v2/Bulle/Bulle.blend",
+  "exports": [
+    "assets/import/models/toy_plush_bulle.glb",
+    "assets/import/models/toy_plush_bulle_lod1.glb",
+    "assets/import/models/toy_plush_bulle.fbx"
+  ],
+  "method": "SDF (union lisse de primitives) -> surface nets + projection de Newton -> décimation -> découpe/plafonnement du rectangle utile -> UV smart project -> peinture procédurale par texel",
+  "grid_step_studs": 0.032,
+  "highres_tris": 190980,
+  "highres_bbox_blender": [
+    [
+      -3.0033,
+      -1.9342,
+      0.0
+    ],
+    [
+      3.0038,
+      2.0298,
+      3.9891
+    ]
+  ],
+  "lod0_tris": 1520,
+  "lod1_tris": 380,
+  "lod0_bbox_blender": [
+    [
+      -3.0006,
+      -1.9379,
+      0.0
+    ],
+    [
+      3.0062,
+      2.0308,
+      3.9899
+    ]
+  ],
+  "top_clamped_vertices": {
+    "Bulle_LOD0": 0,
+    "Bulle_LOD1": 0
+  },
+  "lod_decimation_tries": {
+    "Bulle_LOD0": [
+      {
+        "target": 1520,
+        "symmetric": true,
+        "tris": 1520,
+        "top_worst": 0.056
+      }
+    ],
+    "Bulle_LOD1": [
+      {
+        "target": 380,
+        "symmetric": true,
+        "tris": 380,
+        "top_worst": 0.0561
+      }
+    ]
+  },
+  "bones": [
+    "Root",
+    "Belly_00",
+    "Belly_10",
+    "Belly_20",
+    "Belly_01",
+    "Belly_11",
+    "Belly_21",
+    "Belly_02",
+    "Belly_12",
+    "Belly_22",
+    "Fin_L",
+    "Fin_R",
+    "Tail"
+  ],
+  "weights": {
+    "Bulle_LOD0": {
+      "vertices": 755,
+      "max_influences": 4,
+      "weight_sum_max_error": 2.220446049250313e-16,
+      "unweighted_vertices": 0
+    },
+    "Bulle_LOD1": {
+      "vertices": 185,
+      "max_influences": 4,
+      "weight_sum_max_error": 2.220446049250313e-16,
+      "unweighted_vertices": 0
+    }
+  },
+  "materials_per_mesh": 1,
+  "textures": {
+    "toy_plush_bulle_albedo_1024.png": {
+      "size": 1024,
+      "uv_coverage": 0.7224,
+      "studs_per_texel": 0.01046
+    },
+    "toy_plush_bulle_albedo_256.png": {
+      "size": 256,
+      "uv_coverage": 0.6416,
+      "studs_per_texel": 0.04414
+    }
+  },
+  "sha256": {
+    "assets/import/models/toy_plush_bulle.glb": "7b0d48b01a1934c9cca7f67f6d6d1457fdb7c7273780a77938c930652c822039",
+    "assets/import/models/toy_plush_bulle_lod1.glb": "48ffecb360c6ff91564b1be39836b00b8d8944e6cdf8ccf3d1a9a5024cda330a",
+    "assets/import/models/toy_plush_bulle.fbx": "741c624b451db7474b902eb87c8982de9f7e8d80479b456b8eabe1adcff65423",
+    "assets/source/models/plush_v2/Bulle/textures/toy_plush_bulle_albedo_1024.png": "93f6a55569a002a1b9ca25f3df44af3260ff896fe4756c218b8d069e32fd5458",
+    "assets/source/models/plush_v2/Bulle/textures/toy_plush_bulle_albedo_256.png": "0f7db19f0dd94d242d076dcaa07576a8e9c2f1e1a240129c4e6f61f84dbdba5f"
+  },
+  "seed": 20261102,
+  "blender_version": "5.2.3 LTS"
+}
