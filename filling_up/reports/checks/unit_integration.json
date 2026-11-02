@@ -3,7 +3,7 @@
   "suite": "integration",
   "passed": 10,
   "failed": 0,
-  "seconds": 10.241786791000038,
+  "seconds": 10.424668538000006,
   "executed": [
     "integration > Server flow on the fake engine (integration) > first session: tutorial 65, Radar 50 -> 15, used in room 1, exit pays band + discovery once",
     "integration > Server flow on the fake engine (integration) > 30 room transitions: no Heartbeat/instance growth, <= 2 room models + sas resident",
@@ -19,7 +19,7 @@
   "failures": [],
   "not_run": [],
   "scope": "Pure Luau logic under Lune (no Roblox engine services).",
-  "date_utc": "2026-11-02T11:27:56.545985+00:00",
+  "date_utc": "2026-11-02T11:48:02.653219+00:00",
   "versions": {
     "python": "3.13.18",
     "rojo": "Rojo 7.5.1",

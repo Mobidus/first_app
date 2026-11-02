@@ -21,6 +21,14 @@ local ToolService = require(Tools.ToolService)
 
 local DATASTORE_NAME = "FillingUp_Profiles_TEST_v3" -- production name is set only at release (T23)
 
+-- Automated Studio labs (tests/studio) run alone: the game itself does not start for them.
+local AUTOMATED_LABS = { movement = true, burial = true, plush = true, transitions = true }
+local selectedLab = workspace:GetAttribute("FU_TEST_SUITE")
+if selectedLab and AUTOMATED_LABS[selectedLab] then
+	print("[FillingUp] Studio lab '" .. tostring(selectedLab) .. "' selected: game start skipped")
+	return
+end
+
 Remotes.init()
 
 local telemetry = Telemetry.new(function(e)

@@ -1,5 +1,4 @@
 .toolchain/
 .venv/
-build/StudioTests.rbxlx
 __pycache__/
 *.blend1
