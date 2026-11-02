@@ -19,6 +19,7 @@ local templates = {
 	bureau = "Office",
 	kitchen = "Kitchen",
 	garage = "Garage",
+	pool = "Pool",
 	bin = "GiantBin",
 }
 

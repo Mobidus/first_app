@@ -43,7 +43,7 @@ describe("Generation certification (MVP)", function()
 			{ "bureau", "S", "door" },
 			{ "reception", "XV", "window" },
 			{ "bureau", "XL", "window" },
-			{ "toy", "S", "window" },
+			{ "pool", "S", "window" },
 			{ "bureau", "XL", "door" },
 			{ "toy", "XV", "window" },
 		}
@@ -98,7 +98,8 @@ describe("Generation certification (MVP)", function()
 	it("Giant Bin / V1 families are not selected under the MVP profile", function()
 		for depth = 11, 200 do
 			local s = Plan.selectSpec(depth, 42, {})
-			expect(table.find({ "reception", "toy", "bureau" }, s.family) ~= nil).toBe(true)
+			expect(table.find(Config.Rooms.release_profiles.mvp.families, s.family) ~= nil).toBe(true)
+			expect(table.find({ "kitchen", "garage", "bin" }, s.family) == nil).toBe(true)
 		end
 	end)
 end)

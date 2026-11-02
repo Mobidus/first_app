@@ -286,6 +286,69 @@ local CATALOG: { [string]: { ItemDef } } = {
 			},
 		},
 	},
+	pool = {
+		{
+			key = "decor_pool_lounger",
+			w = 6,
+			h = 3,
+			d = 12,
+			parts = {
+				P(0, 1.25, 6, 5, 0.5, 11, "background"),
+				P(0, 2.5, 1.6, 5, 2.4, 0.6, "background"),
+				P(-2, 0.5, 6, 0.5, 1, 10, "structure"),
+				P(2, 0.5, 6, 0.5, 1, 10, "structure"),
+				P(0, 1.6, 9, 4, 0.3, 4, "accent"),
+			},
+		},
+		{
+			key = "decor_pool_parasol",
+			w = 9,
+			h = 12,
+			d = 9,
+			parts = {
+				P(0, 0.5, 4.5, 3, 1, 3, "dark"),
+				P(0, 6, 4.5, 0.6, 11, 0.6, "soft"),
+				P(0, 11.2, 4.5, 9, 0.8, 9, "accent"),
+				P(0, 11.8, 4.5, 5, 0.6, 5, "structure"),
+			},
+		},
+		{
+			key = "decor_pool_palm",
+			w = 6,
+			h = 14,
+			d = 6,
+			parts = {
+				P(0, 1.25, 3, 4, 2.5, 4, "accent"),
+				P(0, 7, 3, 1.4, 10, 1.4, "soft"),
+				P(0, 12.6, 3, 7, 1.2, 7, "plant"),
+				P(0, 13.6, 3, 4, 1, 4, "plant"),
+			},
+		},
+		{
+			key = "decor_pool_lifeguard_chair",
+			w = 5,
+			h = 12,
+			d = 5,
+			parts = {
+				P(-2, 5, 2.5, 0.6, 10, 0.6, "soft"),
+				P(2, 5, 2.5, 0.6, 10, 0.6, "soft"),
+				P(0, 9.5, 2.5, 4.6, 0.6, 4, "accent"),
+				P(0, 11, 0.8, 4.6, 2.4, 0.5, "accent"),
+			},
+		},
+		{
+			key = "decor_pool_ring_rack",
+			w = 8,
+			h = 8,
+			d = 0.8,
+			wallMounted = true,
+			parts = {
+				P(-2, 8, 0.4, 3.5, 3.5, 0.6, "accent"),
+				P(2, 8, 0.4, 3.5, 3.5, 0.6, "structure"),
+				P(0, 10.5, 0.3, 8, 0.4, 0.4, "dark"),
+			},
+		},
+	},
 	bin = {
 		{
 			key = "decor_bin_crushed_can",

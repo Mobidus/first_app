@@ -39,7 +39,7 @@ Copie cette ligne et colle-la dans la conversation avec Claude. Copie aussi tout
 ## 3. Jouer (test manuel)
 
 Retire l'attribut `FU_TEST_SUITE`, puis **Jouer (F5)** :
-1. le carton tombe : +10 ; monte dessus : +5 ; sors : +50 ;
+1. le canard gonflable tombe (il remplace le carton, décision 0020) : +10 ; monte dessus : +5 ; sors : +50 ;
 2. dans le sas, achète le Radar (reste 15), puis avance tout droit dans la porte ;
 3. salle 1 : bouton Radar, grimpe, sors ; attends ensuite dans une salle pour te faire ensevelir.
 

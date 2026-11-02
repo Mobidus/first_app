@@ -133,6 +133,22 @@ def validate(econ, rooms, runtime) -> list[str]:
             for i in range(3):
                 check(col["size_studs"][i] <= p["size_studs"][i] + 1e-9, f"{p['id']} collider exceeds visual envelope")
             check(min(col["walkable_top"]) > 0, f"{p['id']} walkable top")
+    all_props = {p["id"]: p for f in rooms["families"] for p in f["props"]}
+    fi = rooms.get("fun_intruders")
+    if fi:
+        check(0 <= fi["share"] <= 1, "fun_intruders share in [0, 1]")
+        check(set(fi["fun_only_families"]) <= set(fams), "fun_only_families must be families")
+        for pid in fi["prop_ids"]:
+            check(pid in all_props, f"fun intruder {pid} must be a defined prop")
+            if pid in all_props:
+                check(all_props[pid]["behavior"] in ("stable", "bounce"), f"fun intruder {pid} must be stable or bounce")
+                check(all_props[pid].get("wave_drop") is not False, f"fun intruder {pid} must be droppable")
+    tut = rooms.get("tutorial")
+    if tut:
+        tp = all_props.get(tut["falling_prop_id"])
+        check(tp is not None and tp["behavior"] == "stable", "tutorial falling prop must be a stable prop")
+        if tp:
+            check(tp["collider"]["size_studs"][1] <= 8 and tp["collider"]["size_studs"][2] == 4, "tutorial prop must fit the 8-stud gap, 4 high")
     for r in rooms["first_rooms"]:
         check(r["family"] in fams, f"first room {r['depth']} family")
         check(r.get("final_room") in (None, False), "no final room")

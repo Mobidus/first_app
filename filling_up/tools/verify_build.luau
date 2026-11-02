@@ -73,7 +73,7 @@ for _, ctl in
 do
 	check("Client.Controllers." .. ctl, client and client.Controllers:FindFirstChild(ctl) ~= nil)
 end
-for _, fam in { "Reception", "Toys", "Office", "Kitchen", "Garage", "GiantBin" } do
+for _, fam in { "Reception", "Toys", "Office", "Kitchen", "Garage", "GiantBin", "Pool" } do
 	check("RoomTemplates." .. fam, server and server.RoomTemplates:FindFirstChild(fam) ~= nil)
 end
 check("Server.Tools.StarterRadar", server and server.Tools:FindFirstChild("StarterRadar") ~= nil)

@@ -28,6 +28,41 @@ local function fillProps(family, depth: number, formatId: string?): { any }
 	return out
 end
 
+-- Fun intruders (rooms.json fun_intruders, decision 0020). Serious objects (desks, cartons, binders,
+-- tools) stay in the room as supports and furniture, but what FALLS is fun:
+--   * fun_only families: wave drops come only from the fun list;
+--   * other families (minus exclusions): a `share` of drops is swapped for a fun prop, drawn from a
+--     separate random stream so that the base prop sequence and draw count stay unchanged.
+local ALL_PROPS: { [string]: any } = {}
+for _, f in Config.Rooms.families do
+	for _, p in f.props do
+		ALL_PROPS[p.id] = p
+	end
+end
+
+local function intrudersFor(familyId: string, depth: number, formatId: string?): ({ any }, number, boolean)
+	local cfg = (Config.Rooms :: any).fun_intruders
+	if cfg == nil or table.find(cfg.exclude_families or {}, familyId) then
+		return {}, 0, false
+	end
+	local funOnly = table.find(cfg.fun_only_families or {}, familyId) ~= nil
+	local out = {}
+	for _, id in cfg.prop_ids do
+		local p = ALL_PROPS[id]
+		if
+			p
+			and (p.behavior == "stable" or p.behavior == "bounce")
+			and (p.stage or 1) <= depth
+			and p.wave_drop ~= false
+			and (p.formats == nil or formatId == nil or table.find(p.formats, formatId) ~= nil)
+		then
+			table.insert(out, p)
+		end
+	end
+	return out, cfg.share, funOnly and #out > 0
+end
+Wave.intrudersFor = intrudersFor
+
 export type Drop = { propId: string, x: number, z: number, yaw: number, structural: boolean, nodeId: string? }
 export type WaveInfo = {
 	index: number,
@@ -46,6 +81,9 @@ export type Schedule = {
 	firstImpact: number,
 	props: { any },
 	structural: { any },
+	intruders: { any },
+	intruderShare: number,
+	funOnly: boolean,
 }
 
 function Wave.new(room, family, depth: number): Schedule
@@ -56,14 +94,19 @@ function Wave.new(room, family, depth: number): Schedule
 			table.insert(structural, n)
 		end
 	end
+	local intruders, share, funOnly = intrudersFor(room.familyId, math.max(depth, 1), room.formatId)
 	return {
+		-- fun_only: the fun list IS the fill list (no swap needed)
+		intruders = if funOnly then {} else intruders,
+		intruderShare = if funOnly then 0 else share,
+		funOnly = funOnly,
 		room = room,
 		band = band,
 		seed = Rng.derive(room.seed, "waves:" .. room.templateId),
 		-- the first impact never lands before the spawn grace and its own warning
 		firstImpact = math.max(SPAWN_GRACE + band.warning_seconds, band.wave_interval_seconds * 0.5),
 		params = Difficulty.waveParams(band, room.familyId, room.formatId),
-		props = fillProps(family, math.max(depth, 1), room.formatId),
+		props = if funOnly then intruders else fillProps(family, math.max(depth, 1), room.formatId),
 		structural = structural,
 	}
 end
@@ -99,9 +142,13 @@ function Wave.at(s: Schedule, index: number): WaveInfo
 		end
 	end
 	if mouthIndex > 0 and #s.props > 0 then
+		local funRng = Rng.new(Rng.derive(s.seed, "fun:" .. index))
 		for i = 1, math.max(0, count) do
 			local m = mouths[mouthIndices[((i - 1) % #mouthIndices) + 1]]
 			local p = rng:pick(s.props)
+			if #s.intruders > 0 and funRng:nextNumber() < s.intruderShare then
+				p = funRng:pick(s.intruders)
+			end
 			local half = math.max(0, (m.sx - math.max(p.collider.size_studs[1], p.collider.size_studs[2])) / 2)
 			table.insert(drops, {
 				propId = p.id,

@@ -872,11 +872,12 @@ function Plan.build(spec, depth: number, seed: number): (any, { string })
 end
 
 ------------------------------------------------------------------------------------------------
--- Tutorial cell (24 x 24 x 16): falling carton then a step to an exit at 8 studs.
+-- Tutorial cell (24 x 24 x 16): a falling prop (rooms.json tutorial.falling_prop_id, the inflatable
+-- duck since decision 0020; node id stays "carton" for the economy keys) then a step to an exit at 8.
 ------------------------------------------------------------------------------------------------
 function Plan.tutorialCell(): any
 	local w, d, h = 24, 24, 16
-	local carton = PROPS.reception_carton
+	local carton = PROPS[(Rooms :: any).tutorial and (Rooms :: any).tutorial.falling_prop_id or "reception_carton"]
 	local cs = carton.collider.size_studs
 	local nodes, solids = {}, {}
 	table.insert(nodes, {
@@ -890,7 +891,7 @@ function Plan.tutorialCell(): any
 		behavior = "stable",
 		protected = false,
 	})
-	-- carton 10 x 8 x 4 centred at z = 0: 1 stud clear of the spawn sas (z <= -5), touching the
+	-- prop (depth 8, height 4) centred at z = 0: 1 stud clear of the spawn sas (z <= -5), touching the
 	-- 8-stud exit ledge (z >= 4) so the second step is a plain 4-stud rise
 	local cbox = Box.onFloor(0, 0, 0, cs[1], cs[3], cs[2])
 	table.insert(nodes, {

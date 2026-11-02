@@ -1217,6 +1217,316 @@
       ]
     },
     {
+      "id": "pool",
+      "name": "Piscine Gonflable",
+      "release": "mvp",
+      "minimum_depth": 3,
+      "palette": {
+        "fond": "#E3F7FF",
+        "structure": "#1FA8E0",
+        "accent": "#FFD23F"
+      },
+      "formats": {
+        "S": [
+          40,
+          36,
+          24
+        ],
+        "M": [
+          64,
+          56,
+          36
+        ],
+        "L": [
+          80,
+          72,
+          44
+        ],
+        "V": [
+          44,
+          44,
+          64
+        ],
+        "XL": [
+          116,
+          104,
+          56
+        ],
+        "XV": [
+          64,
+          64,
+          100
+        ]
+      },
+      "exits": [
+        "door",
+        "window",
+        "roof",
+        "duct",
+        "tailgate",
+        "floor_hatch"
+      ],
+      "exit_visuals": {
+        "door": "Porte de cabine de plage",
+        "window": "Hublot de piscine",
+        "roof": "Trappe du plongeoir",
+        "duct": "Tuyau de toboggan aquatique",
+        "tailgate": "Coffre du camping-car",
+        "floor_hatch": "Bonde géante"
+      },
+      "machine": {
+        "id": "machine_pool_pump",
+        "name": "La Pompe à Bouées",
+        "visual": "Pompe à pied géante jaune avec un visage sur le soufflet, deux tuyaux dont un gonfle une bouée canard, manomètre à aiguille, pieds en caoutchouc.",
+        "size_studs": [
+          22,
+          16,
+          18
+        ]
+      },
+      "signature_event": "Un requin gonflable géant surgit d'un bassin latéral et recrache une pluie de canards de bain décoratifs.",
+      "audio": [
+        "couinement de canard",
+        "plouf",
+        "pompe à air"
+      ],
+      "souvenir_cosmetic_ids": [
+        "compagnon_canard_gonflable",
+        "trace_bulles_savon",
+        "victoire_bouees"
+      ],
+      "props": [
+        {
+          "id": "pool_inflatable_duck",
+          "name": "Canard gonflable géant",
+          "size_studs": [
+            12,
+            10,
+            8
+          ],
+          "behavior": "stable",
+          "deformation_profile": null,
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              9,
+              8,
+              4
+            ],
+            "walkable_top": [
+              9,
+              8
+            ],
+            "top_visible": true
+          },
+          "visual": "Canard jaune à chevaucher en vinyle brillant : selle plate rembourrée, cou et tête à l'avant hors du dessus utile, bec orange, grands yeux de dessin animé, petite queue, soudures visibles et valve.",
+          "stage": 1
+        },
+        {
+          "id": "pool_flamingo_float",
+          "name": "Bouée flamant rose",
+          "size_studs": [
+            12,
+            10,
+            10
+          ],
+          "behavior": "bounce",
+          "behavior_params": {
+            "vertical_impulse_multiplier": 1.15
+          },
+          "deformation_profile": null,
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              9,
+              8,
+              3
+            ],
+            "walkable_top": [
+              9,
+              8
+            ],
+            "top_visible": true
+          },
+          "visual": "Île gonflable flamant rose au pont plat, long cou en S et tête à l'avant, ailes repliées, bec à pointe noire. Rebond élastique.",
+          "stage": 1
+        },
+        {
+          "id": "pool_beach_ball",
+          "name": "Ballon de plage écrasé",
+          "size_studs": [
+            7,
+            7,
+            5
+          ],
+          "behavior": "bounce",
+          "behavior_params": {
+            "vertical_impulse_multiplier": 1.2
+          },
+          "deformation_profile": null,
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              7,
+              7,
+              4
+            ],
+            "walkable_top": [
+              7,
+              7
+            ],
+            "top_visible": true
+          },
+          "visual": "Ballon de plage écrasé en coussin : six fuseaux de couleur, calottes blanches, valve ; dessus aplati à hauteur 4.",
+          "stage": 1
+        },
+        {
+          "id": "pool_donut_ring",
+          "name": "Bouée donut",
+          "size_studs": [
+            9,
+            9,
+            3
+          ],
+          "behavior": "bounce",
+          "behavior_params": {
+            "vertical_impulse_multiplier": 1.12
+          },
+          "deformation_profile": null,
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              8,
+              8,
+              3
+            ],
+            "walkable_top": [
+              8,
+              8
+            ],
+            "top_visible": true
+          },
+          "visual": "Bouée donut glaçage rose avec vermicelles peints et coulures ; le trou est fermé par un filet trampoline blanc au niveau du dessus.",
+          "stage": 1
+        },
+        {
+          "id": "pool_unicorn_float",
+          "name": "Licorne gonflable",
+          "size_studs": [
+            14,
+            9,
+            10
+          ],
+          "behavior": "stable",
+          "deformation_profile": null,
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              12,
+              8,
+              4
+            ],
+            "walkable_top": [
+              12,
+              8
+            ],
+            "top_visible": true
+          },
+          "visual": "Licorne gonflable blanche au pont plat, crinière arc-en-ciel le long du cou, corne dorée en spirale, tête à l'avant.",
+          "stage": 3
+        },
+        {
+          "id": "pool_cooler",
+          "name": "Glacière rigolote",
+          "size_studs": [
+            10,
+            7,
+            6
+          ],
+          "behavior": "stable",
+          "deformation_profile": null,
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              10,
+              7,
+              5
+            ],
+            "walkable_top": [
+              10,
+              7
+            ],
+            "top_visible": true
+          },
+          "visual": "Glacière bleue et blanche avec un grand sourire et une langue sur la face avant, couvercle plat, poignées sur les côtés, décalques de glaçons.",
+          "stage": 3
+        },
+        {
+          "id": "pool_croc_float",
+          "name": "Crocodile gonflable",
+          "size_studs": [
+            16,
+            8,
+            6
+          ],
+          "behavior": "moving",
+          "behavior_params": {
+            "path": "linear",
+            "axis": "width",
+            "travel_studs": 10,
+            "cycle_seconds": 9,
+            "pause_at_each_end_seconds": 1.2
+          },
+          "deformation_profile": null,
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              14,
+              7,
+              3
+            ],
+            "walkable_top": [
+              14,
+              7
+            ],
+            "top_visible": true
+          },
+          "visual": "Crocodile gonflable vert au dos plat, grosse tête à dents en feutre et yeux loufoques à l'avant, queue à l'arrière, ventre vert clair. Dérive d'un bord à l'autre.",
+          "stage": 5
+        },
+        {
+          "id": "pool_air_mattress",
+          "name": "Matelas qui se dégonfle",
+          "size_studs": [
+            12,
+            7,
+            2
+          ],
+          "behavior": "temporary",
+          "behavior_params": {
+            "seconds_after_contact": 3,
+            "effect": "collapse_to_lower_recovery_level"
+          },
+          "deformation_profile": null,
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              12,
+              7,
+              2
+            ],
+            "walkable_top": [
+              12,
+              7
+            ],
+            "top_visible": true
+          },
+          "visual": "Matelas pneumatique à boudins rayés jaune et bleu, bosse d'oreiller, valve ; se dégonfle trois secondes après le contact (variante dégonflée modélisée).",
+          "stage": 7
+        }
+      ]
+    },
+    {
       "id": "kitchen",
       "name": "Kitchen Disaster",
       "release": "v1",
@@ -2377,7 +2687,7 @@
         "temporary"
       ],
       "mvp_substitution": {
-        "family": "toy",
+        "family": "pool",
         "format": "S",
         "exit": "window"
       }
@@ -2429,7 +2739,8 @@
       "families": [
         "reception",
         "toy",
-        "bureau"
+        "bureau",
+        "pool"
       ],
       "formats": [
         "S",
@@ -2457,6 +2768,7 @@
         "reception",
         "toy",
         "bureau",
+        "pool",
         "kitchen",
         "garage",
         "bin"
@@ -2555,5 +2867,43 @@
       "large": "12 studs",
       "giant": "18x16 studs"
     }
+  },
+  "fun_intruders": {
+    "note": "Décision 0020 (demande de l'utilisateur) : les objets sérieux (bureau, cartons, classeurs, outils) restent dans la salle comme appuis et mobilier, mais ce qui TOMBE est fun. Familles fun_only : les vagues ne lâchent que des objets de cette liste. Autres familles (hors exclusions) : une part `share` des objets de vague est remplacée. Jouets et Piscine gardent leurs propres objets, déjà fun. Le budget physique ne change pas.",
+    "fun_only_families": [
+      "reception",
+      "bureau",
+      "garage",
+      "bin"
+    ],
+    "share": 0.3,
+    "exclude_families": [
+      "pool",
+      "toy"
+    ],
+    "prop_ids": [
+      "pool_inflatable_duck",
+      "pool_flamingo_float",
+      "pool_beach_ball",
+      "pool_donut_ring",
+      "pool_unicorn_float",
+      "pool_cooler",
+      "toy_flat_duck",
+      "toy_drum",
+      "toy_plush_mallow",
+      "toy_plush_loppy",
+      "toy_plush_octo",
+      "toy_plush_pipou",
+      "toy_plush_mochi",
+      "toy_plush_bulle",
+      "toy_plush_grumf",
+      "toy_plush_nuage",
+      "toy_plush_balto",
+      "toy_plush_ronron"
+    ]
+  },
+  "tutorial": {
+    "falling_prop_id": "pool_inflatable_duck",
+    "note": "Décision 0020 : le premier objet qui tombe dans la cellule tutoriel est le canard gonflable (au lieu du carton). Collider 9 × 8 × 4, comme le carton (10 × 8 × 4) en profondeur."
   }
 }

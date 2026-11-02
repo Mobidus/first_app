@@ -13,9 +13,11 @@ local Template = require(script.Parent.Parent.RoomTemplates.Template)
 local PropFactory = {}
 
 local PROPS: { [string]: any } = {}
+local OWN_ACCENT: { [string]: Color3 } = {} -- proxy colour for props dropped outside their family
 for _, f in Config.Rooms.families do
 	for _, p in f.props do
 		PROPS[p.id] = p
+		OWN_ACCENT[p.id] = Color3.fromHex(f.palette.accent)
 	end
 end
 PropFactory.PROPS = PROPS
@@ -134,7 +136,9 @@ function PropFactory.create(propId: string, template: any?): Model
 		local body = Instance.new("Part")
 		body.Name = "ProxyBody"
 		body.Size = Vector3.new(p.size_studs[1], h, p.size_studs[2])
-		body.Color = (template and template.propColors[propId]) or Color3.fromRGB(240, 230, 210)
+		body.Color = (template and template.propColors[propId])
+			or (template and template.familyId ~= nil and OWN_ACCENT[propId])
+			or Color3.fromRGB(240, 230, 210)
 		body.Material = if template then template.propMaterial else Enum.Material.SmoothPlastic
 		body.CanCollide = false
 		body.CanQuery = false

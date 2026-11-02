@@ -6,6 +6,7 @@ local Spec = require("../_harness/Spec")
 local Loader = require("../_harness/Loader")
 local FakeEngine = require("../_harness/FakeEngine")
 local roblox = require("@lune/roblox")
+local Config = Loader.require("src/shared/GeneratedConfig")
 local describe, it, expect = Spec.describe, Spec.it, Spec.expect
 
 local V3, CF = roblox.Vector3, roblox.CFrame
@@ -75,7 +76,7 @@ end
 
 local function tutorial(E, p, buyRadar)
 	E:step(1.5)
-	local col = find(E, "reception_carton").PrimaryPart
+	local col = find(E, Config.Rooms.tutorial.falling_prop_id).PrimaryPart
 	E:placeFeet(p, col.Position + V3.new(0, col.Size.Y / 2, 0))
 	E:step(0.5)
 	toExit(E, p, 0)

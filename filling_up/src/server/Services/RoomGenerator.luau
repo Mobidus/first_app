@@ -15,6 +15,7 @@ local TEMPLATE_BY_FAMILY = {
 	reception = "Reception",
 	toy = "Toys",
 	bureau = "Office",
+	pool = "Pool",
 	kitchen = "Kitchen",
 	garage = "Garage",
 	bin = "GiantBin",
