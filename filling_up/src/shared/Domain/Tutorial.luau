@@ -49,10 +49,12 @@ function Tutorial.record(s: Session, name: string, now: number)
 	if name == "controllable" and s.controllableAt == nil then
 		s.controllableAt = now
 	end
-	table.insert(s.events, { name = name, t = now })
 	if name == "input" then
+		-- called every frame while the player moves: only the timestamp is kept (bounded memory)
 		s.lastInputAt = now
+		return
 	end
+	table.insert(s.events, { name = name, t = now })
 end
 
 -- Ghost trajectory hint after 5 s of inaction: shows a path, never moves the avatar.

@@ -20,12 +20,22 @@ local TEMPLATE_BY_FAMILY = {
 	bin = "GiantBin",
 }
 
--- Two room cells + one sas cell, far enough apart, reused forever (no drifting chain).
-RoomGenerator.CELLS = {
-	[1] = CFrame.new(0, 0, 0),
-	[2] = CFrame.new(400, 0, 0),
-	sas = CFrame.new(200, 0, 300),
-}
+-- Each session owns a slot: two room cells + one sas cell, reused forever (no drifting chain).
+-- Slots are 4000 studs apart so that rooms, fill colliders, burial probes and "standing on"
+-- checks of different players can never interact (solo expeditions, docs/01).
+RoomGenerator.SLOT_SPACING = 4000
+
+function RoomGenerator.cellsFor(slot: number): { [any]: CFrame }
+	local base = CFrame.new(slot * RoomGenerator.SLOT_SPACING, 0, 0)
+	return {
+		[1] = base,
+		[2] = base * CFrame.new(400, 0, 0),
+		sas = base * CFrame.new(200, 0, 300),
+	}
+end
+
+-- Backwards-compatible default (slot 0), used by Studio test scenes.
+RoomGenerator.CELLS = RoomGenerator.cellsFor(0)
 
 function RoomGenerator.template(familyId: string)
 	return require(Templates:WaitForChild(TEMPLATE_BY_FAMILY[familyId]) :: ModuleScript)

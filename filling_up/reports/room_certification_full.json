@@ -178,9 +178,9 @@
     },
     "bin/V/tailgate": {
       "certified": true,
-      "fallback": 0,
+      "fallback": 1,
       "key": "bin/V/tailgate",
-      "primary_ok": 120,
+      "primary_ok": 119,
       "tested": 120,
       "unbuildable": 0
     },
@@ -546,25 +546,25 @@
     },
     "garage/V/floor_hatch": {
       "certified": true,
-      "fallback": 6,
+      "fallback": 5,
       "key": "garage/V/floor_hatch",
-      "primary_ok": 114,
+      "primary_ok": 115,
       "tested": 120,
       "unbuildable": 0
     },
     "garage/V/roof": {
       "certified": true,
-      "fallback": 6,
+      "fallback": 8,
       "key": "garage/V/roof",
-      "primary_ok": 114,
+      "primary_ok": 112,
       "tested": 120,
       "unbuildable": 0
     },
     "garage/V/tailgate": {
       "certified": true,
-      "fallback": 9,
+      "fallback": 8,
       "key": "garage/V/tailgate",
-      "primary_ok": 111,
+      "primary_ok": 112,
       "tested": 120,
       "unbuildable": 0
     },
@@ -602,9 +602,9 @@
     },
     "kitchen/L/roof": {
       "certified": true,
-      "fallback": 1,
+      "fallback": 2,
       "key": "kitchen/L/roof",
-      "primary_ok": 119,
+      "primary_ok": 118,
       "tested": 120,
       "unbuildable": 0
     },
@@ -658,9 +658,9 @@
     },
     "kitchen/M/tailgate": {
       "certified": true,
-      "fallback": 4,
+      "fallback": 3,
       "key": "kitchen/M/tailgate",
-      "primary_ok": 116,
+      "primary_ok": 117,
       "tested": 120,
       "unbuildable": 0
     },
@@ -698,9 +698,9 @@
     },
     "kitchen/S/roof": {
       "certified": true,
-      "fallback": 5,
+      "fallback": 4,
       "key": "kitchen/S/roof",
-      "primary_ok": 115,
+      "primary_ok": 116,
       "tested": 120,
       "unbuildable": 0
     },
@@ -738,17 +738,17 @@
     },
     "kitchen/V/floor_hatch": {
       "certified": true,
-      "fallback": 17,
+      "fallback": 19,
       "key": "kitchen/V/floor_hatch",
-      "primary_ok": 103,
+      "primary_ok": 101,
       "tested": 120,
       "unbuildable": 0
     },
     "kitchen/V/roof": {
       "certified": true,
-      "fallback": 9,
+      "fallback": 8,
       "key": "kitchen/V/roof",
-      "primary_ok": 111,
+      "primary_ok": 112,
       "tested": 120,
       "unbuildable": 0
     },
@@ -762,9 +762,9 @@
     },
     "kitchen/V/window": {
       "certified": true,
-      "fallback": 7,
+      "fallback": 5,
       "key": "kitchen/V/window",
-      "primary_ok": 113,
+      "primary_ok": 115,
       "tested": 120,
       "unbuildable": 0
     },
@@ -1182,13 +1182,7 @@
       "combo": "kitchen/S/roof",
       "depth": 45,
       "reason": "primary_rejected_fallback_used",
-      "seed": 459736
-    },
-    {
-      "combo": "kitchen/S/roof",
-      "depth": 12,
-      "reason": "primary_rejected_fallback_used",
-      "seed": 491412
+      "seed": 364708
     },
     {
       "combo": "kitchen/S/roof",
@@ -1377,12 +1371,6 @@
       "seed": 396508
     },
     {
-      "combo": "kitchen/M/tailgate",
-      "depth": 8,
-      "reason": "primary_rejected_fallback_used",
-      "seed": 618240
-    },
-    {
       "combo": "kitchen/M/floor_hatch",
       "depth": 90,
       "reason": "primary_rejected_fallback_used",
@@ -1399,6 +1387,12 @@
       "depth": 8,
       "reason": "primary_rejected_fallback_used",
       "seed": 768639
+    },
+    {
+      "combo": "kitchen/L/roof",
+      "depth": 90,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 657711
     },
     {
       "combo": "kitchen/L/roof",
@@ -1426,9 +1420,9 @@
     },
     {
       "combo": "kitchen/V/window",
-      "depth": 45,
+      "depth": 8,
       "reason": "primary_rejected_fallback_used",
-      "seed": 269742
+      "seed": 483555
     },
     {
       "combo": "kitchen/V/window",
@@ -1438,33 +1432,9 @@
     },
     {
       "combo": "kitchen/V/window",
-      "depth": 45,
-      "reason": "primary_rejected_fallback_used",
-      "seed": 839910
-    },
-    {
-      "combo": "kitchen/V/window",
-      "depth": 45,
-      "reason": "primary_rejected_fallback_used",
-      "seed": 887424
-    },
-    {
-      "combo": "kitchen/V/window",
       "depth": 12,
       "reason": "primary_rejected_fallback_used",
       "seed": 919100
-    },
-    {
-      "combo": "kitchen/V/roof",
-      "depth": 8,
-      "reason": "primary_rejected_fallback_used",
-      "seed": 55867
-    },
-    {
-      "combo": "kitchen/V/roof",
-      "depth": 45,
-      "reason": "primary_rejected_fallback_used",
-      "seed": 222166
     },
     {
       "combo": "kitchen/V/roof",
@@ -1482,7 +1452,13 @@
       "combo": "kitchen/V/roof",
       "depth": 90,
       "reason": "primary_rejected_fallback_used",
-      "seed": 420141
+      "seed": 515169
+    },
+    {
+      "combo": "kitchen/V/roof",
+      "depth": 45,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 554764
     },
     {
       "combo": "kitchen/V/roof",
@@ -1492,9 +1468,9 @@
     },
     {
       "combo": "kitchen/V/roof",
-      "depth": 8,
+      "depth": 90,
       "reason": "primary_rejected_fallback_used",
-      "seed": 626035
+      "seed": 610197
     },
     {
       "combo": "kitchen/V/roof",
@@ -1507,6 +1483,12 @@
       "depth": 90,
       "reason": "primary_rejected_fallback_used",
       "seed": 800253
+    },
+    {
+      "combo": "kitchen/V/tailgate",
+      "depth": 25,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 24315
     },
     {
       "combo": "kitchen/V/tailgate",
@@ -1528,12 +1510,6 @@
     },
     {
       "combo": "kitchen/V/tailgate",
-      "depth": 12,
-      "reason": "primary_rejected_fallback_used",
-      "seed": 348994
-    },
-    {
-      "combo": "kitchen/V/tailgate",
       "depth": 45,
       "reason": "primary_rejected_fallback_used",
       "seed": 412346
@@ -1552,15 +1528,15 @@
     },
     {
       "combo": "kitchen/V/tailgate",
-      "depth": 90,
+      "depth": 45,
       "reason": "primary_rejected_fallback_used",
-      "seed": 610321
+      "seed": 697430
     },
     {
       "combo": "kitchen/V/tailgate",
       "depth": 45,
       "reason": "primary_rejected_fallback_used",
-      "seed": 697430
+      "seed": 744944
     },
     {
       "combo": "kitchen/V/tailgate",
@@ -1588,6 +1564,12 @@
     },
     {
       "combo": "kitchen/V/floor_hatch",
+      "depth": 45,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 32327
+    },
+    {
+      "combo": "kitchen/V/floor_hatch",
       "depth": 8,
       "reason": "primary_rejected_fallback_used",
       "seed": 48165
@@ -1612,9 +1594,21 @@
     },
     {
       "combo": "kitchen/V/floor_hatch",
+      "depth": 8,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 190707
+    },
+    {
+      "combo": "kitchen/V/floor_hatch",
       "depth": 25,
       "reason": "primary_rejected_fallback_used",
       "seed": 261978
+    },
+    {
+      "combo": "kitchen/V/floor_hatch",
+      "depth": 8,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 285735
     },
     {
       "combo": "kitchen/V/floor_hatch",
@@ -1636,6 +1630,12 @@
     },
     {
       "combo": "kitchen/V/floor_hatch",
+      "depth": 8,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 531224
+    },
+    {
+      "combo": "kitchen/V/floor_hatch",
       "depth": 90,
       "reason": "primary_rejected_fallback_used",
       "seed": 610414
@@ -1648,21 +1648,15 @@
     },
     {
       "combo": "kitchen/V/floor_hatch",
-      "depth": 8,
+      "depth": 90,
       "reason": "primary_rejected_fallback_used",
-      "seed": 713361
+      "seed": 752956
     },
     {
       "combo": "kitchen/V/floor_hatch",
       "depth": 8,
       "reason": "primary_rejected_fallback_used",
       "seed": 760875
-    },
-    {
-      "combo": "kitchen/V/floor_hatch",
-      "depth": 25,
-      "reason": "primary_rejected_fallback_used",
-      "seed": 784632
     },
     {
       "combo": "kitchen/V/floor_hatch",
@@ -1675,12 +1669,6 @@
       "depth": 8,
       "reason": "primary_rejected_fallback_used",
       "seed": 903417
-    },
-    {
-      "combo": "kitchen/V/floor_hatch",
-      "depth": 12,
-      "reason": "primary_rejected_fallback_used",
-      "seed": 919255
     },
     {
       "combo": "garage/S/door",
@@ -1989,6 +1977,18 @@
       "seed": 713113
     },
     {
+      "combo": "garage/V/roof",
+      "depth": 90,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 847736
+    },
+    {
+      "combo": "garage/V/roof",
+      "depth": 9,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 903169
+    },
+    {
       "combo": "garage/V/duct",
       "depth": 25,
       "reason": "primary_rejected_fallback_used",
@@ -2008,6 +2008,12 @@
     },
     {
       "combo": "garage/V/tailgate",
+      "depth": 25,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 261854
+    },
+    {
+      "combo": "garage/V/tailgate",
       "depth": 9,
       "reason": "primary_rejected_fallback_used",
       "seed": 578614
@@ -2023,18 +2029,6 @@
       "depth": 9,
       "reason": "primary_rejected_fallback_used",
       "seed": 665723
-    },
-    {
-      "combo": "garage/V/tailgate",
-      "depth": 12,
-      "reason": "primary_rejected_fallback_used",
-      "seed": 681561
-    },
-    {
-      "combo": "garage/V/tailgate",
-      "depth": 25,
-      "reason": "primary_rejected_fallback_used",
-      "seed": 689480
     },
     {
       "combo": "garage/V/tailgate",
@@ -2068,12 +2062,6 @@
     },
     {
       "combo": "garage/V/floor_hatch",
-      "depth": 90,
-      "reason": "primary_rejected_fallback_used",
-      "seed": 230271
-    },
-    {
-      "combo": "garage/V/floor_hatch",
       "depth": 9,
       "reason": "primary_rejected_fallback_used",
       "seed": 531193
@@ -2097,6 +2085,12 @@
       "seed": 31986
     },
     {
+      "combo": "bin/V/tailgate",
+      "depth": 45,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 602278
+    },
+    {
       "combo": "bin/V/floor_hatch",
       "depth": 12,
       "reason": "primary_rejected_fallback_used",
@@ -2109,8 +2103,8 @@
       "seed": 705318
     }
   ],
-  "fallback": 159,
-  "primary_ok": 17121,
+  "fallback": 158,
+  "primary_ok": 17122,
   "profile": "v1",
   "seeds_per_combo": 120,
   "total": 17280,

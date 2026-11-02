@@ -2,7 +2,7 @@
   "task": "T07",
   "title": "Construire Réception et son graphe garanti",
   "status": "blocked",
-  "date_utc": "2026-11-02T10:17:13.891156+00:00",
+  "date_utc": "2026-11-02T11:04:48.070919+00:00",
   "criteria": [
     {
       "criterion": "Sortie atteignable sans outil (logique)",

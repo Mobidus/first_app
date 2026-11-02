@@ -81,8 +81,18 @@ def result_json(output: str) -> dict | None:
     return None
 
 
+def as_list(v) -> list:
+    """Lune's serde encodes an empty Luau table as {}: normalise to a list."""
+    if isinstance(v, list):
+        return v
+    return [] if not v else list(v.values()) if isinstance(v, dict) else [v]
+
+
 def write(name: str, report: dict) -> int:
     REPORTS.mkdir(parents=True, exist_ok=True)
+    for key in ("failures", "not_run", "executed"):
+        if key in report:
+            report[key] = as_list(report[key])
     report.setdefault("date_utc", dt.datetime.now(dt.timezone.utc).isoformat())
     report.setdefault("versions", versions())
     path = REPORTS / f"{name}.json"

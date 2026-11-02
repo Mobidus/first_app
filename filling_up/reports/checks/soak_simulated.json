@@ -2779,7 +2779,7 @@
     "1000 rooms reached depth 1001 (no last room)",
     "pool created count stable from 200 to 1000 rooms"
   ],
-  "failures": {},
+  "failures": [],
   "not_run": [
     "engine physics, network, camera and frame time (simulation only)"
   ],
@@ -2789,7 +2789,7 @@
       "completedRooms": 1000,
       "finalDepth": 1001,
       "permits": 3966,
-      "profileBytes": 944,
+      "profileBytes": 1018,
       "simulatedSeconds": 236310,
       "stats": {
         "deferredDrops": 53760,
@@ -2811,7 +2811,7 @@
       "completedRooms": 200,
       "finalDepth": 201,
       "permits": 766,
-      "profileBytes": 931,
+      "profileBytes": 1003,
       "simulatedSeconds": 44310,
       "stats": {
         "deferredDrops": 8960,
@@ -2833,7 +2833,7 @@
       "completedRooms": 80,
       "finalDepth": 81,
       "permits": 286,
-      "profileBytes": 922,
+      "profileBytes": 992,
       "simulatedSeconds": 15510,
       "stats": {
         "deferredDrops": 2240,
@@ -2855,7 +2855,7 @@
       "completedRooms": 90,
       "finalDepth": 91,
       "permits": 326,
-      "profileBytes": 758,
+      "profileBytes": 825,
       "simulatedSeconds": 17910,
       "stats": {
         "deferredDrops": 2800,
@@ -2873,7 +2873,7 @@
       }
     }
   },
-  "date_utc": "2026-11-02T10:14:56.890735+00:00",
+  "date_utc": "2026-11-02T11:04:09.074965+00:00",
   "versions": {
     "python": "3.13.18",
     "rojo": "Rojo 7.5.1",

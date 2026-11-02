@@ -77,9 +77,10 @@ local function playersStandingOn(model: Model): boolean
 		return false
 	end
 	for _, plr in game:GetService("Players"):GetPlayers() do
-		local hum = plr.Character and plr.Character:FindFirstChildOfClass("Humanoid")
-		if hum and hum.FloorMaterial ~= Enum.Material.Air then
-			local root = plr.Character:FindFirstChild("HumanoidRootPart") :: BasePart?
+		local char = plr.Character
+		local hum = char and char:FindFirstChildOfClass("Humanoid")
+		if char and hum and hum.FloorMaterial ~= Enum.Material.Air then
+			local root = char:FindFirstChild("HumanoidRootPart") :: BasePart?
 			if root then
 				local rel = collider.CFrame:PointToObjectSpace(root.Position)
 				local s = collider.Size
@@ -152,7 +153,41 @@ function WaveDirector.spawnDrop(self, drop: any, _impactTime: number)
 	end
 end
 
+local function coveredOnAllSides(col: BasePart, params: OverlapParams): boolean
+	local s = col.Size
+	local probes = {
+		{ CFrame.new(0, s.Y / 2 + 1, 0), Vector3.new(s.X * 0.8, 1.5, s.Z * 0.8) },
+		{ CFrame.new(s.X / 2 + 1, 0, 0), Vector3.new(1.5, s.Y * 0.8, s.Z * 0.8) },
+		{ CFrame.new(-s.X / 2 - 1, 0, 0), Vector3.new(1.5, s.Y * 0.8, s.Z * 0.8) },
+		{ CFrame.new(0, 0, s.Z / 2 + 1), Vector3.new(s.X * 0.8, s.Y * 0.8, 1.5) },
+		{ CFrame.new(0, 0, -s.Z / 2 - 1), Vector3.new(s.X * 0.8, s.Y * 0.8, 1.5) },
+	}
+	for _, pr in probes do
+		local hits = Workspace:GetPartBoundsInBox(col.CFrame * pr[1], pr[2], params)
+		local other = false
+		for _, h in hits do
+			if not h:IsDescendantOf(col.Parent :: Instance) then
+				other = true
+				break
+			end
+		end
+		if not other then
+			return false
+		end
+	end
+	return true
+end
+
 function WaveDirector.consolidate(self)
+	local fillParams = OverlapParams.new()
+	fillParams.FilterType = Enum.RaycastFilterType.Include
+	local fill = {}
+	for _, tag in { "FillCollider", "FillAggregate" } do
+		for _, inst in CollectionService:GetTagged(tag) do
+			table.insert(fill, inst)
+		end
+	end
+	fillParams.FilterDescendantsInstances = fill
 	local list = {}
 	local byId = {}
 	local dynCount = 0
@@ -166,16 +201,9 @@ function WaveDirector.consolidate(self)
 		if not col.Anchored then
 			dynCount += 1
 		elseif not occupied then
-			-- buried = top and all four sides covered by other fill (cheap box query)
-			local params = OverlapParams.new()
-			params.FilterType = Enum.RaycastFilterType.Exclude
-			params.FilterDescendantsInstances = { m }
-			local above = Workspace:GetPartBoundsInBox(
-				col.CFrame * CFrame.new(0, col.Size.Y / 2 + 1.5, 0),
-				Vector3.new(col.Size.X, 2, col.Size.Z),
-				params
-			)
-			buried = #above > 0 and e.age > 20
+			-- buried = top AND all four sides covered by other FILL colliders (architecture, shelves,
+			-- ceiling and the exit clearance never count): only then is it unreachable
+			buried = e.age > 20 and coveredOnAllSides(col, fillParams)
 		end
 		table.insert(list, {
 			id = e.id,

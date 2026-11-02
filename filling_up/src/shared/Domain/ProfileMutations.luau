@@ -149,26 +149,56 @@ end
 
 local HANDLERS: { [string]: (p: any, m: any, ctx: any) -> (boolean, any) } = {}
 
+-- Authoritative per-room claim ledger (decision 0005). The mask sent by the caller is only a hint:
+-- with a yielding store, several requests can be built from the same stale mask before the first
+-- write returns. Claims are therefore checked against the ledger committed in the profile itself.
+local function roomLedger(p: any, runId: string, depth: number): any
+	local rc = p.roomClaims
+	if rc and rc.runId == runId and rc.depth == depth then
+		return rc
+	end
+	rc = { runId = runId, depth = depth, mask = 0, paid = 0 }
+	local cp = p.checkpoint
+	if cp and cp.runId == runId and cp.depth == depth then
+		rc.mask = cp.roomRewardMask or 0
+		rc.paid = cp.paidBaseCumulative or 0
+	end
+	p.roomClaims = rc
+	return rc
+end
+
 HANDLERS.GrantProgress = function(p, m)
-	-- m: { runId, depth, index, mask, rateBp, paidBaseCumulative }
-	local claim = Rewards.planProgress(m)
+	-- m: { runId, depth, index, mask (hint), rateBp, paidBaseCumulative (hint) }
+	local rc = roomLedger(p, m.runId, m.depth)
+	local claim = Rewards.planProgress({
+		runId = m.runId,
+		depth = m.depth,
+		index = m.index,
+		mask = bit32.bor(m.mask or 0, rc.mask),
+		rateBp = m.rateBp,
+		paidBaseCumulative = math.max(m.paidBaseCumulative or 0, rc.paid),
+	})
 	if #claim.lines == 0 then
 		return false, "already_claimed"
 	end
 	p.coins += claim.coins
 	p.permits += claim.permits
 	p.xp += claim.xp
+	rc.mask = claim.newMask
+	rc.paid = claim.newPaidBaseCumulative
 	updateCheckpointMask(p, m.runId, m.depth, claim.newMask, claim.newPaidBaseCumulative)
 	return true, claim
 end
 
 HANDLERS.GrantToken = function(p, m)
-	local ok, claim = Rewards.planToken(m.runId, m.depth, m.tokenIndex, m.mask)
+	local rc = roomLedger(p, m.runId, m.depth)
+	local ok, claim = Rewards.planToken(m.runId, m.depth, m.tokenIndex, bit32.bor(m.mask or 0, rc.mask))
 	if not ok then
 		return false, claim
 	end
 	p.coins += claim.coins
-	updateCheckpointMask(p, m.runId, m.depth, claim.newMask, m.paidBaseCumulative or 0)
+	rc.mask = claim.newMask
+	updateCheckpointMask(p, m.runId, m.depth, claim.newMask, rc.paid)
 	return true, claim
 end
 
@@ -254,6 +284,51 @@ end
 
 HANDLERS.ClearCheckpoint = function(p)
 	p.checkpoint = nil
+	return true, nil
+end
+
+-- Room exit in ONE durable write: exit reward (+ any unpaid milestones), mastery, first-family
+-- discovery bonus and the checkpoint of the next room. Avoids 3-4 sequential writes at the exit.
+HANDLERS.CompleteRoom = function(p, m, ctx)
+	local first = (p.roomMastery.families[m.familyId] or 0) == 0
+	local ok, claim = HANDLERS.GrantProgress(p, {
+		runId = m.runId,
+		depth = m.depth,
+		index = 4,
+		mask = m.mask,
+		rateBp = m.rateBp,
+		paidBaseCumulative = m.paidBaseCumulative,
+	}, ctx)
+	if not ok then
+		return false, claim
+	end
+	HANDLERS.RoomCompleted(p, { familyId = m.familyId, depth = m.depth }, ctx)
+	local discovery = 0
+	if first then
+		local okD, d = HANDLERS.GrantOnce(p, { kind = "family_discovery", key = m.familyId }, ctx)
+		if okD then
+			discovery = d.coins
+		end
+	end
+	if m.nextCheckpoint then
+		p.checkpoint = deepCopy(m.nextCheckpoint)
+	end
+	return true, { claim = claim, familyDiscovery = discovery }
+end
+
+-- Persist the current room's tool charges (resume never refills them for the same room).
+HANDLERS.UpdateCharges = function(p, m)
+	local cp = p.checkpoint
+	if not (cp and cp.runId == m.runId and cp.depth == m.depth) then
+		return false, "no_room_checkpoint"
+	end
+	local snap = {}
+	for toolId, c in m.charges do
+		if Economy.tool(toolId) and type(c) == "number" and c >= 0 and c % 1 == 0 then
+			snap[toolId] = c
+		end
+	end
+	cp.chargesSnapshot = snap
 	return true, nil
 end
 

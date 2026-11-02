@@ -399,7 +399,7 @@ function Plan.generate(spec, depth: number, seed: number, attempt: number?): any
 			if not Box.insideRoom(Box.expand(b, WALL_MARGIN, 0, WALL_MARGIN), w, d, h) then
 				return false
 			end
-			if isColumn and Box.overlapsXZ(b, spawnBlock) then
+			if (isColumn and Box.overlapsXZ(b, spawnBlock)) or Box.intersects(b, Box.expand(spawn, 1, 1, 1)) then
 				return false
 			end
 			if Box.intersects(b, clearanceBlock) then
@@ -844,7 +844,9 @@ function Plan.tutorialCell(): any
 		behavior = "stable",
 		protected = false,
 	})
-	local cbox = Box.onFloor(0, 0, -2, cs[1], cs[3], cs[2])
+	-- carton 10 x 8 x 4 centred at z = 0: 1 stud clear of the spawn sas (z <= -5), touching the
+	-- 8-stud exit ledge (z >= 4) so the second step is a plain 4-stud rise
+	local cbox = Box.onFloor(0, 0, 0, cs[1], cs[3], cs[2])
 	table.insert(nodes, {
 		id = "carton",
 		kind = "column",

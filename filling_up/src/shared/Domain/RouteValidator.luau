@@ -99,6 +99,12 @@ function V.validate(room, opts: { gapRatio: number }): (boolean, { errors: { str
 		if not Box.insideRoom(s.box, w, d, h, 1e-6) then
 			fail("solid_outside_room:" .. tostring(s.nodeId or i))
 		end
+		-- the player must never appear inside (or under) a support or a structural drop
+		for _, sz in room.spawnZones do
+			if Box.intersects(s.box, sz, 0.01) then
+				fail("spawn_obstructed:" .. tostring(s.nodeId or i))
+			end
+		end
 		for j = i + 1, #solids do
 			local o = solids[j]
 			if Box.intersects(s.box, o.box, 0.01) then

@@ -71,6 +71,8 @@ function HUDController.start()
 			showToast(string.format("+%d Coins  +%d ◆  +%d XP", e.coins or 0, e.permits or 0, e.xp or 0), 2.5)
 		elseif e.type == "save_status" then
 			showToast(Strings.get(lang(), if e.ok then "saved" else "save_failed"), 1.5)
+		elseif e.type == "save_failed_retry" then
+			showToast(Strings.get(lang(), "save_failed"), 1)
 		elseif e.type == "loading_next" then
 			showToast(Strings.get(lang(), "loading_next"), 1)
 		elseif e.type == "ko" then

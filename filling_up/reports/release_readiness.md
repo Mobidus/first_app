@@ -28,6 +28,7 @@ et 5 h ne sont pas franchies. Aucune publication n'est demandée tant que T06 à
 4. Faire les essais mobiles sur des appareils nommés, et le test d'identification des peluches.
 5. Faire tourner une session réelle de 5 h avec un pilote de test, avec des relevés périodiques.
 6. Créer les produits Robux de test dans une expérience **de test** autorisée, puis T20.
-7. Seulement ensuite, demander l'autorisation explicite de publier et d'activer les ventes.
+7. Régler Max Players = 1 (MVP solo) dans les paramètres du jeu.
+8. Seulement ensuite, demander l'autorisation explicite de publier et d'activer les ventes.
 
 Coopération et classements à kit standardisé : exclus du MVP (non approuvés).

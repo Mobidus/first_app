@@ -2795,7 +2795,7 @@
       "completedRooms": 1000,
       "finalDepth": 1001,
       "permits": 3966,
-      "profileBytes": 944,
+      "profileBytes": 1018,
       "simulatedSeconds": 236310,
       "stats": {
         "deferredDrops": 53760,
@@ -2817,7 +2817,7 @@
       "completedRooms": 200,
       "finalDepth": 201,
       "permits": 766,
-      "profileBytes": 931,
+      "profileBytes": 1003,
       "simulatedSeconds": 44310,
       "stats": {
         "deferredDrops": 8960,
@@ -2839,7 +2839,7 @@
       "completedRooms": 80,
       "finalDepth": 81,
       "permits": 286,
-      "profileBytes": 922,
+      "profileBytes": 992,
       "simulatedSeconds": 15510,
       "stats": {
         "deferredDrops": 2240,
@@ -2861,7 +2861,7 @@
       "completedRooms": 90,
       "finalDepth": 91,
       "permits": 326,
-      "profileBytes": 758,
+      "profileBytes": 825,
       "simulatedSeconds": 17910,
       "stats": {
         "deferredDrops": 2800,
@@ -2879,5 +2879,5 @@
       }
     }
   },
-  "wall_clock_seconds": 19.75762413199982
+  "wall_clock_seconds": 21.322354786000005
 }

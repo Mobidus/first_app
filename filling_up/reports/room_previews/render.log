@@ -1,0 +1,36 @@
+/home/user/first_app/filling_up/tools/render_rooms.py:84: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  sc.world.use_nodes = True
+/home/user/first_app/filling_up/tools/render_rooms.py:45: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m.use_nodes = True
+00:16.112  render           | Saved: '/home/user/first_app/filling_up/reports/room_previews/00_tutorial_cell_d0.png'
+rendered 00_tutorial_cell_d0.png
+00:28.588  render           | Saved: '/home/user/first_app/filling_up/reports/room_previews/01_reception_S_door_d1.png'
+rendered 01_reception_S_door_d1.png
+00:38.969  render           | Saved: '/home/user/first_app/filling_up/reports/room_previews/02_reception_M_window_d2.png'
+rendered 02_reception_M_window_d2.png
+00:50.927  render           | Saved: '/home/user/first_app/filling_up/reports/room_previews/03_toy_S_door_d3.png'
+rendered 03_toy_S_door_d3.png
+01:03.902  render           | Saved: '/home/user/first_app/filling_up/reports/room_previews/04_toy_M_roof_d4.png'
+rendered 04_toy_M_roof_d4.png
+01:16.519  render           | Saved: '/home/user/first_app/filling_up/reports/room_previews/05_bureau_S_door_d5.png'
+rendered 05_bureau_S_door_d5.png
+01:30.630  render           | Saved: '/home/user/first_app/filling_up/reports/room_previews/06_reception_V_window_d6.png'
+rendered 06_reception_V_window_d6.png
+01:40.977  render           | Saved: '/home/user/first_app/filling_up/reports/room_previews/07_bureau_M_window_d7.png'
+rendered 07_bureau_M_window_d7.png
+01:53.714  render           | Saved: '/home/user/first_app/filling_up/reports/room_previews/08_toy_S_window_d8.png'
+rendered 08_toy_S_window_d8.png
+02:04.431  render           | Saved: '/home/user/first_app/filling_up/reports/room_previews/09_bureau_M_door_d9.png'
+rendered 09_bureau_M_door_d9.png
+02:17.694  render           | Saved: '/home/user/first_app/filling_up/reports/room_previews/10_toy_V_window_d10.png'
+rendered 10_toy_V_window_d10.png
+02:30.794  render           | Saved: '/home/user/first_app/filling_up/reports/room_previews/11_reception_V_window_d25.png'
+rendered 11_reception_V_window_d25.png
+02:43.705  render           | Saved: '/home/user/first_app/filling_up/reports/room_previews/12_bureau_V_window_d60.png'
+rendered 12_bureau_V_window_d60.png
+02:54.274  render           | Saved: '/home/user/first_app/filling_up/reports/room_previews/13_reception_M_door_d150.png'
+rendered 13_reception_M_door_d150.png
+03:07.336  render           | Saved: '/home/user/first_app/filling_up/reports/room_previews/14_bureau_S_window_d30.png'
+rendered 14_bureau_S_window_d30.png
+03:20.722  render           | Saved: '/home/user/first_app/filling_up/reports/room_previews/15_toy_S_floor_hatch_d90.png'
+rendered 15_toy_S_floor_hatch_d90.png

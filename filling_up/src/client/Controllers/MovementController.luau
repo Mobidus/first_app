@@ -17,6 +17,7 @@ local lastGrounded = -math.huge
 local lastJumpPress = -math.huge
 local glideMultiplier: number? = nil
 local glideUntil = 0
+local stepConn: RBXScriptConnection? = nil
 
 function MovementController.setGlide(mult: number, duration: number)
 	glideMultiplier = mult
@@ -40,7 +41,10 @@ local function bind(character: Model)
 			end
 		end
 	end)
-	RunService.RenderStepped:Connect(function()
+	if stepConn then
+		stepConn:Disconnect() -- one per character: no pile-up across respawns
+	end
+	stepConn = RunService.RenderStepped:Connect(function()
 		if hum.FloorMaterial ~= Enum.Material.Air then
 			lastGrounded = os.clock()
 		end
@@ -59,6 +63,7 @@ local function bind(character: Model)
 			local params = RaycastParams.new()
 			params.FilterType = Enum.RaycastFilterType.Exclude
 			params.FilterDescendantsInstances = { character }
+			params.RespectCanCollide = true -- ignore query-only volumes such as ExitClearance
 			local ahead = hum.MoveDirection * 1.6
 			local hitChest = workspace:Raycast(root.Position, ahead, params)
 			local hitHead = workspace:Raycast(root.Position + Vector3.new(0, 1.6, 0), ahead, params)

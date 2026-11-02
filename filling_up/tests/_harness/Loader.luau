@@ -15,6 +15,7 @@ local ROOTS = {
 	ReplicatedStorage = { Shared = "src/shared" },
 	ServerScriptService = { Server = "src/server" },
 	StarterPlayerScripts = { Client = "src/client" },
+	ServerStorage = { AssetGenerators = "assets/source/generators" },
 }
 
 local cache: { [string]: any } = {}
@@ -102,6 +103,10 @@ NodeMeta.__index = function(node, key)
 		return function(self)
 			return self.__path
 		end
+	elseif key == "IsA" then
+		return function(self, class)
+			return class == "ModuleScript" and (self.__kind == "file" or FILES[self.__path .. "/init.luau"] ~= nil)
+		end
 	end
 	local c = childOf(node, key)
 	if c == nil then
@@ -119,9 +124,30 @@ local requireNode
 -- `game:GetService("ReplicatedStorage"):WaitForChild("Shared")` resolves offline.
 local services = {}
 local FakeGame = {}
+-- Engine-lite mode: real Roblox DOM instances from @lune/roblox (property names and value types
+-- are validated against Roblox's reflection database) + a CollectionService shim mapping to the
+-- instance tag API. No physics, no signals, no PivotTo: only code that builds instances can run.
+local engineLite = false
+local CollectionShim = {}
+function CollectionShim.AddTag(_, inst, tag)
+	inst:AddTag(tag)
+end
+function CollectionShim.RemoveTag(_, inst, tag)
+	inst:RemoveTag(tag)
+end
+function CollectionShim.HasTag(_, inst, tag)
+	return inst:HasTag(tag)
+end
+function Loader.enableEngineLite()
+	engineLite = true
+end
+
 function FakeGame.GetService(_, name: string)
 	if services[name] then
 		return services[name]
+	end
+	if name == "CollectionService" and engineLite then
+		return CollectionShim
 	end
 	local map = ROOTS[name]
 	if not map then
@@ -157,7 +183,9 @@ local function makeEnv(node)
 		Vector3 = roblox.Vector3,
 		CFrame = roblox.CFrame,
 		Color3 = roblox.Color3,
-		Instance = nil,
+		Instance = if engineLite then roblox.Instance else nil,
+		Enum = if engineLite then roblox.Enum else nil,
+		PhysicalProperties = if engineLite then roblox.PhysicalProperties else nil,
 	}
 end
 

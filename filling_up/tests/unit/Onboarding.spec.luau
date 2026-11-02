@@ -191,6 +191,16 @@ describe("Onboarding vertical slice", function()
 		expect(#Tutorial.KIOSK_BUTTONS).toBe(2)
 	end)
 
+	it("per-frame input recording does not grow the event log", function()
+		local sess = Tutorial.newSession()
+		Tutorial.record(sess, "controllable", 0)
+		for i = 1, 10000 do
+			Tutorial.record(sess, "input", i / 60)
+		end
+		expect(#sess.events).toBeAtMost(2)
+		expect(sess.lastInputAt).toBeNear(10000 / 60, 1e-9)
+	end)
+
 	it("ghost trajectory hint after 5 s of inaction (never moves the avatar)", function()
 		local s = Tutorial.newSession()
 		Tutorial.record(s, "controllable", 0)

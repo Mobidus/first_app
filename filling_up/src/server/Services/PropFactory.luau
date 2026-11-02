@@ -95,6 +95,13 @@ function PropFactory.create(propId: string, template: any?): Model
 			part.CanTouch = false
 			part.Massless = true
 			part:SetAttribute("LocalOffset", v3(spec.offset) - Vector3.new(0, h / 2, 0))
+			-- generator rotation hints (Roblox cylinders run along X): per part, per name, or for all cylinders
+			local rot = spec.rotationDeg
+				or (desc.chevronRotationDeg and desc.chevronRotationDeg[spec.name])
+				or (spec.shape == "Cylinder" and (desc.edgeCylinderRotationDeg or desc.stampRotationDeg))
+			if rot then
+				part:SetAttribute("LocalRotationDeg", v3(rot))
+			end
 			part.Parent = visualRoot
 		end
 	else
@@ -122,7 +129,10 @@ function PropFactory.create(propId: string, template: any?): Model
 	for _, part in model:GetDescendants() do
 		if part:IsA("BasePart") and part ~= collider then
 			local off = part:GetAttribute("LocalOffset") or Vector3.new(0, (part:GetAttribute("LocalY") :: number?) or 0, 0)
-			part.CFrame = collider.CFrame * CFrame.new(off :: Vector3)
+			local rot = part:GetAttribute("LocalRotationDeg") :: Vector3?
+			part.CFrame = collider.CFrame
+				* CFrame.new(off :: Vector3)
+				* (if rot then CFrame.Angles(math.rad(rot.X), math.rad(rot.Y), math.rad(rot.Z)) else CFrame.identity)
 			if visualRoot.Name ~= "PlushVisual" or part.Name == "TopMarker" then
 				local weld = Instance.new("WeldConstraint")
 				weld.Part0 = collider

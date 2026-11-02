@@ -34,9 +34,13 @@ local persistent = true
 local okStore = pcall(function()
 	store = Repository.dataStoreAdapter(DATASTORE_NAME)
 	-- probe API access once (Studio without "Enable Studio Access to API Services" fails here)
-	store:update("probe_" .. game.JobId, function(_old)
+	-- the adapter reports failures as a return value: turn it into an error so the fallback triggers
+	local okProbe, err = store:update("probe_" .. game.JobId, function(_old)
 		return nil
 	end)
+	if not okProbe then
+		error(err)
+	end
 end)
 if not okStore then
 	warn("[FillingUp] DataStore unavailable: using NON-PERSISTENT memory store (test only)")

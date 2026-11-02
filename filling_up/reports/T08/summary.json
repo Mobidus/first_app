@@ -2,7 +2,7 @@
   "task": "T08",
   "title": "Implémenter vagues physique hybride et peluches déformables",
   "status": "blocked",
-  "date_utc": "2026-11-02T10:17:13.891156+00:00",
+  "date_utc": "2026-11-02T11:04:48.070919+00:00",
   "criteria": [
     {
       "criterion": "Vagues temporelles continues",

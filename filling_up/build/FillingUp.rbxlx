@@ -1321,26 +1321,56 @@ end
 
 local HANDLERS: { [string]: (p: any, m: any, ctx: any) -> (boolean, any) } = {}
 
+-- Authoritative per-room claim ledger (decision 0005). The mask sent by the caller is only a hint:
+-- with a yielding store, several requests can be built from the same stale mask before the first
+-- write returns. Claims are therefore checked against the ledger committed in the profile itself.
+local function roomLedger(p: any, runId: string, depth: number): any
+	local rc = p.roomClaims
+	if rc and rc.runId == runId and rc.depth == depth then
+		return rc
+	end
+	rc = { runId = runId, depth = depth, mask = 0, paid = 0 }
+	local cp = p.checkpoint
+	if cp and cp.runId == runId and cp.depth == depth then
+		rc.mask = cp.roomRewardMask or 0
+		rc.paid = cp.paidBaseCumulative or 0
+	end
+	p.roomClaims = rc
+	return rc
+end
+
 HANDLERS.GrantProgress = function(p, m)
-	-- m: { runId, depth, index, mask, rateBp, paidBaseCumulative }
-	local claim = Rewards.planProgress(m)
+	-- m: { runId, depth, index, mask (hint), rateBp, paidBaseCumulative (hint) }
+	local rc = roomLedger(p, m.runId, m.depth)
+	local claim = Rewards.planProgress({
+		runId = m.runId,
+		depth = m.depth,
+		index = m.index,
+		mask = bit32.bor(m.mask or 0, rc.mask),
+		rateBp = m.rateBp,
+		paidBaseCumulative = math.max(m.paidBaseCumulative or 0, rc.paid),
+	})
 	if #claim.lines == 0 then
 		return false, "already_claimed"
 	end
 	p.coins += claim.coins
 	p.permits += claim.permits
 	p.xp += claim.xp
+	rc.mask = claim.newMask
+	rc.paid = claim.newPaidBaseCumulative
 	updateCheckpointMask(p, m.runId, m.depth, claim.newMask, claim.newPaidBaseCumulative)
 	return true, claim
 end
 
 HANDLERS.GrantToken = function(p, m)
-	local ok, claim = Rewards.planToken(m.runId, m.depth, m.tokenIndex, m.mask)
+	local rc = roomLedger(p, m.runId, m.depth)
+	local ok, claim = Rewards.planToken(m.runId, m.depth, m.tokenIndex, bit32.bor(m.mask or 0, rc.mask))
 	if not ok then
 		return false, claim
 	end
 	p.coins += claim.coins
-	updateCheckpointMask(p, m.runId, m.depth, claim.newMask, m.paidBaseCumulative or 0)
+	rc.mask = claim.newMask
+	updateCheckpointMask(p, m.runId, m.depth, claim.newMask, rc.paid)
 	return true, claim
 end
 
@@ -1426,6 +1456,51 @@ end
 
 HANDLERS.ClearCheckpoint = function(p)
 	p.checkpoint = nil
+	return true, nil
+end
+
+-- Room exit in ONE durable write: exit reward (+ any unpaid milestones), mastery, first-family
+-- discovery bonus and the checkpoint of the next room. Avoids 3-4 sequential writes at the exit.
+HANDLERS.CompleteRoom = function(p, m, ctx)
+	local first = (p.roomMastery.families[m.familyId] or 0) == 0
+	local ok, claim = HANDLERS.GrantProgress(p, {
+		runId = m.runId,
+		depth = m.depth,
+		index = 4,
+		mask = m.mask,
+		rateBp = m.rateBp,
+		paidBaseCumulative = m.paidBaseCumulative,
+	}, ctx)
+	if not ok then
+		return false, claim
+	end
+	HANDLERS.RoomCompleted(p, { familyId = m.familyId, depth = m.depth }, ctx)
+	local discovery = 0
+	if first then
+		local okD, d = HANDLERS.GrantOnce(p, { kind = "family_discovery", key = m.familyId }, ctx)
+		if okD then
+			discovery = d.coins
+		end
+	end
+	if m.nextCheckpoint then
+		p.checkpoint = deepCopy(m.nextCheckpoint)
+	end
+	return true, { claim = claim, familyDiscovery = discovery }
+end
+
+-- Persist the current room's tool charges (resume never refills them for the same room).
+HANDLERS.UpdateCharges = function(p, m)
+	local cp = p.checkpoint
+	if not (cp and cp.runId == m.runId and cp.depth == m.depth) then
+		return false, "no_room_checkpoint"
+	end
+	local snap = {}
+	for toolId, c in m.charges do
+		if Economy.tool(toolId) and type(c) == "number" and c >= 0 and c % 1 == 0 then
+			snap[toolId] = c
+		end
+	end
+	cp.chargesSnapshot = snap
 	return true, nil
 end
 
@@ -2223,7 +2298,7 @@ function Plan.generate(spec, depth: number, seed: number, attempt: number?): any
 			if not Box.insideRoom(Box.expand(b, WALL_MARGIN, 0, WALL_MARGIN), w, d, h) then
 				return false
 			end
-			if isColumn and Box.overlapsXZ(b, spawnBlock) then
+			if (isColumn and Box.overlapsXZ(b, spawnBlock)) or Box.intersects(b, Box.expand(spawn, 1, 1, 1)) then
 				return false
 			end
 			if Box.intersects(b, clearanceBlock) then
@@ -2668,7 +2743,9 @@ function Plan.tutorialCell(): any
 		behavior = "stable",
 		protected = false,
 	})
-	local cbox = Box.onFloor(0, 0, -2, cs[1], cs[3], cs[2])
+	-- carton 10 x 8 x 4 centred at z = 0: 1 stud clear of the spawn sas (z <= -5), touching the
+	-- 8-stud exit ledge (z >= 4) so the second step is a plain 4-stud rise
+	local cbox = Box.onFloor(0, 0, 0, cs[1], cs[3], cs[2])
 	table.insert(nodes, {
 		id = "carton",
 		kind = "column",
@@ -2943,6 +3020,12 @@ function V.validate(room, opts: { gapRatio: number }): (boolean, { errors: { str
 	for i, s in solids do
 		if not Box.insideRoom(s.box, w, d, h, 1e-6) then
 			fail("solid_outside_room:" .. tostring(s.nodeId or i))
+		end
+		-- the player must never appear inside (or under) a support or a structural drop
+		for _, sz in room.spawnZones do
+			if Box.intersects(s.box, sz, 0.01) then
+				fail("spawn_obstructed:" .. tostring(s.nodeId or i))
+			end
 		end
 		for j = i + 1, #solids do
 			local o = solids[j]
@@ -3343,10 +3426,12 @@ function Tutorial.record(s: Session, name: string, now: number)
 	if name == "controllable" and s.controllableAt == nil then
 		s.controllableAt = now
 	end
-	table.insert(s.events, { name = name, t = now })
 	if name == "input" then
+		-- called every frame while the player moves: only the timestamp is kept (bounded memory)
 		s.lastInputAt = now
+		return
 	end
+	table.insert(s.events, { name = name, t = now })
 end
 
 -- Ghost trajectory hint after 5 s of inaction: shows a path, never moves the avatar.
@@ -6860,9 +6945,13 @@ local persistent = true
 local okStore = pcall(function()
 	store = Repository.dataStoreAdapter(DATASTORE_NAME)
 	-- probe API access once (Studio without "Enable Studio Access to API Services" fails here)
-	store:update("probe_" .. game.JobId, function(_old)
+	-- the adapter reports failures as a return value: turn it into an error so the fallback triggers
+	local okProbe, err = store:update("probe_" .. game.JobId, function(_old)
 		return nil
 	end)
+	if not okProbe then
+		error(err)
+	end
 end)
 if not okStore then
 	warn("[FillingUp] DataStore unavailable: using NON-PERSISTENT memory store (test only)")
@@ -7410,6 +7499,7 @@ function ExpeditionService.new(deps: any)
 	self.burial = deps.burial
 	self.telemetry = deps.telemetry
 	self.sessions = {} :: { [Player]: any }
+	self.slots = {} :: { [number]: boolean }
 	self.worldFolder = Instance.new("Folder")
 	self.worldFolder.Name = "Expeditions"
 	self.worldFolder.Parent = Workspace
@@ -7487,6 +7577,10 @@ local function buildSas(parent: Instance, cell: CFrame, canRebirth: boolean): (M
 		local rb = part("RebirthMachine", Vector3.new(4, 6, 3), Vector3.new(0, 3, -6), "#8855FF")
 		rb:SetAttribute("Kiosk", "rebirth")
 	end
+	-- north wall closed on both sides of the 8-stud door (no way to walk off the floor)
+	part("WallN_L", Vector3.new(8, 12, 1), Vector3.new(-8, 6, 8.5), "#203055")
+	part("WallN_R", Vector3.new(8, 12, 1), Vector3.new(8, 6, 8.5), "#203055")
+	part("Floor_Door", Vector3.new(8, 1, 6), Vector3.new(0, -0.5, 11), "#FFF5DF")
 	-- straight ahead: the door to the next room (continuing requires no menu)
 	local door = part("ContinueDoor", Vector3.new(8, 10, 1), Vector3.new(0, 5, 8.5), "#39E68B", false)
 	door.Transparency = 0.5
@@ -7510,9 +7604,27 @@ function ExpeditionService.playerAdded(self, player: Player)
 		)
 		return
 	end
+	if player.Parent == nil then
+		-- left while the profile was loading: release the lock instead of keeping it 30 min
+		self.repo:release(userKey)
+		return
+	end
+	local slot = 0
+	while self.slots[slot] do
+		slot += 1
+	end
+	self.slots[slot] = true
 	local s = {
 		player = player,
 		userKey = userKey,
+		slot = slot,
+		cells = RoomGenerator.cellsFor(slot),
+		removed = false,
+		claiming = false,
+		txBusy = false,
+		tutorialGranted = {},
+		pendingCompletion = nil,
+		pendingResume = nil,
 		exp = nil,
 		residency = Residency.new(),
 		rooms = {},
@@ -7530,7 +7642,19 @@ function ExpeditionService.playerAdded(self, player: Player)
 	}
 	self.sessions[player] = s
 	self.telemetry:event(userKey, "session_start", { migration = notes })
-	player.CharacterAdded:Wait()
+	-- the character usually spawned while the profile was loading: never wait for a NEXT spawn
+	if not player.Character then
+		player.CharacterAdded:Wait()
+	end
+	if s.removed then
+		return
+	end
+	-- respawn (reset button, fall below the world): back to the current safe place, same room
+	s.maid:give(player.CharacterAdded:Connect(function()
+		task.defer(function()
+			self:respawnInPlace(s)
+		end)
+	end))
 	if not Tutorial.isComplete(profile.tutorialFlags) then
 		self:startTutorial(s)
 		return
@@ -7553,6 +7677,11 @@ function ExpeditionService.playerRemoving(self, player: Player)
 	if not s then
 		return
 	end
+	-- mark first: pending retries and Heartbeat callbacks must stop before any yield below
+	s.removed = true
+	s.inSas = false
+	self.sessions[player] = nil
+	self.slots[s.slot] = nil
 	self:teardownRoom(s, s.room)
 	if s.nextRoom then
 		self:teardownRoom(s, s.nextRoom)
@@ -7565,7 +7694,19 @@ function ExpeditionService.playerRemoving(self, player: Player)
 	self.tools:forget(player)
 	self.remotes.forget(player)
 	self.repo:release(s.userKey)
-	self.sessions[player] = nil
+end
+
+function ExpeditionService.respawnInPlace(self, s: any)
+	if s.removed then
+		return
+	end
+	if s.inSas then
+		spawnAt(s.player, s.cells.sas * CFrame.new(0, 0, -4))
+	elseif s.room then
+		local sp = s.room.def.spawnZones[1]
+		spawnAt(s.player, s.room.cell * CFrame.new(sp.cx, 0, sp.cz))
+		self.burial:resetSpawn(s.player)
+	end
 end
 
 ------------------------------------------------------------------------------------------------
@@ -7573,7 +7714,7 @@ end
 ------------------------------------------------------------------------------------------------
 function ExpeditionService.startTutorial(self, s: any)
 	local def = RoomPlan.tutorialCell()
-	local cell = RoomGenerator.CELLS[1]
+	local cell = s.cells[1]
 	local model, index = RoomGenerator.build(def, cell, self.worldFolder)
 	s.room = { def = def, model = model, index = index, cell = cell, tutorial = true }
 	s.roomMaid = Maid.new()
@@ -7581,6 +7722,11 @@ function ExpeditionService.startTutorial(self, s: any)
 	Tutorial.record(s.tutorial, "controllable", os.clock())
 	self.remotes.fire(s.player, "Hud", { type = "hint", key = "climb_and_exit" })
 	local function grant(event: string)
+		-- one request per event: Heartbeat would otherwise queue a mutation every frame
+		if s.tutorialGranted[event] then
+			return
+		end
+		s.tutorialGranted[event] = true
 		Tutorial.record(s.tutorial, event, os.clock())
 		local p = self.repo:get(s.userKey)
 		local reward = Tutorial.rewardFor(event, p.tutorialFlags)
@@ -7595,26 +7741,28 @@ function ExpeditionService.startTutorial(self, s: any)
 	-- 0-3 s: the yellow carton falls and settles (discovery bonus once per account)
 	local slot = index.structuralSlots.carton
 	local carton = PropFactory.create(slot.propId, RoomGenerator.template("reception"))
+	local cartonCol = carton.PrimaryPart :: BasePart
 	carton:PivotTo(slot.cframe + Vector3.new(0, 8, 0))
-	carton.PrimaryPart.Anchored = true
+	cartonCol.Anchored = true
 	carton.Parent = model
 	s.roomMaid:give(carton)
 	task.delay(def.structuralDrops[1].atSeconds, function()
 		local tween = game:GetService("TweenService")
-			:Create(carton.PrimaryPart, TweenInfo.new(0.6, Enum.EasingStyle.Bounce), { CFrame = slot.cframe })
+			:Create(cartonCol, TweenInfo.new(0.6, Enum.EasingStyle.Bounce), { CFrame = slot.cframe })
 		tween.Completed:Once(function()
 			grant("carton_settled")
 		end)
 		tween:Play()
 	end)
 	-- first landing on the carton
+	local nextHintCheck = 0
 	s.roomMaid:give(RunService.Heartbeat:Connect(function()
 		local char = s.player.Character
 		local hum = char and char:FindFirstChildOfClass("Humanoid")
 		local root = char and char:FindFirstChild("HumanoidRootPart") :: BasePart?
 		if hum and root and hum.FloorMaterial ~= Enum.Material.Air then
-			local rel = carton.PrimaryPart.CFrame:PointToObjectSpace(root.Position)
-			local sz = carton.PrimaryPart.Size
+			local rel = cartonCol.CFrame:PointToObjectSpace(root.Position)
+			local sz = cartonCol.Size
 			if math.abs(rel.X) < sz.X / 2 + 0.5 and math.abs(rel.Z) < sz.Z / 2 + 0.5 and rel.Y > sz.Y / 2 then
 				grant("landed_on_support")
 			end
@@ -7622,6 +7770,10 @@ function ExpeditionService.startTutorial(self, s: any)
 		if hum and hum.MoveDirection.Magnitude > 0.05 then
 			Tutorial.record(s.tutorial, "input", os.clock())
 		end
+		if os.clock() < nextHintCheck or s.tutorial.hintShown then
+			return
+		end
+		nextHintCheck = os.clock() + 0.5
 		if Tutorial.shouldShowGhostHint(s.tutorial, os.clock(), self.repo:get(s.userKey).tutorialFlags) then
 			s.tutorial.hintShown = true
 			self.remotes.fire(
@@ -7656,7 +7808,7 @@ function ExpeditionService.prepareRoom(self, s: any, depth: number, cellIndex: n
 	if def.fallback then
 		self.telemetry:event(s.userKey, "room_fallback", { depth = depth, template = def.templateId })
 	end
-	local cell = RoomGenerator.CELLS[cellIndex]
+	local cell = s.cells[cellIndex]
 	local model, index = RoomGenerator.build(def, cell, self.worldFolder)
 	return {
 		def = def,
@@ -7683,12 +7835,19 @@ function ExpeditionService.startRun(self, s: any, params: any)
 		configVersion = params.configVersion,
 	})
 	s.history = {}
+	s.pendingResume = params
+	if params.resumed ~= true then
+		-- durable checkpoint of the starting room: resume, claim ledger and tool charges need it
+		-- (CheckpointService updates s.exp.checkpointRevision on success; a failure is retried at exit)
+		self.checkpoints:save(s.userKey, s.exp, { rateBp = Rewards.rebirthBasisPoints(p.rebirthCount), paidBaseCumulative = 0 }, nil)
+	end
 	local room = self:prepareRoom(s, s.exp.depth, 1)
 	if not room then
+		-- honest waiting state in the safe sas; continueFromSas retries (state stays Preparing)
 		self:enterSas(s, nil, { waitingForRoom = true })
 		return
 	end
-	self:activateRoom(s, room, params)
+	self:activateRoom(s, room, if params.resumed then params else nil)
 end
 
 function ExpeditionService.activateRoom(self, s: any, room: any, resume: any?)
@@ -7783,9 +7942,20 @@ end
 
 function ExpeditionService.checkProgress(self, s: any)
 	local room = s.room
-	if not room or not s.exp or s.exp.state ~= "Active" then
+	if not room or not s.exp or s.exp.state ~= "Active" or s.claiming or s.removed then
 		return
 	end
+	-- one claim pass at a time: the writes yield and the next 10 Hz tick must not reuse a stale mask
+	-- (the profile's claim ledger also refuses duplicates: decision 0005)
+	s.claiming = true
+	local ok, err = pcall(self.checkProgressUnsafe, self, s, room)
+	s.claiming = false
+	if not ok then
+		warn("[ExpeditionService] checkProgress failed:", err)
+	end
+end
+
+function ExpeditionService.checkProgressUnsafe(self, s: any, room: any)
 	local char = s.player.Character
 	local root = char and char:FindFirstChild("HumanoidRootPart") :: BasePart?
 	local hum = char and char:FindFirstChildOfClass("Humanoid")
@@ -7870,15 +8040,53 @@ function ExpeditionService.onExit(self, s: any)
 	end
 	s.exp = t
 	room.director:stop() -- only the active room simulates waves; none in the sas
-	local okReward, res = self.rewards:progress(s.userKey, s.roomCtx, 4)
 	local p = self.repo:get(s.userKey)
-	local firstOfFamily = (p.roomMastery.families[room.def.familyId] or 0) == 0
-	self.repo:mutate(s.userKey, { type = "RoomCompleted", familyId = room.def.familyId, depth = depth })
-	if firstOfFamily then
-		self.repo:mutate(s.userKey, { type = "GrantOnce", kind = "family_discovery", key = room.def.familyId })
-	end
+	-- next room checkpoint (depth already incremented by the machine, fresh claim mask)
+	local nextExp = table.clone(t)
+	nextExp.roomRewardMask = 0
+	local nextCp =
+		Checkpoint.fromExpedition(nextExp, { rateBasisPoints = Rewards.rebirthBasisPoints(p.rebirthCount), paidBaseCumulative = 0 })
+	s.pendingCompletion = {
+		type = "CompleteRoom",
+		runId = s.roomCtx.runId,
+		depth = depth,
+		mask = s.roomCtx.mask,
+		rateBp = s.roomCtx.rateBp,
+		paidBaseCumulative = s.roomCtx.paidBaseCumulative,
+		familyId = room.def.familyId,
+		nextCheckpoint = nextCp,
+	}
 	self.telemetry:event(s.userKey, "room_exit", { depth = depth, template = room.def.templateId })
-	self:enterSas(s, if okReward then res.claim else nil, {})
+	-- the player is moved to the safe sas first; the single durable write happens there
+	self:enterSas(s, nil, {})
+	self:commitCompletion(s)
+end
+
+-- Commits the pending room completion (exit reward + mastery + discovery + checkpoint) in ONE
+-- write. On failure nothing is announced as saved and continuing waits for a successful retry.
+function ExpeditionService.commitCompletion(self, s: any): boolean
+	local m = s.pendingCompletion
+	if m == nil then
+		return true
+	end
+	local ok, res, info = self.repo:mutate(s.userKey, m)
+	if ok or res == "already_claimed" then
+		s.pendingCompletion = nil
+		s.lastSaveOk = true
+		if s.exp then
+			s.exp.checkpointRevision = m.nextCheckpoint.checkpointRevision
+		end
+		if ok then
+			local c = info.claim
+			self.remotes.fire(s.player, "Hud", { type = "gains", coins = c.coins + info.familyDiscovery, permits = c.permits, xp = c.xp })
+		end
+		self.remotes.fire(s.player, "Hud", { type = "save_status", ok = true })
+		self:push(s)
+		return true
+	end
+	s.lastSaveOk = false
+	self.remotes.fire(s.player, "Hud", { type = "save_status", ok = false })
+	return false
 end
 
 function ExpeditionService.enterSas(self, s: any, claim: any?, opts: any)
@@ -7888,7 +8096,7 @@ function ExpeditionService.enterSas(self, s: any, claim: any?, opts: any)
 	end
 	local Rebirth = require(Shared.Domain.Rebirth)
 	local eligible = (Rebirth.qualifies(p)) and Rebirth.maxAffordable(p.rebirthCount, p.permits) > 0
-	local sas, door = buildSas(self.worldFolder, RoomGenerator.CELLS.sas, eligible)
+	local sas, door = buildSas(self.worldFolder, s.cells.sas, eligible)
 	s.sas = sas
 	s.inSas = true
 	s.kiosk = opts.kiosk == true
@@ -7903,11 +8111,9 @@ function ExpeditionService.enterSas(self, s: any, claim: any?, opts: any)
 			paidBaseCumulative = 0,
 		}
 		s.exp.roomRewardMask = 0
-		local okSave = self.checkpoints:save(s.userKey, s.exp, s.roomCtx, nil)
-		s.lastSaveOk = okSave
-		self.remotes.fire(s.player, "Hud", { type = "save_status", ok = okSave })
+		-- the durable checkpoint is part of the pending CompleteRoom write (commitCompletion)
 	end
-	spawnAt(s.player, RoomGenerator.CELLS.sas * CFrame.new(0, 0, -4))
+	spawnAt(s.player, s.cells.sas * CFrame.new(0, 0, -4))
 	if claim then
 		self.remotes.fire(s.player, "Hud", { type = "gains", coins = claim.coins, permits = claim.permits, xp = claim.xp })
 	end
@@ -7916,10 +8122,11 @@ function ExpeditionService.enterSas(self, s: any, claim: any?, opts: any)
 	s.maid:give(doorMaid)
 	local fired = false
 	doorMaid:give(RunService.Heartbeat:Connect(function()
-		if fired then
+		if fired or s.txBusy or s.removed then
 			return
 		end
-		local root = s.player.Character and s.player.Character:FindFirstChild("HumanoidRootPart") :: BasePart?
+		local char = s.player.Character
+		local root = char and char:FindFirstChild("HumanoidRootPart") :: BasePart?
 		if root and (root.Position - door.Position).Magnitude < 5 then
 			fired = true
 			doorMaid:clean()
@@ -7959,7 +8166,37 @@ function ExpeditionService.continueFromSas(self, s: any)
 		self:startRun(s, self:newRunParams())
 		return
 	end
+	if s.removed then
+		return
+	end
+	local function retryLater(key: string)
+		self.remotes.fire(s.player, "Hud", { type = key })
+		task.delay(1, function()
+			if s.inSas and not s.removed then
+				self:continueFromSas(s)
+			end
+		end)
+	end
+	if s.exp.state == "Preparing" then
+		-- the first room of the run could not be prepared yet: retry from the safe sas
+		local room = self:prepareRoom(s, s.exp.depth, 1)
+		if room == nil then
+			retryLater("loading_next")
+			return
+		end
+		if s.sas then
+			s.sas:Destroy()
+			s.sas = nil
+		end
+		self:activateRoom(s, room, if s.pendingResume and s.pendingResume.resumed then s.pendingResume else nil)
+		return
+	end
 	if s.exp.state ~= "Transitioning" then
+		return
+	end
+	-- the previous room must be durably completed before progressing (no unsaved progression)
+	if s.pendingCompletion and not self:commitCompletion(s) then
+		retryLater("save_failed_retry")
 		return
 	end
 	if s.nextRoom == nil then
@@ -7967,12 +8204,7 @@ function ExpeditionService.continueFromSas(self, s: any)
 		s.nextRoom = self:prepareRoom(s, s.exp.depth, cellIndex)
 		if s.nextRoom == nil then
 			-- honest loading state in the safe sas: no failure can come from waiting here
-			self.remotes.fire(s.player, "Hud", { type = "loading_next" })
-			task.delay(1, function()
-				if s.inSas then
-					self:continueFromSas(s)
-				end
-			end)
+			retryLater("loading_next")
 			return
 		end
 		Residency.preloadNext(s.residency, s.nextRoom.id)
@@ -8036,6 +8268,13 @@ function ExpeditionService.bindIntents(self)
 		})
 		if res.ok then
 			self.remotes.fire(player, "ToolEffect", res)
+			-- persist the remaining charges of this room instance (a reconnect never refills them)
+			task.spawn(function()
+				self.repo:mutate(
+					s.userKey,
+					{ type = "UpdateCharges", runId = s.exp.runId, depth = s.exp.depth, charges = self.tools:charges(player) }
+				)
+			end)
 		end
 		return res
 	end)
@@ -8048,7 +8287,22 @@ function ExpeditionService.bindIntents(self)
 		if not s then
 			return { ok = false, error = "no_session" }
 		end
-		local res = self.rebirth:confirm(s.userKey, a, s.inSas)
+		if not s.inSas or s.txBusy then
+			return { ok = false, error = if s.txBusy then "transaction_in_progress" else "not_in_sas" }
+		end
+		-- the completed room must be durably credited before the run can end by rebirth
+		if s.pendingCompletion and not self:commitCompletion(s) then
+			return { ok = false, error = "save_failed" }
+		end
+		-- the sas door is ignored while the rebirth write is in flight (no race to the next room)
+		s.txBusy = true
+		local okCall, res = pcall(function()
+			return self.rebirth:confirm(s.userKey, a, s.inSas)
+		end)
+		s.txBusy = false
+		if not okCall then
+			return { ok = false, error = "server_error" }
+		end
 		if res.ok and s.exp and s.exp.state == "Transitioning" then
 			local okX, x = Machine.apply(s.exp, { type = "Extract", inSas = true })
 			if okX then
@@ -8065,7 +8319,9 @@ function ExpeditionService.bindIntents(self)
 		if not s or not s.inSas then
 			return { ok = false, error = "only_in_sas" }
 		end
-		if not s.lastSaveOk and s.exp and s.exp.state == "Transitioning" then
+		if s.pendingCompletion then
+			self:commitCompletion(s)
+		elseif not s.lastSaveOk and s.exp and s.exp.state == "Transitioning" then
 			s.lastSaveOk = self.checkpoints:save(s.userKey, s.exp, s.roomCtx, nil)
 		end
 		if not s.lastSaveOk then
@@ -8217,6 +8473,9 @@ return InventoryService
 -- (Roblox: clone a template Model; tests: plain tables). Release ALWAYS runs the full reset:
 -- connections, velocities, network owner, effects, reward identifiers, tags, anchoring.
 
+local Shared = game:GetService("ReplicatedStorage"):WaitForChild("Shared")
+local Config = require(Shared.GeneratedConfig)
+
 local Pool = {}
 Pool.__index = Pool
 
@@ -8230,13 +8489,21 @@ export type Pool = typeof(setmetatable(
 		acquired: number,
 		released: number,
 		maxFreePerKind: number,
+		maxFreeTotal: number,
+		freeTotal: number,
 		destroy: ((obj: any) -> ())?,
 	},
 	Pool
 ))
 
 function Pool.new(
-	opts: { factory: (kind: string) -> any, reset: (obj: any) -> (), destroy: ((obj: any) -> ())?, maxFreePerKind: number? }
+	opts: {
+		factory: (kind: string) -> any,
+		reset: (obj: any) -> (),
+		destroy: ((obj: any) -> ())?,
+		maxFreePerKind: number?,
+		maxFreeTotal: number?, -- default: runtime.streaming.max_fill_colliders_active_room
+	}
 ): Pool
 	return setmetatable({
 		factory = opts.factory,
@@ -8248,7 +8515,7 @@ function Pool.new(
 		acquired = 0,
 		released = 0,
 		maxFreePerKind = opts.maxFreePerKind or math.huge,
-		maxFreeTotal = opts.maxFreeTotal or 160,
+		maxFreeTotal = opts.maxFreeTotal or Config.Runtime.streaming.max_fill_colliders_active_room,
 		freeTotal = 0,
 	}, Pool)
 end
@@ -8644,6 +8911,13 @@ function PropFactory.create(propId: string, template: any?): Model
 			part.CanTouch = false
 			part.Massless = true
 			part:SetAttribute("LocalOffset", v3(spec.offset) - Vector3.new(0, h / 2, 0))
+			-- generator rotation hints (Roblox cylinders run along X): per part, per name, or for all cylinders
+			local rot = spec.rotationDeg
+				or (desc.chevronRotationDeg and desc.chevronRotationDeg[spec.name])
+				or (spec.shape == "Cylinder" and (desc.edgeCylinderRotationDeg or desc.stampRotationDeg))
+			if rot then
+				part:SetAttribute("LocalRotationDeg", v3(rot))
+			end
 			part.Parent = visualRoot
 		end
 	else
@@ -8671,7 +8945,10 @@ function PropFactory.create(propId: string, template: any?): Model
 	for _, part in model:GetDescendants() do
 		if part:IsA("BasePart") and part ~= collider then
 			local off = part:GetAttribute("LocalOffset") or Vector3.new(0, (part:GetAttribute("LocalY") :: number?) or 0, 0)
-			part.CFrame = collider.CFrame * CFrame.new(off :: Vector3)
+			local rot = part:GetAttribute("LocalRotationDeg") :: Vector3?
+			part.CFrame = collider.CFrame
+				* CFrame.new(off :: Vector3)
+				* (if rot then CFrame.Angles(math.rad(rot.X), math.rad(rot.Y), math.rad(rot.Z)) else CFrame.identity)
 			if visualRoot.Name ~= "PlushVisual" or part.Name == "TopMarker" then
 				local weld = Instance.new("WeldConstraint")
 				weld.Part0 = collider
@@ -9025,12 +9302,22 @@ local TEMPLATE_BY_FAMILY = {
 	bin = "GiantBin",
 }
 
--- Two room cells + one sas cell, far enough apart, reused forever (no drifting chain).
-RoomGenerator.CELLS = {
-	[1] = CFrame.new(0, 0, 0),
-	[2] = CFrame.new(400, 0, 0),
-	sas = CFrame.new(200, 0, 300),
-}
+-- Each session owns a slot: two room cells + one sas cell, reused forever (no drifting chain).
+-- Slots are 4000 studs apart so that rooms, fill colliders, burial probes and "standing on"
+-- checks of different players can never interact (solo expeditions, docs/01).
+RoomGenerator.SLOT_SPACING = 4000
+
+function RoomGenerator.cellsFor(slot: number): { [any]: CFrame }
+	local base = CFrame.new(slot * RoomGenerator.SLOT_SPACING, 0, 0)
+	return {
+		[1] = base,
+		[2] = base * CFrame.new(400, 0, 0),
+		sas = base * CFrame.new(200, 0, 300),
+	}
+end
+
+-- Backwards-compatible default (slot 0), used by Studio test scenes.
+RoomGenerator.CELLS = RoomGenerator.cellsFor(0)
 
 function RoomGenerator.template(familyId: string)
 	return require(Templates:WaitForChild(TEMPLATE_BY_FAMILY[familyId]) :: ModuleScript)
@@ -9484,9 +9771,10 @@ local function playersStandingOn(model: Model): boolean
 		return false
 	end
 	for _, plr in game:GetService("Players"):GetPlayers() do
-		local hum = plr.Character and plr.Character:FindFirstChildOfClass("Humanoid")
-		if hum and hum.FloorMaterial ~= Enum.Material.Air then
-			local root = plr.Character:FindFirstChild("HumanoidRootPart") :: BasePart?
+		local char = plr.Character
+		local hum = char and char:FindFirstChildOfClass("Humanoid")
+		if char and hum and hum.FloorMaterial ~= Enum.Material.Air then
+			local root = char:FindFirstChild("HumanoidRootPart") :: BasePart?
 			if root then
 				local rel = collider.CFrame:PointToObjectSpace(root.Position)
 				local s = collider.Size
@@ -9559,7 +9847,41 @@ function WaveDirector.spawnDrop(self, drop: any, _impactTime: number)
 	end
 end
 
+local function coveredOnAllSides(col: BasePart, params: OverlapParams): boolean
+	local s = col.Size
+	local probes = {
+		{ CFrame.new(0, s.Y / 2 + 1, 0), Vector3.new(s.X * 0.8, 1.5, s.Z * 0.8) },
+		{ CFrame.new(s.X / 2 + 1, 0, 0), Vector3.new(1.5, s.Y * 0.8, s.Z * 0.8) },
+		{ CFrame.new(-s.X / 2 - 1, 0, 0), Vector3.new(1.5, s.Y * 0.8, s.Z * 0.8) },
+		{ CFrame.new(0, 0, s.Z / 2 + 1), Vector3.new(s.X * 0.8, s.Y * 0.8, 1.5) },
+		{ CFrame.new(0, 0, -s.Z / 2 - 1), Vector3.new(s.X * 0.8, s.Y * 0.8, 1.5) },
+	}
+	for _, pr in probes do
+		local hits = Workspace:GetPartBoundsInBox(col.CFrame * pr[1], pr[2], params)
+		local other = false
+		for _, h in hits do
+			if not h:IsDescendantOf(col.Parent :: Instance) then
+				other = true
+				break
+			end
+		end
+		if not other then
+			return false
+		end
+	end
+	return true
+end
+
 function WaveDirector.consolidate(self)
+	local fillParams = OverlapParams.new()
+	fillParams.FilterType = Enum.RaycastFilterType.Include
+	local fill = {}
+	for _, tag in { "FillCollider", "FillAggregate" } do
+		for _, inst in CollectionService:GetTagged(tag) do
+			table.insert(fill, inst)
+		end
+	end
+	fillParams.FilterDescendantsInstances = fill
 	local list = {}
 	local byId = {}
 	local dynCount = 0
@@ -9573,16 +9895,9 @@ function WaveDirector.consolidate(self)
 		if not col.Anchored then
 			dynCount += 1
 		elseif not occupied then
-			-- buried = top and all four sides covered by other fill (cheap box query)
-			local params = OverlapParams.new()
-			params.FilterType = Enum.RaycastFilterType.Exclude
-			params.FilterDescendantsInstances = { m }
-			local above = Workspace:GetPartBoundsInBox(
-				col.CFrame * CFrame.new(0, col.Size.Y / 2 + 1.5, 0),
-				Vector3.new(col.Size.X, 2, col.Size.Z),
-				params
-			)
-			buried = #above > 0 and e.age > 20
+			-- buried = top AND all four sides covered by other FILL colliders (architecture, shelves,
+			-- ceiling and the exit clearance never count): only then is it unreachable
+			buried = e.age > 20 and coveredOnAllSides(col, fillParams)
 		end
 		table.insert(list, {
 			id = e.id,
@@ -10920,6 +11235,8 @@ function HUDController.start()
 			showToast(string.format("+%d Coins  +%d ◆  +%d XP", e.coins or 0, e.permits or 0, e.xp or 0), 2.5)
 		elseif e.type == "save_status" then
 			showToast(Strings.get(lang(), if e.ok then "saved" else "save_failed"), 1.5)
+		elseif e.type == "save_failed_retry" then
+			showToast(Strings.get(lang(), "save_failed"), 1)
 		elseif e.type == "loading_next" then
 			showToast(Strings.get(lang(), "loading_next"), 1)
 		elseif e.type == "ko" then
@@ -10964,6 +11281,7 @@ local lastGrounded = -math.huge
 local lastJumpPress = -math.huge
 local glideMultiplier: number? = nil
 local glideUntil = 0
+local stepConn: RBXScriptConnection? = nil
 
 function MovementController.setGlide(mult: number, duration: number)
 	glideMultiplier = mult
@@ -10987,7 +11305,10 @@ local function bind(character: Model)
 			end
 		end
 	end)
-	RunService.RenderStepped:Connect(function()
+	if stepConn then
+		stepConn:Disconnect() -- one per character: no pile-up across respawns
+	end
+	stepConn = RunService.RenderStepped:Connect(function()
 		if hum.FloorMaterial ~= Enum.Material.Air then
 			lastGrounded = os.clock()
 		end
@@ -11006,6 +11327,7 @@ local function bind(character: Model)
 			local params = RaycastParams.new()
 			params.FilterType = Enum.RaycastFilterType.Exclude
 			params.FilterDescendantsInstances = { character }
+			params.RespectCanCollide = true -- ignore query-only volumes such as ExitClearance
 			local ahead = hum.MoveDirection * 1.6
 			local hitChest = workspace:Raycast(root.Position, ahead, params)
 			local hitHead = workspace:Raycast(root.Position + Vector3.new(0, 1.6, 0), ahead, params)

@@ -1,0 +1,344 @@
+{
+  "count": 48,
+  "exported": [
+    {
+      "id": "reception_carton",
+      "parts": 11,
+      "path": "assets/import/models/reception_carton.rbxm",
+      "roundtrip": true,
+      "visual": "generator"
+    },
+    {
+      "id": "reception_foam_crate",
+      "parts": 7,
+      "path": "assets/import/models/reception_foam_crate.rbxm",
+      "roundtrip": true,
+      "visual": "generator"
+    },
+    {
+      "id": "reception_suitcase",
+      "parts": 11,
+      "path": "assets/import/models/reception_suitcase.rbxm",
+      "roundtrip": true,
+      "visual": "generator"
+    },
+    {
+      "id": "reception_pallet",
+      "parts": 8,
+      "path": "assets/import/models/reception_pallet.rbxm",
+      "roundtrip": true,
+      "visual": "generator"
+    },
+    {
+      "id": "reception_tape_reel",
+      "parts": 3,
+      "path": "assets/import/models/reception_tape_reel.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "reception_pillow_parcel",
+      "parts": 3,
+      "path": "assets/import/models/reception_pillow_parcel.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "reception_mail_cart",
+      "parts": 3,
+      "path": "assets/import/models/reception_mail_cart.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "reception_accordion_parcel",
+      "parts": 3,
+      "path": "assets/import/models/reception_accordion_parcel.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "toy_plush_mallow",
+      "parts": 3,
+      "path": "assets/import/models/toy_plush_mallow.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "toy_plush_loppy",
+      "parts": 3,
+      "path": "assets/import/models/toy_plush_loppy.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "toy_flat_duck",
+      "parts": 3,
+      "path": "assets/import/models/toy_flat_duck.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "toy_train",
+      "parts": 3,
+      "path": "assets/import/models/toy_train.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "toy_drum",
+      "parts": 3,
+      "path": "assets/import/models/toy_drum.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "toy_domino",
+      "parts": 3,
+      "path": "assets/import/models/toy_domino.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "toy_shape_cube",
+      "parts": 3,
+      "path": "assets/import/models/toy_shape_cube.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "toy_plush_octo",
+      "parts": 3,
+      "path": "assets/import/models/toy_plush_octo.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "bureau_paper_ream",
+      "parts": 3,
+      "path": "assets/import/models/bureau_paper_ream.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "bureau_binder_stack",
+      "parts": 3,
+      "path": "assets/import/models/bureau_binder_stack.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "bureau_desk",
+      "parts": 3,
+      "path": "assets/import/models/bureau_desk.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "bureau_locker",
+      "parts": 3,
+      "path": "assets/import/models/bureau_locker.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "bureau_keyboard",
+      "parts": 3,
+      "path": "assets/import/models/bureau_keyboard.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "bureau_rail_chair",
+      "parts": 3,
+      "path": "assets/import/models/bureau_rail_chair.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "bureau_spring_phone",
+      "parts": 3,
+      "path": "assets/import/models/bureau_spring_phone.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "bureau_loose_files",
+      "parts": 3,
+      "path": "assets/import/models/bureau_loose_files.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "kitchen_cereal_box",
+      "parts": 3,
+      "path": "assets/import/models/kitchen_cereal_box.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "kitchen_closed_pot",
+      "parts": 3,
+      "path": "assets/import/models/kitchen_closed_pot.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "kitchen_flat_lemon",
+      "parts": 3,
+      "path": "assets/import/models/kitchen_flat_lemon.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "kitchen_biscuit_tin",
+      "parts": 3,
+      "path": "assets/import/models/kitchen_biscuit_tin.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "kitchen_jelly",
+      "parts": 3,
+      "path": "assets/import/models/kitchen_jelly.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "kitchen_serving_tray",
+      "parts": 3,
+      "path": "assets/import/models/kitchen_serving_tray.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "kitchen_toast",
+      "parts": 3,
+      "path": "assets/import/models/kitchen_toast.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "kitchen_pancake_stack",
+      "parts": 3,
+      "path": "assets/import/models/kitchen_pancake_stack.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "garage_wheel_stack",
+      "parts": 3,
+      "path": "assets/import/models/garage_wheel_stack.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "garage_tool_chest",
+      "parts": 3,
+      "path": "assets/import/models/garage_tool_chest.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "garage_flat_car",
+      "parts": 3,
+      "path": "assets/import/models/garage_flat_car.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "garage_barrier_block",
+      "parts": 3,
+      "path": "assets/import/models/garage_barrier_block.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "garage_square_can",
+      "parts": 3,
+      "path": "assets/import/models/garage_square_can.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "garage_lift_jack",
+      "parts": 3,
+      "path": "assets/import/models/garage_lift_jack.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "garage_spring_plate",
+      "parts": 3,
+      "path": "assets/import/models/garage_spring_plate.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "garage_hinged_ramp",
+      "parts": 3,
+      "path": "assets/import/models/garage_hinged_ramp.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "bin_compact_container",
+      "parts": 3,
+      "path": "assets/import/models/bin_compact_container.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "bin_foam_beam",
+      "parts": 3,
+      "path": "assets/import/models/bin_foam_beam.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "bin_hex_block",
+      "parts": 3,
+      "path": "assets/import/models/bin_hex_block.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "bin_spring_piano",
+      "parts": 3,
+      "path": "assets/import/models/bin_spring_piano.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "bin_conveyor_bucket",
+      "parts": 3,
+      "path": "assets/import/models/bin_conveyor_bucket.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "bin_satellite_parcel",
+      "parts": 3,
+      "path": "assets/import/models/bin_satellite_parcel.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "bin_air_ring",
+      "parts": 3,
+      "path": "assets/import/models/bin_air_ring.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    },
+    {
+      "id": "bin_compressible_barrel",
+      "parts": 3,
+      "path": "assets/import/models/bin_compressible_barrel.rbxm",
+      "roundtrip": true,
+      "visual": "proxy_not_final_art"
+    }
+  ],
+  "failures": {},
+  "kind": "engine_lite_build_and_export",
+  "status": "PASS"
+}

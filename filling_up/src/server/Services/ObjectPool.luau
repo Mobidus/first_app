@@ -3,6 +3,9 @@
 -- (Roblox: clone a template Model; tests: plain tables). Release ALWAYS runs the full reset:
 -- connections, velocities, network owner, effects, reward identifiers, tags, anchoring.
 
+local Shared = game:GetService("ReplicatedStorage"):WaitForChild("Shared")
+local Config = require(Shared.GeneratedConfig)
+
 local Pool = {}
 Pool.__index = Pool
 
@@ -16,13 +19,21 @@ export type Pool = typeof(setmetatable(
 		acquired: number,
 		released: number,
 		maxFreePerKind: number,
+		maxFreeTotal: number,
+		freeTotal: number,
 		destroy: ((obj: any) -> ())?,
 	},
 	Pool
 ))
 
 function Pool.new(
-	opts: { factory: (kind: string) -> any, reset: (obj: any) -> (), destroy: ((obj: any) -> ())?, maxFreePerKind: number? }
+	opts: {
+		factory: (kind: string) -> any,
+		reset: (obj: any) -> (),
+		destroy: ((obj: any) -> ())?,
+		maxFreePerKind: number?,
+		maxFreeTotal: number?, -- default: runtime.streaming.max_fill_colliders_active_room
+	}
 ): Pool
 	return setmetatable({
 		factory = opts.factory,
@@ -34,7 +45,7 @@ function Pool.new(
 		acquired = 0,
 		released = 0,
 		maxFreePerKind = opts.maxFreePerKind or math.huge,
-		maxFreeTotal = opts.maxFreeTotal or 160,
+		maxFreeTotal = opts.maxFreeTotal or Config.Runtime.streaming.max_fill_colliders_active_room,
 		freeTotal = 0,
 	}, Pool)
 end

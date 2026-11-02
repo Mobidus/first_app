@@ -7,9 +7,11 @@
 1. **Aucun test moteur (Roblox Studio indisponible).** 17 suites `studio` sont BLOCKED : physique, collisions,
    caméra, mobile, DataStore réel, achats. Les scènes sont prêtes dans `tests/studio/*` (4 automatisées, 8 avec une
    procédure).
-2. **Le code moteur n'a jamais été exécuté.** Services serveur et contrôleurs client : les 74 scripts du `.rbxlx`
-   compilent en Luau et Selene ne remonte aucune erreur. Mais sans `luau-analyze`, les types ne sont pas vérifiés. Il
-   faut s'attendre à des corrections au premier lancement dans Studio (API, timings, ergonomie).
+2. **Le code moteur n'a jamais été exécuté dans Roblox.** Les 74 scripts compilent et Selene ne signale aucune
+   erreur. Une relecture indépendante a trouvé 17 défauts, tous corrigés (`reports/engine_review.md`).
+   `PropFactory` et les modèles de salle s'exécutent sur de vraies instances `@lune/roblox` (48 exports `.rbxm`).
+   `luau-analyze` n'est toujours pas disponible : sa compilation depuis les sources a été refusée par la politique de
+   permissions. Il faut s'attendre à d'autres corrections au premier lancement dans Studio.
 3. **Contrôleur non mesuré (T06).** Les distances des parcours viennent d'un modèle balistique provisoire (décision
    0009). Après MovementLab, il faudra injecter la table mesurée et relancer la certification.
 4. **Assets non importés (T03).** Mallow, Loppy et Octo existent en GLB/FBX riggés, mais aucun import Studio n'a été
@@ -25,6 +27,11 @@
   (Mallow 0,34 ; Loppy 0,80 ; Octo 0,36). Décision provisoire 0008 : balise sur l'empreinte réduite.
 - **Silhouette de Loppy** fragile : son dos plat de 8 × 7 impose un corps cubique.
 - **Valise et machine de Réception** : générateur ou proxy au lieu du mesh Blender prévu. Décision à prendre.
+- **Max Players** doit être réglé à 1 (MVP solo) dans les paramètres du jeu. Les cases de monde par session rendent
+  plusieurs joueurs inoffensifs, mais rien n'a été testé au-delà d'un joueur.
+- **Rendus de revue** (`reports/room_previews/`) : les sorties « porte » sont basses (0,35 h), donc les salles M/porte
+  restent courtes même en profondeur. La pression vient des vagues, pas de la longueur de la route. À juger en
+  playtest.
 - **Doc 04 / config.** Le carton du tutoriel fait 10 × 10 × 4 dans la doc, 10 × 8 × 4 dans la config (la config
   fait foi, décision 0006).
 - **Jalons.** Ils sont validés par la hauteur des pieds posés (≥ 25/50/75 % de la cible). Le seuil exact est à

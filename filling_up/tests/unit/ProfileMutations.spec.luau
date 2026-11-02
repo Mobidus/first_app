@@ -50,6 +50,83 @@ describe("ProfileMutations", function()
 		expect(again).toBe(false)
 	end)
 
+	it("a stale caller mask cannot claim a milestone twice (yielding store race)", function()
+		local p = Mut.newProfile()
+		local m = { type = "GrantProgress", runId = "r9", depth = 4, index = 1, mask = 0, rateBp = 0, paidBaseCumulative = 0 }
+		local ok1, p1 = Mut.apply(p, m)
+		expect(ok1).toBe(true)
+		-- second request built from the SAME stale mask (sent before the first write returned)
+		local ok2, why = Mut.apply(p1, m)
+		expect(ok2).toBe(false)
+		expect(why).toBe("already_claimed")
+		-- a later zone built from the stale mask pays only what is new
+		local ok3, p3 =
+			Mut.apply(p1, { type = "GrantProgress", runId = "r9", depth = 4, index = 2, mask = 0, rateBp = 0, paidBaseCumulative = 0 })
+		expect(ok3).toBe(true)
+		expect(p3.coins - p1.coins).toBe(10)
+	end)
+
+	it("a stale caller mask cannot claim an optional token twice", function()
+		local p = Mut.newProfile()
+		local m = { type = "GrantToken", runId = "r9", depth = 4, tokenIndex = 2, mask = 0, paidBaseCumulative = 0 }
+		local _, p1 = Mut.apply(p, m)
+		expect((Mut.apply(p1, m))).toBe(false)
+		expect(p1.coins).toBe(5)
+	end)
+
+	it("CompleteRoom commits exit reward, mastery, family discovery and next checkpoint in ONE mutation", function()
+		local p = Mut.newProfile()
+		local cp = {
+			runId = "r",
+			seed = 1,
+			configVersion = "x",
+			depth = 3,
+			roomRewardMask = 0,
+			lastCommittedDepth = 2,
+			checkpointRevision = 1,
+			roomInstanceId = "r:3",
+			rateBasisPoints = 0,
+			paidBaseCumulative = 0,
+		}
+		local ok, p1, info = Mut.apply(p, {
+			type = "CompleteRoom",
+			runId = "r",
+			depth = 2,
+			mask = 0,
+			rateBp = 0,
+			paidBaseCumulative = 0,
+			familyId = "toy",
+			nextCheckpoint = cp,
+		})
+		expect(ok).toBe(true)
+		expect(p1.revision).toBe(1)
+		expect(p1.coins).toBe(150 + 50) -- whole band base + first-discovery bonus
+		expect(p1.permits).toBe(1)
+		expect(p1.roomMastery.totalCompleted).toBe(1)
+		expect(p1.checkpoint.depth).toBe(3)
+		expect(info.familyDiscovery).toBe(50)
+		local again = Mut.apply(p1, {
+			type = "CompleteRoom",
+			runId = "r",
+			depth = 2,
+			mask = 0,
+			rateBp = 0,
+			paidBaseCumulative = 0,
+			familyId = "toy",
+			nextCheckpoint = cp,
+		})
+		expect(again).toBe(false)
+	end)
+
+	it("tool charges of the current room are persisted for resume", function()
+		local p = Mut.newProfile()
+		p.checkpoint = { runId = "r", depth = 5, roomRewardMask = 0, paidBaseCumulative = 0 }
+		local ok, p1 = Mut.apply(p, { type = "UpdateCharges", runId = "r", depth = 5, charges = { radar_pop = 2 } })
+		expect(ok).toBe(true)
+		expect(p1.checkpoint.chargesSnapshot.radar_pop).toBe(2)
+		expect((Mut.apply(p1, { type = "UpdateCharges", runId = "r", depth = 6, charges = { radar_pop = 4 } }))).toBe(false)
+	end)
+
 	it("KO does not touch coins, permits or inventory (no KO mutation exists)", function()
 		for _, t in Mut.TYPES do
 			expect(string.find(string.lower(t), "ko") == nil).toBe(true)

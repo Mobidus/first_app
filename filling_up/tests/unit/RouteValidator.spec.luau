@@ -148,6 +148,22 @@ describe("RouteValidator", function()
 		expect(t.routeGraph.nodes[3].topY).toBe(8)
 	end)
 
+	it("no solid (support, shelf or structural drop) may occupy a spawn zone", function()
+		local r = deepCopy(first)
+		local sz = r.spawnZones[1]
+		table.insert(r.solids, { nodeId = "intruder", kind = "prop", box = Box.new(sz.cx, 1, sz.cz + sz.sz / 2, 4, 2, 4) })
+		local ok, rep = V.validate(r, { gapRatio = r.gapRatio })
+		expect(ok).toBe(false)
+		expect(hasError(rep, "spawn_obstructed")).toBe(true)
+	end)
+
+	it("tutorial carton never lands on the spawn zone", function()
+		local t = Plan.tutorialCell()
+		for _, s in t.solids do
+			expect(Box.intersects(s.box, t.spawnZones[1])).toBe(false)
+		end
+	end)
+
 	it("landing smaller than 7 studs on the required route is rejected", function()
 		local r = deepCopy(first)
 		for _, n in r.routeGraph.nodes do

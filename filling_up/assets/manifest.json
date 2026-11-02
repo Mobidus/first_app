@@ -45,13 +45,13 @@
       "provenance": "original_creation_required",
       "validation_evidence": [
         "assets/source/design/canvas/project/Room_Reception.dc.html",
-        "reports/T03/generators_check.txt"
+        "reports/T03/generators_check.txt",
+        "reports/T03/props_rbxm_export.json"
       ],
       "design_reference_paths": [
         "assets/source/generators/reception_carton.luau",
         "assets/import/models/reception_carton.rbxm"
-      ],
-      "export_pending": "engine export requires an authorised Studio import"
+      ]
     },
     {
       "id": "reception_foam_crate",
@@ -93,13 +93,13 @@
       "provenance": "original_creation_required",
       "validation_evidence": [
         "assets/source/design/canvas/project/Room_Reception.dc.html",
-        "reports/T03/generators_check.txt"
+        "reports/T03/generators_check.txt",
+        "reports/T03/props_rbxm_export.json"
       ],
       "design_reference_paths": [
         "assets/source/generators/reception_foam_crate.luau",
         "assets/import/models/reception_foam_crate.rbxm"
-      ],
-      "export_pending": "engine export requires an authorised Studio import"
+      ]
     },
     {
       "id": "reception_suitcase",
@@ -109,7 +109,7 @@
       "status": "designed",
       "roblox_asset_id": null,
       "source_path": "assets/source/models/reception_suitcase.blend",
-      "export_path": "assets/import/models/reception_suitcase.glb",
+      "export_path": "assets/import/models/reception_suitcase.rbxm",
       "dimensions_order": "width_depth_height",
       "size_studs": [
         10,
@@ -140,7 +140,8 @@
       "image_export_pixels": null,
       "provenance": "original_creation_required",
       "validation_evidence": [
-        "assets/source/design/canvas/project/Room_Reception.dc.html"
+        "assets/source/design/canvas/project/Room_Reception.dc.html",
+        "reports/T03/props_rbxm_export.json"
       ],
       "design_reference_paths": [
         "assets/source/models/reception_suitcase.blend",
@@ -187,13 +188,13 @@
       "provenance": "original_creation_required",
       "validation_evidence": [
         "assets/source/design/canvas/project/Room_Reception.dc.html",
-        "reports/T03/generators_check.txt"
+        "reports/T03/generators_check.txt",
+        "reports/T03/props_rbxm_export.json"
       ],
       "design_reference_paths": [
         "assets/source/generators/reception_pallet.luau",
         "assets/import/models/reception_pallet.rbxm"
-      ],
-      "export_pending": "engine export requires an authorised Studio import"
+      ]
     },
     {
       "id": "reception_tape_reel",
@@ -239,7 +240,9 @@
       "design_reference_paths": [
         "assets/source/models/reception_tape_reel.blend",
         "assets/import/models/reception_tape_reel.glb"
-      ]
+      ],
+      "proxy_export_path": "assets/import/models/reception_tape_reel.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "reception_pillow_parcel",
@@ -285,7 +288,9 @@
       "design_reference_paths": [
         "assets/source/models/reception_pillow_parcel.blend",
         "assets/import/models/reception_pillow_parcel.glb"
-      ]
+      ],
+      "proxy_export_path": "assets/import/models/reception_pillow_parcel.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "reception_mail_cart",
@@ -331,7 +336,9 @@
       "design_reference_paths": [
         "assets/source/models/reception_mail_cart.blend",
         "assets/import/models/reception_mail_cart.glb"
-      ]
+      ],
+      "proxy_export_path": "assets/import/models/reception_mail_cart.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "reception_accordion_parcel",
@@ -377,7 +384,9 @@
       "design_reference_paths": [
         "assets/source/models/reception_accordion_parcel.blend",
         "assets/import/models/reception_accordion_parcel.glb"
-      ]
+      ],
+      "proxy_export_path": "assets/import/models/reception_accordion_parcel.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "machine_reception_stamp",
@@ -467,7 +476,9 @@
       "additional_exports": [
         "assets/import/models/toy_plush_mallow.fbx",
         "assets/import/models/toy_plush_mallow_lod1.glb"
-      ]
+      ],
+      "proxy_export_path": "assets/import/models/toy_plush_mallow.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "toy_plush_loppy",
@@ -521,7 +532,9 @@
       "additional_exports": [
         "assets/import/models/toy_plush_loppy.fbx",
         "assets/import/models/toy_plush_loppy_lod1.glb"
-      ]
+      ],
+      "proxy_export_path": "assets/import/models/toy_plush_loppy.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "toy_flat_duck",
@@ -567,7 +580,9 @@
       "design_reference_paths": [
         "assets/source/models/toy_flat_duck.blend",
         "assets/import/models/toy_flat_duck.glb"
-      ]
+      ],
+      "proxy_export_path": "assets/import/models/toy_flat_duck.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "toy_train",
@@ -613,7 +628,9 @@
       "design_reference_paths": [
         "assets/source/models/toy_train.blend",
         "assets/import/models/toy_train.glb"
-      ]
+      ],
+      "proxy_export_path": "assets/import/models/toy_train.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "toy_drum",
@@ -659,7 +676,9 @@
       "design_reference_paths": [
         "assets/source/models/toy_drum.blend",
         "assets/import/models/toy_drum.glb"
-      ]
+      ],
+      "proxy_export_path": "assets/import/models/toy_drum.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "toy_domino",
@@ -705,7 +724,9 @@
       "design_reference_paths": [
         "assets/source/generators/toy_domino.luau",
         "assets/import/models/toy_domino.rbxm"
-      ]
+      ],
+      "proxy_export_path": "assets/import/models/toy_domino.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "toy_shape_cube",
@@ -751,7 +772,9 @@
       "design_reference_paths": [
         "assets/source/generators/toy_shape_cube.luau",
         "assets/import/models/toy_shape_cube.rbxm"
-      ]
+      ],
+      "proxy_export_path": "assets/import/models/toy_shape_cube.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "toy_plush_octo",
@@ -805,7 +828,9 @@
       "additional_exports": [
         "assets/import/models/toy_plush_octo.fbx",
         "assets/import/models/toy_plush_octo_lod1.glb"
-      ]
+      ],
+      "proxy_export_path": "assets/import/models/toy_plush_octo.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "machine_toy_spinner",
@@ -887,7 +912,9 @@
       "design_reference_paths": [
         "assets/source/generators/bureau_paper_ream.luau",
         "assets/import/models/bureau_paper_ream.rbxm"
-      ]
+      ],
+      "proxy_export_path": "assets/import/models/bureau_paper_ream.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "bureau_binder_stack",
@@ -933,7 +960,9 @@
       "design_reference_paths": [
         "assets/source/generators/bureau_binder_stack.luau",
         "assets/import/models/bureau_binder_stack.rbxm"
-      ]
+      ],
+      "proxy_export_path": "assets/import/models/bureau_binder_stack.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "bureau_desk",
@@ -979,7 +1008,9 @@
       "design_reference_paths": [
         "assets/source/generators/bureau_desk.luau",
         "assets/import/models/bureau_desk.rbxm"
-      ]
+      ],
+      "proxy_export_path": "assets/import/models/bureau_desk.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "bureau_locker",
@@ -1025,7 +1056,9 @@
       "design_reference_paths": [
         "assets/source/generators/bureau_locker.luau",
         "assets/import/models/bureau_locker.rbxm"
-      ]
+      ],
+      "proxy_export_path": "assets/import/models/bureau_locker.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "bureau_keyboard",
@@ -1071,7 +1104,9 @@
       "design_reference_paths": [
         "assets/source/models/bureau_keyboard.blend",
         "assets/import/models/bureau_keyboard.glb"
-      ]
+      ],
+      "proxy_export_path": "assets/import/models/bureau_keyboard.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "bureau_rail_chair",
@@ -1117,7 +1152,9 @@
       "design_reference_paths": [
         "assets/source/models/bureau_rail_chair.blend",
         "assets/import/models/bureau_rail_chair.glb"
-      ]
+      ],
+      "proxy_export_path": "assets/import/models/bureau_rail_chair.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "bureau_spring_phone",
@@ -1163,7 +1200,9 @@
       "design_reference_paths": [
         "assets/source/models/bureau_spring_phone.blend",
         "assets/import/models/bureau_spring_phone.glb"
-      ]
+      ],
+      "proxy_export_path": "assets/import/models/bureau_spring_phone.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "bureau_loose_files",
@@ -1209,7 +1248,9 @@
       "design_reference_paths": [
         "assets/source/models/bureau_loose_files.blend",
         "assets/import/models/bureau_loose_files.glb"
-      ]
+      ],
+      "proxy_export_path": "assets/import/models/bureau_loose_files.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "machine_bureau_copier",
@@ -1285,7 +1326,9 @@
       "max_materials": 2,
       "image_export_pixels": null,
       "provenance": "original_creation_required",
-      "validation_evidence": []
+      "validation_evidence": [],
+      "proxy_export_path": "assets/import/models/kitchen_cereal_box.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "kitchen_closed_pot",
@@ -1325,7 +1368,9 @@
       "max_materials": 2,
       "image_export_pixels": null,
       "provenance": "original_creation_required",
-      "validation_evidence": []
+      "validation_evidence": [],
+      "proxy_export_path": "assets/import/models/kitchen_closed_pot.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "kitchen_flat_lemon",
@@ -1365,7 +1410,9 @@
       "max_materials": 2,
       "image_export_pixels": null,
       "provenance": "original_creation_required",
-      "validation_evidence": []
+      "validation_evidence": [],
+      "proxy_export_path": "assets/import/models/kitchen_flat_lemon.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "kitchen_biscuit_tin",
@@ -1405,7 +1452,9 @@
       "max_materials": 2,
       "image_export_pixels": null,
       "provenance": "original_creation_required",
-      "validation_evidence": []
+      "validation_evidence": [],
+      "proxy_export_path": "assets/import/models/kitchen_biscuit_tin.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "kitchen_jelly",
@@ -1445,7 +1494,9 @@
       "max_materials": 2,
       "image_export_pixels": null,
       "provenance": "original_creation_required",
-      "validation_evidence": []
+      "validation_evidence": [],
+      "proxy_export_path": "assets/import/models/kitchen_jelly.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "kitchen_serving_tray",
@@ -1485,7 +1536,9 @@
       "max_materials": 2,
       "image_export_pixels": null,
       "provenance": "original_creation_required",
-      "validation_evidence": []
+      "validation_evidence": [],
+      "proxy_export_path": "assets/import/models/kitchen_serving_tray.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "kitchen_toast",
@@ -1525,7 +1578,9 @@
       "max_materials": 2,
       "image_export_pixels": null,
       "provenance": "original_creation_required",
-      "validation_evidence": []
+      "validation_evidence": [],
+      "proxy_export_path": "assets/import/models/kitchen_toast.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "kitchen_pancake_stack",
@@ -1565,7 +1620,9 @@
       "max_materials": 2,
       "image_export_pixels": null,
       "provenance": "original_creation_required",
-      "validation_evidence": []
+      "validation_evidence": [],
+      "proxy_export_path": "assets/import/models/kitchen_pancake_stack.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "machine_kitchen_toaster",
@@ -1635,7 +1692,9 @@
       "max_materials": 2,
       "image_export_pixels": null,
       "provenance": "original_creation_required",
-      "validation_evidence": []
+      "validation_evidence": [],
+      "proxy_export_path": "assets/import/models/garage_wheel_stack.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "garage_tool_chest",
@@ -1675,7 +1734,9 @@
       "max_materials": 2,
       "image_export_pixels": null,
       "provenance": "original_creation_required",
-      "validation_evidence": []
+      "validation_evidence": [],
+      "proxy_export_path": "assets/import/models/garage_tool_chest.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "garage_flat_car",
@@ -1715,7 +1776,9 @@
       "max_materials": 2,
       "image_export_pixels": null,
       "provenance": "original_creation_required",
-      "validation_evidence": []
+      "validation_evidence": [],
+      "proxy_export_path": "assets/import/models/garage_flat_car.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "garage_barrier_block",
@@ -1755,7 +1818,9 @@
       "max_materials": 2,
       "image_export_pixels": null,
       "provenance": "original_creation_required",
-      "validation_evidence": []
+      "validation_evidence": [],
+      "proxy_export_path": "assets/import/models/garage_barrier_block.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "garage_square_can",
@@ -1795,7 +1860,9 @@
       "max_materials": 2,
       "image_export_pixels": null,
       "provenance": "original_creation_required",
-      "validation_evidence": []
+      "validation_evidence": [],
+      "proxy_export_path": "assets/import/models/garage_square_can.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "garage_lift_jack",
@@ -1835,7 +1902,9 @@
       "max_materials": 2,
       "image_export_pixels": null,
       "provenance": "original_creation_required",
-      "validation_evidence": []
+      "validation_evidence": [],
+      "proxy_export_path": "assets/import/models/garage_lift_jack.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "garage_spring_plate",
@@ -1875,7 +1944,9 @@
       "max_materials": 2,
       "image_export_pixels": null,
       "provenance": "original_creation_required",
-      "validation_evidence": []
+      "validation_evidence": [],
+      "proxy_export_path": "assets/import/models/garage_spring_plate.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "garage_hinged_ramp",
@@ -1915,7 +1986,9 @@
       "max_materials": 2,
       "image_export_pixels": null,
       "provenance": "original_creation_required",
-      "validation_evidence": []
+      "validation_evidence": [],
+      "proxy_export_path": "assets/import/models/garage_hinged_ramp.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "machine_garage_assembler",
@@ -1985,7 +2058,9 @@
       "max_materials": 2,
       "image_export_pixels": null,
       "provenance": "original_creation_required",
-      "validation_evidence": []
+      "validation_evidence": [],
+      "proxy_export_path": "assets/import/models/bin_compact_container.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "bin_foam_beam",
@@ -2025,7 +2100,9 @@
       "max_materials": 2,
       "image_export_pixels": null,
       "provenance": "original_creation_required",
-      "validation_evidence": []
+      "validation_evidence": [],
+      "proxy_export_path": "assets/import/models/bin_foam_beam.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "bin_hex_block",
@@ -2065,7 +2142,9 @@
       "max_materials": 2,
       "image_export_pixels": null,
       "provenance": "original_creation_required",
-      "validation_evidence": []
+      "validation_evidence": [],
+      "proxy_export_path": "assets/import/models/bin_hex_block.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "bin_spring_piano",
@@ -2105,7 +2184,9 @@
       "max_materials": 2,
       "image_export_pixels": null,
       "provenance": "original_creation_required",
-      "validation_evidence": []
+      "validation_evidence": [],
+      "proxy_export_path": "assets/import/models/bin_spring_piano.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "bin_conveyor_bucket",
@@ -2145,7 +2226,9 @@
       "max_materials": 2,
       "image_export_pixels": null,
       "provenance": "original_creation_required",
-      "validation_evidence": []
+      "validation_evidence": [],
+      "proxy_export_path": "assets/import/models/bin_conveyor_bucket.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "bin_satellite_parcel",
@@ -2185,7 +2268,9 @@
       "max_materials": 2,
       "image_export_pixels": null,
       "provenance": "original_creation_required",
-      "validation_evidence": []
+      "validation_evidence": [],
+      "proxy_export_path": "assets/import/models/bin_satellite_parcel.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "bin_air_ring",
@@ -2225,7 +2310,9 @@
       "max_materials": 2,
       "image_export_pixels": null,
       "provenance": "original_creation_required",
-      "validation_evidence": []
+      "validation_evidence": [],
+      "proxy_export_path": "assets/import/models/bin_air_ring.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "bin_compressible_barrel",
@@ -2265,7 +2352,9 @@
       "max_materials": 2,
       "image_export_pixels": null,
       "provenance": "original_creation_required",
-      "validation_evidence": []
+      "validation_evidence": [],
+      "proxy_export_path": "assets/import/models/bin_compressible_barrel.rbxm",
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
     },
     {
       "id": "machine_bin_tricore",
