@@ -72,6 +72,54 @@
       "tested": 120,
       "unbuildable": 0
     },
+    "bureau/XL/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/XL/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/XL/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/XL/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/XL/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/XL/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/XV/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/XV/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/XV/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/XV/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/XV/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/XV/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
     "reception/M/door": {
       "certified": true,
       "fallback": 0,
@@ -140,6 +188,54 @@
       "certified": true,
       "fallback": 0,
       "key": "reception/V/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/XL/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/XL/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/XL/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/XL/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/XL/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/XL/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/XV/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/XV/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/XV/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/XV/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/XV/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/XV/window",
       "primary_ok": 120,
       "tested": 120,
       "unbuildable": 0
@@ -215,13 +311,61 @@
       "primary_ok": 120,
       "tested": 120,
       "unbuildable": 0
+    },
+    "toy/XL/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/XL/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/XL/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/XL/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/XL/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/XL/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/XV/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/XV/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/XV/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/XV/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/XV/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/XV/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
     }
   },
   "failing_seeds": {},
   "fallback": 0,
-  "primary_ok": 3240,
+  "primary_ok": 5400,
   "profile": "mvp",
   "seeds_per_combo": 120,
-  "total": 3240,
+  "total": 5400,
   "unbuildable": 0
 }

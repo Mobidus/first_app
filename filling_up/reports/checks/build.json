@@ -17,8 +17,8 @@
       "check": "verify_build (place tree + every script compiles with Luau)",
       "exit_code": 0,
       "scripts": 2,
-      "modules": 72,
-      "compiled": 74,
+      "modules": 73,
+      "compiled": 75,
       "errors": {}
     },
     {
@@ -43,7 +43,7 @@
   ],
   "artifact": "build/FillingUp.rbxlx",
   "scope": "A valid local place file is produced; this is not a gameplay test (Rojo != Studio).",
-  "date_utc": "2026-11-02T11:47:52.067843+00:00",
+  "date_utc": "2026-11-02T13:06:40.668493+00:00",
   "versions": {
     "python": "3.13.18",
     "rojo": "Rojo 7.5.1",

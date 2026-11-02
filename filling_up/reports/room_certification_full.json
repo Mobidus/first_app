@@ -192,6 +192,102 @@
       "tested": 120,
       "unbuildable": 0
     },
+    "bin/XL/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bin/XL/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bin/XL/duct": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bin/XL/duct",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bin/XL/floor_hatch": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bin/XL/floor_hatch",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bin/XL/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bin/XL/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bin/XL/tailgate": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bin/XL/tailgate",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bin/XL/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bin/XL/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bin/XV/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bin/XV/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bin/XV/duct": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bin/XV/duct",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bin/XV/floor_hatch": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bin/XV/floor_hatch",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bin/XV/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bin/XV/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bin/XV/tailgate": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bin/XV/tailgate",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bin/XV/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bin/XV/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
     "bureau/L/door": {
       "certified": true,
       "fallback": 0,
@@ -380,6 +476,102 @@
       "certified": true,
       "fallback": 0,
       "key": "bureau/V/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/XL/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/XL/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/XL/duct": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/XL/duct",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/XL/floor_hatch": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/XL/floor_hatch",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/XL/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/XL/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/XL/tailgate": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/XL/tailgate",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/XL/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/XL/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/XV/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/XV/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/XV/duct": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/XV/duct",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/XV/floor_hatch": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/XV/floor_hatch",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/XV/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/XV/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/XV/tailgate": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/XV/tailgate",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/XV/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/XV/window",
       "primary_ok": 120,
       "tested": 120,
       "unbuildable": 0
@@ -576,6 +768,102 @@
       "tested": 120,
       "unbuildable": 0
     },
+    "garage/XL/door": {
+      "certified": true,
+      "fallback": 1,
+      "key": "garage/XL/door",
+      "primary_ok": 119,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "garage/XL/duct": {
+      "certified": true,
+      "fallback": 1,
+      "key": "garage/XL/duct",
+      "primary_ok": 119,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "garage/XL/floor_hatch": {
+      "certified": true,
+      "fallback": 0,
+      "key": "garage/XL/floor_hatch",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "garage/XL/roof": {
+      "certified": true,
+      "fallback": 3,
+      "key": "garage/XL/roof",
+      "primary_ok": 117,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "garage/XL/tailgate": {
+      "certified": true,
+      "fallback": 0,
+      "key": "garage/XL/tailgate",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "garage/XL/window": {
+      "certified": true,
+      "fallback": 2,
+      "key": "garage/XL/window",
+      "primary_ok": 118,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "garage/XV/door": {
+      "certified": true,
+      "fallback": 2,
+      "key": "garage/XV/door",
+      "primary_ok": 118,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "garage/XV/duct": {
+      "certified": true,
+      "fallback": 2,
+      "key": "garage/XV/duct",
+      "primary_ok": 118,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "garage/XV/floor_hatch": {
+      "certified": true,
+      "fallback": 0,
+      "key": "garage/XV/floor_hatch",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "garage/XV/roof": {
+      "certified": true,
+      "fallback": 2,
+      "key": "garage/XV/roof",
+      "primary_ok": 118,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "garage/XV/tailgate": {
+      "certified": true,
+      "fallback": 2,
+      "key": "garage/XV/tailgate",
+      "primary_ok": 118,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "garage/XV/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "garage/XV/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
     "kitchen/L/door": {
       "certified": true,
       "fallback": 0,
@@ -765,6 +1053,102 @@
       "fallback": 5,
       "key": "kitchen/V/window",
       "primary_ok": 115,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "kitchen/XL/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "kitchen/XL/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "kitchen/XL/duct": {
+      "certified": true,
+      "fallback": 0,
+      "key": "kitchen/XL/duct",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "kitchen/XL/floor_hatch": {
+      "certified": true,
+      "fallback": 0,
+      "key": "kitchen/XL/floor_hatch",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "kitchen/XL/roof": {
+      "certified": true,
+      "fallback": 1,
+      "key": "kitchen/XL/roof",
+      "primary_ok": 119,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "kitchen/XL/tailgate": {
+      "certified": true,
+      "fallback": 0,
+      "key": "kitchen/XL/tailgate",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "kitchen/XL/window": {
+      "certified": true,
+      "fallback": 2,
+      "key": "kitchen/XL/window",
+      "primary_ok": 118,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "kitchen/XV/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "kitchen/XV/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "kitchen/XV/duct": {
+      "certified": true,
+      "fallback": 0,
+      "key": "kitchen/XV/duct",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "kitchen/XV/floor_hatch": {
+      "certified": true,
+      "fallback": 2,
+      "key": "kitchen/XV/floor_hatch",
+      "primary_ok": 118,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "kitchen/XV/roof": {
+      "certified": true,
+      "fallback": 1,
+      "key": "kitchen/XV/roof",
+      "primary_ok": 119,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "kitchen/XV/tailgate": {
+      "certified": true,
+      "fallback": 1,
+      "key": "kitchen/XV/tailgate",
+      "primary_ok": 119,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "kitchen/XV/window": {
+      "certified": true,
+      "fallback": 1,
+      "key": "kitchen/XV/window",
+      "primary_ok": 119,
       "tested": 120,
       "unbuildable": 0
     },
@@ -960,6 +1344,102 @@
       "tested": 120,
       "unbuildable": 0
     },
+    "reception/XL/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/XL/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/XL/duct": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/XL/duct",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/XL/floor_hatch": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/XL/floor_hatch",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/XL/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/XL/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/XL/tailgate": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/XL/tailgate",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/XL/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/XL/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/XV/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/XV/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/XV/duct": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/XV/duct",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/XV/floor_hatch": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/XV/floor_hatch",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/XV/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/XV/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/XV/tailgate": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/XV/tailgate",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/XV/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/XV/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
     "toy/L/door": {
       "certified": true,
       "fallback": 0,
@@ -1148,6 +1628,102 @@
       "certified": true,
       "fallback": 0,
       "key": "toy/V/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/XL/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/XL/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/XL/duct": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/XL/duct",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/XL/floor_hatch": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/XL/floor_hatch",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/XL/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/XL/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/XL/tailgate": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/XL/tailgate",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/XL/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/XL/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/XV/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/XV/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/XV/duct": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/XV/duct",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/XV/floor_hatch": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/XV/floor_hatch",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/XV/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/XV/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/XV/tailgate": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/XV/tailgate",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/XV/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/XV/window",
       "primary_ok": 120,
       "tested": 120,
       "unbuildable": 0
@@ -1671,6 +2247,54 @@
       "seed": 903417
     },
     {
+      "combo": "kitchen/XL/window",
+      "depth": 45,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 744913
+    },
+    {
+      "combo": "kitchen/XL/window",
+      "depth": 12,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 871617
+    },
+    {
+      "combo": "kitchen/XL/roof",
+      "depth": 8,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 198440
+    },
+    {
+      "combo": "kitchen/XV/window",
+      "depth": 45,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 127231
+    },
+    {
+      "combo": "kitchen/XV/roof",
+      "depth": 8,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 768608
+    },
+    {
+      "combo": "kitchen/XV/tailgate",
+      "depth": 45,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 554919
+    },
+    {
+      "combo": "kitchen/XV/floor_hatch",
+      "depth": 90,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 325361
+    },
+    {
+      "combo": "kitchen/XV/floor_hatch",
+      "depth": 8,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 760906
+    },
+    {
       "combo": "garage/S/door",
       "depth": 90,
       "reason": "primary_rejected_fallback_used",
@@ -2079,6 +2703,96 @@
       "seed": 879629
     },
     {
+      "combo": "garage/XL/door",
+      "depth": 12,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 253842
+    },
+    {
+      "combo": "garage/XL/window",
+      "depth": 12,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 206390
+    },
+    {
+      "combo": "garage/XL/window",
+      "depth": 25,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 879505
+    },
+    {
+      "combo": "garage/XL/roof",
+      "depth": 12,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 491412
+    },
+    {
+      "combo": "garage/XL/roof",
+      "depth": 25,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 499331
+    },
+    {
+      "combo": "garage/XL/roof",
+      "depth": 12,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 728982
+    },
+    {
+      "combo": "garage/XL/duct",
+      "depth": 45,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 32110
+    },
+    {
+      "combo": "garage/XV/door",
+      "depth": 25,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 24191
+    },
+    {
+      "combo": "garage/XV/door",
+      "depth": 25,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 736901
+    },
+    {
+      "combo": "garage/XV/roof",
+      "depth": 9,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 428060
+    },
+    {
+      "combo": "garage/XV/roof",
+      "depth": 45,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 602278
+    },
+    {
+      "combo": "garage/XV/duct",
+      "depth": 90,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 657711
+    },
+    {
+      "combo": "garage/XV/duct",
+      "depth": 45,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 887362
+    },
+    {
+      "combo": "garage/XV/tailgate",
+      "depth": 90,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 420265
+    },
+    {
+      "combo": "garage/XV/tailgate",
+      "depth": 9,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 618240
+    },
+    {
       "combo": "bin/S/roof",
       "depth": 45,
       "reason": "primary_rejected_fallback_used",
@@ -2103,10 +2817,10 @@
       "seed": 705318
     }
   ],
-  "fallback": 158,
-  "primary_ok": 17122,
+  "fallback": 181,
+  "primary_ok": 25739,
   "profile": "v1",
   "seeds_per_combo": 120,
-  "total": 17280,
+  "total": 25920,
   "unbuildable": 0
 }
