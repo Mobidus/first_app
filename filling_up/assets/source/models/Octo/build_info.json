@@ -6,9 +6,9 @@
     "assets/import/models/toy_plush_octo_lod1.glb",
     "assets/import/models/toy_plush_octo.fbx"
   ],
-  "highres_tris": 363772,
-  "lod0_tris": 3000,
-  "lod1_tris": 520,
+  "highres_tris": 368100,
+  "lod0_tris": 3400,
+  "lod1_tris": 690,
   "bones": [
     "Root",
     "Belly_00",
@@ -27,13 +27,13 @@
   ],
   "weights": {
     "Octo_LOD0": {
-      "vertices": 1494,
+      "vertices": 1702,
       "max_influences": 4,
       "weight_sum_max_error": 2.220446049250313e-16,
       "unweighted_vertices": 0
     },
     "Octo_LOD1": {
-      "vertices": 254,
+      "vertices": 347,
       "max_influences": 4,
       "weight_sum_max_error": 2.220446049250313e-16,
       "unweighted_vertices": 0

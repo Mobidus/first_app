@@ -37,10 +37,13 @@ HEX = {
     "loppy_cream": "#FFF1DA",
     "loppy_ear_inner": "#F7C9D6",
     "loppy_nose": "#F07C6A",
+    "loppy_back": "#C9B6F2",
+    "loppy_piping": "#9878D8",
     "octo_fabric": "#8FDDBE",
     "octo_under": "#F38D72",
     "octo_sucker": "#FFD3C2",
     "octo_eye_white": "#FFF5DF",
+    "octo_spot": "#BDF0DA",
 }
 
 
@@ -105,6 +108,72 @@ class Prim:
         f = ((q[:, 0] ** self.eh + q[:, 1] ** self.eh) ** (self.ev / self.eh) + q[:, 2] ** self.ev) ** (1.0 / self.ev)
         loc = d / f[:, None]
         world = (loc * self.radii) @ self.R.T + self.center
+        for r in range(rings - 2):
+            for s in range(seg):
+                a = r * seg + s
+                b = r * seg + (s + 1) % seg
+                faces.append((a, b, b + seg, a + seg))
+        for s in range(seg):
+            faces.append((top, (s + 1) % seg, s))
+            base = (rings - 2) * seg
+            faces.append((bot, base + s, base + (s + 1) % seg))
+        return world, faces
+
+
+class RoundSlab:
+    """Dalle à dessus plat : rectangle arrondi en plan (rayon de coin rc), extrudé entre z0 et z1,
+    arêtes arrondies (rayon re). Sert de « plateau passepoilé » aux peluches dont l'empreinte de
+    collision touche l'enveloppe : le dessus reste à la hauteur du collider jusqu'au bord.
+
+    value() suit la convention des Prim (<= 1 à l'intérieur) : 1 + distance signée (studs).
+    """
+
+    def __init__(self, name, center_xy, half_xy, z0, z1, rc=0.4, re=0.3, owner="body"):
+        self.name = name
+        self.center = np.array([center_xy[0], center_xy[1], 0.5 * (z0 + z1)], dtype=float)
+        self.half = np.array([half_xy[0], half_xy[1], 0.5 * (z1 - z0)], dtype=float)
+        self.radii = self.half.copy()
+        self.rc = float(rc)
+        self.re = float(re)
+        self.owner = owner
+        self.R = np.eye(3)
+
+    def local(self, p):
+        return (np.atleast_2d(p) - self.center) / self.radii
+
+    def sdf(self, p):
+        q = np.atleast_2d(p) - self.center
+        # rectangle arrondi 2D (plan), puis extrusion arrondie
+        dx = np.abs(q[:, 0]) - (self.half[0] - self.rc)
+        dy = np.abs(q[:, 1]) - (self.half[1] - self.rc)
+        d2 = np.sqrt(np.maximum(dx, 0) ** 2 + np.maximum(dy, 0) ** 2) + np.minimum(np.maximum(dx, dy), 0) - self.rc
+        wx = d2 + self.re
+        wz = np.abs(q[:, 2]) - (self.half[2] - self.re)
+        return np.sqrt(np.maximum(wx, 0) ** 2 + np.maximum(wz, 0) ** 2) + np.minimum(np.maximum(wx, wz), 0) - self.re
+
+    def value(self, p):
+        return 1.0 + self.sdf(p)
+
+    def surface_points(self, seg=96, rings=48):
+        verts = []
+        for r in range(1, rings):
+            th = math.pi * r / rings
+            for s in range(seg):
+                ph = 2 * math.pi * s / seg
+                verts.append((math.sin(th) * math.cos(ph), math.sin(th) * math.sin(ph), math.cos(th)))
+        verts.append((0, 0, 1))
+        verts.append((0, 0, -1))
+        d = np.array(verts) * self.half  # direction étirée (forme convexe, étoilée depuis le centre)
+        lo = np.zeros(len(d))
+        hi = np.full(len(d), 1.6)
+        for _ in range(40):  # bissection sur le rayon
+            mid = 0.5 * (lo + hi)
+            inside = self.sdf(self.center + d * mid[:, None]) <= 0
+            lo = np.where(inside, mid, lo)
+            hi = np.where(inside, hi, mid)
+        world = self.center + d * lo[:, None]
+        faces = []
+        top, bot = (rings - 1) * seg, (rings - 1) * seg + 1
         for r in range(rings - 2):
             for s in range(seg):
                 a = r * seg + s
@@ -320,20 +389,25 @@ def mallow():
     body_c = (-1.0, 0.0, 2.03)
     prims = [
         # ventre ovale dodu, dessus aplati à z ~ 4.03 (léger surplus : le pied s'y enfonce)
-        Prim("body", body_c, (4.6, 4.35, 2.0), eh=3.6, ev=5.0, owner="body"),
-        Prim("head", (4.15, 0.0, 2.55), (1.85, 2.30, 2.15), owner="head"),
-        Prim("muzzle", (3.55, 0.0, 4.25), (0.85, 1.10, 0.55), owner="head"),
-        Prim("nose", (3.80, 0.0, 4.78), (0.28, 0.38, 0.15), owner="head"),
-        Prim("eye_l", (4.62, 0.88, 4.40), (0.30, 0.26, 0.14), owner="head"),
-        Prim("eye_r", (4.62, -0.88, 4.40), (0.30, 0.26, 0.14), owner="head"),
-        Prim("ear_l", (5.05, 1.95, 3.55), (0.68, 0.92, 0.88), rot=(0, -10, 30), owner="head"),
-        Prim("ear_r", (5.05, -1.95, 3.55), (0.68, 0.92, 0.88), rot=(0, -10, -30), owner="head"),
-        # pattes avant levées aux coins avant de l'empreinte (coussinets vers le haut)
-        Prim("arm_l", (1.75, 3.55, 2.55), (1.55, 1.25, 1.38), rot=(0, 0, 35), owner="arm_l"),
-        Prim("arm_r", (1.75, -3.55, 2.55), (1.55, 1.25, 1.38), rot=(0, 0, -35), owner="arm_r"),
+        # Révision qualité (T03-b) : ventre plus carré en plan (exposants élevés, 0,75 stud de marge
+        # autour de l'empreinte) pour garder le dessus à z ~ 4 jusqu'au bord ; bourrelet bas bombé
+        # pour l'aspect rembourré ; tête, museau et pattes entièrement hors de l'empreinte ou sous
+        # le dessus (aucun relief > 4,25 dans l'empreinte).
+        Prim("body", body_c, (4.80, 4.70, 2.0), eh=11.0, ev=7.0, owner="body"),
+        Prim("tummy", (-1.0, 0.0, 1.55), (5.0, 4.82, 1.55), eh=3.2, ev=2.4, owner="body"),
+        Prim("head", (4.42, 0.0, 2.5), (1.55, 2.45, 2.12), owner="head"),
+        Prim("muzzle", (4.55, 0.0, 4.28), (0.72, 0.98, 0.50), owner="head"),
+        Prim("nose", (4.85, 0.0, 4.8), (0.26, 0.36, 0.15), owner="head"),
+        Prim("eye_l", (5.30, 0.85, 4.10), (0.26, 0.24, 0.13), owner="head"),
+        Prim("eye_r", (5.30, -0.85, 4.10), (0.26, 0.24, 0.13), owner="head"),
+        Prim("ear_l", (5.42, 1.92, 3.30), (0.60, 0.85, 0.80), rot=(0, -10, 30), owner="head"),
+        Prim("ear_r", (5.42, -1.92, 3.30), (0.60, 0.85, 0.80), rot=(0, -10, -30), owner="head"),
+        # pattes avant écartées aux coins avant (sous le dessus, coussinets vers l'extérieur)
+        Prim("arm_l", (3.05, 3.74, 2.05), (1.6, 0.98, 1.32), rot=(0, 0, 42), owner="arm_l"),
+        Prim("arm_r", (3.05, -3.74, 2.05), (1.6, 0.98, 1.32), rot=(0, 0, -42), owner="arm_r"),
         # pattes arrière courtes aux coins arrière
-        Prim("leg_l", (-4.35, 3.05, 2.30), (1.55, 1.30, 1.55), rot=(0, 0, -30), owner="leg_l"),
-        Prim("leg_r", (-4.35, -3.05, 2.30), (1.55, 1.30, 1.55), rot=(0, 0, 30), owner="leg_r"),
+        Prim("leg_l", (-4.62, 3.55, 1.62), (1.42, 1.08, 1.5), rot=(0, 0, -38), owner="leg_l"),
+        Prim("leg_r", (-4.62, -3.55, 1.62), (1.42, 1.08, 1.5), rot=(0, 0, 38), owner="leg_r"),
     ]
     pm = {p.name: p for p in prims}
     star = star_polygon(-2.0, 0.0, 1.25, 0.55, rot_deg=0.0)
@@ -362,12 +436,12 @@ def mallow():
         # museau caramel, nez et bouche brodés
         mz = pm["muzzle"].value(P) <= 1.04
         C[mz] = col("caramel_light")
-        nose_tri = point_in_polygon(p2, [(4.05, 0.0), (3.66, 0.36), (3.66, -0.36)])
-        C[mz & (P[:, 2] > 4.55) & nose_tri] = col("nose_brown")
+        nose_tri = point_in_polygon(p2, [(5.12, 0.0), (4.70, 0.38), (4.70, -0.38)])
+        C[mz & (P[:, 2] > 4.5) & nose_tri] = col("nose_brown")
         C[pm["nose"].value(P) <= 1.05] = col("nose_brown")
-        mouth = polyline_stitch(p2, [(3.66, 0.0), (3.22, 0.0)], width=0.05, dash=10, duty=1.0)
-        mouth |= polyline_stitch(p2, [(3.22, 0.0), (3.12, 0.26), (3.20, 0.48)], width=0.05, dash=10, duty=1.0)
-        mouth |= polyline_stitch(p2, [(3.22, 0.0), (3.12, -0.26), (3.20, -0.48)], width=0.05, dash=10, duty=1.0)
+        mouth = polyline_stitch(p2, [(4.62, 0.0), (4.18, 0.0)], width=0.05, dash=10, duty=1.0)
+        mouth |= polyline_stitch(p2, [(4.18, 0.0), (4.06, 0.28), (4.14, 0.52)], width=0.05, dash=10, duty=1.0)
+        mouth |= polyline_stitch(p2, [(4.18, 0.0), (4.06, -0.28), (4.14, -0.52)], width=0.05, dash=10, duty=1.0)
         C[mz & mouth & (N[:, 2] > 0.3)] = col("nose_brown")
         # yeux brodés
         C[(pm["eye_l"].value(P) <= 1.08) | (pm["eye_r"].value(P) <= 1.08)] = col("stitch_navy")
@@ -377,7 +451,7 @@ def mallow():
             C[inner] = col("caramel")
         # couture centrale de tête (du front vers le crâne)
         hs = (pm["head"].value(P) <= 1.03) & (N[:, 2] > 0.2)
-        cseam = polyline_stitch(p2, [(4.95, 0.0), (5.95, 0.0)], width=0.05, dash=0.28)
+        cseam = polyline_stitch(p2, [(5.45, 0.0), (5.95, 0.0)], width=0.05, dash=0.28)
         C[hs & cseam & ~mz] = col("stitch_caramel")
         # coussinets des pattes arrière (semelles vers -X) et pattes avant
         # coussinets caramel sur le dessus des quatre pattes levées
@@ -398,11 +472,11 @@ def mallow():
         return C
 
     secondary = {
-        "Head": (np.array([3.0, 0.0, 2.6]), "head"),
-        "Arm_L": (np.array([1.2, 3.1, 2.4]), "arm_l"),
-        "Arm_R": (np.array([1.2, -3.1, 2.4]), "arm_r"),
-        "Leg_L": (np.array([-3.8, 2.6, 2.2]), "leg_l"),
-        "Leg_R": (np.array([-3.8, -2.6, 2.2]), "leg_r"),
+        "Head": (np.array([3.3, 0.0, 2.5]), "head"),
+        "Arm_L": (np.array([2.4, 3.4, 2.2]), "arm_l"),
+        "Arm_R": (np.array([2.4, -3.4, 2.2]), "arm_r"),
+        "Leg_L": (np.array([-4.2, 3.0, 1.8]), "leg_l"),
+        "Leg_R": (np.array([-4.2, -3.0, 1.8]), "leg_r"),
     }
 
     cr = Creature(
@@ -444,71 +518,138 @@ def mallow():
 
 # ============================== LOPPY =======================================
 def loppy():
-    # Lapin couché sur le ventre, dos plat jouable à z ~ 4, grosse tête dressée vers +X,
-    # une oreille droite (-Y) et une oreille pliée qui retombe (+Y), cuisses arrondies.
+    # Lapin couché sur le ventre. Révision qualité (T03-b) :
+    # - dos = plateau passepoilé (RoundSlab) qui garde z ~ 4 jusqu'au bord de l'empreinte 8 x 7
+    #   (l'arrière de l'empreinte touche l'enveloppe en x = -5) ;
+    # - sous le passepoil, corps bombé, grosses cuisses, pieds crème et pompon : silhouette de lapin
+    #   couché lisible de profil ;
+    # - tête poire plus large (joues) et oreilles plus grandes : une droite (-Y), une pliée qui
+    #   retombe le long de la joue (+Y) ; tout ce qui dépasse z = 4,25 reste hors empreinte (x > 3).
     prims = [
-        Prim("body", (-0.95, 0.0, 2.03), (4.03, 3.80, 2.0), eh=4.5, ev=5.5, owner="body"),
-        Prim("haunch_l", (-2.7, 3.22, 1.55), (1.95, 0.78, 1.45), owner="body"),
-        Prim("haunch_r", (-2.7, -3.22, 1.55), (1.95, 0.78, 1.45), owner="body"),
-        Prim("head", (3.78, 0.0, 4.12), (1.22, 1.80, 1.62), owner="head"),
-        Prim("cheeks", (4.15, 0.0, 3.55), (0.85, 1.32, 0.78), owner="head"),
-        Prim("nose", (4.90, 0.0, 3.85), (0.12, 0.24, 0.17), owner="head"),
-        Prim("eye_l", (4.76, 0.85, 4.45), (0.14, 0.24, 0.27), owner="head"),
-        Prim("eye_r", (4.76, -0.85, 4.45), (0.14, 0.24, 0.27), owner="head"),
-        Prim("ear_up", (3.50, -0.75, 5.85), (0.42, 0.60, 1.18), rot=(-10, -10, 0), owner="ear_r"),
-        # oreille pliée longue qui retombe le long de la joue (hors empreinte : x > 3.1)
-        Prim("ear_fold_a", (3.55, 1.20, 5.70), (0.44, 0.66, 0.62), rot=(50, 0, 0), owner="ear_l"),
-        Prim("ear_fold_b", (3.62, 2.12, 4.75), (0.42, 0.62, 1.05), rot=(18, 0, 0), owner="ear_l"),
-        Prim("ear_fold_c", (3.70, 2.32, 3.55), (0.40, 0.58, 0.72), rot=(5, 0, 0), owner="ear_l"),
-        Prim("foot_l", (-4.15, 2.45, 0.55), (0.85, 0.85, 0.55), owner="legs"),
-        Prim("foot_r", (-4.15, -2.45, 0.55), (0.85, 0.85, 0.55), owner="legs"),
-        Prim("paw_l", (3.25, 1.55, 0.55), (1.05, 0.70, 0.55), owner="legs"),
-        Prim("paw_r", (3.25, -1.55, 0.55), (1.05, 0.70, 0.55), owner="legs"),
-        Prim("tail", (-4.45, 0.0, 2.65), (0.48, 0.62, 0.62), owner="tail"),
+        RoundSlab("back", (-1.0, 0.0), (4.08, 3.86), 3.30, 4.03, rc=0.45, re=0.30, owner="body"),
+        Prim("body", (-0.85, 0.0, 1.95), (4.0, 3.80, 1.95), eh=6.0, ev=4.0, owner="body"),
+        Prim("haunch_l", (-3.0, 3.27, 1.45), (1.95, 0.80, 1.42), owner="body"),
+        Prim("haunch_r", (-3.0, -3.27, 1.45), (1.95, 0.80, 1.42), owner="body"),
+        Prim("chest", (2.35, 0.0, 1.55), (1.05, 2.35, 1.45), owner="body"),
+        Prim("head", (4.08, 0.0, 4.2), (0.96, 1.78, 1.52), owner="head"),
+        Prim("cheeks", (4.2, 0.0, 3.3), (0.86, 2.3, 0.95), owner="head"),
+        Prim("muzzle", (4.82, 0.0, 3.42), (0.24, 0.62, 0.40), owner="head"),
+        Prim("nose", (4.95, 0.0, 3.78), (0.10, 0.22, 0.15), owner="head"),
+        Prim("eye_l", (4.83, 0.80, 4.38), (0.14, 0.22, 0.27), owner="head"),
+        Prim("eye_r", (4.83, -0.80, 4.38), (0.14, 0.22, 0.27), owner="head"),
+        Prim("ear_up", (3.98, -1.0, 5.85), (0.34, 0.74, 1.20), rot=(-14, 0, 0), owner="ear_r"),
+        # oreille longue qui retombe vers l'arrière : passe sur le crâne, descend derrière la tête
+        # (x > 3, hors empreinte) puis s'étale À PLAT sur le dos comme une applique (relief 0,1 :
+        # dans la tolérance de 0,25 du dessus jouable). La partie couchée suit la grille du ventre.
+        Prim("ear_root_a", (3.92, 1.0, 5.72), (0.52, 0.64, 0.30), owner="ear_l"),
+        Prim("ear_root_b", (3.34, 1.08, 4.95), (0.26, 0.66, 0.78), owner="ear_l"),
+        Prim("paw_l", (3.75, 1.35, 0.5), (1.22, 0.66, 0.5), owner="legs"),
+        Prim("paw_r", (3.75, -1.35, 0.5), (1.22, 0.66, 0.5), owner="legs"),
+        Prim("foot_l", (-3.55, 3.42, 0.52), (1.45, 0.58, 0.52), owner="legs"),
+        Prim("foot_r", (-3.55, -3.42, 0.52), (1.45, 0.58, 0.52), owner="legs"),
+        Prim("tail", (-4.44, 0.0, 2.1), (0.62, 0.88, 0.86), owner="tail"),
     ]
+    # oreille couchée : 10 ellipsoïdes plats très recouvrants le long d'une ligne médiane en goutte
+    ear_cl = [(3.05, 1.12), (2.35, 1.22), (0.90, 1.58), (-0.62, 1.84), (-1.88, 1.95), (-2.55, 1.98)]
+    ear_hw = [0.62, 0.74, 0.86, 0.80, 0.58, 0.12]
+    cum = [0.0]
+    for p0, p1 in zip(ear_cl[:-1], ear_cl[1:]):
+        cum.append(cum[-1] + math.dist(p0, p1))
+    for k in range(10):
+        u = cum[-1] * (k + 0.5) / 10.0
+        j = max(i for i in range(len(cum) - 1) if cum[i] <= u)
+        t = (u - cum[j]) / (cum[j + 1] - cum[j])
+        x = ear_cl[j][0] + t * (ear_cl[j + 1][0] - ear_cl[j][0])
+        y = ear_cl[j][1] + t * (ear_cl[j + 1][1] - ear_cl[j][1])
+        w = ear_hw[j] + t * (ear_hw[j + 1] - ear_hw[j])
+        ang = math.degrees(math.atan2(ear_cl[j + 1][1] - ear_cl[j][1], ear_cl[j + 1][0] - ear_cl[j][0]))
+        prims.append(Prim(f"ear_lay_{k}", (x, y, 3.97), (0.62, max(w, 0.2), 0.12), eh=2.0, ev=2.4,
+                          rot=(0, 0, ang), owner="body"))
     pm = {p.name: p for p in prims}
 
     def color_fn(P, N):
         n = len(P)
         C = np.tile(col("loppy_fabric"), (n, 1))
         p2 = P[:, :2]
-        on_body = pm["body"].value(P) <= 1.03
-        top = on_body & (N[:, 2] > 0.55) & (P[:, 2] > 3.0)
-        # couture centrale du dos
-        C[top & polyline_stitch(p2, [(-4.3, 0.0), (2.4, 0.0)], width=0.05, dash=0.3)] = col("stitch_navy")
-        side = on_body & (np.abs(N[:, 2]) < 0.6) & (np.abs(P[:, 2] - 2.0) < 0.06)
+        back = pm["back"]
+        on_back = back.sdf(P) <= 0.03
+        top = on_back & (N[:, 2] > 0.55) & (P[:, 2] > 3.6)
+        # passepoil : bande foncée sur l'arête du plateau (là où la normale bascule)
+        edge = on_back & (P[:, 2] > 3.72) & (N[:, 2] < 0.85) & (N[:, 2] > 0.25)
+        C[edge] = col("loppy_piping")
+        # dos : couture centrale (côté -Y de l'oreille couchée)
+        C[top & polyline_stitch(p2, [(-4.4, -0.35), (2.4, -0.35)], width=0.045, dash=0.3)] = col("stitch_navy")
+        # oreille couchée : contour en goutte (ligne médiane + demi-largeur), bord lilas soutenu,
+        # intérieur crème rosé, contour brodé en pointillés
+        cl, hw = ear_cl, ear_hw
+        best = np.full(n, 1e9)
+        for (a0, a1), (w0, w1) in zip(zip(cl[:-1], cl[1:]), zip(hw[:-1], hw[1:])):
+            d, t = seg_dist(p2, a0, a1)
+            r = d / (w0 + (w1 - w0) * t)
+            best = np.minimum(best, r)
+        lay = (P[:, 2] > 3.75) & (N[:, 2] > 0.3) & (best <= 1.0)
+        C[lay] = col("loppy_piping")
+        C[lay & (best <= 0.62)] = col("loppy_ear_inner")
+        C[lay & (np.abs(best - 0.8) < 0.07)] = col("stitch_navy")
+        for e in ("ear_root_a", "ear_root_b"):
+            C[pm[e].value(P) <= 1.03] = col("loppy_piping")
+        # couture latérale
+        on_body = (pm["body"].value(P) <= 1.03) | (pm["chest"].value(P) <= 1.03)
+        side = on_body & (np.abs(N[:, 2]) < 0.6) & (np.abs(P[:, 2] - 1.8) < 0.05)
         ang = np.arctan2(P[:, 1], P[:, 0] + 0.95)
         C[side & (np.mod(ang * 4.2 / 0.33, 1.0) < 0.55)] = col("stitch_navy")
         for f in ("foot_l", "foot_r", "paw_l", "paw_r"):
-            C[pm[f].value(P) <= 1.04] = col("loppy_cream")
-        C[pm["tail"].value(P) <= 1.04] = col("loppy_cream")
-        C[pm["cheeks"].value(P) <= 1.03] = col("loppy_cream")
+            on = pm[f].value(P) <= 1.04
+            C[on] = col("loppy_cream")
+            # coussinets roses sous l'avant des pattes
+            pr = pm[f]
+            tip = pr.center[0] + np.sign(pr.center[0]) * 0.75
+            C[on & ((P[:, 0] - tip) ** 2 + (P[:, 1] - pr.center[1]) ** 2 < 0.28 ** 2) & (P[:, 2] > 0.55)] = col("loppy_ear_inner")
+        C[pm["tail"].value(P) <= 1.06] = col("loppy_cream")
+        C[(pm["cheeks"].value(P) <= 1.02) & (N[:, 0] > 0.2) & (P[:, 2] < 3.75)] = col("loppy_cream")
+        C[pm["muzzle"].value(P) <= 1.05] = col("loppy_cream")
         # cuisses : contour cousu sur la face extérieure
         for hn in ("haunch_l", "haunch_r"):
             hp = pm[hn]
             q = hp.local(P)
             rr = np.sqrt(q[:, 0] ** 2 + q[:, 2] ** 2)
             outer = (np.abs(N[:, 1]) > 0.55) & (hp.value(P) <= 1.04)
-            ring = outer & (np.abs(rr - 0.78) < 0.045) & (np.mod(np.arctan2(q[:, 2], q[:, 0]) * 1.6 / 0.3, 1.0) < 0.55)
+            ring = outer & (np.abs(rr - 0.74) < 0.05) & (np.mod(np.arctan2(q[:, 2], q[:, 0]) * 1.6 / 0.3, 1.0) < 0.55)
             C[ring] = col("stitch_navy")
-        # moustaches brodées
-        wh = (P[:, 0] > 4.6) & (N[:, 0] > 0.4) & (np.abs(P[:, 1]) > 0.35) & (np.abs(P[:, 1]) < 1.05)
-        for zz, slope in ((3.72, 0.12), (3.56, -0.05)):
-            C[wh & (np.abs(P[:, 2] - (zz + slope * (np.abs(P[:, 1]) - 0.35))) < 0.035)] = col("stitch_navy")
+        # moustaches et bouche brodées
+        wh = (P[:, 0] > 4.55) & (N[:, 0] > 0.35) & (np.abs(P[:, 1]) > 0.55) & (np.abs(P[:, 1]) < 1.35)
+        for zz, slope in ((3.62, 0.14), (3.44, -0.04)):
+            C[wh & (np.abs(P[:, 2] - (zz + slope * (np.abs(P[:, 1]) - 0.55))) < 0.035)] = col("stitch_navy")
+        mouth = (P[:, 0] > 4.7) & (N[:, 0] > 0.4) & (np.abs(P[:, 1]) < 0.3) & \
+            (np.abs(P[:, 2] - (3.42 + 0.9 * (np.abs(P[:, 1]) - 0.15) ** 2)) < 0.035)
+        mouth |= (P[:, 0] > 4.8) & (np.abs(P[:, 1]) < 0.035) & (P[:, 2] > 3.42) & (P[:, 2] < 3.66)
+        C[mouth] = col("stitch_navy")
         C[pm["nose"].value(P) <= 1.15] = col("loppy_nose")
-        C[(pm["eye_l"].value(P) <= 1.1) | (pm["eye_r"].value(P) <= 1.1)] = col("stitch_navy")
+        for e in ("eye_l", "eye_r"):
+            on = pm[e].value(P) <= 1.1
+            C[on] = col("stitch_navy")
+            # reflet brodé crème
+            ec = pm[e].center
+            C[on & ((P[:, 1] - ec[1] + 0.06) ** 2 + (P[:, 2] - ec[2] - 0.1) ** 2 < 0.075 ** 2)] = col("loppy_cream")
+        # joues rosées
+        for sy in (1, -1):
+            blush = (N[:, 0] > 0.3) & ((P[:, 1] - sy * 1.35) ** 2 / 0.3 ** 2 + (P[:, 2] - 3.85) ** 2 / 0.18 ** 2 < 1.0)
+            C[blush & (pm["head"].value(P) <= 1.04)] = col("loppy_ear_inner")
         # intérieur d'oreilles (face avant +X)
-        for e in ("ear_up", "ear_fold_a", "ear_fold_b", "ear_fold_c"):
-            inner = (pm[e].value(P) <= 1.03) & (N[:, 0] > 0.35) & (pm["head"].value(P) > 1.02)
+        for e in ("ear_up",):
+            pr = pm[e]
+            q = pr.local(P)
+            inner = (pr.value(P) <= 1.03) & (N[:, 0] > 0.3) & (pm["head"].value(P) > 1.02) & \
+                (np.sqrt(q[:, 1] ** 2 + q[:, 2] ** 2) < 0.78)
             C[inner] = col("loppy_ear_inner")
         return C
 
     secondary = {
-        "Head": (np.array([3.4, 0.0, 3.4]), "head"),
-        "Ear_L": (np.array([3.55, 0.90, 5.3]), "ear_l"),
-        "Ear_R": (np.array([3.55, -0.70, 5.0]), "ear_r"),
+        "Head": (np.array([3.6, 0.0, 3.5]), "head"),
+        "Ear_L": (np.array([3.6, 1.05, 5.2]), "ear_l"),
+        "Ear_R": (np.array([3.95, -0.85, 5.15]), "ear_r"),
         "Feet": (np.array([0.0, 0.0, 0.5]), "legs"),
-        "Tail": (np.array([-4.2, 0.0, 2.6]), "tail"),
+        "Tail": (np.array([-4.35, 0.0, 2.05]), "tail"),
     }
     cr = Creature(
         asset_id="toy_plush_loppy", label="Loppy",
@@ -548,27 +689,37 @@ def loppy():
 def octo():
     # Pieuvre : tête large à sommet aplati (z ~ 4), bourrelet périphérique doux,
     # huit bras épais corail rayonnants (diagonales plus longues -> silhouette étoilée).
-    prims = [Prim("head", (0.0, 0.0, 2.03), (4.55, 4.55, 2.0), eh=4.6, ev=4.5, owner="body"),
+    # Révision qualité (T03-b) : tête plus carrée en plan (exposants 9/8, rayon 4,75) pour garder le
+    # sommet à z ~ 4 jusqu'aux coins de l'empreinte 8 x 8 ; boucles des bras diagonaux repoussées
+    # hors de l'empreinte (elles dépassaient le dessus dans les coins).
+    prims = [Prim("head", (0.0, 0.0, 2.03), (5.0, 5.0, 2.0), eh=6.0, ev=8.0, owner="body"),
              Prim("rim", (0.0, 0.0, 1.05), (4.85, 4.85, 1.0), eh=3.0, ev=2.2, owner="body"),
-             Prim("eye_l", (-1.35, 4.42, 2.45), (0.80, 0.30, 0.95), owner="body"),
-             Prim("eye_r", (1.35, 4.42, 2.45), (0.80, 0.30, 0.95), owner="body")]
+             Prim("eye_l", (-1.35, 4.88, 2.45), (0.86, 0.30, 1.0), owner="body"),
+             Prim("eye_r", (1.35, 4.88, 2.45), (0.86, 0.30, 1.0), owner="body")]
     arm_groups = {"Arms_N": [], "Arms_E": [], "Arms_S": [], "Arms_W": []}
     for k in range(8):
         a = math.radians(45 * k)
         diag = k % 2 == 1
-        r_c = 5.2 if diag else 4.45
-        rx = 2.0 if diag else 1.55
+        r_c = 5.2 if diag else 4.72
+        rx = 2.0 if diag else 1.28
         cx, cy = r_c * math.cos(a), r_c * math.sin(a)
         deg = math.degrees(a)
         quad = ["Arms_E", "Arms_N", "Arms_N", "Arms_W", "Arms_W", "Arms_S", "Arms_S", "Arms_E"][k]
         owner = quad.lower()
-        prims.append(Prim(f"arm_{k}", (cx, cy, 0.72), (rx, 1.05, 0.72), rot=(0, 0, deg), owner=owner))
+        prims.append(Prim(f"arm_{k}", (cx, cy, 0.72), (rx, 1.05 if diag else 1.18, 0.72), rot=(0, 0, deg), owner=owner))
         # bout de bras enroulé ; les quatre diagonales se relèvent (bras « qui saluent »)
         tr = r_c + rx - (0.35 if diag else 0.62)
         prims.append(Prim(f"tip_{k}", (tr * math.cos(a), tr * math.sin(a), 1.05), (0.55, 0.62, 0.55), owner=owner))
         if diag:
-            for j, (rr, zz, rz) in enumerate(((6.05, 1.75, 0.95), (6.15, 3.10, 0.95), (5.85, 4.20, 0.60))):
-                prims.append(Prim(f"curl_{k}_{j}", (rr * math.cos(a), rr * math.sin(a), zz), (0.58, 0.58, rz), owner=owner))
+            # bout enroulé vers l'extérieur (spirale : monte en s'écartant puis revient vers le corps)
+            ctrl = ((6.15, 1.55, 0.62), (6.75, 2.45, 0.58), (7.0, 3.45, 0.53), (6.72, 4.3, 0.47), (6.3, 4.52, 0.4))
+            for j in range(9):  # 9 sphères très recouvrantes interpolées : tube lisse, pas de perles
+                u = j / 8 * (len(ctrl) - 1)
+                i0 = min(int(u), len(ctrl) - 2)
+                t = u - i0
+                rr, zz, rad = [ctrl[i0][q] * (1 - t) + ctrl[i0 + 1][q] * t for q in range(3)]
+                prims.append(Prim(f"curl_{k}_{j}", (rr * math.cos(a), rr * math.sin(a), zz), (rad, rad, rad * 1.1),
+                                  owner=owner))
         arm_groups[quad].append(k)
     pm = {p.name: p for p in prims}
 
@@ -583,9 +734,9 @@ def octo():
             on = pr.value(P) <= 1.04
             C[on] = col("octo_under")
             C[pm[f"tip_{k}"].value(P) <= 1.04] = col("octo_under")
-            for j in range(3):
+            for j in range(9):
                 if f"curl_{k}_{j}" in pm:
-                    C[pm[f"curl_{k}_{j}"].value(P) <= 1.04] = col("octo_under")
+                    C[pm[f"curl_{k}_{j}"].value(P) <= 1.15] = col("octo_under")
             # ventouses brodées sur le dessus des bras
             loc = pr.local(P) * pr.radii
             suck = on & (N[:, 2] > 0.4)
@@ -594,9 +745,15 @@ def octo():
                 dots |= (loc[:, 0] - xx) ** 2 + loc[:, 1] ** 2 < 0.15 ** 2
             C[suck & dots] = col("octo_sucker")
         top = (N[:, 2] > 0.6) & (P[:, 2] > 3.2)
-        # couture en croix douce sur le sommet (repère de quartiers)
-        C[top & polyline_stitch(p2, [(-3.6, 0.0), (3.6, 0.0)], width=0.05, dash=0.3)] = col("stitch_navy")
-        C[top & polyline_stitch(p2, [(0.0, -3.6), (0.0, 3.6)], width=0.05, dash=0.3)] = col("stitch_navy")
+        # sommet : taches de manteau plus claires (lecture « pieuvre » vue de dessus) et couture
+        # circulaire de couverture qui souligne la zone d'appui
+        for (sx, sy, sr) in ((-1.9, 1.2, 0.62), (1.6, 2.1, 0.48), (2.3, -1.2, 0.7), (-0.6, -2.4, 0.5),
+                             (0.3, 0.2, 0.42), (-2.6, -0.9, 0.38), (2.9, 0.9, 0.3), (-0.9, 2.95, 0.34)):
+            spot = (p2[:, 0] - sx) ** 2 + (p2[:, 1] - sy) ** 2 < sr ** 2
+            C[top & spot] = col("octo_spot")
+        ring = np.sqrt(p2[:, 0] ** 2 + p2[:, 1] ** 2)
+        ang = np.arctan2(p2[:, 1], p2[:, 0])
+        C[top & (np.abs(ring - 3.75) < 0.05) & (np.mod(ang * 3.75 / 0.3, 1.0) < 0.55)] = col("stitch_navy")
         # yeux en couture : blanc crème + pupille navy + paupière brodée
         for e, ex in (("eye_l", -1.25), ("eye_r", 1.25)):
             on = pm[e].value(P) <= 1.06
@@ -604,7 +761,7 @@ def octo():
             pup = on & ((P[:, 0] - ex) ** 2 + (P[:, 2] - 2.30) ** 2 < 0.42 ** 2)
             C[pup] = col("stitch_navy")
         # bouche brodée
-        mouth = (P[:, 1] > 4.2) & (N[:, 1] > 0.5) & (np.abs(P[:, 2] - (1.35 + 0.35 * (P[:, 0] / 0.6) ** 2)) < 0.07) & (np.abs(P[:, 0]) < 0.6)
+        mouth = (P[:, 1] > 4.6) & (N[:, 1] > 0.5) & (np.abs(P[:, 2] - (1.35 + 0.35 * (P[:, 0] / 0.6) ** 2)) < 0.07) & (np.abs(P[:, 0]) < 0.6)
         C[mouth] = col("stitch_navy")
         return C
 

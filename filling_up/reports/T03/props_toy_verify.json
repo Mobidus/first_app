@@ -1,0 +1,2268 @@
+{
+  "task": "T03 (passe qualité famille toy)",
+  "checked_at_utc": "2026-11-02T14:10:31.149626+00:00",
+  "blender_version": "5.2.3 LTS",
+  "method": "Exports rouverts dans une scène Blender vide (glTF/FBX) ; dessus jouable mesuré par lancer de rayons verticaux (grille 0,25 stud, bord inclus à 0,02 stud près) ; tolérance 0,25 stud.",
+  "roblox_studio_import": {
+    "status": "NOT_RUN",
+    "reason": "Roblox Studio / Open Cloud indisponibles dans le conteneur ; roblox_asset_id = null."
+  },
+  "assets": {
+    "toy_flat_duck": {
+      "asset_id": "toy_flat_duck",
+      "files": {
+        "glb": {
+          "meshes": [
+            "toy_flat_duck"
+          ],
+          "triangles": 2932,
+          "materials_per_mesh": {
+            "toy_flat_duck": [
+              "M_toy_gloss"
+            ]
+          },
+          "max_materials_per_mesh": 1,
+          "uv_layers": {
+            "toy_flat_duck": 1
+          },
+          "textures": [
+            "toy_props_atlas_1024"
+          ],
+          "bbox_min": [
+            -7.076,
+            -5.004,
+            0.0
+          ],
+          "bbox_max": [
+            7.094,
+            5.004,
+            8.036
+          ],
+          "size_wdh": [
+            14.17,
+            10.008,
+            8.036
+          ],
+          "file": "assets/import/models/toy_flat_duck.glb",
+          "file_bytes": 88252,
+          "size_within_2pct": true,
+          "walkable_top": {
+            "inset_studs": 0.02,
+            "step_studs": 0.25,
+            "samples": 1089,
+            "misses": 0,
+            "max_abs_dev_studs": 0.03,
+            "max_above_studs": 0.03,
+            "max_below_studs": -0.027,
+            "mean_dev_studs": 0.026,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              -4.73,
+              -3.23
+            ],
+            "edge_ring_width_studs": 1.0,
+            "edge_ring_samples": 513,
+            "edge_ring_max_abs_dev_studs": 0.03,
+            "collider_top_studs": 6,
+            "collider_center_blender_xy": [
+              -1.0,
+              0.0
+            ]
+          }
+        },
+        "glb_lod1": {
+          "meshes": [
+            "toy_flat_duck_LOD1"
+          ],
+          "triangles": 660,
+          "materials_per_mesh": {
+            "toy_flat_duck_LOD1": [
+              "M_toy_gloss"
+            ]
+          },
+          "max_materials_per_mesh": 1,
+          "uv_layers": {
+            "toy_flat_duck_LOD1": 1
+          },
+          "textures": [
+            "toy_props_atlas_1024"
+          ],
+          "bbox_min": [
+            -7.063,
+            -4.981,
+            0.0
+          ],
+          "bbox_max": [
+            7.11,
+            4.981,
+            7.9
+          ],
+          "size_wdh": [
+            14.173,
+            9.962,
+            7.9
+          ],
+          "file": "assets/import/models/toy_flat_duck_lod1.glb",
+          "file_bytes": 39548,
+          "size_within_2pct": true,
+          "walkable_top": {
+            "inset_studs": 0.02,
+            "step_studs": 0.25,
+            "samples": 1089,
+            "misses": 0,
+            "max_abs_dev_studs": 0.068,
+            "max_above_studs": 0.03,
+            "max_below_studs": -0.068,
+            "mean_dev_studs": 0.026,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              -4.98,
+              -3.98
+            ],
+            "edge_ring_width_studs": 1.0,
+            "edge_ring_samples": 513,
+            "edge_ring_max_abs_dev_studs": 0.068,
+            "collider_top_studs": 6,
+            "collider_center_blender_xy": [
+              -1.0,
+              0.0
+            ]
+          }
+        },
+        "fbx": {
+          "meshes": [
+            "toy_flat_duck"
+          ],
+          "triangles": 2932,
+          "materials_per_mesh": {
+            "toy_flat_duck": [
+              "M_toy_gloss"
+            ]
+          },
+          "max_materials_per_mesh": 1,
+          "uv_layers": {
+            "toy_flat_duck": 1
+          },
+          "textures": [
+            "toy_props_atlas"
+          ],
+          "bbox_min": [
+            -7.076,
+            -5.004,
+            -0.0
+          ],
+          "bbox_max": [
+            7.094,
+            5.004,
+            8.036
+          ],
+          "size_wdh": [
+            14.17,
+            10.008,
+            8.036
+          ],
+          "file": "assets/import/models/toy_flat_duck.fbx",
+          "file_bytes": 111308,
+          "size_within_2pct": true
+        }
+      },
+      "expected_size_wdh": [
+        14,
+        10,
+        8
+      ],
+      "checks": {
+        "envelope_glb_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_at_z0": "PASS",
+        "pivot_centered_xy_within_2pct": "PASS",
+        "materials_le_2_per_mesh": "PASS",
+        "uv_present": "PASS",
+        "lod1_tris_le_700": "PASS",
+        "fbx_tris_equal_glb": "PASS",
+        "lod0_tris_800_3000": "PASS",
+        "walkable_top_flat_le_0_25_full_area_lod0": "PASS",
+        "walkable_top_flat_le_0_25_full_area_lod1": "PASS"
+      }
+    },
+    "toy_train": {
+      "asset_id": "toy_train",
+      "files": {
+        "glb": {
+          "meshes": [
+            "toy_train"
+          ],
+          "triangles": 2920,
+          "materials_per_mesh": {
+            "toy_train": [
+              "M_toy_gloss"
+            ]
+          },
+          "max_materials_per_mesh": 1,
+          "uv_layers": {
+            "toy_train": 1
+          },
+          "textures": [
+            "toy_props_atlas_1024"
+          ],
+          "bbox_min": [
+            -8.06,
+            -4.0,
+            0.0
+          ],
+          "bbox_max": [
+            8.0,
+            4.0,
+            5.03
+          ],
+          "size_wdh": [
+            16.06,
+            8.0,
+            5.03
+          ],
+          "file": "assets/import/models/toy_train.glb",
+          "file_bytes": 112892,
+          "size_within_2pct": true,
+          "walkable_top": {
+            "inset_studs": 0.02,
+            "step_studs": 0.25,
+            "samples": 2145,
+            "misses": 0,
+            "max_abs_dev_studs": 0.102,
+            "max_above_studs": 0.03,
+            "max_below_studs": -0.102,
+            "mean_dev_studs": -0.007,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              -7.98,
+              -3.98
+            ],
+            "edge_ring_width_studs": 1.0,
+            "edge_ring_samples": 801,
+            "edge_ring_max_abs_dev_studs": 0.102,
+            "collider_top_studs": 5,
+            "collider_center_blender_xy": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "glb_lod1": {
+          "meshes": [
+            "toy_train_LOD1"
+          ],
+          "triangles": 592,
+          "materials_per_mesh": {
+            "toy_train_LOD1": [
+              "M_toy_gloss"
+            ]
+          },
+          "max_materials_per_mesh": 1,
+          "uv_layers": {
+            "toy_train_LOD1": 1
+          },
+          "textures": [
+            "toy_props_atlas_1024"
+          ],
+          "bbox_min": [
+            -8.06,
+            -4.0,
+            0.0
+          ],
+          "bbox_max": [
+            8.0,
+            4.0,
+            5.03
+          ],
+          "size_wdh": [
+            16.06,
+            8.0,
+            5.03
+          ],
+          "file": "assets/import/models/toy_train_lod1.glb",
+          "file_bytes": 49004,
+          "size_within_2pct": true,
+          "walkable_top": {
+            "inset_studs": 0.02,
+            "step_studs": 0.25,
+            "samples": 2145,
+            "misses": 0,
+            "max_abs_dev_studs": 0.13,
+            "max_above_studs": 0.03,
+            "max_below_studs": -0.13,
+            "mean_dev_studs": -0.011,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              -7.98,
+              -3.48
+            ],
+            "edge_ring_width_studs": 1.0,
+            "edge_ring_samples": 801,
+            "edge_ring_max_abs_dev_studs": 0.13,
+            "collider_top_studs": 5,
+            "collider_center_blender_xy": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "fbx": {
+          "meshes": [
+            "toy_train"
+          ],
+          "triangles": 2920,
+          "materials_per_mesh": {
+            "toy_train": [
+              "M_toy_gloss"
+            ]
+          },
+          "max_materials_per_mesh": 1,
+          "uv_layers": {
+            "toy_train": 1
+          },
+          "textures": [
+            "toy_props_atlas"
+          ],
+          "bbox_min": [
+            -8.06,
+            -4.0,
+            -0.0
+          ],
+          "bbox_max": [
+            8.0,
+            4.0,
+            5.03
+          ],
+          "size_wdh": [
+            16.06,
+            8.0,
+            5.03
+          ],
+          "file": "assets/import/models/toy_train.fbx",
+          "file_bytes": 102700,
+          "size_within_2pct": true
+        }
+      },
+      "expected_size_wdh": [
+        16,
+        8,
+        5
+      ],
+      "checks": {
+        "envelope_glb_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_at_z0": "PASS",
+        "pivot_centered_xy_within_2pct": "PASS",
+        "materials_le_2_per_mesh": "PASS",
+        "uv_present": "PASS",
+        "lod1_tris_le_700": "PASS",
+        "fbx_tris_equal_glb": "PASS",
+        "lod0_tris_800_3000": "PASS",
+        "walkable_top_flat_le_0_25_full_area_lod0": "PASS",
+        "walkable_top_flat_le_0_25_full_area_lod1": "PASS"
+      }
+    },
+    "toy_drum": {
+      "asset_id": "toy_drum",
+      "files": {
+        "glb": {
+          "meshes": [
+            "toy_drum"
+          ],
+          "triangles": 2940,
+          "materials_per_mesh": {
+            "toy_drum": [
+              "M_toy_gloss"
+            ]
+          },
+          "max_materials_per_mesh": 1,
+          "uv_layers": {
+            "toy_drum": 1
+          },
+          "textures": [
+            "toy_props_atlas_1024"
+          ],
+          "bbox_min": [
+            -5.035,
+            -5.035,
+            0.0
+          ],
+          "bbox_max": [
+            5.035,
+            5.035,
+            5.035
+          ],
+          "size_wdh": [
+            10.07,
+            10.07,
+            5.035
+          ],
+          "file": "assets/import/models/toy_drum.glb",
+          "file_bytes": 146084,
+          "size_within_2pct": true,
+          "walkable_top": {
+            "inset_studs": 0.02,
+            "step_studs": 0.25,
+            "samples": 1089,
+            "misses": 0,
+            "max_abs_dev_studs": 0.02,
+            "max_above_studs": 0.02,
+            "max_below_studs": -0.0,
+            "mean_dev_studs": 0.017,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              -2.23,
+              -3.48
+            ],
+            "edge_ring_width_studs": 1.0,
+            "edge_ring_samples": 513,
+            "edge_ring_max_abs_dev_studs": 0.02,
+            "collider_top_studs": 5,
+            "collider_center_blender_xy": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "glb_lod1": {
+          "meshes": [
+            "toy_drum_LOD1"
+          ],
+          "triangles": 388,
+          "materials_per_mesh": {
+            "toy_drum_LOD1": [
+              "M_toy_gloss"
+            ]
+          },
+          "max_materials_per_mesh": 1,
+          "uv_layers": {
+            "toy_drum_LOD1": 1
+          },
+          "textures": [
+            "toy_props_atlas_1024"
+          ],
+          "bbox_min": [
+            -4.95,
+            -4.95,
+            0.0
+          ],
+          "bbox_max": [
+            4.95,
+            4.95,
+            5.02
+          ],
+          "size_wdh": [
+            9.9,
+            9.9,
+            5.02
+          ],
+          "file": "assets/import/models/toy_drum_lod1.glb",
+          "file_bytes": 36436,
+          "size_within_2pct": true,
+          "walkable_top": {
+            "inset_studs": 0.02,
+            "step_studs": 0.25,
+            "samples": 1089,
+            "misses": 0,
+            "max_abs_dev_studs": 0.02,
+            "max_above_studs": 0.02,
+            "max_below_studs": -0.0,
+            "mean_dev_studs": 0.017,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              -1.98,
+              -2.48
+            ],
+            "edge_ring_width_studs": 1.0,
+            "edge_ring_samples": 513,
+            "edge_ring_max_abs_dev_studs": 0.02,
+            "collider_top_studs": 5,
+            "collider_center_blender_xy": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "fbx": {
+          "meshes": [
+            "toy_drum"
+          ],
+          "triangles": 2940,
+          "materials_per_mesh": {
+            "toy_drum": [
+              "M_toy_gloss"
+            ]
+          },
+          "max_materials_per_mesh": 1,
+          "uv_layers": {
+            "toy_drum": 1
+          },
+          "textures": [
+            "toy_props_atlas"
+          ],
+          "bbox_min": [
+            -5.035,
+            -5.035,
+            -0.0
+          ],
+          "bbox_max": [
+            5.035,
+            5.035,
+            5.035
+          ],
+          "size_wdh": [
+            10.07,
+            10.07,
+            5.035
+          ],
+          "file": "assets/import/models/toy_drum.fbx",
+          "file_bytes": 115788,
+          "size_within_2pct": true
+        }
+      },
+      "expected_size_wdh": [
+        10,
+        10,
+        5
+      ],
+      "checks": {
+        "envelope_glb_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_at_z0": "PASS",
+        "pivot_centered_xy_within_2pct": "PASS",
+        "materials_le_2_per_mesh": "PASS",
+        "uv_present": "PASS",
+        "lod1_tris_le_700": "PASS",
+        "fbx_tris_equal_glb": "PASS",
+        "lod0_tris_800_3000": "PASS",
+        "walkable_top_flat_le_0_25_full_area_lod0": "PASS",
+        "walkable_top_flat_le_0_25_full_area_lod1": "PASS"
+      }
+    },
+    "toy_domino": {
+      "asset_id": "toy_domino",
+      "files": {
+        "glb": {
+          "meshes": [
+            "toy_domino"
+          ],
+          "triangles": 1132,
+          "materials_per_mesh": {
+            "toy_domino": [
+              "M_toy_gloss"
+            ]
+          },
+          "max_materials_per_mesh": 1,
+          "uv_layers": {
+            "toy_domino": 1
+          },
+          "textures": [
+            "toy_props_atlas_1024"
+          ],
+          "bbox_min": [
+            -6.02,
+            -3.02,
+            0.0
+          ],
+          "bbox_max": [
+            6.02,
+            3.02,
+            3.03
+          ],
+          "size_wdh": [
+            12.04,
+            6.04,
+            3.03
+          ],
+          "file": "assets/import/models/toy_domino.glb",
+          "file_bytes": 52288,
+          "size_within_2pct": true,
+          "walkable_top": {
+            "inset_studs": 0.02,
+            "step_studs": 0.25,
+            "samples": 1225,
+            "misses": 0,
+            "max_abs_dev_studs": 0.155,
+            "max_above_studs": 0.03,
+            "max_below_studs": -0.155,
+            "mean_dev_studs": -0.015,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              -2.98,
+              0.02
+            ],
+            "edge_ring_width_studs": 1.0,
+            "edge_ring_samples": 585,
+            "edge_ring_max_abs_dev_studs": 0.105,
+            "collider_top_studs": 3,
+            "collider_center_blender_xy": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "glb_lod1": {
+          "meshes": [
+            "toy_domino_LOD1"
+          ],
+          "triangles": 292,
+          "materials_per_mesh": {
+            "toy_domino_LOD1": [
+              "M_toy_gloss"
+            ]
+          },
+          "max_materials_per_mesh": 1,
+          "uv_layers": {
+            "toy_domino_LOD1": 1
+          },
+          "textures": [
+            "toy_props_atlas_1024"
+          ],
+          "bbox_min": [
+            -6.0,
+            -3.0,
+            0.0
+          ],
+          "bbox_max": [
+            6.0,
+            3.0,
+            3.03
+          ],
+          "size_wdh": [
+            12.0,
+            6.0,
+            3.03
+          ],
+          "file": "assets/import/models/toy_domino_lod1.glb",
+          "file_bytes": 31572,
+          "size_within_2pct": true,
+          "walkable_top": {
+            "inset_studs": 0.02,
+            "step_studs": 0.25,
+            "samples": 1225,
+            "misses": 0,
+            "max_abs_dev_studs": 0.16,
+            "max_above_studs": 0.03,
+            "max_below_studs": -0.16,
+            "mean_dev_studs": -0.017,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              5.98,
+              2.77
+            ],
+            "edge_ring_width_studs": 1.0,
+            "edge_ring_samples": 585,
+            "edge_ring_max_abs_dev_studs": 0.16,
+            "collider_top_studs": 3,
+            "collider_center_blender_xy": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "fbx": {
+          "meshes": [
+            "toy_domino"
+          ],
+          "triangles": 1132,
+          "materials_per_mesh": {
+            "toy_domino": [
+              "M_toy_gloss"
+            ]
+          },
+          "max_materials_per_mesh": 1,
+          "uv_layers": {
+            "toy_domino": 1
+          },
+          "textures": [
+            "toy_props_atlas"
+          ],
+          "bbox_min": [
+            -6.02,
+            -3.02,
+            -0.0
+          ],
+          "bbox_max": [
+            6.02,
+            3.02,
+            3.03
+          ],
+          "size_wdh": [
+            12.04,
+            6.04,
+            3.03
+          ],
+          "file": "assets/import/models/toy_domino.fbx",
+          "file_bytes": 62572,
+          "size_within_2pct": true
+        }
+      },
+      "expected_size_wdh": [
+        12,
+        6,
+        3
+      ],
+      "checks": {
+        "envelope_glb_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_at_z0": "PASS",
+        "pivot_centered_xy_within_2pct": "PASS",
+        "materials_le_2_per_mesh": "PASS",
+        "uv_present": "PASS",
+        "lod1_tris_le_700": "PASS",
+        "fbx_tris_equal_glb": "PASS",
+        "lod0_tris_800_3000": "PASS",
+        "walkable_top_flat_le_0_25_full_area_lod0": "PASS",
+        "walkable_top_flat_le_0_25_full_area_lod1": "PASS"
+      }
+    },
+    "toy_shape_cube": {
+      "asset_id": "toy_shape_cube",
+      "files": {
+        "glb": {
+          "meshes": [
+            "toy_shape_cube"
+          ],
+          "triangles": 940,
+          "materials_per_mesh": {
+            "toy_shape_cube": [
+              "M_toy_gloss"
+            ]
+          },
+          "max_materials_per_mesh": 1,
+          "uv_layers": {
+            "toy_shape_cube": 1
+          },
+          "textures": [
+            "toy_props_atlas_1024"
+          ],
+          "bbox_min": [
+            -5.011,
+            -5.02,
+            0.0
+          ],
+          "bbox_max": [
+            5.011,
+            5.02,
+            7.025
+          ],
+          "size_wdh": [
+            10.021,
+            10.04,
+            7.025
+          ],
+          "file": "assets/import/models/toy_shape_cube.glb",
+          "file_bytes": 54536,
+          "size_within_2pct": true,
+          "walkable_top": {
+            "inset_studs": 0.02,
+            "step_studs": 0.25,
+            "samples": 1681,
+            "misses": 0,
+            "max_abs_dev_studs": 0.075,
+            "max_above_studs": 0.025,
+            "max_below_studs": -0.075,
+            "mean_dev_studs": 0.01,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              -4.98,
+              -3.48
+            ],
+            "edge_ring_width_studs": 1.0,
+            "edge_ring_samples": 657,
+            "edge_ring_max_abs_dev_studs": 0.075,
+            "collider_top_studs": 7,
+            "collider_center_blender_xy": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "glb_lod1": {
+          "meshes": [
+            "toy_shape_cube_LOD1"
+          ],
+          "triangles": 500,
+          "materials_per_mesh": {
+            "toy_shape_cube_LOD1": [
+              "M_toy_gloss"
+            ]
+          },
+          "max_materials_per_mesh": 1,
+          "uv_layers": {
+            "toy_shape_cube_LOD1": 1
+          },
+          "textures": [
+            "toy_props_atlas_1024"
+          ],
+          "bbox_min": [
+            -5.02,
+            -5.02,
+            0.0
+          ],
+          "bbox_max": [
+            5.02,
+            5.02,
+            7.025
+          ],
+          "size_wdh": [
+            10.04,
+            10.04,
+            7.025
+          ],
+          "file": "assets/import/models/toy_shape_cube_lod1.glb",
+          "file_bytes": 42176,
+          "size_within_2pct": true,
+          "walkable_top": {
+            "inset_studs": 0.02,
+            "step_studs": 0.25,
+            "samples": 1681,
+            "misses": 0,
+            "max_abs_dev_studs": 0.13,
+            "max_above_studs": 0.025,
+            "max_below_studs": -0.13,
+            "mean_dev_studs": 0.005,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              -4.98,
+              3.27
+            ],
+            "edge_ring_width_studs": 1.0,
+            "edge_ring_samples": 657,
+            "edge_ring_max_abs_dev_studs": 0.13,
+            "collider_top_studs": 7,
+            "collider_center_blender_xy": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "fbx": {
+          "meshes": [
+            "toy_shape_cube"
+          ],
+          "triangles": 940,
+          "materials_per_mesh": {
+            "toy_shape_cube": [
+              "M_toy_gloss"
+            ]
+          },
+          "max_materials_per_mesh": 1,
+          "uv_layers": {
+            "toy_shape_cube": 1
+          },
+          "textures": [
+            "toy_props_atlas"
+          ],
+          "bbox_min": [
+            -5.011,
+            -5.02,
+            -0.0
+          ],
+          "bbox_max": [
+            5.011,
+            5.02,
+            7.025
+          ],
+          "size_wdh": [
+            10.021,
+            10.04,
+            7.025
+          ],
+          "file": "assets/import/models/toy_shape_cube.fbx",
+          "file_bytes": 57484,
+          "size_within_2pct": true
+        }
+      },
+      "expected_size_wdh": [
+        10,
+        10,
+        7
+      ],
+      "checks": {
+        "envelope_glb_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_at_z0": "PASS",
+        "pivot_centered_xy_within_2pct": "PASS",
+        "materials_le_2_per_mesh": "PASS",
+        "uv_present": "PASS",
+        "lod1_tris_le_700": "PASS",
+        "fbx_tris_equal_glb": "PASS",
+        "lod0_tris_800_3000": "PASS",
+        "walkable_top_flat_le_0_25_full_area_lod0": "PASS",
+        "walkable_top_flat_le_0_25_full_area_lod1": "PASS"
+      }
+    },
+    "machine_toy_spinner": {
+      "asset_id": "machine_toy_spinner",
+      "files": {
+        "glb": {
+          "meshes": [
+            "machine_toy_spinner_Mount",
+            "machine_toy_spinner_Spinner",
+            "machine_toy_spinner_Trunks"
+          ],
+          "triangles": 7432,
+          "materials_per_mesh": {
+            "machine_toy_spinner_Mount": [
+              "M_toy_gloss"
+            ],
+            "machine_toy_spinner_Spinner": [
+              "M_toy_gloss",
+              "M_toy_glass"
+            ],
+            "machine_toy_spinner_Trunks": [
+              "M_toy_gloss"
+            ]
+          },
+          "max_materials_per_mesh": 2,
+          "uv_layers": {
+            "machine_toy_spinner_Mount": 1,
+            "machine_toy_spinner_Spinner": 1,
+            "machine_toy_spinner_Trunks": 1
+          },
+          "textures": [
+            "toy_props_atlas_1024"
+          ],
+          "bbox_min": [
+            -12.127,
+            -12.169,
+            0.0
+          ],
+          "bbox_max": [
+            12.127,
+            11.75,
+            18.0
+          ],
+          "size_wdh": [
+            24.253,
+            23.919,
+            18.0
+          ],
+          "file": "assets/import/models/machine_toy_spinner.glb",
+          "file_bytes": 228468,
+          "size_within_2pct": true
+        },
+        "glb_lod1": {
+          "meshes": [
+            "machine_toy_spinner_Mount_LOD1",
+            "machine_toy_spinner_Spinner_LOD1",
+            "machine_toy_spinner_Trunks_LOD1"
+          ],
+          "triangles": 690,
+          "materials_per_mesh": {
+            "machine_toy_spinner_Mount_LOD1": [
+              "M_toy_gloss"
+            ],
+            "machine_toy_spinner_Spinner_LOD1": [
+              "M_toy_gloss",
+              "M_toy_glass"
+            ],
+            "machine_toy_spinner_Trunks_LOD1": [
+              "M_toy_gloss"
+            ]
+          },
+          "max_materials_per_mesh": 2,
+          "uv_layers": {
+            "machine_toy_spinner_Mount_LOD1": 1,
+            "machine_toy_spinner_Spinner_LOD1": 1,
+            "machine_toy_spinner_Trunks_LOD1": 1
+          },
+          "textures": [
+            "toy_props_atlas_1024"
+          ],
+          "bbox_min": [
+            -12.039,
+            -12.039,
+            0.0
+          ],
+          "bbox_max": [
+            12.039,
+            11.63,
+            18.0
+          ],
+          "size_wdh": [
+            24.077,
+            23.669,
+            18.0
+          ],
+          "file": "assets/import/models/machine_toy_spinner_lod1.glb",
+          "file_bytes": 49200,
+          "size_within_2pct": true
+        },
+        "fbx": {
+          "meshes": [
+            "machine_toy_spinner_Mount",
+            "machine_toy_spinner_Spinner",
+            "machine_toy_spinner_Trunks"
+          ],
+          "triangles": 7432,
+          "materials_per_mesh": {
+            "machine_toy_spinner_Mount": [
+              "M_toy_gloss"
+            ],
+            "machine_toy_spinner_Spinner": [
+              "M_toy_gloss",
+              "M_toy_glass"
+            ],
+            "machine_toy_spinner_Trunks": [
+              "M_toy_gloss"
+            ]
+          },
+          "max_materials_per_mesh": 2,
+          "uv_layers": {
+            "machine_toy_spinner_Mount": 1,
+            "machine_toy_spinner_Spinner": 1,
+            "machine_toy_spinner_Trunks": 1
+          },
+          "textures": [
+            "toy_props_atlas"
+          ],
+          "bbox_min": [
+            -12.127,
+            -12.169,
+            0.0
+          ],
+          "bbox_max": [
+            12.127,
+            11.75,
+            18.0
+          ],
+          "size_wdh": [
+            24.253,
+            23.919,
+            18.0
+          ],
+          "file": "assets/import/models/machine_toy_spinner.fbx",
+          "file_bytes": 229916,
+          "size_within_2pct": true
+        }
+      },
+      "expected_size_wdh": [
+        24,
+        24,
+        18
+      ],
+      "checks": {
+        "envelope_glb_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_at_z0": "PASS",
+        "pivot_centered_xy_within_2pct": "PASS",
+        "materials_le_2_per_mesh": "PASS",
+        "uv_present": "PASS",
+        "lod1_tris_le_700": "PASS",
+        "fbx_tris_equal_glb": "PASS",
+        "lod0_tris_le_8000": "PASS",
+        "split_parts_mount_spinner_trunks": "PASS"
+      }
+    },
+    "toy_plush_mallow": {
+      "asset_id": "toy_plush_mallow",
+      "verify_exports": {
+        "asset_id": "toy_plush_mallow",
+        "checked_at_utc": "2026-11-02T14:10:32.742726+00:00",
+        "blender_version": "5.2.3 LTS",
+        "files": {
+          "glb": {
+            "file": "assets/import/models/toy_plush_mallow.glb",
+            "opened": true,
+            "bbox_studs_width_depth_height": [
+              12.098,
+              10.069,
+              4.952
+            ],
+            "bbox_min_z": 0.0001,
+            "expected_size_studs": [
+              12,
+              10,
+              5
+            ],
+            "size_max_abs_error_studs": 0.098,
+            "triangles": 3400,
+            "materials": 1,
+            "uv_layers": 1,
+            "textures": [
+              "toy_plush_mallow_albedo_1024"
+            ],
+            "armature_object_matrix_identity": true,
+            "bones": [
+              "Root",
+              "Arm_L",
+              "Arm_R",
+              "Belly_00",
+              "Belly_01",
+              "Belly_02",
+              "Belly_10",
+              "Belly_11",
+              "Belly_12",
+              "Belly_20",
+              "Belly_21",
+              "Belly_22",
+              "Head",
+              "Leg_L",
+              "Leg_R"
+            ],
+            "bone_count": 15,
+            "root_present": true,
+            "belly_bones": 9,
+            "secondary_bones": 5,
+            "skin_modifier": true,
+            "weight_sum_max_error": 1.2386590242385864e-07,
+            "max_influences": 4,
+            "unweighted_vertices": 0
+          },
+          "glb_lod1": {
+            "file": "assets/import/models/toy_plush_mallow_lod1.glb",
+            "opened": true,
+            "bbox_studs_width_depth_height": [
+              12.066,
+              10.103,
+              5.01
+            ],
+            "bbox_min_z": -0.0078,
+            "expected_size_studs": [
+              12,
+              10,
+              5
+            ],
+            "size_max_abs_error_studs": 0.103,
+            "triangles": 690,
+            "materials": 1,
+            "uv_layers": 1,
+            "textures": [
+              "toy_plush_mallow_albedo_256"
+            ],
+            "armature_object_matrix_identity": true,
+            "bones": [
+              "Root",
+              "Arm_L",
+              "Arm_R",
+              "Belly_00",
+              "Belly_01",
+              "Belly_02",
+              "Belly_10",
+              "Belly_11",
+              "Belly_12",
+              "Belly_20",
+              "Belly_21",
+              "Belly_22",
+              "Head",
+              "Leg_L",
+              "Leg_R"
+            ],
+            "bone_count": 15,
+            "root_present": true,
+            "belly_bones": 9,
+            "secondary_bones": 5,
+            "skin_modifier": true,
+            "weight_sum_max_error": 1.1175870895385742e-07,
+            "max_influences": 4,
+            "unweighted_vertices": 0
+          },
+          "fbx": {
+            "file": "assets/import/models/toy_plush_mallow.fbx",
+            "opened": true,
+            "bbox_studs_width_depth_height": [
+              12.098,
+              10.069,
+              4.952
+            ],
+            "bbox_min_z": 0.0001,
+            "expected_size_studs": [
+              12,
+              10,
+              5
+            ],
+            "size_max_abs_error_studs": 0.098,
+            "triangles": 3400,
+            "materials": 1,
+            "uv_layers": 1,
+            "textures": [
+              "Mallow_LOD0_albedo"
+            ],
+            "armature_object_matrix_identity": true,
+            "bones": [
+              "Root",
+              "Belly_00",
+              "Belly_10",
+              "Belly_20",
+              "Belly_01",
+              "Belly_11",
+              "Belly_21",
+              "Belly_02",
+              "Belly_12",
+              "Belly_22",
+              "Head",
+              "Arm_L",
+              "Arm_R",
+              "Leg_L",
+              "Leg_R"
+            ],
+            "bone_count": 15,
+            "root_present": true,
+            "belly_bones": 9,
+            "secondary_bones": 5,
+            "skin_modifier": true,
+            "weight_sum_max_error": 4.470348358154297e-08,
+            "max_influences": 4,
+            "unweighted_vertices": 0
+          }
+        },
+        "pose_ratios": {
+          "rest": {
+            "body_top_height_ratio": 1.0,
+            "body_width_ratio": 1.0,
+            "body_depth_ratio": 1.0,
+            "min_z": 0.0001
+          },
+          "fall": {
+            "body_top_height_ratio": 1.1143,
+            "body_width_ratio": 0.9861,
+            "body_depth_ratio": 0.9823,
+            "min_z": 0.0001
+          },
+          "impact": {
+            "body_top_height_ratio": 0.7267,
+            "body_width_ratio": 1.0767,
+            "body_depth_ratio": 1.0753,
+            "min_z": 0.0001
+          },
+          "rebound": {
+            "body_top_height_ratio": 1.0497,
+            "body_width_ratio": 0.9937,
+            "body_depth_ratio": 0.992,
+            "min_z": 0.0001
+          },
+          "player_landing": {
+            "body_top_height_ratio": 0.9788,
+            "body_width_ratio": 1.0,
+            "body_depth_ratio": 1.0,
+            "min_z": 0.0001
+          }
+        },
+        "drift": {
+          "cycles": 100,
+          "max_vertex_drift_after_reset_studs": 0.0,
+          "max_displacement_during_impact_studs": 1.094,
+          "method": "pose absolue recalculée depuis la référence à chaque cycle (intensité aléatoire 0.2-1.0, graine fixe)"
+        },
+        "top_alignment_rest": {
+          "full_footprint": {
+            "inset_studs": 0.0,
+            "samples": 1089,
+            "misses": 0,
+            "max_abs_dev_studs": 0.165,
+            "mean_dev_studs": -0.005,
+            "within_tolerance_fraction": 1.0,
+            "max_above_studs": 0.03,
+            "max_below_studs": -0.165
+          },
+          "inset_0_5": {
+            "inset_studs": 0.5,
+            "samples": 841,
+            "misses": 0,
+            "max_abs_dev_studs": 0.052,
+            "mean_dev_studs": 0.017,
+            "within_tolerance_fraction": 1.0,
+            "max_above_studs": 0.03,
+            "max_below_studs": -0.052
+          },
+          "inset_1_0": {
+            "inset_studs": 1.0,
+            "samples": 625,
+            "misses": 0,
+            "max_abs_dev_studs": 0.03,
+            "mean_dev_studs": 0.025,
+            "within_tolerance_fraction": 1.0,
+            "max_above_studs": 0.03,
+            "max_below_studs": 0.003
+          }
+        },
+        "top_alignment_player_landing": {
+          "inset_1_0": {
+            "inset_studs": 1.0,
+            "samples": 625,
+            "misses": 0,
+            "max_abs_dev_studs": 0.079,
+            "mean_dev_studs": -0.065,
+            "within_tolerance_fraction": 1.0,
+            "max_above_studs": -0.051,
+            "max_below_studs": -0.079
+          }
+        },
+        "checks": {
+          "dimensions_within_envelope": "PASS",
+          "near_tris_1500_3500": "PASS",
+          "far_tris_300_700": "PASS",
+          "root_plus_9_belly": "PASS",
+          "secondary_le_6": "PASS",
+          "weights_normalized_1e-4": "PASS",
+          "max_4_influences": "PASS",
+          "no_unweighted_vertex": "PASS",
+          "materials_le_2": "PASS",
+          "skin_survives_reimport_glb": "PASS",
+          "skin_survives_reimport_fbx": "PASS",
+          "fall_stretch_le_limit": "PASS",
+          "impact_compression_ge_limit": "PASS",
+          "impact_widening_le_limit": "PASS",
+          "no_drift_after_100_cycles": "PASS",
+          "top_alignment_rest_inset1_le_tol": "PASS",
+          "top_alignment_landing_inset1_le_tol": "PASS",
+          "never_below_floor": "PASS"
+        },
+        "roblox_studio_import": {
+          "status": "blocked",
+          "reason": "Aucun Roblox Studio ni accès Open Cloud autorisé dans le conteneur ; rig, skin, unités et collisions non mesurés dans Roblox.",
+          "roblox_asset_id": null,
+          "studio_checks": "NOT_RUN"
+        }
+      },
+      "top_alignment_rest": {
+        "glb": {
+          "full_footprint_inset_0_02": {
+            "inset_studs": 0.02,
+            "step_studs": 0.25,
+            "samples": 1089,
+            "misses": 0,
+            "max_abs_dev_studs": 0.148,
+            "max_above_studs": 0.03,
+            "max_below_studs": -0.148,
+            "mean_dev_studs": -0.004,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              2.98,
+              -3.98
+            ],
+            "edge_ring_width_studs": 1.0,
+            "edge_ring_samples": 513,
+            "edge_ring_max_abs_dev_studs": 0.148
+          },
+          "inset_0_5": {
+            "inset_studs": 0.5,
+            "step_studs": 0.25,
+            "samples": 841,
+            "misses": 0,
+            "max_abs_dev_studs": 0.052,
+            "max_above_studs": 0.03,
+            "max_below_studs": -0.052,
+            "mean_dev_studs": 0.017,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              2.5,
+              3.5
+            ]
+          },
+          "inset_1_0": {
+            "inset_studs": 1.0,
+            "step_studs": 0.25,
+            "samples": 625,
+            "misses": 0,
+            "max_abs_dev_studs": 0.03,
+            "max_above_studs": 0.03,
+            "max_below_studs": 0.003,
+            "mean_dev_studs": 0.025,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              -3.0,
+              1.75
+            ]
+          }
+        },
+        "glb_lod1": {
+          "full_footprint_inset_0_02": {
+            "inset_studs": 0.02,
+            "step_studs": 0.25,
+            "samples": 1089,
+            "misses": 0,
+            "max_abs_dev_studs": 0.153,
+            "max_above_studs": 0.028,
+            "max_below_studs": -0.153,
+            "mean_dev_studs": -0.006,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              -3.98,
+              -3.98
+            ],
+            "edge_ring_width_studs": 1.0,
+            "edge_ring_samples": 513,
+            "edge_ring_max_abs_dev_studs": 0.153
+          },
+          "inset_0_5": {
+            "inset_studs": 0.5,
+            "step_studs": 0.25,
+            "samples": 841,
+            "misses": 0,
+            "max_abs_dev_studs": 0.064,
+            "max_above_studs": 0.028,
+            "max_below_studs": -0.064,
+            "mean_dev_studs": 0.016,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              2.5,
+              3.5
+            ]
+          },
+          "inset_1_0": {
+            "inset_studs": 1.0,
+            "step_studs": 0.25,
+            "samples": 625,
+            "misses": 0,
+            "max_abs_dev_studs": 0.028,
+            "max_above_studs": 0.028,
+            "max_below_studs": -0.005,
+            "mean_dev_studs": 0.024,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              -4.0,
+              2.0
+            ]
+          }
+        }
+      },
+      "edge_gap_before_after": {
+        "before": {
+          "full_footprint_max_abs_dev": 0.937,
+          "inset_0_5_max_abs_dev": 0.344,
+          "inset_1_0_max_abs_dev": 0.159
+        },
+        "after": {
+          "full_footprint_max_abs_dev": 0.148,
+          "edge_ring_1_stud_max_abs_dev": 0.148,
+          "inset_0_5_max_abs_dev": 0.052,
+          "inset_1_0_max_abs_dev": 0.03,
+          "full_footprint_misses": 0
+        }
+      },
+      "checks": {
+        "dimensions_within_envelope": "PASS",
+        "near_tris_1500_3500": "PASS",
+        "far_tris_300_700": "PASS",
+        "root_plus_9_belly": "PASS",
+        "secondary_le_6": "PASS",
+        "weights_normalized_1e-4": "PASS",
+        "max_4_influences": "PASS",
+        "no_unweighted_vertex": "PASS",
+        "materials_le_2": "PASS",
+        "skin_survives_reimport_glb": "PASS",
+        "skin_survives_reimport_fbx": "PASS",
+        "fall_stretch_le_limit": "PASS",
+        "impact_compression_ge_limit": "PASS",
+        "impact_widening_le_limit": "PASS",
+        "no_drift_after_100_cycles": "PASS",
+        "top_alignment_rest_inset1_le_tol": "PASS",
+        "top_alignment_landing_inset1_le_tol": "PASS",
+        "never_below_floor": "PASS",
+        "edge_ring_rest_lod0_le_0_25": "PASS",
+        "edge_ring_rest_lod1_le_0_25": "PASS"
+      }
+    },
+    "toy_plush_loppy": {
+      "asset_id": "toy_plush_loppy",
+      "verify_exports": {
+        "asset_id": "toy_plush_loppy",
+        "checked_at_utc": "2026-11-02T14:10:34.996770+00:00",
+        "blender_version": "5.2.3 LTS",
+        "files": {
+          "glb": {
+            "file": "assets/import/models/toy_plush_loppy.glb",
+            "opened": true,
+            "bbox_studs_width_depth_height": [
+              10.139,
+              8.138,
+              7.017
+            ],
+            "bbox_min_z": -0.0028,
+            "expected_size_studs": [
+              10,
+              8,
+              7
+            ],
+            "size_max_abs_error_studs": 0.139,
+            "triangles": 3400,
+            "materials": 1,
+            "uv_layers": 1,
+            "textures": [
+              "toy_plush_loppy_albedo_1024"
+            ],
+            "armature_object_matrix_identity": true,
+            "bones": [
+              "Root",
+              "Belly_00",
+              "Belly_01",
+              "Belly_02",
+              "Belly_10",
+              "Belly_11",
+              "Belly_12",
+              "Belly_20",
+              "Belly_21",
+              "Belly_22",
+              "Ear_L",
+              "Ear_R",
+              "Feet",
+              "Head",
+              "Tail"
+            ],
+            "bone_count": 15,
+            "root_present": true,
+            "belly_bones": 9,
+            "secondary_bones": 5,
+            "skin_modifier": true,
+            "weight_sum_max_error": 1.1548399925231934e-07,
+            "max_influences": 4,
+            "unweighted_vertices": 0
+          },
+          "glb_lod1": {
+            "file": "assets/import/models/toy_plush_loppy_lod1.glb",
+            "opened": true,
+            "bbox_studs_width_depth_height": [
+              10.18,
+              8.142,
+              6.972
+            ],
+            "bbox_min_z": -0.0233,
+            "expected_size_studs": [
+              10,
+              8,
+              7
+            ],
+            "size_max_abs_error_studs": 0.18,
+            "triangles": 690,
+            "materials": 1,
+            "uv_layers": 1,
+            "textures": [
+              "toy_plush_loppy_albedo_256"
+            ],
+            "armature_object_matrix_identity": true,
+            "bones": [
+              "Root",
+              "Belly_00",
+              "Belly_01",
+              "Belly_02",
+              "Belly_10",
+              "Belly_11",
+              "Belly_12",
+              "Belly_20",
+              "Belly_21",
+              "Belly_22",
+              "Ear_L",
+              "Ear_R",
+              "Feet",
+              "Head",
+              "Tail"
+            ],
+            "bone_count": 15,
+            "root_present": true,
+            "belly_bones": 9,
+            "secondary_bones": 5,
+            "skin_modifier": true,
+            "weight_sum_max_error": 1.1594966053962708e-07,
+            "max_influences": 4,
+            "unweighted_vertices": 0
+          },
+          "fbx": {
+            "file": "assets/import/models/toy_plush_loppy.fbx",
+            "opened": true,
+            "bbox_studs_width_depth_height": [
+              10.139,
+              8.138,
+              7.017
+            ],
+            "bbox_min_z": -0.0028,
+            "expected_size_studs": [
+              10,
+              8,
+              7
+            ],
+            "size_max_abs_error_studs": 0.139,
+            "triangles": 3400,
+            "materials": 1,
+            "uv_layers": 1,
+            "textures": [
+              "Loppy_LOD0_albedo"
+            ],
+            "armature_object_matrix_identity": true,
+            "bones": [
+              "Root",
+              "Belly_00",
+              "Belly_10",
+              "Belly_20",
+              "Belly_01",
+              "Belly_11",
+              "Belly_21",
+              "Belly_02",
+              "Belly_12",
+              "Belly_22",
+              "Head",
+              "Ear_L",
+              "Ear_R",
+              "Feet",
+              "Tail"
+            ],
+            "bone_count": 15,
+            "root_present": true,
+            "belly_bones": 9,
+            "secondary_bones": 5,
+            "skin_modifier": true,
+            "weight_sum_max_error": 4.0978193283081055e-08,
+            "max_influences": 4,
+            "unweighted_vertices": 0
+          }
+        },
+        "pose_ratios": {
+          "rest": {
+            "body_top_height_ratio": 1.0,
+            "body_width_ratio": 1.0,
+            "body_depth_ratio": 1.0,
+            "min_z": -0.0028
+          },
+          "fall": {
+            "body_top_height_ratio": 1.1133,
+            "body_width_ratio": 0.9727,
+            "body_depth_ratio": 0.9841,
+            "min_z": -0.0028
+          },
+          "impact": {
+            "body_top_height_ratio": 0.7291,
+            "body_width_ratio": 1.0944,
+            "body_depth_ratio": 1.0753,
+            "min_z": -0.0028
+          },
+          "rebound": {
+            "body_top_height_ratio": 1.0542,
+            "body_width_ratio": 0.9878,
+            "body_depth_ratio": 0.9924,
+            "min_z": -0.0028
+          },
+          "player_landing": {
+            "body_top_height_ratio": 0.9779,
+            "body_width_ratio": 1.0,
+            "body_depth_ratio": 1.0,
+            "min_z": -0.0028
+          }
+        },
+        "drift": {
+          "cycles": 100,
+          "max_vertex_drift_after_reset_studs": 0.0,
+          "max_displacement_during_impact_studs": 1.235,
+          "method": "pose absolue recalculée depuis la référence à chaque cycle (intensité aléatoire 0.2-1.0, graine fixe)"
+        },
+        "top_alignment_rest": {
+          "full_footprint": {
+            "inset_studs": 0.0,
+            "samples": 957,
+            "misses": 0,
+            "max_abs_dev_studs": 0.151,
+            "mean_dev_studs": 0.028,
+            "within_tolerance_fraction": 1.0,
+            "max_above_studs": 0.094,
+            "max_below_studs": -0.151
+          },
+          "inset_0_5": {
+            "inset_studs": 0.5,
+            "samples": 725,
+            "misses": 0,
+            "max_abs_dev_studs": 0.094,
+            "mean_dev_studs": 0.036,
+            "within_tolerance_fraction": 1.0,
+            "max_above_studs": 0.094,
+            "max_below_studs": 0.026
+          },
+          "inset_1_0": {
+            "inset_studs": 1.0,
+            "samples": 525,
+            "misses": 0,
+            "max_abs_dev_studs": 0.094,
+            "mean_dev_studs": 0.037,
+            "within_tolerance_fraction": 1.0,
+            "max_above_studs": 0.094,
+            "max_below_studs": 0.029
+          }
+        },
+        "top_alignment_player_landing": {
+          "inset_1_0": {
+            "inset_studs": 1.0,
+            "samples": 525,
+            "misses": 0,
+            "max_abs_dev_studs": 0.085,
+            "mean_dev_studs": -0.047,
+            "within_tolerance_fraction": 1.0,
+            "max_above_studs": 0.014,
+            "max_below_studs": -0.085
+          }
+        },
+        "checks": {
+          "dimensions_within_envelope": "PASS",
+          "near_tris_1500_3500": "PASS",
+          "far_tris_300_700": "PASS",
+          "root_plus_9_belly": "PASS",
+          "secondary_le_6": "PASS",
+          "weights_normalized_1e-4": "PASS",
+          "max_4_influences": "PASS",
+          "no_unweighted_vertex": "PASS",
+          "materials_le_2": "PASS",
+          "skin_survives_reimport_glb": "PASS",
+          "skin_survives_reimport_fbx": "PASS",
+          "fall_stretch_le_limit": "PASS",
+          "impact_compression_ge_limit": "PASS",
+          "impact_widening_le_limit": "PASS",
+          "no_drift_after_100_cycles": "PASS",
+          "top_alignment_rest_inset1_le_tol": "PASS",
+          "top_alignment_landing_inset1_le_tol": "PASS",
+          "never_below_floor": "PASS"
+        },
+        "roblox_studio_import": {
+          "status": "blocked",
+          "reason": "Aucun Roblox Studio ni accès Open Cloud autorisé dans le conteneur ; rig, skin, unités et collisions non mesurés dans Roblox.",
+          "roblox_asset_id": null,
+          "studio_checks": "NOT_RUN"
+        }
+      },
+      "top_alignment_rest": {
+        "glb": {
+          "full_footprint_inset_0_02": {
+            "inset_studs": 0.02,
+            "step_studs": 0.25,
+            "samples": 957,
+            "misses": 0,
+            "max_abs_dev_studs": 0.114,
+            "max_above_studs": 0.094,
+            "max_below_studs": -0.114,
+            "mean_dev_studs": 0.029,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              2.98,
+              3.48
+            ],
+            "edge_ring_width_studs": 1.0,
+            "edge_ring_samples": 477,
+            "edge_ring_max_abs_dev_studs": 0.114
+          },
+          "inset_0_5": {
+            "inset_studs": 0.5,
+            "step_studs": 0.25,
+            "samples": 725,
+            "misses": 0,
+            "max_abs_dev_studs": 0.094,
+            "max_above_studs": 0.094,
+            "max_below_studs": 0.026,
+            "mean_dev_studs": 0.036,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              0.0,
+              1.75
+            ]
+          },
+          "inset_1_0": {
+            "inset_studs": 1.0,
+            "step_studs": 0.25,
+            "samples": 525,
+            "misses": 0,
+            "max_abs_dev_studs": 0.094,
+            "max_above_studs": 0.094,
+            "max_below_studs": 0.029,
+            "mean_dev_studs": 0.037,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              0.0,
+              1.75
+            ]
+          }
+        },
+        "glb_lod1": {
+          "full_footprint_inset_0_02": {
+            "inset_studs": 0.02,
+            "step_studs": 0.25,
+            "samples": 957,
+            "misses": 0,
+            "max_abs_dev_studs": 0.128,
+            "max_above_studs": 0.085,
+            "max_below_studs": -0.128,
+            "mean_dev_studs": 0.029,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              2.98,
+              3.48
+            ],
+            "edge_ring_width_studs": 1.0,
+            "edge_ring_samples": 477,
+            "edge_ring_max_abs_dev_studs": 0.128
+          },
+          "inset_0_5": {
+            "inset_studs": 0.5,
+            "step_studs": 0.25,
+            "samples": 725,
+            "misses": 0,
+            "max_abs_dev_studs": 0.084,
+            "max_above_studs": 0.084,
+            "max_below_studs": 0.007,
+            "mean_dev_studs": 0.037,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              0.0,
+              2.0
+            ]
+          },
+          "inset_1_0": {
+            "inset_studs": 1.0,
+            "step_studs": 0.25,
+            "samples": 525,
+            "misses": 0,
+            "max_abs_dev_studs": 0.084,
+            "max_above_studs": 0.084,
+            "max_below_studs": 0.025,
+            "mean_dev_studs": 0.039,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              0.0,
+              2.0
+            ]
+          }
+        }
+      },
+      "edge_gap_before_after": {
+        "before": {
+          "full_footprint_max_abs_dev": 3.323,
+          "inset_0_5_max_abs_dev": 0.795,
+          "inset_1_0_max_abs_dev": 0.167,
+          "full_footprint_misses": 55
+        },
+        "after": {
+          "full_footprint_max_abs_dev": 0.114,
+          "edge_ring_1_stud_max_abs_dev": 0.114,
+          "inset_0_5_max_abs_dev": 0.094,
+          "inset_1_0_max_abs_dev": 0.094,
+          "full_footprint_misses": 0
+        }
+      },
+      "checks": {
+        "dimensions_within_envelope": "PASS",
+        "near_tris_1500_3500": "PASS",
+        "far_tris_300_700": "PASS",
+        "root_plus_9_belly": "PASS",
+        "secondary_le_6": "PASS",
+        "weights_normalized_1e-4": "PASS",
+        "max_4_influences": "PASS",
+        "no_unweighted_vertex": "PASS",
+        "materials_le_2": "PASS",
+        "skin_survives_reimport_glb": "PASS",
+        "skin_survives_reimport_fbx": "PASS",
+        "fall_stretch_le_limit": "PASS",
+        "impact_compression_ge_limit": "PASS",
+        "impact_widening_le_limit": "PASS",
+        "no_drift_after_100_cycles": "PASS",
+        "top_alignment_rest_inset1_le_tol": "PASS",
+        "top_alignment_landing_inset1_le_tol": "PASS",
+        "never_below_floor": "PASS",
+        "edge_ring_rest_lod0_le_0_25": "PASS",
+        "edge_ring_rest_lod1_le_0_25": "PASS"
+      }
+    },
+    "toy_plush_octo": {
+      "asset_id": "toy_plush_octo",
+      "verify_exports": {
+        "asset_id": "toy_plush_octo",
+        "checked_at_utc": "2026-11-02T14:10:37.757377+00:00",
+        "blender_version": "5.2.3 LTS",
+        "files": {
+          "glb": {
+            "file": "assets/import/models/toy_plush_octo.glb",
+            "opened": true,
+            "bbox_studs_width_depth_height": [
+              11.999,
+              12.001,
+              4.979
+            ],
+            "bbox_min_z": -0.0084,
+            "expected_size_studs": [
+              12,
+              12,
+              5
+            ],
+            "size_max_abs_error_studs": 0.021,
+            "triangles": 3400,
+            "materials": 1,
+            "uv_layers": 1,
+            "textures": [
+              "toy_plush_octo_albedo_1024"
+            ],
+            "armature_object_matrix_identity": true,
+            "bones": [
+              "Root",
+              "Arms_E",
+              "Arms_N",
+              "Arms_S",
+              "Arms_W",
+              "Belly_00",
+              "Belly_01",
+              "Belly_02",
+              "Belly_10",
+              "Belly_11",
+              "Belly_12",
+              "Belly_20",
+              "Belly_21",
+              "Belly_22"
+            ],
+            "bone_count": 14,
+            "root_present": true,
+            "belly_bones": 9,
+            "secondary_bones": 4,
+            "skin_modifier": true,
+            "weight_sum_max_error": 1.4528632164001465e-07,
+            "max_influences": 4,
+            "unweighted_vertices": 0
+          },
+          "glb_lod1": {
+            "file": "assets/import/models/toy_plush_octo_lod1.glb",
+            "opened": true,
+            "bbox_studs_width_depth_height": [
+              11.971,
+              12.003,
+              5.081
+            ],
+            "bbox_min_z": -0.0433,
+            "expected_size_studs": [
+              12,
+              12,
+              5
+            ],
+            "size_max_abs_error_studs": 0.081,
+            "triangles": 690,
+            "materials": 1,
+            "uv_layers": 1,
+            "textures": [
+              "toy_plush_octo_albedo_256"
+            ],
+            "armature_object_matrix_identity": true,
+            "bones": [
+              "Root",
+              "Arms_E",
+              "Arms_N",
+              "Arms_S",
+              "Arms_W",
+              "Belly_00",
+              "Belly_01",
+              "Belly_02",
+              "Belly_10",
+              "Belly_11",
+              "Belly_12",
+              "Belly_20",
+              "Belly_21",
+              "Belly_22"
+            ],
+            "bone_count": 14,
+            "root_present": true,
+            "belly_bones": 9,
+            "secondary_bones": 4,
+            "skin_modifier": true,
+            "weight_sum_max_error": 1.2665987014770508e-07,
+            "max_influences": 4,
+            "unweighted_vertices": 0
+          },
+          "fbx": {
+            "file": "assets/import/models/toy_plush_octo.fbx",
+            "opened": true,
+            "bbox_studs_width_depth_height": [
+              11.999,
+              12.001,
+              4.979
+            ],
+            "bbox_min_z": -0.0084,
+            "expected_size_studs": [
+              12,
+              12,
+              5
+            ],
+            "size_max_abs_error_studs": 0.021,
+            "triangles": 3400,
+            "materials": 1,
+            "uv_layers": 1,
+            "textures": [
+              "Octo_LOD0_albedo"
+            ],
+            "armature_object_matrix_identity": true,
+            "bones": [
+              "Root",
+              "Belly_00",
+              "Belly_10",
+              "Belly_20",
+              "Belly_01",
+              "Belly_11",
+              "Belly_21",
+              "Belly_02",
+              "Belly_12",
+              "Belly_22",
+              "Arms_N",
+              "Arms_E",
+              "Arms_S",
+              "Arms_W"
+            ],
+            "bone_count": 14,
+            "root_present": true,
+            "belly_bones": 9,
+            "secondary_bones": 4,
+            "skin_modifier": true,
+            "weight_sum_max_error": 4.470348358154297e-08,
+            "max_influences": 4,
+            "unweighted_vertices": 0
+          }
+        },
+        "pose_ratios": {
+          "rest": {
+            "body_top_height_ratio": 1.0,
+            "body_width_ratio": 1.0,
+            "body_depth_ratio": 1.0,
+            "min_z": -0.0084
+          },
+          "fall": {
+            "body_top_height_ratio": 1.1142,
+            "body_width_ratio": 0.9885,
+            "body_depth_ratio": 0.984,
+            "min_z": -0.0084
+          },
+          "impact": {
+            "body_top_height_ratio": 0.7269,
+            "body_width_ratio": 1.098,
+            "body_depth_ratio": 1.0892,
+            "min_z": -0.0084
+          },
+          "rebound": {
+            "body_top_height_ratio": 1.0497,
+            "body_width_ratio": 0.9937,
+            "body_depth_ratio": 0.9915,
+            "min_z": -0.0084
+          },
+          "player_landing": {
+            "body_top_height_ratio": 0.9796,
+            "body_width_ratio": 1.0,
+            "body_depth_ratio": 1.0,
+            "min_z": -0.0084
+          }
+        },
+        "drift": {
+          "cycles": 100,
+          "max_vertex_drift_after_reset_studs": 0.0,
+          "max_displacement_during_impact_studs": 1.094,
+          "method": "pose absolue recalculée depuis la référence à chaque cycle (intensité aléatoire 0.2-1.0, graine fixe)"
+        },
+        "top_alignment_rest": {
+          "full_footprint": {
+            "inset_studs": 0.0,
+            "samples": 1089,
+            "misses": 0,
+            "max_abs_dev_studs": 0.134,
+            "mean_dev_studs": 0.011,
+            "within_tolerance_fraction": 1.0,
+            "max_above_studs": 0.03,
+            "max_below_studs": -0.134
+          },
+          "inset_0_5": {
+            "inset_studs": 0.5,
+            "samples": 841,
+            "misses": 0,
+            "max_abs_dev_studs": 0.03,
+            "mean_dev_studs": 0.023,
+            "within_tolerance_fraction": 1.0,
+            "max_above_studs": 0.03,
+            "max_below_studs": -0.014
+          },
+          "inset_1_0": {
+            "inset_studs": 1.0,
+            "samples": 625,
+            "misses": 0,
+            "max_abs_dev_studs": 0.03,
+            "mean_dev_studs": 0.028,
+            "within_tolerance_fraction": 1.0,
+            "max_above_studs": 0.03,
+            "max_below_studs": 0.01
+          }
+        },
+        "top_alignment_player_landing": {
+          "inset_1_0": {
+            "inset_studs": 1.0,
+            "samples": 625,
+            "misses": 0,
+            "max_abs_dev_studs": 0.071,
+            "mean_dev_studs": -0.055,
+            "within_tolerance_fraction": 1.0,
+            "max_above_studs": -0.05,
+            "max_below_studs": -0.071
+          }
+        },
+        "checks": {
+          "dimensions_within_envelope": "PASS",
+          "near_tris_1500_3500": "PASS",
+          "far_tris_300_700": "PASS",
+          "root_plus_9_belly": "PASS",
+          "secondary_le_6": "PASS",
+          "weights_normalized_1e-4": "PASS",
+          "max_4_influences": "PASS",
+          "no_unweighted_vertex": "PASS",
+          "materials_le_2": "PASS",
+          "skin_survives_reimport_glb": "PASS",
+          "skin_survives_reimport_fbx": "PASS",
+          "fall_stretch_le_limit": "PASS",
+          "impact_compression_ge_limit": "PASS",
+          "impact_widening_le_limit": "PASS",
+          "no_drift_after_100_cycles": "PASS",
+          "top_alignment_rest_inset1_le_tol": "PASS",
+          "top_alignment_landing_inset1_le_tol": "PASS",
+          "never_below_floor": "PASS"
+        },
+        "roblox_studio_import": {
+          "status": "blocked",
+          "reason": "Aucun Roblox Studio ni accès Open Cloud autorisé dans le conteneur ; rig, skin, unités et collisions non mesurés dans Roblox.",
+          "roblox_asset_id": null,
+          "studio_checks": "NOT_RUN"
+        }
+      },
+      "top_alignment_rest": {
+        "glb": {
+          "full_footprint_inset_0_02": {
+            "inset_studs": 0.02,
+            "step_studs": 0.25,
+            "samples": 1089,
+            "misses": 0,
+            "max_abs_dev_studs": 0.13,
+            "max_above_studs": 0.03,
+            "max_below_studs": -0.13,
+            "mean_dev_studs": 0.011,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              -3.98,
+              3.98
+            ],
+            "edge_ring_width_studs": 1.0,
+            "edge_ring_samples": 513,
+            "edge_ring_max_abs_dev_studs": 0.13
+          },
+          "inset_0_5": {
+            "inset_studs": 0.5,
+            "step_studs": 0.25,
+            "samples": 841,
+            "misses": 0,
+            "max_abs_dev_studs": 0.03,
+            "max_above_studs": 0.03,
+            "max_below_studs": -0.014,
+            "mean_dev_studs": 0.023,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              2.5,
+              1.5
+            ]
+          },
+          "inset_1_0": {
+            "inset_studs": 1.0,
+            "step_studs": 0.25,
+            "samples": 625,
+            "misses": 0,
+            "max_abs_dev_studs": 0.03,
+            "max_above_studs": 0.03,
+            "max_below_studs": 0.01,
+            "mean_dev_studs": 0.028,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              2.5,
+              1.5
+            ]
+          }
+        },
+        "glb_lod1": {
+          "full_footprint_inset_0_02": {
+            "inset_studs": 0.02,
+            "step_studs": 0.25,
+            "samples": 1089,
+            "misses": 0,
+            "max_abs_dev_studs": 0.149,
+            "max_above_studs": 0.026,
+            "max_below_studs": -0.149,
+            "mean_dev_studs": 0.009,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              3.98,
+              3.98
+            ],
+            "edge_ring_width_studs": 1.0,
+            "edge_ring_samples": 513,
+            "edge_ring_max_abs_dev_studs": 0.149
+          },
+          "inset_0_5": {
+            "inset_studs": 0.5,
+            "step_studs": 0.25,
+            "samples": 841,
+            "misses": 0,
+            "max_abs_dev_studs": 0.028,
+            "max_above_studs": 0.026,
+            "max_below_studs": -0.028,
+            "mean_dev_studs": 0.02,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              3.5,
+              3.5
+            ]
+          },
+          "inset_1_0": {
+            "inset_studs": 1.0,
+            "step_studs": 0.25,
+            "samples": 625,
+            "misses": 0,
+            "max_abs_dev_studs": 0.026,
+            "max_above_studs": 0.026,
+            "max_below_studs": 0.004,
+            "mean_dev_studs": 0.023,
+            "within_tolerance_fraction": 1.0,
+            "worst_point_blender_xy": [
+              -1.25,
+              -3.0
+            ]
+          }
+        }
+      },
+      "edge_gap_before_after": {
+        "before": {
+          "full_footprint_max_abs_dev": 0.78,
+          "inset_0_5_max_abs_dev": 0.359,
+          "inset_1_0_max_abs_dev": 0.128
+        },
+        "after": {
+          "full_footprint_max_abs_dev": 0.13,
+          "edge_ring_1_stud_max_abs_dev": 0.13,
+          "inset_0_5_max_abs_dev": 0.03,
+          "inset_1_0_max_abs_dev": 0.03,
+          "full_footprint_misses": 0
+        }
+      },
+      "checks": {
+        "dimensions_within_envelope": "PASS",
+        "near_tris_1500_3500": "PASS",
+        "far_tris_300_700": "PASS",
+        "root_plus_9_belly": "PASS",
+        "secondary_le_6": "PASS",
+        "weights_normalized_1e-4": "PASS",
+        "max_4_influences": "PASS",
+        "no_unweighted_vertex": "PASS",
+        "materials_le_2": "PASS",
+        "skin_survives_reimport_glb": "PASS",
+        "skin_survives_reimport_fbx": "PASS",
+        "fall_stretch_le_limit": "PASS",
+        "impact_compression_ge_limit": "PASS",
+        "impact_widening_le_limit": "PASS",
+        "no_drift_after_100_cycles": "PASS",
+        "top_alignment_rest_inset1_le_tol": "PASS",
+        "top_alignment_landing_inset1_le_tol": "PASS",
+        "never_below_floor": "PASS",
+        "edge_ring_rest_lod0_le_0_25": "PASS",
+        "edge_ring_rest_lod1_le_0_25": "PASS"
+      }
+    }
+  },
+  "summary": {
+    "all_pass": true,
+    "failed_checks": {}
+  }
+}

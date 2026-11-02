@@ -557,7 +557,11 @@
         "assets/source/design/canvas/project/Room_Toys.dc.html",
         "reports/asset_import.json#assets.toy_plush_mallow",
         "reports/T03/verify_log.txt",
-        "reports/T03/renders/toy_plush_mallow_sheet.png"
+        "reports/T03/renders/toy_plush_mallow_sheet.png",
+        "reports/T03/props_toy_verify.json#assets.toy_plush_mallow",
+        "reports/T03/renders/toy_plush_mallow_3q.png",
+        "reports/T03/renders/toy_plush_mallow_sil.png",
+        "reports/T03/renders/toy_family_lineup.png"
       ],
       "design_reference_paths": [
         "assets/source/models/toy_plush_mallow.blend",
@@ -613,7 +617,12 @@
         "assets/source/design/canvas/project/Room_Toys.dc.html",
         "reports/asset_import.json#assets.toy_plush_loppy",
         "reports/T03/verify_log.txt",
-        "reports/T03/renders/toy_plush_loppy_sheet.png"
+        "reports/T03/renders/toy_plush_loppy_sheet.png",
+        "reports/T03/props_toy_verify.json#assets.toy_plush_loppy",
+        "reports/T03/renders/toy_plush_loppy_3q.png",
+        "reports/T03/renders/toy_plush_loppy_sil.png",
+        "reports/T03/renders/toy_family_lineup.png",
+        "reports/T03/renders/toy_plush_loppy_profile.png"
       ],
       "design_reference_paths": [
         "assets/source/models/toy_plush_loppy.blend",
@@ -631,9 +640,9 @@
       "name": "Canard à dos plat",
       "category": "room_prop",
       "release_stage": "MVP",
-      "status": "designed",
+      "status": "modeled",
       "roblox_asset_id": null,
-      "source_path": "assets/source/models/toy_flat_duck.blend",
+      "source_path": "assets/source/models/toy/toy_props.blend",
       "export_path": "assets/import/models/toy_flat_duck.glb",
       "dimensions_order": "width_depth_height",
       "size_studs": [
@@ -665,23 +674,33 @@
       "image_export_pixels": null,
       "provenance": "original_creation_required",
       "validation_evidence": [
-        "assets/source/design/canvas/project/Room_Toys.dc.html"
+        "assets/source/design/canvas/project/Room_Toys.dc.html",
+        "reports/T03/props_toy_verify.json#assets.toy_flat_duck",
+        "reports/T03/renders/toy_flat_duck_3q.png",
+        "reports/T03/renders/toy_flat_duck_sil.png",
+        "reports/T03/renders/props_toy_sheet.png",
+        "reports/T03/renders/toy_family_lineup.png",
+        "reports/T03/renders/toy_flat_duck_profile.png"
       ],
       "design_reference_paths": [
         "assets/source/models/toy_flat_duck.blend",
         "assets/import/models/toy_flat_duck.glb"
       ],
       "proxy_export_path": "assets/import/models/toy_flat_duck.rbxm",
-      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged",
+      "additional_exports": [
+        "assets/import/models/toy_flat_duck_lod1.glb",
+        "assets/import/models/toy_flat_duck.fbx"
+      ]
     },
     {
       "id": "toy_train",
       "name": "Petit train",
       "category": "room_prop",
       "release_stage": "MVP",
-      "status": "designed",
+      "status": "modeled",
       "roblox_asset_id": null,
-      "source_path": "assets/source/models/toy_train.blend",
+      "source_path": "assets/source/models/toy/toy_props.blend",
       "export_path": "assets/import/models/toy_train.glb",
       "dimensions_order": "width_depth_height",
       "size_studs": [
@@ -713,23 +732,33 @@
       "image_export_pixels": null,
       "provenance": "original_creation_required",
       "validation_evidence": [
-        "assets/source/design/canvas/project/Room_Toys.dc.html"
+        "assets/source/design/canvas/project/Room_Toys.dc.html",
+        "reports/T03/props_toy_verify.json#assets.toy_train",
+        "reports/T03/renders/toy_train_3q.png",
+        "reports/T03/renders/toy_train_sil.png",
+        "reports/T03/renders/props_toy_sheet.png",
+        "reports/T03/renders/toy_family_lineup.png",
+        "reports/T03/renders/toy_train_profile.png"
       ],
       "design_reference_paths": [
         "assets/source/models/toy_train.blend",
         "assets/import/models/toy_train.glb"
       ],
       "proxy_export_path": "assets/import/models/toy_train.rbxm",
-      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged",
+      "additional_exports": [
+        "assets/import/models/toy_train_lod1.glb",
+        "assets/import/models/toy_train.fbx"
+      ]
     },
     {
       "id": "toy_drum",
       "name": "Tambour",
       "category": "room_prop",
       "release_stage": "MVP",
-      "status": "designed",
+      "status": "modeled",
       "roblox_asset_id": null,
-      "source_path": "assets/source/models/toy_drum.blend",
+      "source_path": "assets/source/models/toy/toy_props.blend",
       "export_path": "assets/import/models/toy_drum.glb",
       "dimensions_order": "width_depth_height",
       "size_studs": [
@@ -761,24 +790,33 @@
       "image_export_pixels": null,
       "provenance": "original_creation_required",
       "validation_evidence": [
-        "assets/source/design/canvas/project/Room_Toys.dc.html"
+        "assets/source/design/canvas/project/Room_Toys.dc.html",
+        "reports/T03/props_toy_verify.json#assets.toy_drum",
+        "reports/T03/renders/toy_drum_3q.png",
+        "reports/T03/renders/toy_drum_sil.png",
+        "reports/T03/renders/props_toy_sheet.png",
+        "reports/T03/renders/toy_family_lineup.png"
       ],
       "design_reference_paths": [
         "assets/source/models/toy_drum.blend",
         "assets/import/models/toy_drum.glb"
       ],
       "proxy_export_path": "assets/import/models/toy_drum.rbxm",
-      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged",
+      "additional_exports": [
+        "assets/import/models/toy_drum_lod1.glb",
+        "assets/import/models/toy_drum.fbx"
+      ]
     },
     {
       "id": "toy_domino",
       "name": "Domino couché",
       "category": "room_prop",
       "release_stage": "MVP",
-      "status": "designed",
+      "status": "modeled",
       "roblox_asset_id": null,
-      "source_path": "assets/source/generators/toy_domino.luau",
-      "export_path": "assets/import/models/toy_domino.rbxm",
+      "source_path": "assets/source/models/toy/toy_props.blend",
+      "export_path": "assets/import/models/toy_domino.glb",
       "dimensions_order": "width_depth_height",
       "size_studs": [
         12,
@@ -809,24 +847,33 @@
       "image_export_pixels": null,
       "provenance": "original_creation_required",
       "validation_evidence": [
-        "assets/source/design/canvas/project/Room_Toys.dc.html"
+        "assets/source/design/canvas/project/Room_Toys.dc.html",
+        "reports/T03/props_toy_verify.json#assets.toy_domino",
+        "reports/T03/renders/toy_domino_3q.png",
+        "reports/T03/renders/toy_domino_sil.png",
+        "reports/T03/renders/props_toy_sheet.png",
+        "reports/T03/renders/toy_family_lineup.png"
       ],
       "design_reference_paths": [
         "assets/source/generators/toy_domino.luau",
         "assets/import/models/toy_domino.rbxm"
       ],
       "proxy_export_path": "assets/import/models/toy_domino.rbxm",
-      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged",
+      "additional_exports": [
+        "assets/import/models/toy_domino_lod1.glb",
+        "assets/import/models/toy_domino.fbx"
+      ]
     },
     {
       "id": "toy_shape_cube",
       "name": "Cube à formes",
       "category": "room_prop",
       "release_stage": "MVP",
-      "status": "designed",
+      "status": "modeled",
       "roblox_asset_id": null,
-      "source_path": "assets/source/generators/toy_shape_cube.luau",
-      "export_path": "assets/import/models/toy_shape_cube.rbxm",
+      "source_path": "assets/source/models/toy/toy_props.blend",
+      "export_path": "assets/import/models/toy_shape_cube.glb",
       "dimensions_order": "width_depth_height",
       "size_studs": [
         10,
@@ -857,14 +904,23 @@
       "image_export_pixels": null,
       "provenance": "original_creation_required",
       "validation_evidence": [
-        "assets/source/design/canvas/project/Room_Toys.dc.html"
+        "assets/source/design/canvas/project/Room_Toys.dc.html",
+        "reports/T03/props_toy_verify.json#assets.toy_shape_cube",
+        "reports/T03/renders/toy_shape_cube_3q.png",
+        "reports/T03/renders/toy_shape_cube_sil.png",
+        "reports/T03/renders/props_toy_sheet.png",
+        "reports/T03/renders/toy_family_lineup.png"
       ],
       "design_reference_paths": [
         "assets/source/generators/toy_shape_cube.luau",
         "assets/import/models/toy_shape_cube.rbxm"
       ],
       "proxy_export_path": "assets/import/models/toy_shape_cube.rbxm",
-      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged",
+      "additional_exports": [
+        "assets/import/models/toy_shape_cube_lod1.glb",
+        "assets/import/models/toy_shape_cube.fbx"
+      ]
     },
     {
       "id": "toy_plush_octo",
@@ -909,7 +965,11 @@
         "assets/source/design/canvas/project/Room_Toys.dc.html",
         "reports/asset_import.json#assets.toy_plush_octo",
         "reports/T03/verify_log.txt",
-        "reports/T03/renders/toy_plush_octo_sheet.png"
+        "reports/T03/renders/toy_plush_octo_sheet.png",
+        "reports/T03/props_toy_verify.json#assets.toy_plush_octo",
+        "reports/T03/renders/toy_plush_octo_3q.png",
+        "reports/T03/renders/toy_plush_octo_sil.png",
+        "reports/T03/renders/toy_family_lineup.png"
       ],
       "design_reference_paths": [
         "assets/source/models/toy_plush_octo.blend",
@@ -927,9 +987,9 @@
       "name": "Toupie Trieuse",
       "category": "signature_machine",
       "release_stage": "MVP",
-      "status": "designed",
+      "status": "modeled",
       "roblox_asset_id": null,
-      "source_path": "assets/source/models/machine_toy_spinner.blend",
+      "source_path": "assets/source/models/toy/toy_props.blend",
       "export_path": "assets/import/models/machine_toy_spinner.glb",
       "dimensions_order": "width_depth_height",
       "size_studs": [
@@ -951,11 +1011,21 @@
       "image_export_pixels": null,
       "provenance": "original_creation_required",
       "validation_evidence": [
-        "assets/source/design/canvas/project/Room_Toys.dc.html"
+        "assets/source/design/canvas/project/Room_Toys.dc.html",
+        "reports/T03/props_toy_verify.json#assets.machine_toy_spinner",
+        "reports/T03/renders/machine_toy_spinner_3q.png",
+        "reports/T03/renders/machine_toy_spinner_sil.png",
+        "reports/T03/renders/props_toy_sheet.png",
+        "reports/T03/renders/toy_family_lineup.png",
+        "reports/T03/renders/machine_toy_spinner_profile.png"
       ],
       "design_reference_paths": [
         "assets/source/models/machine_toy_spinner.blend",
         "assets/import/models/machine_toy_spinner.glb"
+      ],
+      "additional_exports": [
+        "assets/import/models/machine_toy_spinner_lod1.glb",
+        "assets/import/models/machine_toy_spinner.fbx"
       ]
     },
     {
@@ -6009,8 +6079,8 @@
     }
   ],
   "status_counts": {
-    "modeled": 15,
-    "designed": 28,
+    "modeled": 21,
+    "designed": 22,
     "planned": 138
   }
 }

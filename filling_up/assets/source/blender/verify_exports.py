@@ -258,8 +258,8 @@ def verify(key):
     pr = report["pose_ratios"]
     tol = lim["walkable_top_alignment_tolerance_studs"]
     checks = {
-        # enveloppe visuelle : ne jamais dépasser size_studs (+0.05), ni être plus petit de plus de 0.3 stud
-        "dimensions_within_envelope": all(-0.3 <= a - e <= 0.05 for a, e in zip(g["bbox_studs_width_depth_height"], cr.size_studs)),
+        # enveloppe visuelle = size_studs ± 2 % (contrat qualité T03-b, consigne utilisateur)
+        "dimensions_within_envelope": all(abs(a - e) <= 0.02 * e + 1e-6 for a, e in zip(g["bbox_studs_width_depth_height"], cr.size_studs)),
         "near_tris_1500_3500": 1500 <= g["triangles"] <= 3500,
         "far_tris_300_700": 300 <= report["files"]["glb_lod1"]["triangles"] <= 700,
         "root_plus_9_belly": g.get("root_present") and g.get("belly_bones") == lim["plush_lattice_bones"],

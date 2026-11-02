@@ -27,7 +27,16 @@ def main() -> int:
     log = {"applied": [], "rejected": []}
     sources = [("T02", "reports/T02/manifest_updates.json"), ("T03", "reports/T03/manifest_updates.json")]
     # per-family high-quality passes (decision 0017 follow-up): reports/T03/manifest_updates_<family>.json
-    sources += [("T03", str(q.relative_to(ROOT))) for q in sorted((ROOT / "reports/T03").glob("manifest_updates_*.json"))]
+    # only batches whose producing pass is finished and verified: `--only reception,toy` (default: all)
+    only = None
+    if "--only" in sys.argv:
+        only = set(sys.argv[sys.argv.index("--only") + 1].split(","))
+
+    def wanted(q: Path, prefix: str) -> bool:
+        return only is None or q.stem[len(prefix):] in only
+
+    sources += [("T03", str(q.relative_to(ROOT))) for q in sorted((ROOT / "reports/T03").glob("manifest_updates_*.json"))
+                if wanted(q, "manifest_updates_")]
     for task, path in sources:
         if not (ROOT / path).exists():
             continue
@@ -85,6 +94,8 @@ def main() -> int:
     # new assets proposed by a modelling pass (reports/T03/manifest_new_*.json, decision 0019)
     template_keys = list(manifest["assets"][0].keys())
     for q in sorted((ROOT / "reports/T03").glob("manifest_new_*.json")):
+        if not wanted(q, "manifest_new_"):
+            continue
         for e in json.loads(q.read_text(encoding="utf-8"))["new_assets"]:
             src = str(q.relative_to(ROOT))
             if e["id"] in by_id:

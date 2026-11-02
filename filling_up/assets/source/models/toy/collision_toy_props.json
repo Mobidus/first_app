@@ -1,0 +1,429 @@
+{
+  "family": "toy",
+  "units": "studs",
+  "axes": "roblox_model_space (X largeur, Y haut, Z profondeur ; avant = -Z)",
+  "props": {
+    "toy_flat_duck": {
+      "asset_id": "toy_flat_duck",
+      "authority": "server_collider_separate_from_visual_mesh",
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "dimensions_order_config": "width_depth_height",
+      "visual_envelope_studs_config": [
+        14,
+        10,
+        8
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          8,
+          8,
+          6
+        ],
+        "size_vector3_roblox": [
+          8,
+          6,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          -1.0,
+          3.0,
+          -0.0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          8,
+          8
+        ],
+        "height_studs": 6,
+        "center_roblox": [
+          -1.0,
+          6.0,
+          -0.0
+        ],
+        "flat_tolerance_studs": 0.25
+      },
+      "support_sockets_roblox": [
+        [
+          -3.0,
+          6.0,
+          2.0
+        ],
+        [
+          -3.0,
+          6.0,
+          -2.0
+        ],
+        [
+          1.0,
+          6.0,
+          2.0
+        ],
+        [
+          1.0,
+          6.0,
+          -2.0
+        ],
+        [
+          -1.0,
+          6.0,
+          -0.0
+        ]
+      ],
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      },
+      "behavior": "stable",
+      "behavior_params": null
+    },
+    "toy_train": {
+      "asset_id": "toy_train",
+      "authority": "server_collider_separate_from_visual_mesh",
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "dimensions_order_config": "width_depth_height",
+      "visual_envelope_studs_config": [
+        16,
+        8,
+        5
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          16,
+          8,
+          5
+        ],
+        "size_vector3_roblox": [
+          16,
+          5,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0.0,
+          2.5,
+          -0.0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          16,
+          8
+        ],
+        "height_studs": 5,
+        "center_roblox": [
+          0.0,
+          5.0,
+          -0.0
+        ],
+        "flat_tolerance_studs": 0.25
+      },
+      "support_sockets_roblox": [
+        [
+          -4.0,
+          5.0,
+          2.0
+        ],
+        [
+          -4.0,
+          5.0,
+          -2.0
+        ],
+        [
+          4.0,
+          5.0,
+          2.0
+        ],
+        [
+          4.0,
+          5.0,
+          -2.0
+        ],
+        [
+          0.0,
+          5.0,
+          -0.0
+        ]
+      ],
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      },
+      "behavior": "moving",
+      "behavior_params": {
+        "path": "linear",
+        "axis": "depth",
+        "travel_studs": 12,
+        "cycle_seconds": 9,
+        "pause_at_each_end_seconds": 1.2
+      }
+    },
+    "toy_drum": {
+      "asset_id": "toy_drum",
+      "authority": "server_collider_separate_from_visual_mesh",
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "dimensions_order_config": "width_depth_height",
+      "visual_envelope_studs_config": [
+        10,
+        10,
+        5
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          8,
+          8,
+          5
+        ],
+        "size_vector3_roblox": [
+          8,
+          5,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0.0,
+          2.5,
+          -0.0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          8,
+          8
+        ],
+        "height_studs": 5,
+        "center_roblox": [
+          0.0,
+          5.0,
+          -0.0
+        ],
+        "flat_tolerance_studs": 0.25
+      },
+      "support_sockets_roblox": [
+        [
+          -2.0,
+          5.0,
+          2.0
+        ],
+        [
+          -2.0,
+          5.0,
+          -2.0
+        ],
+        [
+          2.0,
+          5.0,
+          2.0
+        ],
+        [
+          2.0,
+          5.0,
+          -2.0
+        ],
+        [
+          0.0,
+          5.0,
+          -0.0
+        ]
+      ],
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      },
+      "behavior": "bounce",
+      "behavior_params": {
+        "vertical_impulse_multiplier": 1.3
+      }
+    },
+    "toy_domino": {
+      "asset_id": "toy_domino",
+      "authority": "server_collider_separate_from_visual_mesh",
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "dimensions_order_config": "width_depth_height",
+      "visual_envelope_studs_config": [
+        12,
+        6,
+        3
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          12,
+          6,
+          3
+        ],
+        "size_vector3_roblox": [
+          12,
+          3,
+          6
+        ],
+        "offset_from_pivot_roblox": [
+          0.0,
+          1.5,
+          -0.0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          12,
+          6
+        ],
+        "height_studs": 3,
+        "center_roblox": [
+          0.0,
+          3.0,
+          -0.0
+        ],
+        "flat_tolerance_studs": 0.25
+      },
+      "support_sockets_roblox": [
+        [
+          -3.0,
+          3.0,
+          1.5
+        ],
+        [
+          -3.0,
+          3.0,
+          -1.5
+        ],
+        [
+          3.0,
+          3.0,
+          1.5
+        ],
+        [
+          3.0,
+          3.0,
+          -1.5
+        ],
+        [
+          0.0,
+          3.0,
+          -0.0
+        ]
+      ],
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      },
+      "behavior": "stable",
+      "behavior_params": null
+    },
+    "toy_shape_cube": {
+      "asset_id": "toy_shape_cube",
+      "authority": "server_collider_separate_from_visual_mesh",
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "dimensions_order_config": "width_depth_height",
+      "visual_envelope_studs_config": [
+        10,
+        10,
+        7
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          10,
+          10,
+          7
+        ],
+        "size_vector3_roblox": [
+          10,
+          7,
+          10
+        ],
+        "offset_from_pivot_roblox": [
+          0.0,
+          3.5,
+          -0.0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          10,
+          10
+        ],
+        "height_studs": 7,
+        "center_roblox": [
+          0.0,
+          7.0,
+          -0.0
+        ],
+        "flat_tolerance_studs": 0.25
+      },
+      "support_sockets_roblox": [
+        [
+          -2.5,
+          7.0,
+          2.5
+        ],
+        [
+          -2.5,
+          7.0,
+          -2.5
+        ],
+        [
+          2.5,
+          7.0,
+          2.5
+        ],
+        [
+          2.5,
+          7.0,
+          -2.5
+        ],
+        [
+          0.0,
+          7.0,
+          -0.0
+        ]
+      ],
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      },
+      "behavior": "stable",
+      "behavior_params": null
+    }
+  },
+  "machine": {
+    "asset_id": "machine_toy_spinner",
+    "collision": "separate_architecture_proxy",
+    "parts": {
+      "Mount": "fixe",
+      "Spinner": "rotation autour de l'axe vertical passant par le pivot",
+      "Trunks": "fixes ou solidaires de la toupie (au choix du runtime)"
+    }
+  }
+}

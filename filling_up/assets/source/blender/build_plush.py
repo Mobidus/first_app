@@ -39,8 +39,8 @@ import plush_specs as specs  # noqa: E402
 SEED = 7
 ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))  # filling_up/
 VOXEL = 0.05
-NEAR_TRIS = 3000
-FAR_TRIS = 520
+NEAR_TRIS = 3400
+FAR_TRIS = 690
 NEAR_TEX = 1024
 FAR_TEX = 256
 

@@ -379,12 +379,66 @@
       "id": "machine_reception_stamp",
       "from": "modeled",
       "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "toy_flat_duck",
+      "from": "designed",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "toy_train",
+      "from": "designed",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "toy_drum",
+      "from": "designed",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "toy_domino",
+      "from": "designed",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "toy_shape_cube",
+      "from": "designed",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "machine_toy_spinner",
+      "from": "designed",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "toy_plush_mallow",
+      "from": "modeled",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "toy_plush_loppy",
+      "from": "modeled",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "toy_plush_octo",
+      "from": "modeled",
+      "to": "modeled"
     }
   ],
   "rejected": [],
   "status_counts": {
-    "modeled": 15,
-    "designed": 28,
+    "modeled": 21,
+    "designed": 22,
     "planned": 138
   }
 }

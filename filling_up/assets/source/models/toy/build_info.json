@@ -1,0 +1,263 @@
+{
+  "blender_version": "5.2.3 LTS",
+  "atlas": "assets/source/models/toy/textures/toy_props_atlas_1024.png",
+  "palette": {
+    "navy": "#203055",
+    "cream": "#FFF5DF",
+    "white": "#FBFAF6",
+    "yellow": "#FFE14D",
+    "duck_yellow": "#FFD23A",
+    "duck_shade": "#F4B71F",
+    "orange": "#FF8A3D",
+    "orange_dark": "#E86A24",
+    "blush": "#FF9AC8",
+    "pink": "#FF4CB8",
+    "pink_light": "#FF8FD2",
+    "pink_dark": "#D6309A",
+    "violet": "#8855FF",
+    "violet_dark": "#6A3BD9",
+    "lavender": "#B9A4EE",
+    "lavender_light": "#D8CCF8",
+    "lavender_dark": "#9C84E3",
+    "teal": "#2ACBC7",
+    "teal_dark": "#1FA9A6",
+    "window": "#B9ECFA",
+    "silver": "#CBD3E3",
+    "glass": "#DFF7FF",
+    "sky": "#5BC8F5",
+    "navy_soft": "#34477A"
+  },
+  "assets": {
+    "toy_flat_duck": {
+      "lod0_tris": 2932,
+      "lod1_tris": 660,
+      "meshes_lod0": [
+        "toy_flat_duck"
+      ],
+      "materials_per_mesh": {
+        "toy_flat_duck": [
+          "M_toy_gloss"
+        ]
+      },
+      "bbox_min": [
+        -7.076,
+        -5.004,
+        0.0
+      ],
+      "bbox_max": [
+        7.094,
+        5.004,
+        8.036
+      ],
+      "size_measured_wdh": [
+        14.17,
+        10.008,
+        8.036
+      ],
+      "size_config_wdh": [
+        14,
+        10,
+        8
+      ],
+      "exports": [
+        "assets/import/models/toy_flat_duck.glb",
+        "assets/import/models/toy_flat_duck_lod1.glb",
+        "assets/import/models/toy_flat_duck.fbx"
+      ]
+    },
+    "toy_train": {
+      "lod0_tris": 2920,
+      "lod1_tris": 592,
+      "meshes_lod0": [
+        "toy_train"
+      ],
+      "materials_per_mesh": {
+        "toy_train": [
+          "M_toy_gloss"
+        ]
+      },
+      "bbox_min": [
+        -8.06,
+        -4.0,
+        0.0
+      ],
+      "bbox_max": [
+        8.0,
+        4.0,
+        5.03
+      ],
+      "size_measured_wdh": [
+        16.06,
+        8.0,
+        5.03
+      ],
+      "size_config_wdh": [
+        16,
+        8,
+        5
+      ],
+      "exports": [
+        "assets/import/models/toy_train.glb",
+        "assets/import/models/toy_train_lod1.glb",
+        "assets/import/models/toy_train.fbx"
+      ]
+    },
+    "toy_drum": {
+      "lod0_tris": 2940,
+      "lod1_tris": 388,
+      "meshes_lod0": [
+        "toy_drum"
+      ],
+      "materials_per_mesh": {
+        "toy_drum": [
+          "M_toy_gloss"
+        ]
+      },
+      "bbox_min": [
+        -5.035,
+        -5.035,
+        0.0
+      ],
+      "bbox_max": [
+        5.035,
+        5.035,
+        5.035
+      ],
+      "size_measured_wdh": [
+        10.07,
+        10.07,
+        5.035
+      ],
+      "size_config_wdh": [
+        10,
+        10,
+        5
+      ],
+      "exports": [
+        "assets/import/models/toy_drum.glb",
+        "assets/import/models/toy_drum_lod1.glb",
+        "assets/import/models/toy_drum.fbx"
+      ]
+    },
+    "toy_domino": {
+      "lod0_tris": 1132,
+      "lod1_tris": 292,
+      "meshes_lod0": [
+        "toy_domino"
+      ],
+      "materials_per_mesh": {
+        "toy_domino": [
+          "M_toy_gloss"
+        ]
+      },
+      "bbox_min": [
+        -6.02,
+        -3.02,
+        0.0
+      ],
+      "bbox_max": [
+        6.02,
+        3.02,
+        3.03
+      ],
+      "size_measured_wdh": [
+        12.04,
+        6.04,
+        3.03
+      ],
+      "size_config_wdh": [
+        12,
+        6,
+        3
+      ],
+      "exports": [
+        "assets/import/models/toy_domino.glb",
+        "assets/import/models/toy_domino_lod1.glb",
+        "assets/import/models/toy_domino.fbx"
+      ]
+    },
+    "toy_shape_cube": {
+      "lod0_tris": 940,
+      "lod1_tris": 500,
+      "meshes_lod0": [
+        "toy_shape_cube"
+      ],
+      "materials_per_mesh": {
+        "toy_shape_cube": [
+          "M_toy_gloss"
+        ]
+      },
+      "bbox_min": [
+        -5.011,
+        -5.02,
+        0.0
+      ],
+      "bbox_max": [
+        5.011,
+        5.02,
+        7.025
+      ],
+      "size_measured_wdh": [
+        10.021,
+        10.04,
+        7.025
+      ],
+      "size_config_wdh": [
+        10,
+        10,
+        7
+      ],
+      "exports": [
+        "assets/import/models/toy_shape_cube.glb",
+        "assets/import/models/toy_shape_cube_lod1.glb",
+        "assets/import/models/toy_shape_cube.fbx"
+      ]
+    },
+    "machine_toy_spinner": {
+      "lod0_tris": 7432,
+      "lod1_tris": 690,
+      "meshes_lod0": [
+        "machine_toy_spinner_Mount",
+        "machine_toy_spinner_Spinner",
+        "machine_toy_spinner_Trunks"
+      ],
+      "materials_per_mesh": {
+        "machine_toy_spinner_Mount": [
+          "M_toy_gloss"
+        ],
+        "machine_toy_spinner_Spinner": [
+          "M_toy_gloss",
+          "M_toy_glass"
+        ],
+        "machine_toy_spinner_Trunks": [
+          "M_toy_gloss"
+        ]
+      },
+      "bbox_min": [
+        -12.127,
+        -12.169,
+        0.0
+      ],
+      "bbox_max": [
+        12.127,
+        11.75,
+        18.0
+      ],
+      "size_measured_wdh": [
+        24.253,
+        23.919,
+        18.0
+      ],
+      "size_config_wdh": [
+        24,
+        24,
+        18
+      ],
+      "exports": [
+        "assets/import/models/machine_toy_spinner.glb",
+        "assets/import/models/machine_toy_spinner_lod1.glb",
+        "assets/import/models/machine_toy_spinner.fbx"
+      ]
+    }
+  }
+}

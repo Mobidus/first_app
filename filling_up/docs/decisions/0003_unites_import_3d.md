@@ -21,8 +21,8 @@ La convention souvent citée « 1 stud ≈ 0,28 m » sert à l'échelle physique
    l'avant Roblox (−Z, `LookVector`) correspond à **+Y Blender**. Le FBX est exporté avec `axis_forward = -Z`,
    `axis_up = Y`. Pivot `bottom_center` : origine au centre de l'empreinte, au sol.
 4. **Contrôle obligatoire après import réel** (critère T03 encore `NOT_RUN`) : la boîte englobante du MeshPart
-   importé doit valoir (X, Y, Z) ≈ (11,84 ; 4,91 ; 9,81) pour Mallow, (10,03 ; 6,99 ; 8,00) pour Loppy et
-   (12,00 ; 4,82 ; 12,02) pour Octo, à ±0,05 stud. Un facteur ×0,28 ou ×3,57 indique une mauvaise unité
+   importé doit valoir (X, Y, Z) ≈ (12,10 ; 4,95 ; 10,07) pour Mallow, (10,14 ; 7,02 ; 8,14) pour Loppy et
+   (12,00 ; 4,98 ; 12,00) pour Octo (passe qualité du 2 novembre 2026), à ±0,05 stud. Un facteur ×0,28 ou ×3,57 indique une mauvaise unité
    d'import : corriger le réglage, pas le modèle.
 
 ## Ce qui est prouvé et ce qui ne l'est pas

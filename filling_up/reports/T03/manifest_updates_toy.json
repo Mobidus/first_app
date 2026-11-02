@@ -1,0 +1,493 @@
+{
+  "task": "T03 — passe qualité famille toy",
+  "generated_at_utc": "2026-11-02T14:06:37.911909+00:00",
+  "rule": "Statut proposé au plus 'modeled' ; jamais imported/validated sans import Roblox réel. roblox_asset_id reste null.",
+  "apply_by": "agent principal (ce fork ne modifie pas assets/manifest.json)",
+  "decision_follow_up": "docs/decisions/0008 peut passer de provisoire à résolue : l'anneau de bord de 1 stud est désormais <= 0,25 au repos pour les 3 peluches (voir edge_gap_before_after) ; walkable_top de la config inchangé.",
+  "updates": [
+    {
+      "id": "toy_flat_duck",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/toy/toy_props.blend",
+      "source_path_manifest_current": "assets/source/models/toy_flat_duck.blend",
+      "source_path_change_proposed": true,
+      "export_path": "assets/import/models/toy_flat_duck.glb",
+      "export_path_manifest_current": "assets/import/models/toy_flat_duck.glb",
+      "additional_exports": [
+        "assets/import/models/toy_flat_duck_lod1.glb",
+        "assets/import/models/toy_flat_duck.fbx"
+      ],
+      "supporting_files": [
+        "assets/source/models/toy/textures/toy_props_atlas_1024.png",
+        "assets/source/models/toy/collision_toy_props.json",
+        "assets/source/models/toy/build_info.json"
+      ],
+      "generator_script": "assets/source/blender/build_props_toy.py",
+      "production_method": "blender_script",
+      "validation_evidence": [
+        "reports/T03/props_toy_verify.json#assets.toy_flat_duck",
+        "reports/T03/renders/toy_flat_duck_3q.png",
+        "reports/T03/renders/toy_flat_duck_sil.png",
+        "reports/T03/renders/props_toy_sheet.png",
+        "reports/T03/renders/toy_family_lineup.png",
+        "reports/T03/renders/toy_flat_duck_profile.png"
+      ],
+      "measured": {
+        "bbox_studs_width_depth_height": [
+          14.17,
+          10.008,
+          8.036
+        ],
+        "triangles_lod0": 2932,
+        "triangles_lod1": 660,
+        "materials_per_mesh": {
+          "toy_flat_duck": [
+            "M_toy_gloss"
+          ]
+        },
+        "blender_checks_failed": [],
+        "walkable_top_max_abs_dev_studs_full_area": 0.03
+      },
+      "not_validated_because": [
+        "Import Roblox Studio bloqué (aucun Studio/Open Cloud) : unités, orientation, SurfaceAppearance non mesurées",
+        "Test d'identification en silhouette par des joueurs non réalisé"
+      ],
+      "previous_export_kept": "assets/import/models/toy_flat_duck.rbxm"
+    },
+    {
+      "id": "toy_train",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/toy/toy_props.blend",
+      "source_path_manifest_current": "assets/source/models/toy_train.blend",
+      "source_path_change_proposed": true,
+      "export_path": "assets/import/models/toy_train.glb",
+      "export_path_manifest_current": "assets/import/models/toy_train.glb",
+      "additional_exports": [
+        "assets/import/models/toy_train_lod1.glb",
+        "assets/import/models/toy_train.fbx"
+      ],
+      "supporting_files": [
+        "assets/source/models/toy/textures/toy_props_atlas_1024.png",
+        "assets/source/models/toy/collision_toy_props.json",
+        "assets/source/models/toy/build_info.json"
+      ],
+      "generator_script": "assets/source/blender/build_props_toy.py",
+      "production_method": "blender_script",
+      "validation_evidence": [
+        "reports/T03/props_toy_verify.json#assets.toy_train",
+        "reports/T03/renders/toy_train_3q.png",
+        "reports/T03/renders/toy_train_sil.png",
+        "reports/T03/renders/props_toy_sheet.png",
+        "reports/T03/renders/toy_family_lineup.png",
+        "reports/T03/renders/toy_train_profile.png"
+      ],
+      "measured": {
+        "bbox_studs_width_depth_height": [
+          16.06,
+          8.0,
+          5.03
+        ],
+        "triangles_lod0": 2920,
+        "triangles_lod1": 592,
+        "materials_per_mesh": {
+          "toy_train": [
+            "M_toy_gloss"
+          ]
+        },
+        "blender_checks_failed": [],
+        "walkable_top_max_abs_dev_studs_full_area": 0.102
+      },
+      "not_validated_because": [
+        "Import Roblox Studio bloqué (aucun Studio/Open Cloud) : unités, orientation, SurfaceAppearance non mesurées",
+        "Test d'identification en silhouette par des joueurs non réalisé"
+      ],
+      "note": "config/rooms.json : axe de déplacement 'depth' (Roblox Z) alors que la longueur du train (16) est sur la largeur (X) : le train glisserait latéralement. Modèle conforme aux dimensions ; à trancher (axe 'width' ou rotation de l'instance).",
+      "previous_export_kept": "assets/import/models/toy_train.rbxm"
+    },
+    {
+      "id": "toy_drum",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/toy/toy_props.blend",
+      "source_path_manifest_current": "assets/source/models/toy_drum.blend",
+      "source_path_change_proposed": true,
+      "export_path": "assets/import/models/toy_drum.glb",
+      "export_path_manifest_current": "assets/import/models/toy_drum.glb",
+      "additional_exports": [
+        "assets/import/models/toy_drum_lod1.glb",
+        "assets/import/models/toy_drum.fbx"
+      ],
+      "supporting_files": [
+        "assets/source/models/toy/textures/toy_props_atlas_1024.png",
+        "assets/source/models/toy/collision_toy_props.json",
+        "assets/source/models/toy/build_info.json"
+      ],
+      "generator_script": "assets/source/blender/build_props_toy.py",
+      "production_method": "blender_script",
+      "validation_evidence": [
+        "reports/T03/props_toy_verify.json#assets.toy_drum",
+        "reports/T03/renders/toy_drum_3q.png",
+        "reports/T03/renders/toy_drum_sil.png",
+        "reports/T03/renders/props_toy_sheet.png",
+        "reports/T03/renders/toy_family_lineup.png"
+      ],
+      "measured": {
+        "bbox_studs_width_depth_height": [
+          10.07,
+          10.07,
+          5.035
+        ],
+        "triangles_lod0": 2940,
+        "triangles_lod1": 388,
+        "materials_per_mesh": {
+          "toy_drum": [
+            "M_toy_gloss"
+          ]
+        },
+        "blender_checks_failed": [],
+        "walkable_top_max_abs_dev_studs_full_area": 0.02
+      },
+      "not_validated_because": [
+        "Import Roblox Studio bloqué (aucun Studio/Open Cloud) : unités, orientation, SurfaceAppearance non mesurées",
+        "Test d'identification en silhouette par des joueurs non réalisé"
+      ],
+      "previous_export_kept": "assets/import/models/toy_drum.rbxm"
+    },
+    {
+      "id": "toy_domino",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/toy/toy_props.blend",
+      "source_path_manifest_current": "assets/source/generators/toy_domino.luau",
+      "source_path_change_proposed": true,
+      "export_path": "assets/import/models/toy_domino.glb",
+      "export_path_manifest_current": "assets/import/models/toy_domino.rbxm",
+      "additional_exports": [
+        "assets/import/models/toy_domino_lod1.glb",
+        "assets/import/models/toy_domino.fbx"
+      ],
+      "supporting_files": [
+        "assets/source/models/toy/textures/toy_props_atlas_1024.png",
+        "assets/source/models/toy/collision_toy_props.json",
+        "assets/source/models/toy/build_info.json"
+      ],
+      "generator_script": "assets/source/blender/build_props_toy.py",
+      "production_method": "blender_script",
+      "validation_evidence": [
+        "reports/T03/props_toy_verify.json#assets.toy_domino",
+        "reports/T03/renders/toy_domino_3q.png",
+        "reports/T03/renders/toy_domino_sil.png",
+        "reports/T03/renders/props_toy_sheet.png",
+        "reports/T03/renders/toy_family_lineup.png"
+      ],
+      "measured": {
+        "bbox_studs_width_depth_height": [
+          12.04,
+          6.04,
+          3.03
+        ],
+        "triangles_lod0": 1132,
+        "triangles_lod1": 292,
+        "materials_per_mesh": {
+          "toy_domino": [
+            "M_toy_gloss"
+          ]
+        },
+        "blender_checks_failed": [],
+        "walkable_top_max_abs_dev_studs_full_area": 0.155
+      },
+      "not_validated_because": [
+        "Import Roblox Studio bloqué (aucun Studio/Open Cloud) : unités, orientation, SurfaceAppearance non mesurées",
+        "Test d'identification en silhouette par des joueurs non réalisé"
+      ],
+      "previous_export_kept": "assets/import/models/toy_domino.rbxm"
+    },
+    {
+      "id": "toy_shape_cube",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/toy/toy_props.blend",
+      "source_path_manifest_current": "assets/source/generators/toy_shape_cube.luau",
+      "source_path_change_proposed": true,
+      "export_path": "assets/import/models/toy_shape_cube.glb",
+      "export_path_manifest_current": "assets/import/models/toy_shape_cube.rbxm",
+      "additional_exports": [
+        "assets/import/models/toy_shape_cube_lod1.glb",
+        "assets/import/models/toy_shape_cube.fbx"
+      ],
+      "supporting_files": [
+        "assets/source/models/toy/textures/toy_props_atlas_1024.png",
+        "assets/source/models/toy/collision_toy_props.json",
+        "assets/source/models/toy/build_info.json"
+      ],
+      "generator_script": "assets/source/blender/build_props_toy.py",
+      "production_method": "blender_script",
+      "validation_evidence": [
+        "reports/T03/props_toy_verify.json#assets.toy_shape_cube",
+        "reports/T03/renders/toy_shape_cube_3q.png",
+        "reports/T03/renders/toy_shape_cube_sil.png",
+        "reports/T03/renders/props_toy_sheet.png",
+        "reports/T03/renders/toy_family_lineup.png"
+      ],
+      "measured": {
+        "bbox_studs_width_depth_height": [
+          10.021,
+          10.04,
+          7.025
+        ],
+        "triangles_lod0": 940,
+        "triangles_lod1": 500,
+        "materials_per_mesh": {
+          "toy_shape_cube": [
+            "M_toy_gloss"
+          ]
+        },
+        "blender_checks_failed": [],
+        "walkable_top_max_abs_dev_studs_full_area": 0.075
+      },
+      "not_validated_because": [
+        "Import Roblox Studio bloqué (aucun Studio/Open Cloud) : unités, orientation, SurfaceAppearance non mesurées",
+        "Test d'identification en silhouette par des joueurs non réalisé"
+      ],
+      "previous_export_kept": "assets/import/models/toy_shape_cube.rbxm"
+    },
+    {
+      "id": "machine_toy_spinner",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/toy/toy_props.blend",
+      "source_path_manifest_current": "assets/source/models/machine_toy_spinner.blend",
+      "source_path_change_proposed": true,
+      "export_path": "assets/import/models/machine_toy_spinner.glb",
+      "export_path_manifest_current": "assets/import/models/machine_toy_spinner.glb",
+      "additional_exports": [
+        "assets/import/models/machine_toy_spinner_lod1.glb",
+        "assets/import/models/machine_toy_spinner.fbx"
+      ],
+      "supporting_files": [
+        "assets/source/models/toy/textures/toy_props_atlas_1024.png",
+        "assets/source/models/toy/collision_toy_props.json",
+        "assets/source/models/toy/build_info.json"
+      ],
+      "generator_script": "assets/source/blender/build_props_toy.py",
+      "production_method": "blender_script",
+      "validation_evidence": [
+        "reports/T03/props_toy_verify.json#assets.machine_toy_spinner",
+        "reports/T03/renders/machine_toy_spinner_3q.png",
+        "reports/T03/renders/machine_toy_spinner_sil.png",
+        "reports/T03/renders/props_toy_sheet.png",
+        "reports/T03/renders/toy_family_lineup.png",
+        "reports/T03/renders/machine_toy_spinner_profile.png"
+      ],
+      "measured": {
+        "bbox_studs_width_depth_height": [
+          24.253,
+          23.919,
+          18.0
+        ],
+        "triangles_lod0": 7432,
+        "triangles_lod1": 690,
+        "materials_per_mesh": {
+          "machine_toy_spinner_Mount": [
+            "M_toy_gloss"
+          ],
+          "machine_toy_spinner_Spinner": [
+            "M_toy_gloss",
+            "M_toy_glass"
+          ],
+          "machine_toy_spinner_Trunks": [
+            "M_toy_gloss"
+          ]
+        },
+        "blender_checks_failed": [],
+        "parts": [
+          "machine_toy_spinner_Mount",
+          "machine_toy_spinner_Spinner",
+          "machine_toy_spinner_Trunks"
+        ]
+      },
+      "not_validated_because": [
+        "Import Roblox Studio bloqué (aucun Studio/Open Cloud) : unités, orientation, SurfaceAppearance non mesurées",
+        "Test d'identification en silhouette par des joueurs non réalisé"
+      ]
+    },
+    {
+      "id": "toy_plush_mallow",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/Mallow/Mallow.blend",
+      "source_path_manifest_current": "assets/source/models/Mallow/Mallow.blend",
+      "export_path": "assets/import/models/toy_plush_mallow.glb",
+      "additional_exports": [
+        "assets/import/models/toy_plush_mallow.fbx",
+        "assets/import/models/toy_plush_mallow_lod1.glb"
+      ],
+      "supporting_files": [
+        "assets/source/models/Mallow/collision.json",
+        "assets/source/models/Mallow/pose_library.json",
+        "assets/source/models/Mallow/build_info.json",
+        "assets/source/models/Mallow/textures/toy_plush_mallow_albedo_1024.png",
+        "assets/source/models/Mallow/textures/toy_plush_mallow_albedo_256.png"
+      ],
+      "generator_script": "assets/source/blender/build_plush.py (+ plush_specs.py)",
+      "validation_evidence": [
+        "reports/T03/props_toy_verify.json#assets.toy_plush_mallow",
+        "reports/T03/renders/toy_plush_mallow_sheet.png",
+        "reports/T03/renders/toy_plush_mallow_3q.png",
+        "reports/T03/renders/toy_plush_mallow_sil.png",
+        "reports/T03/renders/toy_family_lineup.png"
+      ],
+      "measured": {
+        "bbox_studs_width_depth_height": [
+          12.098,
+          10.069,
+          4.952
+        ],
+        "triangles_lod0": 3400,
+        "triangles_lod1": 690,
+        "bones": 15,
+        "secondary_bones": 5,
+        "edge_gap_before_after": {
+          "before": {
+            "full_footprint_max_abs_dev": 0.937,
+            "inset_0_5_max_abs_dev": 0.344,
+            "inset_1_0_max_abs_dev": 0.159
+          },
+          "after": {
+            "full_footprint_max_abs_dev": 0.148,
+            "edge_ring_1_stud_max_abs_dev": 0.148,
+            "inset_0_5_max_abs_dev": 0.052,
+            "inset_1_0_max_abs_dev": 0.03,
+            "full_footprint_misses": 0
+          }
+        },
+        "blender_checks_failed": []
+      },
+      "not_validated_because": [
+        "Import Roblox Studio bloqué (aucun Studio/Open Cloud) : skin/Bones/unités non mesurés dans Roblox",
+        "Test d'identification 8/10 non réalisé",
+        "Planches Claude Design non rapprochées formellement"
+      ]
+    },
+    {
+      "id": "toy_plush_loppy",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/Loppy/Loppy.blend",
+      "source_path_manifest_current": "assets/source/models/Loppy/Loppy.blend",
+      "export_path": "assets/import/models/toy_plush_loppy.glb",
+      "additional_exports": [
+        "assets/import/models/toy_plush_loppy.fbx",
+        "assets/import/models/toy_plush_loppy_lod1.glb"
+      ],
+      "supporting_files": [
+        "assets/source/models/Loppy/collision.json",
+        "assets/source/models/Loppy/pose_library.json",
+        "assets/source/models/Loppy/build_info.json",
+        "assets/source/models/Loppy/textures/toy_plush_loppy_albedo_1024.png",
+        "assets/source/models/Loppy/textures/toy_plush_loppy_albedo_256.png"
+      ],
+      "generator_script": "assets/source/blender/build_plush.py (+ plush_specs.py)",
+      "validation_evidence": [
+        "reports/T03/props_toy_verify.json#assets.toy_plush_loppy",
+        "reports/T03/renders/toy_plush_loppy_sheet.png",
+        "reports/T03/renders/toy_plush_loppy_3q.png",
+        "reports/T03/renders/toy_plush_loppy_sil.png",
+        "reports/T03/renders/toy_family_lineup.png",
+        "reports/T03/renders/toy_plush_loppy_profile.png"
+      ],
+      "measured": {
+        "bbox_studs_width_depth_height": [
+          10.139,
+          8.138,
+          7.017
+        ],
+        "triangles_lod0": 3400,
+        "triangles_lod1": 690,
+        "bones": 15,
+        "secondary_bones": 5,
+        "edge_gap_before_after": {
+          "before": {
+            "full_footprint_max_abs_dev": 3.323,
+            "inset_0_5_max_abs_dev": 0.795,
+            "inset_1_0_max_abs_dev": 0.167,
+            "full_footprint_misses": 55
+          },
+          "after": {
+            "full_footprint_max_abs_dev": 0.114,
+            "edge_ring_1_stud_max_abs_dev": 0.114,
+            "inset_0_5_max_abs_dev": 0.094,
+            "inset_1_0_max_abs_dev": 0.094,
+            "full_footprint_misses": 0
+          }
+        },
+        "blender_checks_failed": []
+      },
+      "not_validated_because": [
+        "Import Roblox Studio bloqué (aucun Studio/Open Cloud) : skin/Bones/unités non mesurés dans Roblox",
+        "Test d'identification 8/10 non réalisé",
+        "Planches Claude Design non rapprochées formellement"
+      ]
+    },
+    {
+      "id": "toy_plush_octo",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/Octo/Octo.blend",
+      "source_path_manifest_current": "assets/source/models/Octo/Octo.blend",
+      "export_path": "assets/import/models/toy_plush_octo.glb",
+      "additional_exports": [
+        "assets/import/models/toy_plush_octo.fbx",
+        "assets/import/models/toy_plush_octo_lod1.glb"
+      ],
+      "supporting_files": [
+        "assets/source/models/Octo/collision.json",
+        "assets/source/models/Octo/pose_library.json",
+        "assets/source/models/Octo/build_info.json",
+        "assets/source/models/Octo/textures/toy_plush_octo_albedo_1024.png",
+        "assets/source/models/Octo/textures/toy_plush_octo_albedo_256.png"
+      ],
+      "generator_script": "assets/source/blender/build_plush.py (+ plush_specs.py)",
+      "validation_evidence": [
+        "reports/T03/props_toy_verify.json#assets.toy_plush_octo",
+        "reports/T03/renders/toy_plush_octo_sheet.png",
+        "reports/T03/renders/toy_plush_octo_3q.png",
+        "reports/T03/renders/toy_plush_octo_sil.png",
+        "reports/T03/renders/toy_family_lineup.png"
+      ],
+      "measured": {
+        "bbox_studs_width_depth_height": [
+          11.999,
+          12.001,
+          4.979
+        ],
+        "triangles_lod0": 3400,
+        "triangles_lod1": 690,
+        "bones": 14,
+        "secondary_bones": 4,
+        "edge_gap_before_after": {
+          "before": {
+            "full_footprint_max_abs_dev": 0.78,
+            "inset_0_5_max_abs_dev": 0.359,
+            "inset_1_0_max_abs_dev": 0.128
+          },
+          "after": {
+            "full_footprint_max_abs_dev": 0.13,
+            "edge_ring_1_stud_max_abs_dev": 0.13,
+            "inset_0_5_max_abs_dev": 0.03,
+            "inset_1_0_max_abs_dev": 0.03,
+            "full_footprint_misses": 0
+          }
+        },
+        "blender_checks_failed": []
+      },
+      "not_validated_because": [
+        "Import Roblox Studio bloqué (aucun Studio/Open Cloud) : skin/Bones/unités non mesurés dans Roblox",
+        "Test d'identification 8/10 non réalisé",
+        "Planches Claude Design non rapprochées formellement"
+      ]
+    }
+  ]
+}
