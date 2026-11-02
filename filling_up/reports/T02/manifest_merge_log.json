@@ -490,78 +490,174 @@
     },
     {
       "task": "T03",
-      "id": "pool_inflatable_duck",
+      "id": "pool_duck_mini_classic",
       "from": null,
       "to": "modeled",
+      "source": "reports/T03/manifest_new_ducks.json"
+    },
+    {
+      "task": "T03",
+      "id": "pool_duck_mini_sunglasses",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_ducks.json"
+    },
+    {
+      "task": "T03",
+      "id": "pool_duck_mini_swimcap",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_ducks.json"
+    },
+    {
+      "task": "T03",
+      "id": "pool_duck_mini_bowtie",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_ducks.json"
+    },
+    {
+      "task": "T03",
+      "id": "pool_duck_summer",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_ducks.json"
+    },
+    {
+      "task": "T03",
+      "id": "pool_duck_gentleman",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_ducks.json"
+    },
+    {
+      "task": "T03",
+      "id": "pool_duck_sailor",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_ducks.json"
+    },
+    {
+      "task": "T03",
+      "id": "pool_duck_snorkel",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_ducks.json"
+    },
+    {
+      "task": "T03",
+      "id": "pool_duck_royal",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_ducks.json"
+    },
+    {
+      "task": "T03",
+      "id": "pool_duck_lilo_classic",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_ducks.json"
+    },
+    {
+      "task": "T03",
+      "id": "pool_duck_lilo_hawaii",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_ducks.json"
+    },
+    {
+      "task": "T03",
+      "id": "pool_duck_ring_pirate",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_ducks.json"
+    },
+    {
+      "task": "T03",
+      "id": "pool_duck_ring_lifeguard",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_ducks.json"
+    },
+    {
+      "task": "T03",
+      "id": "pool_duck_ring_tourist",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_ducks.json"
+    },
+    {
+      "task": "T03",
+      "id": "pool_duck_captain",
+      "from": null,
+      "to": "modeled",
+      "source": "reports/T03/manifest_new_ducks.json"
+    }
+  ],
+  "rejected": [
+    {
+      "task": "T03",
+      "id": "pool_inflatable_duck",
+      "reason": "already in manifest",
       "source": "reports/T03/manifest_new_pool.json"
     },
     {
       "task": "T03",
       "id": "pool_flamingo_float",
-      "from": null,
-      "to": "modeled",
+      "reason": "already in manifest",
       "source": "reports/T03/manifest_new_pool.json"
     },
     {
       "task": "T03",
       "id": "pool_beach_ball",
-      "from": null,
-      "to": "modeled",
+      "reason": "already in manifest",
       "source": "reports/T03/manifest_new_pool.json"
     },
     {
       "task": "T03",
       "id": "pool_donut_ring",
-      "from": null,
-      "to": "modeled",
+      "reason": "already in manifest",
       "source": "reports/T03/manifest_new_pool.json"
     },
     {
       "task": "T03",
       "id": "pool_unicorn_float",
-      "from": null,
-      "to": "modeled",
+      "reason": "already in manifest",
       "source": "reports/T03/manifest_new_pool.json"
     },
     {
       "task": "T03",
       "id": "pool_cooler",
-      "from": null,
-      "to": "modeled",
+      "reason": "already in manifest",
       "source": "reports/T03/manifest_new_pool.json"
     },
     {
       "task": "T03",
       "id": "pool_croc_float",
-      "from": null,
-      "to": "modeled",
+      "reason": "already in manifest",
       "source": "reports/T03/manifest_new_pool.json"
     },
     {
       "task": "T03",
       "id": "pool_air_mattress",
-      "from": null,
-      "to": "modeled",
+      "reason": "already in manifest",
       "source": "reports/T03/manifest_new_pool.json"
     },
     {
       "task": "T03",
       "id": "pool_air_mattress_deflated",
-      "from": null,
-      "to": "modeled",
+      "reason": "already in manifest",
       "source": "reports/T03/manifest_new_pool.json"
     },
     {
       "task": "T03",
       "id": "machine_pool_pump",
-      "from": null,
-      "to": "modeled",
+      "reason": "already in manifest",
       "source": "reports/T03/manifest_new_pool.json"
     }
   ],
-  "rejected": [],
   "status_counts": {
-    "modeled": 40,
+    "modeled": 55,
     "planned": 138,
     "designed": 13
   }

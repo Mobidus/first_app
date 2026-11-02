@@ -1,0 +1,5031 @@
+{
+  "task": "T03",
+  "batch": "ducks",
+  "checked_at_utc": "2026-11-02T15:17:48.107261+00:00",
+  "blender_version": "5.2.3 LTS",
+  "method": "Réimport de chaque GLB/FBX dans une scène vide (Blender) ; lancers de rayons verticaux pour le dessus ; audit exhaustif des sommets au-dessus du dessus ; seconde construction complète pour le déterminisme.",
+  "criteria": {
+    "envelope": "dimensions = enveloppe de la forme à ±2 % sur chaque axe (LOD0, LOD1, FBX)",
+    "walkable_top": "rectangle praticable centré, grille 0,25, retrait 0,25 : aucun raté, |écart| ≤ 0,25 au dessus du collider ; rien > +0,05 (rayons ET sommets)",
+    "front": "tuile visage dans la bande avant (-Z Roblox ; matelas : bout +X) ; tout sommet plus haut que le dessus + 0,05 est dans la bande de la tête ou dans celle de la queue (aucun sur les côtés, aucun dans le rectangle échantillonné)",
+    "triangles": {
+      "mini": {
+        "lod0": [
+          600,
+          1500
+        ],
+        "lod1_max": 350
+      },
+      "medium": {
+        "lod0": [
+          1500,
+          3200
+        ],
+        "lod1_max": 700
+      },
+      "lilo": {
+        "lod0": [
+          1200,
+          2600
+        ],
+        "lod1_max": 600
+      },
+      "large_ring": {
+        "lod0": [
+          2500,
+          4500
+        ],
+        "lod1_max": 900
+      },
+      "giant": {
+        "lod0": [
+          4000,
+          7000
+        ],
+        "lod1_max": 1200
+      }
+    },
+    "materials": "1 par maillage ; textures (couleur + metallicRoughness) embarquées dans le GLB",
+    "axes": "1 BU = 1 stud ; glTF X largeur, Y haut (min 0), Z profondeur ; avant Roblox -Z (décision 0003)"
+  },
+  "summary": {
+    "assets": 15,
+    "checks": 255,
+    "pass": 255,
+    "fail": 0
+  },
+  "determinism": {
+    "command": ".venv/bin/python -I assets/source/blender/build_ducks.py --out-root <tmp>",
+    "returncode": 0,
+    "files": {
+      "pool_duck_mini_classic.glb": {
+        "sha256_build1": "d76a9ad00dab44c2accb7a00e2be649293779deace74566c1b6440507efeae7f",
+        "sha256_build2": "d76a9ad00dab44c2accb7a00e2be649293779deace74566c1b6440507efeae7f",
+        "identical": true
+      },
+      "pool_duck_mini_classic_lod1.glb": {
+        "sha256_build1": "b94dea8bca187c3c4076bc9ee2afed9e6f9a39578f16f6c0c196024350a49069",
+        "sha256_build2": "b94dea8bca187c3c4076bc9ee2afed9e6f9a39578f16f6c0c196024350a49069",
+        "identical": true
+      },
+      "pool_duck_mini_sunglasses.glb": {
+        "sha256_build1": "3b70b709b9b4131c23cf9212010bd094f64d02c5065b81fa53fbcb054577d3c5",
+        "sha256_build2": "3b70b709b9b4131c23cf9212010bd094f64d02c5065b81fa53fbcb054577d3c5",
+        "identical": true
+      },
+      "pool_duck_mini_sunglasses_lod1.glb": {
+        "sha256_build1": "057f3a321001b61523775938891a12a95d478ff23cdea140ffcdd85404acc821",
+        "sha256_build2": "057f3a321001b61523775938891a12a95d478ff23cdea140ffcdd85404acc821",
+        "identical": true
+      },
+      "pool_duck_mini_swimcap.glb": {
+        "sha256_build1": "58c4c850138423b874b244aa7a8443a50d4d7615c0f6bed85133214d3251075e",
+        "sha256_build2": "58c4c850138423b874b244aa7a8443a50d4d7615c0f6bed85133214d3251075e",
+        "identical": true
+      },
+      "pool_duck_mini_swimcap_lod1.glb": {
+        "sha256_build1": "ea035c7d8fa8f5c96e8bf074687a8ba2dc57a347cc1bc31c0a29657e080e9053",
+        "sha256_build2": "ea035c7d8fa8f5c96e8bf074687a8ba2dc57a347cc1bc31c0a29657e080e9053",
+        "identical": true
+      },
+      "pool_duck_mini_bowtie.glb": {
+        "sha256_build1": "72dcb0c5ccffe6ddff7c02b305d952d33c8442f4f9c497f3ca615fe2eeb83524",
+        "sha256_build2": "72dcb0c5ccffe6ddff7c02b305d952d33c8442f4f9c497f3ca615fe2eeb83524",
+        "identical": true
+      },
+      "pool_duck_mini_bowtie_lod1.glb": {
+        "sha256_build1": "621eec7f4bb6439907834f7319d3622452a605e82e96a5b45675840fd7783f46",
+        "sha256_build2": "621eec7f4bb6439907834f7319d3622452a605e82e96a5b45675840fd7783f46",
+        "identical": true
+      },
+      "pool_duck_summer.glb": {
+        "sha256_build1": "83bc3238666681f9c74855ba3f226b8d2ae0ee2c3ba79989303c184a7dd07257",
+        "sha256_build2": "83bc3238666681f9c74855ba3f226b8d2ae0ee2c3ba79989303c184a7dd07257",
+        "identical": true
+      },
+      "pool_duck_summer_lod1.glb": {
+        "sha256_build1": "caef653a949493443ec78cc887350bf956087843a074ec0101e1edced4a0e824",
+        "sha256_build2": "caef653a949493443ec78cc887350bf956087843a074ec0101e1edced4a0e824",
+        "identical": true
+      },
+      "pool_duck_gentleman.glb": {
+        "sha256_build1": "8de023526b22b069c8413ff35da0327f3ba2dd5df12e160559ab20107521e41e",
+        "sha256_build2": "8de023526b22b069c8413ff35da0327f3ba2dd5df12e160559ab20107521e41e",
+        "identical": true
+      },
+      "pool_duck_gentleman_lod1.glb": {
+        "sha256_build1": "fba2e401ab77f35187b73daa51b106436c3000fa6f684b277b040f2b77d3d769",
+        "sha256_build2": "fba2e401ab77f35187b73daa51b106436c3000fa6f684b277b040f2b77d3d769",
+        "identical": true
+      },
+      "pool_duck_sailor.glb": {
+        "sha256_build1": "e92dd96d731078fc2e958d575dbb4dd2d624a49bf14e561e2c44a548e9515166",
+        "sha256_build2": "e92dd96d731078fc2e958d575dbb4dd2d624a49bf14e561e2c44a548e9515166",
+        "identical": true
+      },
+      "pool_duck_sailor_lod1.glb": {
+        "sha256_build1": "a5574eddfba31c6899db2fb253e420305c1743edd811f0b03e2207e56f1cd139",
+        "sha256_build2": "a5574eddfba31c6899db2fb253e420305c1743edd811f0b03e2207e56f1cd139",
+        "identical": true
+      },
+      "pool_duck_snorkel.glb": {
+        "sha256_build1": "69648b2a5d257ed0c6a038a6fe60f0eaa75972e0d778c65ef4948c7e26299455",
+        "sha256_build2": "69648b2a5d257ed0c6a038a6fe60f0eaa75972e0d778c65ef4948c7e26299455",
+        "identical": true
+      },
+      "pool_duck_snorkel_lod1.glb": {
+        "sha256_build1": "b79c936dd30c918c8852ba40e7493cd444c5d4f4cba251ea32769cba37bf3fbb",
+        "sha256_build2": "b79c936dd30c918c8852ba40e7493cd444c5d4f4cba251ea32769cba37bf3fbb",
+        "identical": true
+      },
+      "pool_duck_royal.glb": {
+        "sha256_build1": "bf2434f91c8f288f446bd7e6711136c21d20d38b3fc5889ffc67e0717f974189",
+        "sha256_build2": "bf2434f91c8f288f446bd7e6711136c21d20d38b3fc5889ffc67e0717f974189",
+        "identical": true
+      },
+      "pool_duck_royal_lod1.glb": {
+        "sha256_build1": "7d5d128501fdd1f678c64424dcfb5b5242e50a3f8ee51c2f93978a96cf580e3c",
+        "sha256_build2": "7d5d128501fdd1f678c64424dcfb5b5242e50a3f8ee51c2f93978a96cf580e3c",
+        "identical": true
+      },
+      "pool_duck_lilo_classic.glb": {
+        "sha256_build1": "5042c813513ff05b644a7b37552430c890456ace03c1c38bc86204bd7b7956a1",
+        "sha256_build2": "5042c813513ff05b644a7b37552430c890456ace03c1c38bc86204bd7b7956a1",
+        "identical": true
+      },
+      "pool_duck_lilo_classic_lod1.glb": {
+        "sha256_build1": "90406e09b8dc7720cbca1dc62ca59c77047e8855227fd2461bb0d9a5565a9b3c",
+        "sha256_build2": "90406e09b8dc7720cbca1dc62ca59c77047e8855227fd2461bb0d9a5565a9b3c",
+        "identical": true
+      },
+      "pool_duck_lilo_hawaii.glb": {
+        "sha256_build1": "71259455acd4bd6b58a793456b4efaf1847e1f99fe078375cf6270757981bec7",
+        "sha256_build2": "71259455acd4bd6b58a793456b4efaf1847e1f99fe078375cf6270757981bec7",
+        "identical": true
+      },
+      "pool_duck_lilo_hawaii_lod1.glb": {
+        "sha256_build1": "6fa6b4e5cfe28aac789976b2927dedba6e53f5d16fd0f6fbdedb8d7dd84ed1cb",
+        "sha256_build2": "6fa6b4e5cfe28aac789976b2927dedba6e53f5d16fd0f6fbdedb8d7dd84ed1cb",
+        "identical": true
+      },
+      "pool_duck_ring_pirate.glb": {
+        "sha256_build1": "595f476983bad00a8878336a79d84242ab8a4e062302a269b750dd4a38ca3402",
+        "sha256_build2": "595f476983bad00a8878336a79d84242ab8a4e062302a269b750dd4a38ca3402",
+        "identical": true
+      },
+      "pool_duck_ring_pirate_lod1.glb": {
+        "sha256_build1": "247f0a3f5d607bfa6102c3de0804c63811ed1d1f6c79d9b8158ba556047d3674",
+        "sha256_build2": "247f0a3f5d607bfa6102c3de0804c63811ed1d1f6c79d9b8158ba556047d3674",
+        "identical": true
+      },
+      "pool_duck_ring_lifeguard.glb": {
+        "sha256_build1": "3386faafa8053d3082df0607a5688d2ee750813a554eda9fe917a8c800ec441e",
+        "sha256_build2": "3386faafa8053d3082df0607a5688d2ee750813a554eda9fe917a8c800ec441e",
+        "identical": true
+      },
+      "pool_duck_ring_lifeguard_lod1.glb": {
+        "sha256_build1": "1fe07c66e402233b539e47ceec7aeeba3022c8eb6b24329479fde4fe14deca1e",
+        "sha256_build2": "1fe07c66e402233b539e47ceec7aeeba3022c8eb6b24329479fde4fe14deca1e",
+        "identical": true
+      },
+      "pool_duck_ring_tourist.glb": {
+        "sha256_build1": "8dbdbe3856177a32ccaa151b2f5fe8075025384b03008cf4bcd3cfd20f7505c0",
+        "sha256_build2": "8dbdbe3856177a32ccaa151b2f5fe8075025384b03008cf4bcd3cfd20f7505c0",
+        "identical": true
+      },
+      "pool_duck_ring_tourist_lod1.glb": {
+        "sha256_build1": "8736ef1a39a486f9895afd84447f00bd4535001ef01d69b972d5ff9ace80ca57",
+        "sha256_build2": "8736ef1a39a486f9895afd84447f00bd4535001ef01d69b972d5ff9ace80ca57",
+        "identical": true
+      },
+      "pool_duck_captain.glb": {
+        "sha256_build1": "024e906881f2d2b37713f69761a079c2ba9e0bb1705388097dc2b0c6c1d8c592",
+        "sha256_build2": "024e906881f2d2b37713f69761a079c2ba9e0bb1705388097dc2b0c6c1d8c592",
+        "identical": true
+      },
+      "pool_duck_captain_lod1.glb": {
+        "sha256_build1": "f8fa225e505f2838cb3d23398871f32dc52fa6a64738523fe72db3578a3ac39f",
+        "sha256_build2": "f8fa225e505f2838cb3d23398871f32dc52fa6a64738523fe72db3578a3ac39f",
+        "identical": true
+      },
+      "duck_atlas_1024.png": {
+        "sha256_build1": "dc2c4b53b85a5c78ab3072a7d134fb643036ad80925c275166d48fbda1e2ae7c",
+        "sha256_build2": "dc2c4b53b85a5c78ab3072a7d134fb643036ad80925c275166d48fbda1e2ae7c",
+        "identical": true
+      },
+      "duck_atlas_rough_1024.png": {
+        "sha256_build1": "0ee745d3126fd769a0a9217235dd9ecf2f596e9a0a7b1a59c936315111a51c21",
+        "sha256_build2": "0ee745d3126fd769a0a9217235dd9ecf2f596e9a0a7b1a59c936315111a51c21",
+        "identical": true
+      }
+    },
+    "all_identical": true
+  },
+  "import_status": "blocked",
+  "import_blocker": "Roblox Studio / Open Cloud indisponibles : aucun MeshPart importé, roblox_asset_id = null.",
+  "assets": {
+    "pool_duck_mini_classic": {
+      "asset_id": "pool_duck_mini_classic",
+      "duck_form": "mini",
+      "accessories": [],
+      "size_studs_wdh": [
+        5.0,
+        6.0,
+        6.0
+      ],
+      "collider": {
+        "size_studs_wdh": [
+          4.0,
+          4.0,
+          3.0
+        ],
+        "walkable_top": [
+          4.0,
+          4.0
+        ],
+        "top_height": 3.0
+      },
+      "head_end": "-Z Roblox (+Y Blender)",
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -2.5,
+          0.0,
+          -3.0
+        ],
+        "gltf_position_max_xyz": [
+          2.5,
+          6.0,
+          3.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "gltf_header_lod1": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -2.5,
+          0.0,
+          -3.0
+        ],
+        "gltf_position_max_xyz": [
+          2.5,
+          6.0,
+          3.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/pool_duck_mini_classic.glb",
+        "mesh_objects": 1,
+        "triangles": 1142,
+        "dims_studs_wdh": [
+          5.0,
+          6.0,
+          6.0
+        ],
+        "expected_size_studs_wdh": [
+          5.0,
+          6.0,
+          6.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -2.5,
+          -3.0,
+          0.0
+        ],
+        "bbox_max": [
+          2.5,
+          3.0,
+          6.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod0": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 225,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0219,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0219,
+          "mean_dev_studs": -0.0004,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 256,
+          "misses": 0,
+          "max_abs_dev_studs": 0.2134,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.2134,
+          "mean_dev_studs": -0.0067,
+          "within_tolerance_fraction": 1.0
+        }
+      },
+      "above_deck_lod0": {
+        "vertices_above_top_plus_0_05": 348,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 54,
+        "max_penetration_into_full_rect_studs": 0.12,
+        "front_band": 304,
+        "back_band_tail": 44,
+        "side_bands": 0,
+        "front_fraction": 0.8736
+      },
+      "face_lod0": {
+        "mean_blender_xyz": [
+          -0.0,
+          2.492,
+          4.5
+        ],
+        "n": 294
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/pool_duck_mini_classic_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 228,
+        "dims_studs_wdh": [
+          5.0,
+          6.0,
+          6.0
+        ],
+        "expected_size_studs_wdh": [
+          5.0,
+          6.0,
+          6.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -2.5,
+          -3.0,
+          0.0
+        ],
+        "bbox_max": [
+          2.5,
+          3.0,
+          6.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 225,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0417,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0417,
+          "mean_dev_studs": -0.0007,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 256,
+          "misses": 0,
+          "max_abs_dev_studs": 0.2644,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.2644,
+          "mean_dev_studs": -0.0108,
+          "within_tolerance_fraction": 0.9844
+        }
+      },
+      "above_deck_lod1": {
+        "vertices_above_top_plus_0_05": 84,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 18,
+        "max_penetration_into_full_rect_studs": 0.12,
+        "front_band": 66,
+        "back_band_tail": 18,
+        "side_bands": 0,
+        "front_fraction": 0.7857
+      },
+      "face_lod1": {
+        "mean_blender_xyz": [
+          -0.0,
+          2.494,
+          4.454
+        ],
+        "n": 66
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/pool_duck_mini_classic.fbx",
+        "mesh_objects": 1,
+        "triangles": 1142,
+        "dims_studs_wdh": [
+          5.0,
+          6.0,
+          6.0
+        ],
+        "expected_size_studs_wdh": [
+          5.0,
+          6.0,
+          6.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "bbox_min": [
+          -2.5,
+          -3.0,
+          -0.0
+        ],
+        "bbox_max": [
+          2.5,
+          3.0,
+          6.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "head_front_gltf_minus_z": "PASS",
+        "above_deck_only_head_band_or_tail_band": "PASS",
+        "tris_lod0_600_1500": "PASS",
+        "tris_lod1_le_350": "PASS",
+        "one_material_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS",
+        "walkable_top_flat_lod0_le_0_25": "PASS",
+        "walkable_top_flat_lod1_le_0_25": "PASS",
+        "nothing_above_top_plus_0_05_rays": "PASS",
+        "no_vertex_above_top_in_sampled_rect": "PASS",
+        "determinism_glb_hashes_identical": "PASS"
+      },
+      "informational": {
+        "full_footprint_note": "Échantillons centrés (grille 0,25 jusqu'à 0,125 du bord) : inclut l'arrondi du rebord gonflé ; reporté, non bloquant.",
+        "head_margin_note": "Le dos de la tête est placé 0,12 stud à l'intérieur du bord du rectangle praticable (dans la marge non échantillonnée de 0,25) ; voir max_penetration_into_full_rect_studs.",
+        "fbx_triangles": 1142
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "pool_duck_mini_sunglasses": {
+      "asset_id": "pool_duck_mini_sunglasses",
+      "duck_form": "mini",
+      "accessories": [
+        "glasses_star"
+      ],
+      "size_studs_wdh": [
+        5.0,
+        6.0,
+        6.0
+      ],
+      "collider": {
+        "size_studs_wdh": [
+          4.0,
+          4.0,
+          3.0
+        ],
+        "walkable_top": [
+          4.0,
+          4.0
+        ],
+        "top_height": 3.0
+      },
+      "head_end": "-Z Roblox (+Y Blender)",
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -2.5,
+          0.0,
+          -3.0
+        ],
+        "gltf_position_max_xyz": [
+          2.5,
+          6.0,
+          3.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "gltf_header_lod1": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -2.5,
+          0.0,
+          -3.0
+        ],
+        "gltf_position_max_xyz": [
+          2.5,
+          6.0,
+          3.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/pool_duck_mini_sunglasses.glb",
+        "mesh_objects": 1,
+        "triangles": 1338,
+        "dims_studs_wdh": [
+          5.0,
+          6.0,
+          6.0
+        ],
+        "expected_size_studs_wdh": [
+          5.0,
+          6.0,
+          6.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -2.5,
+          -3.0,
+          0.0
+        ],
+        "bbox_max": [
+          2.5,
+          3.0,
+          6.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod0": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 225,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0219,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0219,
+          "mean_dev_studs": -0.0004,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 256,
+          "misses": 0,
+          "max_abs_dev_studs": 0.2134,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.2134,
+          "mean_dev_studs": -0.0067,
+          "within_tolerance_fraction": 1.0
+        }
+      },
+      "above_deck_lod0": {
+        "vertices_above_top_plus_0_05": 600,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 54,
+        "max_penetration_into_full_rect_studs": 0.12,
+        "front_band": 556,
+        "back_band_tail": 44,
+        "side_bands": 0,
+        "front_fraction": 0.9267
+      },
+      "face_lod0": {
+        "mean_blender_xyz": [
+          -0.0,
+          2.492,
+          4.5
+        ],
+        "n": 294
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/pool_duck_mini_sunglasses_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 300,
+        "dims_studs_wdh": [
+          5.0,
+          6.0,
+          6.0
+        ],
+        "expected_size_studs_wdh": [
+          5.0,
+          6.0,
+          6.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -2.5,
+          -3.0,
+          0.0
+        ],
+        "bbox_max": [
+          2.5,
+          3.0,
+          6.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 225,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0417,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0417,
+          "mean_dev_studs": -0.0007,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 256,
+          "misses": 0,
+          "max_abs_dev_studs": 0.2644,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.2644,
+          "mean_dev_studs": -0.0108,
+          "within_tolerance_fraction": 0.9844
+        }
+      },
+      "above_deck_lod1": {
+        "vertices_above_top_plus_0_05": 184,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 18,
+        "max_penetration_into_full_rect_studs": 0.12,
+        "front_band": 166,
+        "back_band_tail": 18,
+        "side_bands": 0,
+        "front_fraction": 0.9022
+      },
+      "face_lod1": {
+        "mean_blender_xyz": [
+          -0.0,
+          2.494,
+          4.454
+        ],
+        "n": 66
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/pool_duck_mini_sunglasses.fbx",
+        "mesh_objects": 1,
+        "triangles": 1338,
+        "dims_studs_wdh": [
+          5.0,
+          6.0,
+          6.0
+        ],
+        "expected_size_studs_wdh": [
+          5.0,
+          6.0,
+          6.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "bbox_min": [
+          -2.5,
+          -3.0,
+          -0.0
+        ],
+        "bbox_max": [
+          2.5,
+          3.0,
+          6.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "head_front_gltf_minus_z": "PASS",
+        "above_deck_only_head_band_or_tail_band": "PASS",
+        "tris_lod0_600_1500": "PASS",
+        "tris_lod1_le_350": "PASS",
+        "one_material_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS",
+        "walkable_top_flat_lod0_le_0_25": "PASS",
+        "walkable_top_flat_lod1_le_0_25": "PASS",
+        "nothing_above_top_plus_0_05_rays": "PASS",
+        "no_vertex_above_top_in_sampled_rect": "PASS",
+        "determinism_glb_hashes_identical": "PASS"
+      },
+      "informational": {
+        "full_footprint_note": "Échantillons centrés (grille 0,25 jusqu'à 0,125 du bord) : inclut l'arrondi du rebord gonflé ; reporté, non bloquant.",
+        "head_margin_note": "Le dos de la tête est placé 0,12 stud à l'intérieur du bord du rectangle praticable (dans la marge non échantillonnée de 0,25) ; voir max_penetration_into_full_rect_studs.",
+        "fbx_triangles": 1338
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "pool_duck_mini_swimcap": {
+      "asset_id": "pool_duck_mini_swimcap",
+      "duck_form": "mini",
+      "accessories": [
+        "swim_cap"
+      ],
+      "size_studs_wdh": [
+        5.0,
+        6.0,
+        6.0
+      ],
+      "collider": {
+        "size_studs_wdh": [
+          4.0,
+          4.0,
+          3.0
+        ],
+        "walkable_top": [
+          4.0,
+          4.0
+        ],
+        "top_height": 3.0
+      },
+      "head_end": "-Z Roblox (+Y Blender)",
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -2.5,
+          0.0,
+          -3.0
+        ],
+        "gltf_position_max_xyz": [
+          2.5,
+          6.0,
+          3.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "gltf_header_lod1": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -2.5,
+          0.0,
+          -3.0
+        ],
+        "gltf_position_max_xyz": [
+          2.5,
+          6.0,
+          3.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/pool_duck_mini_swimcap.glb",
+        "mesh_objects": 1,
+        "triangles": 1456,
+        "dims_studs_wdh": [
+          5.0,
+          6.0,
+          6.0
+        ],
+        "expected_size_studs_wdh": [
+          5.0,
+          6.0,
+          6.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -2.5,
+          -3.0,
+          0.0
+        ],
+        "bbox_max": [
+          2.5,
+          3.0,
+          6.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod0": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 225,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0219,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0219,
+          "mean_dev_studs": -0.0004,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 256,
+          "misses": 0,
+          "max_abs_dev_studs": 2.2579,
+          "max_above_studs": 2.2579,
+          "max_below_studs": -0.2134,
+          "mean_dev_studs": 0.0709,
+          "within_tolerance_fraction": 0.9609
+        }
+      },
+      "above_deck_lod0": {
+        "vertices_above_top_plus_0_05": 577,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 66,
+        "max_penetration_into_full_rect_studs": 0.216,
+        "front_band": 533,
+        "back_band_tail": 44,
+        "side_bands": 0,
+        "front_fraction": 0.9237
+      },
+      "face_lod0": {
+        "mean_blender_xyz": [
+          -0.0,
+          2.492,
+          4.272
+        ],
+        "n": 294
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/pool_duck_mini_swimcap_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 319,
+        "dims_studs_wdh": [
+          5.0,
+          6.0,
+          6.0
+        ],
+        "expected_size_studs_wdh": [
+          5.0,
+          6.0,
+          6.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -2.5,
+          -3.0,
+          0.0
+        ],
+        "bbox_max": [
+          2.5,
+          3.0,
+          6.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 225,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0417,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0417,
+          "mean_dev_studs": -0.0007,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 256,
+          "misses": 0,
+          "max_abs_dev_studs": 2.2344,
+          "max_above_studs": 2.2344,
+          "max_below_studs": -0.2644,
+          "mean_dev_studs": 0.0572,
+          "within_tolerance_fraction": 0.9492
+        }
+      },
+      "above_deck_lod1": {
+        "vertices_above_top_plus_0_05": 163,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 24,
+        "max_penetration_into_full_rect_studs": 0.216,
+        "front_band": 145,
+        "back_band_tail": 18,
+        "side_bands": 0,
+        "front_fraction": 0.8896
+      },
+      "face_lod1": {
+        "mean_blender_xyz": [
+          -0.0,
+          2.494,
+          4.324
+        ],
+        "n": 66
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/pool_duck_mini_swimcap.fbx",
+        "mesh_objects": 1,
+        "triangles": 1456,
+        "dims_studs_wdh": [
+          5.0,
+          6.0,
+          6.0
+        ],
+        "expected_size_studs_wdh": [
+          5.0,
+          6.0,
+          6.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "bbox_min": [
+          -2.5,
+          -3.0,
+          -0.0
+        ],
+        "bbox_max": [
+          2.5,
+          3.0,
+          6.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "head_front_gltf_minus_z": "PASS",
+        "above_deck_only_head_band_or_tail_band": "PASS",
+        "tris_lod0_600_1500": "PASS",
+        "tris_lod1_le_350": "PASS",
+        "one_material_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS",
+        "walkable_top_flat_lod0_le_0_25": "PASS",
+        "walkable_top_flat_lod1_le_0_25": "PASS",
+        "nothing_above_top_plus_0_05_rays": "PASS",
+        "no_vertex_above_top_in_sampled_rect": "PASS",
+        "determinism_glb_hashes_identical": "PASS"
+      },
+      "informational": {
+        "full_footprint_note": "Échantillons centrés (grille 0,25 jusqu'à 0,125 du bord) : inclut l'arrondi du rebord gonflé ; reporté, non bloquant.",
+        "head_margin_note": "Le dos de la tête est placé 0,12 stud à l'intérieur du bord du rectangle praticable (dans la marge non échantillonnée de 0,25) ; voir max_penetration_into_full_rect_studs.",
+        "fbx_triangles": 1456
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "pool_duck_mini_bowtie": {
+      "asset_id": "pool_duck_mini_bowtie",
+      "duck_form": "mini",
+      "accessories": [
+        "bowtie_red",
+        "moustache_curl"
+      ],
+      "size_studs_wdh": [
+        5.0,
+        6.0,
+        6.0
+      ],
+      "collider": {
+        "size_studs_wdh": [
+          4.0,
+          4.0,
+          3.0
+        ],
+        "walkable_top": [
+          4.0,
+          4.0
+        ],
+        "top_height": 3.0
+      },
+      "head_end": "-Z Roblox (+Y Blender)",
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -2.5,
+          0.0,
+          -3.0
+        ],
+        "gltf_position_max_xyz": [
+          2.5,
+          6.0,
+          3.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "gltf_header_lod1": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -2.5,
+          0.0,
+          -3.0
+        ],
+        "gltf_position_max_xyz": [
+          2.5,
+          6.0,
+          3.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/pool_duck_mini_bowtie.glb",
+        "mesh_objects": 1,
+        "triangles": 1414,
+        "dims_studs_wdh": [
+          5.0,
+          6.0,
+          6.0
+        ],
+        "expected_size_studs_wdh": [
+          5.0,
+          6.0,
+          6.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -2.5,
+          -3.0,
+          0.0
+        ],
+        "bbox_max": [
+          2.5,
+          3.0,
+          6.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod0": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 225,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0219,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0219,
+          "mean_dev_studs": -0.0004,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 256,
+          "misses": 0,
+          "max_abs_dev_studs": 0.2134,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.2134,
+          "mean_dev_studs": -0.0067,
+          "within_tolerance_fraction": 1.0
+        }
+      },
+      "above_deck_lod0": {
+        "vertices_above_top_plus_0_05": 554,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 54,
+        "max_penetration_into_full_rect_studs": 0.12,
+        "front_band": 510,
+        "back_band_tail": 44,
+        "side_bands": 0,
+        "front_fraction": 0.9206
+      },
+      "face_lod0": {
+        "mean_blender_xyz": [
+          -0.0,
+          2.492,
+          4.5
+        ],
+        "n": 294
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/pool_duck_mini_bowtie_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 328,
+        "dims_studs_wdh": [
+          5.0,
+          6.0,
+          6.0
+        ],
+        "expected_size_studs_wdh": [
+          5.0,
+          6.0,
+          6.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -2.5,
+          -3.0,
+          0.0
+        ],
+        "bbox_max": [
+          2.5,
+          3.0,
+          6.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 225,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0417,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0417,
+          "mean_dev_studs": -0.0007,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 256,
+          "misses": 0,
+          "max_abs_dev_studs": 0.2644,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.2644,
+          "mean_dev_studs": -0.0108,
+          "within_tolerance_fraction": 0.9844
+        }
+      },
+      "above_deck_lod1": {
+        "vertices_above_top_plus_0_05": 192,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 18,
+        "max_penetration_into_full_rect_studs": 0.12,
+        "front_band": 174,
+        "back_band_tail": 18,
+        "side_bands": 0,
+        "front_fraction": 0.9062
+      },
+      "face_lod1": {
+        "mean_blender_xyz": [
+          -0.0,
+          2.49,
+          4.454
+        ],
+        "n": 66
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/pool_duck_mini_bowtie.fbx",
+        "mesh_objects": 1,
+        "triangles": 1414,
+        "dims_studs_wdh": [
+          5.0,
+          6.0,
+          6.0
+        ],
+        "expected_size_studs_wdh": [
+          5.0,
+          6.0,
+          6.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "bbox_min": [
+          -2.5,
+          -3.0,
+          -0.0
+        ],
+        "bbox_max": [
+          2.5,
+          3.0,
+          6.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "head_front_gltf_minus_z": "PASS",
+        "above_deck_only_head_band_or_tail_band": "PASS",
+        "tris_lod0_600_1500": "PASS",
+        "tris_lod1_le_350": "PASS",
+        "one_material_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS",
+        "walkable_top_flat_lod0_le_0_25": "PASS",
+        "walkable_top_flat_lod1_le_0_25": "PASS",
+        "nothing_above_top_plus_0_05_rays": "PASS",
+        "no_vertex_above_top_in_sampled_rect": "PASS",
+        "determinism_glb_hashes_identical": "PASS"
+      },
+      "informational": {
+        "full_footprint_note": "Échantillons centrés (grille 0,25 jusqu'à 0,125 du bord) : inclut l'arrondi du rebord gonflé ; reporté, non bloquant.",
+        "head_margin_note": "Le dos de la tête est placé 0,12 stud à l'intérieur du bord du rectangle praticable (dans la marge non échantillonnée de 0,25) ; voir max_penetration_into_full_rect_studs.",
+        "fbx_triangles": 1414
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "pool_duck_summer": {
+      "asset_id": "pool_duck_summer",
+      "duck_form": "medium",
+      "accessories": [
+        "glasses_round",
+        "straw_hat"
+      ],
+      "size_studs_wdh": [
+        12.0,
+        10.0,
+        9.0
+      ],
+      "collider": {
+        "size_studs_wdh": [
+          9.0,
+          8.0,
+          4.0
+        ],
+        "walkable_top": [
+          9.0,
+          8.0
+        ],
+        "top_height": 4.0
+      },
+      "head_end": "-Z Roblox (+Y Blender)",
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -6.0,
+          0.0,
+          -5.0
+        ],
+        "gltf_position_max_xyz": [
+          6.0,
+          9.0,
+          5.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "gltf_header_lod1": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -6.0,
+          0.0,
+          -5.0
+        ],
+        "gltf_position_max_xyz": [
+          6.0,
+          9.0,
+          5.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/pool_duck_summer.glb",
+        "mesh_objects": 1,
+        "triangles": 2650,
+        "dims_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -6.0,
+          -5.0,
+          0.0
+        ],
+        "bbox_max": [
+          6.0,
+          5.0,
+          9.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod0": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 1085,
+          "misses": 0,
+          "max_abs_dev_studs": 0.1026,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.1026,
+          "mean_dev_studs": -0.0006,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1152,
+          "misses": 0,
+          "max_abs_dev_studs": 2.8849,
+          "max_above_studs": 2.8849,
+          "max_below_studs": -0.28,
+          "mean_dev_studs": 0.0017,
+          "within_tolerance_fraction": 0.9948
+        }
+      },
+      "above_deck_lod0": {
+        "vertices_above_top_plus_0_05": 1149,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 105,
+        "max_penetration_into_full_rect_studs": 0.1328,
+        "front_band": 1086,
+        "back_band_tail": 63,
+        "side_bands": 0,
+        "front_fraction": 0.9452
+      },
+      "face_lod0": {
+        "mean_blender_xyz": [
+          0.0,
+          4.489,
+          4.829
+        ],
+        "n": 384
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/pool_duck_summer_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 440,
+        "dims_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -6.0,
+          -5.0,
+          0.0
+        ],
+        "bbox_max": [
+          6.0,
+          5.0,
+          9.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 1085,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0985,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0985,
+          "mean_dev_studs": -0.001,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1152,
+          "misses": 0,
+          "max_abs_dev_studs": 0.3482,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.3482,
+          "mean_dev_studs": -0.006,
+          "within_tolerance_fraction": 0.9965
+        }
+      },
+      "above_deck_lod1": {
+        "vertices_above_top_plus_0_05": 232,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 26,
+        "max_penetration_into_full_rect_studs": 0.1328,
+        "front_band": 214,
+        "back_band_tail": 18,
+        "side_bands": 0,
+        "front_fraction": 0.9224
+      },
+      "face_lod1": {
+        "mean_blender_xyz": [
+          -0.0,
+          4.497,
+          4.76
+        ],
+        "n": 66
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/pool_duck_summer.fbx",
+        "mesh_objects": 1,
+        "triangles": 2650,
+        "dims_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          -0.0,
+          -0.0
+        ],
+        "bbox_min": [
+          -6.0,
+          -5.0,
+          -0.0
+        ],
+        "bbox_max": [
+          6.0,
+          5.0,
+          9.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "head_front_gltf_minus_z": "PASS",
+        "above_deck_only_head_band_or_tail_band": "PASS",
+        "tris_lod0_1500_3200": "PASS",
+        "tris_lod1_le_700": "PASS",
+        "one_material_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS",
+        "walkable_top_flat_lod0_le_0_25": "PASS",
+        "walkable_top_flat_lod1_le_0_25": "PASS",
+        "nothing_above_top_plus_0_05_rays": "PASS",
+        "no_vertex_above_top_in_sampled_rect": "PASS",
+        "determinism_glb_hashes_identical": "PASS"
+      },
+      "informational": {
+        "full_footprint_note": "Échantillons centrés (grille 0,25 jusqu'à 0,125 du bord) : inclut l'arrondi du rebord gonflé ; reporté, non bloquant.",
+        "head_margin_note": "Le dos de la tête est placé 0,12 stud à l'intérieur du bord du rectangle praticable (dans la marge non échantillonnée de 0,25) ; voir max_penetration_into_full_rect_studs.",
+        "fbx_triangles": 2650
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "pool_duck_gentleman": {
+      "asset_id": "pool_duck_gentleman",
+      "duck_form": "medium",
+      "accessories": [
+        "moustache_handlebar",
+        "top_hat",
+        "bowtie_black",
+        "monocle"
+      ],
+      "size_studs_wdh": [
+        12.0,
+        10.0,
+        9.0
+      ],
+      "collider": {
+        "size_studs_wdh": [
+          9.0,
+          8.0,
+          4.0
+        ],
+        "walkable_top": [
+          9.0,
+          8.0
+        ],
+        "top_height": 4.0
+      },
+      "head_end": "-Z Roblox (+Y Blender)",
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -6.0,
+          0.0,
+          -5.0
+        ],
+        "gltf_position_max_xyz": [
+          6.0,
+          9.0,
+          5.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "gltf_header_lod1": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -6.0,
+          0.0,
+          -5.0
+        ],
+        "gltf_position_max_xyz": [
+          6.0,
+          9.0,
+          5.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/pool_duck_gentleman.glb",
+        "mesh_objects": 1,
+        "triangles": 2876,
+        "dims_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -6.0,
+          -5.0,
+          0.0
+        ],
+        "bbox_max": [
+          6.0,
+          5.0,
+          9.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod0": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 1085,
+          "misses": 0,
+          "max_abs_dev_studs": 0.1026,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.1026,
+          "mean_dev_studs": -0.0006,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1152,
+          "misses": 0,
+          "max_abs_dev_studs": 0.28,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.28,
+          "mean_dev_studs": -0.0033,
+          "within_tolerance_fraction": 0.9965
+        }
+      },
+      "above_deck_lod0": {
+        "vertices_above_top_plus_0_05": 593,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 64,
+        "max_penetration_into_full_rect_studs": 0.1246,
+        "front_band": 530,
+        "back_band_tail": 63,
+        "side_bands": 0,
+        "front_fraction": 0.8938
+      },
+      "face_lod0": {
+        "mean_blender_xyz": [
+          0.0,
+          4.488,
+          4.106
+        ],
+        "n": 384
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/pool_duck_gentleman_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 528,
+        "dims_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -6.0,
+          -5.0,
+          0.0
+        ],
+        "bbox_max": [
+          6.0,
+          5.0,
+          9.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 1085,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0985,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0985,
+          "mean_dev_studs": -0.001,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1152,
+          "misses": 0,
+          "max_abs_dev_studs": 2.6997,
+          "max_above_studs": 2.6997,
+          "max_below_studs": -0.3482,
+          "mean_dev_studs": -0.0037,
+          "within_tolerance_fraction": 0.9957
+        }
+      },
+      "above_deck_lod1": {
+        "vertices_above_top_plus_0_05": 164,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 19,
+        "max_penetration_into_full_rect_studs": 0.1315,
+        "front_band": 146,
+        "back_band_tail": 18,
+        "side_bands": 0,
+        "front_fraction": 0.8902
+      },
+      "face_lod1": {
+        "mean_blender_xyz": [
+          -0.0,
+          4.473,
+          4.036
+        ],
+        "n": 66
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/pool_duck_gentleman.fbx",
+        "mesh_objects": 1,
+        "triangles": 2876,
+        "dims_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          -0.0,
+          -0.0
+        ],
+        "bbox_min": [
+          -6.0,
+          -5.0,
+          -0.0
+        ],
+        "bbox_max": [
+          6.0,
+          5.0,
+          9.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "head_front_gltf_minus_z": "PASS",
+        "above_deck_only_head_band_or_tail_band": "PASS",
+        "tris_lod0_1500_3200": "PASS",
+        "tris_lod1_le_700": "PASS",
+        "one_material_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS",
+        "walkable_top_flat_lod0_le_0_25": "PASS",
+        "walkable_top_flat_lod1_le_0_25": "PASS",
+        "nothing_above_top_plus_0_05_rays": "PASS",
+        "no_vertex_above_top_in_sampled_rect": "PASS",
+        "determinism_glb_hashes_identical": "PASS"
+      },
+      "informational": {
+        "full_footprint_note": "Échantillons centrés (grille 0,25 jusqu'à 0,125 du bord) : inclut l'arrondi du rebord gonflé ; reporté, non bloquant.",
+        "head_margin_note": "Le dos de la tête est placé 0,12 stud à l'intérieur du bord du rectangle praticable (dans la marge non échantillonnée de 0,25) ; voir max_penetration_into_full_rect_studs.",
+        "fbx_triangles": 2876
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "pool_duck_sailor": {
+      "asset_id": "pool_duck_sailor",
+      "duck_form": "medium",
+      "accessories": [
+        "sailor_bob",
+        "sailor_scarf"
+      ],
+      "size_studs_wdh": [
+        12.0,
+        10.0,
+        9.0
+      ],
+      "collider": {
+        "size_studs_wdh": [
+          9.0,
+          8.0,
+          4.0
+        ],
+        "walkable_top": [
+          9.0,
+          8.0
+        ],
+        "top_height": 4.0
+      },
+      "head_end": "-Z Roblox (+Y Blender)",
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -6.0,
+          0.0,
+          -5.0
+        ],
+        "gltf_position_max_xyz": [
+          6.0,
+          9.0,
+          5.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "gltf_header_lod1": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -6.0,
+          0.0,
+          -5.0
+        ],
+        "gltf_position_max_xyz": [
+          6.0,
+          9.0,
+          5.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/pool_duck_sailor.glb",
+        "mesh_objects": 1,
+        "triangles": 2296,
+        "dims_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -6.0,
+          -5.0,
+          0.0
+        ],
+        "bbox_max": [
+          6.0,
+          5.0,
+          9.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod0": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 1085,
+          "misses": 0,
+          "max_abs_dev_studs": 0.1026,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.1026,
+          "mean_dev_studs": -0.0006,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1152,
+          "misses": 0,
+          "max_abs_dev_studs": 0.28,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.28,
+          "mean_dev_studs": -0.0033,
+          "within_tolerance_fraction": 0.9965
+        }
+      },
+      "above_deck_lod0": {
+        "vertices_above_top_plus_0_05": 768,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 84,
+        "max_penetration_into_full_rect_studs": 0.12,
+        "front_band": 705,
+        "back_band_tail": 63,
+        "side_bands": 0,
+        "front_fraction": 0.918
+      },
+      "face_lod0": {
+        "mean_blender_xyz": [
+          0.0,
+          4.489,
+          5.239
+        ],
+        "n": 384
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/pool_duck_sailor_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 478,
+        "dims_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -6.0,
+          -5.0,
+          0.0
+        ],
+        "bbox_max": [
+          6.0,
+          5.0,
+          9.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 1085,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0985,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0985,
+          "mean_dev_studs": -0.001,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1152,
+          "misses": 0,
+          "max_abs_dev_studs": 0.3482,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.3482,
+          "mean_dev_studs": -0.006,
+          "within_tolerance_fraction": 0.9965
+        }
+      },
+      "above_deck_lod1": {
+        "vertices_above_top_plus_0_05": 195,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 21,
+        "max_penetration_into_full_rect_studs": 0.12,
+        "front_band": 177,
+        "back_band_tail": 18,
+        "side_bands": 0,
+        "front_fraction": 0.9077
+      },
+      "face_lod1": {
+        "mean_blender_xyz": [
+          -0.0,
+          4.497,
+          5.17
+        ],
+        "n": 66
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/pool_duck_sailor.fbx",
+        "mesh_objects": 1,
+        "triangles": 2296,
+        "dims_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "bbox_min": [
+          -6.0,
+          -5.0,
+          -0.0
+        ],
+        "bbox_max": [
+          6.0,
+          5.0,
+          9.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "head_front_gltf_minus_z": "PASS",
+        "above_deck_only_head_band_or_tail_band": "PASS",
+        "tris_lod0_1500_3200": "PASS",
+        "tris_lod1_le_700": "PASS",
+        "one_material_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS",
+        "walkable_top_flat_lod0_le_0_25": "PASS",
+        "walkable_top_flat_lod1_le_0_25": "PASS",
+        "nothing_above_top_plus_0_05_rays": "PASS",
+        "no_vertex_above_top_in_sampled_rect": "PASS",
+        "determinism_glb_hashes_identical": "PASS"
+      },
+      "informational": {
+        "full_footprint_note": "Échantillons centrés (grille 0,25 jusqu'à 0,125 du bord) : inclut l'arrondi du rebord gonflé ; reporté, non bloquant.",
+        "head_margin_note": "Le dos de la tête est placé 0,12 stud à l'intérieur du bord du rectangle praticable (dans la marge non échantillonnée de 0,25) ; voir max_penetration_into_full_rect_studs.",
+        "fbx_triangles": 2296
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "pool_duck_snorkel": {
+      "asset_id": "pool_duck_snorkel",
+      "duck_form": "medium",
+      "accessories": [
+        "diving_mask",
+        "snorkel",
+        "swimsuit_band"
+      ],
+      "size_studs_wdh": [
+        12.0,
+        10.0,
+        9.0
+      ],
+      "collider": {
+        "size_studs_wdh": [
+          9.0,
+          8.0,
+          4.0
+        ],
+        "walkable_top": [
+          9.0,
+          8.0
+        ],
+        "top_height": 4.0
+      },
+      "head_end": "-Z Roblox (+Y Blender)",
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -6.0,
+          0.0,
+          -5.0
+        ],
+        "gltf_position_max_xyz": [
+          6.0,
+          9.0,
+          5.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "gltf_header_lod1": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -6.0,
+          0.0,
+          -5.0
+        ],
+        "gltf_position_max_xyz": [
+          6.0,
+          9.0,
+          5.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/pool_duck_snorkel.glb",
+        "mesh_objects": 1,
+        "triangles": 2930,
+        "dims_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -6.0,
+          -5.0,
+          0.0
+        ],
+        "bbox_max": [
+          6.0,
+          5.0,
+          9.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod0": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 1085,
+          "misses": 0,
+          "max_abs_dev_studs": 0.1026,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.1026,
+          "mean_dev_studs": -0.0006,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1152,
+          "misses": 0,
+          "max_abs_dev_studs": 1.4657,
+          "max_above_studs": 1.4657,
+          "max_below_studs": -0.28,
+          "mean_dev_studs": 0.0119,
+          "within_tolerance_fraction": 0.9861
+        }
+      },
+      "above_deck_lod0": {
+        "vertices_above_top_plus_0_05": 1015,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 74,
+        "max_penetration_into_full_rect_studs": 0.1725,
+        "front_band": 952,
+        "back_band_tail": 63,
+        "side_bands": 0,
+        "front_fraction": 0.9379
+      },
+      "face_lod0": {
+        "mean_blender_xyz": [
+          0.0,
+          4.482,
+          4.989
+        ],
+        "n": 384
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/pool_duck_snorkel_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 660,
+        "dims_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -6.0,
+          -5.0,
+          0.0
+        ],
+        "bbox_max": [
+          6.0,
+          5.0,
+          9.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 1085,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0985,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0985,
+          "mean_dev_studs": -0.001,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1152,
+          "misses": 0,
+          "max_abs_dev_studs": 1.4619,
+          "max_above_studs": 1.4619,
+          "max_below_studs": -0.3482,
+          "mean_dev_studs": 0.0042,
+          "within_tolerance_fraction": 0.9896
+        }
+      },
+      "above_deck_lod1": {
+        "vertices_above_top_plus_0_05": 296,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 25,
+        "max_penetration_into_full_rect_studs": 0.1725,
+        "front_band": 278,
+        "back_band_tail": 18,
+        "side_bands": 0,
+        "front_fraction": 0.9392
+      },
+      "face_lod1": {
+        "mean_blender_xyz": [
+          -0.0,
+          4.477,
+          4.919
+        ],
+        "n": 66
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/pool_duck_snorkel.fbx",
+        "mesh_objects": 1,
+        "triangles": 2930,
+        "dims_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          -0.0,
+          -0.0
+        ],
+        "bbox_min": [
+          -6.0,
+          -5.0,
+          -0.0
+        ],
+        "bbox_max": [
+          6.0,
+          5.0,
+          9.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "head_front_gltf_minus_z": "PASS",
+        "above_deck_only_head_band_or_tail_band": "PASS",
+        "tris_lod0_1500_3200": "PASS",
+        "tris_lod1_le_700": "PASS",
+        "one_material_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS",
+        "walkable_top_flat_lod0_le_0_25": "PASS",
+        "walkable_top_flat_lod1_le_0_25": "PASS",
+        "nothing_above_top_plus_0_05_rays": "PASS",
+        "no_vertex_above_top_in_sampled_rect": "PASS",
+        "determinism_glb_hashes_identical": "PASS"
+      },
+      "informational": {
+        "full_footprint_note": "Échantillons centrés (grille 0,25 jusqu'à 0,125 du bord) : inclut l'arrondi du rebord gonflé ; reporté, non bloquant.",
+        "head_margin_note": "Le dos de la tête est placé 0,12 stud à l'intérieur du bord du rectangle praticable (dans la marge non échantillonnée de 0,25) ; voir max_penetration_into_full_rect_studs.",
+        "fbx_triangles": 2930
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "pool_duck_royal": {
+      "asset_id": "pool_duck_royal",
+      "duck_form": "medium",
+      "accessories": [
+        "crown",
+        "cape"
+      ],
+      "size_studs_wdh": [
+        12.0,
+        10.0,
+        9.0
+      ],
+      "collider": {
+        "size_studs_wdh": [
+          9.0,
+          8.0,
+          4.0
+        ],
+        "walkable_top": [
+          9.0,
+          8.0
+        ],
+        "top_height": 4.0
+      },
+      "head_end": "-Z Roblox (+Y Blender)",
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -6.0,
+          0.0,
+          -5.0
+        ],
+        "gltf_position_max_xyz": [
+          6.0,
+          9.0,
+          5.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "gltf_header_lod1": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -6.0,
+          0.0,
+          -5.0
+        ],
+        "gltf_position_max_xyz": [
+          6.0,
+          9.0,
+          5.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/pool_duck_royal.glb",
+        "mesh_objects": 1,
+        "triangles": 2996,
+        "dims_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -6.0,
+          -5.0,
+          0.0
+        ],
+        "bbox_max": [
+          6.0,
+          5.0,
+          9.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod0": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 1085,
+          "misses": 0,
+          "max_abs_dev_studs": 0.1026,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.1026,
+          "mean_dev_studs": -0.0005,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1152,
+          "misses": 0,
+          "max_abs_dev_studs": 1.1506,
+          "max_above_studs": 1.1506,
+          "max_below_studs": -0.28,
+          "mean_dev_studs": -0.0023,
+          "within_tolerance_fraction": 0.9957
+        }
+      },
+      "above_deck_lod0": {
+        "vertices_above_top_plus_0_05": 793,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 114,
+        "max_penetration_into_full_rect_studs": 0.16,
+        "front_band": 730,
+        "back_band_tail": 63,
+        "side_bands": 0,
+        "front_fraction": 0.9206
+      },
+      "face_lod0": {
+        "mean_blender_xyz": [
+          0.0,
+          4.489,
+          3.366
+        ],
+        "n": 384
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/pool_duck_royal_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 630,
+        "dims_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -6.0,
+          -5.0,
+          0.0
+        ],
+        "bbox_max": [
+          6.0,
+          5.0,
+          9.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 1085,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0985,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0985,
+          "mean_dev_studs": -0.001,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1152,
+          "misses": 0,
+          "max_abs_dev_studs": 1.3059,
+          "max_above_studs": 1.3059,
+          "max_below_studs": -0.3482,
+          "mean_dev_studs": -0.0048,
+          "within_tolerance_fraction": 0.9957
+        }
+      },
+      "above_deck_lod1": {
+        "vertices_above_top_plus_0_05": 286,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 61,
+        "max_penetration_into_full_rect_studs": 0.1375,
+        "front_band": 268,
+        "back_band_tail": 18,
+        "side_bands": 0,
+        "front_fraction": 0.9371
+      },
+      "face_lod1": {
+        "mean_blender_xyz": [
+          -0.0,
+          4.497,
+          3.296
+        ],
+        "n": 66
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/pool_duck_royal.fbx",
+        "mesh_objects": 1,
+        "triangles": 2996,
+        "dims_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          10.0,
+          9.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          -0.0,
+          -0.0
+        ],
+        "bbox_min": [
+          -6.0,
+          -5.0,
+          -0.0
+        ],
+        "bbox_max": [
+          6.0,
+          5.0,
+          9.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "head_front_gltf_minus_z": "PASS",
+        "above_deck_only_head_band_or_tail_band": "PASS",
+        "tris_lod0_1500_3200": "PASS",
+        "tris_lod1_le_700": "PASS",
+        "one_material_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS",
+        "walkable_top_flat_lod0_le_0_25": "PASS",
+        "walkable_top_flat_lod1_le_0_25": "PASS",
+        "nothing_above_top_plus_0_05_rays": "PASS",
+        "no_vertex_above_top_in_sampled_rect": "PASS",
+        "determinism_glb_hashes_identical": "PASS"
+      },
+      "informational": {
+        "full_footprint_note": "Échantillons centrés (grille 0,25 jusqu'à 0,125 du bord) : inclut l'arrondi du rebord gonflé ; reporté, non bloquant.",
+        "head_margin_note": "Le dos de la tête est placé 0,12 stud à l'intérieur du bord du rectangle praticable (dans la marge non échantillonnée de 0,25) ; voir max_penetration_into_full_rect_studs.",
+        "fbx_triangles": 2996
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "pool_duck_lilo_classic": {
+      "asset_id": "pool_duck_lilo_classic",
+      "duck_form": "lilo",
+      "accessories": [],
+      "size_studs_wdh": [
+        16.0,
+        8.0,
+        5.0
+      ],
+      "collider": {
+        "size_studs_wdh": [
+          14.0,
+          7.0,
+          2.0
+        ],
+        "walkable_top": [
+          14.0,
+          7.0
+        ],
+        "top_height": 2.0
+      },
+      "head_end": "+X (Roblox +X, bout du matelas)",
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -8.0,
+          0.0,
+          -4.0
+        ],
+        "gltf_position_max_xyz": [
+          8.0,
+          5.0,
+          4.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "gltf_header_lod1": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -8.0,
+          0.0,
+          -4.0
+        ],
+        "gltf_position_max_xyz": [
+          8.0,
+          5.0,
+          4.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/pool_duck_lilo_classic.glb",
+        "mesh_objects": 1,
+        "triangles": 1754,
+        "dims_studs_wdh": [
+          16.0,
+          8.0,
+          5.0
+        ],
+        "expected_size_studs_wdh": [
+          16.0,
+          8.0,
+          5.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -8.0,
+          -4.0,
+          0.0
+        ],
+        "bbox_max": [
+          8.0,
+          4.0,
+          5.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod0": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 1485,
+          "misses": 0,
+          "max_abs_dev_studs": 0.2164,
+          "max_above_studs": -0.02,
+          "max_below_studs": -0.2164,
+          "mean_dev_studs": -0.0815,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1568,
+          "misses": 0,
+          "max_abs_dev_studs": 0.2356,
+          "max_above_studs": -0.0238,
+          "max_below_studs": -0.2356,
+          "mean_dev_studs": -0.0796,
+          "within_tolerance_fraction": 1.0
+        }
+      },
+      "above_deck_lod0": {
+        "vertices_above_top_plus_0_05": 390,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 46,
+        "max_penetration_into_full_rect_studs": 0.12,
+        "front_band": 334,
+        "back_band_tail": 56,
+        "side_bands": 0,
+        "front_fraction": 0.8564
+      },
+      "face_lod0": {
+        "mean_blender_xyz": [
+          7.484,
+          -0.0,
+          3.255
+        ],
+        "n": 384
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/pool_duck_lilo_classic_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 252,
+        "dims_studs_wdh": [
+          16.0,
+          8.0,
+          5.0
+        ],
+        "expected_size_studs_wdh": [
+          16.0,
+          8.0,
+          5.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -8.0,
+          -4.0,
+          0.0
+        ],
+        "bbox_max": [
+          8.0,
+          4.0,
+          5.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 1485,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0,
+          "mean_dev_studs": 0.0,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1568,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0267,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0267,
+          "mean_dev_studs": -0.0009,
+          "within_tolerance_fraction": 1.0
+        }
+      },
+      "above_deck_lod1": {
+        "vertices_above_top_plus_0_05": 80,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 14,
+        "max_penetration_into_full_rect_studs": 0.12,
+        "front_band": 62,
+        "back_band_tail": 18,
+        "side_bands": 0,
+        "front_fraction": 0.775
+      },
+      "face_lod1": {
+        "mean_blender_xyz": [
+          7.469,
+          -0.0,
+          3.267
+        ],
+        "n": 66
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/pool_duck_lilo_classic.fbx",
+        "mesh_objects": 1,
+        "triangles": 1754,
+        "dims_studs_wdh": [
+          16.0,
+          8.0,
+          5.0
+        ],
+        "expected_size_studs_wdh": [
+          16.0,
+          8.0,
+          5.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -8.0,
+          -4.0,
+          -0.0
+        ],
+        "bbox_max": [
+          8.0,
+          4.0,
+          5.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "head_end_gltf_plus_x": "PASS",
+        "above_deck_only_head_band_or_tail_band": "PASS",
+        "tris_lod0_1200_2600": "PASS",
+        "tris_lod1_le_600": "PASS",
+        "one_material_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS",
+        "walkable_top_flat_lod0_le_0_25": "PASS",
+        "walkable_top_flat_lod1_le_0_25": "PASS",
+        "nothing_above_top_plus_0_05_rays": "PASS",
+        "no_vertex_above_top_in_sampled_rect": "PASS",
+        "determinism_glb_hashes_identical": "PASS"
+      },
+      "informational": {
+        "full_footprint_note": "Échantillons centrés (grille 0,25 jusqu'à 0,125 du bord) : inclut l'arrondi du rebord gonflé ; reporté, non bloquant.",
+        "head_margin_note": "Le dos de la tête est placé 0,12 stud à l'intérieur du bord du rectangle praticable (dans la marge non échantillonnée de 0,25) ; voir max_penetration_into_full_rect_studs.",
+        "fbx_triangles": 1754
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "pool_duck_lilo_hawaii": {
+      "asset_id": "pool_duck_lilo_hawaii",
+      "duck_form": "lilo",
+      "accessories": [
+        "glasses_heart",
+        "lei"
+      ],
+      "size_studs_wdh": [
+        16.0,
+        8.0,
+        5.0
+      ],
+      "collider": {
+        "size_studs_wdh": [
+          14.0,
+          7.0,
+          2.0
+        ],
+        "walkable_top": [
+          14.0,
+          7.0
+        ],
+        "top_height": 2.0
+      },
+      "head_end": "+X (Roblox +X, bout du matelas)",
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -8.0,
+          0.0,
+          -4.0
+        ],
+        "gltf_position_max_xyz": [
+          8.0,
+          5.0,
+          4.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "gltf_header_lod1": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -8.0,
+          0.0,
+          -4.0
+        ],
+        "gltf_position_max_xyz": [
+          8.0,
+          5.0,
+          4.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/pool_duck_lilo_hawaii.glb",
+        "mesh_objects": 1,
+        "triangles": 2498,
+        "dims_studs_wdh": [
+          16.0,
+          8.0,
+          5.0
+        ],
+        "expected_size_studs_wdh": [
+          16.0,
+          8.0,
+          5.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -8.0,
+          -4.0,
+          0.0
+        ],
+        "bbox_max": [
+          8.0,
+          4.0,
+          5.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod0": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 1485,
+          "misses": 0,
+          "max_abs_dev_studs": 0.2164,
+          "max_above_studs": -0.02,
+          "max_below_studs": -0.2164,
+          "mean_dev_studs": -0.0815,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1568,
+          "misses": 0,
+          "max_abs_dev_studs": 0.2356,
+          "max_above_studs": -0.0238,
+          "max_below_studs": -0.2356,
+          "mean_dev_studs": -0.0796,
+          "within_tolerance_fraction": 1.0
+        }
+      },
+      "above_deck_lod0": {
+        "vertices_above_top_plus_0_05": 1180,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 76,
+        "max_penetration_into_full_rect_studs": 0.12,
+        "front_band": 1124,
+        "back_band_tail": 56,
+        "side_bands": 0,
+        "front_fraction": 0.9525
+      },
+      "face_lod0": {
+        "mean_blender_xyz": [
+          7.484,
+          -0.0,
+          3.255
+        ],
+        "n": 384
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/pool_duck_lilo_hawaii_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 492,
+        "dims_studs_wdh": [
+          16.0,
+          8.0,
+          5.0
+        ],
+        "expected_size_studs_wdh": [
+          16.0,
+          8.0,
+          5.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -8.0,
+          -4.0,
+          0.0
+        ],
+        "bbox_max": [
+          8.0,
+          4.0,
+          5.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 1485,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0,
+          "mean_dev_studs": 0.0,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1568,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0267,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0267,
+          "mean_dev_studs": -0.0009,
+          "within_tolerance_fraction": 1.0
+        }
+      },
+      "above_deck_lod1": {
+        "vertices_above_top_plus_0_05": 348,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 20,
+        "max_penetration_into_full_rect_studs": 0.12,
+        "front_band": 330,
+        "back_band_tail": 18,
+        "side_bands": 0,
+        "front_fraction": 0.9483
+      },
+      "face_lod1": {
+        "mean_blender_xyz": [
+          7.469,
+          -0.0,
+          3.267
+        ],
+        "n": 66
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/pool_duck_lilo_hawaii.fbx",
+        "mesh_objects": 1,
+        "triangles": 2498,
+        "dims_studs_wdh": [
+          16.0,
+          8.0,
+          5.0
+        ],
+        "expected_size_studs_wdh": [
+          16.0,
+          8.0,
+          5.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -8.0,
+          -4.0,
+          -0.0
+        ],
+        "bbox_max": [
+          8.0,
+          4.0,
+          5.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "head_end_gltf_plus_x": "PASS",
+        "above_deck_only_head_band_or_tail_band": "PASS",
+        "tris_lod0_1200_2600": "PASS",
+        "tris_lod1_le_600": "PASS",
+        "one_material_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS",
+        "walkable_top_flat_lod0_le_0_25": "PASS",
+        "walkable_top_flat_lod1_le_0_25": "PASS",
+        "nothing_above_top_plus_0_05_rays": "PASS",
+        "no_vertex_above_top_in_sampled_rect": "PASS",
+        "determinism_glb_hashes_identical": "PASS"
+      },
+      "informational": {
+        "full_footprint_note": "Échantillons centrés (grille 0,25 jusqu'à 0,125 du bord) : inclut l'arrondi du rebord gonflé ; reporté, non bloquant.",
+        "head_margin_note": "Le dos de la tête est placé 0,12 stud à l'intérieur du bord du rectangle praticable (dans la marge non échantillonnée de 0,25) ; voir max_penetration_into_full_rect_studs.",
+        "fbx_triangles": 2498
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "pool_duck_ring_pirate": {
+      "asset_id": "pool_duck_ring_pirate",
+      "duck_form": "large_ring",
+      "accessories": [
+        "tricorn",
+        "eye_patch",
+        "moustache_pirate",
+        "skull_decal"
+      ],
+      "size_studs_wdh": [
+        15.0,
+        14.0,
+        11.0
+      ],
+      "collider": {
+        "size_studs_wdh": [
+          12.0,
+          12.0,
+          5.0
+        ],
+        "walkable_top": [
+          12.0,
+          12.0
+        ],
+        "top_height": 5.0
+      },
+      "head_end": "-Z Roblox (+Y Blender)",
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -7.5,
+          0.0,
+          -7.0
+        ],
+        "gltf_position_max_xyz": [
+          7.5,
+          11.0,
+          7.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "gltf_header_lod1": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -7.5,
+          0.0,
+          -7.0
+        ],
+        "gltf_position_max_xyz": [
+          7.5,
+          11.0,
+          7.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/pool_duck_ring_pirate.glb",
+        "mesh_objects": 1,
+        "triangles": 2962,
+        "dims_studs_wdh": [
+          15.0,
+          14.0,
+          11.0
+        ],
+        "expected_size_studs_wdh": [
+          15.0,
+          14.0,
+          11.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -7.5,
+          -7.0,
+          0.0
+        ],
+        "bbox_max": [
+          7.5,
+          7.0,
+          11.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod0": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 2209,
+          "misses": 0,
+          "max_abs_dev_studs": 0.16,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.16,
+          "mean_dev_studs": -0.0373,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 2304,
+          "misses": 0,
+          "max_abs_dev_studs": 0.3533,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.3533,
+          "mean_dev_studs": -0.0389,
+          "within_tolerance_fraction": 0.9983
+        }
+      },
+      "above_deck_lod0": {
+        "vertices_above_top_plus_0_05": 817,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 92,
+        "max_penetration_into_full_rect_studs": 0.12,
+        "front_band": 752,
+        "back_band_tail": 65,
+        "side_bands": 0,
+        "front_fraction": 0.9204
+      },
+      "face_lod0": {
+        "mean_blender_xyz": [
+          0.0,
+          6.488,
+          5.932
+        ],
+        "n": 384
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/pool_duck_ring_pirate_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 544,
+        "dims_studs_wdh": [
+          15.0,
+          14.0,
+          11.0
+        ],
+        "expected_size_studs_wdh": [
+          15.0,
+          14.0,
+          11.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -7.5,
+          -7.0,
+          0.0
+        ],
+        "bbox_max": [
+          7.5,
+          7.0,
+          11.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 2209,
+          "misses": 0,
+          "max_abs_dev_studs": 0.16,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.16,
+          "mean_dev_studs": -0.0364,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 2304,
+          "misses": 0,
+          "max_abs_dev_studs": 0.4394,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.4394,
+          "mean_dev_studs": -0.0403,
+          "within_tolerance_fraction": 0.9983
+        }
+      },
+      "above_deck_lod1": {
+        "vertices_above_top_plus_0_05": 155,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 23,
+        "max_penetration_into_full_rect_studs": 0.12,
+        "front_band": 137,
+        "back_band_tail": 18,
+        "side_bands": 0,
+        "front_fraction": 0.8839
+      },
+      "face_lod1": {
+        "mean_blender_xyz": [
+          -0.0,
+          6.473,
+          5.859
+        ],
+        "n": 66
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/pool_duck_ring_pirate.fbx",
+        "mesh_objects": 1,
+        "triangles": 2962,
+        "dims_studs_wdh": [
+          15.0,
+          14.0,
+          11.0
+        ],
+        "expected_size_studs_wdh": [
+          15.0,
+          14.0,
+          11.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          -0.0,
+          -0.0
+        ],
+        "bbox_min": [
+          -7.5,
+          -7.0,
+          -0.0
+        ],
+        "bbox_max": [
+          7.5,
+          7.0,
+          11.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "head_front_gltf_minus_z": "PASS",
+        "above_deck_only_head_band_or_tail_band": "PASS",
+        "tris_lod0_2500_4500": "PASS",
+        "tris_lod1_le_900": "PASS",
+        "one_material_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS",
+        "walkable_top_flat_lod0_le_0_25": "PASS",
+        "walkable_top_flat_lod1_le_0_25": "PASS",
+        "nothing_above_top_plus_0_05_rays": "PASS",
+        "no_vertex_above_top_in_sampled_rect": "PASS",
+        "determinism_glb_hashes_identical": "PASS"
+      },
+      "informational": {
+        "full_footprint_note": "Échantillons centrés (grille 0,25 jusqu'à 0,125 du bord) : inclut l'arrondi du rebord gonflé ; reporté, non bloquant.",
+        "head_margin_note": "Le dos de la tête est placé 0,12 stud à l'intérieur du bord du rectangle praticable (dans la marge non échantillonnée de 0,25) ; voir max_penetration_into_full_rect_studs.",
+        "fbx_triangles": 2962
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "pool_duck_ring_lifeguard": {
+      "asset_id": "pool_duck_ring_lifeguard",
+      "duck_form": "large_ring",
+      "accessories": [
+        "lifeguard_cap",
+        "whistle",
+        "sunscreen",
+        "sauveteur_band"
+      ],
+      "size_studs_wdh": [
+        15.0,
+        14.0,
+        11.0
+      ],
+      "collider": {
+        "size_studs_wdh": [
+          12.0,
+          12.0,
+          5.0
+        ],
+        "walkable_top": [
+          12.0,
+          12.0
+        ],
+        "top_height": 5.0
+      },
+      "head_end": "-Z Roblox (+Y Blender)",
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -7.5,
+          0.0,
+          -7.0
+        ],
+        "gltf_position_max_xyz": [
+          7.5,
+          11.0,
+          7.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "gltf_header_lod1": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -7.5,
+          0.0,
+          -7.0
+        ],
+        "gltf_position_max_xyz": [
+          7.5,
+          11.0,
+          7.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/pool_duck_ring_lifeguard.glb",
+        "mesh_objects": 1,
+        "triangles": 3180,
+        "dims_studs_wdh": [
+          15.0,
+          14.0,
+          11.0
+        ],
+        "expected_size_studs_wdh": [
+          15.0,
+          14.0,
+          11.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -7.5,
+          -7.0,
+          0.0
+        ],
+        "bbox_max": [
+          7.5,
+          7.0,
+          11.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod0": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 2209,
+          "misses": 0,
+          "max_abs_dev_studs": 0.16,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.16,
+          "mean_dev_studs": -0.0373,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 2304,
+          "misses": 0,
+          "max_abs_dev_studs": 4.8919,
+          "max_above_studs": 4.8919,
+          "max_below_studs": -0.3533,
+          "mean_dev_studs": -0.0223,
+          "within_tolerance_fraction": 0.9948
+        }
+      },
+      "above_deck_lod0": {
+        "vertices_above_top_plus_0_05": 1167,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 141,
+        "max_penetration_into_full_rect_studs": 0.1559,
+        "front_band": 1102,
+        "back_band_tail": 65,
+        "side_bands": 0,
+        "front_fraction": 0.9443
+      },
+      "face_lod0": {
+        "mean_blender_xyz": [
+          0.0,
+          6.489,
+          7.629
+        ],
+        "n": 384
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/pool_duck_ring_lifeguard_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 794,
+        "dims_studs_wdh": [
+          15.0,
+          14.0,
+          11.0
+        ],
+        "expected_size_studs_wdh": [
+          15.0,
+          14.0,
+          11.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -7.5,
+          -7.0,
+          0.0
+        ],
+        "bbox_max": [
+          7.5,
+          7.0,
+          11.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 2209,
+          "misses": 0,
+          "max_abs_dev_studs": 0.16,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.16,
+          "mean_dev_studs": -0.0364,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 2304,
+          "misses": 0,
+          "max_abs_dev_studs": 4.8397,
+          "max_above_studs": 4.8397,
+          "max_below_studs": -0.4394,
+          "mean_dev_studs": -0.032,
+          "within_tolerance_fraction": 0.9965
+        }
+      },
+      "above_deck_lod1": {
+        "vertices_above_top_plus_0_05": 262,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 46,
+        "max_penetration_into_full_rect_studs": 0.16,
+        "front_band": 244,
+        "back_band_tail": 18,
+        "side_bands": 0,
+        "front_fraction": 0.9313
+      },
+      "face_lod1": {
+        "mean_blender_xyz": [
+          -0.0,
+          6.476,
+          7.556
+        ],
+        "n": 66
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/pool_duck_ring_lifeguard.fbx",
+        "mesh_objects": 1,
+        "triangles": 3180,
+        "dims_studs_wdh": [
+          15.0,
+          14.0,
+          11.0
+        ],
+        "expected_size_studs_wdh": [
+          15.0,
+          14.0,
+          11.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "bbox_min": [
+          -7.5,
+          -7.0,
+          -0.0
+        ],
+        "bbox_max": [
+          7.5,
+          7.0,
+          11.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "head_front_gltf_minus_z": "PASS",
+        "above_deck_only_head_band_or_tail_band": "PASS",
+        "tris_lod0_2500_4500": "PASS",
+        "tris_lod1_le_900": "PASS",
+        "one_material_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS",
+        "walkable_top_flat_lod0_le_0_25": "PASS",
+        "walkable_top_flat_lod1_le_0_25": "PASS",
+        "nothing_above_top_plus_0_05_rays": "PASS",
+        "no_vertex_above_top_in_sampled_rect": "PASS",
+        "determinism_glb_hashes_identical": "PASS"
+      },
+      "informational": {
+        "full_footprint_note": "Échantillons centrés (grille 0,25 jusqu'à 0,125 du bord) : inclut l'arrondi du rebord gonflé ; reporté, non bloquant.",
+        "head_margin_note": "Le dos de la tête est placé 0,12 stud à l'intérieur du bord du rectangle praticable (dans la marge non échantillonnée de 0,25) ; voir max_penetration_into_full_rect_studs.",
+        "fbx_triangles": 3180
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "pool_duck_ring_tourist": {
+      "asset_id": "pool_duck_ring_tourist",
+      "duck_form": "large_ring",
+      "accessories": [
+        "bucket_hat",
+        "camera",
+        "glasses_wide",
+        "hawaii_print"
+      ],
+      "size_studs_wdh": [
+        15.0,
+        14.0,
+        11.0
+      ],
+      "collider": {
+        "size_studs_wdh": [
+          12.0,
+          12.0,
+          5.0
+        ],
+        "walkable_top": [
+          12.0,
+          12.0
+        ],
+        "top_height": 5.0
+      },
+      "head_end": "-Z Roblox (+Y Blender)",
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -7.5,
+          0.0,
+          -7.0
+        ],
+        "gltf_position_max_xyz": [
+          7.5,
+          11.0,
+          7.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "gltf_header_lod1": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -7.5,
+          0.0,
+          -7.0
+        ],
+        "gltf_position_max_xyz": [
+          7.5,
+          11.0,
+          7.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/pool_duck_ring_tourist.glb",
+        "mesh_objects": 1,
+        "triangles": 3176,
+        "dims_studs_wdh": [
+          15.0,
+          14.0,
+          11.0
+        ],
+        "expected_size_studs_wdh": [
+          15.0,
+          14.0,
+          11.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -7.5,
+          -7.0,
+          0.0
+        ],
+        "bbox_max": [
+          7.5,
+          7.0,
+          11.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod0": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 2209,
+          "misses": 0,
+          "max_abs_dev_studs": 0.16,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.16,
+          "mean_dev_studs": -0.0373,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 2304,
+          "misses": 0,
+          "max_abs_dev_studs": 0.3533,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.3533,
+          "mean_dev_studs": -0.0389,
+          "within_tolerance_fraction": 0.9983
+        }
+      },
+      "above_deck_lod0": {
+        "vertices_above_top_plus_0_05": 1262,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 132,
+        "max_penetration_into_full_rect_studs": 0.12,
+        "front_band": 1197,
+        "back_band_tail": 65,
+        "side_bands": 0,
+        "front_fraction": 0.9485
+      },
+      "face_lod0": {
+        "mean_blender_xyz": [
+          0.0,
+          6.489,
+          7.097
+        ],
+        "n": 384
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/pool_duck_ring_tourist_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 718,
+        "dims_studs_wdh": [
+          15.0,
+          14.0,
+          11.0
+        ],
+        "expected_size_studs_wdh": [
+          15.0,
+          14.0,
+          11.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -7.5,
+          -7.0,
+          0.0
+        ],
+        "bbox_max": [
+          7.5,
+          7.0,
+          11.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 2209,
+          "misses": 0,
+          "max_abs_dev_studs": 0.16,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.16,
+          "mean_dev_studs": -0.0364,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 2304,
+          "misses": 0,
+          "max_abs_dev_studs": 0.4394,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.4394,
+          "mean_dev_studs": -0.0403,
+          "within_tolerance_fraction": 0.9983
+        }
+      },
+      "above_deck_lod1": {
+        "vertices_above_top_plus_0_05": 304,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 29,
+        "max_penetration_into_full_rect_studs": 0.12,
+        "front_band": 286,
+        "back_band_tail": 18,
+        "side_bands": 0,
+        "front_fraction": 0.9408
+      },
+      "face_lod1": {
+        "mean_blender_xyz": [
+          -0.0,
+          6.474,
+          7.024
+        ],
+        "n": 66
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/pool_duck_ring_tourist.fbx",
+        "mesh_objects": 1,
+        "triangles": 3176,
+        "dims_studs_wdh": [
+          15.0,
+          14.0,
+          11.0
+        ],
+        "expected_size_studs_wdh": [
+          15.0,
+          14.0,
+          11.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          -0.0,
+          -0.0
+        ],
+        "bbox_min": [
+          -7.5,
+          -7.0,
+          -0.0
+        ],
+        "bbox_max": [
+          7.5,
+          7.0,
+          11.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "head_front_gltf_minus_z": "PASS",
+        "above_deck_only_head_band_or_tail_band": "PASS",
+        "tris_lod0_2500_4500": "PASS",
+        "tris_lod1_le_900": "PASS",
+        "one_material_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS",
+        "walkable_top_flat_lod0_le_0_25": "PASS",
+        "walkable_top_flat_lod1_le_0_25": "PASS",
+        "nothing_above_top_plus_0_05_rays": "PASS",
+        "no_vertex_above_top_in_sampled_rect": "PASS",
+        "determinism_glb_hashes_identical": "PASS"
+      },
+      "informational": {
+        "full_footprint_note": "Échantillons centrés (grille 0,25 jusqu'à 0,125 du bord) : inclut l'arrondi du rebord gonflé ; reporté, non bloquant.",
+        "head_margin_note": "Le dos de la tête est placé 0,12 stud à l'intérieur du bord du rectangle praticable (dans la marge non échantillonnée de 0,25) ; voir max_penetration_into_full_rect_studs.",
+        "fbx_triangles": 3176
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "pool_duck_captain": {
+      "asset_id": "pool_duck_captain",
+      "duck_form": "giant",
+      "accessories": [
+        "captain_cap",
+        "moustache_walrus",
+        "bubble_pipe",
+        "mariniere"
+      ],
+      "size_studs_wdh": [
+        24.0,
+        20.0,
+        14.0
+      ],
+      "collider": {
+        "size_studs_wdh": [
+          18.0,
+          16.0,
+          8.0
+        ],
+        "walkable_top": [
+          18.0,
+          16.0
+        ],
+        "top_height": 8.0
+      },
+      "head_end": "-Z Roblox (+Y Blender)",
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -12.0,
+          0.0,
+          -10.0
+        ],
+        "gltf_position_max_xyz": [
+          12.0,
+          14.0,
+          10.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "gltf_header_lod1": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_duck_atlas"
+        ],
+        "images_embedded": 2,
+        "images_in_buffer": true,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -12.0,
+          0.0,
+          -10.0
+        ],
+        "gltf_position_max_xyz": [
+          12.0,
+          14.0,
+          10.0
+        ],
+        "has_base_color_texture": true,
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/pool_duck_captain.glb",
+        "mesh_objects": 1,
+        "triangles": 4198,
+        "dims_studs_wdh": [
+          24.0,
+          20.0,
+          14.0
+        ],
+        "expected_size_studs_wdh": [
+          24.0,
+          20.0,
+          14.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -12.0,
+          -10.0,
+          0.0
+        ],
+        "bbox_max": [
+          12.0,
+          10.0,
+          14.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod0": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 4473,
+          "misses": 0,
+          "max_abs_dev_studs": 0.1692,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.1692,
+          "mean_dev_studs": -0.0003,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 4608,
+          "misses": 0,
+          "max_abs_dev_studs": 5.603,
+          "max_above_studs": 5.603,
+          "max_below_studs": -0.3273,
+          "mean_dev_studs": 0.0105,
+          "within_tolerance_fraction": 0.997
+        }
+      },
+      "above_deck_lod0": {
+        "vertices_above_top_plus_0_05": 1040,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 57,
+        "max_penetration_into_full_rect_studs": 0.1558,
+        "front_band": 970,
+        "back_band_tail": 70,
+        "side_bands": 0,
+        "front_fraction": 0.9327
+      },
+      "face_lod0": {
+        "mean_blender_xyz": [
+          -0.0,
+          9.22,
+          7.454
+        ],
+        "n": 459
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/pool_duck_captain_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 636,
+        "dims_studs_wdh": [
+          24.0,
+          20.0,
+          14.0
+        ],
+        "expected_size_studs_wdh": [
+          24.0,
+          20.0,
+          14.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -12.0,
+          -10.0,
+          0.0
+        ],
+        "bbox_max": [
+          12.0,
+          10.0,
+          14.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 4473,
+          "misses": 0,
+          "max_abs_dev_studs": 0.1741,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.1741,
+          "mean_dev_studs": -0.0006,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 4608,
+          "misses": 0,
+          "max_abs_dev_studs": 5.5854,
+          "max_above_studs": 5.5854,
+          "max_below_studs": -0.3957,
+          "mean_dev_studs": 0.0017,
+          "within_tolerance_fraction": 0.9983
+        }
+      },
+      "above_deck_lod1": {
+        "vertices_above_top_plus_0_05": 192,
+        "in_sampled_rect": 0,
+        "in_full_rect_margin": 18,
+        "max_penetration_into_full_rect_studs": 0.1571,
+        "front_band": 174,
+        "back_band_tail": 18,
+        "side_bands": 0,
+        "front_fraction": 0.9062
+      },
+      "face_lod1": {
+        "mean_blender_xyz": [
+          0.0,
+          9.19,
+          7.365
+        ],
+        "n": 66
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/pool_duck_captain.fbx",
+        "mesh_objects": 1,
+        "triangles": 4198,
+        "dims_studs_wdh": [
+          24.0,
+          20.0,
+          14.0
+        ],
+        "expected_size_studs_wdh": [
+          24.0,
+          20.0,
+          14.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          -0.0,
+          -0.0
+        ],
+        "bbox_min": [
+          -12.0,
+          -10.0,
+          -0.0
+        ],
+        "bbox_max": [
+          12.0,
+          10.0,
+          14.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_duck_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "head_front_gltf_minus_z": "PASS",
+        "above_deck_only_head_band_or_tail_band": "PASS",
+        "tris_lod0_4000_7000": "PASS",
+        "tris_lod1_le_1200": "PASS",
+        "one_material_per_mesh": "PASS",
+        "uv_and_embedded_textures": "PASS",
+        "walkable_top_flat_lod0_le_0_25": "PASS",
+        "walkable_top_flat_lod1_le_0_25": "PASS",
+        "nothing_above_top_plus_0_05_rays": "PASS",
+        "no_vertex_above_top_in_sampled_rect": "PASS",
+        "determinism_glb_hashes_identical": "PASS"
+      },
+      "informational": {
+        "full_footprint_note": "Échantillons centrés (grille 0,25 jusqu'à 0,125 du bord) : inclut l'arrondi du rebord gonflé ; reporté, non bloquant.",
+        "head_margin_note": "Le dos de la tête est placé 0,12 stud à l'intérieur du bord du rectangle praticable (dans la marge non échantillonnée de 0,25) ; voir max_penetration_into_full_rect_studs.",
+        "fbx_triangles": 4198
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    }
+  }
+}

@@ -1,0 +1,789 @@
+{
+  "family": "pool_ducks",
+  "units": "studs",
+  "axes": "roblox_model_space (X largeur, Y haut, Z profondeur ; avant = -Z)",
+  "authority": "server_collider_separate_from_visual_mesh",
+  "rule": "tête, cou, chapeaux, queue et accessoires hors du rectangle praticable ou sous son dessus",
+  "props": [
+    {
+      "asset_id": "pool_duck_mini_classic",
+      "duck_form": "mini",
+      "behavior": "stable",
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "head_end": "-Z",
+      "visual_envelope_studs_wdh": [
+        5,
+        6,
+        6
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          4,
+          4,
+          3
+        ],
+        "size_vector3_roblox": [
+          4,
+          3,
+          4
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          1.5,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          4,
+          4
+        ],
+        "height_studs": 3,
+        "center_roblox": [
+          0,
+          3,
+          0
+        ]
+      },
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      }
+    },
+    {
+      "asset_id": "pool_duck_mini_sunglasses",
+      "duck_form": "mini",
+      "behavior": "stable",
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "head_end": "-Z",
+      "visual_envelope_studs_wdh": [
+        5,
+        6,
+        6
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          4,
+          4,
+          3
+        ],
+        "size_vector3_roblox": [
+          4,
+          3,
+          4
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          1.5,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          4,
+          4
+        ],
+        "height_studs": 3,
+        "center_roblox": [
+          0,
+          3,
+          0
+        ]
+      },
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      }
+    },
+    {
+      "asset_id": "pool_duck_mini_swimcap",
+      "duck_form": "mini",
+      "behavior": "stable",
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "head_end": "-Z",
+      "visual_envelope_studs_wdh": [
+        5,
+        6,
+        6
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          4,
+          4,
+          3
+        ],
+        "size_vector3_roblox": [
+          4,
+          3,
+          4
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          1.5,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          4,
+          4
+        ],
+        "height_studs": 3,
+        "center_roblox": [
+          0,
+          3,
+          0
+        ]
+      },
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      }
+    },
+    {
+      "asset_id": "pool_duck_mini_bowtie",
+      "duck_form": "mini",
+      "behavior": "stable",
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "head_end": "-Z",
+      "visual_envelope_studs_wdh": [
+        5,
+        6,
+        6
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          4,
+          4,
+          3
+        ],
+        "size_vector3_roblox": [
+          4,
+          3,
+          4
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          1.5,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          4,
+          4
+        ],
+        "height_studs": 3,
+        "center_roblox": [
+          0,
+          3,
+          0
+        ]
+      },
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      }
+    },
+    {
+      "asset_id": "pool_duck_summer",
+      "duck_form": "medium",
+      "behavior": "stable",
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "head_end": "-Z",
+      "visual_envelope_studs_wdh": [
+        12,
+        10,
+        9
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          9,
+          8,
+          4
+        ],
+        "size_vector3_roblox": [
+          9,
+          4,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          2.0,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          9,
+          8
+        ],
+        "height_studs": 4,
+        "center_roblox": [
+          0,
+          4,
+          0
+        ]
+      },
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      }
+    },
+    {
+      "asset_id": "pool_duck_gentleman",
+      "duck_form": "medium",
+      "behavior": "stable",
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "head_end": "-Z",
+      "visual_envelope_studs_wdh": [
+        12,
+        10,
+        9
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          9,
+          8,
+          4
+        ],
+        "size_vector3_roblox": [
+          9,
+          4,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          2.0,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          9,
+          8
+        ],
+        "height_studs": 4,
+        "center_roblox": [
+          0,
+          4,
+          0
+        ]
+      },
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      }
+    },
+    {
+      "asset_id": "pool_duck_sailor",
+      "duck_form": "medium",
+      "behavior": "stable",
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "head_end": "-Z",
+      "visual_envelope_studs_wdh": [
+        12,
+        10,
+        9
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          9,
+          8,
+          4
+        ],
+        "size_vector3_roblox": [
+          9,
+          4,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          2.0,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          9,
+          8
+        ],
+        "height_studs": 4,
+        "center_roblox": [
+          0,
+          4,
+          0
+        ]
+      },
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      }
+    },
+    {
+      "asset_id": "pool_duck_snorkel",
+      "duck_form": "medium",
+      "behavior": "stable",
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "head_end": "-Z",
+      "visual_envelope_studs_wdh": [
+        12,
+        10,
+        9
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          9,
+          8,
+          4
+        ],
+        "size_vector3_roblox": [
+          9,
+          4,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          2.0,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          9,
+          8
+        ],
+        "height_studs": 4,
+        "center_roblox": [
+          0,
+          4,
+          0
+        ]
+      },
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      }
+    },
+    {
+      "asset_id": "pool_duck_royal",
+      "duck_form": "medium",
+      "behavior": "stable",
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "head_end": "-Z",
+      "visual_envelope_studs_wdh": [
+        12,
+        10,
+        9
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          9,
+          8,
+          4
+        ],
+        "size_vector3_roblox": [
+          9,
+          4,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          2.0,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          9,
+          8
+        ],
+        "height_studs": 4,
+        "center_roblox": [
+          0,
+          4,
+          0
+        ]
+      },
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      }
+    },
+    {
+      "asset_id": "pool_duck_lilo_classic",
+      "duck_form": "lilo",
+      "behavior": "stable",
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "head_end": "+X",
+      "visual_envelope_studs_wdh": [
+        16,
+        8,
+        5
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          14,
+          7,
+          2
+        ],
+        "size_vector3_roblox": [
+          14,
+          2,
+          7
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          1.0,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          14,
+          7
+        ],
+        "height_studs": 2,
+        "center_roblox": [
+          0,
+          2,
+          0
+        ]
+      },
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      }
+    },
+    {
+      "asset_id": "pool_duck_lilo_hawaii",
+      "duck_form": "lilo",
+      "behavior": "stable",
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "head_end": "+X",
+      "visual_envelope_studs_wdh": [
+        16,
+        8,
+        5
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          14,
+          7,
+          2
+        ],
+        "size_vector3_roblox": [
+          14,
+          2,
+          7
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          1.0,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          14,
+          7
+        ],
+        "height_studs": 2,
+        "center_roblox": [
+          0,
+          2,
+          0
+        ]
+      },
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      }
+    },
+    {
+      "asset_id": "pool_duck_ring_pirate",
+      "duck_form": "large_ring",
+      "behavior": "stable",
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "head_end": "-Z",
+      "visual_envelope_studs_wdh": [
+        15,
+        14,
+        11
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          12,
+          12,
+          5
+        ],
+        "size_vector3_roblox": [
+          12,
+          5,
+          12
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          2.5,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          12,
+          12
+        ],
+        "height_studs": 5,
+        "center_roblox": [
+          0,
+          5,
+          0
+        ]
+      },
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      }
+    },
+    {
+      "asset_id": "pool_duck_ring_lifeguard",
+      "duck_form": "large_ring",
+      "behavior": "stable",
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "head_end": "-Z",
+      "visual_envelope_studs_wdh": [
+        15,
+        14,
+        11
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          12,
+          12,
+          5
+        ],
+        "size_vector3_roblox": [
+          12,
+          5,
+          12
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          2.5,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          12,
+          12
+        ],
+        "height_studs": 5,
+        "center_roblox": [
+          0,
+          5,
+          0
+        ]
+      },
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      }
+    },
+    {
+      "asset_id": "pool_duck_ring_tourist",
+      "duck_form": "large_ring",
+      "behavior": "stable",
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "head_end": "-Z",
+      "visual_envelope_studs_wdh": [
+        15,
+        14,
+        11
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          12,
+          12,
+          5
+        ],
+        "size_vector3_roblox": [
+          12,
+          5,
+          12
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          2.5,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          12,
+          12
+        ],
+        "height_studs": 5,
+        "center_roblox": [
+          0,
+          5,
+          0
+        ]
+      },
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      }
+    },
+    {
+      "asset_id": "pool_duck_captain",
+      "duck_form": "giant",
+      "behavior": "stable",
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "head_end": "-Z",
+      "visual_envelope_studs_wdh": [
+        24,
+        20,
+        14
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          18,
+          16,
+          8
+        ],
+        "size_vector3_roblox": [
+          18,
+          8,
+          16
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          4.0,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          18,
+          16
+        ],
+        "height_studs": 8,
+        "center_roblox": [
+          0,
+          8,
+          0
+        ]
+      },
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      }
+    }
+  ]
+}

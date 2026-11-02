@@ -1,0 +1,1102 @@
+{
+  "family": "pool_ducks",
+  "seed": 20261102,
+  "blender_version": "5.2.3 LTS",
+  "units": "1 BU = 1 stud (décision 0003)",
+  "atlas": "assets/source/models/ducks/textures/duck_atlas_1024.png",
+  "atlas_roughness_metal": "assets/source/models/ducks/textures/duck_atlas_rough_1024.png",
+  "approach": "modulaire : duck_kit.FORMS (5 corps) + duck_kit.ACCESSORIES (prises head_top/eyes/beak_under/neck/body) ; une variante = un maillage, un matériau",
+  "fit_note": "Après composition, une déformation affine par morceaux HORS du rectangle du collider et au-dessus du dessus utile ajuste l'enveloppe exactement ; facteurs ≈ 1 consignés par asset.",
+  "contract_notes": [
+    "Bande de tête : l'enveloppe ne laisse que (enveloppe - collider)/2 devant le rectangle praticable (1 stud ; 2 studs pour l'île géante). Les têtes sont donc des coussins soudés de 0,72 stud d'épaisseur (1,62 pour le géant) + bec de 0,4-0,5 ; dos de la tête 0,12 stud à l'intérieur du bord du rectangle (dans la marge non échantillonnée de 0,25).",
+    "Matelas : la bande avant -Z ne fait que 0,5 stud ; la tête est au bout +X (bande de 1 stud), regard +X, queue au bout -X.",
+    "Mini LOD1 : ailes supprimées (budget 350) ; la largeur 5 est atteinte par l'ajustement d'enveloppe hors collider (facteur x 1,25 sur le bombé latéral, au-delà de |x| = 2).",
+    "Chapeaux à la profondeur de la tête : calottes elliptiques écrasées en profondeur, bords larges en X."
+  ],
+  "assets": {
+    "pool_duck_mini_classic": {
+      "duck_form": "mini",
+      "accessories": [],
+      "skin": "yellow",
+      "lod0_object": "pool_duck_mini_classic_LOD0",
+      "lod1_object": "pool_duck_mini_classic_LOD1",
+      "lod0_tris": 1142,
+      "lod1_tris": 228,
+      "lod0_dims_wdh": [
+        5.0,
+        6.0,
+        6.0
+      ],
+      "lod1_dims_wdh": [
+        5.0,
+        6.0,
+        6.0
+      ],
+      "materials": [
+        "M_duck_atlas"
+      ],
+      "head": {
+        "head_center": [
+          0.0,
+          2.24,
+          4.5
+        ],
+        "head_size": {
+          "half_width": 1.85,
+          "thickness_along_facing": 0.72,
+          "half_height": 1.5,
+          "bill_protrusion": 0.4
+        },
+        "head_axis": "+Y (Roblox -Z)",
+        "fit_factors": {
+          "x": [
+            1.0,
+            1.0
+          ],
+          "y": [
+            1.0111,
+            1.0183
+          ],
+          "z": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "lod1_fit_factors": {
+        "x": [
+          1.25,
+          1.25
+        ],
+        "y": [
+          1.0,
+          1.0524
+        ],
+        "z": [
+          1.0,
+          1.0
+        ]
+      },
+      "exports": [
+        "assets/import/models/pool_duck_mini_classic.glb",
+        "assets/import/models/pool_duck_mini_classic_lod1.glb",
+        "assets/import/models/pool_duck_mini_classic.fbx"
+      ]
+    },
+    "pool_duck_mini_sunglasses": {
+      "duck_form": "mini",
+      "accessories": [
+        "glasses_star"
+      ],
+      "skin": "yellow",
+      "lod0_object": "pool_duck_mini_sunglasses_LOD0",
+      "lod1_object": "pool_duck_mini_sunglasses_LOD1",
+      "lod0_tris": 1338,
+      "lod1_tris": 300,
+      "lod0_dims_wdh": [
+        5.0,
+        6.0,
+        6.0
+      ],
+      "lod1_dims_wdh": [
+        5.0,
+        6.0,
+        6.0
+      ],
+      "materials": [
+        "M_duck_atlas"
+      ],
+      "head": {
+        "head_center": [
+          0.0,
+          2.24,
+          4.5
+        ],
+        "head_size": {
+          "half_width": 1.85,
+          "thickness_along_facing": 0.72,
+          "half_height": 1.5,
+          "bill_protrusion": 0.4
+        },
+        "head_axis": "+Y (Roblox -Z)",
+        "fit_factors": {
+          "x": [
+            1.0,
+            1.0
+          ],
+          "y": [
+            1.0111,
+            1.0183
+          ],
+          "z": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "lod1_fit_factors": {
+        "x": [
+          1.25,
+          1.25
+        ],
+        "y": [
+          1.0,
+          1.0524
+        ],
+        "z": [
+          1.0,
+          1.0
+        ]
+      },
+      "exports": [
+        "assets/import/models/pool_duck_mini_sunglasses.glb",
+        "assets/import/models/pool_duck_mini_sunglasses_lod1.glb",
+        "assets/import/models/pool_duck_mini_sunglasses.fbx"
+      ]
+    },
+    "pool_duck_mini_swimcap": {
+      "duck_form": "mini",
+      "accessories": [
+        "swim_cap"
+      ],
+      "skin": "yellow",
+      "lod0_object": "pool_duck_mini_swimcap_LOD0",
+      "lod1_object": "pool_duck_mini_swimcap_LOD1",
+      "lod0_tris": 1456,
+      "lod1_tris": 319,
+      "lod0_dims_wdh": [
+        5.0,
+        6.0,
+        6.0
+      ],
+      "lod1_dims_wdh": [
+        5.0,
+        6.0,
+        6.0
+      ],
+      "materials": [
+        "M_duck_atlas"
+      ],
+      "head": {
+        "head_center": [
+          0.0,
+          2.24,
+          4.2722
+        ],
+        "head_size": {
+          "half_width": 1.85,
+          "thickness_along_facing": 0.72,
+          "half_height": 1.5,
+          "bill_protrusion": 0.4
+        },
+        "head_axis": "+Y (Roblox -Z)",
+        "fit_factors": {
+          "x": [
+            1.0,
+            1.0
+          ],
+          "y": [
+            1.0111,
+            1.0183
+          ],
+          "z": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "lod1_fit_factors": {
+        "x": [
+          1.25,
+          1.25
+        ],
+        "y": [
+          1.0,
+          1.0524
+        ],
+        "z": [
+          1.0,
+          1.0
+        ]
+      },
+      "exports": [
+        "assets/import/models/pool_duck_mini_swimcap.glb",
+        "assets/import/models/pool_duck_mini_swimcap_lod1.glb",
+        "assets/import/models/pool_duck_mini_swimcap.fbx"
+      ]
+    },
+    "pool_duck_mini_bowtie": {
+      "duck_form": "mini",
+      "accessories": [
+        "bowtie_red",
+        "moustache_curl"
+      ],
+      "skin": "yellow",
+      "lod0_object": "pool_duck_mini_bowtie_LOD0",
+      "lod1_object": "pool_duck_mini_bowtie_LOD1",
+      "lod0_tris": 1414,
+      "lod1_tris": 328,
+      "lod0_dims_wdh": [
+        5.0,
+        6.0,
+        6.0
+      ],
+      "lod1_dims_wdh": [
+        5.0,
+        6.0,
+        6.0
+      ],
+      "materials": [
+        "M_duck_atlas"
+      ],
+      "head": {
+        "head_center": [
+          0.0,
+          2.24,
+          4.5
+        ],
+        "head_size": {
+          "half_width": 1.85,
+          "thickness_along_facing": 0.72,
+          "half_height": 1.5,
+          "bill_protrusion": 0.4
+        },
+        "head_axis": "+Y (Roblox -Z)",
+        "fit_factors": {
+          "x": [
+            1.0,
+            1.0
+          ],
+          "y": [
+            1.0111,
+            1.0183
+          ],
+          "z": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "lod1_fit_factors": {
+        "x": [
+          1.25,
+          1.25
+        ],
+        "y": [
+          1.0,
+          1.0447
+        ],
+        "z": [
+          1.0,
+          1.0
+        ]
+      },
+      "exports": [
+        "assets/import/models/pool_duck_mini_bowtie.glb",
+        "assets/import/models/pool_duck_mini_bowtie_lod1.glb",
+        "assets/import/models/pool_duck_mini_bowtie.fbx"
+      ]
+    },
+    "pool_duck_summer": {
+      "duck_form": "medium",
+      "accessories": [
+        "glasses_round",
+        "straw_hat"
+      ],
+      "skin": "yellow",
+      "lod0_object": "pool_duck_summer_LOD0",
+      "lod1_object": "pool_duck_summer_LOD1",
+      "lod0_tris": 2650,
+      "lod1_tris": 440,
+      "lod0_dims_wdh": [
+        12.0,
+        10.0,
+        9.0
+      ],
+      "lod1_dims_wdh": [
+        12.0,
+        10.0,
+        9.0
+      ],
+      "materials": [
+        "M_duck_atlas"
+      ],
+      "head": {
+        "head_center": [
+          0.0,
+          4.24,
+          4.838
+        ],
+        "head_size": {
+          "half_width": 2.9,
+          "thickness_along_facing": 0.72,
+          "half_height": 2.35,
+          "bill_protrusion": 0.4
+        },
+        "head_axis": "+Y (Roblox -Z)",
+        "fit_factors": {
+          "x": [
+            1.0,
+            1.0
+          ],
+          "y": [
+            1.0111,
+            1.0106
+          ],
+          "z": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "lod1_fit_factors": {
+        "x": [
+          1.0,
+          1.0
+        ],
+        "y": [
+          1.0,
+          1.0604
+        ],
+        "z": [
+          1.0,
+          1.0
+        ]
+      },
+      "exports": [
+        "assets/import/models/pool_duck_summer.glb",
+        "assets/import/models/pool_duck_summer_lod1.glb",
+        "assets/import/models/pool_duck_summer.fbx"
+      ]
+    },
+    "pool_duck_gentleman": {
+      "duck_form": "medium",
+      "accessories": [
+        "moustache_handlebar",
+        "top_hat",
+        "bowtie_black",
+        "monocle"
+      ],
+      "skin": "yellow",
+      "lod0_object": "pool_duck_gentleman_LOD0",
+      "lod1_object": "pool_duck_gentleman_LOD1",
+      "lod0_tris": 2876,
+      "lod1_tris": 528,
+      "lod0_dims_wdh": [
+        12.0,
+        10.0,
+        9.0
+      ],
+      "lod1_dims_wdh": [
+        12.0,
+        10.0,
+        9.0
+      ],
+      "materials": [
+        "M_duck_atlas"
+      ],
+      "head": {
+        "head_center": [
+          0.0,
+          4.24,
+          4.1144
+        ],
+        "head_size": {
+          "half_width": 2.9,
+          "thickness_along_facing": 0.72,
+          "half_height": 2.35,
+          "bill_protrusion": 0.4
+        },
+        "head_axis": "+Y (Roblox -Z)",
+        "fit_factors": {
+          "x": [
+            1.0,
+            1.0
+          ],
+          "y": [
+            1.0111,
+            1.0081
+          ],
+          "z": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "lod1_fit_factors": {
+        "x": [
+          1.0,
+          1.0
+        ],
+        "y": [
+          1.0,
+          1.0081
+        ],
+        "z": [
+          1.0,
+          1.0
+        ]
+      },
+      "exports": [
+        "assets/import/models/pool_duck_gentleman.glb",
+        "assets/import/models/pool_duck_gentleman_lod1.glb",
+        "assets/import/models/pool_duck_gentleman.fbx"
+      ]
+    },
+    "pool_duck_sailor": {
+      "duck_form": "medium",
+      "accessories": [
+        "sailor_bob",
+        "sailor_scarf"
+      ],
+      "skin": "mariniere",
+      "lod0_object": "pool_duck_sailor_LOD0",
+      "lod1_object": "pool_duck_sailor_LOD1",
+      "lod0_tris": 2296,
+      "lod1_tris": 478,
+      "lod0_dims_wdh": [
+        12.0,
+        10.0,
+        9.0
+      ],
+      "lod1_dims_wdh": [
+        12.0,
+        10.0,
+        9.0
+      ],
+      "materials": [
+        "M_duck_atlas"
+      ],
+      "head": {
+        "head_center": [
+          0.0,
+          4.24,
+          5.248
+        ],
+        "head_size": {
+          "half_width": 2.9,
+          "thickness_along_facing": 0.72,
+          "half_height": 2.35,
+          "bill_protrusion": 0.4
+        },
+        "head_axis": "+Y (Roblox -Z)",
+        "fit_factors": {
+          "x": [
+            1.0,
+            1.0
+          ],
+          "y": [
+            1.0111,
+            1.0106
+          ],
+          "z": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "lod1_fit_factors": {
+        "x": [
+          1.0,
+          1.0
+        ],
+        "y": [
+          1.0,
+          1.0604
+        ],
+        "z": [
+          1.0,
+          1.0
+        ]
+      },
+      "exports": [
+        "assets/import/models/pool_duck_sailor.glb",
+        "assets/import/models/pool_duck_sailor_lod1.glb",
+        "assets/import/models/pool_duck_sailor.fbx"
+      ]
+    },
+    "pool_duck_snorkel": {
+      "duck_form": "medium",
+      "accessories": [
+        "diving_mask",
+        "snorkel",
+        "swimsuit_band"
+      ],
+      "skin": "yellow",
+      "lod0_object": "pool_duck_snorkel_LOD0",
+      "lod1_object": "pool_duck_snorkel_LOD1",
+      "lod0_tris": 2930,
+      "lod1_tris": 660,
+      "lod0_dims_wdh": [
+        12.0,
+        10.0,
+        9.0
+      ],
+      "lod1_dims_wdh": [
+        12.0,
+        10.0,
+        9.0
+      ],
+      "materials": [
+        "M_duck_atlas"
+      ],
+      "head": {
+        "head_center": [
+          0.0,
+          4.24,
+          4.9975
+        ],
+        "head_size": {
+          "half_width": 2.9,
+          "thickness_along_facing": 0.72,
+          "half_height": 2.35,
+          "bill_protrusion": 0.4
+        },
+        "head_axis": "+Y (Roblox -Z)",
+        "fit_factors": {
+          "x": [
+            1.0,
+            1.0
+          ],
+          "y": [
+            1.0111,
+            0.9964
+          ],
+          "z": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "lod1_fit_factors": {
+        "x": [
+          1.0,
+          1.0
+        ],
+        "y": [
+          1.0,
+          1.0159
+        ],
+        "z": [
+          1.0,
+          1.0
+        ]
+      },
+      "exports": [
+        "assets/import/models/pool_duck_snorkel.glb",
+        "assets/import/models/pool_duck_snorkel_lod1.glb",
+        "assets/import/models/pool_duck_snorkel.fbx"
+      ]
+    },
+    "pool_duck_royal": {
+      "duck_form": "medium",
+      "accessories": [
+        "crown",
+        "cape"
+      ],
+      "skin": "yellow",
+      "lod0_object": "pool_duck_royal_LOD0",
+      "lod1_object": "pool_duck_royal_LOD1",
+      "lod0_tris": 2996,
+      "lod1_tris": 630,
+      "lod0_dims_wdh": [
+        12.0,
+        10.0,
+        9.0
+      ],
+      "lod1_dims_wdh": [
+        12.0,
+        10.0,
+        9.0
+      ],
+      "materials": [
+        "M_duck_atlas"
+      ],
+      "head": {
+        "head_center": [
+          0.0,
+          4.24,
+          3.3746
+        ],
+        "head_size": {
+          "half_width": 2.9,
+          "thickness_along_facing": 0.72,
+          "half_height": 2.35,
+          "bill_protrusion": 0.4
+        },
+        "head_axis": "+Y (Roblox -Z)",
+        "fit_factors": {
+          "x": [
+            1.0,
+            1.0
+          ],
+          "y": [
+            1.0111,
+            1.0106
+          ],
+          "z": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "lod1_fit_factors": {
+        "x": [
+          1.0,
+          1.0
+        ],
+        "y": [
+          1.0,
+          1.0604
+        ],
+        "z": [
+          1.0,
+          1.0
+        ]
+      },
+      "exports": [
+        "assets/import/models/pool_duck_royal.glb",
+        "assets/import/models/pool_duck_royal_lod1.glb",
+        "assets/import/models/pool_duck_royal.fbx"
+      ]
+    },
+    "pool_duck_lilo_classic": {
+      "duck_form": "lilo",
+      "accessories": [],
+      "skin": "yellow",
+      "lod0_object": "pool_duck_lilo_classic_LOD0",
+      "lod1_object": "pool_duck_lilo_classic_LOD1",
+      "lod0_tris": 1754,
+      "lod1_tris": 252,
+      "lod0_dims_wdh": [
+        16.0,
+        8.0,
+        5.0
+      ],
+      "lod1_dims_wdh": [
+        16.0,
+        8.0,
+        5.0
+      ],
+      "materials": [
+        "M_duck_atlas"
+      ],
+      "head": {
+        "head_center": [
+          7.24,
+          0.0,
+          3.28
+        ],
+        "head_size": {
+          "half_width": 2.4,
+          "thickness_along_facing": 0.72,
+          "half_height": 1.72,
+          "bill_protrusion": 0.4
+        },
+        "head_axis": "+X",
+        "fit_factors": {
+          "x": [
+            1.0111,
+            1.0
+          ],
+          "y": [
+            1.0,
+            1.0
+          ],
+          "z": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "lod1_fit_factors": {
+        "x": [
+          1.0,
+          1.0
+        ],
+        "y": [
+          1.0,
+          1.0
+        ],
+        "z": [
+          1.0,
+          1.0
+        ]
+      },
+      "exports": [
+        "assets/import/models/pool_duck_lilo_classic.glb",
+        "assets/import/models/pool_duck_lilo_classic_lod1.glb",
+        "assets/import/models/pool_duck_lilo_classic.fbx"
+      ]
+    },
+    "pool_duck_lilo_hawaii": {
+      "duck_form": "lilo",
+      "accessories": [
+        "glasses_heart",
+        "lei"
+      ],
+      "skin": "hawaii",
+      "lod0_object": "pool_duck_lilo_hawaii_LOD0",
+      "lod1_object": "pool_duck_lilo_hawaii_LOD1",
+      "lod0_tris": 2498,
+      "lod1_tris": 492,
+      "lod0_dims_wdh": [
+        16.0,
+        8.0,
+        5.0
+      ],
+      "lod1_dims_wdh": [
+        16.0,
+        8.0,
+        5.0
+      ],
+      "materials": [
+        "M_duck_atlas"
+      ],
+      "head": {
+        "head_center": [
+          7.24,
+          0.0,
+          3.28
+        ],
+        "head_size": {
+          "half_width": 2.4,
+          "thickness_along_facing": 0.72,
+          "half_height": 1.72,
+          "bill_protrusion": 0.4
+        },
+        "head_axis": "+X",
+        "fit_factors": {
+          "x": [
+            1.0111,
+            1.0
+          ],
+          "y": [
+            1.0,
+            1.0
+          ],
+          "z": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "lod1_fit_factors": {
+        "x": [
+          1.0,
+          1.0
+        ],
+        "y": [
+          1.0,
+          1.0
+        ],
+        "z": [
+          1.0,
+          1.0
+        ]
+      },
+      "exports": [
+        "assets/import/models/pool_duck_lilo_hawaii.glb",
+        "assets/import/models/pool_duck_lilo_hawaii_lod1.glb",
+        "assets/import/models/pool_duck_lilo_hawaii.fbx"
+      ]
+    },
+    "pool_duck_ring_pirate": {
+      "duck_form": "large_ring",
+      "accessories": [
+        "tricorn",
+        "eye_patch",
+        "moustache_pirate",
+        "skull_decal"
+      ],
+      "skin": "yellow",
+      "lod0_object": "pool_duck_ring_pirate_LOD0",
+      "lod1_object": "pool_duck_ring_pirate_LOD1",
+      "lod0_tris": 2962,
+      "lod1_tris": 544,
+      "lod0_dims_wdh": [
+        15.0,
+        14.0,
+        11.0
+      ],
+      "lod1_dims_wdh": [
+        15.0,
+        14.0,
+        11.0
+      ],
+      "materials": [
+        "M_duck_atlas"
+      ],
+      "head": {
+        "head_center": [
+          0.0,
+          6.24,
+          5.941
+        ],
+        "head_size": {
+          "half_width": 3.0,
+          "thickness_along_facing": 0.72,
+          "half_height": 2.45,
+          "bill_protrusion": 0.4
+        },
+        "head_axis": "+Y (Roblox -Z)",
+        "fit_factors": {
+          "x": [
+            1.0,
+            1.0
+          ],
+          "y": [
+            1.0111,
+            1.0081
+          ],
+          "z": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "lod1_fit_factors": {
+        "x": [
+          1.0,
+          1.0
+        ],
+        "y": [
+          1.0,
+          1.0081
+        ],
+        "z": [
+          1.0,
+          1.0
+        ]
+      },
+      "exports": [
+        "assets/import/models/pool_duck_ring_pirate.glb",
+        "assets/import/models/pool_duck_ring_pirate_lod1.glb",
+        "assets/import/models/pool_duck_ring_pirate.fbx"
+      ]
+    },
+    "pool_duck_ring_lifeguard": {
+      "duck_form": "large_ring",
+      "accessories": [
+        "lifeguard_cap",
+        "whistle",
+        "sunscreen",
+        "sauveteur_band"
+      ],
+      "skin": "yellow",
+      "lod0_object": "pool_duck_ring_lifeguard_LOD0",
+      "lod1_object": "pool_duck_ring_lifeguard_LOD1",
+      "lod0_tris": 3180,
+      "lod1_tris": 794,
+      "lod0_dims_wdh": [
+        15.0,
+        14.0,
+        11.0
+      ],
+      "lod1_dims_wdh": [
+        15.0,
+        14.0,
+        11.0
+      ],
+      "materials": [
+        "M_duck_atlas"
+      ],
+      "head": {
+        "head_center": [
+          0.0,
+          6.24,
+          7.6375
+        ],
+        "head_size": {
+          "half_width": 3.0,
+          "thickness_along_facing": 0.72,
+          "half_height": 2.45,
+          "bill_protrusion": 0.4
+        },
+        "head_axis": "+Y (Roblox -Z)",
+        "fit_factors": {
+          "x": [
+            1.0,
+            1.0
+          ],
+          "y": [
+            1.0111,
+            1.0106
+          ],
+          "z": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "lod1_fit_factors": {
+        "x": [
+          1.0,
+          1.0
+        ],
+        "y": [
+          1.0,
+          1.0143
+        ],
+        "z": [
+          1.0,
+          1.0
+        ]
+      },
+      "exports": [
+        "assets/import/models/pool_duck_ring_lifeguard.glb",
+        "assets/import/models/pool_duck_ring_lifeguard_lod1.glb",
+        "assets/import/models/pool_duck_ring_lifeguard.fbx"
+      ]
+    },
+    "pool_duck_ring_tourist": {
+      "duck_form": "large_ring",
+      "accessories": [
+        "bucket_hat",
+        "camera",
+        "glasses_wide",
+        "hawaii_print"
+      ],
+      "skin": "hawaii",
+      "lod0_object": "pool_duck_ring_tourist_LOD0",
+      "lod1_object": "pool_duck_ring_tourist_LOD1",
+      "lod0_tris": 3176,
+      "lod1_tris": 718,
+      "lod0_dims_wdh": [
+        15.0,
+        14.0,
+        11.0
+      ],
+      "lod1_dims_wdh": [
+        15.0,
+        14.0,
+        11.0
+      ],
+      "materials": [
+        "M_duck_atlas"
+      ],
+      "head": {
+        "head_center": [
+          0.0,
+          6.24,
+          7.106
+        ],
+        "head_size": {
+          "half_width": 3.0,
+          "thickness_along_facing": 0.72,
+          "half_height": 2.45,
+          "bill_protrusion": 0.4
+        },
+        "head_axis": "+Y (Roblox -Z)",
+        "fit_factors": {
+          "x": [
+            1.0,
+            1.0
+          ],
+          "y": [
+            1.0111,
+            1.0101
+          ],
+          "z": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "lod1_fit_factors": {
+        "x": [
+          1.0,
+          1.0
+        ],
+        "y": [
+          1.0,
+          1.0101
+        ],
+        "z": [
+          1.0,
+          1.0
+        ]
+      },
+      "exports": [
+        "assets/import/models/pool_duck_ring_tourist.glb",
+        "assets/import/models/pool_duck_ring_tourist_lod1.glb",
+        "assets/import/models/pool_duck_ring_tourist.fbx"
+      ]
+    },
+    "pool_duck_captain": {
+      "duck_form": "giant",
+      "accessories": [
+        "captain_cap",
+        "moustache_walrus",
+        "bubble_pipe",
+        "mariniere"
+      ],
+      "skin": "mariniere",
+      "lod0_object": "pool_duck_captain_LOD0",
+      "lod1_object": "pool_duck_captain_LOD1",
+      "lod0_tris": 4198,
+      "lod1_tris": 636,
+      "lod0_dims_wdh": [
+        24.0,
+        20.0,
+        14.0
+      ],
+      "lod1_dims_wdh": [
+        24.0,
+        20.0,
+        14.0
+      ],
+      "materials": [
+        "M_duck_atlas"
+      ],
+      "head": {
+        "head_center": [
+          0.0,
+          8.69,
+          7.482
+        ],
+        "head_size": {
+          "half_width": 4.8,
+          "thickness_along_facing": 1.62,
+          "half_height": 3.7,
+          "bill_protrusion": 0.5
+        },
+        "head_axis": "+Y (Roblox -Z)",
+        "fit_factors": {
+          "x": [
+            1.0,
+            1.0
+          ],
+          "y": [
+            1.0106,
+            0.9838
+          ],
+          "z": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "lod1_fit_factors": {
+        "x": [
+          1.0,
+          1.0
+        ],
+        "y": [
+          1.0,
+          0.9869
+        ],
+        "z": [
+          1.0,
+          1.0
+        ]
+      },
+      "exports": [
+        "assets/import/models/pool_duck_captain.glb",
+        "assets/import/models/pool_duck_captain_lod1.glb",
+        "assets/import/models/pool_duck_captain.fbx"
+      ]
+    }
+  },
+  "blend": "assets/source/models/ducks/ducks.blend"
+}

@@ -6751,10 +6751,1021 @@
         "assets/import/models/machine_pool_pump_lod1.glb",
         "assets/import/models/machine_pool_pump.fbx"
       ]
+    },
+    {
+      "id": "pool_duck_mini_classic",
+      "name": "Mini canard de bain",
+      "category": "room_prop",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/ducks/ducks.blend",
+      "export_path": "assets/import/models/pool_duck_mini_classic.glb",
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        5,
+        6,
+        6
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Petit canard de bain classique en vinyle jaune brillant, dos plat praticable à 3 studs, tête ronde à l'avant, bec orange, grands yeux marine, queue relevée, soudures et valve. Tête et accessoires dans la bande avant (-Z Roblox) hors du dessus utile ; vinyle jaune #FFD23F, bec #FF9B47, pupilles #203055.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          4,
+          4,
+          3
+        ],
+        "walkable_top": [
+          4,
+          4
+        ],
+        "top_visible": true
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 1500,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/ducks_verify.json#assets.pool_duck_mini_classic",
+        "reports/T03/ducks_verify_log.txt",
+        "assets/source/models/ducks/build_info.json",
+        "assets/source/models/ducks/collision_ducks.json",
+        "reports/T03/renders/pool_duck_mini_classic_3q.png",
+        "reports/T03/renders/pool_duck_mini_classic_silhouette.png",
+        "reports/T03/renders/ducks_sheet.png",
+        "reports/T03/renders/ducks_silhouettes_sheet.png",
+        "reports/T03/renders/ducks_lineup.png",
+        "reports/T03/renders/ducks_accessories_sheet.png"
+      ],
+      "design_reference_paths": [],
+      "additional_exports": [
+        "assets/import/models/pool_duck_mini_classic_lod1.glb",
+        "assets/import/models/pool_duck_mini_classic.fbx"
+      ],
+      "duck_form": "mini",
+      "accessories": [],
+      "accessories_labels_fr": [],
+      "head_end": "-Z",
+      "max_triangles_far": 350
+    },
+    {
+      "id": "pool_duck_mini_sunglasses",
+      "name": "Mini canard lunettes étoiles",
+      "category": "room_prop",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/ducks/ducks.blend",
+      "export_path": "assets/import/models/pool_duck_mini_sunglasses.glb",
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        5,
+        6,
+        6
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Mini canard de bain avec d'énormes lunettes de soleil en forme d'étoiles roses. Tête et accessoires dans la bande avant (-Z Roblox) hors du dessus utile ; vinyle jaune #FFD23F, bec #FF9B47, pupilles #203055.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          4,
+          4,
+          3
+        ],
+        "walkable_top": [
+          4,
+          4
+        ],
+        "top_visible": true
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 1500,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/ducks_verify.json#assets.pool_duck_mini_sunglasses",
+        "reports/T03/ducks_verify_log.txt",
+        "assets/source/models/ducks/build_info.json",
+        "assets/source/models/ducks/collision_ducks.json",
+        "reports/T03/renders/pool_duck_mini_sunglasses_3q.png",
+        "reports/T03/renders/pool_duck_mini_sunglasses_silhouette.png",
+        "reports/T03/renders/ducks_sheet.png",
+        "reports/T03/renders/ducks_silhouettes_sheet.png",
+        "reports/T03/renders/ducks_lineup.png",
+        "reports/T03/renders/ducks_accessories_sheet.png"
+      ],
+      "design_reference_paths": [],
+      "additional_exports": [
+        "assets/import/models/pool_duck_mini_sunglasses_lod1.glb",
+        "assets/import/models/pool_duck_mini_sunglasses.fbx"
+      ],
+      "duck_form": "mini",
+      "accessories": [
+        "glasses_star"
+      ],
+      "accessories_labels_fr": [
+        "lunettes étoile roses"
+      ],
+      "head_end": "-Z",
+      "max_triangles_far": 350
+    },
+    {
+      "id": "pool_duck_mini_swimcap",
+      "name": "Mini canard bonnet de bain",
+      "category": "room_prop",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/ducks/ducks.blend",
+      "export_path": "assets/import/models/pool_duck_mini_swimcap.glb",
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        5,
+        6,
+        6
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Mini canard de bain coiffé d'un bonnet de bain bleu piscine couvert de grosses fleurs en relief. Tête et accessoires dans la bande avant (-Z Roblox) hors du dessus utile ; vinyle jaune #FFD23F, bec #FF9B47, pupilles #203055.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          4,
+          4,
+          3
+        ],
+        "walkable_top": [
+          4,
+          4
+        ],
+        "top_visible": true
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 1500,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/ducks_verify.json#assets.pool_duck_mini_swimcap",
+        "reports/T03/ducks_verify_log.txt",
+        "assets/source/models/ducks/build_info.json",
+        "assets/source/models/ducks/collision_ducks.json",
+        "reports/T03/renders/pool_duck_mini_swimcap_3q.png",
+        "reports/T03/renders/pool_duck_mini_swimcap_silhouette.png",
+        "reports/T03/renders/ducks_sheet.png",
+        "reports/T03/renders/ducks_silhouettes_sheet.png",
+        "reports/T03/renders/ducks_lineup.png",
+        "reports/T03/renders/ducks_accessories_sheet.png"
+      ],
+      "design_reference_paths": [],
+      "additional_exports": [
+        "assets/import/models/pool_duck_mini_swimcap_lod1.glb",
+        "assets/import/models/pool_duck_mini_swimcap.fbx"
+      ],
+      "duck_form": "mini",
+      "accessories": [
+        "swim_cap"
+      ],
+      "accessories_labels_fr": [
+        "bonnet de bain à fleurs"
+      ],
+      "head_end": "-Z",
+      "max_triangles_far": 350
+    },
+    {
+      "id": "pool_duck_mini_bowtie",
+      "name": "Mini canard noeud papillon",
+      "category": "room_prop",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/ducks/ducks.blend",
+      "export_path": "assets/import/models/pool_duck_mini_bowtie.glb",
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        5,
+        6,
+        6
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Mini canard de bain chic : noeud papillon rouge à pois blancs et petite moustache bouclée. Tête et accessoires dans la bande avant (-Z Roblox) hors du dessus utile ; vinyle jaune #FFD23F, bec #FF9B47, pupilles #203055.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          4,
+          4,
+          3
+        ],
+        "walkable_top": [
+          4,
+          4
+        ],
+        "top_visible": true
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 1500,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/ducks_verify.json#assets.pool_duck_mini_bowtie",
+        "reports/T03/ducks_verify_log.txt",
+        "assets/source/models/ducks/build_info.json",
+        "assets/source/models/ducks/collision_ducks.json",
+        "reports/T03/renders/pool_duck_mini_bowtie_3q.png",
+        "reports/T03/renders/pool_duck_mini_bowtie_silhouette.png",
+        "reports/T03/renders/ducks_sheet.png",
+        "reports/T03/renders/ducks_silhouettes_sheet.png",
+        "reports/T03/renders/ducks_lineup.png",
+        "reports/T03/renders/ducks_accessories_sheet.png"
+      ],
+      "design_reference_paths": [],
+      "additional_exports": [
+        "assets/import/models/pool_duck_mini_bowtie_lod1.glb",
+        "assets/import/models/pool_duck_mini_bowtie.fbx"
+      ],
+      "duck_form": "mini",
+      "accessories": [
+        "bowtie_red",
+        "moustache_curl"
+      ],
+      "accessories_labels_fr": [
+        "noeud papillon rouge à pois",
+        "petite moustache bouclée"
+      ],
+      "head_end": "-Z",
+      "max_triangles_far": 350
+    },
+    {
+      "id": "pool_duck_summer",
+      "name": "Canard bouée été",
+      "category": "room_prop",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/ducks/ducks.blend",
+      "export_path": "assets/import/models/pool_duck_summer.glb",
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        12,
+        10,
+        9
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Canard gonflable à chevaucher, selle plate matelassée, avec lunettes rondes corail et grand chapeau de paille à ruban corail. Tête et accessoires dans la bande avant (-Z Roblox) hors du dessus utile ; vinyle jaune #FFD23F, bec #FF9B47, pupilles #203055.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          9,
+          8,
+          4
+        ],
+        "walkable_top": [
+          9,
+          8
+        ],
+        "top_visible": true
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 3200,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/ducks_verify.json#assets.pool_duck_summer",
+        "reports/T03/ducks_verify_log.txt",
+        "assets/source/models/ducks/build_info.json",
+        "assets/source/models/ducks/collision_ducks.json",
+        "reports/T03/renders/pool_duck_summer_3q.png",
+        "reports/T03/renders/pool_duck_summer_silhouette.png",
+        "reports/T03/renders/ducks_sheet.png",
+        "reports/T03/renders/ducks_silhouettes_sheet.png",
+        "reports/T03/renders/ducks_lineup.png",
+        "reports/T03/renders/ducks_accessories_sheet.png"
+      ],
+      "design_reference_paths": [],
+      "additional_exports": [
+        "assets/import/models/pool_duck_summer_lod1.glb",
+        "assets/import/models/pool_duck_summer.fbx"
+      ],
+      "duck_form": "medium",
+      "accessories": [
+        "glasses_round",
+        "straw_hat"
+      ],
+      "accessories_labels_fr": [
+        "lunettes rondes",
+        "chapeau de paille à ruban"
+      ],
+      "head_end": "-Z",
+      "max_triangles_far": 700
+    },
+    {
+      "id": "pool_duck_gentleman",
+      "name": "Canard gentleman",
+      "category": "room_prop",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/ducks/ducks.blend",
+      "export_path": "assets/import/models/pool_duck_gentleman.glb",
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        12,
+        10,
+        9
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Canard gonflable à chevaucher très distingué : moustache en guidon, haut-de-forme noir à ruban rouge, noeud papillon noir et monocle doré à chaînette. Tête et accessoires dans la bande avant (-Z Roblox) hors du dessus utile ; vinyle jaune #FFD23F, bec #FF9B47, pupilles #203055.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          9,
+          8,
+          4
+        ],
+        "walkable_top": [
+          9,
+          8
+        ],
+        "top_visible": true
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 3200,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/ducks_verify.json#assets.pool_duck_gentleman",
+        "reports/T03/ducks_verify_log.txt",
+        "assets/source/models/ducks/build_info.json",
+        "assets/source/models/ducks/collision_ducks.json",
+        "reports/T03/renders/pool_duck_gentleman_3q.png",
+        "reports/T03/renders/pool_duck_gentleman_silhouette.png",
+        "reports/T03/renders/ducks_sheet.png",
+        "reports/T03/renders/ducks_silhouettes_sheet.png",
+        "reports/T03/renders/ducks_lineup.png",
+        "reports/T03/renders/ducks_accessories_sheet.png"
+      ],
+      "design_reference_paths": [],
+      "additional_exports": [
+        "assets/import/models/pool_duck_gentleman_lod1.glb",
+        "assets/import/models/pool_duck_gentleman.fbx"
+      ],
+      "duck_form": "medium",
+      "accessories": [
+        "moustache_handlebar",
+        "top_hat",
+        "bowtie_black",
+        "monocle"
+      ],
+      "accessories_labels_fr": [
+        "moustache en guidon",
+        "haut-de-forme",
+        "noeud papillon noir",
+        "monocle et chaînette"
+      ],
+      "head_end": "-Z",
+      "max_triangles_far": 700
+    },
+    {
+      "id": "pool_duck_sailor",
+      "name": "Canard marin",
+      "category": "room_prop",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/ducks/ducks.blend",
+      "export_path": "assets/import/models/pool_duck_sailor.glb",
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        12,
+        10,
+        9
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Canard gonflable à chevaucher en marinière rayée marine et blanche, bob de marin blanc à badge ancre et foulard marine. Tête et accessoires dans la bande avant (-Z Roblox) hors du dessus utile ; vinyle jaune #FFD23F, bec #FF9B47, pupilles #203055.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          9,
+          8,
+          4
+        ],
+        "walkable_top": [
+          9,
+          8
+        ],
+        "top_visible": true
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 3200,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/ducks_verify.json#assets.pool_duck_sailor",
+        "reports/T03/ducks_verify_log.txt",
+        "assets/source/models/ducks/build_info.json",
+        "assets/source/models/ducks/collision_ducks.json",
+        "reports/T03/renders/pool_duck_sailor_3q.png",
+        "reports/T03/renders/pool_duck_sailor_silhouette.png",
+        "reports/T03/renders/ducks_sheet.png",
+        "reports/T03/renders/ducks_silhouettes_sheet.png",
+        "reports/T03/renders/ducks_lineup.png",
+        "reports/T03/renders/ducks_accessories_sheet.png"
+      ],
+      "design_reference_paths": [],
+      "additional_exports": [
+        "assets/import/models/pool_duck_sailor_lod1.glb",
+        "assets/import/models/pool_duck_sailor.fbx"
+      ],
+      "duck_form": "medium",
+      "accessories": [
+        "sailor_bob",
+        "sailor_scarf"
+      ],
+      "accessories_labels_fr": [
+        "bob de marin, badge ancre",
+        "foulard de marin"
+      ],
+      "head_end": "-Z",
+      "max_triangles_far": 700
+    },
+    {
+      "id": "pool_duck_snorkel",
+      "name": "Canard plongeur",
+      "category": "room_prop",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/ducks/ducks.blend",
+      "export_path": "assets/import/models/pool_duck_snorkel.glb",
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        12,
+        10,
+        9
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Canard gonflable à chevaucher équipé d'un masque de plongée bleu, d'un tuba corail et d'un maillot rétro rayé rouge et blanc autour du corps. Tête et accessoires dans la bande avant (-Z Roblox) hors du dessus utile ; vinyle jaune #FFD23F, bec #FF9B47, pupilles #203055.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          9,
+          8,
+          4
+        ],
+        "walkable_top": [
+          9,
+          8
+        ],
+        "top_visible": true
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 3200,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/ducks_verify.json#assets.pool_duck_snorkel",
+        "reports/T03/ducks_verify_log.txt",
+        "assets/source/models/ducks/build_info.json",
+        "assets/source/models/ducks/collision_ducks.json",
+        "reports/T03/renders/pool_duck_snorkel_3q.png",
+        "reports/T03/renders/pool_duck_snorkel_silhouette.png",
+        "reports/T03/renders/ducks_sheet.png",
+        "reports/T03/renders/ducks_silhouettes_sheet.png",
+        "reports/T03/renders/ducks_lineup.png",
+        "reports/T03/renders/ducks_accessories_sheet.png"
+      ],
+      "design_reference_paths": [],
+      "additional_exports": [
+        "assets/import/models/pool_duck_snorkel_lod1.glb",
+        "assets/import/models/pool_duck_snorkel.fbx"
+      ],
+      "duck_form": "medium",
+      "accessories": [
+        "diving_mask",
+        "snorkel",
+        "swimsuit_band"
+      ],
+      "accessories_labels_fr": [
+        "masque de plongée",
+        "tuba",
+        "maillot rétro rayé"
+      ],
+      "head_end": "-Z",
+      "max_triangles_far": 700
+    },
+    {
+      "id": "pool_duck_royal",
+      "name": "Canard royal",
+      "category": "room_prop",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/ducks/ducks.blend",
+      "export_path": "assets/import/models/pool_duck_royal.glb",
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        12,
+        10,
+        9
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Canard gonflable à chevaucher couronné d'or, cape de velours rouge bordée d'hermine qui retombe sur l'arrière et les côtés sans dépasser le dessus utile. Tête et accessoires dans la bande avant (-Z Roblox) hors du dessus utile ; vinyle jaune #FFD23F, bec #FF9B47, pupilles #203055.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          9,
+          8,
+          4
+        ],
+        "walkable_top": [
+          9,
+          8
+        ],
+        "top_visible": true
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 3200,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/ducks_verify.json#assets.pool_duck_royal",
+        "reports/T03/ducks_verify_log.txt",
+        "assets/source/models/ducks/build_info.json",
+        "assets/source/models/ducks/collision_ducks.json",
+        "reports/T03/renders/pool_duck_royal_3q.png",
+        "reports/T03/renders/pool_duck_royal_silhouette.png",
+        "reports/T03/renders/ducks_sheet.png",
+        "reports/T03/renders/ducks_silhouettes_sheet.png",
+        "reports/T03/renders/ducks_lineup.png",
+        "reports/T03/renders/ducks_accessories_sheet.png"
+      ],
+      "design_reference_paths": [],
+      "additional_exports": [
+        "assets/import/models/pool_duck_royal_lod1.glb",
+        "assets/import/models/pool_duck_royal.fbx"
+      ],
+      "duck_form": "medium",
+      "accessories": [
+        "crown",
+        "cape"
+      ],
+      "accessories_labels_fr": [
+        "couronne dorée",
+        "cape royale rouge"
+      ],
+      "head_end": "-Z",
+      "max_triangles_far": 700
+    },
+    {
+      "id": "pool_duck_lilo_classic",
+      "name": "Matelas canard",
+      "category": "room_prop",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/ducks/ducks.blend",
+      "export_path": "assets/import/models/pool_duck_lilo_classic.glb",
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        16,
+        8,
+        5
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Long matelas pneumatique jaune à cinq boudins, oreiller et tête de canard à un bout, queue à l'autre bout ; creux entre boudins de moins de 0,25 stud. La tête est au bout +X du matelas (bande de 1 stud) car la bande avant -Z ne fait que 0,5 stud ; vinyle jaune #FFD23F, bec #FF9B47, pupilles #203055.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          14,
+          7,
+          2
+        ],
+        "walkable_top": [
+          14,
+          7
+        ],
+        "top_visible": true
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 2600,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/ducks_verify.json#assets.pool_duck_lilo_classic",
+        "reports/T03/ducks_verify_log.txt",
+        "assets/source/models/ducks/build_info.json",
+        "assets/source/models/ducks/collision_ducks.json",
+        "reports/T03/renders/pool_duck_lilo_classic_3q.png",
+        "reports/T03/renders/pool_duck_lilo_classic_silhouette.png",
+        "reports/T03/renders/ducks_sheet.png",
+        "reports/T03/renders/ducks_silhouettes_sheet.png",
+        "reports/T03/renders/ducks_lineup.png",
+        "reports/T03/renders/ducks_accessories_sheet.png"
+      ],
+      "design_reference_paths": [],
+      "additional_exports": [
+        "assets/import/models/pool_duck_lilo_classic_lod1.glb",
+        "assets/import/models/pool_duck_lilo_classic.fbx"
+      ],
+      "duck_form": "lilo",
+      "accessories": [],
+      "accessories_labels_fr": [],
+      "head_end": "+X",
+      "max_triangles_far": 600
+    },
+    {
+      "id": "pool_duck_lilo_hawaii",
+      "name": "Matelas canard hawaïen",
+      "category": "room_prop",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/ducks/ducks.blend",
+      "export_path": "assets/import/models/pool_duck_lilo_hawaii.glb",
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        16,
+        8,
+        5
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Matelas canard aux boudins imprimés chemise hawaïenne (hibiscus sur bleu piscine), lunettes coeur menthe et collier de fleurs. La tête est au bout +X du matelas (bande de 1 stud) car la bande avant -Z ne fait que 0,5 stud ; vinyle jaune #FFD23F, bec #FF9B47, pupilles #203055.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          14,
+          7,
+          2
+        ],
+        "walkable_top": [
+          14,
+          7
+        ],
+        "top_visible": true
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 2600,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/ducks_verify.json#assets.pool_duck_lilo_hawaii",
+        "reports/T03/ducks_verify_log.txt",
+        "assets/source/models/ducks/build_info.json",
+        "assets/source/models/ducks/collision_ducks.json",
+        "reports/T03/renders/pool_duck_lilo_hawaii_3q.png",
+        "reports/T03/renders/pool_duck_lilo_hawaii_silhouette.png",
+        "reports/T03/renders/ducks_sheet.png",
+        "reports/T03/renders/ducks_silhouettes_sheet.png",
+        "reports/T03/renders/ducks_lineup.png",
+        "reports/T03/renders/ducks_accessories_sheet.png"
+      ],
+      "design_reference_paths": [],
+      "additional_exports": [
+        "assets/import/models/pool_duck_lilo_hawaii_lod1.glb",
+        "assets/import/models/pool_duck_lilo_hawaii.fbx"
+      ],
+      "duck_form": "lilo",
+      "accessories": [
+        "glasses_heart",
+        "lei"
+      ],
+      "accessories_labels_fr": [
+        "lunettes coeur",
+        "collier de fleurs"
+      ],
+      "head_end": "+X",
+      "max_triangles_far": 600
+    },
+    {
+      "id": "pool_duck_ring_pirate",
+      "name": "Bouée canard pirate",
+      "category": "room_prop",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/ducks/ducks.blend",
+      "export_path": "assets/import/models/pool_duck_ring_pirate.glb",
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        15,
+        14,
+        11
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Grande bouée canard carrée à filet trampoline : tricorne noir galonné d'or, cache-oeil, moustache bouclée et décalque tête de mort sur le flanc. Tête et accessoires dans la bande avant (-Z Roblox) hors du dessus utile ; vinyle jaune #FFD23F, bec #FF9B47, pupilles #203055.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          12,
+          12,
+          5
+        ],
+        "walkable_top": [
+          12,
+          12
+        ],
+        "top_visible": true
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 4500,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/ducks_verify.json#assets.pool_duck_ring_pirate",
+        "reports/T03/ducks_verify_log.txt",
+        "assets/source/models/ducks/build_info.json",
+        "assets/source/models/ducks/collision_ducks.json",
+        "reports/T03/renders/pool_duck_ring_pirate_3q.png",
+        "reports/T03/renders/pool_duck_ring_pirate_silhouette.png",
+        "reports/T03/renders/ducks_sheet.png",
+        "reports/T03/renders/ducks_silhouettes_sheet.png",
+        "reports/T03/renders/ducks_lineup.png",
+        "reports/T03/renders/ducks_accessories_sheet.png"
+      ],
+      "design_reference_paths": [],
+      "additional_exports": [
+        "assets/import/models/pool_duck_ring_pirate_lod1.glb",
+        "assets/import/models/pool_duck_ring_pirate.fbx"
+      ],
+      "duck_form": "large_ring",
+      "accessories": [
+        "tricorn",
+        "eye_patch",
+        "moustache_pirate",
+        "skull_decal"
+      ],
+      "accessories_labels_fr": [
+        "tricorne de pirate",
+        "cache-oeil",
+        "moustache de pirate",
+        "décalque tête de mort"
+      ],
+      "head_end": "-Z",
+      "max_triangles_far": 900
+    },
+    {
+      "id": "pool_duck_ring_lifeguard",
+      "name": "Bouée canard sauveteur",
+      "category": "room_prop",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/ducks/ducks.blend",
+      "export_path": "assets/import/models/pool_duck_ring_lifeguard.glb",
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        15,
+        14,
+        11
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Grande bouée canard sauveteur : casquette rouge, sifflet sur cordon, trait de crème solaire blanche sur le bec et bande rouge SAUVETEUR autour de la bouée. Tête et accessoires dans la bande avant (-Z Roblox) hors du dessus utile ; vinyle jaune #FFD23F, bec #FF9B47, pupilles #203055.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          12,
+          12,
+          5
+        ],
+        "walkable_top": [
+          12,
+          12
+        ],
+        "top_visible": true
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 4500,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/ducks_verify.json#assets.pool_duck_ring_lifeguard",
+        "reports/T03/ducks_verify_log.txt",
+        "assets/source/models/ducks/build_info.json",
+        "assets/source/models/ducks/collision_ducks.json",
+        "reports/T03/renders/pool_duck_ring_lifeguard_3q.png",
+        "reports/T03/renders/pool_duck_ring_lifeguard_silhouette.png",
+        "reports/T03/renders/ducks_sheet.png",
+        "reports/T03/renders/ducks_silhouettes_sheet.png",
+        "reports/T03/renders/ducks_lineup.png",
+        "reports/T03/renders/ducks_accessories_sheet.png"
+      ],
+      "design_reference_paths": [],
+      "additional_exports": [
+        "assets/import/models/pool_duck_ring_lifeguard_lod1.glb",
+        "assets/import/models/pool_duck_ring_lifeguard.fbx"
+      ],
+      "duck_form": "large_ring",
+      "accessories": [
+        "lifeguard_cap",
+        "whistle",
+        "sunscreen",
+        "sauveteur_band"
+      ],
+      "accessories_labels_fr": [
+        "casquette rouge de sauveteur",
+        "sifflet sur cordon",
+        "trait de crème solaire",
+        "bande SAUVETEUR"
+      ],
+      "head_end": "-Z",
+      "max_triangles_far": 900
+    },
+    {
+      "id": "pool_duck_ring_tourist",
+      "name": "Bouée canard touriste",
+      "category": "room_prop",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/ducks/ducks.blend",
+      "export_path": "assets/import/models/pool_duck_ring_tourist.glb",
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        15,
+        14,
+        11
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Grande bouée canard touriste : flancs en chemise hawaïenne, bob beige à fleur, lunettes noires et appareil photo en bandoulière. Tête et accessoires dans la bande avant (-Z Roblox) hors du dessus utile ; vinyle jaune #FFD23F, bec #FF9B47, pupilles #203055.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          12,
+          12,
+          5
+        ],
+        "walkable_top": [
+          12,
+          12
+        ],
+        "top_visible": true
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 4500,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/ducks_verify.json#assets.pool_duck_ring_tourist",
+        "reports/T03/ducks_verify_log.txt",
+        "assets/source/models/ducks/build_info.json",
+        "assets/source/models/ducks/collision_ducks.json",
+        "reports/T03/renders/pool_duck_ring_tourist_3q.png",
+        "reports/T03/renders/pool_duck_ring_tourist_silhouette.png",
+        "reports/T03/renders/ducks_sheet.png",
+        "reports/T03/renders/ducks_silhouettes_sheet.png",
+        "reports/T03/renders/ducks_lineup.png",
+        "reports/T03/renders/ducks_accessories_sheet.png"
+      ],
+      "design_reference_paths": [],
+      "additional_exports": [
+        "assets/import/models/pool_duck_ring_tourist_lod1.glb",
+        "assets/import/models/pool_duck_ring_tourist.fbx"
+      ],
+      "duck_form": "large_ring",
+      "accessories": [
+        "bucket_hat",
+        "camera",
+        "glasses_wide",
+        "hawaii_print"
+      ],
+      "accessories_labels_fr": [
+        "bob de touriste",
+        "appareil photo en bandoulière",
+        "lunettes de touriste",
+        "imprimé chemise hawaïenne (peau du corps)"
+      ],
+      "head_end": "-Z",
+      "max_triangles_far": 900
+    },
+    {
+      "id": "pool_duck_captain",
+      "name": "Capitaine Coin-Coin",
+      "category": "room_prop",
+      "release_stage": "MVP",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/ducks/ducks.blend",
+      "export_path": "assets/import/models/pool_duck_captain.glb",
+      "dimensions_order": "width_depth_height",
+      "size_studs": [
+        24,
+        20,
+        14
+      ],
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_brief": "Île canard géante « Capitaine Coin-Coin » : casquette de capitaine à ancre dorée, grosse moustache blanche, marinière rayée marine, pipe à bulles de savon (jouet) et bulles irisées ; pont matelassé imprimé d'une barre de navire. Tête et accessoires dans la bande avant (-Z Roblox) hors du dessus utile ; vinyle jaune #FFD23F, bec #FF9B47, pupilles #203055.",
+      "collision": {
+        "shape": "box",
+        "size_studs": [
+          18,
+          16,
+          8
+        ],
+        "walkable_top": [
+          18,
+          16
+        ],
+        "top_visible": true
+      },
+      "deformation_profile": null,
+      "production_method": "blender_mesh_and_optional_rig",
+      "requires_external_import": true,
+      "max_triangles_near": 7000,
+      "max_materials": 1,
+      "image_export_pixels": null,
+      "provenance": "generated from code in Blender, no third-party assets",
+      "validation_evidence": [
+        "reports/T03/ducks_verify.json#assets.pool_duck_captain",
+        "reports/T03/ducks_verify_log.txt",
+        "assets/source/models/ducks/build_info.json",
+        "assets/source/models/ducks/collision_ducks.json",
+        "reports/T03/renders/pool_duck_captain_3q.png",
+        "reports/T03/renders/pool_duck_captain_silhouette.png",
+        "reports/T03/renders/ducks_sheet.png",
+        "reports/T03/renders/ducks_silhouettes_sheet.png",
+        "reports/T03/renders/ducks_lineup.png",
+        "reports/T03/renders/ducks_accessories_sheet.png"
+      ],
+      "design_reference_paths": [],
+      "additional_exports": [
+        "assets/import/models/pool_duck_captain_lod1.glb",
+        "assets/import/models/pool_duck_captain.fbx"
+      ],
+      "duck_form": "giant",
+      "accessories": [
+        "captain_cap",
+        "moustache_walrus",
+        "bubble_pipe",
+        "mariniere"
+      ],
+      "accessories_labels_fr": [
+        "casquette de capitaine, ancre dorée",
+        "grosse moustache blanche",
+        "pipe à bulles de savon",
+        "marinière (peau du corps)"
+      ],
+      "head_end": "-Z",
+      "max_triangles_far": 1200
     }
   ],
   "status_counts": {
-    "modeled": 40,
+    "modeled": 55,
     "planned": 138,
     "designed": 13
   }
