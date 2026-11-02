@@ -1523,6 +1523,505 @@
           },
           "visual": "Matelas pneumatique à boudins rayés jaune et bleu, bosse d'oreiller, valve ; se dégonfle trois secondes après le contact (variante dégonflée modélisée).",
           "stage": 7
+        },
+        {
+          "id": "pool_duck_mini_classic",
+          "name": "Mini canard",
+          "size_studs": [
+            5,
+            6,
+            6
+          ],
+          "behavior": "stable",
+          "deformation_profile": null,
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              4,
+              4,
+              3
+            ],
+            "walkable_top": [
+              4,
+              4
+            ],
+            "top_visible": true
+          },
+          "visual": "Petit canard de bain gonflable classique, dos plat.",
+          "stage": 1,
+          "duck_form": "mini",
+          "accessories": []
+        },
+        {
+          "id": "pool_duck_mini_sunglasses",
+          "name": "Mini canard star",
+          "size_studs": [
+            5,
+            6,
+            6
+          ],
+          "behavior": "stable",
+          "deformation_profile": null,
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              4,
+              4,
+              3
+            ],
+            "walkable_top": [
+              4,
+              4
+            ],
+            "top_visible": true
+          },
+          "visual": "Mini canard avec de grosses lunettes de soleil roses en étoile.",
+          "stage": 1,
+          "duck_form": "mini",
+          "accessories": [
+            "lunettes_etoile"
+          ]
+        },
+        {
+          "id": "pool_duck_mini_swimcap",
+          "name": "Mini canard nageur",
+          "size_studs": [
+            5,
+            6,
+            6
+          ],
+          "behavior": "stable",
+          "deformation_profile": null,
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              4,
+              4,
+              3
+            ],
+            "walkable_top": [
+              4,
+              4
+            ],
+            "top_visible": true
+          },
+          "visual": "Mini canard en bonnet de bain à fleurs.",
+          "stage": 1,
+          "duck_form": "mini",
+          "accessories": [
+            "bonnet_bain_fleurs"
+          ]
+        },
+        {
+          "id": "pool_duck_mini_bowtie",
+          "name": "Mini canard chic",
+          "size_studs": [
+            5,
+            6,
+            6
+          ],
+          "behavior": "stable",
+          "deformation_profile": null,
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              4,
+              4,
+              3
+            ],
+            "walkable_top": [
+              4,
+              4
+            ],
+            "top_visible": true
+          },
+          "visual": "Mini canard en nœud papillon rouge et petite moustache frisée.",
+          "stage": 2,
+          "duck_form": "mini",
+          "accessories": [
+            "noeud_papillon",
+            "moustache_frisee"
+          ]
+        },
+        {
+          "id": "pool_duck_summer",
+          "name": "Canard vacances",
+          "size_studs": [
+            12,
+            10,
+            9
+          ],
+          "behavior": "stable",
+          "deformation_profile": null,
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              9,
+              8,
+              4
+            ],
+            "walkable_top": [
+              9,
+              8
+            ],
+            "top_visible": true
+          },
+          "visual": "Canard à chevaucher avec lunettes rondes et grand chapeau de paille à ruban.",
+          "stage": 1,
+          "duck_form": "medium",
+          "accessories": [
+            "lunettes_rondes",
+            "chapeau_paille"
+          ]
+        },
+        {
+          "id": "pool_duck_gentleman",
+          "name": "Canard gentleman",
+          "size_studs": [
+            12,
+            10,
+            9
+          ],
+          "behavior": "stable",
+          "deformation_profile": null,
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              9,
+              8,
+              4
+            ],
+            "walkable_top": [
+              9,
+              8
+            ],
+            "top_visible": true
+          },
+          "visual": "Canard à chevaucher avec grosse moustache en guidon, haut-de-forme, nœud papillon et monocle.",
+          "stage": 2,
+          "duck_form": "medium",
+          "accessories": [
+            "moustache_guidon",
+            "haut_de_forme",
+            "noeud_papillon",
+            "monocle"
+          ]
+        },
+        {
+          "id": "pool_duck_sailor",
+          "name": "Canard matelot",
+          "size_studs": [
+            12,
+            10,
+            9
+          ],
+          "behavior": "stable",
+          "deformation_profile": null,
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              9,
+              8,
+              4
+            ],
+            "walkable_top": [
+              9,
+              8
+            ],
+            "top_visible": true
+          },
+          "visual": "Canard à chevaucher en marinière marine et blanche, bob de marin à ancre.",
+          "stage": 2,
+          "duck_form": "medium",
+          "accessories": [
+            "mariniere",
+            "bob_ancre"
+          ]
+        },
+        {
+          "id": "pool_duck_snorkel",
+          "name": "Canard plongeur",
+          "size_studs": [
+            12,
+            10,
+            9
+          ],
+          "behavior": "stable",
+          "deformation_profile": null,
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              9,
+              8,
+              4
+            ],
+            "walkable_top": [
+              9,
+              8
+            ],
+            "top_visible": true
+          },
+          "visual": "Canard à chevaucher avec masque et tuba, maillot rétro rayé rouge et blanc.",
+          "stage": 3,
+          "duck_form": "medium",
+          "accessories": [
+            "masque_tuba",
+            "maillot_retro"
+          ]
+        },
+        {
+          "id": "pool_duck_royal",
+          "name": "Canard royal",
+          "size_studs": [
+            12,
+            10,
+            9
+          ],
+          "behavior": "stable",
+          "deformation_profile": null,
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              9,
+              8,
+              4
+            ],
+            "walkable_top": [
+              9,
+              8
+            ],
+            "top_visible": true
+          },
+          "visual": "Canard à chevaucher avec couronne dorée et cape rouge drapée sur l'arrière.",
+          "stage": 3,
+          "duck_form": "medium",
+          "accessories": [
+            "couronne",
+            "cape"
+          ]
+        },
+        {
+          "id": "pool_duck_lilo_classic",
+          "name": "Matelas canard",
+          "size_studs": [
+            16,
+            8,
+            5
+          ],
+          "behavior": "stable",
+          "deformation_profile": null,
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              14,
+              7,
+              2
+            ],
+            "walkable_top": [
+              14,
+              7
+            ],
+            "top_visible": true
+          },
+          "visual": "Long matelas gonflable à boudins jaunes avec tête et queue de canard.",
+          "stage": 3,
+          "duck_form": "lilo",
+          "accessories": []
+        },
+        {
+          "id": "pool_duck_lilo_hawaii",
+          "name": "Matelas canard hawaïen",
+          "size_studs": [
+            16,
+            8,
+            5
+          ],
+          "behavior": "stable",
+          "deformation_profile": null,
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              14,
+              7,
+              2
+            ],
+            "walkable_top": [
+              14,
+              7
+            ],
+            "top_visible": true
+          },
+          "visual": "Matelas canard à imprimé chemise hawaïenne, lunettes et collier de fleurs.",
+          "stage": 3,
+          "duck_form": "lilo",
+          "accessories": [
+            "imprime_hawaien",
+            "lunettes_rondes",
+            "collier_fleurs"
+          ]
+        },
+        {
+          "id": "pool_duck_ring_pirate",
+          "name": "Bouée canard pirate",
+          "size_studs": [
+            15,
+            14,
+            11
+          ],
+          "behavior": "bounce",
+          "behavior_params": {
+            "vertical_impulse_multiplier": 1.1
+          },
+          "deformation_profile": null,
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              12,
+              12,
+              5
+            ],
+            "walkable_top": [
+              12,
+              12
+            ],
+            "top_visible": true
+          },
+          "visual": "Grande bouée canard ronde au filet central : tricorne, cache-œil, moustache frisée, tête de mort rigolote.",
+          "stage": 4,
+          "duck_form": "large_ring",
+          "accessories": [
+            "tricorne",
+            "cache_oeil",
+            "moustache_frisee"
+          ],
+          "formats": [
+            "L",
+            "V",
+            "XL",
+            "XV"
+          ]
+        },
+        {
+          "id": "pool_duck_ring_lifeguard",
+          "name": "Bouée canard sauveteur",
+          "size_studs": [
+            15,
+            14,
+            11
+          ],
+          "behavior": "bounce",
+          "behavior_params": {
+            "vertical_impulse_multiplier": 1.1
+          },
+          "deformation_profile": null,
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              12,
+              12,
+              5
+            ],
+            "walkable_top": [
+              12,
+              12
+            ],
+            "top_visible": true
+          },
+          "visual": "Grande bouée canard : casquette rouge, sifflet, bande de maillot rouge, trait de crème solaire sur le bec.",
+          "stage": 4,
+          "duck_form": "large_ring",
+          "accessories": [
+            "casquette_rouge",
+            "sifflet",
+            "maillot_sauveteur",
+            "creme_solaire"
+          ],
+          "formats": [
+            "L",
+            "V",
+            "XL",
+            "XV"
+          ]
+        },
+        {
+          "id": "pool_duck_ring_tourist",
+          "name": "Bouée canard touriste",
+          "size_studs": [
+            15,
+            14,
+            11
+          ],
+          "behavior": "bounce",
+          "behavior_params": {
+            "vertical_impulse_multiplier": 1.1
+          },
+          "deformation_profile": null,
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              12,
+              12,
+              5
+            ],
+            "walkable_top": [
+              12,
+              12
+            ],
+            "top_visible": true
+          },
+          "visual": "Grande bouée canard : chemise hawaïenne, appareil photo en bandoulière, bob et lunettes.",
+          "stage": 4,
+          "duck_form": "large_ring",
+          "accessories": [
+            "imprime_hawaien",
+            "appareil_photo",
+            "bob",
+            "lunettes_rondes"
+          ],
+          "formats": [
+            "L",
+            "V",
+            "XL",
+            "XV"
+          ]
+        },
+        {
+          "id": "pool_duck_captain",
+          "name": "Capitaine Coin-Coin",
+          "size_studs": [
+            24,
+            20,
+            14
+          ],
+          "behavior": "stable",
+          "deformation_profile": null,
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              18,
+              16,
+              8
+            ],
+            "walkable_top": [
+              18,
+              16
+            ],
+            "top_visible": true
+          },
+          "visual": "Île canard géante : casquette de capitaine à ancre dorée, grosse moustache blanche, marinière, souffleur de bulles. Appui monumental des salles XL/XV, jamais lâché.",
+          "stage": 10,
+          "duck_form": "giant",
+          "accessories": [
+            "casquette_capitaine",
+            "moustache_blanche",
+            "mariniere",
+            "souffleur_bulles"
+          ],
+          "formats": [
+            "XL",
+            "XV"
+          ],
+          "wave_drop": false
         }
       ]
     },
@@ -2899,7 +3398,21 @@
       "toy_plush_grumf",
       "toy_plush_nuage",
       "toy_plush_balto",
-      "toy_plush_ronron"
+      "toy_plush_ronron",
+      "pool_duck_mini_classic",
+      "pool_duck_mini_sunglasses",
+      "pool_duck_mini_swimcap",
+      "pool_duck_mini_bowtie",
+      "pool_duck_summer",
+      "pool_duck_gentleman",
+      "pool_duck_sailor",
+      "pool_duck_snorkel",
+      "pool_duck_royal",
+      "pool_duck_lilo_classic",
+      "pool_duck_lilo_hawaii",
+      "pool_duck_ring_pirate",
+      "pool_duck_ring_lifeguard",
+      "pool_duck_ring_tourist"
     ]
   },
   "tutorial": {

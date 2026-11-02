@@ -102,6 +102,46 @@ describe("Fun intruders", function()
 		end
 	end)
 
+	it("duck line: 5 forms, 15 droppable variants with accessories, the giant captain never falls", function()
+		local forms, droppable = {}, 0
+		for _, p in Plan.FAMILIES.pool.props do
+			if p.duck_form then
+				forms[p.duck_form] = (forms[p.duck_form] or 0) + 1
+				if p.wave_drop ~= false then
+					droppable += 1
+					expect(isIntruder(p.id)).toBe(true)
+				end
+				if
+					p.duck_form ~= "mini" and p.duck_form ~= "lilo"
+					or p.id ~= "pool_duck_mini_classic" and p.id ~= "pool_duck_lilo_classic"
+				then
+					expect(#p.accessories >= 1 or p.id == "pool_duck_mini_classic" or p.id == "pool_duck_lilo_classic").toBe(true)
+				end
+			end
+		end
+		expect(forms.mini).toBe(4)
+		expect(forms.medium).toBe(5)
+		expect(forms.lilo).toBe(2)
+		expect(forms.large_ring).toBe(3)
+		expect(forms.giant).toBe(1)
+		expect(droppable).toBe(14)
+		expect(Plan.PROPS.pool_duck_captain.wave_drop).toBe(false)
+		-- an office XL room at depth 20 can drop ducks of every droppable form
+		local seen = {}
+		local room = Plan.build({ family = "bureau", format = "XL", exit = "window", allowedBehaviors = { "stable" } }, 20, 4)
+		local s = Wave.new(room, Plan.FAMILIES.bureau, 20)
+		for i = 1, 300 do
+			for _, dr in Wave.at(s, i).drops do
+				local p = Plan.PROPS[dr.propId]
+				if p.duck_form then
+					seen[p.duck_form] = true
+				end
+				expect(dr.propId ~= "pool_duck_captain").toBe(true)
+			end
+		end
+		expect(seen.mini and seen.medium and seen.lilo and seen.large_ring).toBe(true)
+	end)
+
 	it("the pool family builds valid rooms in every format with every exit", function()
 		for _, format in Config.Rooms.release_profiles.v1.formats do
 			for _, exit in Plan.FAMILIES.pool.exits do
