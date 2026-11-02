@@ -21,6 +21,7 @@ local SUITES = {
 	burial = { "./unit/BurialLogic.spec" },
 	plush = { "./unit/PlushPose.spec" },
 	continuity = { "./unit/RoomResidency.spec" },
+	dressing = { "./unit/SetDressing.spec" },
 	config = { "./unit/Config.spec" },
 	integration = { "./integration/ServerFlow.spec" },
 }

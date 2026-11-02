@@ -44,6 +44,12 @@
 - **Repli de génération.** 0,9 % des salles V1 utilisent le repli certifié, surtout `kitchen/V/floor_hatch`,
   `kitchen/S/tailgate` et `garage/S/door`. Elles restent valides, mais le générateur est à améliorer.
 - **Outils V1** (8 outils) : visibles mais non achetables, faute d'implémentation.
+- **Très grandes pièces XL/XV** (décision 0017). Plusieurs points restent à mesurer en Studio : la caméra (zoom
+  de 28 studs, pièce jamais vue en entier), la densité perçue du remplissage et le nombre d'instances sur mobile.
+  Le parcours occupe souvent un quart de la pièce ; le reste est rempli par les vagues et par l'habillage.
+- **Habillage** (décision 0018). Ce sont des blocs aux couleurs de la palette de la famille, pas encore des meshes.
+  Chaque meuble porte une `assetKey` qui permettra de le remplacer plus tard. Un meuble haut peut gêner la caméra
+  contre un mur.
 - **Coopération et classements** : hors MVP, non commencés.
 - **Revue humaine des planches (T01) et test d'identification à 8/10** : NOT_RUN.
 

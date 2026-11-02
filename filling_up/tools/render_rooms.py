@@ -1,7 +1,8 @@
 """Review renders of generated rooms (Blender, Cycles CPU). Input: reports/room_previews/rooms.json
 (tools/dump_rooms.luau). Output: reports/room_previews/<idx>_<template>_d<depth>.png + contact sheet.
 
-Legend: navy = structural pedestal / suspended shelf; family colour = stable prop; mint plate = landing
+Legend: set dressing (decision 0018) uses the family palette (furniture, rugs, ceiling lights);
+navy = structural pedestal / suspended shelf; family colour = stable prop; mint plate = landing
 marker / exit ledge; translucent mint box = protected exit clearance 8x8x10; coral plates = wave
 mouths; blue box = spawn sas; orange box = avatar 2x5x1.5 for scale; yellow dots = required route
 (node top centres, hop order); violet balls = optional tokens. These are geometry review images,
@@ -26,6 +27,10 @@ W, H = 960, 720
 
 FAMILY = {"reception": "#16D9FF", "toy": "#FF4CB8", "bureau": "#2ACBC7", "kitchen": "#24BFC4", "garage": "#FF9B47", "bin": "#16D9FF"}
 NAVY, MINT, CORAL, CREAM, VIOLET, BLUE, ORANGE, YELLOW = "#203055", "#39E68B", "#FF684B", "#FFF5DF", "#8855FF", "#4A7BFF", "#FF9B47", "#FFE14D"
+
+
+PALETTES = {f["id"]: f["palette"] for f in json.load(open(os.path.join(ROOT, "config", "rooms.json"), encoding="utf-8"))["families"]}
+ROLE_FIXED = {"soft": "#FFF5DF", "dark": "#203055", "plant": "#3FBF6A", "glass": "#BFE9FF", "glow": "#FFF3C4"}
 
 
 def rgb(hexs: str, a: float = 1.0):
@@ -107,6 +112,13 @@ def render_room(entry: dict, path: str):
             box(s["box"], YELLOW, 0.85)
         else:
             box(s["box"], fam)
+    pal = PALETTES.get(r["familyId"], {})
+    for item in r.get("decor", []) or []:
+        for part in item["parts"]:
+            role = part["role"]
+            hexs = ROLE_FIXED.get(role) or {"structure": pal.get("structure"), "accent": pal.get("accent"),
+                                            "background": pal.get("fond")}.get(role) or "#999999"
+            box(part["box"], hexs, 0.6 if role == "glass" else 1.0, 2.0 if role == "glow" else 0.0)
     for n in r["routeGraph"]["nodes"]:
         if n["kind"] in ("column", "shelf") and not n.get("optional"):
             wl = n["walkable"]
@@ -155,7 +167,8 @@ def main() -> int:
         name = f"{i:02d}_{r['templateId']}_d{entry['depth']}.png"
         render_room(entry, os.path.join(OUT, name))
         written.append({"file": name, "depth": entry["depth"], "template": r["templateId"], "fallback": bool(r.get("fallback")),
-                        "nodes": len(r["routeGraph"]["nodes"]), "size": r["size"]})
+                        "nodes": len(r["routeGraph"]["nodes"]), "size": r["size"],
+                        "decor": sum(1 for it in (r.get("decor") or []) if it["kind"] in ("furniture", "wall"))})
         print("rendered", name, flush=True)
     json.dump({"runSeed": data["runSeed"], "renders": written,
                "note": "Geometry review renders from validated RoomDefinitions; not Roblox screenshots."},

@@ -14,6 +14,7 @@ local Rng = require(script.Parent.Parent.Util.Rng)
 local Jump = require(script.Parent.JumpModel)
 local Difficulty = require(script.Parent.Difficulty)
 local Validator = require(script.Parent.RouteValidator)
+local Dressing = require(script.Parent.SetDressing)
 
 local Rooms = Config.Rooms
 local Rules = Rooms.validation_rules
@@ -819,6 +820,17 @@ function Plan.fallback(spec, depth: number, seed: number): any
 	return nil
 end
 
+-- Set dressing after validation (decision 0018): it cannot change the layout; if the independent
+-- decor check ever refuses it, the room ships undressed with a diagnostic (never a broken room).
+local function dress(room, diags: { string })
+	room.decor = Dressing.dress(room)
+	local ok, errs = Validator.validateDecor(room, Dressing.BLOCK_BUDGET)
+	if not ok then
+		table.insert(diags, "decor_rejected: " .. table.concat(errs, ","))
+		room.decor = {}
+	end
+end
+
 -- Validated room or certified fallback, with diagnostics. Never returns an unvalidated room.
 function Plan.build(spec, depth: number, seed: number): (any, { string })
 	local diags = {}
@@ -828,6 +840,7 @@ function Plan.build(spec, depth: number, seed: number): (any, { string })
 			local ok, report = Validator.validate(room, { gapRatio = room.gapRatio })
 			if ok then
 				room.attempt = attempt
+				dress(room, diags)
 				return room, diags
 			end
 			table.insert(diags, string.format("attempt %d rejected: %s", attempt, table.concat(report.errors, ",")))
@@ -837,6 +850,9 @@ function Plan.build(spec, depth: number, seed: number): (any, { string })
 	end
 	local fb = Plan.fallback(spec, depth, seed)
 	table.insert(diags, "fallback_used")
+	if fb then
+		dress(fb, diags)
+	end
 	return fb, diags
 end
 

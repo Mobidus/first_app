@@ -37,15 +37,15 @@ describe("Generation certification (MVP)", function()
 	it("first ten rooms follow the pedagogical table with MVP substitutions", function()
 		local expected = {
 			{ "reception", "S", "door" },
-			{ "reception", "M", "window" },
+			{ "reception", "XL", "window" },
 			{ "toy", "S", "door" },
-			{ "toy", "M", "roof" },
+			{ "toy", "XL", "roof" },
 			{ "bureau", "S", "door" },
-			{ "reception", "V", "window" },
-			{ "bureau", "M", "window" },
+			{ "reception", "XV", "window" },
+			{ "bureau", "XL", "window" },
 			{ "toy", "S", "window" },
-			{ "bureau", "M", "door" },
-			{ "toy", "V", "window" },
+			{ "bureau", "XL", "door" },
+			{ "toy", "XV", "window" },
 		}
 		for depth, e in expected do
 			local s = Plan.selectSpec(depth, 1, {})

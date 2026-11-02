@@ -293,6 +293,33 @@ function Difficulty.bandForDepth(depth: number)
 	error("no difficulty band for depth " .. depth)
 end
 
+-- Wave volume scaled by floor area (rooms.json wave_area_scaling, decision 0017): very large rooms
+-- keep the same filling pressure per floor area. The physics budget (40 dynamic bodies) is not
+-- raised: excess drops are deferred by the consolidation planner.
+function Difficulty.waveParams(band, familyId: string, formatId: string)
+	local scaling = Config.Rooms.wave_area_scaling
+	local fam
+	for _, f in Config.Rooms.families do
+		if f.id == familyId then
+			fam = f
+		end
+	end
+	local factor = 1
+	if scaling and fam and fam.formats[formatId] and fam.formats[scaling.reference_format] then
+		local a = fam.formats[formatId]
+		local r = fam.formats[scaling.reference_format]
+		factor = math.clamp((a[1] * a[2]) / (r[1] * r[2]), 1, scaling.max_factor)
+	end
+	local maxMouths = if scaling then scaling.max_mouths else band.mouths
+	local mouthsPerWave = math.ceil(factor - 1e-9)
+	return {
+		factor = factor,
+		objectsPerWave = math.floor(band.physical_objects_per_wave * factor + 0.5),
+		mouths = math.min(band.mouths * mouthsPerWave, math.max(maxMouths, band.mouths)),
+		mouthsPerWave = mouthsPerWave,
+	}
+end
+
 -- Bounds that hold for EVERY depth (used by tests and the soak simulation).
 function Difficulty.bounds()
 	local minInterval, maxRatio, maxObjects, minWarning = math.huge, 0, 0, math.huge
@@ -1913,6 +1940,7 @@ local Rng = require(script.Parent.Parent.Util.Rng)
 local Jump = require(script.Parent.JumpModel)
 local Difficulty = require(script.Parent.Difficulty)
 local Validator = require(script.Parent.RouteValidator)
+local Dressing = require(script.Parent.SetDressing)
 
 local Rooms = Config.Rooms
 local Rules = Rooms.validation_rules
@@ -2030,7 +2058,21 @@ function Plan.selectSpec(depth: number, runSeed: number, history: { any }, profi
 	if #filtered == 0 then
 		filtered = combos
 	end
-	local c = rng:pick(filtered)
+	-- weighted pick (release_profiles.format_weights): very large formats come up more often
+	local weights = prof.format_weights or {}
+	local total = 0
+	for _, cc in filtered do
+		total += weights[cc.format] or 1
+	end
+	local roll = rng:nextNumber() * total
+	local c = filtered[#filtered]
+	for _, cc in filtered do
+		roll -= weights[cc.format] or 1
+		if roll <= 0 then
+			c = cc
+			break
+		end
+	end
 	local band = Difficulty.bandForDepth(depth)
 	return {
 		family = c.family,
@@ -2595,7 +2637,8 @@ function Plan.generate(spec, depth: number, seed: number, attempt: number?): any
 			table.insert(protectedNodes, n)
 		end
 	end
-	for _ = 1, band.mouths do
+	local waveParams = Difficulty.waveParams(band, spec.family, spec.format)
+	for _ = 1, waveParams.mouths do
 		local ok = false
 		for _ = 1, 200 do
 			local mx = rng:nextRange(-w / 2 + MOUTH_SIZE / 2 + 1, w / 2 - MOUTH_SIZE / 2 - 1)
@@ -2703,6 +2746,17 @@ function Plan.fallback(spec, depth: number, seed: number): any
 	return nil
 end
 
+-- Set dressing after validation (decision 0018): it cannot change the layout; if the independent
+-- decor check ever refuses it, the room ships undressed with a diagnostic (never a broken room).
+local function dress(room, diags: { string })
+	room.decor = Dressing.dress(room)
+	local ok, errs = Validator.validateDecor(room, Dressing.BLOCK_BUDGET)
+	if not ok then
+		table.insert(diags, "decor_rejected: " .. table.concat(errs, ","))
+		room.decor = {}
+	end
+end
+
 -- Validated room or certified fallback, with diagnostics. Never returns an unvalidated room.
 function Plan.build(spec, depth: number, seed: number): (any, { string })
 	local diags = {}
@@ -2712,6 +2766,7 @@ function Plan.build(spec, depth: number, seed: number): (any, { string })
 			local ok, report = Validator.validate(room, { gapRatio = room.gapRatio })
 			if ok then
 				room.attempt = attempt
+				dress(room, diags)
 				return room, diags
 			end
 			table.insert(diags, string.format("attempt %d rejected: %s", attempt, table.concat(report.errors, ",")))
@@ -2721,6 +2776,9 @@ function Plan.build(spec, depth: number, seed: number): (any, { string })
 	end
 	local fb = Plan.fallback(spec, depth, seed)
 	table.insert(diags, "fallback_used")
+	if fb then
+		dress(fb, diags)
+	end
 	return fb, diags
 end
 
@@ -3176,11 +3234,624 @@ function V.validate(room, opts: { gapRatio: number }): (boolean, { errors: { str
 	return #errors == 0, { errors = errors, checks = checks }
 end
 
+-- Set dressing (decision 0018): decorative furniture must never interfere with play. Independent
+-- of SetDressing's own keep-out logic (it does not reuse it) so that a placement bug is caught.
+V.DECOR_SUPPORT_MARGIN = 1
+function V.validateDecor(room, budget: number): (boolean, { string })
+	local errors: { string } = {}
+	local decor = room.decor or {}
+	local w, d, h = room.size.w, room.size.d, room.size.h
+	local nodes = nodeById(room)
+	local blocks = 0
+	local arcs = {}
+	for _, e in room.routeGraph.edges do
+		local a, b = nodes[e.from], nodes[e.to]
+		if e.kind == "jump" and a and b and a.kind ~= "floor" then
+			for _, body in V.arcBodies(a, b) do
+				table.insert(arcs, body)
+			end
+		end
+	end
+	for _, item in decor do
+		blocks += #item.parts
+		for _, part in item.parts do
+			local bx = part.box
+			if not Box.insideRoom(bx, w, d, h, 1e-6) then
+				table.insert(errors, "decor_outside_room:" .. item.id)
+			end
+			if not item.collide and item.kind ~= "wall" then
+				continue -- rugs and light panels: no collision, only bounds and budget
+			end
+			for _, sz in room.spawnZones do
+				if Box.overlapsXZ(bx, Box.expand(sz, 2, 0, 2)) then
+					table.insert(errors, "decor_in_spawn:" .. item.id)
+				end
+			end
+			if Box.overlapsXZ(bx, room.exitClearance) then
+				table.insert(errors, "decor_in_exit_clearance:" .. item.id)
+			end
+			for _, s in room.solids do
+				if Box.overlapsXZ(bx, Box.expand(s.box, V.DECOR_SUPPORT_MARGIN, 0, V.DECOR_SUPPORT_MARGIN)) then
+					table.insert(errors, "decor_near_support:" .. item.id .. "/" .. tostring(s.nodeId))
+				end
+			end
+			for _, n in room.routeGraph.nodes do
+				if n.kind ~= "floor" then
+					local head = Box.onFloor(n.box.cx, n.topY, n.box.cz, n.walkable.w, Jump.AVATAR.height + 0.5, n.walkable.d)
+					if Box.intersects(bx, head, 0.01) then
+						table.insert(errors, "decor_in_headroom:" .. item.id .. "/" .. n.id)
+					end
+				end
+			end
+			for _, body in arcs do
+				if Box.intersects(bx, body, 0.01) then
+					table.insert(errors, "decor_in_jump_arc:" .. item.id)
+					break
+				end
+			end
+			for mi, m in room.waveMouths do
+				if Box.overlapsXZ(bx, Box.expand(m, 1, 0, 1)) then
+					table.insert(errors, string.format("decor_under_mouth:%s/%d", item.id, mi))
+				end
+			end
+		end
+	end
+	if blocks + #room.waveMouths > budget then
+		table.insert(errors, "decor_budget")
+	end
+	return #errors == 0, errors
+end
+
 return V
 ]]></string>
           </Properties>
         </Item>
         <Item class="ModuleScript" referent="19">
+          <Properties>
+            <string name="Name">SetDressing</string>
+            <string name="Source"><![CDATA[--!strict
+-- Set dressing for (very) large rooms (decision 0018). Runs AFTER a room has been validated and
+-- never changes its layout: it uses its own random stream ("dressing:<templateId>"), so a room's
+-- route, mouths and tokens are byte-identical with or without dressing.
+--
+-- What it adds, all decorative, all inside the decor budget (validation_rules.maximum_decorative_blocks_active_room):
+--   * wall-hugging furniture per family (benches, bookcases, fridges, tyre stacks...), multi-part
+--     blocks with a manifest-style asset key for a later mesh swap (no Roblox ID, ever invented);
+--   * floor rugs (no collision, 0.1 stud) that break up very large floors;
+--   * ceiling light panels (no collision, glow) between the wave mouths.
+-- Safety rules (re-checked by RouteValidator.validateDecor): never in the spawn sas, never in the
+-- exit clearance or in front of the exit opening, never under a wave mouth, never within 1.5 studs
+-- (XZ) of a route support, never in a jump arc or a landing headroom, never out of the room.
+
+local Config = require(script.Parent.Parent.GeneratedConfig)
+local Box = require(script.Parent.Parent.Util.Box)
+local Rng = require(script.Parent.Parent.Util.Rng)
+local Jump = require(script.Parent.JumpModel)
+local Validator = require(script.Parent.RouteValidator)
+
+local Dressing = {}
+
+local Rules = Config.Rooms.validation_rules
+Dressing.BLOCK_BUDGET = Rules.maximum_decorative_blocks_active_room
+Dressing.SUPPORT_MARGIN = 1.5
+Dressing.HEADROOM = Jump.AVATAR.height + 1.5
+
+-- Part = local box: x along the wall (centred), y from floor (centre), z away from the wall
+-- (centre, 0 = wall face). role -> colour mapping is done by RoomGenerator / render tools.
+type PartDef = { x: number, y: number, z: number, sx: number, sy: number, sz: number, role: string }
+type ItemDef = { key: string, w: number, h: number, d: number, parts: { PartDef }, wallMounted: boolean? }
+
+local function P(x, y, z, sx, sy, sz, role): PartDef
+	return { x = x, y = y, z = z, sx = sx, sy = sy, sz = sz, role = role }
+end
+
+local CATALOG: { [string]: { ItemDef } } = {
+	reception = {
+		{
+			key = "decor_reception_bench",
+			w = 12,
+			h = 4,
+			d = 4,
+			parts = {
+				P(0, 1.75, 2, 12, 0.5, 3.6, "soft"),
+				P(0, 3.2, 0.4, 12, 2.4, 0.6, "soft"),
+				P(-5, 0.75, 2, 1, 1.5, 3, "dark"),
+				P(5, 0.75, 2, 1, 1.5, 3, "dark"),
+			},
+		},
+		{
+			key = "decor_reception_plant",
+			w = 4,
+			h = 8,
+			d = 4,
+			parts = {
+				P(0, 1.25, 2, 3, 2.5, 3, "structure"),
+				P(0, 4.5, 2, 4, 4, 4, "plant"),
+				P(0, 7, 2, 2.6, 2, 2.6, "plant"),
+			},
+		},
+		{
+			key = "decor_reception_cooler",
+			w = 3,
+			h = 7,
+			d = 3,
+			parts = {
+				P(0, 2, 1.5, 3, 4, 3, "background"),
+				P(0, 5.5, 1.5, 2.4, 3, 2.4, "glass"),
+			},
+		},
+		{
+			key = "decor_reception_sofa",
+			w = 14,
+			h = 5,
+			d = 5,
+			parts = {
+				P(0, 1.25, 2.5, 14, 2.5, 5, "accent"),
+				P(0, 3.5, 0.75, 14, 3, 1.5, "accent"),
+				P(-6.25, 2.75, 2.5, 1.5, 1.5, 5, "accent"),
+				P(6.25, 2.75, 2.5, 1.5, 1.5, 5, "accent"),
+			},
+		},
+		{
+			key = "decor_reception_noticeboard",
+			w = 9,
+			h = 6,
+			d = 0.6,
+			wallMounted = true,
+			parts = {
+				P(0, 8, 0.3, 9, 6, 0.4, "structure"),
+				P(0, 8, 0.45, 8, 5, 0.3, "soft"),
+			},
+		},
+	},
+	toy = {
+		{
+			key = "decor_toy_shelf",
+			w = 14,
+			h = 12,
+			d = 3,
+			parts = {
+				P(0, 6, 0.25, 14, 12, 0.5, "structure"),
+				P(0, 4, 1.75, 14, 0.5, 2.5, "background"),
+				P(0, 8, 1.75, 14, 0.5, 2.5, "background"),
+				P(-3, 5.75, 1.75, 4, 3, 2, "accent"),
+				P(3, 9.5, 1.75, 5, 2.5, 2, "accent"),
+			},
+		},
+		{
+			key = "decor_toy_block_stack",
+			w = 6,
+			h = 9,
+			d = 6,
+			parts = {
+				P(0, 2, 3, 6, 4, 6, "accent"),
+				P(0.5, 5.5, 3, 4.5, 3, 4.5, "structure"),
+				P(-0.4, 8, 3, 3, 2, 3, "glow"),
+			},
+		},
+		{
+			key = "decor_toy_crate",
+			w = 8,
+			h = 4,
+			d = 6,
+			parts = {
+				P(0, 1.75, 3, 8, 3.5, 6, "structure"),
+				P(0, 3.75, 3.1, 8.4, 0.5, 6.2, "dark"),
+				P(0, 4.5, 3, 5, 1, 3, "accent"),
+			},
+		},
+		{
+			key = "decor_toy_poster",
+			w = 7,
+			h = 9,
+			d = 0.5,
+			wallMounted = true,
+			parts = {
+				P(0, 9, 0.25, 7, 9, 0.3, "accent"),
+				P(0, 9, 0.42, 5.5, 7.5, 0.1, "soft"),
+			},
+		},
+	},
+	bureau = {
+		{
+			key = "decor_bureau_bookcase",
+			w = 10,
+			h = 14,
+			d = 3,
+			parts = {
+				P(0, 7, 0.25, 10, 14, 0.5, "structure"),
+				P(0, 4.5, 1.75, 10, 0.5, 2.5, "background"),
+				P(0, 9, 1.75, 10, 0.5, 2.5, "background"),
+				P(-1, 6.5, 1.75, 7, 3.5, 2, "accent"),
+				P(1, 11, 1.75, 6, 3.5, 2, "soft"),
+			},
+		},
+		{
+			key = "decor_bureau_filing",
+			w = 4,
+			h = 8,
+			d = 3,
+			parts = {
+				P(0, 4, 1.5, 4, 8, 3, "background"),
+				P(0, 2.5, 3.05, 3, 0.4, 0.1, "dark"),
+				P(0, 5.5, 3.05, 3, 0.4, 0.1, "dark"),
+			},
+		},
+		{
+			key = "decor_bureau_printer_table",
+			w = 7,
+			h = 6,
+			d = 4,
+			parts = {
+				P(0, 2.75, 2, 7, 0.5, 4, "structure"),
+				P(-3, 1.25, 2, 0.6, 2.5, 3.4, "dark"),
+				P(3, 1.25, 2, 0.6, 2.5, 3.4, "dark"),
+				P(0, 4, 2, 4.5, 2, 3, "background"),
+			},
+		},
+		{
+			key = "decor_bureau_plant",
+			w = 4,
+			h = 9,
+			d = 4,
+			parts = {
+				P(0, 1.5, 2, 3, 3, 3, "dark"),
+				P(0, 5, 2, 4, 4, 4, "plant"),
+				P(0, 7.75, 2, 2.4, 2.5, 2.4, "plant"),
+			},
+		},
+		{
+			key = "decor_bureau_whiteboard",
+			w = 12,
+			h = 6,
+			d = 0.5,
+			wallMounted = true,
+			parts = {
+				P(0, 8, 0.25, 12, 6, 0.3, "dark"),
+				P(0, 8, 0.42, 11.2, 5.2, 0.1, "soft"),
+			},
+		},
+	},
+	kitchen = {
+		{
+			key = "decor_kitchen_counter",
+			w = 16,
+			h = 6,
+			d = 4,
+			parts = {
+				P(0, 2.75, 2, 16, 5.5, 4, "background"),
+				P(0, 5.75, 2.1, 16.4, 0.5, 4.2, "structure"),
+				P(-4, 6.25, 2, 4, 0.5, 3, "dark"),
+				P(4, 2.75, 4.05, 6, 3, 0.1, "accent"),
+			},
+		},
+		{
+			key = "decor_kitchen_fridge",
+			w = 6,
+			h = 14,
+			d = 5,
+			parts = {
+				P(0, 7, 2.5, 6, 14, 5, "soft"),
+				P(2.2, 8.5, 5.05, 0.4, 4, 0.2, "dark"),
+				P(0, 13.5, 2.6, 6.2, 1, 5.2, "accent"),
+			},
+		},
+		{
+			key = "decor_kitchen_jar_shelf",
+			w = 10,
+			h = 4,
+			d = 2.5,
+			wallMounted = true,
+			parts = {
+				P(0, 8, 1.25, 10, 0.5, 2.5, "structure"),
+				P(-2.5, 9.5, 1.25, 2, 2.5, 2, "glass"),
+				P(2, 9.25, 1.25, 2.5, 2, 2, "accent"),
+			},
+		},
+	},
+	garage = {
+		{
+			key = "decor_garage_tyre_stack",
+			w = 5,
+			h = 6,
+			d = 5,
+			parts = {
+				P(0, 1, 2.5, 5, 2, 5, "dark"),
+				P(0, 3, 2.5, 5, 2, 5, "dark"),
+				P(0, 5, 2.5, 5, 2, 5, "dark"),
+			},
+		},
+		{
+			key = "decor_garage_shelving",
+			w = 12,
+			h = 12,
+			d = 4,
+			parts = {
+				P(0, 6, 0.3, 12, 12, 0.6, "structure"),
+				P(0, 4, 2, 12, 0.5, 4, "background"),
+				P(0, 8, 2, 12, 0.5, 4, "background"),
+				P(-3, 5.5, 2, 4, 2.5, 3, "accent"),
+				P(3, 9.75, 2, 4.5, 3, 3, "soft"),
+			},
+		},
+		{
+			key = "decor_garage_drums",
+			w = 7,
+			h = 5,
+			d = 3.5,
+			parts = {
+				P(-1.8, 2.5, 1.75, 3, 5, 3, "accent"),
+				P(1.8, 2.5, 1.75, 3, 5, 3, "structure"),
+			},
+		},
+		{
+			key = "decor_garage_pegboard",
+			w = 12,
+			h = 7,
+			d = 0.6,
+			wallMounted = true,
+			parts = {
+				P(0, 8, 0.3, 12, 7, 0.4, "background"),
+				P(-3, 8, 0.6, 1, 4, 0.3, "dark"),
+				P(2, 8.5, 0.6, 3, 1, 0.3, "accent"),
+			},
+		},
+	},
+	bin = {
+		{
+			key = "decor_bin_crushed_can",
+			w = 5,
+			h = 9,
+			d = 5,
+			parts = {
+				P(0, 2, 2.5, 5, 4, 5, "accent"),
+				P(0.3, 6, 2.5, 4.6, 4, 4.6, "structure"),
+				P(0, 8.5, 2.5, 3.5, 1, 3.5, "soft"),
+			},
+		},
+		{
+			key = "decor_bin_cardboard_pile",
+			w = 9,
+			h = 6,
+			d = 6,
+			parts = {
+				P(-1.5, 1.75, 3, 6, 3.5, 5, "background"),
+				P(1.5, 4.5, 3, 5, 2.5, 4, "background"),
+				P(2, 1.25, 3, 4, 2.5, 6, "soft"),
+			},
+		},
+		{
+			key = "decor_bin_bag_cluster",
+			w = 8,
+			h = 5,
+			d = 5,
+			parts = {
+				P(-2, 2, 2.5, 4, 4, 4, "dark"),
+				P(2, 1.75, 2.5, 4, 3.5, 4, "dark"),
+				P(0, 4, 2.5, 3, 2, 3, "structure"),
+			},
+		},
+	},
+}
+Dressing.CATALOG = CATALOG
+
+-- local part -> room box on a given wall. wall: "N" (+Z), "S" (-Z), "E" (+X), "W" (-X)
+local function toRoom(wall: string, w: number, d: number, along: number, p: PartDef): any
+	if wall == "N" then
+		return Box.new(along + p.x, p.y, d / 2 - p.z, p.sx, p.sy, p.sz)
+	elseif wall == "S" then
+		return Box.new(along - p.x, p.y, -d / 2 + p.z, p.sx, p.sy, p.sz)
+	elseif wall == "E" then
+		return Box.new(w / 2 - p.z, p.y, along - p.x, p.sz, p.sy, p.sx)
+	else
+		return Box.new(-w / 2 + p.z, p.y, along + p.x, p.sz, p.sy, p.sx)
+	end
+end
+Dressing.toRoom = toRoom
+
+-- Union of the item's parts in room space (the placement test uses the real geometry).
+local function footprint(wall: string, w: number, d: number, along: number, item: ItemDef): any
+	local x0, y0, z0, x1, y1, z1 = math.huge, math.huge, math.huge, -math.huge, -math.huge, -math.huge
+	for _, p in item.parts do
+		local b = toRoom(wall, w, d, along, p)
+		x0, x1 = math.min(x0, b.cx - b.sx / 2), math.max(x1, b.cx + b.sx / 2)
+		y0, y1 = math.min(y0, b.cy - b.sy / 2), math.max(y1, b.cy + b.sy / 2)
+		z0, z1 = math.min(z0, b.cz - b.sz / 2), math.max(z1, b.cz + b.sz / 2)
+	end
+	return Box.new((x0 + x1) / 2, (y0 + y1) / 2, (z0 + z1) / 2, x1 - x0, y1 - y0, z1 - z0)
+end
+
+-- Boxes that decor must never touch, computed from the final (validated) room.
+function Dressing.keepOut(room): { volumes: { any }, footprints: { any }, wallZones: { any } }
+	local h = room.size.h
+	local volumes, footprints = {}, {}
+	local nodes = {}
+	for _, n in room.routeGraph.nodes do
+		nodes[n.id] = n
+		if n.kind ~= "floor" then
+			table.insert(footprints, Box.expand(n.box, Dressing.SUPPORT_MARGIN, 0, Dressing.SUPPORT_MARGIN))
+			table.insert(volumes, Box.onFloor(n.box.cx, n.topY, n.box.cz, n.walkable.w, Dressing.HEADROOM, n.walkable.d))
+			if n.sweep then
+				table.insert(footprints, Box.expand(n.sweep, Dressing.SUPPORT_MARGIN, 0, Dressing.SUPPORT_MARGIN))
+			end
+		end
+	end
+	for _, s in room.solids do
+		table.insert(footprints, Box.expand(s.box, Dressing.SUPPORT_MARGIN, 0, Dressing.SUPPORT_MARGIN))
+	end
+	for _, e in room.routeGraph.edges do
+		local a, b = nodes[e.from], nodes[e.to]
+		if e.kind == "jump" and a and b and a.kind ~= "floor" then
+			for _, body in Validator.arcBodies(a, b) do
+				table.insert(volumes, Box.expand(body, 0.5, 0.5, 0.5))
+			end
+		end
+	end
+	for _, sz in room.spawnZones do
+		table.insert(footprints, Box.expand(sz, 3, 0, 3))
+	end
+	table.insert(footprints, Box.expand(room.exitClearance, 2, 0, 2))
+	-- the exit opening and its approach (door, window, tailgate) stay visually clear
+	local o = room.exitOpening
+	table.insert(footprints, Box.new(o.cx, h / 2, o.cz, math.max(o.sx, 1) + 8, h, math.max(o.sz, 1) + 8))
+	for _, m in room.waveMouths do
+		table.insert(footprints, Box.new(m.cx, h / 2, m.cz, m.sx + 2, h, m.sz + 2))
+	end
+	return { volumes = volumes, footprints = footprints, wallZones = {} }
+end
+
+local function blocked(box, keep, placed): boolean
+	for _, fp in keep.footprints do
+		if Box.overlapsXZ(box, fp) then
+			return true
+		end
+	end
+	for _, v in keep.volumes do
+		if Box.intersects(box, v, 0.01) then
+			return true
+		end
+	end
+	for _, o in placed do
+		if Box.overlapsXZ(box, Box.expand(o, 1, 0, 1)) and Box.intersects(Box.expand(box, 0, 0.5, 0), o) then
+			return true
+		end
+	end
+	return false
+end
+
+-- Returns the decor list for a validated room. Deterministic for (room.seed, room.templateId).
+function Dressing.dress(room): { any }
+	local items = CATALOG[room.familyId]
+	if not items then
+		return {}
+	end
+	local w, d, h = room.size.w, room.size.d, room.size.h
+	local rng = Rng.new(Rng.derive(room.seed, "dressing:" .. room.templateId))
+	local keep = Dressing.keepOut(room)
+	local budget = Dressing.BLOCK_BUDGET - #room.waveMouths
+	local used = 0
+	local decor = {}
+	local placedBoxes = {}
+
+	local perimeter = 2 * (w + d)
+	local target = math.clamp(math.floor(perimeter / 26), 3, 16)
+	local walls = { { id = "N", len = w }, { id = "S", len = w }, { id = "E", len = d }, { id = "W", len = d } }
+	local placedCount = 0
+	for _ = 1, target * 10 do
+		if placedCount >= target then
+			break
+		end
+		local item = rng:pick(items)
+		if used + #item.parts > budget then
+			continue
+		end
+		local wall = walls[rng:nextInt(1, 4)]
+		local half = wall.len / 2 - item.w / 2 - 1
+		if half <= 0 then
+			continue
+		end
+		local along = rng:nextRange(-half, half)
+		local bbox = footprint(wall.id, w, d, along, item)
+		if not Box.insideRoom(bbox, w, d, h, 1e-6) or blocked(bbox, keep, placedBoxes) then
+			continue
+		end
+		local parts = {}
+		for i, p in item.parts do
+			parts[i] = { box = toRoom(wall.id, w, d, along, p), role = p.role }
+		end
+		table.insert(decor, {
+			id = "decor" .. (placedCount + 1),
+			kind = if item.wallMounted then "wall" else "furniture",
+			assetKey = item.key,
+			wall = wall.id,
+			collide = not item.wallMounted,
+			bbox = bbox,
+			parts = parts,
+		})
+		table.insert(placedBoxes, bbox)
+		used += #item.parts
+		placedCount += 1
+	end
+
+	-- floor rugs: one per ~1800 studs^2 of floor (max 3), never collide, never under the spawn sas
+	local rugs = math.clamp(math.floor(w * d / 1800), 0, 3)
+	for i = 1, rugs do
+		if used + 1 > budget then
+			break
+		end
+		for _ = 1, 20 do
+			local rw, rd = rng:nextRange(14, 24), rng:nextRange(10, 18)
+			local cx = rng:nextRange(-w / 2 + rw / 2 + 4, w / 2 - rw / 2 - 4)
+			local cz = rng:nextRange(-d / 2 + rd / 2 + 10, d / 2 - rd / 2 - 4)
+			local rug = Box.new(cx, 0.05, cz, rw, 0.1, rd)
+			if not Box.overlapsXZ(rug, Box.expand(room.spawnZones[1], 2, 0, 2)) and not Box.overlapsXZ(rug, room.exitClearance) then
+				table.insert(decor, {
+					id = "rug" .. i,
+					kind = "rug",
+					assetKey = "decor_" .. room.familyId .. "_rug",
+					collide = false,
+					bbox = rug,
+					parts = { { box = rug, role = if i % 2 == 1 then "accent" else "structure" } },
+				})
+				used += 1
+				break
+			end
+		end
+	end
+
+	-- ceiling light panels on a coarse grid, skipping mouths and ceiling openings
+	local lights = math.clamp(math.floor(w * d / 1200), 2, 6)
+	local cols = math.max(1, math.ceil(math.sqrt(lights * w / d)))
+	local rows = math.max(1, math.ceil(lights / cols))
+	local n = 0
+	for r = 1, rows do
+		for c = 1, cols do
+			if n >= lights or used + 1 > budget then
+				break
+			end
+			local cx = -w / 2 + (c - 0.5) * w / cols
+			local cz = -d / 2 + (r - 0.5) * d / rows
+			local panel = Box.new(cx, h - 0.15, cz, 8, 0.3, 3)
+			local clash = false
+			for _, m in room.waveMouths do
+				clash = clash or Box.overlapsXZ(panel, Box.expand(m, 2, 0, 2))
+			end
+			for _, op in room.ceilingOpenings or {} do
+				clash = clash or Box.overlapsXZ(panel, op)
+			end
+			if room.exitType == "roof" then
+				clash = clash or Box.overlapsXZ(panel, Box.expand(room.exitOpening, 2, 0, 2))
+			end
+			if not clash then
+				n += 1
+				table.insert(decor, {
+					id = "light" .. n,
+					kind = "light",
+					assetKey = "decor_ceiling_light",
+					collide = false,
+					bbox = panel,
+					parts = { { box = panel, role = "glow" } },
+				})
+				used += 1
+			end
+		end
+	end
+	return decor
+end
+
+function Dressing.blockCount(decor: { any }): number
+	local n = 0
+	for _, item in decor do
+		n += #item.parts
+	end
+	return n
+end
+
+return Dressing
+]]></string>
+          </Properties>
+        </Item>
+        <Item class="ModuleScript" referent="20">
           <Properties>
             <string name="Name">ToolRules</string>
             <string name="Source"><![CDATA[--!strict
@@ -3372,7 +4043,7 @@ return Tools
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="20">
+        <Item class="ModuleScript" referent="21">
           <Properties>
             <string name="Name">Tutorial</string>
             <string name="Source"><![CDATA[--!strict
@@ -3461,7 +4132,7 @@ return Tutorial
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="21">
+        <Item class="ModuleScript" referent="22">
           <Properties>
             <string name="Name">WaveSchedule</string>
             <string name="Source"><![CDATA[--!strict
@@ -3488,9 +4159,17 @@ local function fillProps(family, depth: number): { any }
 end
 
 export type Drop = { propId: string, x: number, z: number, yaw: number, structural: boolean, nodeId: string? }
-export type WaveInfo = { index: number, warningTime: number, impactTime: number, mouthIndex: number, drops: { Drop } }
+export type WaveInfo = {
+	index: number,
+	warningTime: number,
+	impactTime: number,
+	mouthIndex: number,
+	mouthIndices: { number },
+	drops: { Drop },
+}
 
 export type Schedule = {
+	params: any,
 	room: any,
 	band: any,
 	seed: number,
@@ -3513,6 +4192,7 @@ function Wave.new(room, family, depth: number): Schedule
 		seed = Rng.derive(room.seed, "waves:" .. room.templateId),
 		-- the first impact never lands before the spawn grace and its own warning
 		firstImpact = math.max(SPAWN_GRACE + band.warning_seconds, band.wave_interval_seconds * 0.5),
+		params = Difficulty.waveParams(band, room.familyId, room.formatId),
 		props = fillProps(family, math.max(depth, 1)),
 		structural = structural,
 	}
@@ -3526,11 +4206,21 @@ function Wave.at(s: Schedule, index: number): WaveInfo
 	assert(index >= 1 and index % 1 == 0, "wave index must be a positive integer")
 	local band = s.band
 	local mouths = s.room.waveMouths
-	local mouthIndex = if #mouths > 0 then ((index - 1) % math.min(band.mouths, #mouths)) + 1 else 0
+	local params = s.params
+	local usable = math.min(params.mouths, #mouths)
+	local perWave = math.max(1, math.min(params.mouthsPerWave, usable))
+	-- large rooms open several mouths per wave, rotating through all of them
+	local mouthIndices = {}
+	for k = 0, perWave - 1 do
+		if usable > 0 then
+			table.insert(mouthIndices, (((index - 1) * perWave + k) % usable) + 1)
+		end
+	end
+	local mouthIndex = mouthIndices[1] or 0
 	local impact = Wave.impactTime(s, index)
 	local rng = Rng.new(Rng.derive(s.seed, "wave:" .. index))
 	local drops: { Drop } = {}
-	local count = band.physical_objects_per_wave
+	local count = params.objectsPerWave
 	if index == 1 then
 		for _, n in s.structural do
 			-- guest / structural support replaces a standard drop and counts toward the budget
@@ -3539,8 +4229,8 @@ function Wave.at(s: Schedule, index: number): WaveInfo
 		end
 	end
 	if mouthIndex > 0 and #s.props > 0 then
-		local m = mouths[mouthIndex]
-		for _ = 1, math.max(0, count) do
+		for i = 1, math.max(0, count) do
+			local m = mouths[mouthIndices[((i - 1) % #mouthIndices) + 1]]
 			local p = rng:pick(s.props)
 			local half = math.max(0, (m.sx - math.max(p.collider.size_studs[1], p.collider.size_studs[2])) / 2)
 			table.insert(drops, {
@@ -3552,7 +4242,14 @@ function Wave.at(s: Schedule, index: number): WaveInfo
 			})
 		end
 	end
-	return { index = index, warningTime = impact - band.warning_seconds, impactTime = impact, mouthIndex = mouthIndex, drops = drops }
+	return {
+		index = index,
+		warningTime = impact - band.warning_seconds,
+		impactTime = impact,
+		mouthIndex = mouthIndex,
+		mouthIndices = mouthIndices,
+		drops = drops,
+	}
 end
 
 -- Number of waves whose impact time is <= simSeconds (since room activation).
@@ -3568,20 +4265,20 @@ return Wave
           </Properties>
         </Item>
       </Item>
-      <Item class="ModuleScript" referent="22">
+      <Item class="ModuleScript" referent="23">
         <Properties>
           <string name="Name">GeneratedConfig</string>
           <string name="Source"><![CDATA[--!strict
 -- AUTO-GENERATED by tools/compile_config.py. DO NOT EDIT.
 return table.freeze({
-	configVersion = "54fafb01573d4f28",
+	configVersion = "50e29a92908dc0bb",
 	Economy = require(script.Economy),
 	Rooms = require(script.Rooms),
 	Runtime = require(script.Runtime),
 })
 ]]></string>
         </Properties>
-        <Item class="ModuleScript" referent="23">
+        <Item class="ModuleScript" referent="24">
           <Properties>
             <string name="Name">Economy</string>
             <string name="Source"><![CDATA[--!strict
@@ -4937,7 +5634,7 @@ return table.freeze({
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="24">
+        <Item class="ModuleScript" referent="25">
           <Properties>
             <string name="Name">Rooms</string>
             <string name="Source"><![CDATA[--!strict
@@ -5038,6 +5735,8 @@ return table.freeze({
 				M = { 56, 48, 30 },
 				L = { 72, 60, 36 },
 				V = { 40, 40, 56 },
+				XL = { 104, 88, 48 },
+				XV = { 60, 60, 88 },
 			},
 			exits = { "door", "window", "roof", "duct", "tailgate", "floor_hatch" },
 			exit_visuals = {
@@ -5201,6 +5900,8 @@ return table.freeze({
 				M = { 64, 56, 36 },
 				L = { 80, 72, 44 },
 				V = { 44, 44, 64 },
+				XL = { 112, 100, 56 },
+				XV = { 64, 64, 100 },
 			},
 			exits = { "door", "window", "roof", "duct", "tailgate", "floor_hatch" },
 			exit_visuals = {
@@ -5366,6 +6067,8 @@ return table.freeze({
 				M = { 64, 48, 36 },
 				L = { 80, 64, 44 },
 				V = { 40, 40, 60 },
+				XL = { 112, 92, 56 },
+				XV = { 60, 60, 96 },
 			},
 			exits = { "door", "window", "roof", "duct", "tailgate", "floor_hatch" },
 			exit_visuals = {
@@ -5538,6 +6241,8 @@ return table.freeze({
 				M = { 64, 56, 36 },
 				L = { 80, 72, 44 },
 				V = { 44, 40, 60 },
+				XL = { 112, 100, 56 },
+				XV = { 64, 60, 96 },
 			},
 			exits = { "door", "window", "roof", "duct", "tailgate", "floor_hatch" },
 			exit_visuals = {
@@ -5705,6 +6410,8 @@ return table.freeze({
 				M = { 72, 56, 38 },
 				L = { 88, 72, 48 },
 				V = { 48, 44, 64 },
+				XL = { 124, 100, 64 },
+				XV = { 72, 64, 100 },
 			},
 			exits = { "door", "window", "roof", "duct", "tailgate", "floor_hatch" },
 			exit_visuals = {
@@ -5869,6 +6576,8 @@ return table.freeze({
 				M = { 72, 64, 42 },
 				L = { 96, 88, 56 },
 				V = { 52, 48, 72 },
+				XL = { 136, 124, 72 },
+				XV = { 76, 72, 112 },
 			},
 			exits = { "door", "window", "roof", "duct", "tailgate", "floor_hatch" },
 			exit_visuals = {
@@ -6173,7 +6882,7 @@ return table.freeze({
 		{
 			depth = 2,
 			family = "reception",
-			format = "M",
+			format = "XL",
 			exit = "window",
 			new_mechanic = "choose_between_two_visible_routes",
 			allowed_behaviors = { "stable" },
@@ -6190,7 +6899,7 @@ return table.freeze({
 		{
 			depth = 4,
 			family = "toy",
-			format = "M",
+			format = "XL",
 			exit = "roof",
 			allowed_behaviors = { "stable", "bounce" },
 			bounce_mandatory = false,
@@ -6207,7 +6916,7 @@ return table.freeze({
 		{
 			depth = 6,
 			family = "reception",
-			format = "V",
+			format = "XV",
 			exit = "window",
 			new_mechanic = "multi_floor_navigation_with_recovery_ledges",
 			allowed_behaviors = { "stable", "bounce", "moving" },
@@ -6215,7 +6924,7 @@ return table.freeze({
 		{
 			depth = 7,
 			family = "bureau",
-			format = "M",
+			format = "XL",
 			exit = "window",
 			new_mechanic = "telegraphed_temporary_platform",
 			allowed_behaviors = { "stable", "bounce", "moving", "temporary" },
@@ -6236,13 +6945,13 @@ return table.freeze({
 		{
 			depth = 9,
 			family = "garage",
-			format = "M",
+			format = "XL",
 			exit = "door",
 			new_mechanic = "vertical_mover_with_pauses",
 			allowed_behaviors = { "stable", "bounce", "moving", "temporary" },
 			mvp_substitution = {
 				family = "bureau",
-				format = "M",
+				format = "XL",
 				exit = "door",
 				prop_behavior_variant = {
 					prop_id = "bureau_rail_chair",
@@ -6253,12 +6962,12 @@ return table.freeze({
 		{
 			depth = 10,
 			family = "bin",
-			format = "M",
+			format = "XV",
 			exit = "window",
 			allowed_behaviors = { "stable", "bounce", "moving", "temporary" },
 			mvp_substitution = {
 				family = "toy",
-				format = "V",
+				format = "XV",
 				exit = "window",
 			},
 			final_room = false,
@@ -6267,15 +6976,30 @@ return table.freeze({
 	release_profiles = {
 		mvp = {
 			families = { "reception", "toy", "bureau" },
-			formats = { "S", "M", "V" },
+			formats = { "S", "M", "V", "XL", "XV" },
 			exits = { "door", "window", "roof" },
 			use_first_room_substitutions = true,
+			format_weights = {
+				S = 0.5,
+				M = 1,
+				V = 1,
+				XL = 3,
+				XV = 2,
+			},
 		},
 		v1 = {
 			families = { "reception", "toy", "bureau", "kitchen", "garage", "bin" },
-			formats = { "S", "M", "L", "V" },
+			formats = { "S", "M", "L", "V", "XL", "XV" },
 			exits = { "door", "window", "roof", "duct", "tailgate", "floor_hatch" },
 			use_first_room_substitutions = false,
+			format_weights = {
+				S = 0.5,
+				M = 1,
+				L = 1.5,
+				V = 1,
+				XL = 3,
+				XV = 2,
+			},
 		},
 	},
 	validation_rules = {
@@ -6318,11 +7042,26 @@ return table.freeze({
 		test_mobile_camera_and_touch = true,
 		test_real_burial_ko_without_global_timeout = true,
 	},
+	format_scale = {
+		status = "user_request_2026_11_02_very_large_rooms",
+		XL = "vast hall: about 1.4x L footprint, 1.35x height",
+		XV = "vast vertical: about 1.5x V footprint, 1.6x height",
+		first_room_kept_small_for_onboarding = true,
+	},
+	wave_area_scaling = {
+		reference_format = "M",
+		max_factor = 3,
+		objects_per_wave_scale = "round(band.physical_objects_per_wave * factor)",
+		mouths_scale = "min(band.mouths * ceil(factor), max_mouths)",
+		max_mouths = 6,
+		dynamic_budget_unchanged = true,
+		rationale = "keep the filling pressure per floor area in very large rooms; excess drops are deferred by the physics budget",
+	},
 })
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="25">
+        <Item class="ModuleScript" referent="26">
           <Properties>
             <string name="Name">Runtime</string>
             <string name="Source"><![CDATA[--!strict
@@ -6442,7 +7181,7 @@ return table.freeze({
           </Properties>
         </Item>
       </Item>
-      <Item class="ModuleScript" referent="26">
+      <Item class="ModuleScript" referent="27">
         <Properties>
           <string name="Name">Strings</string>
           <string name="Source"><![CDATA[--!strict
@@ -6519,7 +7258,7 @@ return Strings
 ]]></string>
         </Properties>
       </Item>
-      <Item class="ModuleScript" referent="27">
+      <Item class="ModuleScript" referent="28">
         <Properties>
           <string name="Name">Types</string>
           <string name="Source"><![CDATA[--!strict
@@ -6654,11 +7393,11 @@ return {}
 ]]></string>
         </Properties>
       </Item>
-      <Item class="Folder" referent="28">
+      <Item class="Folder" referent="29">
         <Properties>
           <string name="Name">Util</string>
         </Properties>
-        <Item class="ModuleScript" referent="29">
+        <Item class="ModuleScript" referent="30">
           <Properties>
             <string name="Name">Box</string>
             <string name="Source"><![CDATA[--!strict
@@ -6738,7 +7477,7 @@ return Box
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="30">
+        <Item class="ModuleScript" referent="31">
           <Properties>
             <string name="Name">Maid</string>
             <string name="Source"><![CDATA[--!strict
@@ -6803,7 +7542,7 @@ return Maid
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="31">
+        <Item class="ModuleScript" referent="32">
           <Properties>
             <string name="Name">Rng</string>
             <string name="Source"><![CDATA[--!strict
@@ -6897,15 +7636,15 @@ return Rng
       </Item>
     </Item>
   </Item>
-  <Item class="ServerScriptService" referent="32">
+  <Item class="ServerScriptService" referent="33">
     <Properties>
       <string name="Name">ServerScriptService</string>
     </Properties>
-    <Item class="Folder" referent="33">
+    <Item class="Folder" referent="34">
       <Properties>
         <string name="Name">Server</string>
       </Properties>
-      <Item class="Script" referent="34">
+      <Item class="Script" referent="35">
         <Properties>
           <string name="Name">Main</string>
           <token name="RunContext">0</token>
@@ -7009,11 +7748,11 @@ end)
 ]]></string>
         </Properties>
       </Item>
-      <Item class="Folder" referent="35">
+      <Item class="Folder" referent="36">
         <Properties>
           <string name="Name">RoomTemplates</string>
         </Properties>
-        <Item class="ModuleScript" referent="36">
+        <Item class="ModuleScript" referent="37">
           <Properties>
             <string name="Name">Garage</string>
             <string name="Source"><![CDATA[--!strict
@@ -7032,7 +7771,7 @@ return Template.make("garage", {
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="37">
+        <Item class="ModuleScript" referent="38">
           <Properties>
             <string name="Name">GiantBin</string>
             <string name="Source"><![CDATA[--!strict
@@ -7051,7 +7790,7 @@ return Template.make("bin", {
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="38">
+        <Item class="ModuleScript" referent="39">
           <Properties>
             <string name="Name">Kitchen</string>
             <string name="Source"><![CDATA[--!strict
@@ -7070,7 +7809,7 @@ return Template.make("kitchen", {
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="39">
+        <Item class="ModuleScript" referent="40">
           <Properties>
             <string name="Name">Office</string>
             <string name="Source"><![CDATA[--!strict
@@ -7090,7 +7829,7 @@ return Template.make("bureau", {
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="40">
+        <Item class="ModuleScript" referent="41">
           <Properties>
             <string name="Name">Reception</string>
             <string name="Source"><![CDATA[--!strict
@@ -7113,7 +7852,7 @@ return Template.make("reception", {
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="41">
+        <Item class="ModuleScript" referent="42">
           <Properties>
             <string name="Name">Template</string>
             <string name="Source"><![CDATA[--!strict
@@ -7170,7 +7909,7 @@ return Template
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="42">
+        <Item class="ModuleScript" referent="43">
           <Properties>
             <string name="Name">Toys</string>
             <string name="Source"><![CDATA[--!strict
@@ -7193,11 +7932,11 @@ return Template.make("toy", {
           </Properties>
         </Item>
       </Item>
-      <Item class="Folder" referent="43">
+      <Item class="Folder" referent="44">
         <Properties>
           <string name="Name">Services</string>
         </Properties>
-        <Item class="ModuleScript" referent="44">
+        <Item class="ModuleScript" referent="45">
           <Properties>
             <string name="Name">BurialService</string>
             <string name="Source"><![CDATA[--!strict
@@ -7361,7 +8100,7 @@ return BurialService
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="45">
+        <Item class="ModuleScript" referent="46">
           <Properties>
             <string name="Name">CheckpointService</string>
             <string name="Source"><![CDATA[--!strict
@@ -7407,7 +8146,7 @@ return CheckpointService
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="46">
+        <Item class="ModuleScript" referent="47">
           <Properties>
             <string name="Name">ExitService</string>
             <string name="Source"><![CDATA[--!strict
@@ -7458,7 +8197,7 @@ return ExitService
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="47">
+        <Item class="ModuleScript" referent="48">
           <Properties>
             <string name="Name">ExpeditionService</string>
             <string name="Source"><![CDATA[--!strict
@@ -7889,12 +8628,17 @@ function ExpeditionService.activateRoom(self, s: any, room: any, resume: any?)
 	s.roomMaid = Maid.new()
 	room.director = WaveDirector.new(room.def, room.index, room.cell, room.model, s.exp.depth, {
 		warn = function(info)
-			local m = room.def.waveMouths[info.mouthIndex]
-			self.remotes.fire(s.player, "WaveWarning", {
-				mouth = m and room.cell * CFrame.new(m.cx, room.def.size.h, m.cz),
-				impactIn = info.impactIn,
-				size = m and Vector3.new(m.sx, 1, m.sz),
-			})
+			-- one warning per mouth opened by this wave (several in very large rooms)
+			for _, mi in info.mouthIndices or { info.mouthIndex } do
+				local m = room.def.waveMouths[mi]
+				if m then
+					self.remotes.fire(s.player, "WaveWarning", {
+						mouth = room.cell * CFrame.new(m.cx, room.def.size.h, m.cz),
+						impactIn = info.impactIn,
+						size = Vector3.new(m.sx, 1, m.sz),
+					})
+				end
+			end
 		end,
 		plushImpact = function(ev)
 			self.remotes.fire(s.player, "PlushImpact", ev)
@@ -8377,7 +9121,7 @@ return ExpeditionService
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="48">
+        <Item class="ModuleScript" referent="49">
           <Properties>
             <string name="Name">InventoryService</string>
             <string name="Source"><![CDATA[--!strict
@@ -8473,7 +9217,7 @@ return InventoryService
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="49">
+        <Item class="ModuleScript" referent="50">
           <Properties>
             <string name="Name">ObjectPool</string>
             <string name="Source"><![CDATA[--!strict
@@ -8593,7 +9337,7 @@ return Pool
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="50">
+        <Item class="ModuleScript" referent="51">
           <Properties>
             <string name="Name">PlayerProfileRepository</string>
             <string name="Source"><![CDATA[--!strict
@@ -8819,7 +9563,7 @@ return Repository
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="51">
+        <Item class="ModuleScript" referent="52">
           <Properties>
             <string name="Name">PropFactory</string>
             <string name="Source"><![CDATA[--!strict
@@ -8996,7 +9740,7 @@ return PropFactory
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="52">
+        <Item class="ModuleScript" referent="53">
           <Properties>
             <string name="Name">PurchaseService</string>
             <string name="Source"><![CDATA[--!strict
@@ -9094,7 +9838,7 @@ return Purchase
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="53">
+        <Item class="ModuleScript" referent="54">
           <Properties>
             <string name="Name">RebirthService</string>
             <string name="Source"><![CDATA[--!strict
@@ -9151,7 +9895,7 @@ return RebirthService
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="54">
+        <Item class="ModuleScript" referent="55">
           <Properties>
             <string name="Name">Remotes</string>
             <string name="Source"><![CDATA[--!strict
@@ -9222,7 +9966,7 @@ return Remotes
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="55">
+        <Item class="ModuleScript" referent="56">
           <Properties>
             <string name="Name">RewardService</string>
             <string name="Source"><![CDATA[--!strict
@@ -9285,7 +10029,7 @@ return RewardService
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="56">
+        <Item class="ModuleScript" referent="57">
           <Properties>
             <string name="Name">RoomGenerator</string>
             <string name="Source"><![CDATA[--!strict
@@ -9435,7 +10179,8 @@ local function shell(model: Model, origin: CFrame, room: any, tpl: any)
 		)
 	else
 		-- coarse grid of ceiling tiles skipping openings
-		local tile = 4
+		-- coarse tiles keep the instance count reasonable in very large rooms
+		local tile = if w * d > 4000 then 8 else 4
 		for x = -w / 2, w / 2 - tile, tile do
 			for z = -d / 2, d / 2 - tile, tile do
 				local cx, cz = x + tile / 2, z + tile / 2
@@ -9564,6 +10309,49 @@ function RoomGenerator.build(room: any, cell: CFrame, parent: Instance): (Model,
 		end
 	end
 
+	-- set dressing (decision 0018): validated by RouteValidator.validateDecor in RoomPlan.build.
+	-- Furniture collides (tagged Architecture: excluded from burial probes, structural for tools);
+	-- wall pieces, rugs and ceiling lights never collide and are invisible to queries.
+	local decorFolder = Instance.new("Folder")
+	decorFolder.Name = "SetDressing"
+	decorFolder.Parent = model
+	local roleColors = {
+		structure = tpl.palette.structure,
+		accent = tpl.palette.accent,
+		background = tpl.palette.background,
+		soft = Color3.fromHex("#FFF5DF"),
+		dark = Color3.fromHex("#203055"),
+		plant = Color3.fromHex("#3FBF6A"),
+		glass = Color3.fromHex("#BFE9FF"),
+		glow = Color3.fromHex("#FFF3C4"),
+	}
+	for _, item in room.decor or {} do
+		local holder = Instance.new("Model")
+		holder.Name = item.id
+		holder:SetAttribute("AssetKey", item.assetKey)
+		holder.Parent = decorFolder
+		for i, part in item.parts do
+			local role = part.role
+			local material = if role == "glow" then Enum.Material.Neon elseif role == "glass" then Enum.Material.Glass else tpl.propMaterial
+			local p = block(
+				holder,
+				item.id .. "_" .. i,
+				cell,
+				part.box,
+				roleColors[role] or tpl.palette.structure,
+				material,
+				if item.collide then "Architecture" else "DecorOnly",
+				if role == "glass" then 0.35 else 0
+			)
+			p.CanCollide = item.collide == true
+			p.CanQuery = item.collide == true
+			p.CanTouch = false
+			if item.kind == "rug" or item.kind == "light" then
+				p.CastShadow = false
+			end
+		end
+	end
+
 	-- wave mouths (ceiling chutes, decor) with coral danger triangles drawn by the client
 	for i, m in room.waveMouths do
 		local mouth = block(
@@ -9616,7 +10404,7 @@ return RoomGenerator
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="57">
+        <Item class="ModuleScript" referent="58">
           <Properties>
             <string name="Name">TelemetryService</string>
             <string name="Source"><![CDATA[--!strict
@@ -9651,7 +10439,7 @@ return TelemetryService
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="58">
+        <Item class="ModuleScript" referent="59">
           <Properties>
             <string name="Name">TutorialService</string>
             <string name="Source"><![CDATA[--!strict
@@ -9697,7 +10485,7 @@ return TutorialService
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="59">
+        <Item class="ModuleScript" referent="60">
           <Properties>
             <string name="Name">WaveDirector</string>
             <string name="Source"><![CDATA[--!strict
@@ -9987,6 +10775,7 @@ function WaveDirector.step(self, dt: number)
 		self.hooks.warn({
 			index = upcoming.index,
 			mouthIndex = upcoming.mouthIndex,
+			mouthIndices = upcoming.mouthIndices,
 			impactIn = upcoming.impactTime - self.simTime,
 			drops = upcoming.drops,
 		})
@@ -10042,11 +10831,11 @@ return WaveDirector
           </Properties>
         </Item>
       </Item>
-      <Item class="Folder" referent="60">
+      <Item class="Folder" referent="61">
         <Properties>
           <string name="Name">Tools</string>
         </Properties>
-        <Item class="ModuleScript" referent="61">
+        <Item class="ModuleScript" referent="62">
           <Properties>
             <string name="Name">StarterRadar</string>
             <string name="Source"><![CDATA[--!strict
@@ -10109,7 +10898,7 @@ return StarterRadar
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="62">
+        <Item class="ModuleScript" referent="63">
           <Properties>
             <string name="Name">ToolService</string>
             <string name="Source"><![CDATA[--!strict
@@ -10231,15 +11020,15 @@ return ToolService
       </Item>
     </Item>
   </Item>
-  <Item class="ServerStorage" referent="63">
+  <Item class="ServerStorage" referent="64">
     <Properties>
       <string name="Name">ServerStorage</string>
     </Properties>
-    <Item class="Folder" referent="64">
+    <Item class="Folder" referent="65">
       <Properties>
         <string name="Name">AssetGenerators</string>
       </Properties>
-      <Item class="ModuleScript" referent="65">
+      <Item class="ModuleScript" referent="66">
         <Properties>
           <string name="Name">exit_door</string>
           <string name="Source"><![CDATA[--!strict
@@ -10365,7 +11154,7 @@ return {
 ]]></string>
         </Properties>
       </Item>
-      <Item class="ModuleScript" referent="66">
+      <Item class="ModuleScript" referent="67">
         <Properties>
           <string name="Name">exit_roof</string>
           <string name="Source"><![CDATA[--!strict
@@ -10462,7 +11251,7 @@ return {
 ]]></string>
         </Properties>
       </Item>
-      <Item class="ModuleScript" referent="67">
+      <Item class="ModuleScript" referent="68">
         <Properties>
           <string name="Name">exit_window</string>
           <string name="Source"><![CDATA[--!strict
@@ -10587,7 +11376,7 @@ return {
 ]]></string>
         </Properties>
       </Item>
-      <Item class="ModuleScript" referent="68">
+      <Item class="ModuleScript" referent="69">
         <Properties>
           <string name="Name">machine_reception_stamp</string>
           <string name="Source"><![CDATA[--!strict
@@ -10735,7 +11524,7 @@ return {
 ]]></string>
         </Properties>
       </Item>
-      <Item class="ModuleScript" referent="69">
+      <Item class="ModuleScript" referent="70">
         <Properties>
           <string name="Name">reception_carton</string>
           <string name="Source"><![CDATA[--!strict
@@ -10820,7 +11609,7 @@ return {
 ]]></string>
         </Properties>
       </Item>
-      <Item class="ModuleScript" referent="70">
+      <Item class="ModuleScript" referent="71">
         <Properties>
           <string name="Name">reception_foam_crate</string>
           <string name="Source"><![CDATA[--!strict
@@ -10902,7 +11691,7 @@ return {
 ]]></string>
         </Properties>
       </Item>
-      <Item class="ModuleScript" referent="71">
+      <Item class="ModuleScript" referent="72">
         <Properties>
           <string name="Name">reception_pallet</string>
           <string name="Source"><![CDATA[--!strict
@@ -10975,7 +11764,7 @@ return {
 ]]></string>
         </Properties>
       </Item>
-      <Item class="ModuleScript" referent="72">
+      <Item class="ModuleScript" referent="73">
         <Properties>
           <string name="Name">reception_suitcase</string>
           <string name="Source"><![CDATA[--!strict
@@ -11061,26 +11850,26 @@ return {
       </Item>
     </Item>
   </Item>
-  <Item class="StarterPlayer" referent="73">
+  <Item class="StarterPlayer" referent="74">
     <Properties>
       <string name="Name">StarterPlayer</string>
       <float name="CharacterJumpHeight">7.2</float>
       <bool name="CharacterUseJumpPower">false</bool>
       <float name="CharacterWalkSpeed">16</float>
     </Properties>
-    <Item class="StarterPlayerScripts" referent="74">
+    <Item class="StarterPlayerScripts" referent="75">
       <Properties>
         <string name="Name">StarterPlayerScripts</string>
       </Properties>
-      <Item class="Folder" referent="75">
+      <Item class="Folder" referent="76">
         <Properties>
           <string name="Name">Client</string>
         </Properties>
-        <Item class="Folder" referent="76">
+        <Item class="Folder" referent="77">
           <Properties>
             <string name="Name">Controllers</string>
           </Properties>
-          <Item class="ModuleScript" referent="77">
+          <Item class="ModuleScript" referent="78">
             <Properties>
               <string name="Name">CameraController</string>
               <string name="Source"><![CDATA[--!strict
@@ -11105,7 +11894,7 @@ return CameraController
 ]]></string>
             </Properties>
           </Item>
-          <Item class="ModuleScript" referent="78">
+          <Item class="ModuleScript" referent="79">
             <Properties>
               <string name="Name">EffectsController</string>
               <string name="Source"><![CDATA[--!strict
@@ -11167,7 +11956,7 @@ return EffectsController
 ]]></string>
             </Properties>
           </Item>
-          <Item class="ModuleScript" referent="79">
+          <Item class="ModuleScript" referent="80">
             <Properties>
               <string name="Name">HUDController</string>
               <string name="Source"><![CDATA[--!strict
@@ -11267,7 +12056,7 @@ return HUDController
 ]]></string>
             </Properties>
           </Item>
-          <Item class="ModuleScript" referent="80">
+          <Item class="ModuleScript" referent="81">
             <Properties>
               <string name="Name">MovementController</string>
               <string name="Source"><![CDATA[--!strict
@@ -11372,7 +12161,7 @@ return MovementController
 ]]></string>
             </Properties>
           </Item>
-          <Item class="ModuleScript" referent="81">
+          <Item class="ModuleScript" referent="82">
             <Properties>
               <string name="Name">PlushDeformationController</string>
               <string name="Source"><![CDATA[--!strict
@@ -11534,7 +12323,7 @@ return PlushDeformationController
 ]]></string>
             </Properties>
           </Item>
-          <Item class="ModuleScript" referent="82">
+          <Item class="ModuleScript" referent="83">
             <Properties>
               <string name="Name">SettingsController</string>
               <string name="Source"><![CDATA[--!strict
@@ -11565,7 +12354,7 @@ return SettingsController
 ]]></string>
             </Properties>
           </Item>
-          <Item class="ModuleScript" referent="83">
+          <Item class="ModuleScript" referent="84">
             <Properties>
               <string name="Name">ShopController</string>
               <string name="Source"><![CDATA[--!strict
@@ -11703,7 +12492,7 @@ return ShopController
 ]]></string>
             </Properties>
           </Item>
-          <Item class="ModuleScript" referent="84">
+          <Item class="ModuleScript" referent="85">
             <Properties>
               <string name="Name">ToolController</string>
               <string name="Source"><![CDATA[--!strict
@@ -11762,7 +12551,7 @@ return ToolController
 ]]></string>
             </Properties>
           </Item>
-          <Item class="ModuleScript" referent="85">
+          <Item class="ModuleScript" referent="86">
             <Properties>
               <string name="Name">TutorialController</string>
               <string name="Source"><![CDATA[--!strict
@@ -11812,7 +12601,7 @@ return TutorialController
 ]]></string>
             </Properties>
           </Item>
-          <Item class="ModuleScript" referent="86">
+          <Item class="ModuleScript" referent="87">
             <Properties>
               <string name="Name">TutorialShopController</string>
               <string name="Source"><![CDATA[--!strict
@@ -11890,7 +12679,7 @@ return TutorialShopController
 ]]></string>
             </Properties>
           </Item>
-          <Item class="ModuleScript" referent="87">
+          <Item class="ModuleScript" referent="88">
             <Properties>
               <string name="Name">Ui</string>
               <string name="Source"><![CDATA[--!strict
@@ -11983,7 +12772,7 @@ return Ui
             </Properties>
           </Item>
         </Item>
-        <Item class="LocalScript" referent="88">
+        <Item class="LocalScript" referent="89">
           <Properties>
             <string name="Name">Main</string>
             <string name="Source"><![CDATA[--!strict
@@ -12014,7 +12803,7 @@ end
 ]]></string>
           </Properties>
         </Item>
-        <Item class="ModuleScript" referent="89">
+        <Item class="ModuleScript" referent="90">
           <Properties>
             <string name="Name">Net</string>
             <string name="Source"><![CDATA[--!strict
@@ -12074,7 +12863,7 @@ return Net
       </Item>
     </Item>
   </Item>
-  <Item class="Workspace" referent="90">
+  <Item class="Workspace" referent="91">
     <Properties>
       <string name="Name">Workspace</string>
       <float name="Gravity">196.2</float>

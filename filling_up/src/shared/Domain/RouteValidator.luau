@@ -254,4 +254,72 @@ function V.validate(room, opts: { gapRatio: number }): (boolean, { errors: { str
 	return #errors == 0, { errors = errors, checks = checks }
 end
 
+-- Set dressing (decision 0018): decorative furniture must never interfere with play. Independent
+-- of SetDressing's own keep-out logic (it does not reuse it) so that a placement bug is caught.
+V.DECOR_SUPPORT_MARGIN = 1
+function V.validateDecor(room, budget: number): (boolean, { string })
+	local errors: { string } = {}
+	local decor = room.decor or {}
+	local w, d, h = room.size.w, room.size.d, room.size.h
+	local nodes = nodeById(room)
+	local blocks = 0
+	local arcs = {}
+	for _, e in room.routeGraph.edges do
+		local a, b = nodes[e.from], nodes[e.to]
+		if e.kind == "jump" and a and b and a.kind ~= "floor" then
+			for _, body in V.arcBodies(a, b) do
+				table.insert(arcs, body)
+			end
+		end
+	end
+	for _, item in decor do
+		blocks += #item.parts
+		for _, part in item.parts do
+			local bx = part.box
+			if not Box.insideRoom(bx, w, d, h, 1e-6) then
+				table.insert(errors, "decor_outside_room:" .. item.id)
+			end
+			if not item.collide and item.kind ~= "wall" then
+				continue -- rugs and light panels: no collision, only bounds and budget
+			end
+			for _, sz in room.spawnZones do
+				if Box.overlapsXZ(bx, Box.expand(sz, 2, 0, 2)) then
+					table.insert(errors, "decor_in_spawn:" .. item.id)
+				end
+			end
+			if Box.overlapsXZ(bx, room.exitClearance) then
+				table.insert(errors, "decor_in_exit_clearance:" .. item.id)
+			end
+			for _, s in room.solids do
+				if Box.overlapsXZ(bx, Box.expand(s.box, V.DECOR_SUPPORT_MARGIN, 0, V.DECOR_SUPPORT_MARGIN)) then
+					table.insert(errors, "decor_near_support:" .. item.id .. "/" .. tostring(s.nodeId))
+				end
+			end
+			for _, n in room.routeGraph.nodes do
+				if n.kind ~= "floor" then
+					local head = Box.onFloor(n.box.cx, n.topY, n.box.cz, n.walkable.w, Jump.AVATAR.height + 0.5, n.walkable.d)
+					if Box.intersects(bx, head, 0.01) then
+						table.insert(errors, "decor_in_headroom:" .. item.id .. "/" .. n.id)
+					end
+				end
+			end
+			for _, body in arcs do
+				if Box.intersects(bx, body, 0.01) then
+					table.insert(errors, "decor_in_jump_arc:" .. item.id)
+					break
+				end
+			end
+			for mi, m in room.waveMouths do
+				if Box.overlapsXZ(bx, Box.expand(m, 1, 0, 1)) then
+					table.insert(errors, string.format("decor_under_mouth:%s/%d", item.id, mi))
+				end
+			end
+		end
+	end
+	if blocks + #room.waveMouths > budget then
+		table.insert(errors, "decor_budget")
+	end
+	return #errors == 0, errors
+end
+
 return V

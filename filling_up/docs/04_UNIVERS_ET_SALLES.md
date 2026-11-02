@@ -45,6 +45,8 @@ Toutes les dimensions suivantes sont des gabarits de maquette en studs, notés l
 famille, **XL** (grande halle, environ 1,4 × L) et **XV** (verticale géante, environ 1,6 × la hauteur de V). Leurs
 dimensions sont dans `config/rooms.json`. Ils dominent la sélection à partir de la salle 2 ; la salle 1 reste petite.
 Le volume des vagues suit la surface de la pièce, avec un budget physique inchangé.
+Les grandes pièces reçoivent un habillage (décision 0018) : mobilier collé aux murs selon la famille, tapis et
+panneaux lumineux. Il est posé après la validation, sans toucher au parcours, et vérifié par un contrôle indépendant.
 
 Les variantes V multiplient les étages et paliers de récupération ; elles ne réduisent pas automatiquement les surfaces d'atterrissage. Les volumes L offrent plusieurs itinéraires visibles. Le sol et le plafond ne sont pas étirés arbitrairement : les modules de murs, machines et appuis sont recomposés sur une grille.
 

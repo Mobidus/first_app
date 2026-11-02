@@ -275,6 +275,49 @@ function RoomGenerator.build(room: any, cell: CFrame, parent: Instance): (Model,
 		end
 	end
 
+	-- set dressing (decision 0018): validated by RouteValidator.validateDecor in RoomPlan.build.
+	-- Furniture collides (tagged Architecture: excluded from burial probes, structural for tools);
+	-- wall pieces, rugs and ceiling lights never collide and are invisible to queries.
+	local decorFolder = Instance.new("Folder")
+	decorFolder.Name = "SetDressing"
+	decorFolder.Parent = model
+	local roleColors = {
+		structure = tpl.palette.structure,
+		accent = tpl.palette.accent,
+		background = tpl.palette.background,
+		soft = Color3.fromHex("#FFF5DF"),
+		dark = Color3.fromHex("#203055"),
+		plant = Color3.fromHex("#3FBF6A"),
+		glass = Color3.fromHex("#BFE9FF"),
+		glow = Color3.fromHex("#FFF3C4"),
+	}
+	for _, item in room.decor or {} do
+		local holder = Instance.new("Model")
+		holder.Name = item.id
+		holder:SetAttribute("AssetKey", item.assetKey)
+		holder.Parent = decorFolder
+		for i, part in item.parts do
+			local role = part.role
+			local material = if role == "glow" then Enum.Material.Neon elseif role == "glass" then Enum.Material.Glass else tpl.propMaterial
+			local p = block(
+				holder,
+				item.id .. "_" .. i,
+				cell,
+				part.box,
+				roleColors[role] or tpl.palette.structure,
+				material,
+				if item.collide then "Architecture" else "DecorOnly",
+				if role == "glass" then 0.35 else 0
+			)
+			p.CanCollide = item.collide == true
+			p.CanQuery = item.collide == true
+			p.CanTouch = false
+			if item.kind == "rug" or item.kind == "light" then
+				p.CastShadow = false
+			end
+		end
+	end
+
 	-- wave mouths (ceiling chutes, decor) with coral danger triangles drawn by the client
 	for i, m in room.waveMouths do
 		local mouth = block(
