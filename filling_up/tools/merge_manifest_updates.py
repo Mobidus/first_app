@@ -26,6 +26,8 @@ def main() -> int:
     by_id = {a["id"]: a for a in manifest["assets"]}
     log = {"applied": [], "rejected": []}
     sources = [("T02", "reports/T02/manifest_updates.json"), ("T03", "reports/T03/manifest_updates.json")]
+    # per-family high-quality passes (decision 0017 follow-up): reports/T03/manifest_updates_<family>.json
+    sources += [("T03", str(q.relative_to(ROOT))) for q in sorted((ROOT / "reports/T03").glob("manifest_updates_*.json"))]
     for task, path in sources:
         if not (ROOT / path).exists():
             continue

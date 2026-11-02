@@ -12,8 +12,8 @@
       "release_stage": "MVP",
       "status": "modeled",
       "roblox_asset_id": null,
-      "source_path": "assets/source/generators/reception_carton.luau",
-      "export_path": "assets/import/models/reception_carton.rbxm",
+      "source_path": "assets/source/models/reception/reception_props.blend",
+      "export_path": "assets/import/models/reception_carton.glb",
       "dimensions_order": "width_depth_height",
       "size_studs": [
         10,
@@ -46,11 +46,21 @@
       "validation_evidence": [
         "assets/source/design/canvas/project/Room_Reception.dc.html",
         "reports/T03/generators_check.txt",
-        "reports/T03/props_rbxm_export.json"
+        "reports/T03/props_rbxm_export.json",
+        "reports/T03/props_reception_verify.json#assets.reception_carton",
+        "reports/T03/renders/reception_carton_3q.png",
+        "reports/T03/renders/reception_carton_silhouette.png",
+        "reports/T03/renders/props_reception_sheet.png",
+        "reports/T03/renders/props_reception_silhouettes_sheet.png",
+        "reports/T03/renders/props_reception_lineup.png"
       ],
       "design_reference_paths": [
         "assets/source/generators/reception_carton.luau",
         "assets/import/models/reception_carton.rbxm"
+      ],
+      "additional_exports": [
+        "assets/import/models/reception_carton_lod1.glb",
+        "assets/import/models/reception_carton.fbx"
       ]
     },
     {
@@ -60,8 +70,8 @@
       "release_stage": "MVP",
       "status": "modeled",
       "roblox_asset_id": null,
-      "source_path": "assets/source/generators/reception_foam_crate.luau",
-      "export_path": "assets/import/models/reception_foam_crate.rbxm",
+      "source_path": "assets/source/models/reception/reception_props.blend",
+      "export_path": "assets/import/models/reception_foam_crate.glb",
       "dimensions_order": "width_depth_height",
       "size_studs": [
         8,
@@ -94,11 +104,21 @@
       "validation_evidence": [
         "assets/source/design/canvas/project/Room_Reception.dc.html",
         "reports/T03/generators_check.txt",
-        "reports/T03/props_rbxm_export.json"
+        "reports/T03/props_rbxm_export.json",
+        "reports/T03/props_reception_verify.json#assets.reception_foam_crate",
+        "reports/T03/renders/reception_foam_crate_3q.png",
+        "reports/T03/renders/reception_foam_crate_silhouette.png",
+        "reports/T03/renders/props_reception_sheet.png",
+        "reports/T03/renders/props_reception_silhouettes_sheet.png",
+        "reports/T03/renders/props_reception_lineup.png"
       ],
       "design_reference_paths": [
         "assets/source/generators/reception_foam_crate.luau",
         "assets/import/models/reception_foam_crate.rbxm"
+      ],
+      "additional_exports": [
+        "assets/import/models/reception_foam_crate_lod1.glb",
+        "assets/import/models/reception_foam_crate.fbx"
       ]
     },
     {
@@ -106,10 +126,10 @@
       "name": "Valise orange",
       "category": "room_prop",
       "release_stage": "MVP",
-      "status": "designed",
+      "status": "modeled",
       "roblox_asset_id": null,
-      "source_path": "assets/source/models/reception_suitcase.blend",
-      "export_path": "assets/import/models/reception_suitcase.rbxm",
+      "source_path": "assets/source/models/reception/reception_props.blend",
+      "export_path": "assets/import/models/reception_suitcase.glb",
       "dimensions_order": "width_depth_height",
       "size_studs": [
         10,
@@ -141,11 +161,21 @@
       "provenance": "original_creation_required",
       "validation_evidence": [
         "assets/source/design/canvas/project/Room_Reception.dc.html",
-        "reports/T03/props_rbxm_export.json"
+        "reports/T03/props_rbxm_export.json",
+        "reports/T03/props_reception_verify.json#assets.reception_suitcase",
+        "reports/T03/renders/reception_suitcase_3q.png",
+        "reports/T03/renders/reception_suitcase_silhouette.png",
+        "reports/T03/renders/props_reception_sheet.png",
+        "reports/T03/renders/props_reception_silhouettes_sheet.png",
+        "reports/T03/renders/props_reception_lineup.png"
       ],
       "design_reference_paths": [
         "assets/source/models/reception_suitcase.blend",
         "assets/import/models/reception_suitcase.glb"
+      ],
+      "additional_exports": [
+        "assets/import/models/reception_suitcase_lod1.glb",
+        "assets/import/models/reception_suitcase.fbx"
       ]
     },
     {
@@ -155,8 +185,8 @@
       "release_stage": "MVP",
       "status": "modeled",
       "roblox_asset_id": null,
-      "source_path": "assets/source/generators/reception_pallet.luau",
-      "export_path": "assets/import/models/reception_pallet.rbxm",
+      "source_path": "assets/source/models/reception/reception_props.blend",
+      "export_path": "assets/import/models/reception_pallet.glb",
       "dimensions_order": "width_depth_height",
       "size_studs": [
         12,
@@ -189,11 +219,21 @@
       "validation_evidence": [
         "assets/source/design/canvas/project/Room_Reception.dc.html",
         "reports/T03/generators_check.txt",
-        "reports/T03/props_rbxm_export.json"
+        "reports/T03/props_rbxm_export.json",
+        "reports/T03/props_reception_verify.json#assets.reception_pallet",
+        "reports/T03/renders/reception_pallet_3q.png",
+        "reports/T03/renders/reception_pallet_silhouette.png",
+        "reports/T03/renders/props_reception_sheet.png",
+        "reports/T03/renders/props_reception_silhouettes_sheet.png",
+        "reports/T03/renders/props_reception_lineup.png"
       ],
       "design_reference_paths": [
         "assets/source/generators/reception_pallet.luau",
         "assets/import/models/reception_pallet.rbxm"
+      ],
+      "additional_exports": [
+        "assets/import/models/reception_pallet_lod1.glb",
+        "assets/import/models/reception_pallet.fbx"
       ]
     },
     {
@@ -201,9 +241,9 @@
       "name": "Bobine de ruban",
       "category": "room_prop",
       "release_stage": "MVP",
-      "status": "designed",
+      "status": "modeled",
       "roblox_asset_id": null,
-      "source_path": "assets/source/models/reception_tape_reel.blend",
+      "source_path": "assets/source/models/reception/reception_props.blend",
       "export_path": "assets/import/models/reception_tape_reel.glb",
       "dimensions_order": "width_depth_height",
       "size_studs": [
@@ -235,23 +275,33 @@
       "image_export_pixels": null,
       "provenance": "original_creation_required",
       "validation_evidence": [
-        "assets/source/design/canvas/project/Room_Reception.dc.html"
+        "assets/source/design/canvas/project/Room_Reception.dc.html",
+        "reports/T03/props_reception_verify.json#assets.reception_tape_reel",
+        "reports/T03/renders/reception_tape_reel_3q.png",
+        "reports/T03/renders/reception_tape_reel_silhouette.png",
+        "reports/T03/renders/props_reception_sheet.png",
+        "reports/T03/renders/props_reception_silhouettes_sheet.png",
+        "reports/T03/renders/props_reception_lineup.png"
       ],
       "design_reference_paths": [
         "assets/source/models/reception_tape_reel.blend",
         "assets/import/models/reception_tape_reel.glb"
       ],
       "proxy_export_path": "assets/import/models/reception_tape_reel.rbxm",
-      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged",
+      "additional_exports": [
+        "assets/import/models/reception_tape_reel_lod1.glb",
+        "assets/import/models/reception_tape_reel.fbx"
+      ]
     },
     {
       "id": "reception_pillow_parcel",
       "name": "Colis oreiller",
       "category": "room_prop",
       "release_stage": "MVP",
-      "status": "designed",
+      "status": "modeled",
       "roblox_asset_id": null,
-      "source_path": "assets/source/models/reception_pillow_parcel.blend",
+      "source_path": "assets/source/models/reception/reception_props.blend",
       "export_path": "assets/import/models/reception_pillow_parcel.glb",
       "dimensions_order": "width_depth_height",
       "size_studs": [
@@ -283,23 +333,33 @@
       "image_export_pixels": null,
       "provenance": "original_creation_required",
       "validation_evidence": [
-        "assets/source/design/canvas/project/Room_Reception.dc.html"
+        "assets/source/design/canvas/project/Room_Reception.dc.html",
+        "reports/T03/props_reception_verify.json#assets.reception_pillow_parcel",
+        "reports/T03/renders/reception_pillow_parcel_3q.png",
+        "reports/T03/renders/reception_pillow_parcel_silhouette.png",
+        "reports/T03/renders/props_reception_sheet.png",
+        "reports/T03/renders/props_reception_silhouettes_sheet.png",
+        "reports/T03/renders/props_reception_lineup.png"
       ],
       "design_reference_paths": [
         "assets/source/models/reception_pillow_parcel.blend",
         "assets/import/models/reception_pillow_parcel.glb"
       ],
       "proxy_export_path": "assets/import/models/reception_pillow_parcel.rbxm",
-      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged",
+      "additional_exports": [
+        "assets/import/models/reception_pillow_parcel_lod1.glb",
+        "assets/import/models/reception_pillow_parcel.fbx"
+      ]
     },
     {
       "id": "reception_mail_cart",
       "name": "Chariot postal",
       "category": "room_prop",
       "release_stage": "MVP",
-      "status": "designed",
+      "status": "modeled",
       "roblox_asset_id": null,
-      "source_path": "assets/source/models/reception_mail_cart.blend",
+      "source_path": "assets/source/models/reception/reception_props.blend",
       "export_path": "assets/import/models/reception_mail_cart.glb",
       "dimensions_order": "width_depth_height",
       "size_studs": [
@@ -331,23 +391,33 @@
       "image_export_pixels": null,
       "provenance": "original_creation_required",
       "validation_evidence": [
-        "assets/source/design/canvas/project/Room_Reception.dc.html"
+        "assets/source/design/canvas/project/Room_Reception.dc.html",
+        "reports/T03/props_reception_verify.json#assets.reception_mail_cart",
+        "reports/T03/renders/reception_mail_cart_3q.png",
+        "reports/T03/renders/reception_mail_cart_silhouette.png",
+        "reports/T03/renders/props_reception_sheet.png",
+        "reports/T03/renders/props_reception_silhouettes_sheet.png",
+        "reports/T03/renders/props_reception_lineup.png"
       ],
       "design_reference_paths": [
         "assets/source/models/reception_mail_cart.blend",
         "assets/import/models/reception_mail_cart.glb"
       ],
       "proxy_export_path": "assets/import/models/reception_mail_cart.rbxm",
-      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged",
+      "additional_exports": [
+        "assets/import/models/reception_mail_cart_lod1.glb",
+        "assets/import/models/reception_mail_cart.fbx"
+      ]
     },
     {
       "id": "reception_accordion_parcel",
       "name": "Colis accordéon",
       "category": "room_prop",
       "release_stage": "MVP",
-      "status": "designed",
+      "status": "modeled",
       "roblox_asset_id": null,
-      "source_path": "assets/source/models/reception_accordion_parcel.blend",
+      "source_path": "assets/source/models/reception/reception_props.blend",
       "export_path": "assets/import/models/reception_accordion_parcel.glb",
       "dimensions_order": "width_depth_height",
       "size_studs": [
@@ -379,23 +449,33 @@
       "image_export_pixels": null,
       "provenance": "original_creation_required",
       "validation_evidence": [
-        "assets/source/design/canvas/project/Room_Reception.dc.html"
+        "assets/source/design/canvas/project/Room_Reception.dc.html",
+        "reports/T03/props_reception_verify.json#assets.reception_accordion_parcel",
+        "reports/T03/renders/reception_accordion_parcel_3q.png",
+        "reports/T03/renders/reception_accordion_parcel_silhouette.png",
+        "reports/T03/renders/props_reception_sheet.png",
+        "reports/T03/renders/props_reception_silhouettes_sheet.png",
+        "reports/T03/renders/props_reception_lineup.png"
       ],
       "design_reference_paths": [
         "assets/source/models/reception_accordion_parcel.blend",
         "assets/import/models/reception_accordion_parcel.glb"
       ],
       "proxy_export_path": "assets/import/models/reception_accordion_parcel.rbxm",
-      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged"
+      "proxy_note": "rbxm built from the identified diagnostic proxy (not final art); status unchanged",
+      "additional_exports": [
+        "assets/import/models/reception_accordion_parcel_lod1.glb",
+        "assets/import/models/reception_accordion_parcel.fbx"
+      ]
     },
     {
       "id": "machine_reception_stamp",
       "name": "Le Tamponneur",
       "category": "signature_machine",
       "release_stage": "MVP",
-      "status": "designed",
+      "status": "modeled",
       "roblox_asset_id": null,
-      "source_path": "assets/source/models/machine_reception_stamp.blend",
+      "source_path": "assets/source/models/reception/reception_props.blend",
       "export_path": "assets/import/models/machine_reception_stamp.glb",
       "dimensions_order": "width_depth_height",
       "size_studs": [
@@ -417,11 +497,21 @@
       "image_export_pixels": null,
       "provenance": "original_creation_required",
       "validation_evidence": [
-        "assets/source/design/canvas/project/Room_Reception.dc.html"
+        "assets/source/design/canvas/project/Room_Reception.dc.html",
+        "reports/T03/props_reception_verify.json#assets.machine_reception_stamp",
+        "reports/T03/renders/machine_reception_stamp_3q.png",
+        "reports/T03/renders/machine_reception_stamp_silhouette.png",
+        "reports/T03/renders/props_reception_sheet.png",
+        "reports/T03/renders/props_reception_silhouettes_sheet.png",
+        "reports/T03/renders/props_reception_lineup.png"
       ],
       "design_reference_paths": [
         "assets/source/models/machine_reception_stamp.blend",
         "assets/import/models/machine_reception_stamp.glb"
+      ],
+      "additional_exports": [
+        "assets/import/models/machine_reception_stamp_lod1.glb",
+        "assets/import/models/machine_reception_stamp.fbx"
       ]
     },
     {
@@ -5919,8 +6009,8 @@
     }
   ],
   "status_counts": {
-    "modeled": 9,
-    "designed": 34,
+    "modeled": 15,
+    "designed": 28,
     "planned": 138
   }
 }

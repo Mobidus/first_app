@@ -1,0 +1,440 @@
+{
+  "task": "T03",
+  "family": "reception",
+  "generated_at_utc": "2026-11-02T13:41:03.915761+00:00",
+  "rule": "Statut proposé au plus 'modeled' ; jamais imported/validated sans import Roblox réel. roblox_asset_id reste null.",
+  "apply_by": "agent principal (ce fork ne modifie pas assets/manifest.json)",
+  "replaces_note": "Les .rbxm primitifs existants (assets/import/models/reception_*.rbxm) ne sont pas modifiés ; les GLB/FBX sont les nouveaux exports maillés.",
+  "updates": [
+    {
+      "id": "reception_carton",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/reception/reception_props.blend",
+      "source_objects": [
+        "reception_carton_LOD0",
+        "reception_carton_LOD1"
+      ],
+      "export_path": "assets/import/models/reception_carton.glb",
+      "additional_exports": [
+        "assets/import/models/reception_carton_lod1.glb",
+        "assets/import/models/reception_carton.fbx"
+      ],
+      "supporting_files": [
+        "assets/source/models/reception/textures/reception_atlas_1024.png",
+        "assets/source/models/reception/textures/reception_atlas_rough_1024.png",
+        "assets/source/models/reception/collision_reception.json",
+        "assets/source/models/reception/build_info.json"
+      ],
+      "generator_script": "assets/source/blender/build_props_reception.py",
+      "validation_evidence": [
+        "reports/T03/props_reception_verify.json#assets.reception_carton",
+        "reports/T03/renders/reception_carton_3q.png",
+        "reports/T03/renders/reception_carton_silhouette.png",
+        "reports/T03/renders/props_reception_sheet.png",
+        "reports/T03/renders/props_reception_silhouettes_sheet.png",
+        "reports/T03/renders/props_reception_lineup.png"
+      ],
+      "measured": {
+        "dims_studs_wdh": [
+          9.9871,
+          8.0105,
+          4.0
+        ],
+        "triangles_lod0": 1128,
+        "triangles_lod1": 172,
+        "materials_per_mesh": 1,
+        "walkable_top_max_abs_dev_inset_0_25": 0.0853,
+        "walkable_top_full_footprint_within_tol_fraction": 0.9969,
+        "blender_checks_failed": []
+      },
+      "not_validated_because": [
+        "Import Roblox Studio bloqué (aucun Studio/Open Cloud) : MeshPart, unités et collisions non mesurés dans Roblox",
+        "Test d'identification en silhouette par testeurs non réalisé (rendus seulement)",
+        "Budget LOD0 800–3 000 (props) appliqué sur décision de la tâche ; docs/02 indique encore 100–800 pour un objet répété simple"
+      ]
+    },
+    {
+      "id": "reception_foam_crate",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/reception/reception_props.blend",
+      "source_objects": [
+        "reception_foam_crate_LOD0",
+        "reception_foam_crate_LOD1"
+      ],
+      "export_path": "assets/import/models/reception_foam_crate.glb",
+      "additional_exports": [
+        "assets/import/models/reception_foam_crate_lod1.glb",
+        "assets/import/models/reception_foam_crate.fbx"
+      ],
+      "supporting_files": [
+        "assets/source/models/reception/textures/reception_atlas_1024.png",
+        "assets/source/models/reception/textures/reception_atlas_rough_1024.png",
+        "assets/source/models/reception/collision_reception.json",
+        "assets/source/models/reception/build_info.json"
+      ],
+      "generator_script": "assets/source/blender/build_props_reception.py",
+      "validation_evidence": [
+        "reports/T03/props_reception_verify.json#assets.reception_foam_crate",
+        "reports/T03/renders/reception_foam_crate_3q.png",
+        "reports/T03/renders/reception_foam_crate_silhouette.png",
+        "reports/T03/renders/props_reception_sheet.png",
+        "reports/T03/renders/props_reception_silhouettes_sheet.png",
+        "reports/T03/renders/props_reception_lineup.png"
+      ],
+      "measured": {
+        "dims_studs_wdh": [
+          8.0,
+          8.0,
+          4.0
+        ],
+        "triangles_lod0": 1336,
+        "triangles_lod1": 192,
+        "materials_per_mesh": 1,
+        "walkable_top_max_abs_dev_inset_0_25": 0.0373,
+        "walkable_top_full_footprint_within_tol_fraction": 0.9961,
+        "blender_checks_failed": []
+      },
+      "not_validated_because": [
+        "Import Roblox Studio bloqué (aucun Studio/Open Cloud) : MeshPart, unités et collisions non mesurés dans Roblox",
+        "Test d'identification en silhouette par testeurs non réalisé (rendus seulement)",
+        "Budget LOD0 800–3 000 (props) appliqué sur décision de la tâche ; docs/02 indique encore 100–800 pour un objet répété simple"
+      ]
+    },
+    {
+      "id": "reception_suitcase",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/reception/reception_props.blend",
+      "source_objects": [
+        "reception_suitcase_LOD0",
+        "reception_suitcase_LOD1"
+      ],
+      "export_path": "assets/import/models/reception_suitcase.glb",
+      "additional_exports": [
+        "assets/import/models/reception_suitcase_lod1.glb",
+        "assets/import/models/reception_suitcase.fbx"
+      ],
+      "supporting_files": [
+        "assets/source/models/reception/textures/reception_atlas_1024.png",
+        "assets/source/models/reception/textures/reception_atlas_rough_1024.png",
+        "assets/source/models/reception/collision_reception.json",
+        "assets/source/models/reception/build_info.json"
+      ],
+      "generator_script": "assets/source/blender/build_props_reception.py",
+      "validation_evidence": [
+        "reports/T03/props_reception_verify.json#assets.reception_suitcase",
+        "reports/T03/renders/reception_suitcase_3q.png",
+        "reports/T03/renders/reception_suitcase_silhouette.png",
+        "reports/T03/renders/props_reception_sheet.png",
+        "reports/T03/renders/props_reception_silhouettes_sheet.png",
+        "reports/T03/renders/props_reception_lineup.png"
+      ],
+      "measured": {
+        "dims_studs_wdh": [
+          10.0,
+          6.0,
+          4.0
+        ],
+        "triangles_lod0": 2934,
+        "triangles_lod1": 380,
+        "materials_per_mesh": 1,
+        "walkable_top_max_abs_dev_inset_0_25": 0.1477,
+        "walkable_top_full_footprint_within_tol_fraction": 0.9938,
+        "blender_checks_failed": []
+      },
+      "not_validated_because": [
+        "Import Roblox Studio bloqué (aucun Studio/Open Cloud) : MeshPart, unités et collisions non mesurés dans Roblox",
+        "Test d'identification en silhouette par testeurs non réalisé (rendus seulement)",
+        "Budget LOD0 800–3 000 (props) appliqué sur décision de la tâche ; docs/02 indique encore 100–800 pour un objet répété simple"
+      ]
+    },
+    {
+      "id": "reception_pallet",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/reception/reception_props.blend",
+      "source_objects": [
+        "reception_pallet_LOD0",
+        "reception_pallet_LOD1"
+      ],
+      "export_path": "assets/import/models/reception_pallet.glb",
+      "additional_exports": [
+        "assets/import/models/reception_pallet_lod1.glb",
+        "assets/import/models/reception_pallet.fbx"
+      ],
+      "supporting_files": [
+        "assets/source/models/reception/textures/reception_atlas_1024.png",
+        "assets/source/models/reception/textures/reception_atlas_rough_1024.png",
+        "assets/source/models/reception/collision_reception.json",
+        "assets/source/models/reception/build_info.json"
+      ],
+      "generator_script": "assets/source/blender/build_props_reception.py",
+      "validation_evidence": [
+        "reports/T03/props_reception_verify.json#assets.reception_pallet",
+        "reports/T03/renders/reception_pallet_3q.png",
+        "reports/T03/renders/reception_pallet_silhouette.png",
+        "reports/T03/renders/props_reception_sheet.png",
+        "reports/T03/renders/props_reception_silhouettes_sheet.png",
+        "reports/T03/renders/props_reception_lineup.png"
+      ],
+      "measured": {
+        "dims_studs_wdh": [
+          12.0,
+          10.0,
+          2.0
+        ],
+        "triangles_lod0": 1964,
+        "triangles_lod1": 620,
+        "materials_per_mesh": 1,
+        "walkable_top_max_abs_dev_inset_0_25": 0.0143,
+        "walkable_top_full_footprint_within_tol_fraction": 0.9979,
+        "blender_checks_failed": []
+      },
+      "not_validated_because": [
+        "Import Roblox Studio bloqué (aucun Studio/Open Cloud) : MeshPart, unités et collisions non mesurés dans Roblox",
+        "Test d'identification en silhouette par testeurs non réalisé (rendus seulement)",
+        "Budget LOD0 800–3 000 (props) appliqué sur décision de la tâche ; docs/02 indique encore 100–800 pour un objet répété simple"
+      ]
+    },
+    {
+      "id": "reception_tape_reel",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/reception/reception_props.blend",
+      "source_objects": [
+        "reception_tape_reel_LOD0",
+        "reception_tape_reel_LOD1"
+      ],
+      "export_path": "assets/import/models/reception_tape_reel.glb",
+      "additional_exports": [
+        "assets/import/models/reception_tape_reel_lod1.glb",
+        "assets/import/models/reception_tape_reel.fbx"
+      ],
+      "supporting_files": [
+        "assets/source/models/reception/textures/reception_atlas_1024.png",
+        "assets/source/models/reception/textures/reception_atlas_rough_1024.png",
+        "assets/source/models/reception/collision_reception.json",
+        "assets/source/models/reception/build_info.json"
+      ],
+      "generator_script": "assets/source/blender/build_props_reception.py",
+      "validation_evidence": [
+        "reports/T03/props_reception_verify.json#assets.reception_tape_reel",
+        "reports/T03/renders/reception_tape_reel_3q.png",
+        "reports/T03/renders/reception_tape_reel_silhouette.png",
+        "reports/T03/renders/props_reception_sheet.png",
+        "reports/T03/renders/props_reception_silhouettes_sheet.png",
+        "reports/T03/renders/props_reception_lineup.png"
+      ],
+      "measured": {
+        "dims_studs_wdh": [
+          9.0,
+          9.0,
+          3.0
+        ],
+        "triangles_lod0": 1988,
+        "triangles_lod1": 400,
+        "materials_per_mesh": 1,
+        "walkable_top_max_abs_dev_inset_0_25": 0.0,
+        "walkable_top_full_footprint_within_tol_fraction": 0.9949,
+        "blender_checks_failed": []
+      },
+      "not_validated_because": [
+        "Import Roblox Studio bloqué (aucun Studio/Open Cloud) : MeshPart, unités et collisions non mesurés dans Roblox",
+        "Test d'identification en silhouette par testeurs non réalisé (rendus seulement)",
+        "Budget LOD0 800–3 000 (props) appliqué sur décision de la tâche ; docs/02 indique encore 100–800 pour un objet répété simple"
+      ]
+    },
+    {
+      "id": "reception_pillow_parcel",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/reception/reception_props.blend",
+      "source_objects": [
+        "reception_pillow_parcel_LOD0",
+        "reception_pillow_parcel_LOD1"
+      ],
+      "export_path": "assets/import/models/reception_pillow_parcel.glb",
+      "additional_exports": [
+        "assets/import/models/reception_pillow_parcel_lod1.glb",
+        "assets/import/models/reception_pillow_parcel.fbx"
+      ],
+      "supporting_files": [
+        "assets/source/models/reception/textures/reception_atlas_1024.png",
+        "assets/source/models/reception/textures/reception_atlas_rough_1024.png",
+        "assets/source/models/reception/collision_reception.json",
+        "assets/source/models/reception/build_info.json"
+      ],
+      "generator_script": "assets/source/blender/build_props_reception.py",
+      "validation_evidence": [
+        "reports/T03/props_reception_verify.json#assets.reception_pillow_parcel",
+        "reports/T03/renders/reception_pillow_parcel_3q.png",
+        "reports/T03/renders/reception_pillow_parcel_silhouette.png",
+        "reports/T03/renders/props_reception_sheet.png",
+        "reports/T03/renders/props_reception_silhouettes_sheet.png",
+        "reports/T03/renders/props_reception_lineup.png"
+      ],
+      "measured": {
+        "dims_studs_wdh": [
+          8.0,
+          8.0,
+          3.0
+        ],
+        "triangles_lod0": 1972,
+        "triangles_lod1": 628,
+        "materials_per_mesh": 1,
+        "walkable_top_max_abs_dev_inset_0_25": 0.1897,
+        "walkable_top_full_footprint_within_tol_fraction": 0.8945,
+        "blender_checks_failed": []
+      },
+      "not_validated_because": [
+        "Import Roblox Studio bloqué (aucun Studio/Open Cloud) : MeshPart, unités et collisions non mesurés dans Roblox",
+        "Test d'identification en silhouette par testeurs non réalisé (rendus seulement)",
+        "Budget LOD0 800–3 000 (props) appliqué sur décision de la tâche ; docs/02 indique encore 100–800 pour un objet répété simple"
+      ]
+    },
+    {
+      "id": "reception_mail_cart",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/reception/reception_props.blend",
+      "source_objects": [
+        "reception_mail_cart_LOD0",
+        "reception_mail_cart_LOD1"
+      ],
+      "export_path": "assets/import/models/reception_mail_cart.glb",
+      "additional_exports": [
+        "assets/import/models/reception_mail_cart_lod1.glb",
+        "assets/import/models/reception_mail_cart.fbx"
+      ],
+      "supporting_files": [
+        "assets/source/models/reception/textures/reception_atlas_1024.png",
+        "assets/source/models/reception/textures/reception_atlas_rough_1024.png",
+        "assets/source/models/reception/collision_reception.json",
+        "assets/source/models/reception/build_info.json"
+      ],
+      "generator_script": "assets/source/blender/build_props_reception.py",
+      "validation_evidence": [
+        "reports/T03/props_reception_verify.json#assets.reception_mail_cart",
+        "reports/T03/renders/reception_mail_cart_3q.png",
+        "reports/T03/renders/reception_mail_cart_silhouette.png",
+        "reports/T03/renders/props_reception_sheet.png",
+        "reports/T03/renders/props_reception_silhouettes_sheet.png",
+        "reports/T03/renders/props_reception_lineup.png"
+      ],
+      "measured": {
+        "dims_studs_wdh": [
+          10.0,
+          8.0,
+          3.0
+        ],
+        "triangles_lod0": 2724,
+        "triangles_lod1": 448,
+        "materials_per_mesh": 1,
+        "walkable_top_max_abs_dev_inset_0_25": 0.0221,
+        "walkable_top_full_footprint_within_tol_fraction": 0.9969,
+        "blender_checks_failed": []
+      },
+      "not_validated_because": [
+        "Import Roblox Studio bloqué (aucun Studio/Open Cloud) : MeshPart, unités et collisions non mesurés dans Roblox",
+        "Test d'identification en silhouette par testeurs non réalisé (rendus seulement)",
+        "Budget LOD0 800–3 000 (props) appliqué sur décision de la tâche ; docs/02 indique encore 100–800 pour un objet répété simple"
+      ]
+    },
+    {
+      "id": "reception_accordion_parcel",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/reception/reception_props.blend",
+      "source_objects": [
+        "reception_accordion_parcel_LOD0",
+        "reception_accordion_parcel_LOD1"
+      ],
+      "export_path": "assets/import/models/reception_accordion_parcel.glb",
+      "additional_exports": [
+        "assets/import/models/reception_accordion_parcel_lod1.glb",
+        "assets/import/models/reception_accordion_parcel.fbx"
+      ],
+      "supporting_files": [
+        "assets/source/models/reception/textures/reception_atlas_1024.png",
+        "assets/source/models/reception/textures/reception_atlas_rough_1024.png",
+        "assets/source/models/reception/collision_reception.json",
+        "assets/source/models/reception/build_info.json"
+      ],
+      "generator_script": "assets/source/blender/build_props_reception.py",
+      "validation_evidence": [
+        "reports/T03/props_reception_verify.json#assets.reception_accordion_parcel",
+        "reports/T03/renders/reception_accordion_parcel_3q.png",
+        "reports/T03/renders/reception_accordion_parcel_silhouette.png",
+        "reports/T03/renders/props_reception_sheet.png",
+        "reports/T03/renders/props_reception_silhouettes_sheet.png",
+        "reports/T03/renders/props_reception_lineup.png"
+      ],
+      "measured": {
+        "dims_studs_wdh": [
+          8.0,
+          8.0,
+          4.0
+        ],
+        "triangles_lod0": 2000,
+        "triangles_lod1": 484,
+        "materials_per_mesh": 1,
+        "walkable_top_max_abs_dev_inset_0_25": 0.0792,
+        "walkable_top_full_footprint_within_tol_fraction": 0.9961,
+        "blender_checks_failed": []
+      },
+      "not_validated_because": [
+        "Import Roblox Studio bloqué (aucun Studio/Open Cloud) : MeshPart, unités et collisions non mesurés dans Roblox",
+        "Test d'identification en silhouette par testeurs non réalisé (rendus seulement)",
+        "Budget LOD0 800–3 000 (props) appliqué sur décision de la tâche ; docs/02 indique encore 100–800 pour un objet répété simple"
+      ]
+    },
+    {
+      "id": "machine_reception_stamp",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/reception/reception_props.blend",
+      "source_objects": [
+        "machine_reception_stamp_LOD0",
+        "machine_reception_stamp_LOD1"
+      ],
+      "export_path": "assets/import/models/machine_reception_stamp.glb",
+      "additional_exports": [
+        "assets/import/models/machine_reception_stamp_lod1.glb",
+        "assets/import/models/machine_reception_stamp.fbx"
+      ],
+      "supporting_files": [
+        "assets/source/models/reception/textures/reception_atlas_1024.png",
+        "assets/source/models/reception/textures/reception_atlas_rough_1024.png",
+        "assets/source/models/reception/collision_reception.json",
+        "assets/source/models/reception/build_info.json"
+      ],
+      "generator_script": "assets/source/blender/build_props_reception.py",
+      "validation_evidence": [
+        "reports/T03/props_reception_verify.json#assets.machine_reception_stamp",
+        "reports/T03/renders/machine_reception_stamp_3q.png",
+        "reports/T03/renders/machine_reception_stamp_silhouette.png",
+        "reports/T03/renders/props_reception_sheet.png",
+        "reports/T03/renders/props_reception_silhouettes_sheet.png",
+        "reports/T03/renders/props_reception_lineup.png"
+      ],
+      "measured": {
+        "dims_studs_wdh": [
+          18.0,
+          12.0,
+          20.0
+        ],
+        "triangles_lod0": 7600,
+        "triangles_lod1": 634,
+        "materials_per_mesh": 2,
+        "blender_checks_failed": []
+      },
+      "not_validated_because": [
+        "Import Roblox Studio bloqué (aucun Studio/Open Cloud) : MeshPart, unités et collisions non mesurés dans Roblox",
+        "Test d'identification en silhouette par testeurs non réalisé (rendus seulement)",
+        "Budget LOD0 800–3 000 (props) appliqué sur décision de la tâche ; docs/02 indique encore 100–800 pour un objet répété simple"
+      ]
+    }
+  ]
+}

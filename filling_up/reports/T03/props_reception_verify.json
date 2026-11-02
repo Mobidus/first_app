@@ -1,0 +1,2198 @@
+{
+  "task": "T03",
+  "family": "reception",
+  "checked_at_utc": "2026-11-02T13:37:33.108608+00:00",
+  "blender_version": "5.2.3 LTS",
+  "method": "Réimport de chaque GLB/FBX dans une scène vide (Blender) ; lancers de rayons verticaux pour le dessus.",
+  "criteria": {
+    "envelope": "dimensions = size_studs (config/rooms.json) à ±2 % sur chaque axe (LOD0, LOD1, FBX)",
+    "walkable_top": "rectangle walkable_top centré, grille 0,25, retrait 0,25 stud : aucun raté, |écart| ≤ 0,25 au dessus du collider (size_studs[2]) ; aucune pièce > +0,05 au-dessus",
+    "triangles": "props LOD0 800–3 000, machine 3 000–8 000, LOD1 ≤ 700",
+    "materials": "≤ 2 par maillage",
+    "axes": "1 BU = 1 stud ; glTF X largeur, Y haut (min 0), Z profondeur ; avant Roblox -Z (décision 0003)"
+  },
+  "summary": {
+    "assets": 9,
+    "checks": 118,
+    "pass": 118,
+    "fail": 0
+  },
+  "import_status": "blocked",
+  "import_blocker": "Roblox Studio / Open Cloud indisponibles : aucun MeshPart importé, roblox_asset_id = null.",
+  "assets": {
+    "reception_carton": {
+      "asset_id": "reception_carton",
+      "kind": "prop",
+      "behavior": "stable",
+      "size_studs_wdh": [
+        10.0,
+        8.0,
+        4.0
+      ],
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_reception_atlas"
+        ],
+        "images_embedded": 2,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -4.9936,
+          0.0,
+          -4.0105
+        ],
+        "gltf_position_max_xyz": [
+          4.9936,
+          4.0,
+          4.0
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/reception_carton.glb",
+        "mesh_objects": 1,
+        "triangles": 1128,
+        "dims_studs_wdh": [
+          9.9871,
+          8.0105,
+          4.0
+        ],
+        "expected_size_studs_wdh": [
+          10.0,
+          8.0,
+          4.0
+        ],
+        "dims_rel_error": [
+          -0.0013,
+          0.0013,
+          -0.0
+        ],
+        "bbox_min": [
+          -4.9936,
+          -4.0,
+          0.0
+        ],
+        "bbox_max": [
+          4.9936,
+          4.0105,
+          4.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0052
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "collider": {
+        "size_studs_wdh": [
+          10,
+          8,
+          4
+        ],
+        "walkable_top": [
+          10,
+          8
+        ],
+        "top_height": 4.0
+      },
+      "top_lod0": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 1209,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0853,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0853,
+          "mean_dev_studs": -0.0269,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1280,
+          "misses": 4,
+          "max_abs_dev_studs": 4.0,
+          "max_above_studs": 0.0,
+          "max_below_studs": -4.0,
+          "mean_dev_studs": -0.0463,
+          "within_tolerance_fraction": 0.9969
+        }
+      },
+      "front_axis": {
+        "tile": "label_carton",
+        "found": true,
+        "mean_blender_y": 4.006,
+        "roblox_z": -4.006,
+        "is_front_minus_z_roblox": true
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/reception_carton_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 172,
+        "dims_studs_wdh": [
+          9.9184,
+          7.9305,
+          4.0
+        ],
+        "expected_size_studs_wdh": [
+          10.0,
+          8.0,
+          4.0
+        ],
+        "dims_rel_error": [
+          -0.0082,
+          -0.0087,
+          -0.0
+        ],
+        "bbox_min": [
+          -4.9592,
+          -3.9596,
+          0.0
+        ],
+        "bbox_max": [
+          4.9592,
+          3.9709,
+          4.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0057
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 1209,
+          "misses": 0,
+          "max_abs_dev_studs": 0.1672,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.1672,
+          "mean_dev_studs": -0.0292,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1280,
+          "misses": 8,
+          "max_abs_dev_studs": 4.0,
+          "max_above_studs": 0.0,
+          "max_below_studs": -4.0,
+          "mean_dev_studs": -0.0672,
+          "within_tolerance_fraction": 0.9938
+        }
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/reception_carton.fbx",
+        "mesh_objects": 1,
+        "triangles": 1128,
+        "dims_studs_wdh": [
+          9.9871,
+          8.0105,
+          4.0
+        ],
+        "expected_size_studs_wdh": [
+          10.0,
+          8.0,
+          4.0
+        ],
+        "dims_rel_error": [
+          -0.0013,
+          0.0013,
+          -0.0
+        ],
+        "bbox_min": [
+          -4.9936,
+          -4.0,
+          -0.0
+        ],
+        "bbox_max": [
+          4.9936,
+          4.0105,
+          4.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0052
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "tris_lod0_800_3000": "PASS",
+        "tris_lod1_le_700": "PASS",
+        "materials_le_2_per_mesh": "PASS",
+        "uv_and_embedded_texture": "PASS",
+        "front_details_face_minus_z_roblox": "PASS",
+        "walkable_top_flat_lod0_inset0_25_le_0_25": "PASS",
+        "walkable_top_flat_lod1_inset0_25_le_0_25": "PASS",
+        "walkable_top_no_part_above_collider_plus_0_05": "PASS"
+      },
+      "informational": {
+        "full_footprint_note": "Échantillons centrés sur une grille de 0,25 stud jusqu'à 0,125 du bord : inclut l'arrondi décoratif du rebord (biseaux ≤ 0,25) ; reporté, non bloquant."
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "reception_foam_crate": {
+      "asset_id": "reception_foam_crate",
+      "kind": "prop",
+      "behavior": "stable",
+      "size_studs_wdh": [
+        8.0,
+        8.0,
+        4.0
+      ],
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_reception_atlas"
+        ],
+        "images_embedded": 2,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -4.0,
+          0.0,
+          -4.0
+        ],
+        "gltf_position_max_xyz": [
+          4.0,
+          4.0,
+          4.0
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/reception_foam_crate.glb",
+        "mesh_objects": 1,
+        "triangles": 1336,
+        "dims_studs_wdh": [
+          8.0,
+          8.0,
+          4.0
+        ],
+        "expected_size_studs_wdh": [
+          8.0,
+          8.0,
+          4.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -4.0,
+          -4.0,
+          0.0
+        ],
+        "bbox_max": [
+          4.0,
+          4.0,
+          4.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "collider": {
+        "size_studs_wdh": [
+          8,
+          8,
+          4
+        ],
+        "walkable_top": [
+          8,
+          8
+        ],
+        "top_height": 4.0
+      },
+      "top_lod0": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 961,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0373,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0373,
+          "mean_dev_studs": -0.0002,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1024,
+          "misses": 4,
+          "max_abs_dev_studs": 4.0,
+          "max_above_studs": 0.0,
+          "max_below_studs": -4.0,
+          "mean_dev_studs": -0.0187,
+          "within_tolerance_fraction": 0.9961
+        }
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/reception_foam_crate_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 192,
+        "dims_studs_wdh": [
+          8.0,
+          8.0,
+          4.0
+        ],
+        "expected_size_studs_wdh": [
+          8.0,
+          8.0,
+          4.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -4.0,
+          -4.0,
+          0.0
+        ],
+        "bbox_max": [
+          4.0,
+          4.0,
+          4.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 961,
+          "misses": 0,
+          "max_abs_dev_studs": 0.115,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.115,
+          "mean_dev_studs": -0.0006,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1024,
+          "misses": 4,
+          "max_abs_dev_studs": 4.0,
+          "max_above_studs": 0.0,
+          "max_below_studs": -4.0,
+          "mean_dev_studs": -0.0275,
+          "within_tolerance_fraction": 0.9961
+        }
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/reception_foam_crate.fbx",
+        "mesh_objects": 1,
+        "triangles": 1336,
+        "dims_studs_wdh": [
+          8.0,
+          8.0,
+          4.0
+        ],
+        "expected_size_studs_wdh": [
+          8.0,
+          8.0,
+          4.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -4.0,
+          -4.0,
+          -0.0
+        ],
+        "bbox_max": [
+          4.0,
+          4.0,
+          4.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "tris_lod0_800_3000": "PASS",
+        "tris_lod1_le_700": "PASS",
+        "materials_le_2_per_mesh": "PASS",
+        "uv_and_embedded_texture": "PASS",
+        "walkable_top_flat_lod0_inset0_25_le_0_25": "PASS",
+        "walkable_top_flat_lod1_inset0_25_le_0_25": "PASS",
+        "walkable_top_no_part_above_collider_plus_0_05": "PASS"
+      },
+      "informational": {
+        "full_footprint_note": "Échantillons centrés sur une grille de 0,25 stud jusqu'à 0,125 du bord : inclut l'arrondi décoratif du rebord (biseaux ≤ 0,25) ; reporté, non bloquant."
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "reception_suitcase": {
+      "asset_id": "reception_suitcase",
+      "kind": "prop",
+      "behavior": "stable",
+      "size_studs_wdh": [
+        10.0,
+        6.0,
+        4.0
+      ],
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_reception_atlas"
+        ],
+        "images_embedded": 2,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -5.0,
+          0.0,
+          -3.0
+        ],
+        "gltf_position_max_xyz": [
+          5.0,
+          4.0,
+          3.0
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/reception_suitcase.glb",
+        "mesh_objects": 1,
+        "triangles": 2934,
+        "dims_studs_wdh": [
+          10.0,
+          6.0,
+          4.0
+        ],
+        "expected_size_studs_wdh": [
+          10.0,
+          6.0,
+          4.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "bbox_min": [
+          -5.0,
+          -3.0,
+          0.0
+        ],
+        "bbox_max": [
+          5.0,
+          3.0,
+          4.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "collider": {
+        "size_studs_wdh": [
+          10,
+          6,
+          4
+        ],
+        "walkable_top": [
+          10,
+          6
+        ],
+        "top_height": 4.0
+      },
+      "top_lod0": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 897,
+          "misses": 0,
+          "max_abs_dev_studs": 0.1477,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.1477,
+          "mean_dev_studs": -0.0437,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 960,
+          "misses": 4,
+          "max_abs_dev_studs": 4.0,
+          "max_above_studs": 0.0,
+          "max_below_studs": -4.0,
+          "mean_dev_studs": -0.0699,
+          "within_tolerance_fraction": 0.9938
+        }
+      },
+      "front_axis": {
+        "tile": "label_small",
+        "found": true,
+        "mean_blender_y": 2.98,
+        "roblox_z": -2.98,
+        "is_front_minus_z_roblox": true
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/reception_suitcase_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 380,
+        "dims_studs_wdh": [
+          10.0,
+          6.0,
+          4.0
+        ],
+        "expected_size_studs_wdh": [
+          10.0,
+          6.0,
+          4.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "bbox_min": [
+          -5.0,
+          -3.0,
+          0.0
+        ],
+        "bbox_max": [
+          5.0,
+          3.0,
+          4.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 897,
+          "misses": 0,
+          "max_abs_dev_studs": 0.2433,
+          "max_above_studs": -0.0,
+          "max_below_studs": -0.2433,
+          "mean_dev_studs": -0.0495,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 960,
+          "misses": 8,
+          "max_abs_dev_studs": 4.0,
+          "max_above_studs": -0.0,
+          "max_below_studs": -4.0,
+          "mean_dev_studs": -0.0987,
+          "within_tolerance_fraction": 0.9875
+        }
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/reception_suitcase.fbx",
+        "mesh_objects": 1,
+        "triangles": 2934,
+        "dims_studs_wdh": [
+          10.0,
+          6.0,
+          4.0
+        ],
+        "expected_size_studs_wdh": [
+          10.0,
+          6.0,
+          4.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "bbox_min": [
+          -5.0,
+          -3.0,
+          -0.0
+        ],
+        "bbox_max": [
+          5.0,
+          3.0,
+          4.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "tris_lod0_800_3000": "PASS",
+        "tris_lod1_le_700": "PASS",
+        "materials_le_2_per_mesh": "PASS",
+        "uv_and_embedded_texture": "PASS",
+        "front_details_face_minus_z_roblox": "PASS",
+        "walkable_top_flat_lod0_inset0_25_le_0_25": "PASS",
+        "walkable_top_flat_lod1_inset0_25_le_0_25": "PASS",
+        "walkable_top_no_part_above_collider_plus_0_05": "PASS"
+      },
+      "informational": {
+        "full_footprint_note": "Échantillons centrés sur une grille de 0,25 stud jusqu'à 0,125 du bord : inclut l'arrondi décoratif du rebord (biseaux ≤ 0,25) ; reporté, non bloquant."
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "reception_pallet": {
+      "asset_id": "reception_pallet",
+      "kind": "prop",
+      "behavior": "stable",
+      "size_studs_wdh": [
+        12.0,
+        10.0,
+        2.0
+      ],
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_reception_atlas"
+        ],
+        "images_embedded": 2,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -6.0,
+          0.0,
+          -5.0
+        ],
+        "gltf_position_max_xyz": [
+          6.0,
+          2.0,
+          5.0
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/reception_pallet.glb",
+        "mesh_objects": 1,
+        "triangles": 1964,
+        "dims_studs_wdh": [
+          12.0,
+          10.0,
+          2.0
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          10.0,
+          2.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -6.0,
+          -5.0,
+          0.0
+        ],
+        "bbox_max": [
+          6.0,
+          5.0,
+          2.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "collider": {
+        "size_studs_wdh": [
+          12,
+          10,
+          2
+        ],
+        "walkable_top": [
+          12,
+          10
+        ],
+        "top_height": 2.0
+      },
+      "top_lod0": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 1833,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0143,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0143,
+          "mean_dev_studs": -0.0,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1920,
+          "misses": 4,
+          "max_abs_dev_studs": 2.0,
+          "max_above_studs": 0.0,
+          "max_below_studs": -2.0,
+          "mean_dev_studs": -0.006,
+          "within_tolerance_fraction": 0.9979
+        }
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/reception_pallet_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 620,
+        "dims_studs_wdh": [
+          12.0,
+          10.0,
+          2.0
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          10.0,
+          2.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -6.0,
+          -5.0,
+          0.0
+        ],
+        "bbox_max": [
+          6.0,
+          5.0,
+          2.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 1833,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0536,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0536,
+          "mean_dev_studs": -0.0001,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1920,
+          "misses": 4,
+          "max_abs_dev_studs": 2.0,
+          "max_above_studs": 0.0,
+          "max_below_studs": -2.0,
+          "mean_dev_studs": -0.0109,
+          "within_tolerance_fraction": 0.9979
+        }
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/reception_pallet.fbx",
+        "mesh_objects": 1,
+        "triangles": 1964,
+        "dims_studs_wdh": [
+          12.0,
+          10.0,
+          2.0
+        ],
+        "expected_size_studs_wdh": [
+          12.0,
+          10.0,
+          2.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -6.0,
+          -5.0,
+          -0.0
+        ],
+        "bbox_max": [
+          6.0,
+          5.0,
+          2.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "tris_lod0_800_3000": "PASS",
+        "tris_lod1_le_700": "PASS",
+        "materials_le_2_per_mesh": "PASS",
+        "uv_and_embedded_texture": "PASS",
+        "walkable_top_flat_lod0_inset0_25_le_0_25": "PASS",
+        "walkable_top_flat_lod1_inset0_25_le_0_25": "PASS",
+        "walkable_top_no_part_above_collider_plus_0_05": "PASS"
+      },
+      "informational": {
+        "full_footprint_note": "Échantillons centrés sur une grille de 0,25 stud jusqu'à 0,125 du bord : inclut l'arrondi décoratif du rebord (biseaux ≤ 0,25) ; reporté, non bloquant."
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "reception_tape_reel": {
+      "asset_id": "reception_tape_reel",
+      "kind": "prop",
+      "behavior": "stable",
+      "size_studs_wdh": [
+        9.0,
+        9.0,
+        3.0
+      ],
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_reception_atlas"
+        ],
+        "images_embedded": 2,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -4.5,
+          0.0,
+          -4.5
+        ],
+        "gltf_position_max_xyz": [
+          4.5,
+          3.0,
+          4.5
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/reception_tape_reel.glb",
+        "mesh_objects": 1,
+        "triangles": 1988,
+        "dims_studs_wdh": [
+          9.0,
+          9.0,
+          3.0
+        ],
+        "expected_size_studs_wdh": [
+          9.0,
+          9.0,
+          3.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -4.5,
+          -4.5,
+          0.0
+        ],
+        "bbox_max": [
+          4.5,
+          4.5,
+          3.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "collider": {
+        "size_studs_wdh": [
+          7,
+          7,
+          3
+        ],
+        "walkable_top": [
+          7,
+          7
+        ],
+        "top_height": 3.0
+      },
+      "top_lod0": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 729,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0,
+          "mean_dev_studs": 0.0,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 784,
+          "misses": 4,
+          "max_abs_dev_studs": 3.0,
+          "max_above_studs": 0.0,
+          "max_below_studs": -3.0,
+          "mean_dev_studs": -0.0162,
+          "within_tolerance_fraction": 0.9949
+        }
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/reception_tape_reel_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 400,
+        "dims_studs_wdh": [
+          9.0,
+          9.0,
+          3.0
+        ],
+        "expected_size_studs_wdh": [
+          9.0,
+          9.0,
+          3.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -4.5,
+          -4.5,
+          0.0
+        ],
+        "bbox_max": [
+          4.5,
+          4.5,
+          3.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 729,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0,
+          "mean_dev_studs": 0.0,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 784,
+          "misses": 4,
+          "max_abs_dev_studs": 3.0,
+          "max_above_studs": 0.0,
+          "max_below_studs": -3.0,
+          "mean_dev_studs": -0.0189,
+          "within_tolerance_fraction": 0.9949
+        }
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/reception_tape_reel.fbx",
+        "mesh_objects": 1,
+        "triangles": 1988,
+        "dims_studs_wdh": [
+          9.0,
+          9.0,
+          3.0
+        ],
+        "expected_size_studs_wdh": [
+          9.0,
+          9.0,
+          3.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -4.5,
+          -4.5,
+          -0.0
+        ],
+        "bbox_max": [
+          4.5,
+          4.5,
+          3.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "tris_lod0_800_3000": "PASS",
+        "tris_lod1_le_700": "PASS",
+        "materials_le_2_per_mesh": "PASS",
+        "uv_and_embedded_texture": "PASS",
+        "walkable_top_flat_lod0_inset0_25_le_0_25": "PASS",
+        "walkable_top_flat_lod1_inset0_25_le_0_25": "PASS",
+        "walkable_top_no_part_above_collider_plus_0_05": "PASS"
+      },
+      "informational": {
+        "full_footprint_note": "Échantillons centrés sur une grille de 0,25 stud jusqu'à 0,125 du bord : inclut l'arrondi décoratif du rebord (biseaux ≤ 0,25) ; reporté, non bloquant."
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "reception_pillow_parcel": {
+      "asset_id": "reception_pillow_parcel",
+      "kind": "prop",
+      "behavior": "bounce",
+      "size_studs_wdh": [
+        8.0,
+        8.0,
+        3.0
+      ],
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_reception_atlas"
+        ],
+        "images_embedded": 2,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -4.0,
+          0.0,
+          -4.0
+        ],
+        "gltf_position_max_xyz": [
+          4.0,
+          3.0,
+          4.0
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/reception_pillow_parcel.glb",
+        "mesh_objects": 1,
+        "triangles": 1972,
+        "dims_studs_wdh": [
+          8.0,
+          8.0,
+          3.0
+        ],
+        "expected_size_studs_wdh": [
+          8.0,
+          8.0,
+          3.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "bbox_min": [
+          -4.0,
+          -4.0,
+          0.0
+        ],
+        "bbox_max": [
+          4.0,
+          4.0,
+          3.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "collider": {
+        "size_studs_wdh": [
+          8,
+          8,
+          3
+        ],
+        "walkable_top": [
+          8,
+          8
+        ],
+        "top_height": 3.0
+      },
+      "top_lod0": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 961,
+          "misses": 0,
+          "max_abs_dev_studs": 0.1897,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.1897,
+          "mean_dev_studs": -0.0561,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1024,
+          "misses": 0,
+          "max_abs_dev_studs": 0.6799,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.6799,
+          "mean_dev_studs": -0.1118,
+          "within_tolerance_fraction": 0.8945
+        }
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/reception_pillow_parcel_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 628,
+        "dims_studs_wdh": [
+          8.0,
+          8.0,
+          3.0
+        ],
+        "expected_size_studs_wdh": [
+          8.0,
+          8.0,
+          3.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "bbox_min": [
+          -4.0,
+          -4.0,
+          0.0
+        ],
+        "bbox_max": [
+          4.0,
+          4.0,
+          3.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 961,
+          "misses": 0,
+          "max_abs_dev_studs": 0.2211,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.2211,
+          "mean_dev_studs": -0.0642,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1024,
+          "misses": 0,
+          "max_abs_dev_studs": 1.0165,
+          "max_above_studs": 0.0,
+          "max_below_studs": -1.0165,
+          "mean_dev_studs": -0.1403,
+          "within_tolerance_fraction": 0.8945
+        }
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/reception_pillow_parcel.fbx",
+        "mesh_objects": 1,
+        "triangles": 1972,
+        "dims_studs_wdh": [
+          8.0,
+          8.0,
+          3.0
+        ],
+        "expected_size_studs_wdh": [
+          8.0,
+          8.0,
+          3.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          -0.0
+        ],
+        "bbox_min": [
+          -4.0,
+          -4.0,
+          -0.0
+        ],
+        "bbox_max": [
+          4.0,
+          4.0,
+          3.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "tris_lod0_800_3000": "PASS",
+        "tris_lod1_le_700": "PASS",
+        "materials_le_2_per_mesh": "PASS",
+        "uv_and_embedded_texture": "PASS",
+        "walkable_top_flat_lod0_inset0_25_le_0_25": "PASS",
+        "walkable_top_flat_lod1_inset0_25_le_0_25": "PASS",
+        "walkable_top_no_part_above_collider_plus_0_05": "PASS"
+      },
+      "informational": {
+        "full_footprint_note": "Échantillons centrés sur une grille de 0,25 stud jusqu'à 0,125 du bord : inclut l'arrondi décoratif du rebord (biseaux ≤ 0,25) ; reporté, non bloquant."
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "reception_mail_cart": {
+      "asset_id": "reception_mail_cart",
+      "kind": "prop",
+      "behavior": "moving",
+      "size_studs_wdh": [
+        10.0,
+        8.0,
+        3.0
+      ],
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_reception_atlas"
+        ],
+        "images_embedded": 2,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -5.0,
+          0.0,
+          -4.0
+        ],
+        "gltf_position_max_xyz": [
+          5.0,
+          3.0,
+          4.0
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/reception_mail_cart.glb",
+        "mesh_objects": 1,
+        "triangles": 2724,
+        "dims_studs_wdh": [
+          10.0,
+          8.0,
+          3.0
+        ],
+        "expected_size_studs_wdh": [
+          10.0,
+          8.0,
+          3.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -5.0,
+          -4.0,
+          0.0
+        ],
+        "bbox_max": [
+          5.0,
+          4.0,
+          3.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "collider": {
+        "size_studs_wdh": [
+          10,
+          8,
+          3
+        ],
+        "walkable_top": [
+          10,
+          8
+        ],
+        "top_height": 3.0
+      },
+      "top_lod0": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 1209,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0221,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0221,
+          "mean_dev_studs": -0.0001,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1280,
+          "misses": 4,
+          "max_abs_dev_studs": 3.0,
+          "max_above_studs": 0.0,
+          "max_below_studs": -3.0,
+          "mean_dev_studs": -0.0129,
+          "within_tolerance_fraction": 0.9969
+        }
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/reception_mail_cart_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 448,
+        "dims_studs_wdh": [
+          10.0,
+          7.92,
+          3.0
+        ],
+        "expected_size_studs_wdh": [
+          10.0,
+          8.0,
+          3.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          -0.01,
+          0.0
+        ],
+        "bbox_min": [
+          -5.0,
+          -3.96,
+          0.0
+        ],
+        "bbox_max": [
+          5.0,
+          3.96,
+          3.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 1209,
+          "misses": 0,
+          "max_abs_dev_studs": 0.066,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.066,
+          "mean_dev_studs": -0.0002,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1280,
+          "misses": 12,
+          "max_abs_dev_studs": 3.0,
+          "max_above_studs": 0.0,
+          "max_below_studs": -3.0,
+          "mean_dev_studs": -0.0356,
+          "within_tolerance_fraction": 0.9906
+        }
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/reception_mail_cart.fbx",
+        "mesh_objects": 1,
+        "triangles": 2724,
+        "dims_studs_wdh": [
+          10.0,
+          8.0,
+          3.0
+        ],
+        "expected_size_studs_wdh": [
+          10.0,
+          8.0,
+          3.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -5.0,
+          -4.0,
+          -0.0
+        ],
+        "bbox_max": [
+          5.0,
+          4.0,
+          3.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "tris_lod0_800_3000": "PASS",
+        "tris_lod1_le_700": "PASS",
+        "materials_le_2_per_mesh": "PASS",
+        "uv_and_embedded_texture": "PASS",
+        "walkable_top_flat_lod0_inset0_25_le_0_25": "PASS",
+        "walkable_top_flat_lod1_inset0_25_le_0_25": "PASS",
+        "walkable_top_no_part_above_collider_plus_0_05": "PASS"
+      },
+      "informational": {
+        "full_footprint_note": "Échantillons centrés sur une grille de 0,25 stud jusqu'à 0,125 du bord : inclut l'arrondi décoratif du rebord (biseaux ≤ 0,25) ; reporté, non bloquant."
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "reception_accordion_parcel": {
+      "asset_id": "reception_accordion_parcel",
+      "kind": "prop",
+      "behavior": "temporary",
+      "size_studs_wdh": [
+        8.0,
+        8.0,
+        4.0
+      ],
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 1,
+        "materials": [
+          "M_reception_atlas"
+        ],
+        "images_embedded": 2,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -4.0,
+          0.0,
+          -4.0
+        ],
+        "gltf_position_max_xyz": [
+          4.0,
+          4.0,
+          4.0
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/reception_accordion_parcel.glb",
+        "mesh_objects": 1,
+        "triangles": 2000,
+        "dims_studs_wdh": [
+          8.0,
+          8.0,
+          4.0
+        ],
+        "expected_size_studs_wdh": [
+          8.0,
+          8.0,
+          4.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -4.0,
+          -4.0,
+          0.0
+        ],
+        "bbox_max": [
+          4.0,
+          4.0,
+          4.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "collider": {
+        "size_studs_wdh": [
+          8,
+          8,
+          4
+        ],
+        "walkable_top": [
+          8,
+          8
+        ],
+        "top_height": 4.0
+      },
+      "top_lod0": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 961,
+          "misses": 0,
+          "max_abs_dev_studs": 0.0792,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.0792,
+          "mean_dev_studs": -0.0375,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1024,
+          "misses": 4,
+          "max_abs_dev_studs": 4.0,
+          "max_above_studs": 0.0,
+          "max_below_studs": -4.0,
+          "mean_dev_studs": -0.0574,
+          "within_tolerance_fraction": 0.9961
+        }
+      },
+      "front_axis": {
+        "tile": "label_small",
+        "found": true,
+        "mean_blender_y": 3.994,
+        "roblox_z": -3.994,
+        "is_front_minus_z_roblox": true
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/reception_accordion_parcel_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 484,
+        "dims_studs_wdh": [
+          8.0,
+          8.0,
+          4.0
+        ],
+        "expected_size_studs_wdh": [
+          8.0,
+          8.0,
+          4.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -4.0,
+          -4.0,
+          0.0
+        ],
+        "bbox_max": [
+          4.0,
+          4.0,
+          4.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "top_lod1": {
+        "inset_0_25": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.25,
+          "sampling": "edge_inclusive",
+          "samples": 961,
+          "misses": 0,
+          "max_abs_dev_studs": 0.1643,
+          "max_above_studs": 0.0,
+          "max_below_studs": -0.1643,
+          "mean_dev_studs": -0.038,
+          "within_tolerance_fraction": 1.0
+        },
+        "full_footprint_cell_centred": {
+          "grid_studs": 0.25,
+          "inset_studs": 0.125,
+          "sampling": "cell_centred",
+          "samples": 1024,
+          "misses": 4,
+          "max_abs_dev_studs": 4.0,
+          "max_above_studs": 0.0,
+          "max_below_studs": -4.0,
+          "mean_dev_studs": -0.0666,
+          "within_tolerance_fraction": 0.9961
+        }
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/reception_accordion_parcel.fbx",
+        "mesh_objects": 1,
+        "triangles": 2000,
+        "dims_studs_wdh": [
+          8.0,
+          8.0,
+          4.0
+        ],
+        "expected_size_studs_wdh": [
+          8.0,
+          8.0,
+          4.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -4.0,
+          -4.0,
+          -0.0
+        ],
+        "bbox_max": [
+          4.0,
+          4.0,
+          4.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "tris_lod0_800_3000": "PASS",
+        "tris_lod1_le_700": "PASS",
+        "materials_le_2_per_mesh": "PASS",
+        "uv_and_embedded_texture": "PASS",
+        "front_details_face_minus_z_roblox": "PASS",
+        "walkable_top_flat_lod0_inset0_25_le_0_25": "PASS",
+        "walkable_top_flat_lod1_inset0_25_le_0_25": "PASS",
+        "walkable_top_no_part_above_collider_plus_0_05": "PASS"
+      },
+      "informational": {
+        "full_footprint_note": "Échantillons centrés sur une grille de 0,25 stud jusqu'à 0,125 du bord : inclut l'arrondi décoratif du rebord (biseaux ≤ 0,25) ; reporté, non bloquant."
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    },
+    "machine_reception_stamp": {
+      "asset_id": "machine_reception_stamp",
+      "kind": "machine",
+      "behavior": null,
+      "size_studs_wdh": [
+        18.0,
+        12.0,
+        20.0
+      ],
+      "gltf_header": {
+        "magic_ok": true,
+        "generator": "Khronos glTF Blender I/O v5.2.41",
+        "meshes": 1,
+        "primitives": 2,
+        "materials": [
+          "M_reception_atlas",
+          "M_reception_glass"
+        ],
+        "images_embedded": 2,
+        "node_translations": [
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "gltf_position_min_xyz": [
+          -9.0,
+          0.0,
+          -6.0
+        ],
+        "gltf_position_max_xyz": [
+          9.0,
+          20.0,
+          6.0
+        ],
+        "alpha_modes": [
+          "OPAQUE",
+          "BLEND"
+        ],
+        "has_metallic_roughness_texture": true
+      },
+      "glb_lod0": {
+        "file": "assets/import/models/machine_reception_stamp.glb",
+        "mesh_objects": 1,
+        "triangles": 7600,
+        "dims_studs_wdh": [
+          18.0,
+          12.0,
+          20.0
+        ],
+        "expected_size_studs_wdh": [
+          18.0,
+          12.0,
+          20.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -9.0,
+          -6.0,
+          0.0
+        ],
+        "bbox_max": [
+          9.0,
+          6.0,
+          20.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 2,
+        "material_names": [
+          "M_reception_atlas",
+          "M_reception_glass"
+        ],
+        "uv_layers": 1
+      },
+      "front_axis": {
+        "tile": "eye",
+        "found": true,
+        "mean_blender_y": 4.822,
+        "roblox_z": -4.822,
+        "is_front_minus_z_roblox": true
+      },
+      "glb_lod1": {
+        "file": "assets/import/models/machine_reception_stamp_lod1.glb",
+        "mesh_objects": 1,
+        "triangles": 634,
+        "dims_studs_wdh": [
+          18.0,
+          12.0,
+          20.0
+        ],
+        "expected_size_studs_wdh": [
+          18.0,
+          12.0,
+          20.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -9.0,
+          -6.0,
+          0.0
+        ],
+        "bbox_max": [
+          9.0,
+          6.0,
+          20.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 1,
+        "material_names": [
+          "M_reception_atlas"
+        ],
+        "uv_layers": 1
+      },
+      "fbx_lod0": {
+        "file": "assets/import/models/machine_reception_stamp.fbx",
+        "mesh_objects": 1,
+        "triangles": 7600,
+        "dims_studs_wdh": [
+          18.0,
+          12.0,
+          20.0
+        ],
+        "expected_size_studs_wdh": [
+          18.0,
+          12.0,
+          20.0
+        ],
+        "dims_rel_error": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bbox_min": [
+          -9.0,
+          -6.0,
+          -0.0
+        ],
+        "bbox_max": [
+          9.0,
+          6.0,
+          20.0
+        ],
+        "pivot_offset_xy": [
+          0.0,
+          0.0
+        ],
+        "materials_per_mesh_max": 2,
+        "material_names": [
+          "M_reception_atlas",
+          "M_reception_glass"
+        ],
+        "uv_layers": 1
+      },
+      "checks": {
+        "glb_reopened": "PASS",
+        "envelope_lod0_within_2pct": "PASS",
+        "envelope_lod1_within_2pct": "PASS",
+        "envelope_fbx_within_2pct": "PASS",
+        "pivot_bottom_center": "PASS",
+        "gltf_axes_x_width_y_up_z_depth": "PASS",
+        "tris_lod0_3000_8000": "PASS",
+        "tris_lod1_le_700": "PASS",
+        "materials_le_2_per_mesh": "PASS",
+        "uv_and_embedded_texture": "PASS",
+        "front_details_face_minus_z_roblox": "PASS"
+      },
+      "informational": {
+        "full_footprint_note": "Échantillons centrés sur une grille de 0,25 stud jusqu'à 0,125 du bord : inclut l'arrondi décoratif du rebord (biseaux ≤ 0,25) ; reporté, non bloquant."
+      },
+      "roblox_studio_import": {
+        "status": "blocked",
+        "roblox_asset_id": null,
+        "studio_checks": "NOT_RUN"
+      }
+    }
+  }
+}

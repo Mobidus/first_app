@@ -1,0 +1,436 @@
+{
+  "family": "reception",
+  "units": "studs",
+  "axes": "roblox_model_space (X largeur, Y haut, Z profondeur ; avant = -Z)",
+  "authority": "server_collider_separate_from_visual_mesh",
+  "props": [
+    {
+      "asset_id": "reception_carton",
+      "behavior": "stable",
+      "behavior_params": {},
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_envelope_studs_wdh": [
+        10,
+        8,
+        4
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          10,
+          8,
+          4
+        ],
+        "size_vector3_roblox": [
+          10,
+          4,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          2.0,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          10,
+          8
+        ],
+        "height_studs": 4,
+        "center_roblox": [
+          0,
+          4,
+          0
+        ]
+      },
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      }
+    },
+    {
+      "asset_id": "reception_foam_crate",
+      "behavior": "stable",
+      "behavior_params": {},
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_envelope_studs_wdh": [
+        8,
+        8,
+        4
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          8,
+          8,
+          4
+        ],
+        "size_vector3_roblox": [
+          8,
+          4,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          2.0,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          8,
+          8
+        ],
+        "height_studs": 4,
+        "center_roblox": [
+          0,
+          4,
+          0
+        ]
+      },
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      }
+    },
+    {
+      "asset_id": "reception_suitcase",
+      "behavior": "stable",
+      "behavior_params": {},
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_envelope_studs_wdh": [
+        10,
+        6,
+        4
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          10,
+          6,
+          4
+        ],
+        "size_vector3_roblox": [
+          10,
+          4,
+          6
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          2.0,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          10,
+          6
+        ],
+        "height_studs": 4,
+        "center_roblox": [
+          0,
+          4,
+          0
+        ]
+      },
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      }
+    },
+    {
+      "asset_id": "reception_pallet",
+      "behavior": "stable",
+      "behavior_params": {},
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_envelope_studs_wdh": [
+        12,
+        10,
+        2
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          12,
+          10,
+          2
+        ],
+        "size_vector3_roblox": [
+          12,
+          2,
+          10
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          1.0,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          12,
+          10
+        ],
+        "height_studs": 2,
+        "center_roblox": [
+          0,
+          2,
+          0
+        ]
+      },
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      }
+    },
+    {
+      "asset_id": "reception_tape_reel",
+      "behavior": "stable",
+      "behavior_params": {},
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_envelope_studs_wdh": [
+        9,
+        9,
+        3
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          7,
+          7,
+          3
+        ],
+        "size_vector3_roblox": [
+          7,
+          3,
+          7
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          1.5,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          7,
+          7
+        ],
+        "height_studs": 3,
+        "center_roblox": [
+          0,
+          3,
+          0
+        ]
+      },
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      }
+    },
+    {
+      "asset_id": "reception_pillow_parcel",
+      "behavior": "bounce",
+      "behavior_params": {
+        "vertical_impulse_multiplier": 1.18
+      },
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_envelope_studs_wdh": [
+        8,
+        8,
+        3
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          8,
+          8,
+          3
+        ],
+        "size_vector3_roblox": [
+          8,
+          3,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          1.5,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          8,
+          8
+        ],
+        "height_studs": 3,
+        "center_roblox": [
+          0,
+          3,
+          0
+        ]
+      },
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      }
+    },
+    {
+      "asset_id": "reception_mail_cart",
+      "behavior": "moving",
+      "behavior_params": {
+        "path": "linear",
+        "axis": "width",
+        "travel_studs": 10,
+        "cycle_seconds": 8,
+        "pause_at_each_end_seconds": 1
+      },
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_envelope_studs_wdh": [
+        10,
+        8,
+        3
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          10,
+          8,
+          3
+        ],
+        "size_vector3_roblox": [
+          10,
+          3,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          1.5,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          10,
+          8
+        ],
+        "height_studs": 3,
+        "center_roblox": [
+          0,
+          3,
+          0
+        ]
+      },
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      }
+    },
+    {
+      "asset_id": "reception_accordion_parcel",
+      "behavior": "temporary",
+      "behavior_params": {
+        "seconds_after_contact": 3,
+        "effect": "collapse_to_lower_recovery_level"
+      },
+      "pivot": "bottom_center",
+      "forward_axis": "-Z",
+      "visual_envelope_studs_wdh": [
+        8,
+        8,
+        4
+      ],
+      "collider": {
+        "shape": "box",
+        "size_studs_config": [
+          8,
+          8,
+          4
+        ],
+        "size_vector3_roblox": [
+          8,
+          4,
+          8
+        ],
+        "offset_from_pivot_roblox": [
+          0,
+          2.0,
+          0
+        ],
+        "tags": [
+          "FillCollider"
+        ],
+        "can_collide": true
+      },
+      "walkable_top": {
+        "size_studs": [
+          8,
+          8
+        ],
+        "height_studs": 4,
+        "center_roblox": [
+          0,
+          4,
+          0
+        ]
+      },
+      "visual_mesh": {
+        "can_collide": false,
+        "can_query": false,
+        "can_touch": false
+      }
+    }
+  ],
+  "machine": {
+    "asset_id": "machine_reception_stamp",
+    "envelope_studs_wdh": [
+      18,
+      12,
+      20
+    ],
+    "note": "Derrière une vitre, hors volume jouable : collision du parcours séparée."
+  }
+}

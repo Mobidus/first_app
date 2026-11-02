@@ -3,295 +3,295 @@
     {
       "task": "T02",
       "id": "aimant_poche_icon",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "balise_retour_icon",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "bob_7",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "bottes_adhesives_icon",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "bureau_binder_stack",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "bureau_desk",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "bureau_keyboard",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "bureau_locker",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "bureau_loose_files",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "bureau_paper_ream",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "bureau_rail_chair",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "bureau_spring_phone",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "coussin_gonflable_icon",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "drone_eclaireur_icon",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "exit_door",
-      "from": "planned",
-      "to": "designed"
+      "from": "modeled",
+      "to": "modeled"
     },
     {
       "task": "T02",
       "id": "exit_roof",
-      "from": "planned",
-      "to": "designed"
+      "from": "modeled",
+      "to": "modeled"
     },
     {
       "task": "T02",
       "id": "exit_window",
-      "from": "planned",
-      "to": "designed"
+      "from": "modeled",
+      "to": "modeled"
     },
     {
       "task": "T02",
       "id": "gant_air_icon",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "grappin_balancier_icon",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "machine_bureau_copier",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "machine_reception_stamp",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "machine_toy_spinner",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "mini_pont_icon",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "parapluie_bonbon_icon",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "pogo_pop_icon",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "radar_pop_icon",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "reception_accordion_parcel",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "reception_carton",
-      "from": "planned",
-      "to": "designed"
+      "from": "modeled",
+      "to": "modeled"
     },
     {
       "task": "T02",
       "id": "reception_foam_crate",
-      "from": "planned",
-      "to": "designed"
+      "from": "modeled",
+      "to": "modeled"
     },
     {
       "task": "T02",
       "id": "reception_mail_cart",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "reception_pallet",
-      "from": "planned",
-      "to": "designed"
+      "from": "modeled",
+      "to": "modeled"
     },
     {
       "task": "T02",
       "id": "reception_pillow_parcel",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "reception_suitcase",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "reception_tape_reel",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "toy_domino",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "toy_drum",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "toy_flat_duck",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "toy_plush_loppy",
-      "from": "planned",
-      "to": "designed"
+      "from": "modeled",
+      "to": "modeled"
     },
     {
       "task": "T02",
       "id": "toy_plush_mallow",
-      "from": "planned",
-      "to": "designed"
+      "from": "modeled",
+      "to": "modeled"
     },
     {
       "task": "T02",
       "id": "toy_plush_octo",
-      "from": "planned",
-      "to": "designed"
+      "from": "modeled",
+      "to": "modeled"
     },
     {
       "task": "T02",
       "id": "toy_shape_cube",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "toy_train",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T02",
       "id": "ventouse_chantier_icon",
-      "from": "planned",
+      "from": "designed",
       "to": "designed"
     },
     {
       "task": "T03",
       "id": "toy_plush_mallow",
-      "from": "designed",
+      "from": "modeled",
       "to": "modeled"
     },
     {
       "task": "T03",
       "id": "toy_plush_loppy",
-      "from": "designed",
+      "from": "modeled",
       "to": "modeled"
     },
     {
       "task": "T03",
       "id": "toy_plush_octo",
-      "from": "designed",
+      "from": "modeled",
       "to": "modeled"
     },
     {
       "task": "T03",
       "id": "reception_carton",
-      "from": "designed",
+      "from": "modeled",
       "to": "modeled"
     },
     {
       "task": "T03",
       "id": "reception_foam_crate",
-      "from": "designed",
+      "from": "modeled",
       "to": "modeled"
     },
     {
       "task": "T03",
       "id": "reception_pallet",
-      "from": "designed",
+      "from": "modeled",
       "to": "modeled"
     },
     {
@@ -304,19 +304,19 @@
     {
       "task": "T03",
       "id": "exit_door",
-      "from": "designed",
+      "from": "modeled",
       "to": "modeled"
     },
     {
       "task": "T03",
       "id": "exit_window",
-      "from": "designed",
+      "from": "modeled",
       "to": "modeled"
     },
     {
       "task": "T03",
       "id": "exit_roof",
-      "from": "designed",
+      "from": "modeled",
       "to": "modeled"
     },
     {
@@ -325,12 +325,66 @@
       "from": "designed",
       "to": "designed",
       "note": "kept planned"
+    },
+    {
+      "task": "T03",
+      "id": "reception_carton",
+      "from": "modeled",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "reception_foam_crate",
+      "from": "modeled",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "reception_suitcase",
+      "from": "designed",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "reception_pallet",
+      "from": "modeled",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "reception_tape_reel",
+      "from": "designed",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "reception_pillow_parcel",
+      "from": "designed",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "reception_mail_cart",
+      "from": "designed",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "reception_accordion_parcel",
+      "from": "designed",
+      "to": "modeled"
+    },
+    {
+      "task": "T03",
+      "id": "machine_reception_stamp",
+      "from": "designed",
+      "to": "modeled"
     }
   ],
   "rejected": [],
   "status_counts": {
-    "modeled": 9,
-    "designed": 34,
+    "modeled": 15,
+    "designed": 28,
     "planned": 138
   }
 }

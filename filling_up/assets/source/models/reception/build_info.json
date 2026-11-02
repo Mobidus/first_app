@@ -1,0 +1,228 @@
+{
+  "family": "reception",
+  "seed": 20261102,
+  "blender_version": "5.2.3 LTS",
+  "units": "1 BU = 1 stud (décision 0003)",
+  "atlas": "assets/source/models/reception/textures/reception_atlas_1024.png",
+  "atlas_roughness_metal": "assets/source/models/reception/textures/reception_atlas_rough_1024.png",
+  "assets": {
+    "reception_carton": {
+      "lod0_object": "reception_carton_LOD0",
+      "lod1_object": "reception_carton_LOD1",
+      "lod0_tris": 1128,
+      "lod1_tris": 172,
+      "lod0_dims_wdh": [
+        9.9871,
+        8.0105,
+        4.0
+      ],
+      "lod1_dims_wdh": [
+        9.9184,
+        7.9305,
+        4.0
+      ],
+      "materials": [
+        "M_reception_atlas"
+      ],
+      "exports": [
+        "assets/import/models/reception_carton.glb",
+        "assets/import/models/reception_carton_lod1.glb",
+        "assets/import/models/reception_carton.fbx"
+      ]
+    },
+    "reception_foam_crate": {
+      "lod0_object": "reception_foam_crate_LOD0",
+      "lod1_object": "reception_foam_crate_LOD1",
+      "lod0_tris": 1336,
+      "lod1_tris": 192,
+      "lod0_dims_wdh": [
+        8.0,
+        8.0,
+        4.0
+      ],
+      "lod1_dims_wdh": [
+        8.0,
+        8.0,
+        4.0
+      ],
+      "materials": [
+        "M_reception_atlas"
+      ],
+      "exports": [
+        "assets/import/models/reception_foam_crate.glb",
+        "assets/import/models/reception_foam_crate_lod1.glb",
+        "assets/import/models/reception_foam_crate.fbx"
+      ]
+    },
+    "reception_suitcase": {
+      "lod0_object": "reception_suitcase_LOD0",
+      "lod1_object": "reception_suitcase_LOD1",
+      "lod0_tris": 2934,
+      "lod1_tris": 380,
+      "lod0_dims_wdh": [
+        10.0,
+        6.0,
+        4.0
+      ],
+      "lod1_dims_wdh": [
+        10.0,
+        6.0,
+        4.0
+      ],
+      "materials": [
+        "M_reception_atlas"
+      ],
+      "exports": [
+        "assets/import/models/reception_suitcase.glb",
+        "assets/import/models/reception_suitcase_lod1.glb",
+        "assets/import/models/reception_suitcase.fbx"
+      ]
+    },
+    "reception_pallet": {
+      "lod0_object": "reception_pallet_LOD0",
+      "lod1_object": "reception_pallet_LOD1",
+      "lod0_tris": 1964,
+      "lod1_tris": 620,
+      "lod0_dims_wdh": [
+        12.0,
+        10.0,
+        2.0
+      ],
+      "lod1_dims_wdh": [
+        12.0,
+        10.0,
+        2.0
+      ],
+      "materials": [
+        "M_reception_atlas"
+      ],
+      "exports": [
+        "assets/import/models/reception_pallet.glb",
+        "assets/import/models/reception_pallet_lod1.glb",
+        "assets/import/models/reception_pallet.fbx"
+      ]
+    },
+    "reception_tape_reel": {
+      "lod0_object": "reception_tape_reel_LOD0",
+      "lod1_object": "reception_tape_reel_LOD1",
+      "lod0_tris": 1988,
+      "lod1_tris": 400,
+      "lod0_dims_wdh": [
+        9.0,
+        9.0,
+        3.0
+      ],
+      "lod1_dims_wdh": [
+        9.0,
+        9.0,
+        3.0
+      ],
+      "materials": [
+        "M_reception_atlas"
+      ],
+      "exports": [
+        "assets/import/models/reception_tape_reel.glb",
+        "assets/import/models/reception_tape_reel_lod1.glb",
+        "assets/import/models/reception_tape_reel.fbx"
+      ]
+    },
+    "reception_pillow_parcel": {
+      "lod0_object": "reception_pillow_parcel_LOD0",
+      "lod1_object": "reception_pillow_parcel_LOD1",
+      "lod0_tris": 1972,
+      "lod1_tris": 628,
+      "lod0_dims_wdh": [
+        8.0,
+        8.0,
+        3.0
+      ],
+      "lod1_dims_wdh": [
+        8.0,
+        8.0,
+        3.0
+      ],
+      "materials": [
+        "M_reception_atlas"
+      ],
+      "exports": [
+        "assets/import/models/reception_pillow_parcel.glb",
+        "assets/import/models/reception_pillow_parcel_lod1.glb",
+        "assets/import/models/reception_pillow_parcel.fbx"
+      ]
+    },
+    "reception_mail_cart": {
+      "lod0_object": "reception_mail_cart_LOD0",
+      "lod1_object": "reception_mail_cart_LOD1",
+      "lod0_tris": 2724,
+      "lod1_tris": 448,
+      "lod0_dims_wdh": [
+        10.0,
+        8.0,
+        3.0
+      ],
+      "lod1_dims_wdh": [
+        10.0,
+        7.92,
+        3.0
+      ],
+      "materials": [
+        "M_reception_atlas"
+      ],
+      "exports": [
+        "assets/import/models/reception_mail_cart.glb",
+        "assets/import/models/reception_mail_cart_lod1.glb",
+        "assets/import/models/reception_mail_cart.fbx"
+      ]
+    },
+    "reception_accordion_parcel": {
+      "lod0_object": "reception_accordion_parcel_LOD0",
+      "lod1_object": "reception_accordion_parcel_LOD1",
+      "lod0_tris": 2000,
+      "lod1_tris": 484,
+      "lod0_dims_wdh": [
+        8.0,
+        8.0,
+        4.0
+      ],
+      "lod1_dims_wdh": [
+        8.0,
+        8.0,
+        4.0
+      ],
+      "materials": [
+        "M_reception_atlas"
+      ],
+      "exports": [
+        "assets/import/models/reception_accordion_parcel.glb",
+        "assets/import/models/reception_accordion_parcel_lod1.glb",
+        "assets/import/models/reception_accordion_parcel.fbx"
+      ]
+    },
+    "machine_reception_stamp": {
+      "lod0_object": "machine_reception_stamp_LOD0",
+      "lod1_object": "machine_reception_stamp_LOD1",
+      "lod0_tris": 7600,
+      "lod1_tris": 634,
+      "lod0_dims_wdh": [
+        18.0,
+        12.0,
+        20.0
+      ],
+      "lod1_dims_wdh": [
+        18.0,
+        12.0,
+        20.0
+      ],
+      "materials": [
+        "M_reception_atlas",
+        "M_reception_glass"
+      ],
+      "exports": [
+        "assets/import/models/machine_reception_stamp.glb",
+        "assets/import/models/machine_reception_stamp_lod1.glb",
+        "assets/import/models/machine_reception_stamp.fbx"
+      ]
+    }
+  },
+  "blend": "assets/source/models/reception/reception_props.blend"
+}
