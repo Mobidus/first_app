@@ -1152,6 +1152,294 @@
       "tested": 120,
       "unbuildable": 0
     },
+    "pool/L/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/L/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/L/duct": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/L/duct",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/L/floor_hatch": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/L/floor_hatch",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/L/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/L/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/L/tailgate": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/L/tailgate",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/L/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/L/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/M/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/M/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/M/duct": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/M/duct",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/M/floor_hatch": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/M/floor_hatch",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/M/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/M/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/M/tailgate": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/M/tailgate",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/M/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/M/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/S/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/S/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/S/duct": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/S/duct",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/S/floor_hatch": {
+      "certified": true,
+      "fallback": 1,
+      "key": "pool/S/floor_hatch",
+      "primary_ok": 119,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/S/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/S/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/S/tailgate": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/S/tailgate",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/S/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/S/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/V/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/V/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/V/duct": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/V/duct",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/V/floor_hatch": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/V/floor_hatch",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/V/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/V/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/V/tailgate": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/V/tailgate",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/V/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/V/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/XL/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/XL/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/XL/duct": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/XL/duct",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/XL/floor_hatch": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/XL/floor_hatch",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/XL/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/XL/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/XL/tailgate": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/XL/tailgate",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/XL/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/XL/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/XV/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/XV/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/XV/duct": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/XV/duct",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/XV/floor_hatch": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/XV/floor_hatch",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/XV/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/XV/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/XV/tailgate": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/XV/tailgate",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "pool/XV/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "pool/XV/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
     "reception/L/door": {
       "certified": true,
       "fallback": 0,
@@ -1741,6 +2029,12 @@
       "depth": 25,
       "reason": "primary_rejected_fallback_used",
       "seed": 356975
+    },
+    {
+      "combo": "pool/S/floor_hatch",
+      "depth": 90,
+      "reason": "primary_rejected_fallback_used",
+      "seed": 182695
     },
     {
       "combo": "kitchen/S/door",
@@ -2817,10 +3111,10 @@
       "seed": 705318
     }
   ],
-  "fallback": 181,
-  "primary_ok": 25739,
+  "fallback": 182,
+  "primary_ok": 30058,
   "profile": "v1",
   "seeds_per_combo": 120,
-  "total": 25920,
+  "total": 30240,
   "unbuildable": 0
 }
