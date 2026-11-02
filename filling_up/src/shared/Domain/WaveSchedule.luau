@@ -22,9 +22,17 @@ local function fillProps(family, depth: number): { any }
 end
 
 export type Drop = { propId: string, x: number, z: number, yaw: number, structural: boolean, nodeId: string? }
-export type WaveInfo = { index: number, warningTime: number, impactTime: number, mouthIndex: number, drops: { Drop } }
+export type WaveInfo = {
+	index: number,
+	warningTime: number,
+	impactTime: number,
+	mouthIndex: number,
+	mouthIndices: { number },
+	drops: { Drop },
+}
 
 export type Schedule = {
+	params: any,
 	room: any,
 	band: any,
 	seed: number,
@@ -47,6 +55,7 @@ function Wave.new(room, family, depth: number): Schedule
 		seed = Rng.derive(room.seed, "waves:" .. room.templateId),
 		-- the first impact never lands before the spawn grace and its own warning
 		firstImpact = math.max(SPAWN_GRACE + band.warning_seconds, band.wave_interval_seconds * 0.5),
+		params = Difficulty.waveParams(band, room.familyId, room.formatId),
 		props = fillProps(family, math.max(depth, 1)),
 		structural = structural,
 	}
@@ -60,11 +69,21 @@ function Wave.at(s: Schedule, index: number): WaveInfo
 	assert(index >= 1 and index % 1 == 0, "wave index must be a positive integer")
 	local band = s.band
 	local mouths = s.room.waveMouths
-	local mouthIndex = if #mouths > 0 then ((index - 1) % math.min(band.mouths, #mouths)) + 1 else 0
+	local params = s.params
+	local usable = math.min(params.mouths, #mouths)
+	local perWave = math.max(1, math.min(params.mouthsPerWave, usable))
+	-- large rooms open several mouths per wave, rotating through all of them
+	local mouthIndices = {}
+	for k = 0, perWave - 1 do
+		if usable > 0 then
+			table.insert(mouthIndices, (((index - 1) * perWave + k) % usable) + 1)
+		end
+	end
+	local mouthIndex = mouthIndices[1] or 0
 	local impact = Wave.impactTime(s, index)
 	local rng = Rng.new(Rng.derive(s.seed, "wave:" .. index))
 	local drops: { Drop } = {}
-	local count = band.physical_objects_per_wave
+	local count = params.objectsPerWave
 	if index == 1 then
 		for _, n in s.structural do
 			-- guest / structural support replaces a standard drop and counts toward the budget
@@ -73,8 +92,8 @@ function Wave.at(s: Schedule, index: number): WaveInfo
 		end
 	end
 	if mouthIndex > 0 and #s.props > 0 then
-		local m = mouths[mouthIndex]
-		for _ = 1, math.max(0, count) do
+		for i = 1, math.max(0, count) do
+			local m = mouths[mouthIndices[((i - 1) % #mouthIndices) + 1]]
 			local p = rng:pick(s.props)
 			local half = math.max(0, (m.sx - math.max(p.collider.size_studs[1], p.collider.size_studs[2])) / 2)
 			table.insert(drops, {
@@ -86,7 +105,14 @@ function Wave.at(s: Schedule, index: number): WaveInfo
 			})
 		end
 	end
-	return { index = index, warningTime = impact - band.warning_seconds, impactTime = impact, mouthIndex = mouthIndex, drops = drops }
+	return {
+		index = index,
+		warningTime = impact - band.warning_seconds,
+		impactTime = impact,
+		mouthIndex = mouthIndex,
+		mouthIndices = mouthIndices,
+		drops = drops,
+	}
 end
 
 -- Number of waves whose impact time is <= simSeconds (since room activation).

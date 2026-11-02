@@ -53,9 +53,16 @@ describe("WaveSchedule", function()
 			seenMouths[w.mouthIndex] = true
 			for _, dr in w.drops do
 				if not dr.structural then
-					local m = room.waveMouths[w.mouthIndex]
-					expect(math.abs(dr.x - m.cx) <= m.sx / 2 + 1e-6).toBe(true)
-					expect(math.abs(dr.z - m.cz) <= m.sz / 2 + 1e-6).toBe(true)
+					-- the drop lies inside one of the mouths opened by this wave
+					local inside = false
+					for _, mi in w.mouthIndices do
+						seenMouths[mi] = true
+						local m = room.waveMouths[mi]
+						if math.abs(dr.x - m.cx) <= m.sx / 2 + 1e-6 and math.abs(dr.z - m.cz) <= m.sz / 2 + 1e-6 then
+							inside = true
+						end
+					end
+					expect(inside).toBe(true)
 					local p = Plan.PROPS[dr.propId]
 					local fp = Box.new(dr.x, 0, dr.z, p.collider.size_studs[1], 1, p.collider.size_studs[2])
 					expect(Box.overlapsXZ(fp, room.exitClearance)).toBe(false)
@@ -66,14 +73,14 @@ describe("WaveSchedule", function()
 		for _ in seenMouths do
 			n += 1
 		end
-		expect(n).toBe(math.min(s.band.mouths, #room.waveMouths))
+		expect(n).toBe(math.min(s.params.mouths, #room.waveMouths))
 	end)
 
 	it("objects per wave follow the band and the structural guest replaces one drop", function()
 		local room, fam = roomAt(1, 5)
 		local s = Wave.new(room, fam, 1)
 		local w1 = Wave.at(s, 1)
-		expect(#w1.drops).toBe(s.band.physical_objects_per_wave)
+		expect(#w1.drops).toBe(s.params.objectsPerWave)
 		local structural = 0
 		for _, dr in w1.drops do
 			if dr.structural then
@@ -82,7 +89,26 @@ describe("WaveSchedule", function()
 			end
 		end
 		expect(structural).toBe(1)
-		expect(#Wave.at(s, 2).drops).toBe(s.band.physical_objects_per_wave)
+		expect(#Wave.at(s, 2).drops).toBe(s.params.objectsPerWave)
+	end)
+
+	it("very large rooms: wave volume scales with floor area (bounded), several mouths per wave", function()
+		local Difficulty = Loader.require("src/shared/Domain/Difficulty")
+		local Config = Loader.require("src/shared/GeneratedConfig")
+		local band = Difficulty.bandForDepth(30)
+		local small = Difficulty.waveParams(band, "reception", "S")
+		local xl = Difficulty.waveParams(band, "reception", "XL")
+		expect(small.factor).toBe(1)
+		expect(xl.factor > 2).toBe(true)
+		expect(xl.factor).toBeAtMost(Config.Rooms.wave_area_scaling.max_factor)
+		expect(xl.objectsPerWave > small.objectsPerWave).toBe(true)
+		expect(xl.mouths).toBeAtMost(Config.Rooms.wave_area_scaling.max_mouths)
+		local spec = { family = "reception", format = "XL", exit = "window", allowedBehaviors = { "stable" } }
+		local room = Plan.build(spec, 30, 4242)
+		local s = Wave.new(room, Plan.FAMILIES.reception, 30)
+		local w = Wave.at(s, 3)
+		expect(#w.mouthIndices).toBe(math.min(xl.mouthsPerWave, #room.waveMouths))
+		expect(#w.drops).toBe(xl.objectsPerWave)
 	end)
 
 	it("schedule is deterministic for a seed", function()

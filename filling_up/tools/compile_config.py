@@ -118,7 +118,7 @@ def validate(econ, rooms, runtime) -> list[str]:
     fams = {f["id"]: f for f in rooms["families"]}
     exits = {e["id"] for e in rooms["exit_types"]}
     for f in rooms["families"]:
-        check(set(f["formats"]) == {"S", "M", "L", "V"}, f"{f['id']} formats")
+        check({"S", "M", "L", "V"} <= set(f["formats"]), f"{f['id']} formats")
         check(set(f["exits"]) <= exits, f"{f['id']} exits")
         check(len(f["props"]) == 8, f"{f['id']} must have 8 props")
         for p in f["props"]:

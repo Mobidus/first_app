@@ -426,12 +426,17 @@ function ExpeditionService.activateRoom(self, s: any, room: any, resume: any?)
 	s.roomMaid = Maid.new()
 	room.director = WaveDirector.new(room.def, room.index, room.cell, room.model, s.exp.depth, {
 		warn = function(info)
-			local m = room.def.waveMouths[info.mouthIndex]
-			self.remotes.fire(s.player, "WaveWarning", {
-				mouth = m and room.cell * CFrame.new(m.cx, room.def.size.h, m.cz),
-				impactIn = info.impactIn,
-				size = m and Vector3.new(m.sx, 1, m.sz),
-			})
+			-- one warning per mouth opened by this wave (several in very large rooms)
+			for _, mi in info.mouthIndices or { info.mouthIndex } do
+				local m = room.def.waveMouths[mi]
+				if m then
+					self.remotes.fire(s.player, "WaveWarning", {
+						mouth = room.cell * CFrame.new(m.cx, room.def.size.h, m.cz),
+						impactIn = info.impactIn,
+						size = Vector3.new(m.sx, 1, m.sz),
+					})
+				end
+			end
 		end,
 		plushImpact = function(ev)
 			self.remotes.fire(s.player, "PlushImpact", ev)

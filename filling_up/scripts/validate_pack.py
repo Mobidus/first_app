@@ -57,7 +57,7 @@ def validate(initial_delivery=False):
     assert len(exit_ids) == 6
     assert len([p for p in props if p.get("deformation_profile") == "plush_soft"]) >= 3
     for family in rooms["families"]:
-        assert set(family["formats"]) == {"S", "M", "L", "V"}
+        assert {"S", "M", "L", "V"} <= set(family["formats"])  # XL/XV added on user request (decision 0017)
         for dimensions in family["formats"].values():
             assert len(dimensions) == 3 and all(n > 0 for n in dimensions)
         assert set(family["exits"]).issubset(exit_ids)

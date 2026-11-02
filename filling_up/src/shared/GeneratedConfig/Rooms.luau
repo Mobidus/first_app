@@ -96,6 +96,8 @@ return table.freeze({
 				M = { 56, 48, 30 },
 				L = { 72, 60, 36 },
 				V = { 40, 40, 56 },
+				XL = { 104, 88, 48 },
+				XV = { 60, 60, 88 },
 			},
 			exits = { "door", "window", "roof", "duct", "tailgate", "floor_hatch" },
 			exit_visuals = {
@@ -259,6 +261,8 @@ return table.freeze({
 				M = { 64, 56, 36 },
 				L = { 80, 72, 44 },
 				V = { 44, 44, 64 },
+				XL = { 112, 100, 56 },
+				XV = { 64, 64, 100 },
 			},
 			exits = { "door", "window", "roof", "duct", "tailgate", "floor_hatch" },
 			exit_visuals = {
@@ -424,6 +428,8 @@ return table.freeze({
 				M = { 64, 48, 36 },
 				L = { 80, 64, 44 },
 				V = { 40, 40, 60 },
+				XL = { 112, 92, 56 },
+				XV = { 60, 60, 96 },
 			},
 			exits = { "door", "window", "roof", "duct", "tailgate", "floor_hatch" },
 			exit_visuals = {
@@ -596,6 +602,8 @@ return table.freeze({
 				M = { 64, 56, 36 },
 				L = { 80, 72, 44 },
 				V = { 44, 40, 60 },
+				XL = { 112, 100, 56 },
+				XV = { 64, 60, 96 },
 			},
 			exits = { "door", "window", "roof", "duct", "tailgate", "floor_hatch" },
 			exit_visuals = {
@@ -763,6 +771,8 @@ return table.freeze({
 				M = { 72, 56, 38 },
 				L = { 88, 72, 48 },
 				V = { 48, 44, 64 },
+				XL = { 124, 100, 64 },
+				XV = { 72, 64, 100 },
 			},
 			exits = { "door", "window", "roof", "duct", "tailgate", "floor_hatch" },
 			exit_visuals = {
@@ -927,6 +937,8 @@ return table.freeze({
 				M = { 72, 64, 42 },
 				L = { 96, 88, 56 },
 				V = { 52, 48, 72 },
+				XL = { 136, 124, 72 },
+				XV = { 76, 72, 112 },
 			},
 			exits = { "door", "window", "roof", "duct", "tailgate", "floor_hatch" },
 			exit_visuals = {
@@ -1231,7 +1243,7 @@ return table.freeze({
 		{
 			depth = 2,
 			family = "reception",
-			format = "M",
+			format = "XL",
 			exit = "window",
 			new_mechanic = "choose_between_two_visible_routes",
 			allowed_behaviors = { "stable" },
@@ -1248,7 +1260,7 @@ return table.freeze({
 		{
 			depth = 4,
 			family = "toy",
-			format = "M",
+			format = "XL",
 			exit = "roof",
 			allowed_behaviors = { "stable", "bounce" },
 			bounce_mandatory = false,
@@ -1265,7 +1277,7 @@ return table.freeze({
 		{
 			depth = 6,
 			family = "reception",
-			format = "V",
+			format = "XV",
 			exit = "window",
 			new_mechanic = "multi_floor_navigation_with_recovery_ledges",
 			allowed_behaviors = { "stable", "bounce", "moving" },
@@ -1273,7 +1285,7 @@ return table.freeze({
 		{
 			depth = 7,
 			family = "bureau",
-			format = "M",
+			format = "XL",
 			exit = "window",
 			new_mechanic = "telegraphed_temporary_platform",
 			allowed_behaviors = { "stable", "bounce", "moving", "temporary" },
@@ -1294,13 +1306,13 @@ return table.freeze({
 		{
 			depth = 9,
 			family = "garage",
-			format = "M",
+			format = "XL",
 			exit = "door",
 			new_mechanic = "vertical_mover_with_pauses",
 			allowed_behaviors = { "stable", "bounce", "moving", "temporary" },
 			mvp_substitution = {
 				family = "bureau",
-				format = "M",
+				format = "XL",
 				exit = "door",
 				prop_behavior_variant = {
 					prop_id = "bureau_rail_chair",
@@ -1311,12 +1323,12 @@ return table.freeze({
 		{
 			depth = 10,
 			family = "bin",
-			format = "M",
+			format = "XV",
 			exit = "window",
 			allowed_behaviors = { "stable", "bounce", "moving", "temporary" },
 			mvp_substitution = {
 				family = "toy",
-				format = "V",
+				format = "XV",
 				exit = "window",
 			},
 			final_room = false,
@@ -1325,15 +1337,30 @@ return table.freeze({
 	release_profiles = {
 		mvp = {
 			families = { "reception", "toy", "bureau" },
-			formats = { "S", "M", "V" },
+			formats = { "S", "M", "V", "XL", "XV" },
 			exits = { "door", "window", "roof" },
 			use_first_room_substitutions = true,
+			format_weights = {
+				S = 0.5,
+				M = 1,
+				V = 1,
+				XL = 3,
+				XV = 2,
+			},
 		},
 		v1 = {
 			families = { "reception", "toy", "bureau", "kitchen", "garage", "bin" },
-			formats = { "S", "M", "L", "V" },
+			formats = { "S", "M", "L", "V", "XL", "XV" },
 			exits = { "door", "window", "roof", "duct", "tailgate", "floor_hatch" },
 			use_first_room_substitutions = false,
+			format_weights = {
+				S = 0.5,
+				M = 1,
+				L = 1.5,
+				V = 1,
+				XL = 3,
+				XV = 2,
+			},
 		},
 	},
 	validation_rules = {
@@ -1375,5 +1402,20 @@ return table.freeze({
 		test_long_expedition_rooms = 300,
 		test_mobile_camera_and_touch = true,
 		test_real_burial_ko_without_global_timeout = true,
+	},
+	format_scale = {
+		status = "user_request_2026_11_02_very_large_rooms",
+		XL = "vast hall: about 1.4x L footprint, 1.35x height",
+		XV = "vast vertical: about 1.5x V footprint, 1.6x height",
+		first_room_kept_small_for_onboarding = true,
+	},
+	wave_area_scaling = {
+		reference_format = "M",
+		max_factor = 3,
+		objects_per_wave_scale = "round(band.physical_objects_per_wave * factor)",
+		mouths_scale = "min(band.mouths * ceil(factor), max_mouths)",
+		max_mouths = 6,
+		dynamic_budget_unchanged = true,
+		rationale = "keep the filling pressure per floor area in very large rooms; excess drops are deferred by the physics budget",
 	},
 })

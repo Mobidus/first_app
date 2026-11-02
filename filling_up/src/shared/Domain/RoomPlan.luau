@@ -131,7 +131,21 @@ function Plan.selectSpec(depth: number, runSeed: number, history: { any }, profi
 	if #filtered == 0 then
 		filtered = combos
 	end
-	local c = rng:pick(filtered)
+	-- weighted pick (release_profiles.format_weights): very large formats come up more often
+	local weights = prof.format_weights or {}
+	local total = 0
+	for _, cc in filtered do
+		total += weights[cc.format] or 1
+	end
+	local roll = rng:nextNumber() * total
+	local c = filtered[#filtered]
+	for _, cc in filtered do
+		roll -= weights[cc.format] or 1
+		if roll <= 0 then
+			c = cc
+			break
+		end
+	end
 	local band = Difficulty.bandForDepth(depth)
 	return {
 		family = c.family,
@@ -696,7 +710,8 @@ function Plan.generate(spec, depth: number, seed: number, attempt: number?): any
 			table.insert(protectedNodes, n)
 		end
 	end
-	for _ = 1, band.mouths do
+	local waveParams = Difficulty.waveParams(band, spec.family, spec.format)
+	for _ = 1, waveParams.mouths do
 		local ok = false
 		for _ = 1, 200 do
 			local mx = rng:nextRange(-w / 2 + MOUTH_SIZE / 2 + 1, w / 2 - MOUTH_SIZE / 2 - 1)

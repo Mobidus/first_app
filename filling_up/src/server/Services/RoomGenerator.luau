@@ -145,7 +145,8 @@ local function shell(model: Model, origin: CFrame, room: any, tpl: any)
 		)
 	else
 		-- coarse grid of ceiling tiles skipping openings
-		local tile = 4
+		-- coarse tiles keep the instance count reasonable in very large rooms
+		local tile = if w * d > 4000 then 8 else 4
 		for x = -w / 2, w / 2 - tile, tile do
 			for z = -d / 2, d / 2 - tile, tile do
 				local cx, cz = x + tile / 2, z + tile / 2

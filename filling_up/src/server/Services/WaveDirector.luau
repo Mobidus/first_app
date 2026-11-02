@@ -285,6 +285,7 @@ function WaveDirector.step(self, dt: number)
 		self.hooks.warn({
 			index = upcoming.index,
 			mouthIndex = upcoming.mouthIndex,
+			mouthIndices = upcoming.mouthIndices,
 			impactIn = upcoming.impactTime - self.simTime,
 			drops = upcoming.drops,
 		})

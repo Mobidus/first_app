@@ -20,7 +20,7 @@ describe("Generation certification (V1 profile)", function()
 		for _ in report.combos do
 			n += 1
 		end
-		expect(n).toBe(6 * 4 * 6)
+		expect(n).toBe(6 * #Config.Rooms.release_profiles.v1.formats * 6)
 	end)
 
 	it("physical parameters are bounded at any depth (1 .. 1e6)", function()

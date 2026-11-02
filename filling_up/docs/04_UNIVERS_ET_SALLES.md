@@ -41,6 +41,11 @@ Toutes les dimensions suivantes sont des gabarits de maquette en studs, notés l
 | Garage Mayhem | 44 × 40 × 26 | 72 × 56 × 38 | 88 × 72 × 48 | 48 × 44 × 64 |
 | The Giant Bin | 48 × 44 × 28 | 72 × 64 × 42 | 96 × 88 × 56 | 52 × 48 × 72 |
 
+**Mise à jour du 2 novembre 2026 (décision 0017, demande de l'utilisateur)** : deux formats géants s'ajoutent par
+famille, **XL** (grande halle, environ 1,4 × L) et **XV** (verticale géante, environ 1,6 × la hauteur de V). Leurs
+dimensions sont dans `config/rooms.json`. Ils dominent la sélection à partir de la salle 2 ; la salle 1 reste petite.
+Le volume des vagues suit la surface de la pièce, avec un budget physique inchangé.
+
 Les variantes V multiplient les étages et paliers de récupération ; elles ne réduisent pas automatiquement les surfaces d'atterrissage. Les volumes L offrent plusieurs itinéraires visibles. Le sol et le plafond ne sont pas étirés arbitrairement : les modules de murs, machines et appuis sont recomposés sur une grille.
 
 ## 5 Six familles de sorties

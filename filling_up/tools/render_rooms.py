@@ -20,8 +20,8 @@ import bpy
 from mathutils import Vector
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = os.path.join(ROOT, "reports", "room_previews", "rooms.json")
-OUT = os.path.join(ROOT, "reports", "room_previews")
+SRC = os.environ.get("FU_ROOMS_JSON", os.path.join(ROOT, "reports", "room_previews", "rooms.json"))
+OUT = os.path.join(ROOT, "reports", "room_previews", os.environ.get("FU_PREVIEW_SUBDIR", ""))
 W, H = 960, 720
 
 FAMILY = {"reception": "#16D9FF", "toy": "#FF4CB8", "bureau": "#2ACBC7", "kitchen": "#24BFC4", "garage": "#FF9B47", "bin": "#16D9FF"}
