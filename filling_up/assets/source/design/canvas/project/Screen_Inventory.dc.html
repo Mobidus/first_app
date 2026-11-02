@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Inventaire et équipement</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito:wght@400;600;800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#203055}a:hover{color:#8855FF}
+</style>
+</helmet>
+<div style="width: 1280px; height: 720px; box-sizing: border-box; padding: 28px 36px; background: #FFF5DF; font-family: Nunito, system-ui, sans-serif; color: #203055; display: flex; flex-direction: column; gap: 18px">
+  <div style="display: flex; justify-content: space-between; align-items: center">
+    <div><span style="font-family: Fredoka, sans-serif; font-weight: 700; font-size: 36px">Inventaire</span><span style="font-size: 16px; margin-left: 12px">Inventory · borne d'équipement du sas</span></div>
+    <button type="button" aria-label="Fermer l'inventaire" style="width: 56px; height: 56px; border-radius: 28px; background: #FFFFFF; border: 4px solid #203055; font-size: 26px; font-weight: 800; color: #203055">×</button>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+    <div style="background: #FFFFFF; border: 4px solid #39E68B; border-radius: 22px; padding: 14px; display: flex; gap: 14px; align-items: center">
+      <img src="/_blob/60e4883e0390ff54c514bb172bf706e7" alt="Radar POP" width="88" height="88">
+      <div><div style="font-size: 13px; font-weight: 800">ACTIF · ACTIVE</div><div style="font-family: Fredoka, sans-serif; font-weight: 600; font-size: 24px">Radar POP</div><div style="font-size: 14px">Rang I · 4 charges / salle</div></div>
+    </div>
+    <div style="background: #FFFFFF; border: 4px dashed #203055; border-radius: 22px; padding: 14px; display: flex; gap: 14px; align-items: center">
+      <div style="width: 88px; height: 88px; border-radius: 18px; background: #EDF3F8; border: 3px dashed #203055"></div>
+      <div><div style="font-size: 13px; font-weight: 800">PASSIF · PASSIVE</div><div style="font-family: Fredoka, sans-serif; font-weight: 600; font-size: 22px">Emplacement libre</div><div style="font-size: 14px">Aimant de poche : 150 Coins, après 1 salle</div></div>
+    </div>
+    <div style="background: #FFFFFF; border: 4px dashed #203055; border-radius: 22px; padding: 14px; display: flex; gap: 14px; align-items: center">
+      <div style="width: 88px; height: 88px; border-radius: 18px; background: #EDF3F8; border: 3px dashed #203055"></div>
+      <div><div style="font-size: 13px; font-weight: 800">COMPAGNON · COMPANION</div><div style="font-family: Fredoka, sans-serif; font-weight: 600; font-size: 22px">Emplacement libre</div><div style="font-size: 14px">Cosmétique uniquement, aucun pouvoir</div></div>
+    </div>
+  </div>
+  <div style="font-family: Fredoka, sans-serif; font-weight: 600; font-size: 22px">Mes objets · Owned</div>
+  <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px">
+    <div style="background: #FFFFFF; border: 3px solid #203055; border-radius: 18px; padding: 12px; display: flex; flex-direction: column; gap: 8px; align-items: center">
+      <img src="/_blob/60e4883e0390ff54c514bb172bf706e7" alt="Radar POP" width="72" height="72"><b>Radar POP</b><span style="font-size: 13px">Rang II : +100 Coins</span>
+      <button type="button" style="width: 100%; height: 52px; border-radius: 14px; background: #39E68B; border: 3px solid #203055; font-weight: 800; font-size: 16px; color: #203055">Équipé ✓</button>
+    </div>
+    <div style="background: #FFFFFF; border: 3px solid #203055; border-radius: 18px; padding: 12px; display: flex; flex-direction: column; gap: 8px; align-items: center">
+      <img src="/_blob/afb9f9137b42a2c88774c36fd6fe1ac7" alt="Aimant de poche" width="72" height="72"><b>Aimant de poche</b><span style="font-size: 13px">Passif · rang I</span>
+      <button type="button" style="width: 100%; height: 52px; border-radius: 14px; background: #FFE14D; border: 3px solid #203055; font-weight: 800; font-size: 16px; color: #203055">Équiper (passif)</button>
+    </div>
+    <div style="background: #FFFFFF; border: 3px solid #203055; border-radius: 18px; padding: 12px; display: flex; flex-direction: column; gap: 8px; align-items: center">
+      <img src="/_blob/24f800614e9a0cb12ea9be4dd86d7684" alt="Ventouse de chantier" width="72" height="72"><b>Ventouse de chantier</b><span style="font-size: 13px">Actif · remplace le Radar</span>
+      <button type="button" style="width: 100%; height: 52px; border-radius: 14px; background: #FFFFFF; border: 3px solid #203055; font-weight: 800; font-size: 16px; color: #203055">Équiper (actif)</button>
+    </div>
+    <div style="background: #FFFFFF; border: 3px solid #203055; border-radius: 18px; padding: 12px; display: flex; flex-direction: column; gap: 8px; align-items: center">
+      <svg width="72" height="72" viewBox="0 0 72 72" aria-hidden="true"><rect x="10" y="30" width="52" height="12" rx="6" fill="#FFE14D" stroke="#203055" stroke-width="3"/><path d="M14 36 Q30 20 58 36" fill="none" stroke="#FFE14D" stroke-width="6" stroke-linecap="round"/></svg><b>Ruban citron</b><span style="font-size: 13px">Trace · cosmétique</span>
+      <button type="button" style="width: 100%; height: 52px; border-radius: 14px; background: #FFFFFF; border: 3px solid #203055; font-weight: 800; font-size: 16px; color: #203055">Porter</button>
+    </div>
+  </div>
+  <div style="font-size: 14px; font-weight: 700; margin-top: auto">Un actif, un passif, un compagnon. Changement d'équipement uniquement dans le sas ; en salle, seul l'épinglage d'un objet est possible.</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":720}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+{
+  "asset_id": "toy_plush_octo",
+  "blend": "assets/source/models/Octo/Octo.blend",
+  "exports": [
+    "assets/import/models/toy_plush_octo.glb",
+    "assets/import/models/toy_plush_octo_lod1.glb",
+    "assets/import/models/toy_plush_octo.fbx"
+  ],
+  "highres_tris": 363772,
+  "lod0_tris": 3000,
+  "lod1_tris": 520,
+  "bones": [
+    "Root",
+    "Belly_00",
+    "Belly_10",
+    "Belly_20",
+    "Belly_01",
+    "Belly_11",
+    "Belly_21",
+    "Belly_02",
+    "Belly_12",
+    "Belly_22",
+    "Arms_N",
+    "Arms_E",
+    "Arms_S",
+    "Arms_W"
+  ],
+  "weights": {
+    "Octo_LOD0": {
+      "vertices": 1494,
+      "max_influences": 4,
+      "weight_sum_max_error": 2.220446049250313e-16,
+      "unweighted_vertices": 0
+    },
+    "Octo_LOD1": {
+      "vertices": 254,
+      "max_influences": 4,
+      "weight_sum_max_error": 2.220446049250313e-16,
+      "unweighted_vertices": 0
+    }
+  },
+  "materials_per_mesh": 1,
+  "textures": [
+    "toy_plush_octo_albedo_1024.png",
+    "toy_plush_octo_albedo_256.png"
+  ],
+  "voxel_size_studs": 0.05,
+  "seed": 7,
+  "blender_version": "5.2.3 LTS"
+}

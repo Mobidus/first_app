@@ -1,0 +1,27 @@
+{
+  "task": "T04",
+  "title": "Créer le projet et les commandes reproductibles",
+  "status": "done",
+  "date_utc": "2026-11-02T10:17:13.891156+00:00",
+  "criteria": [
+    {
+      "criterion": "Versions verrouillées à partir du préflight",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Construction d'un fichier local de jeu valide",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Configurations JSON compilées sans duplication manuelle",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Outil manquant retourne blocked et non succès",
+      "status": "PASS"
+    }
+  ],
+  "blocked_reason": null,
+  "note": "Rojo 7.5.1 et Lune 0.10.1 compilés depuis crates.io. Le build produit build/FillingUp.rbxlx, et le fichier construit est rouvert et compilé script par script. luau-analyze (types) : NOT_RUN.",
+  "checks_dir": "reports/checks"
+}

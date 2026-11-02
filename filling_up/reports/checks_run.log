@@ -1,0 +1,73 @@
+PASS  config  -> reports/checks/config.json
+FAIL  build  -> reports/checks/build.json
+   FAIL: stylua formatting
+   NOT_RUN: luau-analyze --strict type checking (binary not available in this environment)
+   NOT_RUN: Opening the place in Roblox Studio (Studio not available)
+PASS  unit_expedition  -> reports/checks/unit_expedition.json
+PASS  unit_routes  -> reports/checks/unit_routes.json
+PASS  unit_profile  -> reports/checks/unit_profile.json
+PASS  unit_onboarding  -> reports/checks/unit_onboarding.json
+PASS  unit_economy  -> reports/checks/unit_economy.json
+PASS  unit_tools  -> reports/checks/unit_tools.json
+PASS  unit_rebirth  -> reports/checks/unit_rebirth.json
+PASS  unit_generation-initial  -> reports/checks/unit_generation-initial.json
+PASS  unit_generation-full  -> reports/checks/unit_generation-full.json
+PASS  unit_checkpoints  -> reports/checks/unit_checkpoints.json
+PASS  unit_receipts  -> reports/checks/unit_receipts.json
+PASS  unit_waves  -> reports/checks/unit_waves.json
+PASS  unit_burial  -> reports/checks/unit_burial.json
+PASS  unit_plush  -> reports/checks/unit_plush.json
+PASS  unit_continuity  -> reports/checks/unit_continuity.json
+PASS  unit_config  -> reports/checks/unit_config.json
+BLOCKED  studio_movement  -> reports/checks/studio_movement.json
+   NOT_RUN: tests/studio/MovementLab (scene present)
+BLOCKED  studio_reception  -> reports/checks/studio_reception.json
+   NOT_RUN: tests/studio/ReceptionRoom (scene present)
+BLOCKED  studio_waves  -> reports/checks/studio_waves.json
+   NOT_RUN: tests/studio/WaveLab (scene present)
+BLOCKED  studio_plush  -> reports/checks/studio_plush.json
+   NOT_RUN: tests/studio/PlushLab (scene present)
+BLOCKED  studio_burial  -> reports/checks/studio_burial.json
+   NOT_RUN: tests/studio/BurialFixtures (scene present)
+BLOCKED  studio_transitions  -> reports/checks/studio_transitions.json
+   NOT_RUN: tests/studio/TransitionLab (scene present)
+BLOCKED  studio_persistence  -> reports/checks/studio_persistence.json
+   NOT_RUN: tests/studio/ProfileLab (scene present)
+BLOCKED  studio_onboarding  -> reports/checks/studio_onboarding.json
+   NOT_RUN: tests/studio/FirstSessionLab (scene present)
+BLOCKED  studio_coin-shop  -> reports/checks/studio_coin-shop.json
+   NOT_RUN: tests/studio/FirstSessionLab (scene present)
+BLOCKED  studio_tools  -> reports/checks/studio_tools.json
+   NOT_RUN: tests/studio/ToolLab (scene present)
+BLOCKED  studio_rebirth  -> reports/checks/studio_rebirth.json
+   NOT_RUN: tests/studio/ProfileLab (scene present)
+BLOCKED  studio_rooms-initial  -> reports/checks/studio_rooms-initial.json
+   NOT_RUN: tests/studio/ReceptionRoom (scene present)
+BLOCKED  studio_rooms-full  -> reports/checks/studio_rooms-full.json
+   NOT_RUN: tests/studio/ReceptionRoom (scene present)
+BLOCKED  studio_reconnect  -> reports/checks/studio_reconnect.json
+   NOT_RUN: tests/studio/ResumeLab (scene present)
+BLOCKED  studio_ui  -> reports/checks/studio_ui.json
+   NOT_RUN: tests/studio/EndToEndLab (scene present)
+BLOCKED  studio_purchases  -> reports/checks/studio_purchases.json
+   NOT_RUN: tests/studio/PurchaseLab (scene present)
+BLOCKED  studio_end-to-end  -> reports/checks/studio_end-to-end.json
+   NOT_RUN: tests/studio/EndToEndLab (scene present)
+PASS  soak_simulated  -> reports/checks/soak_simulated.json
+Traceback (most recent call last):
+  File "/home/user/first_app/filling_up/tools/game_checks.py", line 241, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/home/user/first_app/filling_up/tools/game_checks.py", line 237, in main
+    return {"config": cmd_config, "build": cmd_build, "unit": cmd_unit, "studio": cmd_studio, "soak": cmd_soak}[args.cmd](args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/user/first_app/filling_up/tools/game_checks.py", line 218, in cmd_soak
+    return write("soak_simulated", {"status": r["status"], "executed": r.get("executed", []), "failures": r.get("failures", []),
+                                    "not_run": ["engine physics, network, camera and frame time (simulation only)"],
+                                    "summary": r.get("summary")})
+  File "/home/user/first_app/filling_up/tools/game_checks.py", line 92, in write
+    for f in report.get("failures", [])[:20]:
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+KeyError: slice(None, 20, None)
+BLOCKED  soak_real  -> reports/checks/soak_real.json
+   NOT_RUN: real Roblox session of 5.0 h with periodic memory/instances/connections/frame-time samples

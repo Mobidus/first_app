@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Boutique Coins</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito:wght@400;600;800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#203055}a:hover{color:#8855FF}
+</style>
+</helmet>
+<div style="width: 1280px; height: 720px; box-sizing: border-box; padding: 26px 36px; background: #FFF5DF; font-family: Nunito, system-ui, sans-serif; color: #203055; display: flex; flex-direction: column; gap: 16px">
+  <div style="display: flex; justify-content: space-between; align-items: center">
+    <div><span style="font-family: Fredoka, sans-serif; font-weight: 700; font-size: 36px">Boutique Coins</span><span style="font-size: 16px; margin-left: 12px">Coin shop · sas uniquement</span></div>
+    <div style="display: flex; gap: 12px; align-items: center">
+      <div style="background: #FFFFFF; border: 3px solid #203055; border-radius: 24px; padding: 8px 18px; font-weight: 800; font-size: 22px">215 Coins</div>
+      <button type="button" aria-label="Fermer la boutique" style="width: 56px; height: 56px; border-radius: 28px; background: #FFFFFF; border: 4px solid #203055; font-size: 26px; font-weight: 800; color: #203055">×</button>
+    </div>
+  </div>
+  <div style="display: flex; gap: 10px">
+    <button type="button" style="height: 48px; padding: 0 22px; border-radius: 24px; background: #203055; border: 3px solid #203055; color: #FFF5DF; font-weight: 800; font-size: 16px">Outils · Tools</button>
+    <button type="button" style="height: 48px; padding: 0 22px; border-radius: 24px; background: #FFFFFF; border: 3px solid #203055; color: #203055; font-weight: 800; font-size: 16px">Améliorations · Upgrades</button>
+    <button type="button" style="height: 48px; padding: 0 22px; border-radius: 24px; background: #FFFFFF; border: 3px solid #203055; color: #203055; font-weight: 800; font-size: 16px">Cosmétiques · Cosmetics</button>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; flex-grow: 1">
+    <div style="background: #FFFFFF; border: 3px solid #203055; border-radius: 20px; padding: 14px; display: flex; flex-direction: column; gap: 8px">
+      <img src="/_blob/60e4883e0390ff54c514bb172bf706e7" alt="Radar POP" width="96" height="96">
+      <b style="font-size: 20px">Radar POP</b><span style="font-size: 14px">Actif · surligne 3 appuis · permanent</span><span style="font-size: 14px">50 Coins</span>
+      <div style="margin-top: auto; height: 52px; border-radius: 14px; background: #EDF3F8; border: 3px solid #203055; display: flex; align-items: center; justify-content: center; font-weight: 800">Possédé ✓ · Owned</div>
+    </div>
+    <div style="background: #FFFFFF; border: 3px solid #203055; border-radius: 20px; padding: 14px; display: flex; flex-direction: column; gap: 8px">
+      <img src="/_blob/afb9f9137b42a2c88774c36fd6fe1ac7" alt="Aimant de poche" width="96" height="96">
+      <b style="font-size: 20px">Aimant de poche</b><span style="font-size: 14px">Passif · attire les 6 jetons existants · permanent</span><span style="font-size: 14px">Condition : 1 salle terminée ✓</span>
+      <button type="button" style="margin-top: auto; height: 52px; border-radius: 14px; background: #FFE14D; border: 3px solid #203055; font-weight: 800; font-size: 17px; color: #203055">Acheter 150 Coins</button>
+    </div>
+    <div style="background: #FFFFFF; border: 3px solid #203055; border-radius: 20px; padding: 14px; display: flex; flex-direction: column; gap: 8px">
+      <img src="/_blob/24f800614e9a0cb12ea9be4dd86d7684" alt="Ventouse de chantier" width="96" height="96">
+      <b style="font-size: 20px">Ventouse de chantier</b><span style="font-size: 14px">Actif · stabilise 1 objet éligible · permanent</span><span style="font-size: 14px">Condition : 3 salles terminées (2 / 3)</span>
+      <div style="margin-top: auto; height: 52px; border-radius: 14px; background: #EDF3F8; border: 3px dashed #203055; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 15px">Verrouillé · 300 Coins</div>
+    </div>
+    <div style="background: #FFFFFF; border: 3px solid #203055; border-radius: 20px; padding: 14px; display: flex; flex-direction: column; gap: 8px">
+      <img src="/_blob/74c04784c099156995c5a45b9389e707" alt="Parapluie bonbon" width="96" height="96">
+      <b style="font-size: 20px">Parapluie bonbon</b><span style="font-size: 14px">Actif · ralentit une descente · permanent</span><span style="font-size: 14px">Condition : 5 salles terminées (2 / 5)</span>
+      <div style="margin-top: auto; height: 52px; border-radius: 14px; background: #EDF3F8; border: 3px dashed #203055; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 15px">Verrouillé · 650 Coins</div>
+    </div>
+  </div>
+  <div style="font-size: 14px; font-weight: 700">Prix et conditions servis par le serveur depuis config/economy.json · aucun objet aléatoire · le contenu exact est visible avant achat · les objets V1 ne s'affichent pas comme achetables dans le MVP</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":720}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

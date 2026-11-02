@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>coussin_gonflable_icon — Coussin gonflable</title>
+  <g stroke="#203055" stroke-width="14" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M80 150 Q256 110 432 150 Q470 256 432 380 Q256 420 80 380 Q42 256 80 150 Z" fill="#FFE14D"/>
+    <path d="M110 180 Q256 150 402 180 Q430 256 402 350 Q256 380 110 350 Q84 256 110 180 Z" fill="none" stroke="#FF4CB8" stroke-width="10" stroke-dasharray="22 16"/>
+    <rect x="388" y="96" width="44" height="64" rx="14" fill="#16D9FF"/>
+  </g>
+  <path d="M60 440 H452" stroke="#39E68B" stroke-width="16" stroke-linecap="round"/>
+</svg>

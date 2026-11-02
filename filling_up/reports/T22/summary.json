@@ -1,0 +1,31 @@
+{
+  "task": "T22",
+  "title": "Exécuter les stress tests et cinq heures réelles",
+  "status": "blocked",
+  "date_utc": "2026-11-02T10:17:13.891156+00:00",
+  "criteria": [
+    {
+      "criterion": "18 000 s simulées distinguées du temps réel",
+      "status": "PASS"
+    },
+    {
+      "criterion": "80, 200 et 1 000 salles logiques",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Session Roblox réelle de 5 h",
+      "status": "NOT_RUN"
+    },
+    {
+      "criterion": "Mémoire instances connexions erreurs frame time mesurés (moteur)",
+      "status": "NOT_RUN"
+    },
+    {
+      "criterion": "Budgets salles / objets non dépassés (logique)",
+      "status": "PASS"
+    }
+  ],
+  "blocked_reason": "Critères non vérifiés : Session Roblox réelle de 5 h; Mémoire instances connexions erreurs frame time mesurés (moteur)",
+  "note": "Logique : 18 000 s simulées = 90 salles, 39 515 Coins, 326 permis (référence exacte) ; 1 000 salles sans fuite. La session réelle de 5 h est bloquée, faute de Studio.",
+  "checks_dir": "reports/checks"
+}

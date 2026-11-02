@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "purpose": "Hiérarchie, tokens et états pour reconstruire l'UI en Roblox natif (ScreenGui/Frame/TextLabel/TextButton/ImageLabel). Les maquettes HTML du canvas sont des références, pas l'UI du jeu.",
+  "canvas": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3",
+  "tokens_file": "assets/source/design/design_tokens.json",
+  "global_rules": [
+    "Toutes les valeurs (Coins, prix, permis, charges, conditions) viennent d'états serveur ; le client n'affiche que ce qu'il reçoit.",
+    "Aucun chrono de défaite, aucun pourcentage global de remplissage affiché comme menace.",
+    "Écrans d'achat complets seulement dans le sas ; en salle, seul l'épinglage est possible.",
+    "Cibles tactiles >= 44 pt ; la zone du bouton SAUT n'est jamais recouverte.",
+    "Boutons Robux désactivés tant que product_id/gamepass_id est null : libellé « Indisponible ».",
+    "Chaque état coloré a aussi une icône ou un libellé (accessibilité daltonisme)."
+  ],
+  "screens": [
+    {
+      "id": "HUD_Room", "board": "Gameplay.dc.html", "context": "salle active", "layout": "paysage 16:9 et compact",
+      "tree": {
+        "TopLeft": ["RoomBadge(text: room_label)", "DepthChip(text: depth)"],
+        "TopRight": ["CoinsChip(icon ui_coins, value: coins)", "PermitsChip(icon ui_permits, value: permits)"],
+        "Left": ["HeightGauge(position relative à la sortie, pas un timer)"],
+        "BottomLeft": ["Thumbstick (Roblox par défaut)"],
+        "BottomRight": ["ToolButton(icon équipé, charges/max, cooldown radial)", "JumpButton(132 px)"],
+        "Floating": ["MilestoneToast(+N jalon)", "BurialAlert(« DÉGAGE-TOI », flèche direction libre)", "WaveWarning(triangle corail au point d'arrivée)"]
+      },
+      "states": ["normal", "tool_cooldown", "tool_no_charges", "burial_alert", "milestone_toast", "reduced_effects"]
+    },
+    {
+      "id": "RadarKiosk", "board": "Screen_RadarKiosk.dc.html / Screen_RadarKiosk_Compact.dc.html", "context": "sas après tutoriel",
+      "tree": {"Left": ["ItemPreview(radar_pop_icon)", "Demo(2 s, 3 appuis surlignés)"], "Right": ["Title", "Description", "PriceTable(earned 65, price 50, after 15)", "PermanenceNote", "BuyButton(primary)", "ContinueButton(secondary, même taille)"]},
+      "states": ["can_afford", "insufficient_coins", "owned", "network_error", "purchase_pending"],
+      "forbidden": ["countdown", "robux_offer", "auto_open"]
+    },
+    {"id": "Inventory", "board": "Screen_Inventory.dc.html", "context": "sas", "tree": {"Slots": ["ActiveSlot", "PassiveSlot", "CompanionSlot(cosmétique)"], "OwnedGrid": ["ItemCard(icon, name, rank, action: Équipé|Équiper|Porter)"]}, "states": ["equipped", "equippable", "incompatible_slot", "pending"]},
+    {"id": "CoinShop", "board": "Screen_CoinShop.dc.html", "context": "sas", "tree": {"Header": ["Title", "CoinsChip", "Close"], "Tabs": ["Outils", "Améliorations", "Cosmétiques"], "Grid": ["ShopCard(icon, name, slot, effect, price, condition progress, action)"]}, "states": ["buyable", "owned", "locked_condition", "insufficient_coins", "unavailable_v1", "pending", "network_error"]},
+    {"id": "RobuxShop", "board": "Screen_RobuxShop.dc.html", "context": "sas, clic explicite", "tree": {"Banner": ["UnavailableNotice"], "Cosmetics": ["OfferCard x5"], "CoinPacks": ["PackCard x3"]}, "states": ["unavailable(product_id null)", "available(platform price)", "pending", "granted_after_durable_save"], "forbidden": ["after_ko", "fake_discount", "random_reward", "countdown"]},
+    {"id": "KO", "board": "Screen_KO.dc.html", "context": "après KO confirmé", "tree": {"Card": ["Title(KO — enseveli)", "RunSummary(depth, family)", "KeptTable(coins, permits, best depth, items)", "RestartButton(primary, gratuit)", "LoadoutButton"]}, "forbidden": ["paid_revive", "robux_offer"]},
+    {"id": "SaveResume", "board": "Screen_SaveResume.dc.html", "context": "sas / connexion", "tree": {"SavePanel": ["StatusRow(saving|saved|failed)", "SaveExitButton", "ContinueButton"], "ResumePanel": ["CheckpointSummary", "ResumeButton", "NewRunButton"]}, "states": ["saving", "saved_confirmed", "save_failed", "session_locked_elsewhere"]},
+    {"id": "Rebirth", "board": "Screen_Rebirth.dc.html", "context": "machine du sas", "tree": {"Left": ["MachineVisual"], "Right": ["PermitsChip", "RankChip", "QualificationChip", "QuantityStepper(server preview)", "CostTable", "PreviewButton", "ContinueRunButton"]}, "states": ["not_qualified", "insufficient_permits", "preview_ready", "preview_stale"]},
+    {"id": "RebirthConfirm", "board": "Screen_RebirthConfirm.dc.html", "context": "sas", "tree": {"Card": ["StatTiles(permits spent, ranks, new bonus, permits left)", "RestartBanner(« Tu repars à la salle 1 »)", "KeptList", "ConfirmButton", "CancelButton"]}, "request": "RequestRebirth(quantity, expectedRevision, previewToken, requestId)"},
+    {"id": "States", "board": "Screen_States.dc.html", "states": ["loading_next_room", "network_error", "insufficient_coins", "owned", "unavailable", "burial_alert"]}
+  ],
+  "strings": {
+    "fr": {"buy_radar": "Acheter 50 Coins", "continue": "Continuer", "restart_free": "Recommencer (gratuit)", "saved": "Sauvegardé", "saving": "Sauvegarde en cours…", "save_failed": "Échec de sauvegarde", "unavailable": "Indisponible", "owned": "Possédé", "equip": "Équiper", "equipped": "Équipé", "burial_alert": "DÉGAGE-TOI", "climb_and_exit": "GRIMPE ET SORS", "rebirth_restart": "Tu repars à la salle 1", "shop_unavailable": "Boutique indisponible", "loading_next": "Salle suivante en préparation…", "network_error": "Action non confirmée. Rien n'a été débité.", "missing_coins": "Il manque {n} Coins"},
+    "en": {"buy_radar": "Buy for 50 Coins", "continue": "Continue", "restart_free": "Restart (free)", "saved": "Saved", "saving": "Saving…", "save_failed": "Save failed", "unavailable": "Unavailable", "owned": "Owned", "equip": "Equip", "equipped": "Equipped", "burial_alert": "BREAK FREE", "climb_and_exit": "CLIMB AND EXIT", "rebirth_restart": "You restart at room 1", "shop_unavailable": "Shop unavailable", "loading_next": "Preparing next room…", "network_error": "Action not confirmed. Nothing was charged.", "missing_coins": "{n} Coins missing"}
+  }
+}

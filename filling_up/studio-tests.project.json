@@ -1,0 +1,18 @@
+{
+  "name": "FillingUpStudioTests",
+  "globIgnorePaths": ["**/_check_generators.luau", "**/README.md"],
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": { "Shared": { "$path": "src/shared" } },
+    "ServerScriptService": {
+      "Server": { "$path": "src/server" },
+      "StudioTests": { "$path": "tests/studio" }
+    },
+    "ServerStorage": { "AssetGenerators": { "$path": "assets/source/generators" } },
+    "StarterPlayer": {
+      "StarterPlayerScripts": { "Client": { "$path": "src/client" } },
+      "$properties": { "CharacterUseJumpPower": false, "CharacterJumpHeight": 7.2, "CharacterWalkSpeed": 16 }
+    },
+    "Workspace": { "$properties": { "Gravity": 196.2 } }
+  }
+}

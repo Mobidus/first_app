@@ -1,0 +1,1356 @@
+{
+  "schema_version": 1,
+  "project": "FILLING UP",
+  "specification_version": "3.0",
+  "execution_status": "in_progress_engine_validation_blocked",
+  "command_notice": "Les commandes game_checks existent (tools/game_checks.py). Les suites unit/config/build/soak simulé s'exécutent ; les suites studio et le soak réel renvoient BLOCKED faute de Roblox Studio.",
+  "tasks": [
+    {
+      "id": "T00",
+      "title": "Vérifier outils accès et permissions",
+      "depends_on": [],
+      "phase": "preflight",
+      "outputs": [
+        "reports/preflight.json",
+        "docs/decisions/0001_toolchain.md"
+      ],
+      "acceptance": [
+        "Versions détectées et non inventées",
+        "Accès Claude Design Studio modeleur et compte décrits",
+        "Permissions manquantes explicitement bloquantes"
+      ],
+      "commands": [],
+      "status": "done",
+      "risk": "Supposer un accès à Studio ou une intégration de design inexistante",
+      "gate": "Ne pas installer ou ouvrir un compte sans autorité disponible",
+      "rollback": "Aucune mutation externe ; conserver le rapport des limitations",
+      "validation": [
+        {
+          "criterion": "Versions détectées et non inventées",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Accès Claude Design Studio modeleur et compte décrits",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Permissions manquantes explicitement bloquantes",
+          "status": "PASS"
+        }
+      ],
+      "blocked_reason": null,
+      "evidence": "reports/T00/summary.json"
+    },
+    {
+      "id": "T01",
+      "title": "Générer les références et interfaces dans Claude Design",
+      "depends_on": [
+        "T00"
+      ],
+      "phase": "assets_design",
+      "outputs": [
+        "assets/source/design",
+        "reports/design_review.md"
+      ],
+      "acceptance": [
+        "Trois premières familles et interfaces prioritaires représentées",
+        "Mallow Loppy et Octo possèdent quatre vues orthographiques et quatre poses repos chute compression rebond",
+        "Échelle avatar appuis et codes de fonction lisibles",
+        "Sources et provenance conservées",
+        "Aucun export 2D présenté comme modèle 3D"
+      ],
+      "commands": [],
+      "status": "blocked",
+      "risk": "Images séduisantes mais impossibles à transformer en parcours lisible",
+      "gate": "Accès Claude Design vérifié ; commandes design disponibles avant utilisation",
+      "rollback": "Réviser uniquement les planches non conformes et conserver les sources précédentes",
+      "validation": [
+        {
+          "criterion": "Trois premières familles et interfaces prioritaires représentées",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Mallow Loppy et Octo : 4 vues orthographiques + 4 poses",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Échelle avatar appuis et codes de fonction lisibles",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Sources et provenance conservées",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Aucun export 2D présenté comme modèle 3D",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Revue artistique humaine et test d'identification 8/10 testeurs",
+          "status": "NOT_RUN"
+        },
+        {
+          "criterion": "Vues 3/4 dessinées des 12 outils (actuellement icône inclinée)",
+          "status": "NOT_RUN"
+        }
+      ],
+      "blocked_reason": "Critères non vérifiés : Revue artistique humaine et test d'identification 8/10 testeurs; Vues 3/4 dessinées des 12 outils (actuellement icône inclinée)",
+      "evidence": "reports/T01/summary.json",
+      "execution_note": "Planches Claude Design produites (Artifact Design privé + sources HTML/SVG). Bloquée par la revue humaine (identification 8/10) et par les vues 3/4 dédiées des outils."
+    },
+    {
+      "id": "T02",
+      "title": "Exporter et réconcilier le manifeste artistique",
+      "depends_on": [
+        "T01"
+      ],
+      "phase": "assets_design",
+      "outputs": [
+        "assets/import/ui",
+        "assets/manifest.json",
+        "reports/design_handoff.json"
+      ],
+      "acceptance": [
+        "Chaque export du lot activé possède un identifiant stable et un chemin existant",
+        "Entrées futures planned du manifeste maître sans fichier admises hors lot activé",
+        "Référence image et modèle 3D distingués",
+        "assetId Roblox reste null avant import réel",
+        "Formats exportés réellement ouverts et contrôlés"
+      ],
+      "commands": [],
+      "status": "done",
+      "risk": "Liens de partage confondus avec fichiers exportés",
+      "gate": "Aucune synchronisation supposée sans intégration disponible",
+      "rollback": "Réexporter les éléments invalides sans effacer les sources",
+      "validation": [
+        {
+          "criterion": "Chaque export du lot activé possède un identifiant stable et un chemin existant",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Entrées futures planned admises hors lot activé",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Référence image et modèle 3D distingués",
+          "status": "PASS"
+        },
+        {
+          "criterion": "assetId Roblox reste null avant import réel",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Formats exportés réellement ouverts et contrôlés",
+          "status": "PASS"
+        }
+      ],
+      "blocked_reason": null,
+      "evidence": "reports/T02/summary.json",
+      "execution_note": "Critères T02 vérifiés pour le lot activé (manifeste fusionné : 34 designed, 9 modeled). Réalisée sur les livrables existants de T01 ; à refaire si la revue humaine de T01 modifie une planche."
+    },
+    {
+      "id": "T03",
+      "title": "Construire les modèles et collisions du lot initial",
+      "depends_on": [
+        "T02"
+      ],
+      "phase": "assets_production",
+      "outputs": [
+        "assets/source/models",
+        "assets/source/models/Mallow",
+        "assets/import/models",
+        "reports/asset_import.json"
+      ],
+      "acceptance": [
+        "Pivots gabarits matériaux et noms validés",
+        "Mallow livré avec racine non déformante neuf contrôles de ventre et au plus six secondaires",
+        "Rig et poids de skin conservés à l’import",
+        "Colliders serveur séparés du mesh visuel déformable",
+        "Points de réception visibles",
+        "Import autorisé et identifiants réels enregistrés"
+      ],
+      "commands": [],
+      "status": "blocked",
+      "risk": "Mesh importé avec collisions trop complexes ou échelle incorrecte",
+      "gate": "Modeleur et accès d’import disponibles ; aucun achat externe implicite",
+      "rollback": "Revenir au proxy de diagnostic identifié sans déclarer le lot artistique terminé",
+      "validation": [
+        {
+          "criterion": "Pivots gabarits matériaux et noms validés (Blender, réimport)",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Mallow : racine non déformante, 9 contrôles de ventre, ≤ 6 secondaires",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Rig et poids de skin conservés à l'import Roblox",
+          "status": "NOT_RUN"
+        },
+        {
+          "criterion": "Colliders serveur séparés du mesh visuel",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Points de réception visibles",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Import autorisé et identifiants réels enregistrés",
+          "status": "NOT_RUN"
+        }
+      ],
+      "blocked_reason": "Critères non vérifiés : Rig et poids de skin conservés à l'import Roblox; Import autorisé et identifiants réels enregistrés",
+      "evidence": "reports/T03/summary.json",
+      "execution_note": "Mallow, Loppy et Octo modelés, riggés, exportés en GLB/FBX et revérifiés après réimport (Blender 5.2.3). Générateurs paramétriques des objets simples. Import Studio impossible : roblox_asset_id = null."
+    },
+    {
+      "id": "T04",
+      "title": "Créer le projet et les commandes reproductibles",
+      "depends_on": [
+        "T00"
+      ],
+      "phase": "foundation",
+      "outputs": [
+        "default.project.json",
+        "src/shared/GeneratedConfig",
+        "tools/game_checks.py",
+        "reports/build_bootstrap.json"
+      ],
+      "acceptance": [
+        "Versions verrouillées à partir du préflight",
+        "Construction d’un fichier local de jeu valide",
+        "Configurations JSON compilées sans duplication manuelle",
+        "Outil manquant retourne blocked et non succès"
+      ],
+      "commands": [
+        "À implémenter dans cette tâche : python tools/game_checks.py config",
+        "À implémenter dans cette tâche : python tools/game_checks.py build"
+      ],
+      "status": "done",
+      "risk": "Confondre un build Rojo avec un test de jeu",
+      "gate": "Aucune publication lors de la construction locale",
+      "rollback": "Revenir au projet vide compilable et conserver les logs",
+      "validation": [
+        {
+          "criterion": "Versions verrouillées à partir du préflight",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Construction d'un fichier local de jeu valide",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Configurations JSON compilées sans duplication manuelle",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Outil manquant retourne blocked et non succès",
+          "status": "PASS"
+        }
+      ],
+      "blocked_reason": null,
+      "evidence": "reports/T04/summary.json",
+      "execution_note": "Rojo 7.5.1 et Lune 0.10.1 compilés depuis crates.io. Le build produit build/FillingUp.rbxlx, et le fichier construit est rouvert et compilé script par script. luau-analyze (types) : NOT_RUN."
+    },
+    {
+      "id": "T05",
+      "title": "Implémenter contrats et machine d’expédition",
+      "depends_on": [
+        "T04"
+      ],
+      "phase": "foundation",
+      "outputs": [
+        "src/shared/Types",
+        "src/shared/Domain/ExpeditionStateMachine.luau",
+        "tests/unit/ExpeditionStateMachine.spec.luau"
+      ],
+      "acceptance": [
+        "Transitions illégales rejetées",
+        "Double sortie incrémente une seule fois",
+        "Aucune condition de KO fondée sur durée ou remplissage global",
+        "Requêtes client typées et bornées"
+      ],
+      "commands": [
+        "À implémenter en T04 : python tools/game_checks.py unit --suite expedition"
+      ],
+      "status": "done",
+      "risk": "Deux mutations simultanées produisent un état incohérent",
+      "gate": "Contrats validés avant leurs consommateurs",
+      "rollback": "Corriger le contrat et relancer les suites dépendantes",
+      "validation": [
+        {
+          "criterion": "Transitions illégales rejetées",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Double sortie incrémente une seule fois",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Aucune condition de KO fondée sur durée ou remplissage global",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Requêtes client typées et bornées",
+          "status": "PASS"
+        }
+      ],
+      "blocked_reason": null,
+      "evidence": "reports/T05/summary.json"
+    },
+    {
+      "id": "T06",
+      "title": "Mesurer le contrôleur et la caméra mobile",
+      "depends_on": [
+        "T04",
+        "T05"
+      ],
+      "phase": "gameplay",
+      "outputs": [
+        "src/client/Controllers/MovementController.luau",
+        "src/client/Controllers/CameraController.luau",
+        "tests/studio/MovementLab",
+        "reports/movement_calibration.json"
+      ],
+      "acceptance": [
+        "Portée hauteur et réceptions mesurées",
+        "Gabarits d’avatar contrôlés",
+        "Actions essentielles réalisables sur mobile",
+        "Assistance de saut testée sans saut automatique"
+      ],
+      "commands": [
+        "À implémenter en T04 : python tools/game_checks.py studio --suite movement"
+      ],
+      "status": "blocked",
+      "risk": "Distances conçues avant la mesure du personnage",
+      "gate": "Roblox Studio nécessaire ; aucun test hors moteur équivalent",
+      "rollback": "Isoler le contrôleur dans une scène de primitives",
+      "validation": [
+        {
+          "criterion": "Portée hauteur et réceptions mesurées",
+          "status": "NOT_RUN"
+        },
+        {
+          "criterion": "Gabarits d'avatar contrôlés",
+          "status": "NOT_RUN"
+        },
+        {
+          "criterion": "Actions essentielles réalisables sur mobile",
+          "status": "NOT_RUN"
+        },
+        {
+          "criterion": "Assistance de saut testée sans saut automatique",
+          "status": "NOT_RUN"
+        }
+      ],
+      "blocked_reason": "Critères non vérifiés : Portée hauteur et réceptions mesurées; Gabarits d'avatar contrôlés; Actions essentielles réalisables sur mobile; Assistance de saut testée sans saut automatique",
+      "evidence": "reports/T06/summary.json",
+      "execution_note": "MovementController et CameraController écrits ; la scène MovementLab est prête. Aucun Studio : la portée reste analytique et provisoire (décision 0009)."
+    },
+    {
+      "id": "T07",
+      "title": "Construire Réception et son graphe garanti",
+      "depends_on": [
+        "T03",
+        "T06"
+      ],
+      "phase": "gameplay",
+      "outputs": [
+        "src/server/Services/RoomGenerator.luau",
+        "src/shared/Domain/RouteValidator.luau",
+        "tests/studio/ReceptionRoom"
+      ],
+      "acceptance": [
+        "Sortie atteignable sans outil",
+        "Dégagement de sortie au moins 8 par 8 par 10 studs",
+        "Dernier appui protégé",
+        "Arc de saut et espace de tête contrôlés"
+      ],
+      "commands": [
+        "À implémenter en T04 : python tools/game_checks.py unit --suite routes",
+        "À implémenter en T04 : python tools/game_checks.py studio --suite reception"
+      ],
+      "status": "blocked",
+      "risk": "Graphe abstrait atteignable mais collision réelle bloquante",
+      "gate": "Mesures de mouvement T06 disponibles",
+      "rollback": "Corriger le graphe sans augmenter artificiellement la puissance du joueur",
+      "validation": [
+        {
+          "criterion": "Sortie atteignable sans outil (logique)",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Dégagement de sortie ≥ 8×8×10 (logique)",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Dernier appui protégé (logique)",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Arc de saut et espace de tête contrôlés (logique)",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Scène Studio Réception avec contrôleur mesuré",
+          "status": "NOT_RUN"
+        }
+      ],
+      "blocked_reason": "Critères non vérifiés : Scène Studio Réception avec contrôleur mesuré",
+      "evidence": "reports/T07/summary.json"
+    },
+    {
+      "id": "T08",
+      "title": "Implémenter vagues physique hybride et peluches déformables",
+      "depends_on": [
+        "T07"
+      ],
+      "phase": "gameplay",
+      "outputs": [
+        "src/server/Services/WaveDirector.luau",
+        "src/server/Services/ObjectPool.luau",
+        "src/client/Controllers/PlushDeformationController.luau",
+        "tests/studio/WaveLab",
+        "tests/studio/PlushLab",
+        "reports/plush_stress.json"
+      ],
+      "acceptance": [
+        "Vagues temporelles continues",
+        "Alertes avant impacts",
+        "Au plus 40 objets dynamiques dans la salle active",
+        "Consolidation sans disparition de support occupé",
+        "Objets de pool réinitialisés intégralement",
+        "Déformation reconstruite depuis événement impact et pose de référence sans propriété Scale sur Bone.Transform",
+        "100 chutes de Mallow sans dérive du rig",
+        "Six peluches proches et quarante objets dynamiques testés ensemble",
+        "Compression Y 0,72 étirement 1,12 et rythme 0,09 0,18 0,65 respectent les plafonds de runtime.json",
+        "Dessus visible et collision à moins de 0,25 stud lorsque appui actif",
+        "Déformation désactivée conserve résultats de KO et récompenses"
+      ],
+      "commands": [
+        "À implémenter en T04 : python tools/game_checks.py studio --suite waves",
+        "À implémenter en T04 : python tools/game_checks.py studio --suite plush"
+      ],
+      "status": "blocked",
+      "risk": "Objets décoratifs détruisant la route garantie ou fuites du pool",
+      "gate": "Profilage moteur obligatoire",
+      "rollback": "Réduire la scène et reproduire la seed en échec",
+      "validation": [
+        {
+          "criterion": "Vagues temporelles continues",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Alertes avant impacts",
+          "status": "PASS"
+        },
+        {
+          "criterion": "≤ 40 objets dynamiques (planificateur + soak simulé)",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Consolidation sans disparition de support occupé",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Objets de pool réinitialisés intégralement",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Déformation depuis impact + pose de référence, sans échelle de bone",
+          "status": "PASS"
+        },
+        {
+          "criterion": "100 chutes de Mallow sans dérive (logique + Blender)",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Six peluches + 40 dynamiques testées ensemble (moteur)",
+          "status": "NOT_RUN"
+        },
+        {
+          "criterion": "Plafonds 0,72 / 1,12 / 0,09-0,18-0,65 ≤ 0,90 respectés",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Dessus visible / collision ≤ 0,25 stud en appui (moteur)",
+          "status": "NOT_RUN"
+        },
+        {
+          "criterion": "Déformation désactivée conserve KO et récompenses",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Profilage moteur",
+          "status": "NOT_RUN"
+        }
+      ],
+      "blocked_reason": "Critères non vérifiés : Six peluches + 40 dynamiques testées ensemble (moteur); Dessus visible / collision ≤ 0,25 stud en appui (moteur); Profilage moteur",
+      "evidence": "reports/T08/summary.json"
+    },
+    {
+      "id": "T09",
+      "title": "Détecter les KO physiques sans faux positifs",
+      "depends_on": [
+        "T08"
+      ],
+      "phase": "gameplay",
+      "outputs": [
+        "src/server/Services/BurialService.luau",
+        "tests/studio/BurialFixtures",
+        "reports/burial_tests.json"
+      ],
+      "acceptance": [
+        "Détection serveur 10 Hz et confirmation initiale 1,2 seconde",
+        "Vrai ensevelissement détecté",
+        "Table ouverte plafond décoratif et objet transitoire ne tuent pas",
+        "Aucun raycast unique ou pourcentage global comme preuve suffisante"
+      ],
+      "commands": [
+        "À implémenter en T04 : python tools/game_checks.py studio --suite burial"
+      ],
+      "status": "blocked",
+      "risk": "Bounding boxes ou immobilité interprétées comme ensevelissement",
+      "gate": "Toutes les scènes de référence testées dans Roblox",
+      "rollback": "Activer visualisation des sondes et désactiver temporairement le KO pour diagnostic",
+      "validation": [
+        {
+          "criterion": "Détection 10 Hz et confirmation 1,2 s (logique)",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Vrai ensevelissement détecté (logique)",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Table ouverte, plafond décoratif, objet transitoire ne tuent pas (logique)",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Aucun raycast unique ni pourcentage global (logique)",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Scènes de référence dans Roblox",
+          "status": "NOT_RUN"
+        }
+      ],
+      "blocked_reason": "Critères non vérifiés : Scènes de référence dans Roblox",
+      "evidence": "reports/T09/summary.json"
+    },
+    {
+      "id": "T10",
+      "title": "Enchaîner les salles sans accumulation mémoire",
+      "depends_on": [
+        "T05",
+        "T08",
+        "T09"
+      ],
+      "phase": "continuity",
+      "outputs": [
+        "src/server/Services/ExpeditionService.luau",
+        "src/server/Services/ExitService.luau",
+        "tests/studio/TransitionLab"
+      ],
+      "acceptance": [
+        "Sortie conduit directement à la salle suivante",
+        "Maximum trois modules résidents incluant sas",
+        "Une seule salle simule ses vagues",
+        "100 transitions sans croissance permanente des connexions ou instances",
+        "Chargement retardé ne tue jamais"
+      ],
+      "commands": [
+        "À implémenter en T04 : python tools/game_checks.py studio --suite transitions"
+      ],
+      "status": "blocked",
+      "risk": "Anciennes salles ou callbacks conservés après transition",
+      "gate": "Aucun retour obligatoire au lobby",
+      "rollback": "Reproduire sur une alternance de deux salles fixes",
+      "validation": [
+        {
+          "criterion": "Sortie conduit directement à la salle suivante (logique)",
+          "status": "PASS"
+        },
+        {
+          "criterion": "≤ 3 modules résidents",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Une seule salle simule ses vagues",
+          "status": "PASS"
+        },
+        {
+          "criterion": "100 transitions sans croissance (logique)",
+          "status": "PASS"
+        },
+        {
+          "criterion": "100 transitions sans croissance d'instances / connexions (moteur)",
+          "status": "NOT_RUN"
+        },
+        {
+          "criterion": "Chargement retardé ne tue jamais",
+          "status": "PASS"
+        }
+      ],
+      "blocked_reason": "Critères non vérifiés : 100 transitions sans croissance d'instances / connexions (moteur)",
+      "evidence": "reports/T10/summary.json"
+    },
+    {
+      "id": "T11",
+      "title": "Créer le dépôt de profils et les mutations atomiques",
+      "depends_on": [
+        "T05"
+      ],
+      "phase": "persistence",
+      "outputs": [
+        "src/server/Services/PlayerProfileRepository.luau",
+        "src/server/Services/RewardService.luau",
+        "tests/unit/ProfileMutations.spec.luau",
+        "tests/studio/ProfileLab"
+      ],
+      "acceptance": [
+        "Verrouillage et migrations versionnées",
+        "Débit et propriété engagés ensemble",
+        "Jalons attribués une seule fois",
+        "Aucune perte de Coins ou inventaire après KO",
+        "Sauvegarde échouée non annoncée réussie"
+      ],
+      "commands": [
+        "À implémenter en T04 : python tools/game_checks.py unit --suite profile",
+        "À implémenter en T04 : python tools/game_checks.py studio --suite persistence"
+      ],
+      "status": "blocked",
+      "risk": "Concurrence de sessions et attribution répétée",
+      "gate": "Environnement de données de test séparé de la production",
+      "rollback": "Bloquer les mutations nouvelles et conserver la dernière révision engagée",
+      "validation": [
+        {
+          "criterion": "Verrouillage et migrations versionnées",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Débit et propriété engagés ensemble",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Jalons attribués une seule fois",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Aucune perte après KO",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Sauvegarde échouée non annoncée réussie",
+          "status": "PASS"
+        },
+        {
+          "criterion": "DataStore réel d'une expérience de test",
+          "status": "NOT_RUN"
+        }
+      ],
+      "blocked_reason": "Critères non vérifiés : DataStore réel d'une expérience de test",
+      "evidence": "reports/T11/summary.json"
+    },
+    {
+      "id": "T12",
+      "title": "Livrer le tutoriel et le premier achat",
+      "depends_on": [
+        "T10",
+        "T11"
+      ],
+      "phase": "onboarding",
+      "outputs": [
+        "src/client/Controllers/TutorialController.luau",
+        "src/client/Controllers/TutorialShopController.luau",
+        "src/server/Services/TutorialService.luau",
+        "src/server/Tools/StarterRadar.luau",
+        "tests/studio/FirstSessionLab"
+      ],
+      "acceptance": [
+        "Tranche verticale complète Radar achat unitaire équipement et usage sans dépendre de T13 ou T14",
+        "Achat unitaire idempotent via PlayerProfileRepository de T11",
+        "Tutoriel attribue 65 Coins une seule fois",
+        "Radar coûte 50 Coins et laisse 15",
+        "Parcours nominal permet utilisation avant 30 secondes",
+        "Aucune limite de temps imposée pour apprendre",
+        "Compréhension évaluée avec nouveaux joueurs"
+      ],
+      "commands": [
+        "À implémenter en T04 : python tools/game_checks.py unit --suite onboarding",
+        "À implémenter en T04 : python tools/game_checks.py studio --suite onboarding"
+      ],
+      "status": "blocked",
+      "risk": "Récompenses visuelles non créditées ou boutique trop longue",
+      "gate": "Aucune fenêtre Robux automatique dans le tutoriel",
+      "rollback": "Réduire les gestes et interfaces sans ajouter de récompense fictive",
+      "validation": [
+        {
+          "criterion": "Tranche verticale Radar sans T13/T14 (logique)",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Achat unitaire idempotent via le dépôt",
+          "status": "PASS"
+        },
+        {
+          "criterion": "65 Coins une seule fois",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Radar 50, reste 15",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Usage avant 30 s sur le parcours nominal (logique)",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Aucune limite de temps",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Compréhension évaluée avec de nouveaux joueurs",
+          "status": "NOT_RUN"
+        },
+        {
+          "criterion": "Parcours dans Studio",
+          "status": "NOT_RUN"
+        }
+      ],
+      "blocked_reason": "Critères non vérifiés : Compréhension évaluée avec de nouveaux joueurs; Parcours dans Studio",
+      "evidence": "reports/T12/summary.json"
+    },
+    {
+      "id": "T13",
+      "title": "Implémenter le catalogue et les achats Coins",
+      "depends_on": [
+        "T11",
+        "T12"
+      ],
+      "phase": "economy",
+      "outputs": [
+        "src/server/Services/InventoryService.luau",
+        "src/shared/Domain/Economy.luau",
+        "tests/unit/Economy.spec.luau"
+      ],
+      "acceptance": [
+        "Prix et qualifications issus du JSON canonique",
+        "StarterRadar intégré sous le même SKU sans nouvel achat",
+        "Solde insuffisant et double achat refusés",
+        "Possession déjà acquise visible",
+        "Améliorations bornées et calculs entiers"
+      ],
+      "commands": [
+        "À implémenter en T04 : python tools/game_checks.py unit --suite economy",
+        "À implémenter en T04 : python tools/game_checks.py studio --suite coin-shop"
+      ],
+      "status": "blocked",
+      "risk": "Prix client différent du débit serveur",
+      "gate": "Aucune mutation de prix en cours de transaction",
+      "rollback": "Désactiver la boutique fautive sans effacer les propriétés",
+      "validation": [
+        {
+          "criterion": "Prix et qualifications du JSON",
+          "status": "PASS"
+        },
+        {
+          "criterion": "StarterRadar même SKU",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Solde insuffisant et double achat refusés",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Possession visible",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Améliorations bornées et entières",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Boutique Coins dans Studio",
+          "status": "NOT_RUN"
+        }
+      ],
+      "blocked_reason": "Critères non vérifiés : Boutique Coins dans Studio",
+      "evidence": "reports/T13/summary.json"
+    },
+    {
+      "id": "T14",
+      "title": "Généraliser le Radar aux autres outils et valider le serveur",
+      "depends_on": [
+        "T13",
+        "T07"
+      ],
+      "phase": "equipment",
+      "outputs": [
+        "src/server/Tools",
+        "src/client/Controllers/ToolController.luau",
+        "tests/studio/ToolLab"
+      ],
+      "acceptance": [
+        "Protocole StarterRadar de T12 réutilisé et généralisé aux autres outils",
+        "Un actif et un passif au maximum",
+        "Compagnon cosmétique sans pouvoir supplémentaire",
+        "Portées charges et cibles validées serveur",
+        "Chaque route principale reste réalisable sans outil"
+      ],
+      "commands": [
+        "À implémenter en T04 : python tools/game_checks.py unit --suite tools",
+        "À implémenter en T04 : python tools/game_checks.py studio --suite tools"
+      ],
+      "status": "blocked",
+      "risk": "Outil combiné supprimant l’adresse ou permettant un exploit",
+      "gate": "Livraison outil par outil dans l’ordre du catalogue",
+      "rollback": "Désactiver l’usage défectueux avec propriété conservée",
+      "validation": [
+        {
+          "criterion": "Protocole Radar généralisé",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Un actif et un passif max",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Compagnon sans pouvoir",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Portées charges cibles validées serveur (logique)",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Routes sans outil",
+          "status": "PASS"
+        },
+        {
+          "criterion": "ToolLab Studio + mobile",
+          "status": "NOT_RUN"
+        }
+      ],
+      "blocked_reason": "Critères non vérifiés : ToolLab Studio + mobile",
+      "evidence": "reports/T14/summary.json"
+    },
+    {
+      "id": "T15",
+      "title": "Ajouter permis et renaissances volontaires",
+      "depends_on": [
+        "T10",
+        "T13"
+      ],
+      "phase": "progression",
+      "outputs": [
+        "src/server/Services/RebirthService.luau",
+        "src/shared/Domain/Rebirth.luau",
+        "tests/unit/Rebirth.spec.luau"
+      ],
+      "acceptance": [
+        "Permis non achetables et conservés après KO",
+        "Conversion uniquement volontaire au sas",
+        "quantity expectedRevision previewToken et requestId contrôlés serveur",
+        "Coûts cumulés recalculés serveur sans autorité client",
+        "Excédent de permis conservé selon économie",
+        "Coins outils et achats inchangés",
+        "Continuer après éligibilité reste possible sans pénalité cachée"
+      ],
+      "commands": [
+        "À implémenter en T04 : python tools/game_checks.py unit --suite rebirth",
+        "À implémenter en T04 : python tools/game_checks.py studio --suite rebirth"
+      ],
+      "status": "blocked",
+      "risk": "Renaissance forcée ou destruction de biens payés",
+      "gate": "Aucun produit de renaissance instantanée",
+      "rollback": "Suspendre les conversions et préserver les soldes engagés",
+      "validation": [
+        {
+          "criterion": "Permis non achetables, conservés après KO",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Conversion volontaire au sas",
+          "status": "PASS"
+        },
+        {
+          "criterion": "quantity / expectedRevision / previewToken / requestId contrôlés",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Coûts cumulés recalculés serveur",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Excédent conservé",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Coins outils achats inchangés",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Continuer sans pénalité",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Renaissance dans Studio",
+          "status": "NOT_RUN"
+        }
+      ],
+      "blocked_reason": "Critères non vérifiés : Renaissance dans Studio",
+      "evidence": "reports/T15/summary.json"
+    },
+    {
+      "id": "T16",
+      "title": "Certifier les trois premières familles",
+      "depends_on": [
+        "T07",
+        "T08",
+        "T14"
+      ],
+      "phase": "content",
+      "outputs": [
+        "src/server/RoomTemplates/Reception",
+        "src/server/RoomTemplates/Toys",
+        "src/server/RoomTemplates/Office",
+        "reports/room_certification_initial.json"
+      ],
+      "acceptance": [
+        "Formats et sorties compatibles identifiés",
+        "Routes validées sans outil",
+        "Seeds invalides reproduisibles",
+        "Introduction graduelle des mécanismes",
+        "Sorties et derniers appuis jamais obturés par dépôts"
+      ],
+      "commands": [
+        "À implémenter en T04 : python tools/game_checks.py unit --suite generation-initial",
+        "À implémenter en T04 : python tools/game_checks.py studio --suite rooms-initial"
+      ],
+      "status": "blocked",
+      "risk": "Combinaisons théoriques non testées livrées comme contenu",
+      "gate": "Seules variantes certifiées activées",
+      "rollback": "Revenir au sous-ensemble certifié et corriger les seeds en échec",
+      "validation": [
+        {
+          "criterion": "Formats et sorties compatibles identifiés",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Routes validées sans outil",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Seeds invalides reproductibles",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Introduction graduelle",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Sorties jamais obturées par dépôts (logique)",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Certification dans Studio (rooms-initial)",
+          "status": "NOT_RUN"
+        }
+      ],
+      "blocked_reason": "Critères non vérifiés : Certification dans Studio (rooms-initial)",
+      "evidence": "reports/T16/summary.json"
+    },
+    {
+      "id": "T17",
+      "title": "Étendre à six familles et profondeur extensible",
+      "depends_on": [
+        "T16"
+      ],
+      "phase": "content",
+      "outputs": [
+        "src/server/RoomTemplates/Kitchen",
+        "src/server/RoomTemplates/Garage",
+        "src/server/RoomTemplates/GiantBin",
+        "reports/room_certification_full.json"
+      ],
+      "acceptance": [
+        "Taille et sortie varient de façon compatible",
+        "Giant Bin n’est pas une finale forcée",
+        "Paramètres physiques bornés à grande profondeur",
+        "Aucun dernier niveau imposé",
+        "Assets supplémentaires suivent la même chaîne de validation"
+      ],
+      "commands": [
+        "À implémenter en T04 : python tools/game_checks.py unit --suite generation-full",
+        "À implémenter en T04 : python tools/game_checks.py studio --suite rooms-full"
+      ],
+      "status": "blocked",
+      "risk": "Difficulté croissante devenue physiquement impossible",
+      "gate": "Chaque nouvelle famille doit réussir les recettes existantes",
+      "rollback": "Désactiver les combinaisons non certifiées dans une nouvelle version",
+      "validation": [
+        {
+          "criterion": "Taille et sortie varient de façon compatible",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Giant Bin pas une finale",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Paramètres physiques bornés",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Aucun dernier niveau",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Assets supplémentaires validés (chaîne T01-T03)",
+          "status": "NOT_RUN"
+        },
+        {
+          "criterion": "rooms-full dans Studio",
+          "status": "NOT_RUN"
+        }
+      ],
+      "blocked_reason": "Critères non vérifiés : Assets supplémentaires validés (chaîne T01-T03); rooms-full dans Studio",
+      "evidence": "reports/T17/summary.json"
+    },
+    {
+      "id": "T18",
+      "title": "Sécuriser la sauvegarde et la reprise",
+      "depends_on": [
+        "T10",
+        "T11",
+        "T16"
+      ],
+      "phase": "persistence",
+      "outputs": [
+        "src/server/Services/CheckpointService.luau",
+        "tests/studio/ResumeLab",
+        "reports/resume_tests.json"
+      ],
+      "acceptance": [
+        "Checkpoint durable entre salles",
+        "Même seed et version à la reprise",
+        "Jalons déjà gagnés non répétés",
+        "Conflit de session traité",
+        "Migration incompatible conserve les biens"
+      ],
+      "commands": [
+        "À implémenter en T04 : python tools/game_checks.py unit --suite checkpoints",
+        "À implémenter en T04 : python tools/game_checks.py studio --suite reconnect"
+      ],
+      "status": "blocked",
+      "risk": "Reconnexion exploitée pour dupliquer les gains ou éviter une sauvegarde",
+      "gate": "Pas de message Sauvegardé sans confirmation durable",
+      "rollback": "Restaurer un checkpoint cohérent avec le journal engagé et signaler l’échec",
+      "validation": [
+        {
+          "criterion": "Checkpoint durable entre salles (logique)",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Même seed et version",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Jalons non répétés",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Conflit de session traité",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Migration conserve les biens",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Reconnexion réelle (ResumeLab)",
+          "status": "NOT_RUN"
+        }
+      ],
+      "blocked_reason": "Critères non vérifiés : Reconnexion réelle (ResumeLab)",
+      "evidence": "reports/T18/summary.json"
+    },
+    {
+      "id": "T19",
+      "title": "Terminer les interfaces et le confort de jeu",
+      "depends_on": [
+        "T12",
+        "T13",
+        "T15",
+        "T18"
+      ],
+      "phase": "interface",
+      "outputs": [
+        "src/client/Controllers/HUDController.luau",
+        "src/client/Controllers/ShopController.luau",
+        "src/client/Controllers/SettingsController.luau",
+        "reports/ui_accessibility.json"
+      ],
+      "acceptance": [
+        "Continuer dans le sas ne requiert aucun menu",
+        "Prix contenus conditions et permanence explicites",
+        "HUD mobile lisible",
+        "Réduction d’effets et codes non uniquement colorés",
+        "Aucune issue uniquement payante après KO"
+      ],
+      "commands": [
+        "À implémenter en T04 : python tools/game_checks.py studio --suite ui"
+      ],
+      "status": "blocked",
+      "risk": "Interface interrompant l’expédition ou masquant les sauts",
+      "gate": "Écrans conformes aux références validées et aux règles de jeu",
+      "rollback": "Retirer les éléments décoratifs bloquants et garder les actions essentielles",
+      "validation": [
+        {
+          "criterion": "Continuer sans menu",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Prix contenus conditions permanence explicites (code)",
+          "status": "PASS"
+        },
+        {
+          "criterion": "HUD mobile lisible",
+          "status": "NOT_RUN"
+        },
+        {
+          "criterion": "Réduction d'effets et codes non uniquement colorés (code)",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Aucune issue payante après KO (code)",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Écrans conformes aux références validées (revue)",
+          "status": "NOT_RUN"
+        }
+      ],
+      "blocked_reason": "Critères non vérifiés : HUD mobile lisible; Écrans conformes aux références validées (revue)",
+      "evidence": "reports/T19/summary.json"
+    },
+    {
+      "id": "T20",
+      "title": "Brancher les achats Robux dans un environnement autorisé",
+      "depends_on": [
+        "T11",
+        "T13",
+        "T19"
+      ],
+      "phase": "monetization",
+      "outputs": [
+        "src/server/Services/PurchaseService.luau",
+        "tests/studio/PurchaseLab",
+        "reports/purchase_tests.json"
+      ],
+      "acceptance": [
+        "Identifiants réels uniquement et produits null bloqués",
+        "Prix affiché applicable au joueur",
+        "Reçu validé et attribution durable unique",
+        "Annulation réception différée et double reçu testés",
+        "Achats conservés après renaissance"
+      ],
+      "commands": [
+        "À implémenter en T04 : python tools/game_checks.py unit --suite receipts",
+        "À implémenter en T04 : python tools/game_checks.py studio --suite purchases"
+      ],
+      "status": "blocked",
+      "risk": "Facturation sans attribution ou attribution doublée",
+      "gate": "Création de produits tests et dépenses soumises à autorisation explicite",
+      "rollback": "Désactiver les produits fautifs sans supprimer leur journal de reçus",
+      "validation": [
+        {
+          "criterion": "Produits null bloqués",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Prix affiché applicable au joueur",
+          "status": "NOT_RUN"
+        },
+        {
+          "criterion": "Reçu validé, attribution durable unique (mock)",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Annulation / différé / double reçu dans un environnement autorisé",
+          "status": "NOT_RUN"
+        },
+        {
+          "criterion": "Achats conservés après renaissance (logique)",
+          "status": "PASS"
+        }
+      ],
+      "blocked_reason": "Critères non vérifiés : Prix affiché applicable au joueur; Annulation / différé / double reçu dans un environnement autorisé",
+      "evidence": "reports/T20/summary.json"
+    },
+    {
+      "id": "T21",
+      "title": "Valider parcours complet télémétrie et mobile",
+      "depends_on": [
+        "T17",
+        "T18",
+        "T19",
+        "T20"
+      ],
+      "phase": "quality",
+      "outputs": [
+        "src/server/Services/TelemetryService.luau",
+        "tests/studio/EndToEndLab",
+        "reports/end_to_end.json",
+        "reports/mobile_playtest.md"
+      ],
+      "acceptance": [
+        "Tutoriel achat progression KO reprise et renaissance testés",
+        "Événements cohérents avec état serveur",
+        "Appareils réellement testés indiqués",
+        "Aucune statistique de rétention inventée",
+        "Tests non exécutés explicitement signalés"
+      ],
+      "commands": [
+        "À implémenter en T04 : python tools/game_checks.py studio --suite end-to-end"
+      ],
+      "status": "blocked",
+      "risk": "Validation limitée à PC ou aux seuls tests unitaires",
+      "gate": "Tests Studio et mobile obligatoires avant recette finale",
+      "rollback": "Réouvrir les tâches à l’origine de chaque régression",
+      "validation": [
+        {
+          "criterion": "Parcours complet testé",
+          "status": "NOT_RUN"
+        },
+        {
+          "criterion": "Événements cohérents avec l'état serveur",
+          "status": "NOT_RUN"
+        },
+        {
+          "criterion": "Appareils réellement testés",
+          "status": "NOT_RUN"
+        },
+        {
+          "criterion": "Aucune statistique de rétention inventée",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Tests non exécutés signalés",
+          "status": "PASS"
+        }
+      ],
+      "blocked_reason": "Critères non vérifiés : Parcours complet testé; Événements cohérents avec l'état serveur; Appareils réellement testés",
+      "evidence": "reports/T21/summary.json"
+    },
+    {
+      "id": "T22",
+      "title": "Exécuter les stress tests et cinq heures réelles",
+      "depends_on": [
+        "T21"
+      ],
+      "phase": "quality",
+      "outputs": [
+        "reports/soak_simulated.json",
+        "reports/soak_real_5h.json",
+        "reports/performance_timeseries.json"
+      ],
+      "acceptance": [
+        "18 000 secondes simulées distinguées du temps réel",
+        "80 200 et 1 000 salles logiques parcourues",
+        "Session Roblox réelle de cinq heures effectuée",
+        "Mémoire instances connexions erreurs et frame time mesurés",
+        "Aucun dépassement durable des budgets de salles et objets"
+      ],
+      "commands": [
+        "À implémenter en T04 : python tools/game_checks.py soak --simulated-seconds 18000",
+        "À implémenter en T04 : python tools/game_checks.py soak --real-hours 5"
+      ],
+      "status": "blocked",
+      "risk": "Simulation rapide présentée comme preuve d’endurance moteur",
+      "gate": "Sans environnement Roblox réel le test cinq heures reste blocked",
+      "rollback": "Conserver la seed le checkpoint et les relevés pour reproduire la fuite",
+      "validation": [
+        {
+          "criterion": "18 000 s simulées distinguées du temps réel",
+          "status": "PASS"
+        },
+        {
+          "criterion": "80, 200 et 1 000 salles logiques",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Session Roblox réelle de 5 h",
+          "status": "NOT_RUN"
+        },
+        {
+          "criterion": "Mémoire instances connexions erreurs frame time mesurés (moteur)",
+          "status": "NOT_RUN"
+        },
+        {
+          "criterion": "Budgets salles / objets non dépassés (logique)",
+          "status": "PASS"
+        }
+      ],
+      "blocked_reason": "Critères non vérifiés : Session Roblox réelle de 5 h; Mémoire instances connexions erreurs frame time mesurés (moteur)",
+      "evidence": "reports/T22/summary.json",
+      "execution_note": "Logique : 18 000 s simulées = 90 salles, 39 515 Coins, 326 permis (référence exacte) ; 1 000 salles sans fuite. La session réelle de 5 h est bloquée, faute de Studio."
+    },
+    {
+      "id": "T23",
+      "title": "Préparer la livraison et demander l’autorisation de publication",
+      "depends_on": [
+        "T22"
+      ],
+      "phase": "release",
+      "outputs": [
+        "build/FillingUp.rbxlx",
+        "reports/release_readiness.md",
+        "docs/operations/rollback.md",
+        "reports/known_issues.md"
+      ],
+      "acceptance": [
+        "Toutes les tâches requises disposent de preuves",
+        "Assets et produits réels autorisés vérifiés",
+        "Retour arrière documenté",
+        "Problèmes connus et contrôles bloqués visibles",
+        "Coopération et classement standardisé exclus du MVP non approuvé"
+      ],
+      "commands": [
+        "À implémenter en T04 : python tools/game_checks.py build"
+      ],
+      "status": "blocked",
+      "risk": "Publication prématurée ou changement d’accès non autorisé",
+      "gate": "Autorisation explicite requise pour publier et activer les ventes en production",
+      "rollback": "Ne pas publier ; conserver la construction et les rapports pour correction",
+      "validation": [
+        {
+          "criterion": "Toutes les tâches requises disposent de preuves",
+          "status": "FAIL"
+        },
+        {
+          "criterion": "Assets et produits réels autorisés vérifiés",
+          "status": "NOT_RUN"
+        },
+        {
+          "criterion": "Retour arrière documenté",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Problèmes connus visibles",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Coopération et classement exclus du MVP",
+          "status": "PASS"
+        }
+      ],
+      "blocked_reason": "Critères non vérifiés : Toutes les tâches requises disposent de preuves; Assets et produits réels autorisés vérifiés",
+      "evidence": "reports/T23/summary.json",
+      "execution_note": "Livraison préparée (build, rapports, rollback, known_issues). Publication NON demandée : les preuves Studio, mobile et 5 h manquent. Toute publication exige une autorisation explicite."
+    }
+  ],
+  "last_update_utc": "2026-11-02T10:17:13.891156+00:00"
+}

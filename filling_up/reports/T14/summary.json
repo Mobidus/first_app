@@ -1,0 +1,35 @@
+{
+  "task": "T14",
+  "title": "Généraliser le Radar aux autres outils et valider le serveur",
+  "status": "blocked",
+  "date_utc": "2026-11-02T10:17:13.891156+00:00",
+  "criteria": [
+    {
+      "criterion": "Protocole Radar généralisé",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Un actif et un passif max",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Compagnon sans pouvoir",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Portées charges cibles validées serveur (logique)",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Routes sans outil",
+      "status": "PASS"
+    },
+    {
+      "criterion": "ToolLab Studio + mobile",
+      "status": "NOT_RUN"
+    }
+  ],
+  "blocked_reason": "Critères non vérifiés : ToolLab Studio + mobile",
+  "note": null,
+  "checks_dir": "reports/checks"
+}

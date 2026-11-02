@@ -1,0 +1,43 @@
+{
+  "task": "T15",
+  "title": "Ajouter permis et renaissances volontaires",
+  "status": "blocked",
+  "date_utc": "2026-11-02T10:17:13.891156+00:00",
+  "criteria": [
+    {
+      "criterion": "Permis non achetables, conservés après KO",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Conversion volontaire au sas",
+      "status": "PASS"
+    },
+    {
+      "criterion": "quantity / expectedRevision / previewToken / requestId contrôlés",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Coûts cumulés recalculés serveur",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Excédent conservé",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Coins outils achats inchangés",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Continuer sans pénalité",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Renaissance dans Studio",
+      "status": "NOT_RUN"
+    }
+  ],
+  "blocked_reason": "Critères non vérifiés : Renaissance dans Studio",
+  "note": null,
+  "checks_dir": "reports/checks"
+}

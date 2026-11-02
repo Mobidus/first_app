@@ -1,0 +1,31 @@
+{
+  "task": "T07",
+  "title": "Construire Réception et son graphe garanti",
+  "status": "blocked",
+  "date_utc": "2026-11-02T10:17:13.891156+00:00",
+  "criteria": [
+    {
+      "criterion": "Sortie atteignable sans outil (logique)",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Dégagement de sortie ≥ 8×8×10 (logique)",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Dernier appui protégé (logique)",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Arc de saut et espace de tête contrôlés (logique)",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Scène Studio Réception avec contrôleur mesuré",
+      "status": "NOT_RUN"
+    }
+  ],
+  "blocked_reason": "Critères non vérifiés : Scène Studio Réception avec contrôleur mesuré",
+  "note": null,
+  "checks_dir": "reports/checks"
+}

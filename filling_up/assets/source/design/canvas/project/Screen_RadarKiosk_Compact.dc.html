@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Borne Radar — compact</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito:wght@400;600;800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#203055}a:hover{color:#8855FF}
+</style>
+</helmet>
+<div style="width: 844px; height: 390px; box-sizing: border-box; padding: 16px 20px; background: #DFF7FF; font-family: Nunito, system-ui, sans-serif; color: #203055; display: flex; gap: 16px; align-items: stretch">
+  <div style="width: 220px; flex-shrink: 0; background: #FFFFFF; border: 4px solid #203055; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px">
+    <img src="/_blob/60e4883e0390ff54c514bb172bf706e7" alt="Radar POP" width="150" height="150">
+    <span style="font-size: 13px; font-weight: 700">3 appuis surlignés · 2 s</span>
+  </div>
+  <div style="flex-grow: 1; background: #FFFFFF; border: 4px solid #203055; border-radius: 24px; padding: 16px 20px; display: flex; flex-direction: column; gap: 10px">
+    <div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-family: Fredoka, sans-serif; font-weight: 700; font-size: 32px">Radar POP</span><span style="font-weight: 800; font-size: 18px">Solde 65</span></div>
+    <div style="font-size: 16px">50 Coins · permanent · reste 15 après achat</div>
+    <div style="font-size: 13px">Même prix plus tard. Aucun compte à rebours.</div>
+    <div style="display: flex; gap: 12px; margin-top: auto">
+      <button type="button" style="flex: 1; height: 64px; border-radius: 18px; background: #FFE14D; border: 4px solid #203055; font-family: Fredoka, sans-serif; font-weight: 700; font-size: 21px; color: #203055">Acheter 50 Coins</button>
+      <button type="button" style="flex: 1; height: 64px; border-radius: 18px; background: #FFFFFF; border: 4px solid #203055; font-family: Fredoka, sans-serif; font-weight: 700; font-size: 21px; color: #203055">Continuer</button>
+    </div>
+  </div>
+  <div style="width: 120px; flex-shrink: 0; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 8px">
+    <div style="width: 92px; height: 92px; border-radius: 46px; background: rgba(32,48,85,0.12); border: 3px dashed #203055; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; text-align: center">zone saut libre</div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":844,"height":390}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

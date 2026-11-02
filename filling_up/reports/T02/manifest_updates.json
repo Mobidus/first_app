@@ -1,0 +1,578 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-11-02",
+  "source": "T02 fork",
+  "updates": [
+    {
+      "id": "aimant_poche_icon",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/design/icons/aimant_poche_icon.svg",
+      "export_path": "assets/import/ui/icons/aimant_poche_icon.png",
+      "validation_evidence": [
+        "assets/import/ui/icons/aimant_poche_icon.png",
+        "assets/source/design/canvas/project/Tools.dc.html",
+        "assets/source/design/icons/aimant_poche_icon.svg",
+        "reports/T01/icons_legibility_64_96.png"
+      ],
+      "note": "Icône finale 2D exportée en PNG 512x512 ; import Roblox non fait, assetId null."
+    },
+    {
+      "id": "balise_retour_icon",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/design/icons/balise_retour_icon.svg",
+      "export_path": "assets/import/ui/icons/balise_retour_icon.png",
+      "validation_evidence": [
+        "assets/import/ui/icons/balise_retour_icon.png",
+        "assets/source/design/canvas/project/Tools.dc.html",
+        "assets/source/design/icons/balise_retour_icon.svg",
+        "reports/T01/icons_legibility_64_96.png"
+      ],
+      "note": "Icône finale 2D exportée en PNG 512x512 ; import Roblox non fait, assetId null."
+    },
+    {
+      "id": "bob_7",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/bob_7.blend",
+      "export_path": "assets/import/models/bob_7.glb",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Main.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "bottes_adhesives_icon",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/design/icons/bottes_adhesives_icon.svg",
+      "export_path": "assets/import/ui/icons/bottes_adhesives_icon.png",
+      "validation_evidence": [
+        "assets/import/ui/icons/bottes_adhesives_icon.png",
+        "assets/source/design/canvas/project/Tools.dc.html",
+        "assets/source/design/icons/bottes_adhesives_icon.svg",
+        "reports/T01/icons_legibility_64_96.png"
+      ],
+      "note": "Icône finale 2D exportée en PNG 512x512 ; import Roblox non fait, assetId null."
+    },
+    {
+      "id": "bureau_binder_stack",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/generators/bureau_binder_stack.luau",
+      "export_path": "assets/import/models/bureau_binder_stack.rbxm",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Office.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "bureau_desk",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/generators/bureau_desk.luau",
+      "export_path": "assets/import/models/bureau_desk.rbxm",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Office.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "bureau_keyboard",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/bureau_keyboard.blend",
+      "export_path": "assets/import/models/bureau_keyboard.glb",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Office.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "bureau_locker",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/generators/bureau_locker.luau",
+      "export_path": "assets/import/models/bureau_locker.rbxm",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Office.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "bureau_loose_files",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/bureau_loose_files.blend",
+      "export_path": "assets/import/models/bureau_loose_files.glb",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Office.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "bureau_paper_ream",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/generators/bureau_paper_ream.luau",
+      "export_path": "assets/import/models/bureau_paper_ream.rbxm",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Office.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "bureau_rail_chair",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/bureau_rail_chair.blend",
+      "export_path": "assets/import/models/bureau_rail_chair.glb",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Office.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "bureau_spring_phone",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/bureau_spring_phone.blend",
+      "export_path": "assets/import/models/bureau_spring_phone.glb",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Office.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "coussin_gonflable_icon",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/design/icons/coussin_gonflable_icon.svg",
+      "export_path": "assets/import/ui/icons/coussin_gonflable_icon.png",
+      "validation_evidence": [
+        "assets/import/ui/icons/coussin_gonflable_icon.png",
+        "assets/source/design/canvas/project/Tools.dc.html",
+        "assets/source/design/icons/coussin_gonflable_icon.svg",
+        "reports/T01/icons_legibility_64_96.png"
+      ],
+      "note": "Icône finale 2D exportée en PNG 512x512 ; import Roblox non fait, assetId null."
+    },
+    {
+      "id": "drone_eclaireur_icon",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/design/icons/drone_eclaireur_icon.svg",
+      "export_path": "assets/import/ui/icons/drone_eclaireur_icon.png",
+      "validation_evidence": [
+        "assets/import/ui/icons/drone_eclaireur_icon.png",
+        "assets/source/design/canvas/project/Tools.dc.html",
+        "assets/source/design/icons/drone_eclaireur_icon.svg",
+        "reports/T01/icons_legibility_64_96.png"
+      ],
+      "note": "Icône finale 2D exportée en PNG 512x512 ; import Roblox non fait, assetId null."
+    },
+    {
+      "id": "exit_door",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/generators/exit_door.luau",
+      "export_path": "assets/import/models/exit_door.rbxm",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Office.dc.html",
+        "assets/source/design/canvas/project/Room_Reception.dc.html",
+        "assets/source/design/canvas/project/Room_Toys.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "exit_roof",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/generators/exit_roof.luau",
+      "export_path": "assets/import/models/exit_roof.rbxm",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Office.dc.html",
+        "assets/source/design/canvas/project/Room_Reception.dc.html",
+        "assets/source/design/canvas/project/Room_Toys.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "exit_window",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/generators/exit_window.luau",
+      "export_path": "assets/import/models/exit_window.rbxm",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Office.dc.html",
+        "assets/source/design/canvas/project/Room_Reception.dc.html",
+        "assets/source/design/canvas/project/Room_Toys.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "gant_air_icon",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/design/icons/gant_air_icon.svg",
+      "export_path": "assets/import/ui/icons/gant_air_icon.png",
+      "validation_evidence": [
+        "assets/import/ui/icons/gant_air_icon.png",
+        "assets/source/design/canvas/project/Tools.dc.html",
+        "assets/source/design/icons/gant_air_icon.svg",
+        "reports/T01/icons_legibility_64_96.png"
+      ],
+      "note": "Icône finale 2D exportée en PNG 512x512 ; import Roblox non fait, assetId null."
+    },
+    {
+      "id": "grappin_balancier_icon",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/design/icons/grappin_balancier_icon.svg",
+      "export_path": "assets/import/ui/icons/grappin_balancier_icon.png",
+      "validation_evidence": [
+        "assets/import/ui/icons/grappin_balancier_icon.png",
+        "assets/source/design/canvas/project/Tools.dc.html",
+        "assets/source/design/icons/grappin_balancier_icon.svg",
+        "reports/T01/icons_legibility_64_96.png"
+      ],
+      "note": "Icône finale 2D exportée en PNG 512x512 ; import Roblox non fait, assetId null."
+    },
+    {
+      "id": "machine_bureau_copier",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/machine_bureau_copier.blend",
+      "export_path": "assets/import/models/machine_bureau_copier.glb",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Office.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "machine_reception_stamp",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/machine_reception_stamp.blend",
+      "export_path": "assets/import/models/machine_reception_stamp.glb",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Reception.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "machine_toy_spinner",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/machine_toy_spinner.blend",
+      "export_path": "assets/import/models/machine_toy_spinner.glb",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Toys.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "mini_pont_icon",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/design/icons/mini_pont_icon.svg",
+      "export_path": "assets/import/ui/icons/mini_pont_icon.png",
+      "validation_evidence": [
+        "assets/import/ui/icons/mini_pont_icon.png",
+        "assets/source/design/canvas/project/Tools.dc.html",
+        "assets/source/design/icons/mini_pont_icon.svg",
+        "reports/T01/icons_legibility_64_96.png"
+      ],
+      "note": "Icône finale 2D exportée en PNG 512x512 ; import Roblox non fait, assetId null."
+    },
+    {
+      "id": "parapluie_bonbon_icon",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/design/icons/parapluie_bonbon_icon.svg",
+      "export_path": "assets/import/ui/icons/parapluie_bonbon_icon.png",
+      "validation_evidence": [
+        "assets/import/ui/icons/parapluie_bonbon_icon.png",
+        "assets/source/design/canvas/project/Tools.dc.html",
+        "assets/source/design/icons/parapluie_bonbon_icon.svg",
+        "reports/T01/icons_legibility_64_96.png"
+      ],
+      "note": "Icône finale 2D exportée en PNG 512x512 ; import Roblox non fait, assetId null."
+    },
+    {
+      "id": "pogo_pop_icon",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/design/icons/pogo_pop_icon.svg",
+      "export_path": "assets/import/ui/icons/pogo_pop_icon.png",
+      "validation_evidence": [
+        "assets/import/ui/icons/pogo_pop_icon.png",
+        "assets/source/design/canvas/project/Tools.dc.html",
+        "assets/source/design/icons/pogo_pop_icon.svg",
+        "reports/T01/icons_legibility_64_96.png"
+      ],
+      "note": "Icône finale 2D exportée en PNG 512x512 ; import Roblox non fait, assetId null."
+    },
+    {
+      "id": "radar_pop_icon",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/design/icons/radar_pop_icon.svg",
+      "export_path": "assets/import/ui/icons/radar_pop_icon.png",
+      "validation_evidence": [
+        "assets/import/ui/icons/radar_pop_icon.png",
+        "assets/source/design/canvas/project/Tools.dc.html",
+        "assets/source/design/icons/radar_pop_icon.svg",
+        "reports/T01/icons_legibility_64_96.png"
+      ],
+      "note": "Icône finale 2D exportée en PNG 512x512 ; import Roblox non fait, assetId null."
+    },
+    {
+      "id": "reception_accordion_parcel",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/reception_accordion_parcel.blend",
+      "export_path": "assets/import/models/reception_accordion_parcel.glb",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Reception.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "reception_carton",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/generators/reception_carton.luau",
+      "export_path": "assets/import/models/reception_carton.rbxm",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Reception.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "reception_foam_crate",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/generators/reception_foam_crate.luau",
+      "export_path": "assets/import/models/reception_foam_crate.rbxm",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Reception.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "reception_mail_cart",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/reception_mail_cart.blend",
+      "export_path": "assets/import/models/reception_mail_cart.glb",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Reception.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "reception_pallet",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/generators/reception_pallet.luau",
+      "export_path": "assets/import/models/reception_pallet.rbxm",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Reception.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "reception_pillow_parcel",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/reception_pillow_parcel.blend",
+      "export_path": "assets/import/models/reception_pillow_parcel.glb",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Reception.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "reception_suitcase",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/reception_suitcase.blend",
+      "export_path": "assets/import/models/reception_suitcase.glb",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Reception.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "reception_tape_reel",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/reception_tape_reel.blend",
+      "export_path": "assets/import/models/reception_tape_reel.glb",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Reception.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "toy_domino",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/generators/toy_domino.luau",
+      "export_path": "assets/import/models/toy_domino.rbxm",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Toys.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "toy_drum",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/toy_drum.blend",
+      "export_path": "assets/import/models/toy_drum.glb",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Toys.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "toy_flat_duck",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/toy_flat_duck.blend",
+      "export_path": "assets/import/models/toy_flat_duck.glb",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Toys.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "toy_plush_loppy",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/toy_plush_loppy.blend",
+      "export_path": "assets/import/models/toy_plush_loppy.glb",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Plush_Loppy.dc.html",
+        "assets/source/design/canvas/project/Room_Toys.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "toy_plush_mallow",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/toy_plush_mallow.blend",
+      "export_path": "assets/import/models/toy_plush_mallow.glb",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Plush_Mallow.dc.html",
+        "assets/source/design/canvas/project/Room_Toys.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "toy_plush_octo",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/toy_plush_octo.blend",
+      "export_path": "assets/import/models/toy_plush_octo.glb",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Plush_Octo.dc.html",
+        "assets/source/design/canvas/project/Room_Toys.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "toy_shape_cube",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/generators/toy_shape_cube.luau",
+      "export_path": "assets/import/models/toy_shape_cube.rbxm",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Toys.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "toy_train",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/toy_train.blend",
+      "export_path": "assets/import/models/toy_train.glb",
+      "validation_evidence": [
+        "assets/source/design/canvas/project/Room_Toys.dc.html"
+      ],
+      "note": "Référence 2D Claude Design uniquement ; modèle 3D non produit ici (T03)."
+    },
+    {
+      "id": "ventouse_chantier_icon",
+      "previous_status": "planned",
+      "status": "designed",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/design/icons/ventouse_chantier_icon.svg",
+      "export_path": "assets/import/ui/icons/ventouse_chantier_icon.png",
+      "validation_evidence": [
+        "assets/import/ui/icons/ventouse_chantier_icon.png",
+        "assets/source/design/canvas/project/Tools.dc.html",
+        "assets/source/design/icons/ventouse_chantier_icon.svg",
+        "reports/T01/icons_legibility_64_96.png"
+      ],
+      "note": "Icône finale 2D exportée en PNG 512x512 ; import Roblox non fait, assetId null."
+    }
+  ],
+  "unchanged_notes": {
+    "machine_kitchen_toaster": "Esquisse légère sur Room_V1 ; reste planned.",
+    "machine_garage_assembler": "Esquisse légère sur Room_V1 ; reste planned.",
+    "machine_bin_tricore": "Esquisse légère sur Room_V1 ; reste planned.",
+    "tools_3d_models": "Les 12 outils (catégorie tool) restent planned : la planche montre l icône et une inclinaison CSS, pas une vraie vue 3/4 de modèle.",
+    "kitchen_garage_bin_props": "Les 24 objets V1 restent planned : seulement listés en texte.",
+    "ui_status_icons": "ui_coins, ui_permits, ui_xp, ui_depth, ui_safe, ui_danger, ui_exit, ui_saved dessinés inline dans les planches mais sans fichier séparé : restent planned.",
+    "cosmetics": "Les 24 cosmétiques, 5 offres premium et 11 assets premium restent planned (aucune planche dédiée).",
+    "sounds": "Les 16 sons restent planned (hors Claude Design)."
+  }
+}

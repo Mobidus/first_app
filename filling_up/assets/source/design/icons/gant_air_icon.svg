@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>gant_air_icon — Gant à air</title>
+  <circle cx="400" cy="200" r="70" fill="none" stroke="#203055" stroke-width="10" stroke-dasharray="18 14" opacity="0.5"/>
+  <g stroke="#203055" stroke-width="14" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M120 120 Q120 80 160 80 Q200 80 200 120 V96 Q200 60 240 60 Q280 60 280 100 V120 Q280 90 316 90 Q350 90 350 130 V300 Q350 400 250 420 H180 Q110 400 100 320 L70 240 Q60 200 96 196 Q120 196 130 230 Z" fill="#FF4CB8"/>
+    <rect x="140" y="400" width="190" height="70" rx="20" fill="#16D9FF"/>
+    <path d="M180 410 V460 M235 410 V460 M290 410 V460" fill="none" stroke-width="10"/>
+  </g>
+</svg>

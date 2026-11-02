@@ -1,0 +1,35 @@
+{
+  "task": "T19",
+  "title": "Terminer les interfaces et le confort de jeu",
+  "status": "blocked",
+  "date_utc": "2026-11-02T10:17:13.891156+00:00",
+  "criteria": [
+    {
+      "criterion": "Continuer sans menu",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Prix contenus conditions permanence explicites (code)",
+      "status": "PASS"
+    },
+    {
+      "criterion": "HUD mobile lisible",
+      "status": "NOT_RUN"
+    },
+    {
+      "criterion": "Réduction d'effets et codes non uniquement colorés (code)",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Aucune issue payante après KO (code)",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Écrans conformes aux références validées (revue)",
+      "status": "NOT_RUN"
+    }
+  ],
+  "blocked_reason": "Critères non vérifiés : HUD mobile lisible; Écrans conformes aux références validées (revue)",
+  "note": null,
+  "checks_dir": "reports/checks"
+}

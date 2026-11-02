@@ -1,0 +1,31 @@
+{
+  "task": "T21",
+  "title": "Valider parcours complet télémétrie et mobile",
+  "status": "blocked",
+  "date_utc": "2026-11-02T10:17:13.891156+00:00",
+  "criteria": [
+    {
+      "criterion": "Parcours complet testé",
+      "status": "NOT_RUN"
+    },
+    {
+      "criterion": "Événements cohérents avec l'état serveur",
+      "status": "NOT_RUN"
+    },
+    {
+      "criterion": "Appareils réellement testés",
+      "status": "NOT_RUN"
+    },
+    {
+      "criterion": "Aucune statistique de rétention inventée",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Tests non exécutés signalés",
+      "status": "PASS"
+    }
+  ],
+  "blocked_reason": "Critères non vérifiés : Parcours complet testé; Événements cohérents avec l'état serveur; Appareils réellement testés",
+  "note": null,
+  "checks_dir": "reports/checks"
+}

@@ -1,0 +1,35 @@
+{
+  "task": "T10",
+  "title": "Enchaîner les salles sans accumulation mémoire",
+  "status": "blocked",
+  "date_utc": "2026-11-02T10:17:13.891156+00:00",
+  "criteria": [
+    {
+      "criterion": "Sortie conduit directement à la salle suivante (logique)",
+      "status": "PASS"
+    },
+    {
+      "criterion": "≤ 3 modules résidents",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Une seule salle simule ses vagues",
+      "status": "PASS"
+    },
+    {
+      "criterion": "100 transitions sans croissance (logique)",
+      "status": "PASS"
+    },
+    {
+      "criterion": "100 transitions sans croissance d'instances / connexions (moteur)",
+      "status": "NOT_RUN"
+    },
+    {
+      "criterion": "Chargement retardé ne tue jamais",
+      "status": "PASS"
+    }
+  ],
+  "blocked_reason": "Critères non vérifiés : 100 transitions sans croissance d'instances / connexions (moteur)",
+  "note": null,
+  "checks_dir": "reports/checks"
+}

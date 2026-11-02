@@ -1,0 +1,17 @@
+{
+  "status": "BLOCKED",
+  "reason": "A real 5 h Roblox client+server session requires Roblox Studio or a live test place with a test pilot; not available here. Simulation is NOT a substitute.",
+  "executed": [],
+  "failures": [],
+  "not_run": [
+    "real Roblox session of 5.0 h with periodic memory/instances/connections/frame-time samples"
+  ],
+  "date_utc": "2026-11-02T10:14:57.013847+00:00",
+  "versions": {
+    "python": "3.13.18",
+    "rojo": "Rojo 7.5.1",
+    "lune": "lune 0.10.1",
+    "stylua": "stylua 2.1.0",
+    "selene": "selene 0.28.0"
+  }
+}

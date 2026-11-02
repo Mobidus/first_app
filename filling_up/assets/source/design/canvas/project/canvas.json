@@ -1,0 +1,46 @@
+{
+  "v": 3,
+  "createdOnFiles": {"v": 1, "at": "2026-11-02T09:40:00Z"},
+  "title": "FILLING UP — Planches Claude Design",
+  "launch": {"view": "canvas"},
+  "pages": [],
+  "boards": {
+    "Main.dc.html": {"x": 0, "y": 0, "w": 1600, "h": 1000, "title": "Direction artistique — tokens, matières, balises, BOB-7"},
+    "Gameplay.dc.html": {"x": 1680, "y": 0, "w": 1280, "h": 720, "title": "Gameplay mobile paysage 16:9"},
+    "Plush_Mallow.dc.html": {"x": 0, "y": 1420, "w": 1600, "h": 1100, "title": "toy_plush_mallow — Ourson Mallow"},
+    "Plush_Loppy.dc.html": {"x": 1680, "y": 1420, "w": 1600, "h": 1100, "title": "toy_plush_loppy — Lapin Loppy"},
+    "Plush_Octo.dc.html": {"x": 3360, "y": 1420, "w": 1600, "h": 1100, "title": "toy_plush_octo — Pieuvre Octo"},
+    "Room_Reception.dc.html": {"x": 0, "y": 2940, "w": 1800, "h": 1200, "title": "Famille Réception"},
+    "Room_Toys.dc.html": {"x": 1880, "y": 2940, "w": 1800, "h": 1200, "title": "Famille Toy Overflow"},
+    "Room_Office.dc.html": {"x": 3760, "y": 2940, "w": 1800, "h": 1200, "title": "Famille Bureau perdu"},
+    "Room_V1.dc.html": {"x": 5640, "y": 2940, "w": 1400, "h": 1200, "title": "Familles V1 — Cuisine, Garage, Giant Bin (planche légère)"},
+    "Tools.dc.html": {"x": 0, "y": 4560, "w": 1800, "h": 1300, "title": "Douze outils — icônes, silhouettes, rangs"},
+    "Screen_RadarKiosk.dc.html": {"x": 0, "y": 6280, "w": 1280, "h": 720, "title": "Borne Radar — premier achat"},
+    "Screen_RadarKiosk_Compact.dc.html": {"x": 1360, "y": 6280, "w": 844, "h": 390, "title": "Borne Radar — écran compact"},
+    "Screen_Inventory.dc.html": {"x": 2284, "y": 6280, "w": 1280, "h": 720, "title": "Inventaire et équipement"},
+    "Screen_CoinShop.dc.html": {"x": 3644, "y": 6280, "w": 1280, "h": 720, "title": "Boutique Coins"},
+    "Screen_RobuxShop.dc.html": {"x": 0, "y": 7120, "w": 1280, "h": 720, "title": "Boutique Robux — aperçu indisponible"},
+    "Screen_KO.dc.html": {"x": 1360, "y": 7120, "w": 1280, "h": 720, "title": "KO et Recommencer gratuit"},
+    "Screen_SaveResume.dc.html": {"x": 2720, "y": 7120, "w": 1280, "h": 720, "title": "Sauvegarde et reprise"},
+    "Screen_Rebirth.dc.html": {"x": 4080, "y": 7120, "w": 1280, "h": 720, "title": "Renaissance — aperçu"},
+    "Screen_RebirthConfirm.dc.html": {"x": 0, "y": 7960, "w": 1280, "h": 720, "title": "Renaissance — confirmation"},
+    "Screen_States.dc.html": {"x": 1360, "y": 7960, "w": 1280, "h": 720, "title": "États : chargement, réseau, Coins, possédé, indisponible"}
+  },
+  "order": [
+    "Main.dc.html", "Gameplay.dc.html",
+    "Plush_Mallow.dc.html", "Plush_Loppy.dc.html", "Plush_Octo.dc.html",
+    "Room_Reception.dc.html", "Room_Toys.dc.html", "Room_Office.dc.html", "Room_V1.dc.html",
+    "Tools.dc.html",
+    "Screen_RadarKiosk.dc.html", "Screen_RadarKiosk_Compact.dc.html", "Screen_Inventory.dc.html", "Screen_CoinShop.dc.html",
+    "Screen_RobuxShop.dc.html", "Screen_KO.dc.html", "Screen_SaveResume.dc.html", "Screen_Rebirth.dc.html",
+    "Screen_RebirthConfirm.dc.html", "Screen_States.dc.html"
+  ],
+  "notes": {
+    "t_direction": {"x": 0, "y": -300, "text": "Direction artistique", "kind": "title1", "maxW": 2960},
+    "t_plush": {"x": 0, "y": 1120, "text": "Peluches — planches de production", "kind": "title1", "maxW": 4960},
+    "t_rooms": {"x": 0, "y": 2640, "text": "Salles — Réception, Jouets, Bureau (+ V1)", "kind": "title1", "maxW": 7040},
+    "t_tools": {"x": 0, "y": 4260, "text": "Outils — prix et rangs de config/economy.json", "kind": "title1", "maxW": 1800},
+    "t_screens": {"x": 0, "y": 5980, "text": "Écrans et états UI (FR / EN)", "kind": "title1", "maxW": 4924}
+  },
+  "designSystems": []
+}

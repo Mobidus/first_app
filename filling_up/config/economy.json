@@ -1,0 +1,335 @@
+{
+  "schema_version": 1,
+  "design_version": "3.0",
+  "status": "prototype_parameters_not_observed_results",
+  "currencies": {
+    "coins": {"integer": true, "bank_immediately": true, "kept_on_ko": true, "kept_on_rebirth": true},
+    "permits": {"integer": true, "purchasable": false, "bank_on_valid_exit": true, "kept_on_ko": true, "keep_unspent_on_rebirth": true}
+  },
+  "equipment_limits": {"active": 1, "passive": 1, "companion": 1},
+  "ability_rules": {
+    "refill_charges_on_new_room": true,
+    "refill_cost_coins": 0,
+    "refill_cost_robux": 0,
+    "preserve_charges_on_same_room_reload": true,
+    "cooldown_clock": "active_simulation_seconds",
+    "passive_zero_duration_cooldown_charges_means_not_applicable": true,
+    "safe_route_requires_tool": false,
+    "can_activate_after_ko": false,
+    "competitive_mode": "later_phase_fixed_kit_only"
+  },
+  "upgrade_costs": {
+    "rank_2_base_price_factor": 0.5,
+    "rank_2_round_up_multiple": 50,
+    "rank_2_minimum": 100,
+    "rank_3_base_price_factor": 1,
+    "rank_3_minimum": 200,
+    "max_rank": 3,
+    "meaning": "Each rank cost is the additional purchase price; owning the preceding rank is required."
+  },
+  "tutorial": {
+    "clock_origin": "avatar_controllable_not_loading_start",
+    "rewards": [10, 5, 50],
+    "reward_ids": ["tutorial_discovery", "tutorial_first_landing", "tutorial_exit"],
+    "reward_once_per_account": true,
+    "total_coins": 65,
+    "first_tool_id": "radar_pop",
+    "first_purchase_target_seconds": [10, 20],
+    "first_use_target_before_seconds": 30,
+    "first_purchase_optional": true,
+    "robux_prompt_during_tutorial": false
+  },
+  "reward_bands": [
+    {"min_depth": 1, "max_depth": 4, "base_total": 150, "milestones": [10, 10, 10], "exit_reward": 120, "permits": 1, "simulation_seconds": 60},
+    {"min_depth": 5, "max_depth": 10, "base_total": 225, "milestones": [15, 15, 15], "exit_reward": 180, "permits": 2, "simulation_seconds": 90},
+    {"min_depth": 11, "max_depth": 20, "base_total": 350, "milestones": [25, 25, 25], "exit_reward": 275, "permits": 3, "simulation_seconds": 150},
+    {"min_depth": 21, "max_depth": 40, "base_total": 450, "milestones": [30, 30, 30], "exit_reward": 360, "permits": 4, "simulation_seconds": 180},
+    {"min_depth": 41, "max_depth": null, "base_total": 500, "milestones": [35, 35, 35], "exit_reward": 395, "permits": 4, "simulation_seconds": 240}
+  ],
+  "reward_rules": {
+    "session_coin_cap": null,
+    "coins_for_time_online": 0,
+    "coins_for_waiting": 0,
+    "coins_for_object_spawn": 0,
+    "speed_coin_bonus": 0,
+    "milestone_claims_per_id_per_room_instance": 1,
+    "exit_claims_per_room_instance": 1,
+    "grant_source": "server_validated_progression",
+    "store_bonus_rate_at_room_start": true,
+    "rebirth_bonus_applies_to": ["base_milestones", "base_exit"],
+    "rebirth_bonus_excludes": ["tutorial", "optional_tokens", "discovery", "contracts", "purchased_coins"],
+    "rounding": {
+      "mode": "cumulative_half_up_integer_basis_points",
+      "basis_point_denominator": 10000,
+      "rebirth_bonus_basis_points_per_rank": 400,
+      "rebirth_bonus_basis_points_cap": 4000,
+      "description": "For each ordered base grant, pay rounded(multiplier * cumulative_base_claimed) minus the previously paid cumulative base amount; do not round each grant independently."
+    }
+  },
+  "optional_tokens": {
+    "tokens_per_room": 6,
+    "coins_per_token": 5,
+    "max_coins_per_room": 30,
+    "manual_collection_enabled": true,
+    "magnet_uses_same_existing_tokens": true,
+    "respawn_in_same_room_instance": false,
+    "rebirth_multiplier_applies": false,
+    "required_for_exit": false
+  },
+  "secondary_rewards": {
+    "first_room_family_discovery": {"coins": 50, "once_per_account_per_family": true},
+    "practice_contract": {"coins": 50, "available_contracts": 2, "refresh_schedule": "daily_utc", "claim_once_per_contract_key": true, "requires_active_completion": true, "missed_day_penalty": false},
+    "weekly_challenge": {"coins": 250, "once_per_challenge": true},
+    "automatic_login_coins": 0
+  },
+  "rebirth": {
+    "base_cost": 40,
+    "increment": 15,
+    "cost_cap": 160,
+    "coin_bonus_per_rank": 0.04,
+    "coin_bonus_cap": 0.40,
+    "first_rebirth_required_completed_room_families": 3,
+    "family_qualification_persists": true,
+    "minimum_coin_balance": 0,
+    "coin_fee": 0,
+    "robux_fee": 0,
+    "consume_only_required_permits": true,
+    "allow_multiple_ranks_one_transaction": true,
+    "allow_deferring_indefinitely": true,
+    "available_location": "safe_room_transition",
+    "resets": ["expedition_depth_to_1", "cycle_contract_configuration"],
+    "preserves": ["coins", "unspent_permits", "tools", "tool_ranks", "cosmetics", "robux_entitlements", "account_xp", "collections", "records", "room_family_access"],
+    "movement_stat_bonus": 0,
+    "rank_examples": [
+      {"rank": 1, "cost": 40, "cumulative_cost_from_zero": 40, "coin_bonus": 0.04},
+      {"rank": 2, "cost": 55, "cumulative_cost_from_zero": 95, "coin_bonus": 0.08},
+      {"rank": 5, "cost": 100, "cumulative_cost_from_zero": 350, "coin_bonus": 0.20},
+      {"rank": 10, "cost": 160, "cumulative_cost_from_zero": 1060, "coin_bonus": 0.40}
+    ]
+  },
+  "tools": [
+    {
+      "id": "radar_pop", "name": "Radar POP", "slot": "active", "coins": 50,
+      "unlock": {"tutorial_complete": true, "min_completed_rooms": 0, "min_rebirth_rank": 0},
+      "ranks": [
+        {"rank": 1, "upgrade_coins": 0, "stats": {"range_studs": 20, "duration_seconds": 2, "cooldown_seconds": 20, "charges_per_room": 4, "max_targets": 3}},
+        {"rank": 2, "upgrade_coins": 100, "stats": {"range_studs": 24, "duration_seconds": 2.5, "cooldown_seconds": 18, "charges_per_room": 4, "max_targets": 3}},
+        {"rank": 3, "upgrade_coins": 200, "stats": {"range_studs": 28, "duration_seconds": 3, "cooldown_seconds": 16, "charges_per_room": 4, "max_targets": 3}}
+      ],
+      "description": "Surligne des surfaces proches actuellement utilisables; aide à lire le terrain sans jouer les sauts.",
+      "visual": "Boîtier cyan arrondi, antenne jaune courte, écran menthe avec trois points; onde circulaire discrète.",
+      "limitations": ["Ne déplace pas le personnage", "Ne garantit pas la stabilité future", "Ne dessine pas une route complète", "Les informations essentielles restent lisibles sans cet objet"],
+      "stage": "MVP"
+    },
+    {
+      "id": "aimant_poche", "name": "Aimant de poche", "slot": "passive", "coins": 150,
+      "unlock": {"tutorial_complete": true, "min_completed_rooms": 1, "min_rebirth_rank": 0},
+      "ranks": [
+        {"rank": 1, "upgrade_coins": 0, "stats": {"range_studs": 5, "duration_seconds": 0, "cooldown_seconds": 0, "charges_per_room": 0, "max_tokens_per_room": 6, "coins_per_token": 5}},
+        {"rank": 2, "upgrade_coins": 100, "stats": {"range_studs": 6, "duration_seconds": 0, "cooldown_seconds": 0, "charges_per_room": 0, "max_tokens_per_room": 6, "coins_per_token": 5}},
+        {"rank": 3, "upgrade_coins": 200, "stats": {"range_studs": 7, "duration_seconds": 0, "cooldown_seconds": 0, "charges_per_room": 0, "max_tokens_per_room": 6, "coins_per_token": 5}}
+      ],
+      "description": "Attire les six jetons facultatifs déjà présents; les mêmes jetons peuvent être pris à la main.",
+      "visual": "Petit aimant en U corail et jaune fixé à la ceinture; arc pointillé bref vers un jeton.",
+      "limitations": ["Aucun jeton supplémentaire créé", "Aucun multiplicateur de récompense", "Maximum 30 Coins facultatifs par salle", "Les valeurs nulles de durée, recharge et charges signifient passif sans activation"],
+      "stage": "MVP"
+    },
+    {
+      "id": "ventouse_chantier", "name": "Ventouse de chantier", "slot": "active", "coins": 300,
+      "unlock": {"tutorial_complete": true, "min_completed_rooms": 3, "min_rebirth_rank": 0},
+      "ranks": [
+        {"rank": 1, "upgrade_coins": 0, "stats": {"range_studs": 12, "duration_seconds": 1.5, "cooldown_seconds": 25, "charges_per_room": 4, "max_targets": 1, "max_target_size_class": 2}},
+        {"rank": 2, "upgrade_coins": 150, "stats": {"range_studs": 14, "duration_seconds": 2, "cooldown_seconds": 23, "charges_per_room": 4, "max_targets": 1, "max_target_size_class": 2}},
+        {"rank": 3, "upgrade_coins": 300, "stats": {"range_studs": 16, "duration_seconds": 2.5, "cooldown_seconds": 21, "charges_per_room": 4, "max_targets": 1, "max_target_size_class": 2}}
+      ],
+      "description": "Immobilise temporairement un petit ou moyen objet instable éligible.",
+      "visual": "Manche jaune, coupelle menthe, petit piston cyan; trois traits d'ancrage visibles sur la cible.",
+      "limitations": ["Cibles explicitement marquées stabilisables", "Ni sortie ni élément structurel", "Pas de ralentissement de toutes les vagues", "Une cible déjà recouverte peut être inutilisable"],
+      "stage": "MVP"
+    },
+    {
+      "id": "parapluie_bonbon", "name": "Parapluie bonbon", "slot": "active", "coins": 650,
+      "unlock": {"tutorial_complete": true, "min_completed_rooms": 5, "min_rebirth_rank": 0},
+      "ranks": [
+        {"rank": 1, "upgrade_coins": 0, "stats": {"range_studs": 0, "duration_seconds": 1.5, "cooldown_seconds": 20, "charges_per_room": 4, "descent_speed_multiplier": 0.60, "horizontal_speed_multiplier": 1}},
+        {"rank": 2, "upgrade_coins": 350, "stats": {"range_studs": 0, "duration_seconds": 1.8, "cooldown_seconds": 18, "charges_per_room": 4, "descent_speed_multiplier": 0.55, "horizontal_speed_multiplier": 1}},
+        {"rank": 3, "upgrade_coins": 650, "stats": {"range_studs": 0, "duration_seconds": 2.1, "cooldown_seconds": 16, "charges_per_room": 4, "descent_speed_multiplier": 0.50, "horizontal_speed_multiplier": 1}}
+      ],
+      "description": "Ralentit brièvement une descente pour corriger la réception.",
+      "visual": "Petite voûte rose et citron à six quartiers, poignée bleu nuit; s'ouvre au-dessus de l'avatar sans masquer sa cible.",
+      "limitations": ["Activation seulement en descente", "Aucune poussée ascendante", "Ne protège pas de l'ensevelissement", "Ne recharge pas au cours d'un même vol"],
+      "stage": "MVP"
+    },
+    {
+      "id": "coussin_gonflable", "name": "Coussin gonflable", "slot": "active", "coins": 1100,
+      "unlock": {"tutorial_complete": true, "min_completed_rooms": 8, "min_rebirth_rank": 0},
+      "ranks": [
+        {"rank": 1, "upgrade_coins": 0, "stats": {"range_studs": 12, "duration_seconds": 3, "cooldown_seconds": 25, "charges_per_room": 2, "platform_width_studs": 6, "max_height_gain_studs": 0}},
+        {"rank": 2, "upgrade_coins": 550, "stats": {"range_studs": 14, "duration_seconds": 3.5, "cooldown_seconds": 23, "charges_per_room": 2, "platform_width_studs": 6.5, "max_height_gain_studs": 0}},
+        {"rank": 3, "upgrade_coins": 1100, "stats": {"range_studs": 16, "duration_seconds": 4, "cooldown_seconds": 21, "charges_per_room": 2, "platform_width_studs": 7, "max_height_gain_studs": 0}}
+      ],
+      "description": "Déploie une récupération temporaire sous le joueur, s'il existe un volume libre autorisé.",
+      "visual": "Coussin carré jaune gonflé, coutures roses, valve cyan; gonflage rapide et contour menthe quand utilisable.",
+      "limitations": ["Ne peut apparaître au-dessus du joueur", "Pas de création dans un objet solide", "Pas de résurrection après KO", "Une charge n'est consommée qu'après pose valide"],
+      "stage": "V1"
+    },
+    {
+      "id": "balise_retour", "name": "Balise de retour", "slot": "active", "coins": 1800,
+      "unlock": {"tutorial_complete": true, "min_completed_rooms": 10, "min_rebirth_rank": 0},
+      "ranks": [
+        {"rank": 1, "upgrade_coins": 0, "stats": {"range_studs": 18, "duration_seconds": 0, "cooldown_seconds": 1, "charges_per_room": 1, "cast_seconds": 0.6, "clearance_radius_studs": 3, "clearance_height_studs": 6}},
+        {"rank": 2, "upgrade_coins": 900, "stats": {"range_studs": 22, "duration_seconds": 0, "cooldown_seconds": 1, "charges_per_room": 1, "cast_seconds": 0.5, "clearance_radius_studs": 3, "clearance_height_studs": 6}},
+        {"rank": 3, "upgrade_coins": 1800, "stats": {"range_studs": 26, "duration_seconds": 0, "cooldown_seconds": 1, "charges_per_room": 1, "cast_seconds": 0.4, "clearance_radius_studs": 3, "clearance_height_studs": 6}}
+      ],
+      "description": "Premier appui: marque la position stable actuelle. Deuxième appui: retour si cette position est encore libre et dans la portée.",
+      "visual": "Petit fanion menthe dans un socle violet, anneau de rappel cyan autour de la dernière position valide.",
+      "limitations": ["Une utilisation effective par salle", "Marque valable seulement dans sa salle", "Le KO annule toute activation", "Le serveur revérifie le volume et l'existence du support", "Une destination recouverte annule le retour sans consommer la charge"],
+      "stage": "V1"
+    },
+    {
+      "id": "pogo_pop", "name": "Pogo POP", "slot": "active", "coins": 2600,
+      "unlock": {"tutorial_complete": true, "min_completed_rooms": 12, "min_rebirth_rank": 0},
+      "ranks": [
+        {"rank": 1, "upgrade_coins": 0, "stats": {"range_studs": 0, "duration_seconds": 0.4, "cooldown_seconds": 25, "charges_per_room": 3, "jump_height_multiplier": 1.20, "horizontal_speed_multiplier": 0.90}},
+        {"rank": 2, "upgrade_coins": 1300, "stats": {"range_studs": 0, "duration_seconds": 0.4, "cooldown_seconds": 23, "charges_per_room": 3, "jump_height_multiplier": 1.25, "horizontal_speed_multiplier": 0.90}},
+        {"rank": 3, "upgrade_coins": 2600, "stats": {"range_studs": 0, "duration_seconds": 0.4, "cooldown_seconds": 21, "charges_per_room": 3, "jump_height_multiplier": 1.30, "horizontal_speed_multiplier": 0.90}}
+      ],
+      "description": "Prépare un rebond plus haut depuis une surface stable ou rebondissante compatible.",
+      "visual": "Ressort citron dans une coque cyan, poignées roses; compression visible avant impulsion.",
+      "limitations": ["Pas de double saut dans le vide", "Ne modifie pas le saut de base lorsque déséquipé", "La route sûre ne dépend pas de cet objet", "Le contrôle horizontal reste à la charge du joueur"],
+      "stage": "V1"
+    },
+    {
+      "id": "bottes_adhesives", "name": "Bottes adhésives", "slot": "active", "coins": 3600,
+      "unlock": {"tutorial_complete": true, "min_completed_rooms": 14, "min_rebirth_rank": 0},
+      "ranks": [
+        {"rank": 1, "upgrade_coins": 0, "stats": {"range_studs": 0, "duration_seconds": 3, "cooldown_seconds": 24, "charges_per_room": 4, "slip_reduction": 0.40, "walk_speed_multiplier": 0.85}},
+        {"rank": 2, "upgrade_coins": 1800, "stats": {"range_studs": 0, "duration_seconds": 3.5, "cooldown_seconds": 22, "charges_per_room": 4, "slip_reduction": 0.50, "walk_speed_multiplier": 0.85}},
+        {"rank": 3, "upgrade_coins": 3600, "stats": {"range_studs": 0, "duration_seconds": 4, "cooldown_seconds": 20, "charges_per_room": 4, "slip_reduction": 0.60, "walk_speed_multiplier": 0.85}}
+      ],
+      "description": "Réduit la dérive sur une plateforme mobile au prix d'un déplacement un peu plus lent.",
+      "visual": "Semelles menthe épaisses à pastilles rondes, languette jaune; petites marques rondes non persistantes.",
+      "limitations": ["Pas de marche sur les murs ou le plafond", "Pas de fixation contre une force d'écrasement", "L'effet cesse à la fin de l'activation"],
+      "stage": "V1"
+    },
+    {
+      "id": "mini_pont", "name": "Mini-pont pliant", "slot": "active", "coins": 4800,
+      "unlock": {"tutorial_complete": true, "min_completed_rooms": 16, "min_rebirth_rank": 0},
+      "ranks": [
+        {"rank": 1, "upgrade_coins": 0, "stats": {"range_studs": 8, "duration_seconds": 4, "cooldown_seconds": 30, "charges_per_room": 2, "max_span_studs": 4, "platform_width_studs": 3.5, "max_vertical_gap_studs": 2}},
+        {"rank": 2, "upgrade_coins": 2400, "stats": {"range_studs": 9, "duration_seconds": 5, "cooldown_seconds": 28, "charges_per_room": 2, "max_span_studs": 5, "platform_width_studs": 4, "max_vertical_gap_studs": 2}},
+        {"rank": 3, "upgrade_coins": 4800, "stats": {"range_studs": 10, "duration_seconds": 6, "cooldown_seconds": 26, "charges_per_room": 2, "max_span_studs": 6, "platform_width_studs": 4, "max_vertical_gap_studs": 2}}
+      ],
+      "description": "Relie deux appuis autorisés proches par une courte passerelle temporaire.",
+      "visual": "Accordéon jaune à articulations cyan, bords menthe; extrémités clipsées clairement visibles.",
+      "limitations": ["Deux ancrages valides nécessaires", "Ne traverse jamais toute une salle", "Aucun placement vers la sortie hors portée normale", "Charge conservée si pose refusée"],
+      "stage": "V1"
+    },
+    {
+      "id": "gant_air", "name": "Gant à air", "slot": "active", "coins": 6200,
+      "unlock": {"tutorial_complete": true, "min_completed_rooms": 18, "min_rebirth_rank": 0},
+      "ranks": [
+        {"rank": 1, "upgrade_coins": 0, "stats": {"range_studs": 10, "duration_seconds": 0.25, "cooldown_seconds": 22, "charges_per_room": 4, "max_displacement_studs": 4, "max_targets": 1, "max_target_size_class": 2}},
+        {"rank": 2, "upgrade_coins": 3100, "stats": {"range_studs": 12, "duration_seconds": 0.25, "cooldown_seconds": 20, "charges_per_room": 4, "max_displacement_studs": 5, "max_targets": 1, "max_target_size_class": 2}},
+        {"rank": 3, "upgrade_coins": 6200, "stats": {"range_studs": 14, "duration_seconds": 0.25, "cooldown_seconds": 18, "charges_per_room": 4, "max_displacement_studs": 6, "max_targets": 1, "max_target_size_class": 2}}
+      ],
+      "description": "Décale légèrement un objet éligible pour ajuster un appui ou dégager une réception.",
+      "visual": "Gant rose volumineux, éventail cyan sur le poignet, anneau d'air blanc à faible opacité.",
+      "limitations": ["Aucun effet sur les avatars", "Aucun déplacement des murs, sorties ou supports structurels", "La cible conserve ses limites de sécurité", "Ne crée pas de gain pour des poussées répétées"],
+      "stage": "V1"
+    },
+    {
+      "id": "drone_eclaireur", "name": "Drone éclaireur", "slot": "active", "coins": 8000,
+      "unlock": {"tutorial_complete": true, "min_completed_rooms": 20, "min_rebirth_rank": 0},
+      "ranks": [
+        {"rank": 1, "upgrade_coins": 0, "stats": {"range_studs": 20, "duration_seconds": 3, "cooldown_seconds": 25, "charges_per_room": 4, "spawn_anticipation_seconds": 1.5, "max_targets": 1}},
+        {"rank": 2, "upgrade_coins": 4000, "stats": {"range_studs": 24, "duration_seconds": 3.5, "cooldown_seconds": 23, "charges_per_room": 4, "spawn_anticipation_seconds": 2, "max_targets": 1}},
+        {"rank": 3, "upgrade_coins": 8000, "stats": {"range_studs": 28, "duration_seconds": 4, "cooldown_seconds": 21, "charges_per_room": 4, "spawn_anticipation_seconds": 2.5, "max_targets": 1}}
+      ],
+      "description": "Révèle l'emplacement d'un prochain objet utile déjà prévu par la vague.",
+      "visual": "Petit cube violet à deux turbines cyan, œil jaune; projection d'un contour pointillé au futur emplacement.",
+      "limitations": ["Ne fait apparaître aucun objet", "Ne change pas l'ordre des vagues", "Seule une arrivée déjà déterminée peut être annoncée", "N'occupe pas le slot compagnon cosmétique"],
+      "stage": "V1"
+    },
+    {
+      "id": "grappin_balancier", "name": "Grappin balancier", "slot": "active", "coins": 10000,
+      "unlock": {"tutorial_complete": true, "min_completed_rooms": 22, "min_rebirth_rank": 0},
+      "ranks": [
+        {"rank": 1, "upgrade_coins": 0, "stats": {"range_studs": 10, "duration_seconds": 1.5, "cooldown_seconds": 30, "charges_per_room": 3, "max_height_gain_studs": 4, "release_velocity_multiplier": 1}},
+        {"rank": 2, "upgrade_coins": 5000, "stats": {"range_studs": 12, "duration_seconds": 1.8, "cooldown_seconds": 28, "charges_per_room": 3, "max_height_gain_studs": 5, "release_velocity_multiplier": 1}},
+        {"rank": 3, "upgrade_coins": 10000, "stats": {"range_studs": 14, "duration_seconds": 2, "cooldown_seconds": 26, "charges_per_room": 3, "max_height_gain_studs": 6, "release_velocity_multiplier": 1}}
+      ],
+      "description": "Crée un court balancement sur un ancrage dédié; le joueur choisit son lâcher avec la commande de saut.",
+      "visual": "Lanceur cyan, crochet jaune arrondi, corde rose segmentée; point d'ancrage menthe lisible.",
+      "limitations": ["Ancrages dédiés seulement", "Pas de traction directe vers une porte", "Pas de nouvelle accroche en plein balancement", "La réception reste manuelle"],
+      "stage": "V1"
+    }
+  ],
+  "cosmetics": [
+    {"id": "trace_ruban_citron", "name": "Ruban citron", "coins": 75, "slot": "trail", "unlock": {"tutorial_complete": true, "min_completed_rooms": 0, "min_rebirth_rank": 0}, "visual": "Ruban jaune court derrière les pieds, longueur maximale 2 studs; aucun halo sur les plateformes."},
+    {"id": "trace_bulles_menthe", "name": "Bulles menthe", "coins": 250, "slot": "trail", "unlock": {"tutorial_complete": true, "min_completed_rooms": 2, "min_rebirth_rank": 0}, "visual": "Trois petites bulles menthe translucides, disparition en 0,4 s."},
+    {"id": "trace_confettis_pop", "name": "Confettis POP", "coins": 750, "slot": "trail", "unlock": {"tutorial_complete": true, "min_completed_rooms": 5, "min_rebirth_rank": 0}, "visual": "Petits carrés rose et cyan, densité réduite lorsque plusieurs objets tombent."},
+    {"id": "trace_ruban_aurore", "name": "Ruban aurore", "coins": 2500, "slot": "trail", "unlock": {"tutorial_complete": true, "min_completed_rooms": 15, "min_rebirth_rank": 0}, "visual": "Dégradé cyan lavande citron, longueur 2,5 studs, sans clignotement."},
+    {"id": "skin_radar_citron", "name": "Radar citron", "coins": 100, "slot": "tool_skin", "unlock": {"tutorial_complete": true, "min_completed_rooms": 0, "min_rebirth_rank": 0, "requires_tool_id": "radar_pop"}, "visual": "Coque jaune satinée et écran bleu nuit; aucune modification de portée."},
+    {"id": "skin_parapluie_pasteque", "name": "Parapluie pastèque", "coins": 500, "slot": "tool_skin", "unlock": {"tutorial_complete": true, "min_completed_rooms": 5, "min_rebirth_rank": 0, "requires_tool_id": "parapluie_bonbon"}, "visual": "Quartiers rose pastèque, bord menthe et petits pépins bleu nuit."},
+    {"id": "skin_grappin_chrome", "name": "Grappin chrome doux", "coins": 1500, "slot": "tool_skin", "unlock": {"tutorial_complete": true, "min_completed_rooms": 22, "min_rebirth_rank": 0, "requires_tool_id": "grappin_balancier"}, "visual": "Coque argent satiné, crochet cyan; reflets mats pour préserver la lisibilité."},
+    {"id": "skin_outil_holographique", "name": "Habillage holographique", "coins": 5000, "slot": "tool_skin", "unlock": {"tutorial_complete": true, "min_completed_rooms": 25, "min_rebirth_rank": 0}, "visual": "Palette irisée douce compatible avec l'outil équipé, forme et zones fonctionnelles inchangées."},
+    {"id": "compagnon_bob_papier", "name": "BOB papier", "coins": 500, "slot": "companion", "unlock": {"tutorial_complete": true, "min_completed_rooms": 3, "min_rebirth_rank": 0}, "visual": "Mini BOB en carton crème, yeux cyan imprimés, flottant derrière l'épaule hors de la visée."},
+    {"id": "compagnon_canard_mousse", "name": "Canard mousse", "coins": 1500, "slot": "companion", "unlock": {"tutorial_complete": true, "min_completed_rooms": 8, "min_rebirth_rank": 0}, "visual": "Canard jaune mat de 1 stud, bec rose, petits rebonds purement décoratifs."},
+    {"id": "compagnon_bob_chantier", "name": "BOB chantier", "coins": 4000, "slot": "companion", "unlock": {"tutorial_complete": true, "min_completed_rooms": 20, "min_rebirth_rank": 0}, "visual": "BOB cyan, casque citron et gilet menthe; pas de collecte ou d'assistance."},
+    {"id": "compagnon_bob_cosmique", "name": "BOB cosmique", "coins": 12000, "slot": "companion", "unlock": {"tutorial_complete": true, "min_completed_rooms": 40, "min_rebirth_rank": 0}, "visual": "BOB violet à visière étoilée mate, deux anneaux orbitaux discrets, aucune lumière sur la caméra."},
+    {"id": "reception_anneau_menthe", "name": "Anneau menthe", "coins": 150, "slot": "landing_fx", "unlock": {"tutorial_complete": true, "min_completed_rooms": 1, "min_rebirth_rank": 0}, "visual": "Anneau menthe unique à la réception, rayon 1,5 stud, durée 0,25 s."},
+    {"id": "reception_etoiles", "name": "POP étoiles", "coins": 600, "slot": "landing_fx", "unlock": {"tutorial_complete": true, "min_completed_rooms": 4, "min_rebirth_rank": 0}, "visual": "Trois étoiles jaunes basses, jamais au-dessus de la cheville."},
+    {"id": "reception_vinyle", "name": "Disque vinyle", "coins": 1800, "slot": "landing_fx", "unlock": {"tutorial_complete": true, "min_completed_rooms": 10, "min_rebirth_rank": 0}, "visual": "Disque bleu nuit à centre rose qui se dilate au sol pendant 0,3 s."},
+    {"id": "reception_prisme", "name": "Anneau prisme", "coins": 6000, "slot": "landing_fx", "unlock": {"tutorial_complete": true, "min_completed_rooms": 30, "min_rebirth_rank": 0}, "visual": "Hexagone cyan lavande, six petits éclats plats, disparition en 0,35 s."},
+    {"id": "victoire_confettis_citron", "name": "Confettis citron", "coins": 300, "slot": "victory_fx", "unlock": {"tutorial_complete": true, "min_completed_rooms": 2, "min_rebirth_rank": 0}, "visual": "Douze confettis citron au passage de la sortie, durée 0,6 s."},
+    {"id": "victoire_canards", "name": "Envol de canards", "coins": 1200, "slot": "victory_fx", "unlock": {"tutorial_complete": true, "min_completed_rooms": 7, "min_rebirth_rank": 0}, "visual": "Trois silhouettes de canards en mousse filent vers le haut dans le sas."},
+    {"id": "victoire_mousse", "name": "Feu d'artifice mousse", "coins": 3500, "slot": "victory_fx", "unlock": {"tutorial_complete": true, "min_completed_rooms": 18, "min_rebirth_rank": 0}, "visual": "Petits blocs colorés expansifs dans le sas; aucun flash blanc ni explosion forte."},
+    {"id": "victoire_planetes", "name": "Orbite de mini-planètes", "coins": 10000, "slot": "victory_fx", "unlock": {"tutorial_complete": true, "min_completed_rooms": 35, "min_rebirth_rank": 0}, "visual": "Trois planètes-jouets font un demi-tour autour de l'avatar dans le sas puis disparaissent."},
+    {"id": "atelier_hublot_cyan", "name": "Hublot cyan", "coins": 1000, "slot": "workshop_skin", "unlock": {"tutorial_complete": true, "min_completed_rooms": 5, "min_rebirth_rank": 0}, "visual": "Habillage du sas personnel avec cadres cyan et verre bleu très clair; géométrie inchangée."},
+    {"id": "atelier_fete_rose", "name": "Atelier fête rose", "coins": 3000, "slot": "workshop_skin", "unlock": {"tutorial_complete": true, "min_completed_rooms": 12, "min_rebirth_rank": 0}, "visual": "Machines roses, guirlandes jaunes fixes, sol crème et lignes de guidage menthe."},
+    {"id": "atelier_lavande", "name": "Atelier lavande", "coins": 8000, "slot": "workshop_skin", "unlock": {"tutorial_complete": true, "min_completed_rooms": 25, "min_rebirth_rank": 0}, "visual": "Coques lavande, panneaux bleu nuit et touches citron, reflet satiné doux."},
+    {"id": "atelier_aurore", "name": "Atelier aurore", "coins": 20000, "slot": "workshop_skin", "unlock": {"tutorial_complete": true, "min_completed_rooms": 50, "min_rebirth_rank": 0}, "visual": "Ciel mural cyan violet pastel, tuyaux nacrés et plaques de rang en relief; aucune modification du parcours."}
+  ],
+  "monetization": {
+    "robux_shop_enabled": false,
+    "disable_sku_if_id_is_null": true,
+    "test_mode_no_real_purchases": true,
+    "prices_are_proposed_base_prices": true,
+    "use_runtime_platform_price_in_ui": true,
+    "paid_coins_can_accelerate_adventure_equipment": true,
+    "paid_coins_grant_permits": false,
+    "paid_revive_enabled": false,
+    "random_paid_rewards_enabled": false,
+    "fake_discounts_enabled": false,
+    "subscription_enabled": false,
+    "interstitial_purchase_prompt_on_ko": false
+  },
+  "coin_packs": [
+    {"sku_id": "coins_800", "robux_base_price": 99, "coins": 800, "product_id": null},
+    {"sku_id": "coins_2400", "robux_base_price": 249, "coins": 2400, "product_id": null},
+    {"sku_id": "coins_5500", "robux_base_price": 499, "coins": 5500, "product_id": null}
+  ],
+  "premium_cosmetics": [
+    {"sku_id": "premium_peinture_signature", "name": "Peinture signature", "robux_base_price": 49, "gamepass_id": null, "slot": "tool_skin", "grants": ["premium_skin_cerise"], "visual": "Habillage cerise et crème pour l'outil équipé; statistiques inchangées."},
+    {"sku_id": "premium_ensemble_assorti", "name": "Ensemble assorti", "robux_base_price": 149, "gamepass_id": null, "slot": "bundle", "grants": ["premium_skin_sorbet", "premium_trace_sorbet", "premium_reception_sorbet"], "visual": "Palette sorbet pêche menthe, trace courte et anneau de réception assortis; contenu fixe."},
+    {"sku_id": "premium_bob_miniature", "name": "BOB miniature", "robux_base_price": 199, "gamepass_id": null, "slot": "companion", "grants": ["premium_compagnon_bob_emaille"], "visual": "BOB miniature en émail cyan et jaune, purement décoratif, sans bonus de Coins."},
+    {"sku_id": "premium_machine_personnelle", "name": "Machine personnelle", "robux_base_price": 299, "gamepass_id": null, "slot": "workshop_skin", "grants": ["premium_atelier_machine_caramel"], "visual": "Machine caramel rose et cuivre peint dans le sas, animation de renaissance personnalisée sans effet économique."},
+    {"sku_id": "premium_grand_ensemble", "name": "Grand ensemble fête", "robux_base_price": 399, "gamepass_id": null, "slot": "bundle", "grants": ["premium_skin_festival", "premium_trace_festival", "premium_reception_festival", "premium_victoire_festival", "premium_compagnon_bob_festival"], "visual": "Cinq éléments fixes cyan, rose et citron; aperçus individuels avant achat, aucune récompense aléatoire."}
+  ],
+  "simulation": {
+    "purpose": "pacing_reference_not_a_room_deadline_or_a_prediction",
+    "catalog_stage": "V1",
+    "intro_seconds": 30,
+    "assumptions": ["no_ko", "no_rebirth", "no_optional_tokens", "no_discovery_or_contract_bonus", "no_paid_coins", "no_upgrade_purchase", "tools_bought_in_catalog_order", "band_simulation_seconds_are_mean_hypotheses", "in_progress_room_milestone_payouts_excluded"],
+    "checkpoints": [
+      {"elapsed_seconds": 30, "completed_rooms": 0, "coins_earned": 65, "permits_earned": 0, "tools_owned": 1, "coins_spent": 50, "coin_balance": 15},
+      {"elapsed_seconds": 300, "completed_rooms": 4, "coins_earned": 665, "permits_earned": 4, "tools_owned": 3, "coins_spent": 500, "coin_balance": 165},
+      {"elapsed_seconds": 1200, "completed_rooms": 12, "coins_earned": 2715, "permits_earned": 22, "tools_owned": 5, "coins_spent": 2250, "coin_balance": 465},
+      {"elapsed_seconds": 3600, "completed_rooms": 27, "coins_earned": 8665, "permits_earned": 74, "tools_owned": 7, "coins_spent": 6650, "coin_balance": 2015},
+      {"elapsed_seconds": 18000, "completed_rooms": 90, "coins_earned": 39515, "permits_earned": 326, "tools_owned": 12, "coins_spent": 39250, "coin_balance": 265}
+    ],
+    "full_catalog_base_cost": 39250,
+    "full_catalog_all_ranks_total_cost": 98450
+  }
+}

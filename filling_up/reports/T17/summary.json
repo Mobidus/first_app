@@ -1,0 +1,35 @@
+{
+  "task": "T17",
+  "title": "Étendre à six familles et profondeur extensible",
+  "status": "blocked",
+  "date_utc": "2026-11-02T10:17:13.891156+00:00",
+  "criteria": [
+    {
+      "criterion": "Taille et sortie varient de façon compatible",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Giant Bin pas une finale",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Paramètres physiques bornés",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Aucun dernier niveau",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Assets supplémentaires validés (chaîne T01-T03)",
+      "status": "NOT_RUN"
+    },
+    {
+      "criterion": "rooms-full dans Studio",
+      "status": "NOT_RUN"
+    }
+  ],
+  "blocked_reason": "Critères non vérifiés : Assets supplémentaires validés (chaîne T01-T03); rooms-full dans Studio",
+  "note": null,
+  "checks_dir": "reports/checks"
+}

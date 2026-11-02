@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "suite": "expedition",
+  "passed": 21,
+  "failed": 0,
+  "seconds": 0.0434502899997824,
+  "executed": [
+    "expedition > ExpeditionStateMachine > starts Preparing at depth 1 and becomes Active on RoomReady",
+    "expedition > ExpeditionStateMachine > double exit increments depth exactly once",
+    "expedition > ExpeditionStateMachine > stale exit (other room / depth) is rejected",
+    "expedition > ExpeditionStateMachine > resumed run cannot re-commit an already committed depth",
+    "expedition > ExpeditionStateMachine > rejects KO causes based on time or global fill",
+    "expedition > ExpeditionStateMachine > KO during transition (sas) is impossible",
+    "expedition > ExpeditionStateMachine > KO is terminal: nothing can follow it",
+    "expedition > ExpeditionStateMachine > transition -> next room resets the room reward mask and wave index",
+    "expedition > ExpeditionStateMachine > suspend and resume returns to Preparing with resumed flag",
+    "expedition > ExpeditionStateMachine > extraction is only possible in the sas",
+    "expedition > ExpeditionStateMachine > wave index is monotonic",
+    "expedition > ExpeditionStateMachine > no expedition depth cap: 10 000 transitions keep incrementing",
+    "expedition > ExpeditionStateMachine > source of the machine contains no timer or fill-percentage KO path",
+    "expedition > IntentValidation > accepts a well-formed coin purchase intent without any price field",
+    "expedition > IntentValidation > rejects extra arguments such as a client price or amount",
+    "expedition > IntentValidation > rejects unknown intents (no 'AddCoins' or 'RoomCompleted')",
+    "expedition > IntentValidation > bounds ids: type, length and charset",
+    "expedition > IntentValidation > rebirth intent needs integer quantity, revision, server token and request id",
+    "expedition > IntentValidation > tool use requires a known tool id",
+    "expedition > IntentValidation > equip validates slot names and item ids",
+    "expedition > IntentValidation > rate limiter caps bursts and refills over time"
+  ],
+  "failures": [],
+  "not_run": [],
+  "scope": "Pure Luau logic under Lune (no Roblox engine services).",
+  "date_utc": "2026-11-02T10:12:00.606444+00:00",
+  "versions": {
+    "python": "3.13.18",
+    "rojo": "Rojo 7.5.1",
+    "lune": "lune 0.10.1",
+    "stylua": "stylua 2.1.0",
+    "selene": "selene 0.28.0"
+  }
+}

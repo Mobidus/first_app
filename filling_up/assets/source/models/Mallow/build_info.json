@@ -1,0 +1,51 @@
+{
+  "asset_id": "toy_plush_mallow",
+  "blend": "assets/source/models/Mallow/Mallow.blend",
+  "exports": [
+    "assets/import/models/toy_plush_mallow.glb",
+    "assets/import/models/toy_plush_mallow_lod1.glb",
+    "assets/import/models/toy_plush_mallow.fbx"
+  ],
+  "highres_tris": 291512,
+  "lod0_tris": 3000,
+  "lod1_tris": 520,
+  "bones": [
+    "Root",
+    "Belly_00",
+    "Belly_10",
+    "Belly_20",
+    "Belly_01",
+    "Belly_11",
+    "Belly_21",
+    "Belly_02",
+    "Belly_12",
+    "Belly_22",
+    "Head",
+    "Arm_L",
+    "Arm_R",
+    "Leg_L",
+    "Leg_R"
+  ],
+  "weights": {
+    "Mallow_LOD0": {
+      "vertices": 1502,
+      "max_influences": 4,
+      "weight_sum_max_error": 2.220446049250313e-16,
+      "unweighted_vertices": 0
+    },
+    "Mallow_LOD1": {
+      "vertices": 262,
+      "max_influences": 4,
+      "weight_sum_max_error": 2.220446049250313e-16,
+      "unweighted_vertices": 0
+    }
+  },
+  "materials_per_mesh": 1,
+  "textures": [
+    "toy_plush_mallow_albedo_1024.png",
+    "toy_plush_mallow_albedo_256.png"
+  ],
+  "voxel_size_studs": 0.05,
+  "seed": 7,
+  "blender_version": "5.2.3 LTS"
+}

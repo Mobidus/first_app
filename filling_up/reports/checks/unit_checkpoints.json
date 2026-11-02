@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "suite": "checkpoints",
+  "passed": 5,
+  "failed": 0,
+  "seconds": 0.03644908099977329,
+  "executed": [
+    "checkpoints > Checkpoint & resume > resume uses the same seed, depth and config version with the reward mask preserved",
+    "checkpoints > Checkpoint & resume > disconnect mid-room cannot duplicate already claimed milestones",
+    "checkpoints > Checkpoint & resume > session conflict: a second server cannot take the same profile",
+    "checkpoints > Checkpoint & resume > incompatible config version: run closed, goods kept, no record fabricated",
+    "checkpoints > Checkpoint & resume > save failure is never announced as saved"
+  ],
+  "failures": [],
+  "not_run": [],
+  "scope": "Pure Luau logic under Lune (no Roblox engine services).",
+  "date_utc": "2026-11-02T10:14:34.370093+00:00",
+  "versions": {
+    "python": "3.13.18",
+    "rojo": "Rojo 7.5.1",
+    "lune": "lune 0.10.1",
+    "stylua": "stylua 2.1.0",
+    "selene": "selene 0.28.0"
+  }
+}

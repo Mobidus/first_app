@@ -1,0 +1,227 @@
+{
+  "combos": {
+    "bureau/M/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/M/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/M/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/M/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/M/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/M/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/S/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/S/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/S/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/S/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/S/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/S/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/V/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/V/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/V/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/V/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "bureau/V/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "bureau/V/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/M/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/M/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/M/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/M/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/M/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/M/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/S/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/S/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/S/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/S/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/S/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/S/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/V/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/V/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/V/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/V/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "reception/V/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "reception/V/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/M/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/M/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/M/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/M/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/M/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/M/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/S/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/S/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/S/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/S/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/S/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/S/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/V/door": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/V/door",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/V/roof": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/V/roof",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    },
+    "toy/V/window": {
+      "certified": true,
+      "fallback": 0,
+      "key": "toy/V/window",
+      "primary_ok": 120,
+      "tested": 120,
+      "unbuildable": 0
+    }
+  },
+  "failing_seeds": {},
+  "fallback": 0,
+  "primary_ok": 3240,
+  "profile": "mvp",
+  "seeds_per_combo": 120,
+  "total": 3240,
+  "unbuildable": 0
+}

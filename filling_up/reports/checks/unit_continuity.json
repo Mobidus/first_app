@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "suite": "continuity",
+  "passed": 4,
+  "failed": 0,
+  "seconds": 0.032199992000187194,
+  "executed": [
+    "continuity > RoomResidency & owner-scoped cleanup > 1000 transitions: <= 3 resident modules, one simulating room, previous released",
+    "continuity > RoomResidency & owner-scoped cleanup > next room not ready => commit refused, player stays in the safe sas (no KO path)",
+    "continuity > RoomResidency & owner-scoped cleanup > two fixed cells are recycled: coordinates never drift away",
+    "continuity > RoomResidency & owner-scoped cleanup > room maids clean every connection: global live count returns to baseline"
+  ],
+  "failures": [],
+  "not_run": [],
+  "scope": "Pure Luau logic under Lune (no Roblox engine services).",
+  "date_utc": "2026-11-02T10:14:35.306830+00:00",
+  "versions": {
+    "python": "3.13.18",
+    "rojo": "Rojo 7.5.1",
+    "lune": "lune 0.10.1",
+    "stylua": "stylua 2.1.0",
+    "selene": "selene 0.28.0"
+  }
+}

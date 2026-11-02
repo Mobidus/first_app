@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Douze outils</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito:wght@400;600;800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#203055}a:hover{color:#8855FF}
+</style>
+</helmet>
+<div style="width: 1800px; height: 1300px; box-sizing: border-box; padding: 30px 40px; background: #FFF5DF; color: #203055; font-family: Nunito, system-ui, sans-serif; display: flex; flex-direction: column; gap: 14px">
+  <div style="display: flex; justify-content: space-between; align-items: baseline">
+    <span style="font-family: Fredoka, sans-serif; font-weight: 700; font-size: 36px">Douze outils — 1 actif + 1 passif + 1 compagnon cosmétique</span>
+    <span style="font-size: 14px; font-weight: 700">Prix Coins et rangs : config/economy.json · rang II/III = coût additionnel · charges gratuites à chaque salle</span>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; flex-grow: 1; font-size: 12.5px; line-height: 1.35">
+
+    <div style="background: #FFFFFF; border: 3px solid #203055; border-radius: 16px; padding: 10px; display: flex; flex-direction: column; gap: 6px">
+      <div style="display: flex; justify-content: space-between"><b style="font-size: 16px">Radar POP</b><span style="font-weight: 800">50 Coins</span></div>
+      <span>radar_pop · Actif · tutoriel terminé · MVP</span>
+      <div style="display: flex; gap: 10px; align-items: center">
+        <img src="/_blob/60e4883e0390ff54c514bb172bf706e7" alt="Radar POP, vue trois-quarts" width="96" height="96" style="transform: perspective(300px) rotateY(-28deg) rotateX(8deg)">
+        <img src="/_blob/60e4883e0390ff54c514bb172bf706e7" alt="Silhouette du Radar POP" width="64" height="64" style="filter: brightness(0)">
+        <div style="width: 72px; height: 72px; border-radius: 16px; border: 4px solid #39E68B; background: #203055; display: flex; flex-direction: column; align-items: center; justify-content: center"><img src="/_blob/60e4883e0390ff54c514bb172bf706e7" alt="Radar POP équipé" width="48" height="48"><span style="color: #39E68B; font-size: 10px; font-weight: 800">ÉQUIPÉ</span></div>
+      </div>
+      <span>Portée 20 / 24 / 28 · durée 2 / 2,5 / 3 s · recharge 20 / 18 / 16 s · 4 charges · 3 cibles max</span>
+      <span style="font-weight: 800">Rang II : +100 · Rang III : +200</span>
+    </div>
+
+    <div style="background: #FFFFFF; border: 3px solid #203055; border-radius: 16px; padding: 10px; display: flex; flex-direction: column; gap: 6px">
+      <div style="display: flex; justify-content: space-between"><b style="font-size: 16px">Aimant de poche</b><span style="font-weight: 800">150 Coins</span></div>
+      <span>aimant_poche · Passif · 1 salle terminée · MVP</span>
+      <div style="display: flex; gap: 10px; align-items: center">
+        <img src="/_blob/afb9f9137b42a2c88774c36fd6fe1ac7" alt="Aimant de poche, vue trois-quarts" width="96" height="96" style="transform: perspective(300px) rotateY(-28deg) rotateX(8deg)">
+        <img src="/_blob/afb9f9137b42a2c88774c36fd6fe1ac7" alt="Silhouette de l'Aimant de poche" width="64" height="64" style="filter: brightness(0)">
+        <div style="width: 72px; height: 72px; border-radius: 16px; border: 4px solid #39E68B; background: #203055; display: flex; flex-direction: column; align-items: center; justify-content: center"><img src="/_blob/afb9f9137b42a2c88774c36fd6fe1ac7" alt="Aimant équipé" width="48" height="48"><span style="color: #39E68B; font-size: 10px; font-weight: 800">PASSIF</span></div>
+      </div>
+      <span>Rayon 5 / 6 / 7 · attire les 6 jetons existants (5 Coins) · max 30 Coins facultatifs par salle</span>
+      <span style="font-weight: 800">Rang II : +100 · Rang III : +200</span>
+    </div>
+
+    <div style="background: #FFFFFF; border: 3px solid #203055; border-radius: 16px; padding: 10px; display: flex; flex-direction: column; gap: 6px">
+      <div style="display: flex; justify-content: space-between"><b style="font-size: 16px">Ventouse de chantier</b><span style="font-weight: 800">300 Coins</span></div>
+      <span>ventouse_chantier · Actif · 3 salles terminées · MVP</span>
+      <div style="display: flex; gap: 10px; align-items: center">
+        <img src="/_blob/24f800614e9a0cb12ea9be4dd86d7684" alt="Ventouse, vue trois-quarts" width="96" height="96" style="transform: perspective(300px) rotateY(-28deg) rotateX(8deg)">
+        <img src="/_blob/24f800614e9a0cb12ea9be4dd86d7684" alt="Silhouette de la Ventouse" width="64" height="64" style="filter: brightness(0)">
+        <div style="width: 72px; height: 72px; border-radius: 16px; border: 4px solid #39E68B; background: #203055; display: flex; flex-direction: column; align-items: center; justify-content: center"><img src="/_blob/24f800614e9a0cb12ea9be4dd86d7684" alt="Ventouse équipée" width="48" height="48"><span style="color: #39E68B; font-size: 10px; font-weight: 800">ÉQUIPÉ</span></div>
+      </div>
+      <span>Portée 12 / 14 / 16 · durée 1,5 / 2 / 2,5 s · recharge 25 / 23 / 21 s · 4 charges · 1 cible (taille ≤ 2)</span>
+      <span style="font-weight: 800">Rang II : +150 · Rang III : +300</span>
+    </div>
+
+    <div style="background: #FFFFFF; border: 3px solid #203055; border-radius: 16px; padding: 10px; display: flex; flex-direction: column; gap: 6px">
+      <div style="display: flex; justify-content: space-between"><b style="font-size: 16px">Parapluie bonbon</b><span style="font-weight: 800">650 Coins</span></div>
+      <span>parapluie_bonbon · Actif · 5 salles terminées · MVP</span>
+      <div style="display: flex; gap: 10px; align-items: center">
+        <img src="/_blob/74c04784c099156995c5a45b9389e707" alt="Parapluie, vue trois-quarts" width="96" height="96" style="transform: perspective(300px) rotateY(-28deg) rotateX(8deg)">
+        <img src="/_blob/74c04784c099156995c5a45b9389e707" alt="Silhouette du Parapluie" width="64" height="64" style="filter: brightness(0)">
+        <div style="width: 72px; height: 72px; border-radius: 16px; border: 4px solid #39E68B; background: #203055; display: flex; flex-direction: column; align-items: center; justify-content: center"><img src="/_blob/74c04784c099156995c5a45b9389e707" alt="Parapluie équipé" width="48" height="48"><span style="color: #39E68B; font-size: 10px; font-weight: 800">ÉQUIPÉ</span></div>
+      </div>
+      <span>Durée 1,5 / 1,8 / 2,1 s · recharge 20 / 18 / 16 s · 4 charges · descente ×0,60 / ×0,55 / ×0,50 · jamais de poussée vers le haut</span>
+      <span style="font-weight: 800">Rang II : +350 · Rang III : +650</span>
+    </div>
+
+    <div style="background: #FFFFFF; border: 3px solid #203055; border-radius: 16px; padding: 10px; display: flex; flex-direction: column; gap: 6px">
+      <div style="display: flex; justify-content: space-between"><b style="font-size: 16px">Coussin gonflable</b><span style="font-weight: 800">1 100 Coins</span></div>
+      <span>coussin_gonflable · Actif · 8 salles terminées · V1</span>
+      <div style="display: flex; gap: 10px; align-items: center">
+        <img src="/_blob/ad75995f53a720ba796cc1288c38e5d0" alt="Coussin, vue trois-quarts" width="96" height="96" style="transform: perspective(300px) rotateY(-28deg) rotateX(8deg)">
+        <img src="/_blob/ad75995f53a720ba796cc1288c38e5d0" alt="Silhouette du Coussin" width="64" height="64" style="filter: brightness(0)">
+        <div style="width: 72px; height: 72px; border-radius: 16px; border: 4px solid #39E68B; background: #203055; display: flex; flex-direction: column; align-items: center; justify-content: center"><img src="/_blob/ad75995f53a720ba796cc1288c38e5d0" alt="Coussin équipé" width="48" height="48"><span style="color: #39E68B; font-size: 10px; font-weight: 800">ÉQUIPÉ</span></div>
+      </div>
+      <span>Portée sous soi 12 / 14 / 16 · durée 3 / 3,5 / 4 s · recharge 25 / 23 / 21 s · 2 charges · largeur 6 / 6,5 / 7</span>
+      <span style="font-weight: 800">Rang II : +550 · Rang III : +1 100</span>
+    </div>
+
+    <div style="background: #FFFFFF; border: 3px solid #203055; border-radius: 16px; padding: 10px; display: flex; flex-direction: column; gap: 6px">
+      <div style="display: flex; justify-content: space-between"><b style="font-size: 16px">Balise de retour</b><span style="font-weight: 800">1 800 Coins</span></div>
+      <span>balise_retour · Actif · 10 salles terminées · V1</span>
+      <div style="display: flex; gap: 10px; align-items: center">
+        <img src="/_blob/c418ebc3fd535f7c5f2d50315b42ac13" alt="Balise, vue trois-quarts" width="96" height="96" style="transform: perspective(300px) rotateY(-28deg) rotateX(8deg)">
+        <img src="/_blob/c418ebc3fd535f7c5f2d50315b42ac13" alt="Silhouette de la Balise" width="64" height="64" style="filter: brightness(0)">
+        <div style="width: 72px; height: 72px; border-radius: 16px; border: 4px solid #39E68B; background: #203055; display: flex; flex-direction: column; align-items: center; justify-content: center"><img src="/_blob/c418ebc3fd535f7c5f2d50315b42ac13" alt="Balise équipée" width="48" height="48"><span style="color: #39E68B; font-size: 10px; font-weight: 800">ÉQUIPÉ</span></div>
+      </div>
+      <span>Portée 18 / 22 / 26 · préparation 0,6 / 0,5 / 0,4 s · 1 utilisation effective par salle · refus sans consommation si recouverte</span>
+      <span style="font-weight: 800">Rang II : +900 · Rang III : +1 800</span>
+    </div>
+
+    <div style="background: #FFFFFF; border: 3px solid #203055; border-radius: 16px; padding: 10px; display: flex; flex-direction: column; gap: 6px">
+      <div style="display: flex; justify-content: space-between"><b style="font-size: 16px">Pogo POP</b><span style="font-weight: 800">2 600 Coins</span></div>
+      <span>pogo_pop · Actif · 12 salles terminées · V1</span>
+      <div style="display: flex; gap: 10px; align-items: center">
+        <img src="/_blob/9f94a498fb7c1c6946c65c5581d8d1bf" alt="Pogo, vue trois-quarts" width="96" height="96" style="transform: perspective(300px) rotateY(-28deg) rotateX(8deg)">
+        <img src="/_blob/9f94a498fb7c1c6946c65c5581d8d1bf" alt="Silhouette du Pogo" width="64" height="64" style="filter: brightness(0)">
+        <div style="width: 72px; height: 72px; border-radius: 16px; border: 4px solid #39E68B; background: #203055; display: flex; flex-direction: column; align-items: center; justify-content: center"><img src="/_blob/9f94a498fb7c1c6946c65c5581d8d1bf" alt="Pogo équipé" width="48" height="48"><span style="color: #39E68B; font-size: 10px; font-weight: 800">ÉQUIPÉ</span></div>
+      </div>
+      <span>Préparation 0,4 s · recharge 25 / 23 / 21 s · 3 charges · hauteur ×1,20 / ×1,25 / ×1,30 · horizontal ×0,90 · pas de double saut</span>
+      <span style="font-weight: 800">Rang II : +1 300 · Rang III : +2 600</span>
+    </div>
+
+    <div style="background: #FFFFFF; border: 3px solid #203055; border-radius: 16px; padding: 10px; display: flex; flex-direction: column; gap: 6px">
+      <div style="display: flex; justify-content: space-between"><b style="font-size: 16px">Bottes adhésives</b><span style="font-weight: 800">3 600 Coins</span></div>
+      <span>bottes_adhesives · Actif · 14 salles terminées · V1</span>
+      <div style="display: flex; gap: 10px; align-items: center">
+        <img src="/_blob/42ce55beb062be372d1af6c83f616b31" alt="Bottes, vue trois-quarts" width="96" height="96" style="transform: perspective(300px) rotateY(-28deg) rotateX(8deg)">
+        <img src="/_blob/42ce55beb062be372d1af6c83f616b31" alt="Silhouette des Bottes" width="64" height="64" style="filter: brightness(0)">
+        <div style="width: 72px; height: 72px; border-radius: 16px; border: 4px solid #39E68B; background: #203055; display: flex; flex-direction: column; align-items: center; justify-content: center"><img src="/_blob/42ce55beb062be372d1af6c83f616b31" alt="Bottes équipées" width="48" height="48"><span style="color: #39E68B; font-size: 10px; font-weight: 800">ÉQUIPÉ</span></div>
+      </div>
+      <span>Durée 3 / 3,5 / 4 s · recharge 24 / 22 / 20 s · 4 charges · dérive −40 / −50 / −60 % · marche ×0,85</span>
+      <span style="font-weight: 800">Rang II : +1 800 · Rang III : +3 600</span>
+    </div>
+
+    <div style="background: #FFFFFF; border: 3px solid #203055; border-radius: 16px; padding: 10px; display: flex; flex-direction: column; gap: 6px">
+      <div style="display: flex; justify-content: space-between"><b style="font-size: 16px">Mini-pont pliant</b><span style="font-weight: 800">4 800 Coins</span></div>
+      <span>mini_pont · Actif · 16 salles terminées · V1</span>
+      <div style="display: flex; gap: 10px; align-items: center">
+        <img src="/_blob/11315e1f083eec9009969b4ff84c19a0" alt="Mini-pont, vue trois-quarts" width="96" height="96" style="transform: perspective(300px) rotateY(-28deg) rotateX(8deg)">
+        <img src="/_blob/11315e1f083eec9009969b4ff84c19a0" alt="Silhouette du Mini-pont" width="64" height="64" style="filter: brightness(0)">
+        <div style="width: 72px; height: 72px; border-radius: 16px; border: 4px solid #39E68B; background: #203055; display: flex; flex-direction: column; align-items: center; justify-content: center"><img src="/_blob/11315e1f083eec9009969b4ff84c19a0" alt="Mini-pont équipé" width="48" height="48"><span style="color: #39E68B; font-size: 10px; font-weight: 800">ÉQUIPÉ</span></div>
+      </div>
+      <span>Portée 8 / 9 / 10 · durée 4 / 5 / 6 s · recharge 30 / 28 / 26 s · 2 charges · franchissement 4 / 5 / 6 studs</span>
+      <span style="font-weight: 800">Rang II : +2 400 · Rang III : +4 800</span>
+    </div>
+
+    <div style="background: #FFFFFF; border: 3px solid #203055; border-radius: 16px; padding: 10px; display: flex; flex-direction: column; gap: 6px">
+      <div style="display: flex; justify-content: space-between"><b style="font-size: 16px">Gant à air</b><span style="font-weight: 800">6 200 Coins</span></div>
+      <span>gant_air · Actif · 18 salles terminées · V1</span>
+      <div style="display: flex; gap: 10px; align-items: center">
+        <img src="/_blob/e377ea24527885f5c2bccb9f076a3d55" alt="Gant à air, vue trois-quarts" width="96" height="96" style="transform: perspective(300px) rotateY(-28deg) rotateX(8deg)">
+        <img src="/_blob/e377ea24527885f5c2bccb9f076a3d55" alt="Silhouette du Gant à air" width="64" height="64" style="filter: brightness(0)">
+        <div style="width: 72px; height: 72px; border-radius: 16px; border: 4px solid #39E68B; background: #203055; display: flex; flex-direction: column; align-items: center; justify-content: center"><img src="/_blob/e377ea24527885f5c2bccb9f076a3d55" alt="Gant équipé" width="48" height="48"><span style="color: #39E68B; font-size: 10px; font-weight: 800">ÉQUIPÉ</span></div>
+      </div>
+      <span>Portée 10 / 12 / 14 · impulsion 0,25 s · recharge 22 / 20 / 18 s · 4 charges · déplacement max 4 / 5 / 6 studs</span>
+      <span style="font-weight: 800">Rang II : +3 100 · Rang III : +6 200</span>
+    </div>
+
+    <div style="background: #FFFFFF; border: 3px solid #203055; border-radius: 16px; padding: 10px; display: flex; flex-direction: column; gap: 6px">
+      <div style="display: flex; justify-content: space-between"><b style="font-size: 16px">Drone éclaireur</b><span style="font-weight: 800">8 000 Coins</span></div>
+      <span>drone_eclaireur · Actif · 20 salles terminées · V1</span>
+      <div style="display: flex; gap: 10px; align-items: center">
+        <img src="/_blob/bd35f082cb1e961349d40afffd1a7b4d" alt="Drone, vue trois-quarts" width="96" height="96" style="transform: perspective(300px) rotateY(-28deg) rotateX(8deg)">
+        <img src="/_blob/bd35f082cb1e961349d40afffd1a7b4d" alt="Silhouette du Drone" width="64" height="64" style="filter: brightness(0)">
+        <div style="width: 72px; height: 72px; border-radius: 16px; border: 4px solid #39E68B; background: #203055; display: flex; flex-direction: column; align-items: center; justify-content: center"><img src="/_blob/bd35f082cb1e961349d40afffd1a7b4d" alt="Drone équipé" width="48" height="48"><span style="color: #39E68B; font-size: 10px; font-weight: 800">ÉQUIPÉ</span></div>
+      </div>
+      <span>Portée 20 / 24 / 28 · durée 3 / 3,5 / 4 s · recharge 25 / 23 / 21 s · 4 charges · anticipation 1,5 / 2 / 2,5 s · outil actif, pas un compagnon</span>
+      <span style="font-weight: 800">Rang II : +4 000 · Rang III : +8 000</span>
+    </div>
+
+    <div style="background: #FFFFFF; border: 3px solid #203055; border-radius: 16px; padding: 10px; display: flex; flex-direction: column; gap: 6px">
+      <div style="display: flex; justify-content: space-between"><b style="font-size: 16px">Grappin balancier</b><span style="font-weight: 800">10 000 Coins</span></div>
+      <span>grappin_balancier · Actif · 22 salles terminées · V1</span>
+      <div style="display: flex; gap: 10px; align-items: center">
+        <img src="/_blob/4f9f26cc03fb822f107bbce356d6b97d" alt="Grappin, vue trois-quarts" width="96" height="96" style="transform: perspective(300px) rotateY(-28deg) rotateX(8deg)">
+        <img src="/_blob/4f9f26cc03fb822f107bbce356d6b97d" alt="Silhouette du Grappin" width="64" height="64" style="filter: brightness(0)">
+        <div style="width: 72px; height: 72px; border-radius: 16px; border: 4px solid #39E68B; background: #203055; display: flex; flex-direction: column; align-items: center; justify-content: center"><img src="/_blob/4f9f26cc03fb822f107bbce356d6b97d" alt="Grappin équipé" width="48" height="48"><span style="color: #39E68B; font-size: 10px; font-weight: 800">ÉQUIPÉ</span></div>
+      </div>
+      <span>Portée 10 / 12 / 14 · durée 1,5 / 1,8 / 2 s · recharge 30 / 28 / 26 s · 3 charges · gain vertical 4 / 5 / 6 · ancrages dédiés</span>
+      <span style="font-weight: 800">Rang II : +5 000 · Rang III : +10 000</span>
+    </div>
+  </div>
+  <div style="font-size: 13px; font-weight: 700">Catalogue de base 39 250 Coins · tous rangs 98 450 Coins · aucune statistique ne croît avec les renaissances · MVP : 4 premiers outils seulement achetables</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1800,"height":1300}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

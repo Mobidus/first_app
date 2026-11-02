@@ -1,0 +1,236 @@
+{
+  "task": "T03",
+  "generated_at_utc": "2026-11-02T09:48:59.141416+00:00",
+  "rule": "Statut proposé au plus 'modeled' ; jamais imported/validated sans import Roblox réel. roblox_asset_id reste null.",
+  "apply_by": "agent principal (le fork T03 ne modifie pas assets/manifest.json)",
+  "updates": [
+    {
+      "id": "toy_plush_mallow",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/Mallow/Mallow.blend",
+      "source_path_manifest_current": "assets/source/models/toy_plush_mallow.blend",
+      "source_path_change_proposed": true,
+      "export_path": "assets/import/models/toy_plush_mallow.glb",
+      "additional_exports": [
+        "assets/import/models/toy_plush_mallow.fbx",
+        "assets/import/models/toy_plush_mallow_lod1.glb"
+      ],
+      "supporting_files": [
+        "assets/source/models/Mallow/collision.json",
+        "assets/source/models/Mallow/pose_library.json",
+        "assets/source/models/Mallow/build_info.json",
+        "assets/source/models/Mallow/textures/toy_plush_mallow_albedo_1024.png",
+        "assets/source/models/Mallow/textures/toy_plush_mallow_albedo_256.png"
+      ],
+      "generator_script": "assets/source/blender/build_plush.py",
+      "validation_evidence": [
+        "reports/asset_import.json#assets.toy_plush_mallow",
+        "reports/T03/verify_log.txt",
+        "reports/T03/renders/toy_plush_mallow_sheet.png"
+      ],
+      "measured": {
+        "bbox_studs_width_depth_height": [
+          11.838,
+          9.81,
+          4.905
+        ],
+        "triangles_lod0": 3000,
+        "triangles_lod1": 520,
+        "bones": 15,
+        "secondary_bones": 5,
+        "blender_checks_failed": []
+      },
+      "not_validated_because": [
+        "Import Roblox Studio bloqué (aucun Studio/Open Cloud)",
+        "Test d'identification 8/10 non réalisé",
+        "Bord de 1 stud de l'empreinte hors tolérance 0,25 (voir décision 0004)",
+        "Planches Claude Design T01 non encore rapprochées"
+      ]
+    },
+    {
+      "id": "toy_plush_loppy",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/Loppy/Loppy.blend",
+      "source_path_manifest_current": "assets/source/models/toy_plush_loppy.blend",
+      "source_path_change_proposed": true,
+      "export_path": "assets/import/models/toy_plush_loppy.glb",
+      "additional_exports": [
+        "assets/import/models/toy_plush_loppy.fbx",
+        "assets/import/models/toy_plush_loppy_lod1.glb"
+      ],
+      "supporting_files": [
+        "assets/source/models/Loppy/collision.json",
+        "assets/source/models/Loppy/pose_library.json",
+        "assets/source/models/Loppy/build_info.json",
+        "assets/source/models/Loppy/textures/toy_plush_loppy_albedo_1024.png",
+        "assets/source/models/Loppy/textures/toy_plush_loppy_albedo_256.png"
+      ],
+      "generator_script": "assets/source/blender/build_plush.py",
+      "validation_evidence": [
+        "reports/asset_import.json#assets.toy_plush_loppy",
+        "reports/T03/verify_log.txt",
+        "reports/T03/renders/toy_plush_loppy_sheet.png"
+      ],
+      "measured": {
+        "bbox_studs_width_depth_height": [
+          10.026,
+          7.998,
+          6.993
+        ],
+        "triangles_lod0": 3000,
+        "triangles_lod1": 520,
+        "bones": 15,
+        "secondary_bones": 5,
+        "blender_checks_failed": []
+      },
+      "not_validated_because": [
+        "Import Roblox Studio bloqué (aucun Studio/Open Cloud)",
+        "Test d'identification 8/10 non réalisé",
+        "Bord de 1 stud de l'empreinte hors tolérance 0,25 (voir décision 0004)",
+        "Planches Claude Design T01 non encore rapprochées"
+      ]
+    },
+    {
+      "id": "toy_plush_octo",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/Octo/Octo.blend",
+      "source_path_manifest_current": "assets/source/models/toy_plush_octo.blend",
+      "source_path_change_proposed": true,
+      "export_path": "assets/import/models/toy_plush_octo.glb",
+      "additional_exports": [
+        "assets/import/models/toy_plush_octo.fbx",
+        "assets/import/models/toy_plush_octo_lod1.glb"
+      ],
+      "supporting_files": [
+        "assets/source/models/Octo/collision.json",
+        "assets/source/models/Octo/pose_library.json",
+        "assets/source/models/Octo/build_info.json",
+        "assets/source/models/Octo/textures/toy_plush_octo_albedo_1024.png",
+        "assets/source/models/Octo/textures/toy_plush_octo_albedo_256.png"
+      ],
+      "generator_script": "assets/source/blender/build_plush.py",
+      "validation_evidence": [
+        "reports/asset_import.json#assets.toy_plush_octo",
+        "reports/T03/verify_log.txt",
+        "reports/T03/renders/toy_plush_octo_sheet.png"
+      ],
+      "measured": {
+        "bbox_studs_width_depth_height": [
+          11.995,
+          12.017,
+          4.819
+        ],
+        "triangles_lod0": 3000,
+        "triangles_lod1": 520,
+        "bones": 14,
+        "secondary_bones": 4,
+        "blender_checks_failed": []
+      },
+      "not_validated_because": [
+        "Import Roblox Studio bloqué (aucun Studio/Open Cloud)",
+        "Test d'identification 8/10 non réalisé",
+        "Bord de 1 stud de l'empreinte hors tolérance 0,25 (voir décision 0004)",
+        "Planches Claude Design T01 non encore rapprochées"
+      ]
+    },
+    {
+      "id": "reception_carton",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/generators/reception_carton.luau",
+      "export_path": "assets/import/models/reception_carton.rbxm",
+      "export_exists": false,
+      "note": "Générateur paramétrique pur (Luau) ; l'instanciation en Parts et l'export .rbxm se font dans le jeu/Studio (non réalisés).",
+      "validation_evidence": [
+        "reports/T03/generators_check.txt"
+      ]
+    },
+    {
+      "id": "reception_foam_crate",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/generators/reception_foam_crate.luau",
+      "export_path": "assets/import/models/reception_foam_crate.rbxm",
+      "export_exists": false,
+      "note": "Générateur paramétrique pur (Luau) ; l'instanciation en Parts et l'export .rbxm se font dans le jeu/Studio (non réalisés).",
+      "validation_evidence": [
+        "reports/T03/generators_check.txt"
+      ]
+    },
+    {
+      "id": "reception_pallet",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/generators/reception_pallet.luau",
+      "export_path": "assets/import/models/reception_pallet.rbxm",
+      "export_exists": false,
+      "note": "Générateur paramétrique pur (Luau) ; l'instanciation en Parts et l'export .rbxm se font dans le jeu/Studio (non réalisés).",
+      "validation_evidence": [
+        "reports/T03/generators_check.txt"
+      ]
+    },
+    {
+      "id": "reception_suitcase",
+      "status": "planned",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/reception_suitcase.blend",
+      "export_path": "assets/import/models/reception_suitcase.glb",
+      "interim_source": "assets/source/generators/reception_suitcase.luau",
+      "requires_decision": "Le manifeste prévoit un mesh Blender ; un générateur en primitives jouable existe. Soit passer production_method à roblox_parametric_primitives (statut modeled), soit garder le mesh Blender à produire.",
+      "validation_evidence": [
+        "reports/T03/generators_check.txt"
+      ]
+    },
+    {
+      "id": "exit_door",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/generators/exit_door.luau",
+      "export_path": "assets/import/models/exit_door.rbxm",
+      "export_exists": false,
+      "note": "Collision en périmètre uniquement, centre ouvert ; volume ExitClearance tiré de config/rooms.json exit_types.approach_clearance_studs (8x8x10) ; balise menthe + chevron.",
+      "validation_evidence": [
+        "reports/T03/generators_check.txt"
+      ]
+    },
+    {
+      "id": "exit_window",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/generators/exit_window.luau",
+      "export_path": "assets/import/models/exit_window.rbxm",
+      "export_exists": false,
+      "note": "Collision en périmètre uniquement, centre ouvert ; volume ExitClearance tiré de config/rooms.json exit_types.approach_clearance_studs (8x8x10) ; balise menthe + chevron.",
+      "validation_evidence": [
+        "reports/T03/generators_check.txt"
+      ]
+    },
+    {
+      "id": "exit_roof",
+      "status": "modeled",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/generators/exit_roof.luau",
+      "export_path": "assets/import/models/exit_roof.rbxm",
+      "export_exists": false,
+      "note": "Collision en périmètre uniquement, centre ouvert ; volume ExitClearance tiré de config/rooms.json exit_types.approach_clearance_studs (8x8x10) ; balise menthe + chevron.",
+      "validation_evidence": [
+        "reports/T03/generators_check.txt"
+      ]
+    },
+    {
+      "id": "machine_reception_stamp",
+      "status": "planned",
+      "roblox_asset_id": null,
+      "source_path": "assets/source/models/machine_reception_stamp.blend",
+      "export_path": "assets/import/models/machine_reception_stamp.glb",
+      "interim_proxy": "assets/source/generators/machine_reception_stamp.luau",
+      "note": "Proxy en primitives clairement marqué isPrototypeProxy ; ne clôt pas la livraison artistique (mesh Blender 3 000 à 8 000 triangles à produire).",
+      "validation_evidence": [
+        "reports/T03/generators_check.txt"
+      ]
+    }
+  ]
+}

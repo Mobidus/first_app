@@ -1,0 +1,79 @@
+{
+  "generated_at_utc": "2026-11-02T08:10:48.032126+00:00",
+  "bundle_validation": {
+    "status": "PASS",
+    "scope": "Specification bundle, not implemented gameplay",
+    "tools": 12,
+    "cosmetics": 24,
+    "room_families": 6,
+    "room_props": 48,
+    "exit_types": 6,
+    "planned_assets": 181,
+    "tasks": 24,
+    "roblox_tests_executed": false
+  },
+  "economy_simulation": {
+    "status": "PASS",
+    "scope": "Specification arithmetic only; not Roblox runtime or retention",
+    "simulations": [
+      {
+        "elapsed_seconds": 30,
+        "completed_rooms": 0,
+        "coins_earned": 65,
+        "permits_earned": 0,
+        "tools_owned": 1,
+        "coins_spent": 50,
+        "coin_balance": 15
+      },
+      {
+        "elapsed_seconds": 300,
+        "completed_rooms": 4,
+        "coins_earned": 665,
+        "permits_earned": 4,
+        "tools_owned": 3,
+        "coins_spent": 500,
+        "coin_balance": 165
+      },
+      {
+        "elapsed_seconds": 1200,
+        "completed_rooms": 12,
+        "coins_earned": 2715,
+        "permits_earned": 22,
+        "tools_owned": 5,
+        "coins_spent": 2250,
+        "coin_balance": 465
+      },
+      {
+        "elapsed_seconds": 3600,
+        "completed_rooms": 27,
+        "coins_earned": 8665,
+        "permits_earned": 74,
+        "tools_owned": 7,
+        "coins_spent": 6650,
+        "coin_balance": 2015
+      },
+      {
+        "elapsed_seconds": 18000,
+        "completed_rooms": 90,
+        "coins_earned": 39515,
+        "permits_earned": 326,
+        "tools_owned": 12,
+        "coins_spent": 39250,
+        "coin_balance": 265
+      }
+    ],
+    "catalog_base_coins": 39250,
+    "catalog_all_ranks_coins": 98450,
+    "batch_rebirth_example": {
+      "initial_permits": 326,
+      "ranks": 4,
+      "remaining_permits": 76
+    },
+    "rounding_cases_checked": 80,
+    "game_tests_executed": false
+  },
+  "gameplay_tests": "NOT_RUN",
+  "studio_tests": "NOT_RUN",
+  "asset_generation": "NOT_STARTED",
+  "five_hour_runtime_test": "NOT_RUN"
+}

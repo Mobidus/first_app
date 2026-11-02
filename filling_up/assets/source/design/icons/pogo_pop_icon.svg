@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>pogo_pop_icon — Pogo POP</title>
+  <g stroke="#203055" stroke-width="14" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="110" y="60" width="292" height="60" rx="30" fill="#FF4CB8"/>
+    <rect x="186" y="110" width="140" height="150" rx="34" fill="#16D9FF"/>
+    <path d="M196 270 L316 300 L196 330 L316 360 L196 390 L316 420" fill="none" stroke="#FFE14D" stroke-width="30"/>
+    <path d="M196 270 L316 300 L196 330 L316 360 L196 390 L316 420" fill="none" stroke-width="8"/>
+    <rect x="166" y="420" width="180" height="40" rx="20" fill="#16D9FF"/>
+  </g>
+</svg>

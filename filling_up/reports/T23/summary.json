@@ -1,0 +1,31 @@
+{
+  "task": "T23",
+  "title": "Préparer la livraison et demander l’autorisation de publication",
+  "status": "blocked",
+  "date_utc": "2026-11-02T10:17:13.891156+00:00",
+  "criteria": [
+    {
+      "criterion": "Toutes les tâches requises disposent de preuves",
+      "status": "FAIL"
+    },
+    {
+      "criterion": "Assets et produits réels autorisés vérifiés",
+      "status": "NOT_RUN"
+    },
+    {
+      "criterion": "Retour arrière documenté",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Problèmes connus visibles",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Coopération et classement exclus du MVP",
+      "status": "PASS"
+    }
+  ],
+  "blocked_reason": "Critères non vérifiés : Toutes les tâches requises disposent de preuves; Assets et produits réels autorisés vérifiés",
+  "note": "Livraison préparée (build, rapports, rollback, known_issues). Publication NON demandée : les preuves Studio, mobile et 5 h manquent. Toute publication exige une autorisation explicite.",
+  "checks_dir": "reports/checks"
+}

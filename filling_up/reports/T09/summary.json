@@ -1,0 +1,31 @@
+{
+  "task": "T09",
+  "title": "Détecter les KO physiques sans faux positifs",
+  "status": "blocked",
+  "date_utc": "2026-11-02T10:17:13.891156+00:00",
+  "criteria": [
+    {
+      "criterion": "Détection 10 Hz et confirmation 1,2 s (logique)",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Vrai ensevelissement détecté (logique)",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Table ouverte, plafond décoratif, objet transitoire ne tuent pas (logique)",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Aucun raycast unique ni pourcentage global (logique)",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Scènes de référence dans Roblox",
+      "status": "NOT_RUN"
+    }
+  ],
+  "blocked_reason": "Critères non vérifiés : Scènes de référence dans Roblox",
+  "note": null,
+  "checks_dir": "reports/checks"
+}

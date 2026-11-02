@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "suite": "receipts",
+  "passed": 6,
+  "failed": 0,
+  "seconds": 0.034716941000169754,
+  "executed": [
+    "receipts > PurchaseService receipts > delivery shipped with every product/gamepass id null and the shop disabled",
+    "receipts > PurchaseService receipts > unknown product (null id never matches) is not granted",
+    "receipts > PurchaseService receipts > grants once per PurchaseId after a durable write; double receipt is idempotent",
+    "receipts > PurchaseService receipts > save unavailable => NotProcessedYet, nothing granted; the retry grants exactly once",
+    "receipts > PurchaseService receipts > deferred receipt for an offline player stays unprocessed (retried later)",
+    "receipts > PurchaseService receipts > purchased coins and entitlements survive a rebirth"
+  ],
+  "failures": [],
+  "not_run": [],
+  "scope": "Pure Luau logic under Lune (no Roblox engine services).",
+  "date_utc": "2026-11-02T10:14:34.528849+00:00",
+  "versions": {
+    "python": "3.13.18",
+    "rojo": "Rojo 7.5.1",
+    "lune": "lune 0.10.1",
+    "stylua": "stylua 2.1.0",
+    "selene": "selene 0.28.0"
+  }
+}

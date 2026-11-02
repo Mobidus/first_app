@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "suite": "routes",
+  "passed": 12,
+  "failed": 0,
+  "seconds": 0.034267624000221986,
+  "executed": [
+    "routes > JumpModel (analytic, provisional until T06) > flat reach ~8.67 studs, decreasing with rise, zero above jump height",
+    "routes > JumpModel (analytic, provisional until T06) > required rise is capped below the physical jump height",
+    "routes > JumpModel (analytic, provisional until T06) > height max and distance max separately allowed can be impossible together",
+    "routes > RouteValidator > first room is valid: exit reachable without tool",
+    "routes > RouteValidator > exit clearance is exactly 8 x 8 x 10 studs",
+    "routes > RouteValidator > detects a solid dropped into the exit clearance",
+    "routes > RouteValidator > detects a wave mouth above the exit clearance or the last support",
+    "routes > RouteValidator > detects a too-long gap instead of accepting it",
+    "routes > RouteValidator > detects a beam intercepting a jump arc",
+    "routes > RouteValidator > detects an unprotected last support",
+    "routes > RouteValidator > tutorial cell: floor -> carton (4) -> exit at 8 studs is valid",
+    "routes > RouteValidator > landing smaller than 7 studs on the required route is rejected"
+  ],
+  "failures": [],
+  "not_run": [],
+  "scope": "Pure Luau logic under Lune (no Roblox engine services).",
+  "date_utc": "2026-11-02T10:12:00.781176+00:00",
+  "versions": {
+    "python": "3.13.18",
+    "rojo": "Rojo 7.5.1",
+    "lune": "lune 0.10.1",
+    "stylua": "stylua 2.1.0",
+    "selene": "selene 0.28.0"
+  }
+}

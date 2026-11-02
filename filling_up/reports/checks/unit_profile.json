@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "suite": "profile",
+  "passed": 19,
+  "failed": 0,
+  "seconds": 0.08376173700025902,
+  "executed": [
+    "profile > ProfileMutations > new profile validates and has schema version from config",
+    "profile > ProfileMutations > every successful mutation increments revision; failures never mutate input",
+    "profile > ProfileMutations > tutorial rewards are once per account",
+    "profile > ProfileMutations > milestones are granted once and the checkpoint mask follows atomically",
+    "profile > ProfileMutations > KO does not touch coins, permits or inventory (no KO mutation exists)",
+    "profile > ProfileMutations > rejects non-finite or out-of-bounds numbers",
+    "profile > ProfileMutations > rejects unknown item identifiers",
+    "profile > ProfileMutations > migrates v1 profiles without losing coins or tools",
+    "profile > ProfileMutations > refuses to downgrade a profile from a newer schema",
+    "profile > ProfileMutations > receipt grants are idempotent and the ledger is bounded",
+    "profile > ProfileMutations > room completion persists family qualification",
+    "profile > PlayerProfileRepository (MemoryStore) > loads a new profile and takes the session lock",
+    "profile > PlayerProfileRepository (MemoryStore) > a second server cannot own a locked profile",
+    "profile > PlayerProfileRepository (MemoryStore) > stale lock (crashed server) can be taken over after timeout",
+    "profile > PlayerProfileRepository (MemoryStore) > purchase debit and ownership are committed together after a durable write",
+    "profile > PlayerProfileRepository (MemoryStore) > failed save is reported as failure and leaves the committed profile untouched",
+    "profile > PlayerProfileRepository (MemoryStore) > store outage blocks new mutations (nothing committed in memory)",
+    "profile > PlayerProfileRepository (MemoryStore) > reload after release returns the persisted profile (coins kept after KO/reconnect)",
+    "profile > PlayerProfileRepository (MemoryStore) > serializes many queued mutations without lost updates"
+  ],
+  "failures": [],
+  "not_run": [],
+  "scope": "Pure Luau logic under Lune (no Roblox engine services).",
+  "date_utc": "2026-11-02T10:12:00.988132+00:00",
+  "versions": {
+    "python": "3.13.18",
+    "rojo": "Rojo 7.5.1",
+    "lune": "lune 0.10.1",
+    "stylua": "stylua 2.1.0",
+    "selene": "selene 0.28.0"
+  }
+}

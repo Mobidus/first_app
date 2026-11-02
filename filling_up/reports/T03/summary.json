@@ -1,0 +1,35 @@
+{
+  "task": "T03",
+  "title": "Construire les modèles et collisions du lot initial",
+  "status": "blocked",
+  "date_utc": "2026-11-02T10:17:13.891156+00:00",
+  "criteria": [
+    {
+      "criterion": "Pivots gabarits matériaux et noms validés (Blender, réimport)",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Mallow : racine non déformante, 9 contrôles de ventre, ≤ 6 secondaires",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Rig et poids de skin conservés à l'import Roblox",
+      "status": "NOT_RUN"
+    },
+    {
+      "criterion": "Colliders serveur séparés du mesh visuel",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Points de réception visibles",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Import autorisé et identifiants réels enregistrés",
+      "status": "NOT_RUN"
+    }
+  ],
+  "blocked_reason": "Critères non vérifiés : Rig et poids de skin conservés à l'import Roblox; Import autorisé et identifiants réels enregistrés",
+  "note": "Mallow, Loppy et Octo modelés, riggés, exportés en GLB/FBX et revérifiés après réimport (Blender 5.2.3). Générateurs paramétriques des objets simples. Import Studio impossible : roblox_asset_id = null.",
+  "checks_dir": "reports/checks"
+}

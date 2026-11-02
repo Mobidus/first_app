@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "suite": "economy",
+  "passed": 20,
+  "failed": 0,
+  "seconds": 0.03122613999994428,
+  "executed": [
+    "economy > Economy catalog > prices come from the canonical JSON",
+    "economy > Economy catalog > radar is buyable after tutorial with 65 coins and leaves 15",
+    "economy > Economy catalog > insufficient balance is refused and nothing changes",
+    "economy > Economy catalog > double purchase is refused: owned stays owned",
+    "economy > Economy catalog > room qualification gates tools without any rebirth requirement",
+    "economy > Economy catalog > V1 tools are visible but not purchasable in this build",
+    "economy > Economy catalog > upgrades need the previous rank and cost the configured additional price",
+    "economy > Economy catalog > full catalog totals match the economy reference (39 250 / 98 450)",
+    "economy > Economy catalog > cosmetics: tool skin requires the tool, owned shows Possédé state",
+    "economy > Economy catalog > equip: one active, one passive; slot compatibility enforced",
+    "economy > Economy catalog > amounts stay integers: no fractional price can appear",
+    "economy > Rewards > each band pays exactly its base total without bonus",
+    "economy > Rewards > cumulative half-up rounding: displayed total equals credited total for all ranks",
+    "economy > Rewards > bonus caps at 4000 bp (40%) after rank 10",
+    "economy > Rewards > reaching a higher zone pays skipped lower milestones once, in order",
+    "economy > Rewards > exit grants permits and XP exactly once",
+    "economy > Rewards > reward identity is derived from runId, depth and milestone",
+    "economy > Rewards > optional tokens: 6 x 5 coins max, never twice, never multiplied",
+    "economy > Rewards > XP formulas: level cost and exit XP",
+    "economy > Rewards > tutorial rewards come from config and total 65"
+  ],
+  "failures": [],
+  "not_run": [],
+  "scope": "Pure Luau logic under Lune (no Roblox engine services).",
+  "date_utc": "2026-11-02T10:12:01.307193+00:00",
+  "versions": {
+    "python": "3.13.18",
+    "rojo": "Rojo 7.5.1",
+    "lune": "lune 0.10.1",
+    "stylua": "stylua 2.1.0",
+    "selene": "selene 0.28.0"
+  }
+}

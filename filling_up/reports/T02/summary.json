@@ -1,0 +1,31 @@
+{
+  "task": "T02",
+  "title": "Exporter et réconcilier le manifeste artistique",
+  "status": "done",
+  "date_utc": "2026-11-02T10:17:13.891156+00:00",
+  "criteria": [
+    {
+      "criterion": "Chaque export du lot activé possède un identifiant stable et un chemin existant",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Entrées futures planned admises hors lot activé",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Référence image et modèle 3D distingués",
+      "status": "PASS"
+    },
+    {
+      "criterion": "assetId Roblox reste null avant import réel",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Formats exportés réellement ouverts et contrôlés",
+      "status": "PASS"
+    }
+  ],
+  "blocked_reason": null,
+  "note": "Critères T02 vérifiés pour le lot activé (manifeste fusionné : 34 designed, 9 modeled). Réalisée sur les livrables existants de T01 ; à refaire si la revue humaine de T01 modifie une planche.",
+  "checks_dir": "reports/checks"
+}

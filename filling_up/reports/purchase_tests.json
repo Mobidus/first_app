@@ -1,0 +1,18 @@
+{
+  "date_utc": "2026-11-02T10:16:34.232481+00:00",
+  "status": "BLOCKED",
+  "reason": "No real product/gamepass ids, robux_shop_enabled=false, no authorised test experience. A mock validates logic only.",
+  "logic": {
+    "suite": "receipts",
+    "status": "PASS",
+    "checks": [
+      "receipts > PurchaseService receipts > delivery shipped with every product/gamepass id null and the shop disabled",
+      "receipts > PurchaseService receipts > unknown product (null id never matches) is not granted",
+      "receipts > PurchaseService receipts > grants once per PurchaseId after a durable write; double receipt is idempotent",
+      "receipts > PurchaseService receipts > save unavailable => NotProcessedYet, nothing granted; the retry grants exactly once",
+      "receipts > PurchaseService receipts > deferred receipt for an offline player stays unprocessed (retried later)",
+      "receipts > PurchaseService receipts > purchased coins and entitlements survive a rebirth"
+    ]
+  },
+  "real_purchases": "NOT_RUN"
+}

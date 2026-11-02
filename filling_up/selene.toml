@@ -1,0 +1,5 @@
+std = "roblox_min"
+
+[lints]
+shadowing = "allow"
+mixed_table = "allow"

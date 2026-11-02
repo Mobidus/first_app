@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>bottes_adhesives_icon — Bottes adhésives</title>
+  <g stroke="#203055" stroke-width="14" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M150 60 H300 V280 Q420 290 440 360 V390 H80 V300 Q80 270 150 260 Z" fill="#FFF5DF"/>
+    <path d="M300 60 H360 V200 H300 Z" fill="#FFE14D"/>
+    <rect x="70" y="384" width="384" height="64" rx="26" fill="#39E68B"/>
+  </g>
+  <g fill="#203055">
+    <circle cx="130" cy="470" r="14"/><circle cx="200" cy="470" r="14"/><circle cx="270" cy="470" r="14"/><circle cx="340" cy="470" r="14"/><circle cx="410" cy="470" r="14"/>
+  </g>
+</svg>

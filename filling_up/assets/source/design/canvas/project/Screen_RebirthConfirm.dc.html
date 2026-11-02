@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Renaissance — confirmation</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito:wght@400;600;800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#203055}a:hover{color:#8855FF}
+</style>
+</helmet>
+<div style="width: 1280px; height: 720px; position: relative; background: #EEE7FF; font-family: Nunito, system-ui, sans-serif; color: #203055">
+  <div style="position: absolute; left: 240px; top: 50px; width: 800px; background: #FFFFFF; border: 5px solid #203055; border-radius: 32px; padding: 28px 36px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px">
+    <div style="font-family: Fredoka, sans-serif; font-weight: 700; font-size: 38px">Confirmer la renaissance ?</div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px">
+      <div style="background: #FFF5DF; border-radius: 16px; padding: 12px; text-align: center"><div style="font-size: 13px; font-weight: 800">PERMIS DÉPENSÉS</div><div style="font-family: Fredoka, sans-serif; font-weight: 700; font-size: 32px">250</div></div>
+      <div style="background: #FFF5DF; border-radius: 16px; padding: 12px; text-align: center"><div style="font-size: 13px; font-weight: 800">RANGS GAGNÉS</div><div style="font-family: Fredoka, sans-serif; font-weight: 700; font-size: 32px">0 → 4</div></div>
+      <div style="background: #FFF5DF; border-radius: 16px; padding: 12px; text-align: center"><div style="font-size: 13px; font-weight: 800">NOUVEAU BONUS</div><div style="font-family: Fredoka, sans-serif; font-weight: 700; font-size: 32px">+16 %</div><div style="font-size: 12px">jalons et sorties</div></div>
+      <div style="background: #FFF5DF; border-radius: 16px; padding: 12px; text-align: center"><div style="font-size: 13px; font-weight: 800">PERMIS RESTANTS</div><div style="font-family: Fredoka, sans-serif; font-weight: 700; font-size: 32px">76</div></div>
+    </div>
+    <div style="background: #203055; color: #FFF5DF; border-radius: 16px; padding: 14px 18px; font-family: Fredoka, sans-serif; font-weight: 600; font-size: 24px">Tu repars à la salle 1 · You restart at room 1</div>
+    <div>
+      <div style="font-weight: 800; font-size: 16px; margin-bottom: 6px">Tu conserves · You keep</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 15px">
+        <span style="background: #E5FBEF; border: 2px solid #203055; border-radius: 20px; padding: 6px 14px">✓ Coins</span>
+        <span style="background: #E5FBEF; border: 2px solid #203055; border-radius: 20px; padding: 6px 14px">✓ Outils</span>
+        <span style="background: #E5FBEF; border: 2px solid #203055; border-radius: 20px; padding: 6px 14px">✓ Améliorations</span>
+        <span style="background: #E5FBEF; border: 2px solid #203055; border-radius: 20px; padding: 6px 14px">✓ Cosmétiques</span>
+        <span style="background: #E5FBEF; border: 2px solid #203055; border-radius: 20px; padding: 6px 14px">✓ Achats</span>
+        <span style="background: #E5FBEF; border: 2px solid #203055; border-radius: 20px; padding: 6px 14px">✓ XP et collections</span>
+        <span style="background: #E5FBEF; border: 2px solid #203055; border-radius: 20px; padding: 6px 14px">✓ 76 permis restants</span>
+      </div>
+    </div>
+    <div style="font-size: 14px">Aucun bonus de saut, vitesse ou résistance. Une seule transaction ; un double clic ne consomme rien deux fois.</div>
+    <div style="display: flex; gap: 14px">
+      <button type="button" style="flex: 1; height: 68px; border-radius: 20px; background: #FFE14D; border: 4px solid #203055; font-family: Fredoka, sans-serif; font-weight: 700; font-size: 22px; color: #203055">Confirmer la renaissance</button>
+      <button type="button" style="flex: 1; height: 68px; border-radius: 20px; background: #FFFFFF; border: 4px solid #203055; font-family: Fredoka, sans-serif; font-weight: 700; font-size: 22px; color: #203055">Annuler · Cancel</button>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":720}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "suite": "generation-full",
+  "passed": 6,
+  "failed": 0,
+  "seconds": 132.60573979899982,
+  "executed": [
+    "generation-full > Generation certification (V1 profile) > all V1 family/format/exit combinations build for every tested seed",
+    "generation-full > Generation certification (V1 profile) > physical parameters are bounded at any depth (1 .. 1e6)",
+    "generation-full > Generation certification (V1 profile) > deep rooms never require a hop beyond the measured envelope",
+    "generation-full > Generation certification (V1 profile) > Giant Bin recurs and is never flagged final; no last depth exists",
+    "generation-full > Generation certification (V1 profile) > size and exit vary compatibly (every family offers every V1 exit and format)",
+    "generation-full > Generation certification (V1 profile) > low exits (tailgate / floor_hatch) require reaching the high lever first"
+  ],
+  "failures": [],
+  "not_run": [],
+  "scope": "Pure Luau logic under Lune (no Roblox engine services).",
+  "date_utc": "2026-11-02T10:14:34.184532+00:00",
+  "versions": {
+    "python": "3.13.18",
+    "rojo": "Rojo 7.5.1",
+    "lune": "lune 0.10.1",
+    "stylua": "stylua 2.1.0",
+    "selene": "selene 0.28.0"
+  }
+}

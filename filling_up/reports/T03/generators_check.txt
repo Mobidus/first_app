@@ -1,0 +1,3 @@
+# .toolchain/bin/lune run assets/source/generators/_check_generators.luau — 2026-11-02T09:53:12Z
+lune 0.10.1
+generators check: 338 PASS, 0 FAIL

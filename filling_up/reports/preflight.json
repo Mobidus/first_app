@@ -1,0 +1,108 @@
+{
+  "generated_at_utc": "2026-11-02T10:11:49.487301+00:00",
+  "system": {
+    "os": "Linux-6.18.44-fc-v185-x86_64-with-glibc2.39",
+    "python": "3.13.18",
+    "machine": "x86_64",
+    "cpu_count": 4,
+    "container": "Claude Code cloud session (ephemeral Linux container)"
+  },
+  "executables": {
+    "rojo": {
+      "present": true,
+      "path": "/home/user/first_app/filling_up/.toolchain/bin/rojo",
+      "version": "Rojo 7.5.1"
+    },
+    "lune": {
+      "present": true,
+      "path": "/home/user/first_app/filling_up/.toolchain/bin/lune",
+      "version": "lune 0.10.1"
+    },
+    "luau": {
+      "present": false,
+      "path": null,
+      "version": null
+    },
+    "luau-analyze": {
+      "present": false,
+      "path": null,
+      "version": null
+    },
+    "selene": {
+      "present": true,
+      "path": "/home/user/first_app/filling_up/.toolchain/bin/selene",
+      "version": "selene 0.28.0"
+    },
+    "stylua": {
+      "present": true,
+      "path": "/home/user/first_app/filling_up/.toolchain/bin/stylua",
+      "version": "stylua 2.1.0"
+    },
+    "git": {
+      "present": true,
+      "path": "/usr/bin/git",
+      "version": "git version 2.43.0"
+    },
+    "cargo": {
+      "present": true,
+      "path": "/root/.cargo/bin/cargo",
+      "version": "cargo 1.97.0 (c980f4866 2026-06-30)"
+    },
+    "node": {
+      "present": true,
+      "path": "/opt/node22/bin/node",
+      "version": "v22.23.4"
+    },
+    "blender_cli": {
+      "present": false,
+      "path": null,
+      "version": null
+    }
+  },
+  "blender_python_module": {
+    "present": true,
+    "path": "/home/user/first_app/filling_up/.venv/bin/python",
+    "module": "bpy (PyPI wheel, headless Blender)",
+    "version": "5.2.3 LTS",
+    "error": null
+  },
+  "roblox_studio": {
+    "present": false,
+    "reason": "Linux cloud container: Roblox Studio is Windows/macOS only and not installed; no Studio MCP/bridge detected.",
+    "consequence": "All tests/studio suites and engine physics, mobile, purchase and real 5h soak criteria are NOT_RUN/blocked."
+  },
+  "roblox_open_cloud": {
+    "present": false,
+    "reason": "No API key or authorised account provided; none searched for (AGENTS.md)."
+  },
+  "roblox_account_rights": {
+    "publish": false,
+    "import_assets": false,
+    "create_products": false,
+    "reason": "No authority granted in this session."
+  },
+  "claude_design": {
+    "present": true,
+    "route": "Artifact type 'Design' (Claude Design now lives in Claude); verified with Artifact quickstart(intent=design).",
+    "design_sync": "DesignSync tool exists but is reserved to design-system syncing (/design-sync); not used to create boards.",
+    "limits": "Exports are HTML/SVG/PNG references, never Roblox meshes."
+  },
+  "network": {
+    "github_release_downloads": "reachable, but executing downloaded prebuilt binaries was refused by the session permission policy",
+    "github_api": "403 (blocked by proxy)",
+    "crates_io": "reachable -> Rust tools compiled from source with cargo install --locked",
+    "pypi": "reachable"
+  },
+  "repository": {
+    "present": true,
+    "path": "/home/user/first_app",
+    "subfolder": "filling_up",
+    "branch_policy": "commit on designated feature branch; no publish, no PR unless asked"
+  },
+  "permissions": {
+    "write_project_dir": true,
+    "install_packages_via_registries": true,
+    "run_downloaded_binaries": false,
+    "spend_robux_or_publish": false
+  }
+}

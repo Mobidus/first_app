@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>mini_pont_icon — Mini-pont pliant</title>
+  <g stroke="#203055" stroke-width="14" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="30" y="300" width="80" height="160" rx="10" fill="#FFF5DF"/>
+    <rect x="402" y="300" width="80" height="160" rx="10" fill="#FFF5DF"/>
+    <path d="M90 300 L170 230 L250 300 L330 230 L422 300" fill="none" stroke="#FFE14D" stroke-width="40"/>
+    <path d="M90 300 L170 230 L250 300 L330 230 L422 300" fill="none"/>
+    <line x1="90" y1="300" x2="422" y2="300" stroke="#39E68B" stroke-width="20"/>
+    <circle cx="170" cy="230" r="22" fill="#16D9FF"/>
+    <circle cx="250" cy="300" r="22" fill="#16D9FF"/>
+    <circle cx="330" cy="230" r="22" fill="#16D9FF"/>
+    <circle cx="90" cy="300" r="22" fill="#16D9FF"/>
+    <circle cx="422" cy="300" r="22" fill="#16D9FF"/>
+  </g>
+</svg>

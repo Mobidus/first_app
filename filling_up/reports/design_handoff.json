@@ -1,0 +1,796 @@
+{
+  "schema_version": 1,
+  "task": "T02",
+  "generated_at_utc": "2026-11-02",
+  "claude_design_canvas": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3",
+  "canvas_visibility": "private (owner only) — partage non effectué",
+  "tooling": {
+    "claude_design": "Artifact type Design (Claude Design dans Claude), type_url https://claude.ai/artifact/QKN21svewxgyPb6SYRqWnd",
+    "design_sync": "non utilisé (réservé à /design-sync design systems)",
+    "rasterizer": "Playwright Chromium local (préinstallé)"
+  },
+  "rules": {
+    "max_status_from_design": "designed",
+    "roblox_asset_id": "null partout",
+    "no_3d_claimed": true
+  },
+  "counts": {
+    "files": 49,
+    "boards": 20,
+    "tool_icons_png": 12,
+    "manifest_updates": 43
+  },
+  "files": [
+    {
+      "path": "assets/source/design/canvas/project/canvas.json",
+      "nature": "source",
+      "logical_assets": [],
+      "format": "json",
+      "sha256": "20834a67fd573dd6181a3764facd97bcae983e90871fab1ef9bfbdcd33fcce13",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3",
+      "note": "Index du canvas Claude Design (20 planches)"
+    },
+    {
+      "path": "assets/source/design/canvas/project/Main.dc.html",
+      "nature": "reference",
+      "logical_assets": [
+        "bob_7"
+      ],
+      "format": "dc.html",
+      "preview_px": [
+        1600,
+        1000
+      ],
+      "sha256": "6c6f76fc05fb324c69651f4f0873706e957202604ef03df7728a377805fd0a40",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (project/Main.dc.html)",
+      "capture": "reports/T01/captures/Main.png",
+      "note": "Direction artistique : tokens, matières, 6 balises, BOB-7 couleur + silhouette, règle de composition, typographie"
+    },
+    {
+      "path": "assets/source/design/canvas/project/Gameplay.dc.html",
+      "nature": "prototype",
+      "logical_assets": [],
+      "format": "dc.html",
+      "preview_px": [
+        1280,
+        720
+      ],
+      "sha256": "62f02293fc50de45354e3685a32d80b5e7cc2674df313de033e33308f8f923e1",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (project/Gameplay.dc.html)",
+      "capture": "reports/T01/captures/Gameplay.png",
+      "note": "Écran gameplay mobile 16:9 avec HUD sans chrono"
+    },
+    {
+      "path": "assets/source/design/canvas/project/Plush_Mallow.dc.html",
+      "nature": "reference",
+      "logical_assets": [
+        "toy_plush_mallow"
+      ],
+      "format": "dc.html",
+      "preview_px": [
+        1600,
+        1100
+      ],
+      "sha256": "277c303472436b6a94844d1cbc7eb6787eeb948d220eff226d3d34a2c9812422",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (project/Plush_Mallow.dc.html)",
+      "capture": "reports/T01/captures/Plush_Mallow.png",
+      "note": "Face, profil, dos, 3/4, dessus + zone 8x8, silhouette + avatar, 4 poses, rig, dimensions, matières"
+    },
+    {
+      "path": "assets/source/design/canvas/project/Plush_Loppy.dc.html",
+      "nature": "reference",
+      "logical_assets": [
+        "toy_plush_loppy"
+      ],
+      "format": "dc.html",
+      "preview_px": [
+        1600,
+        1100
+      ],
+      "sha256": "3ae31eb939a187edeb5e2af06785fcbde9b1365c3327b4cdff23a1494d559cba",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (project/Plush_Loppy.dc.html)",
+      "capture": "reports/T01/captures/Plush_Loppy.png",
+      "note": "Idem Mallow pour Loppy (zone rebond 8x7)"
+    },
+    {
+      "path": "assets/source/design/canvas/project/Plush_Octo.dc.html",
+      "nature": "reference",
+      "logical_assets": [
+        "toy_plush_octo"
+      ],
+      "format": "dc.html",
+      "preview_px": [
+        1600,
+        1100
+      ],
+      "sha256": "ead9040ecd9a4167798f1be9bc2079ce4955231ec38dd419a2ef63317184e185",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (project/Plush_Octo.dc.html)",
+      "capture": "reports/T01/captures/Plush_Octo.png",
+      "note": "Idem Mallow pour Octo"
+    },
+    {
+      "path": "assets/source/design/canvas/project/Room_Reception.dc.html",
+      "nature": "reference",
+      "logical_assets": [
+        "reception_carton",
+        "reception_foam_crate",
+        "reception_suitcase",
+        "reception_pallet",
+        "reception_tape_reel",
+        "reception_pillow_parcel",
+        "reception_mail_cart",
+        "reception_accordion_parcel",
+        "machine_reception_stamp",
+        "exit_door",
+        "exit_window",
+        "exit_roof"
+      ],
+      "format": "dc.html",
+      "preview_px": [
+        1800,
+        1200
+      ],
+      "sha256": "0a3b20686a0f83271450af24d2469f2a03d91dabda3d576671535594a8489abb",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (project/Room_Reception.dc.html)",
+      "capture": "reports/T01/captures/Room_Reception.png",
+      "note": "Perspective avec avatar, dessus M, coupe, 8 objets, machine, porte/fenêtre/toit"
+    },
+    {
+      "path": "assets/source/design/canvas/project/Room_Toys.dc.html",
+      "nature": "reference",
+      "logical_assets": [
+        "toy_plush_mallow",
+        "toy_plush_loppy",
+        "toy_flat_duck",
+        "toy_train",
+        "toy_drum",
+        "toy_domino",
+        "toy_shape_cube",
+        "toy_plush_octo",
+        "machine_toy_spinner",
+        "exit_door",
+        "exit_window",
+        "exit_roof"
+      ],
+      "format": "dc.html",
+      "preview_px": [
+        1800,
+        1200
+      ],
+      "sha256": "eb1e3bca0ee835b438bf3493fb938da7b2e21de51d771d26632c2db09e2983f8",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (project/Room_Toys.dc.html)",
+      "capture": "reports/T01/captures/Room_Toys.png",
+      "note": "Perspective avec avatar, dessus M, coupe, 8 objets, machine, porte/fenêtre/toit"
+    },
+    {
+      "path": "assets/source/design/canvas/project/Room_Office.dc.html",
+      "nature": "reference",
+      "logical_assets": [
+        "bureau_paper_ream",
+        "bureau_binder_stack",
+        "bureau_desk",
+        "bureau_locker",
+        "bureau_keyboard",
+        "bureau_rail_chair",
+        "bureau_spring_phone",
+        "bureau_loose_files",
+        "machine_bureau_copier",
+        "exit_door",
+        "exit_window",
+        "exit_roof"
+      ],
+      "format": "dc.html",
+      "preview_px": [
+        1800,
+        1200
+      ],
+      "sha256": "56432bbe5559dae700a8cdb4ac64e2b9bb54e553a3860fb03a7fe14e86879034",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (project/Room_Office.dc.html)",
+      "capture": "reports/T01/captures/Room_Office.png",
+      "note": "Perspective avec avatar, dessus M, coupe, 8 objets, machine, porte/fenêtre/toit"
+    },
+    {
+      "path": "assets/source/design/canvas/project/Room_V1.dc.html",
+      "nature": "reference_light",
+      "logical_assets": [
+        "machine_kitchen_toaster",
+        "machine_garage_assembler",
+        "machine_bin_tricore"
+      ],
+      "format": "dc.html",
+      "preview_px": [
+        1400,
+        1200
+      ],
+      "sha256": "9406de6d038d29d540145f792eb9645969ee4cd718a498111e39bb95a4a54627",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (project/Room_V1.dc.html)",
+      "capture": "reports/T01/captures/Room_V1.png",
+      "note": "Planche légère V1 : palettes, esquisse machine, listes textuelles des objets (pas de dessins d objets)"
+    },
+    {
+      "path": "assets/source/design/canvas/project/Tools.dc.html",
+      "nature": "reference",
+      "logical_assets": [
+        "radar_pop_icon",
+        "aimant_poche_icon",
+        "ventouse_chantier_icon",
+        "parapluie_bonbon_icon",
+        "coussin_gonflable_icon",
+        "balise_retour_icon",
+        "pogo_pop_icon",
+        "bottes_adhesives_icon",
+        "mini_pont_icon",
+        "gant_air_icon",
+        "drone_eclaireur_icon",
+        "grappin_balancier_icon"
+      ],
+      "format": "dc.html",
+      "preview_px": [
+        1800,
+        1300
+      ],
+      "sha256": "1587d1a11da3609953ad242a5131cb7ee4d210321d602859187a76329e2756ed",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (project/Tools.dc.html)",
+      "capture": "reports/T01/captures/Tools.png",
+      "note": "12 outils : icône, silhouette, pseudo-3/4 (icône inclinée CSS), état équipé, rangs et prix"
+    },
+    {
+      "path": "assets/source/design/canvas/project/Screen_RadarKiosk.dc.html",
+      "nature": "prototype",
+      "logical_assets": [],
+      "format": "dc.html",
+      "preview_px": [
+        1280,
+        720
+      ],
+      "sha256": "02ee1cf2c49292c30a3cc49275e72b8d88b73cec8489991aeeaa096696275b53",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (project/Screen_RadarKiosk.dc.html)",
+      "capture": "reports/T01/captures/Screen_RadarKiosk.png",
+      "note": "Maquette UI de référence (reconstruction en UI Roblox native requise)"
+    },
+    {
+      "path": "assets/source/design/canvas/project/Screen_RadarKiosk_Compact.dc.html",
+      "nature": "prototype",
+      "logical_assets": [],
+      "format": "dc.html",
+      "preview_px": [
+        844,
+        390
+      ],
+      "sha256": "fad2bd78414228852fe85f540f3c14e06726dc4200714c3851415981ecfac094",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (project/Screen_RadarKiosk_Compact.dc.html)",
+      "capture": "reports/T01/captures/Screen_RadarKiosk_Compact.png",
+      "note": "Maquette UI de référence (reconstruction en UI Roblox native requise)"
+    },
+    {
+      "path": "assets/source/design/canvas/project/Screen_Inventory.dc.html",
+      "nature": "prototype",
+      "logical_assets": [],
+      "format": "dc.html",
+      "preview_px": [
+        1280,
+        720
+      ],
+      "sha256": "b633f4501a8e0a8d3f44ff37d449af28464773a6b85dc3b8a1a497519e23fcdd",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (project/Screen_Inventory.dc.html)",
+      "capture": "reports/T01/captures/Screen_Inventory.png",
+      "note": "Maquette UI de référence (reconstruction en UI Roblox native requise)"
+    },
+    {
+      "path": "assets/source/design/canvas/project/Screen_CoinShop.dc.html",
+      "nature": "prototype",
+      "logical_assets": [],
+      "format": "dc.html",
+      "preview_px": [
+        1280,
+        720
+      ],
+      "sha256": "be893a3dc4f26cb209d5879c9ca121db1d743a16e526fb6606ecd987993fda74",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (project/Screen_CoinShop.dc.html)",
+      "capture": "reports/T01/captures/Screen_CoinShop.png",
+      "note": "Maquette UI de référence (reconstruction en UI Roblox native requise)"
+    },
+    {
+      "path": "assets/source/design/canvas/project/Screen_RobuxShop.dc.html",
+      "nature": "prototype",
+      "logical_assets": [],
+      "format": "dc.html",
+      "preview_px": [
+        1280,
+        720
+      ],
+      "sha256": "a813645f4d0304010f8c850d171710ff264b3ea78d027489c9ce7b2eafe2dbdb",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (project/Screen_RobuxShop.dc.html)",
+      "capture": "reports/T01/captures/Screen_RobuxShop.png",
+      "note": "Maquette UI de référence (reconstruction en UI Roblox native requise)"
+    },
+    {
+      "path": "assets/source/design/canvas/project/Screen_KO.dc.html",
+      "nature": "prototype",
+      "logical_assets": [],
+      "format": "dc.html",
+      "preview_px": [
+        1280,
+        720
+      ],
+      "sha256": "bfd1b467813b8d664df3bf3080f6ac4a237fb0c30d0514c35c9e9d0b417268c5",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (project/Screen_KO.dc.html)",
+      "capture": "reports/T01/captures/Screen_KO.png",
+      "note": "Maquette UI de référence (reconstruction en UI Roblox native requise)"
+    },
+    {
+      "path": "assets/source/design/canvas/project/Screen_SaveResume.dc.html",
+      "nature": "prototype",
+      "logical_assets": [],
+      "format": "dc.html",
+      "preview_px": [
+        1280,
+        720
+      ],
+      "sha256": "06621e421a9212b42c1014ab709ddbcf361e56ead2afdad4376c180d15870f3e",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (project/Screen_SaveResume.dc.html)",
+      "capture": "reports/T01/captures/Screen_SaveResume.png",
+      "note": "Maquette UI de référence (reconstruction en UI Roblox native requise)"
+    },
+    {
+      "path": "assets/source/design/canvas/project/Screen_Rebirth.dc.html",
+      "nature": "prototype",
+      "logical_assets": [],
+      "format": "dc.html",
+      "preview_px": [
+        1280,
+        720
+      ],
+      "sha256": "cc52a637c10124080378630a70636d2460808530b92b4b09cb90cb388ec64d2f",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (project/Screen_Rebirth.dc.html)",
+      "capture": "reports/T01/captures/Screen_Rebirth.png",
+      "note": "Maquette UI de référence (reconstruction en UI Roblox native requise)"
+    },
+    {
+      "path": "assets/source/design/canvas/project/Screen_RebirthConfirm.dc.html",
+      "nature": "prototype",
+      "logical_assets": [],
+      "format": "dc.html",
+      "preview_px": [
+        1280,
+        720
+      ],
+      "sha256": "a3dcef05f592a331272cf05b77a8e5c06de95cff443d73ecbfb247aecc415db2",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (project/Screen_RebirthConfirm.dc.html)",
+      "capture": "reports/T01/captures/Screen_RebirthConfirm.png",
+      "note": "Maquette UI de référence (reconstruction en UI Roblox native requise)"
+    },
+    {
+      "path": "assets/source/design/canvas/project/Screen_States.dc.html",
+      "nature": "prototype",
+      "logical_assets": [],
+      "format": "dc.html",
+      "preview_px": [
+        1280,
+        720
+      ],
+      "sha256": "ca7ac1c8659de8d2f8c13c4178bcf29cb3cca552efb16f8a05524481afa3ac44",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (project/Screen_States.dc.html)",
+      "capture": "reports/T01/captures/Screen_States.png",
+      "note": "Maquette UI de référence (reconstruction en UI Roblox native requise)"
+    },
+    {
+      "path": "assets/source/design/icons/aimant_poche_icon.svg",
+      "nature": "source",
+      "logical_assets": [
+        "aimant_poche_icon"
+      ],
+      "format": "svg",
+      "viewBox": "0 0 512 512",
+      "width": "512",
+      "height": "512",
+      "sha256": "03e9e56455e9ba1c7a2e912e8d2667e5e2601f7a7282fbd3de54d66b3898e016",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (asset store, SVG)",
+      "note": "Source vectorielle modifiable"
+    },
+    {
+      "path": "assets/import/ui/icons/aimant_poche_icon.png",
+      "nature": "icon",
+      "logical_assets": [
+        "aimant_poche_icon"
+      ],
+      "format": "png",
+      "pixels": [
+        512,
+        512
+      ],
+      "color_type": 6,
+      "alpha": true,
+      "sha256": "8a6b26373f9f1f3e1a4e66da83e42273a47b9be640ede22441043ac9df0206c7",
+      "published_in": null,
+      "note": "Icône outil 512x512 transparente"
+    },
+    {
+      "path": "assets/source/design/icons/balise_retour_icon.svg",
+      "nature": "source",
+      "logical_assets": [
+        "balise_retour_icon"
+      ],
+      "format": "svg",
+      "viewBox": "0 0 512 512",
+      "width": "512",
+      "height": "512",
+      "sha256": "c948332edeea6c074794b977932a711215e531e6913f8088afac059742c6bc42",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (asset store, SVG)",
+      "note": "Source vectorielle modifiable"
+    },
+    {
+      "path": "assets/import/ui/icons/balise_retour_icon.png",
+      "nature": "icon",
+      "logical_assets": [
+        "balise_retour_icon"
+      ],
+      "format": "png",
+      "pixels": [
+        512,
+        512
+      ],
+      "color_type": 6,
+      "alpha": true,
+      "sha256": "fb7d6c73870570b8f07bb616d706167da231e8197c7ab27f2b7d22e335afb41a",
+      "published_in": null,
+      "note": "Icône outil 512x512 transparente"
+    },
+    {
+      "path": "assets/source/design/icons/bottes_adhesives_icon.svg",
+      "nature": "source",
+      "logical_assets": [
+        "bottes_adhesives_icon"
+      ],
+      "format": "svg",
+      "viewBox": "0 0 512 512",
+      "width": "512",
+      "height": "512",
+      "sha256": "c9bbfe3c8b81779b47ab548a453fc96be4ff3df98abd09e34bffe8e93bcf5422",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (asset store, SVG)",
+      "note": "Source vectorielle modifiable"
+    },
+    {
+      "path": "assets/import/ui/icons/bottes_adhesives_icon.png",
+      "nature": "icon",
+      "logical_assets": [
+        "bottes_adhesives_icon"
+      ],
+      "format": "png",
+      "pixels": [
+        512,
+        512
+      ],
+      "color_type": 6,
+      "alpha": true,
+      "sha256": "4d675afa4e8c72c7420afae7353cbff81269e9249043fd58b8f13b165b47306b",
+      "published_in": null,
+      "note": "Icône outil 512x512 transparente"
+    },
+    {
+      "path": "assets/source/design/icons/coussin_gonflable_icon.svg",
+      "nature": "source",
+      "logical_assets": [
+        "coussin_gonflable_icon"
+      ],
+      "format": "svg",
+      "viewBox": "0 0 512 512",
+      "width": "512",
+      "height": "512",
+      "sha256": "69ac66339a67e37731c4b65828161b0516ec4963bce9b023d2c3d03bc0815d8e",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (asset store, SVG)",
+      "note": "Source vectorielle modifiable"
+    },
+    {
+      "path": "assets/import/ui/icons/coussin_gonflable_icon.png",
+      "nature": "icon",
+      "logical_assets": [
+        "coussin_gonflable_icon"
+      ],
+      "format": "png",
+      "pixels": [
+        512,
+        512
+      ],
+      "color_type": 6,
+      "alpha": true,
+      "sha256": "d0ca5a12c862e3b76c80b86045c3ebba8c1e46f29a10581ac8a28952bbc330d9",
+      "published_in": null,
+      "note": "Icône outil 512x512 transparente"
+    },
+    {
+      "path": "assets/source/design/icons/drone_eclaireur_icon.svg",
+      "nature": "source",
+      "logical_assets": [
+        "drone_eclaireur_icon"
+      ],
+      "format": "svg",
+      "viewBox": "0 0 512 512",
+      "width": "512",
+      "height": "512",
+      "sha256": "614df17d786d5a7c800dc6093768ba397f14f1c317892fb47597b1d79bb3e56c",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (asset store, SVG)",
+      "note": "Source vectorielle modifiable"
+    },
+    {
+      "path": "assets/import/ui/icons/drone_eclaireur_icon.png",
+      "nature": "icon",
+      "logical_assets": [
+        "drone_eclaireur_icon"
+      ],
+      "format": "png",
+      "pixels": [
+        512,
+        512
+      ],
+      "color_type": 6,
+      "alpha": true,
+      "sha256": "fcdb741c9c9fa38bd079ee111d4cd115da5e75f9001e49b39101291129360657",
+      "published_in": null,
+      "note": "Icône outil 512x512 transparente"
+    },
+    {
+      "path": "assets/source/design/icons/gant_air_icon.svg",
+      "nature": "source",
+      "logical_assets": [
+        "gant_air_icon"
+      ],
+      "format": "svg",
+      "viewBox": "0 0 512 512",
+      "width": "512",
+      "height": "512",
+      "sha256": "52d885ff9bf504f08b9c92eb505330979de8724fe5033a4d33c6e595f21805c1",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (asset store, SVG)",
+      "note": "Source vectorielle modifiable"
+    },
+    {
+      "path": "assets/import/ui/icons/gant_air_icon.png",
+      "nature": "icon",
+      "logical_assets": [
+        "gant_air_icon"
+      ],
+      "format": "png",
+      "pixels": [
+        512,
+        512
+      ],
+      "color_type": 6,
+      "alpha": true,
+      "sha256": "4ec58dcd09320b89ad69f5c599ce10a4e232fdb055fef914f59fd72682e16da6",
+      "published_in": null,
+      "note": "Icône outil 512x512 transparente"
+    },
+    {
+      "path": "assets/source/design/icons/grappin_balancier_icon.svg",
+      "nature": "source",
+      "logical_assets": [
+        "grappin_balancier_icon"
+      ],
+      "format": "svg",
+      "viewBox": "0 0 512 512",
+      "width": "512",
+      "height": "512",
+      "sha256": "8b64c284aed08c330f82dd02b8907359313170f7f721fb835663afa27c0f71ca",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (asset store, SVG)",
+      "note": "Source vectorielle modifiable"
+    },
+    {
+      "path": "assets/import/ui/icons/grappin_balancier_icon.png",
+      "nature": "icon",
+      "logical_assets": [
+        "grappin_balancier_icon"
+      ],
+      "format": "png",
+      "pixels": [
+        512,
+        512
+      ],
+      "color_type": 6,
+      "alpha": true,
+      "sha256": "113b7766825c9004eb477abc4024432086fa561c279d4dc9ac82c886f3c6b229",
+      "published_in": null,
+      "note": "Icône outil 512x512 transparente"
+    },
+    {
+      "path": "assets/source/design/icons/mini_pont_icon.svg",
+      "nature": "source",
+      "logical_assets": [
+        "mini_pont_icon"
+      ],
+      "format": "svg",
+      "viewBox": "0 0 512 512",
+      "width": "512",
+      "height": "512",
+      "sha256": "e1fc234ef8de9aa46e594a7e118d95fb9bc0740dea034f58b4af7d098287afad",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (asset store, SVG)",
+      "note": "Source vectorielle modifiable"
+    },
+    {
+      "path": "assets/import/ui/icons/mini_pont_icon.png",
+      "nature": "icon",
+      "logical_assets": [
+        "mini_pont_icon"
+      ],
+      "format": "png",
+      "pixels": [
+        512,
+        512
+      ],
+      "color_type": 6,
+      "alpha": true,
+      "sha256": "4f28675fa5855bfc31af58406d5b928ce58a8f0098a5c3a004ff374125b7b03c",
+      "published_in": null,
+      "note": "Icône outil 512x512 transparente"
+    },
+    {
+      "path": "assets/source/design/icons/parapluie_bonbon_icon.svg",
+      "nature": "source",
+      "logical_assets": [
+        "parapluie_bonbon_icon"
+      ],
+      "format": "svg",
+      "viewBox": "0 0 512 512",
+      "width": "512",
+      "height": "512",
+      "sha256": "98c39042fca70300d464fb6265b91180fe9a3488b70117c7ffa8173261c5a43f",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (asset store, SVG)",
+      "note": "Source vectorielle modifiable"
+    },
+    {
+      "path": "assets/import/ui/icons/parapluie_bonbon_icon.png",
+      "nature": "icon",
+      "logical_assets": [
+        "parapluie_bonbon_icon"
+      ],
+      "format": "png",
+      "pixels": [
+        512,
+        512
+      ],
+      "color_type": 6,
+      "alpha": true,
+      "sha256": "5dc5158d204a3c1130f76dfb4777fb49bc7400841e010eb62641389037fcc9f2",
+      "published_in": null,
+      "note": "Icône outil 512x512 transparente"
+    },
+    {
+      "path": "assets/source/design/icons/pogo_pop_icon.svg",
+      "nature": "source",
+      "logical_assets": [
+        "pogo_pop_icon"
+      ],
+      "format": "svg",
+      "viewBox": "0 0 512 512",
+      "width": "512",
+      "height": "512",
+      "sha256": "588c5a16373a9d48735af019265f9c876dc9c3ae45e6cbc0ea4cb1221b8e9f89",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (asset store, SVG)",
+      "note": "Source vectorielle modifiable"
+    },
+    {
+      "path": "assets/import/ui/icons/pogo_pop_icon.png",
+      "nature": "icon",
+      "logical_assets": [
+        "pogo_pop_icon"
+      ],
+      "format": "png",
+      "pixels": [
+        512,
+        512
+      ],
+      "color_type": 6,
+      "alpha": true,
+      "sha256": "5b933060b934b7690e23973bbb304f5218525db851205b97875bc649b560b724",
+      "published_in": null,
+      "note": "Icône outil 512x512 transparente"
+    },
+    {
+      "path": "assets/source/design/icons/radar_pop_icon.svg",
+      "nature": "source",
+      "logical_assets": [
+        "radar_pop_icon"
+      ],
+      "format": "svg",
+      "viewBox": "0 0 512 512",
+      "width": "512",
+      "height": "512",
+      "sha256": "fde7e2016de042040e49dd62d988ae07677cb5a4329fc08ca53792c12182eb90",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (asset store, SVG)",
+      "note": "Source vectorielle modifiable"
+    },
+    {
+      "path": "assets/import/ui/icons/radar_pop_icon.png",
+      "nature": "icon",
+      "logical_assets": [
+        "radar_pop_icon"
+      ],
+      "format": "png",
+      "pixels": [
+        512,
+        512
+      ],
+      "color_type": 6,
+      "alpha": true,
+      "sha256": "7086536822318d491e2c27614f84dbcb40cc53404de72e1a5bd4e6725c5ab87f",
+      "published_in": null,
+      "note": "Icône outil 512x512 transparente"
+    },
+    {
+      "path": "assets/source/design/icons/ventouse_chantier_icon.svg",
+      "nature": "source",
+      "logical_assets": [
+        "ventouse_chantier_icon"
+      ],
+      "format": "svg",
+      "viewBox": "0 0 512 512",
+      "width": "512",
+      "height": "512",
+      "sha256": "e77d1ef717276fedded31ae1abcf1fb7eaa181278d3a3b97b809f98f688490e7",
+      "published_in": "https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (asset store, SVG)",
+      "note": "Source vectorielle modifiable"
+    },
+    {
+      "path": "assets/import/ui/icons/ventouse_chantier_icon.png",
+      "nature": "icon",
+      "logical_assets": [
+        "ventouse_chantier_icon"
+      ],
+      "format": "png",
+      "pixels": [
+        512,
+        512
+      ],
+      "color_type": 6,
+      "alpha": true,
+      "sha256": "784ad77a1f4cd8bd971f9dcd8122a4010909915a11efff531099ec7d0ffffdd4",
+      "published_in": null,
+      "note": "Icône outil 512x512 transparente"
+    },
+    {
+      "path": "assets/source/design/design_tokens.json",
+      "nature": "source",
+      "logical_assets": [],
+      "format": "json",
+      "sha256": "01026d4764eee5148f451fa1bce73e5c2378a16a272ac6a03a2d0a0661adfcce",
+      "note": "Tokens couleurs, balises, palettes, matières, typo, tactile"
+    },
+    {
+      "path": "assets/source/design/ui_hierarchy.json",
+      "nature": "source",
+      "logical_assets": [],
+      "format": "json",
+      "sha256": "cf72df9a2571ce61fe0af489408d39d05804aa6c473daaccec264a7bdbf9bc15",
+      "note": "Hiérarchie UI, états et chaînes FR/EN pour UI Roblox native"
+    },
+    {
+      "path": "assets/source/design/blob_map.json",
+      "nature": "source",
+      "logical_assets": [],
+      "format": "json",
+      "sha256": "afdaffa5a61b6cc638d6648de194819f9b99e0095f821207be694d6718cd1217",
+      "note": "Correspondance ids des assets du canvas -> SVG locaux"
+    },
+    {
+      "path": "reports/T01/icons_legibility_64_96.png",
+      "nature": "control_capture",
+      "logical_assets": [],
+      "format": "png",
+      "pixels": [
+        869,
+        678
+      ],
+      "color_type": 2,
+      "alpha": false,
+      "sha256": "932a4b7737014e59abd059ec045d5f39056d1ad0ec34bd880ae41a04797dfe40",
+      "note": "Contrôle lisibilité icônes 64/96 px + silhouette"
+    }
+  ],
+  "not_produced": [
+    "Modèles 3D, rigs, FBX/GLB (T03, autre fork)",
+    "Vraies vues 3/4 des outils (inclinaison CSS d icône seulement)",
+    "Planches complètes Cuisine/Garage/Giant Bin (planche légère)",
+    "Icônes séparées ui_* et cosmétiques",
+    "ZIP d export natif Claude Design (les sources du canvas sont conservées en local, export ZIP via le menu Share du canvas non utilisé)",
+    "Test d identification 8/10 testeurs (NOT_RUN)"
+  ]
+}

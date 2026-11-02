@@ -1,0 +1,35 @@
+{
+  "task": "T18",
+  "title": "Sécuriser la sauvegarde et la reprise",
+  "status": "blocked",
+  "date_utc": "2026-11-02T10:17:13.891156+00:00",
+  "criteria": [
+    {
+      "criterion": "Checkpoint durable entre salles (logique)",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Même seed et version",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Jalons non répétés",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Conflit de session traité",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Migration conserve les biens",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Reconnexion réelle (ResumeLab)",
+      "status": "NOT_RUN"
+    }
+  ],
+  "blocked_reason": "Critères non vérifiés : Reconnexion réelle (ResumeLab)",
+  "note": null,
+  "checks_dir": "reports/checks"
+}

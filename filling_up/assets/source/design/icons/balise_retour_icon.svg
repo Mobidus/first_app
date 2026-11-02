@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>balise_retour_icon — Balise de retour</title>
+  <ellipse cx="256" cy="430" rx="190" ry="48" fill="none" stroke="#16D9FF" stroke-width="18"/>
+  <g stroke="#203055" stroke-width="14" stroke-linejoin="round" stroke-linecap="round">
+    <line x1="216" y1="60" x2="216" y2="400" fill="none" stroke-width="18"/>
+    <path d="M222 70 L400 130 L222 196 Z" fill="#39E68B"/>
+    <path d="M140 400 H340 L316 460 H164 Z" fill="#8855FF"/>
+  </g>
+</svg>

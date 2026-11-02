@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "suite": "rebirth",
+  "passed": 10,
+  "failed": 0,
+  "seconds": 0.02387871000019004,
+  "executed": [
+    "rebirth > Rebirth > rank cost formula and table examples from config",
+    "rebirth > Rebirth > 326 permits buy four ranks for 250 and keep 76",
+    "rebirth > Rebirth > exact threshold passes, one permit short fails",
+    "rebirth > Rebirth > first rebirth requires three different families; qualification persists",
+    "rebirth > Rebirth > confirmation recomputes cost, preserves coins, tools, ranks, cosmetics and entitlements",
+    "rebirth > Rebirth > double validation is refused (revision moved on)",
+    "rebirth > Rebirth > modified quantity or forged token requires a new preview",
+    "rebirth > Rebirth > rebirth outside the sas is refused (never automatic)",
+    "rebirth > Rebirth > permits are not purchasable: no coin SKU or Robux pack grants permits",
+    "rebirth > Rebirth > continuing without rebirth has no hidden penalty: rewards ignore eligibility"
+  ],
+  "failures": [],
+  "not_run": [],
+  "scope": "Pure Luau logic under Lune (no Roblox engine services).",
+  "date_utc": "2026-11-02T10:12:01.719883+00:00",
+  "versions": {
+    "python": "3.13.18",
+    "rojo": "Rojo 7.5.1",
+    "lune": "lune 0.10.1",
+    "stylua": "stylua 2.1.0",
+    "selene": "selene 0.28.0"
+  }
+}

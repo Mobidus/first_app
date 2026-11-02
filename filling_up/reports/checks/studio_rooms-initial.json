@@ -1,0 +1,17 @@
+{
+  "status": "BLOCKED",
+  "reason": "Roblox Studio / a Studio test bridge is not available in this environment (Linux container). Run the scene in Studio: see tests/studio/ReceptionRoom/README.md",
+  "executed": [],
+  "failures": [],
+  "not_run": [
+    "tests/studio/ReceptionRoom (scene present)"
+  ],
+  "date_utc": "2026-11-02T10:14:36.545932+00:00",
+  "versions": {
+    "python": "3.13.18",
+    "rojo": "Rojo 7.5.1",
+    "lune": "lune 0.10.1",
+    "stylua": "stylua 2.1.0",
+    "selene": "selene 0.28.0"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "suite": "waves",
+  "passed": 15,
+  "failed": 0,
+  "seconds": 0.13185579500031963,
+  "executed": [
+    "waves > WaveSchedule > waves are continuous in time: there is no last wave",
+    "waves > WaveSchedule > every wave is announced before its impact (warning >= band warning)",
+    "waves > WaveSchedule > cadence uses simulation seconds and the band interval",
+    "waves > WaveSchedule > mouths alternate and drops stay inside mouth footprints (never over exit clearance)",
+    "waves > WaveSchedule > objects per wave follow the band and the structural guest replaces one drop",
+    "waves > WaveSchedule > schedule is deterministic for a seed",
+    "waves > Consolidation > keeps dynamic bodies <= 40 by anchoring settled ones",
+    "waves > Consolidation > never anchors an occupied body (player standing on it)",
+    "waves > Consolidation > unsettled bodies are not frozen; new drops are deferred instead",
+    "waves > Consolidation > static budget: merges only buried, non-occupied, non-route colliders",
+    "waves > Consolidation > when nothing is safely reclaimable, accessible supports are kept and drops deferred",
+    "waves > ObjectPool > reuses objects and fully resets them on release",
+    "waves > ObjectPool > 100 drop/release cycles of Mallow create a bounded number of objects",
+    "waves > ObjectPool > 1000 rooms worth of waves keep the pool bounded",
+    "waves > ObjectPool > double release is an error (no ghost objects)"
+  ],
+  "failures": [],
+  "not_run": [],
+  "scope": "Pure Luau logic under Lune (no Roblox engine services).",
+  "date_utc": "2026-11-02T10:14:34.801855+00:00",
+  "versions": {
+    "python": "3.13.18",
+    "rojo": "Rojo 7.5.1",
+    "lune": "lune 0.10.1",
+    "stylua": "stylua 2.1.0",
+    "selene": "selene 0.28.0"
+  }
+}

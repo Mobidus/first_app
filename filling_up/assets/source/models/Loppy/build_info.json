@@ -1,0 +1,51 @@
+{
+  "asset_id": "toy_plush_loppy",
+  "blend": "assets/source/models/Loppy/Loppy.blend",
+  "exports": [
+    "assets/import/models/toy_plush_loppy.glb",
+    "assets/import/models/toy_plush_loppy_lod1.glb",
+    "assets/import/models/toy_plush_loppy.fbx"
+  ],
+  "highres_tris": 249220,
+  "lod0_tris": 3000,
+  "lod1_tris": 520,
+  "bones": [
+    "Root",
+    "Belly_00",
+    "Belly_10",
+    "Belly_20",
+    "Belly_01",
+    "Belly_11",
+    "Belly_21",
+    "Belly_02",
+    "Belly_12",
+    "Belly_22",
+    "Head",
+    "Ear_L",
+    "Ear_R",
+    "Feet",
+    "Tail"
+  ],
+  "weights": {
+    "Loppy_LOD0": {
+      "vertices": 1502,
+      "max_influences": 4,
+      "weight_sum_max_error": 2.220446049250313e-16,
+      "unweighted_vertices": 0
+    },
+    "Loppy_LOD1": {
+      "vertices": 262,
+      "max_influences": 4,
+      "weight_sum_max_error": 2.220446049250313e-16,
+      "unweighted_vertices": 0
+    }
+  },
+  "materials_per_mesh": 1,
+  "textures": [
+    "toy_plush_loppy_albedo_1024.png",
+    "toy_plush_loppy_albedo_256.png"
+  ],
+  "voxel_size_studs": 0.05,
+  "seed": 7,
+  "blender_version": "5.2.3 LTS"
+}

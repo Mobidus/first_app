@@ -1,0 +1,29 @@
+{
+  "date_utc": "2026-11-02T10:16:34.232481+00:00",
+  "logic": {
+    "suite": "plush",
+    "status": "PASS",
+    "checks": [
+      "plush > PlushPose > rig: non-deforming root implied, 9 belly lattice bones, <= 6 secondary",
+      "plush > PlushPose > respects runtime caps: Y >= 0.72, XZ <= 1.18, fall stretch <= 1.12",
+      "plush > PlushPose > phases 0.09 / 0.18 / settle fit inside the 0.90 s cap (no naive sum)",
+      "plush > PlushPose > weak contact squashes less than a big fall",
+      "plush > PlushPose > 100 impacts then reset return exactly to the reference pose (no drift)",
+      "plush > PlushPose > supporting state: visible top within 0.25 stud of the collider, even with a player on it",
+      "plush > PlushPose > big compressions only happen before the support becomes active",
+      "plush > PlushPose > pose uses translations/rotations only: no bone scale field",
+      "plush > PlushPose > deformation disabled => reference pose, same settle state timeline",
+      "plush > PlushPose > server gameplay code never depends on the visual pose"
+    ]
+  },
+  "blender_reimport": "see reports/asset_import.json (drift 0.0 after 100 cycles, compression 0.727, stretch 1.114, top gap <= 0.25 inside 1-stud inset)",
+  "studio": {
+    "status": "NOT_RUN",
+    "scene": "tests/studio/PlushLab",
+    "pending": [
+      "100 drops on imported rig",
+      "6 plush + 40 dynamic stress on reference devices",
+      "visible top vs collider with avatar standing"
+    ]
+  }
+}

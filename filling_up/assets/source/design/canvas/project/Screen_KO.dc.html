@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>KO et Recommencer</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito:wght@400;600;800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#203055}a:hover{color:#8855FF}
+</style>
+</helmet>
+<div style="width: 1280px; height: 720px; position: relative; overflow: hidden; background: #3A4767; font-family: Nunito, system-ui, sans-serif; color: #203055">
+  <svg width="1280" height="720" viewBox="0 0 1280 720" style="position: absolute; left: 0; top: 0" aria-hidden="true">
+    <rect x="0" y="420" width="1280" height="300" fill="#2C3854"/>
+    <rect x="80" y="360" width="200" height="120" rx="14" fill="#7A6A4E"/><rect x="300" y="330" width="180" height="150" rx="30" fill="#7E7A44"/><rect x="900" y="350" width="240" height="130" rx="14" fill="#5E4E7A"/>
+    <rect x="520" y="300" width="230" height="110" rx="12" fill="#7A6A4E"/><rect x="560" y="250" width="160" height="80" rx="30" fill="#8C8270"/>
+  </svg>
+  <div style="position: absolute; left: 340px; top: 90px; width: 600px; background: #FFFFFF; border: 5px solid #203055; border-radius: 32px; padding: 28px 34px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px">
+    <div style="display: flex; gap: 14px; align-items: center">
+      <svg width="56" height="56" viewBox="0 0 64 64" role="img" aria-label="Danger"><path d="M32 6 L60 56 H4 Z" fill="#FF684B" stroke="#203055" stroke-width="3.5" stroke-linejoin="round"/><path d="M32 24 V40" stroke="#203055" stroke-width="6" stroke-linecap="round"/><circle cx="32" cy="48" r="3.5" fill="#203055"/></svg>
+      <div><div style="font-family: Fredoka, sans-serif; font-weight: 700; font-size: 42px; line-height: 1">KO — enseveli</div><div style="font-size: 15px">KO — buried under objects</div></div>
+    </div>
+    <div style="font-size: 17px">Expédition terminée à la <b>salle 7 · Bureau perdu</b>.</div>
+    <div style="display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; font-size: 17px; background: #FFF5DF; border-radius: 16px; padding: 14px 18px">
+      <span>Coins gagnés et conservés (6 sorties + 2 jalons)</span><b>+1 080</b>
+      <span>Permis conservés</span><b>+8</b>
+      <span>Meilleure profondeur</span><b>7</b>
+      <span>Outils, rangs, cosmétiques</span><b>intacts</b>
+    </div>
+    <button type="button" style="height: 76px; border-radius: 22px; background: #FFE14D; border: 4px solid #203055; font-family: Fredoka, sans-serif; font-weight: 700; font-size: 28px; color: #203055">Recommencer (gratuit)<br><span style="font-family: Nunito, sans-serif; font-size: 14px">Restart free · nouvelle expédition à la salle 1</span></button>
+    <button type="button" style="height: 56px; border-radius: 18px; background: #FFFFFF; border: 3px solid #203055; font-weight: 800; font-size: 17px; color: #203055">Voir mon équipement · Loadout</button>
+  </div>
+  <div style="position: absolute; left: 340px; bottom: 30px; width: 600px; text-align: center; color: #FFF5DF; font-size: 14px; font-weight: 700">Pas de résurrection payante · aucune offre Robux sur cet écran · cause : ensevelissement confirmé 1,2 s</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":720}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

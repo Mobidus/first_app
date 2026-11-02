@@ -1,0 +1,482 @@
+{
+  "asset_id": "toy_plush_loppy",
+  "axes": "roblox_model_space (X largeur, Y haut, Z profondeur ; avant = -Z)",
+  "units": "studs",
+  "usage": "Pose = translation et rotation (axe, angle en degrés, autour de la tête du bone au repos) exprimées en espace modèle Roblox, à convertir dans l'espace parent de chaque Bone. Toujours recalculer depuis la pose de référence (Transform = identité) ; ne jamais cumuler. Aucune échelle : Bone.Transform est un CFrame.",
+  "reference_pose": "rest (toutes transformations identité)",
+  "static_bones": [
+    "Root"
+  ],
+  "bone_rest_heads": {
+    "Root": [
+      0,
+      0,
+      0
+    ],
+    "Belly_00": [
+      -3.75,
+      3.0,
+      2.6
+    ],
+    "Belly_10": [
+      -0.95,
+      3.0,
+      2.6
+    ],
+    "Belly_20": [
+      1.85,
+      3.0,
+      2.6
+    ],
+    "Belly_01": [
+      -3.75,
+      3.0,
+      -0.0
+    ],
+    "Belly_11": [
+      -0.95,
+      3.0,
+      -0.0
+    ],
+    "Belly_21": [
+      1.85,
+      3.0,
+      -0.0
+    ],
+    "Belly_02": [
+      -3.75,
+      3.0,
+      -2.6
+    ],
+    "Belly_12": [
+      -0.95,
+      3.0,
+      -2.6
+    ],
+    "Belly_22": [
+      1.85,
+      3.0,
+      -2.6
+    ],
+    "Head": [
+      3.4,
+      3.4,
+      -0.0
+    ],
+    "Ear_L": [
+      3.55,
+      5.3,
+      -0.9
+    ],
+    "Ear_R": [
+      3.55,
+      5.0,
+      0.7
+    ],
+    "Feet": [
+      0.0,
+      0.5,
+      -0.0
+    ],
+    "Tail": [
+      -4.2,
+      2.6,
+      -0.0
+    ]
+  },
+  "poses": {
+    "rest": {},
+    "fall": {
+      "Belly_00": {
+        "translation": [
+          0.18,
+          0.46,
+          -0.18
+        ]
+      },
+      "Belly_10": {
+        "translation": [
+          -0.0,
+          0.46,
+          -0.18
+        ]
+      },
+      "Belly_20": {
+        "translation": [
+          -0.18,
+          0.46,
+          -0.18
+        ]
+      },
+      "Belly_01": {
+        "translation": [
+          0.18,
+          0.46,
+          0.0
+        ]
+      },
+      "Belly_11": {
+        "translation": [
+          -0.0,
+          0.46,
+          0.0
+        ]
+      },
+      "Belly_21": {
+        "translation": [
+          -0.18,
+          0.46,
+          0.0
+        ]
+      },
+      "Belly_02": {
+        "translation": [
+          0.18,
+          0.46,
+          0.18
+        ]
+      },
+      "Belly_12": {
+        "translation": [
+          -0.0,
+          0.46,
+          0.18
+        ]
+      },
+      "Belly_22": {
+        "translation": [
+          -0.18,
+          0.46,
+          0.18
+        ]
+      },
+      "Head": {
+        "translation": [
+          0.0,
+          0.32,
+          -0.0
+        ],
+        "rotation_axis": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "rotation_degrees": -5.0
+      },
+      "Ear_L": {
+        "translation": [
+          0.0,
+          0.42,
+          -0.0
+        ],
+        "rotation_axis": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "rotation_degrees": -16.0
+      },
+      "Ear_R": {
+        "translation": [
+          0.0,
+          0.42,
+          -0.0
+        ],
+        "rotation_axis": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "rotation_degrees": 14.0
+      },
+      "Tail": {
+        "translation": [
+          0.0,
+          0.25,
+          -0.0
+        ]
+      }
+    },
+    "impact": {
+      "Belly_00": {
+        "translation": [
+          -0.55,
+          -1.1,
+          0.55
+        ]
+      },
+      "Belly_10": {
+        "translation": [
+          0.0,
+          -1.1,
+          0.55
+        ]
+      },
+      "Belly_20": {
+        "translation": [
+          0.55,
+          -1.1,
+          0.55
+        ]
+      },
+      "Belly_01": {
+        "translation": [
+          -0.55,
+          -1.1,
+          -0.0
+        ]
+      },
+      "Belly_11": {
+        "translation": [
+          0.0,
+          -1.1,
+          -0.0
+        ]
+      },
+      "Belly_21": {
+        "translation": [
+          0.55,
+          -1.1,
+          -0.0
+        ]
+      },
+      "Belly_02": {
+        "translation": [
+          -0.55,
+          -1.1,
+          -0.55
+        ]
+      },
+      "Belly_12": {
+        "translation": [
+          0.0,
+          -1.1,
+          -0.55
+        ]
+      },
+      "Belly_22": {
+        "translation": [
+          0.55,
+          -1.1,
+          -0.55
+        ]
+      },
+      "Head": {
+        "translation": [
+          0.22,
+          -0.95,
+          -0.0
+        ],
+        "rotation_axis": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "rotation_degrees": 5.0
+      },
+      "Ear_L": {
+        "translation": [
+          0.1,
+          -1.1,
+          -0.1
+        ],
+        "rotation_axis": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "rotation_degrees": 18.0
+      },
+      "Ear_R": {
+        "translation": [
+          0.1,
+          -1.05,
+          0.1
+        ],
+        "rotation_axis": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "rotation_degrees": -15.0
+      },
+      "Feet": {
+        "translation": [
+          0.0,
+          0.0,
+          -0.0
+        ]
+      },
+      "Tail": {
+        "translation": [
+          -0.2,
+          -0.6,
+          -0.0
+        ]
+      }
+    },
+    "rebound": {
+      "Belly_00": {
+        "translation": [
+          0.08,
+          0.22,
+          -0.08
+        ]
+      },
+      "Belly_10": {
+        "translation": [
+          -0.0,
+          0.22,
+          -0.08
+        ]
+      },
+      "Belly_20": {
+        "translation": [
+          -0.08,
+          0.22,
+          -0.08
+        ]
+      },
+      "Belly_01": {
+        "translation": [
+          0.08,
+          0.22,
+          0.0
+        ]
+      },
+      "Belly_11": {
+        "translation": [
+          -0.0,
+          0.22,
+          0.0
+        ]
+      },
+      "Belly_21": {
+        "translation": [
+          -0.08,
+          0.22,
+          0.0
+        ]
+      },
+      "Belly_02": {
+        "translation": [
+          0.08,
+          0.22,
+          0.08
+        ]
+      },
+      "Belly_12": {
+        "translation": [
+          -0.0,
+          0.22,
+          0.08
+        ]
+      },
+      "Belly_22": {
+        "translation": [
+          -0.08,
+          0.22,
+          0.08
+        ]
+      },
+      "Head": {
+        "translation": [
+          0.0,
+          0.18,
+          -0.0
+        ]
+      },
+      "Ear_L": {
+        "translation": [
+          0.0,
+          0.25,
+          -0.0
+        ],
+        "rotation_axis": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "rotation_degrees": -8.0
+      },
+      "Ear_R": {
+        "translation": [
+          0.0,
+          0.25,
+          -0.0
+        ],
+        "rotation_axis": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "rotation_degrees": 6.0
+      }
+    },
+    "player_landing": {
+      "Belly_00": {
+        "translation": [
+          -0.0,
+          -0.08,
+          0.0
+        ]
+      },
+      "Belly_10": {
+        "translation": [
+          0.0,
+          -0.08,
+          0.0
+        ]
+      },
+      "Belly_20": {
+        "translation": [
+          0.0,
+          -0.08,
+          0.0
+        ]
+      },
+      "Belly_01": {
+        "translation": [
+          -0.0,
+          -0.08,
+          -0.0
+        ]
+      },
+      "Belly_11": {
+        "translation": [
+          0.0,
+          -0.15,
+          -0.0
+        ]
+      },
+      "Belly_21": {
+        "translation": [
+          0.0,
+          -0.08,
+          -0.0
+        ]
+      },
+      "Belly_02": {
+        "translation": [
+          -0.0,
+          -0.08,
+          -0.0
+        ]
+      },
+      "Belly_12": {
+        "translation": [
+          0.0,
+          -0.08,
+          -0.0
+        ]
+      },
+      "Belly_22": {
+        "translation": [
+          0.0,
+          -0.08,
+          -0.0
+        ]
+      }
+    }
+  }
+}

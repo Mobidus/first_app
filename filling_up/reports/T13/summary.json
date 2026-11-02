@@ -1,0 +1,35 @@
+{
+  "task": "T13",
+  "title": "Implémenter le catalogue et les achats Coins",
+  "status": "blocked",
+  "date_utc": "2026-11-02T10:17:13.891156+00:00",
+  "criteria": [
+    {
+      "criterion": "Prix et qualifications du JSON",
+      "status": "PASS"
+    },
+    {
+      "criterion": "StarterRadar même SKU",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Solde insuffisant et double achat refusés",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Possession visible",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Améliorations bornées et entières",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Boutique Coins dans Studio",
+      "status": "NOT_RUN"
+    }
+  ],
+  "blocked_reason": "Critères non vérifiés : Boutique Coins dans Studio",
+  "note": null,
+  "checks_dir": "reports/checks"
+}

@@ -1,0 +1,60 @@
+{
+  "date_utc": "2026-11-02T10:16:34.232481+00:00",
+  "status": "PARTIAL_STATIC_REVIEW",
+  "engine_check": "NOT_RUN",
+  "static_review": [
+    {
+      "item": "continuing from the sas needs no menu (walk through ContinueDoor)",
+      "status": "PASS",
+      "where": "ExpeditionService.enterSas"
+    },
+    {
+      "item": "touch targets >= 48 px (UISizeConstraint)",
+      "status": "PASS",
+      "where": "client/Controllers/Ui.luau"
+    },
+    {
+      "item": "no survival timer / global fill bar in HUD",
+      "status": "PASS",
+      "where": "HUDController"
+    },
+    {
+      "item": "KO panel offers a free restart only (no paid revive)",
+      "status": "PASS",
+      "where": "HUDController"
+    },
+    {
+      "item": "shop states with text, not colour only (owned/buyable/insufficient/locked/unavailable)",
+      "status": "PASS",
+      "where": "ShopController"
+    },
+    {
+      "item": "Robux tab shows 'Boutique indisponible'; no prompt while ids are null",
+      "status": "PASS",
+      "where": "ShopController, PurchaseService.canPrompt"
+    },
+    {
+      "item": "functional markers colour + icon attribute",
+      "status": "PASS",
+      "where": "PropFactory.addMarker"
+    },
+    {
+      "item": "reduced effects disables plush deformation without gameplay change",
+      "status": "PASS",
+      "where": "PlushDeformationController"
+    },
+    {
+      "item": "FR/EN strings",
+      "status": "PASS",
+      "where": "shared/Strings.luau"
+    },
+    {
+      "item": "mobile legibility on real devices",
+      "status": "NOT_RUN"
+    },
+    {
+      "item": "screens match validated Claude Design references (human review)",
+      "status": "NOT_RUN"
+    }
+  ]
+}

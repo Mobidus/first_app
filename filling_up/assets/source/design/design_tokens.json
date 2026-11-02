@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "project": "FILLING UP",
+  "source": "Claude Design canvas https://claude.ai/artifact/Vb6XnUB54ikWQCQsQ9Twb3 (board Main.dc.html) + docs/02_ASSETS_ET_CLAUDE_DESIGN.md",
+  "status": "designed_reference_not_playtested",
+  "color": {
+    "canvas_cream": {"hex": "#FFF5DF", "usage": "Grands fonds, zones de repos visuel"},
+    "outline_navy": {"hex": "#203055", "usage": "Contours, texte, structure"},
+    "brand_cyan": {"hex": "#16D9FF", "usage": "Machines, accessoires et contrôles"},
+    "reward_yellow": {"hex": "#FFE14D", "usage": "Coins, accents joyeux, bouton d'action principal"},
+    "machine_pink": {"hex": "#FF4CB8", "usage": "Pièces mécaniques et objets signature (jamais en fond de texte)"},
+    "safe_mint": {"hex": "#39E68B", "usage": "Balise de sortie et pictogramme d'appui"},
+    "danger_coral": {"hex": "#FF684B", "usage": "Zones d'impact et triangles de danger"},
+    "prestige_violet": {"hex": "#8855FF", "usage": "Maîtrise, personnalisation, objectifs facultatifs"},
+    "surface_white": {"hex": "#FFFFFF", "usage": "Panneaux d'interface"},
+    "disabled_fill": {"hex": "#EDF3F8", "usage": "Boutons indisponibles/verrouillés (toujours avec bordure pointillée + libellé)"}
+  },
+  "contrast_rules": [
+    "Texte bleu nuit #203055 sur crème, blanc, jaune, menthe, cyan : contraste élevé.",
+    "Pas de texte blanc sur rose #FF4CB8, corail #FF684B, menthe ou jaune (contraste insuffisant).",
+    "Texte crème sur bleu nuit autorisé (bandeaux)."
+  ],
+  "functional_markers": {
+    "stable": {"color": "#39E68B", "icon": "footprint", "scope": "top_marker_only"},
+    "bounce": {"color": "#FFE14D", "icon": "spring", "scope": "top_marker_only"},
+    "moving": {"color": "#16D9FF", "icon": "direction_arrows", "scope": "top_marker_only"},
+    "temporary": {"color": "#FF4CB8", "icon": "hourglass", "scope": "top_marker_only", "requires_countdown_gauge": true},
+    "danger": {"color": "#FF684B", "icon": "triangle", "scope": "hazard_area_only"},
+    "optional_bonus": {"color": "#8855FF", "icon": "star", "scope": "bonus_only"},
+    "exit": {"color": "#39E68B", "icon": "arch_with_vertical_chevrons", "scope": "active_exit_only", "animated_chevron": true},
+    "rule": "La couleur ne porte jamais seule une règle : couleur + forme (+ animation pour la sortie)."
+  },
+  "room_palettes": {
+    "reception": {"fond": "#DFF7FF", "structure": "#203055", "accent": "#16D9FF"},
+    "toy": {"fond": "#EEE7FF", "structure": "#8855FF", "accent": "#FF4CB8"},
+    "bureau": {"fond": "#EDF3F8", "structure": "#B9A4EE", "accent": "#2ACBC7"},
+    "kitchen": {"fond": "#FFF5DF", "structure": "#A9EDD0", "accent": "#24BFC4"},
+    "garage": {"fond": "#EAF5FF", "structure": "#8855FF", "accent": "#FF9B47"},
+    "bin": {"fond": "#26364D", "structure": "#F6EEDC", "accent": "#16D9FF", "note": "Fond sombre : dessus de réception toujours clairs et balisés."}
+  },
+  "composition": {"pale_backgrounds": 0.60, "room_color": 0.25, "saturated_accents": 0.15, "note": "Proportions de lisibilité, pas un quota rigide."},
+  "materials": {
+    "plastic_satin": {"base": "#16D9FF", "roughness_hint": 0.35, "roblox_material": "SmoothPlastic"},
+    "dense_foam": {"base": "#FFE14D", "roughness_hint": 0.9, "roblox_material": "Fabric"},
+    "painted_cardboard": {"base": "#F3C969", "roughness_hint": 0.8, "roblox_material": "Cardboard"},
+    "enamel_metal": {"base": "#FF4CB8", "roughness_hint": 0.3, "roblox_material": "Metal"},
+    "stitched_plush": {"base": "#F7EAD2", "roughness_hint": 1.0, "roblox_material": "Fabric", "seams": "pointillés texture, pas de fibres"}
+  },
+  "plush_colors": {
+    "toy_plush_mallow": {"body": "#F7EAD2", "snout_pads": "#D9A06B", "seam": "#C98B5A", "star_patch": "#FFE14D", "embroidery": "#203055"},
+    "toy_plush_loppy": {"body": "#C9B6F2", "ear_inner": "#FFD3E6", "feet_tail": "#FFF1DC", "nose": "#FF684B", "seam": "#7E66C2", "embroidery": "#203055"},
+    "toy_plush_octo": {"body": "#7EEDB4", "underside": "#FF8A73", "seam": "#3FBF85", "eye_white": "#FFFFFF", "embroidery": "#203055"}
+  },
+  "typography": {
+    "display": {"family": "Fredoka", "weights": [600, 700], "roblox_equivalent": "Font.fromName(\"FredokaOne\") / Enum.Font.FredokaOne"},
+    "body": {"family": "Nunito", "weights": [600, 800], "roblox_equivalent": "Font.fromName(\"Nunito\") si disponible, sinon BuilderSans"},
+    "rules": ["Sans empattement", "Textes courts en jeu", "FR et EN prévus, aucun texte figé dans les icônes"]
+  },
+  "shape": {"radius_panel_px": 30, "radius_card_px": 18, "radius_button_px": 18, "stroke_outline_px": [3, 5]},
+  "touch": {"min_target_pt": 44, "primary_button_height_px": [64, 80], "jump_button_px": 132, "tool_button_px": 92, "jump_zone_never_covered_by_shop": true},
+  "motion": {"no_bloom": true, "no_flash": true, "reduced_effects_mode": "réduit traces/réceptions/victoires sans masquer sortie, cible de saut ni alerte d'impact"}
+}

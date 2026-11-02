@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "suite": "onboarding",
+  "passed": 7,
+  "failed": 0,
+  "seconds": 0.028802367000025697,
+  "executed": [
+    "onboarding > Onboarding vertical slice > nominal path: 65 coins, Radar bought for 50, balance 15, used before 30 s",
+    "onboarding > Onboarding vertical slice > tutorial pays 65 exactly once: replay / reconnect / new server pay nothing more",
+    "onboarding > Onboarding vertical slice > replayed purchase request is refused (idempotent: owned)",
+    "onboarding > Onboarding vertical slice > slow learner: no deadline, completing after 10 minutes still pays and the price is unchanged",
+    "onboarding > Onboarding vertical slice > player may skip the kiosk: no forced purchase, Radar price stays 50",
+    "onboarding > Onboarding vertical slice > no Robux prompt during the tutorial; kiosk has exactly two actions",
+    "onboarding > Onboarding vertical slice > ghost trajectory hint after 5 s of inaction (never moves the avatar)"
+  ],
+  "failures": [],
+  "not_run": [],
+  "scope": "Pure Luau logic under Lune (no Roblox engine services).",
+  "date_utc": "2026-11-02T10:12:01.143011+00:00",
+  "versions": {
+    "python": "3.13.18",
+    "rojo": "Rojo 7.5.1",
+    "lune": "lune 0.10.1",
+    "stylua": "stylua 2.1.0",
+    "selene": "selene 0.28.0"
+  }
+}

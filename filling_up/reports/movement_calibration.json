@@ -1,0 +1,52 @@
+{
+  "date_utc": "2026-11-02T10:16:34.232481+00:00",
+  "status": "NOT_RUN",
+  "reason": "Roblox Studio unavailable; MovementLab (tests/studio/MovementLab) ready to run",
+  "measured": null,
+  "provisional_analytic_table": [
+    {
+      "rise": -4,
+      "reach_analytic": 9.741
+    },
+    {
+      "rise": 0,
+      "reach_analytic": 8.669
+    },
+    {
+      "rise": 1,
+      "reach_analytic": 8.357
+    },
+    {
+      "rise": 2,
+      "reach_analytic": 8.018
+    },
+    {
+      "rise": 3,
+      "reach_analytic": 7.645
+    },
+    {
+      "rise": 4,
+      "reach_analytic": 7.224
+    },
+    {
+      "rise": 5,
+      "reach_analytic": 6.731
+    },
+    {
+      "rise": 5.4,
+      "reach_analytic": 6.502
+    },
+    {
+      "rise": 6,
+      "reach_analytic": 6.104
+    },
+    {
+      "rise": 7,
+      "reach_analytic": 5.057
+    }
+  ],
+  "source": "config runtime.player (walk 16, jump 7.2, g 196.2) — hypothesis, not a measurement",
+  "required_rise_cap_studs": 5.4,
+  "mobile": "NOT_RUN",
+  "avatar_shapes": "NOT_RUN"
+}

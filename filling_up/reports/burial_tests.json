@@ -1,0 +1,31 @@
+{
+  "date_utc": "2026-11-02T10:16:34.232481+00:00",
+  "logic": {
+    "suite": "burial",
+    "status": "PASS",
+    "checks": [
+      "burial > BurialLogic > samples at 10 Hz and confirms a true burial after 1.2 s",
+      "burial > BurialLogic > open table (roof hits, sides open) never kills, even standing still for minutes",
+      "burial > BurialLogic > an object passing overhead (transient) does not kill",
+      "burial > BurialLogic > surrounded but an escape gap exists: no KO",
+      "burial > BurialLogic > a single overhead raycast is never sufficient",
+      "burial > BurialLogic > clearance test not run => cannot confirm",
+      "burial > BurialLogic > release hysteresis: a 0.1 s flicker does not reset, a 0.2 s release does",
+      "burial > BurialLogic > exit / sas: not active => no KO",
+      "burial > BurialLogic > spawn invulnerability delays (but does not cancel) confirmation",
+      "burial > BurialLogic > marked kill volume is the only other KO cause",
+      "burial > BurialLogic > module has no fill-percentage / room-timer inputs"
+    ]
+  },
+  "studio": {
+    "status": "NOT_RUN",
+    "scene": "tests/studio/BurialFixtures",
+    "scenes": [
+      "true burial",
+      "open table",
+      "transient overhead object",
+      "moving platform",
+      "near exit"
+    ]
+  }
+}

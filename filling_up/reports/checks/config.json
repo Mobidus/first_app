@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "executed": [
+    {
+      "check": "compile_config --check (JSON -> GeneratedConfig up to date + invariants)",
+      "exit_code": 0,
+      "output_tail": [
+        "  \"status\": \"PASS\",",
+        "  \"errors\": [],",
+        "  \"config_version\": \"54fafb01573d4f28\",",
+        "  \"stale_generated_files\": []",
+        "}"
+      ]
+    },
+    {
+      "check": "scripts/validate_pack.py (specification bundle)",
+      "exit_code": 0,
+      "output_tail": [
+        "  \"exit_types\": 6,",
+        "  \"planned_assets\": 181,",
+        "  \"tasks\": 24,",
+        "  \"roblox_tests_executed\": false",
+        "}"
+      ]
+    },
+    {
+      "check": "scripts/simulate_economy.py (specification arithmetic)",
+      "exit_code": 0,
+      "output_tail": [
+        "    \"remaining_permits\": 76",
+        "  },",
+        "  \"rounding_cases_checked\": 80,",
+        "  \"game_tests_executed\": false",
+        "}"
+      ]
+    },
+    {
+      "check": "unit suite 'config' (generated modules vs JSON)",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0
+    }
+  ],
+  "failures": [],
+  "not_run": [],
+  "scope": "Configuration and specification consistency; not gameplay.",
+  "date_utc": "2026-11-02T10:20:01.419559+00:00",
+  "versions": {
+    "python": "3.13.18",
+    "rojo": "Rojo 7.5.1",
+    "lune": "lune 0.10.1",
+    "stylua": "stylua 2.1.0",
+    "selene": "selene 0.28.0"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "task": "T01",
+  "title": "Générer les références et interfaces dans Claude Design",
+  "status": "blocked",
+  "date_utc": "2026-11-02T10:17:13.891156+00:00",
+  "criteria": [
+    {
+      "criterion": "Trois premières familles et interfaces prioritaires représentées",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Mallow Loppy et Octo : 4 vues orthographiques + 4 poses",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Échelle avatar appuis et codes de fonction lisibles",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Sources et provenance conservées",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Aucun export 2D présenté comme modèle 3D",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Revue artistique humaine et test d'identification 8/10 testeurs",
+      "status": "NOT_RUN"
+    },
+    {
+      "criterion": "Vues 3/4 dessinées des 12 outils (actuellement icône inclinée)",
+      "status": "NOT_RUN"
+    }
+  ],
+  "blocked_reason": "Critères non vérifiés : Revue artistique humaine et test d'identification 8/10 testeurs; Vues 3/4 dessinées des 12 outils (actuellement icône inclinée)",
+  "note": "Planches Claude Design produites (Artifact Design privé + sources HTML/SVG). Bloquée par la revue humaine (identification 8/10) et par les vues 3/4 dédiées des outils.",
+  "checks_dir": "reports/checks"
+}

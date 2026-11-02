@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "executed": [
+    {
+      "check": "compile_config",
+      "exit_code": 0
+    },
+    {
+      "check": "rojo build -> build/FillingUp.rbxlx",
+      "exit_code": 0,
+      "output_tail": [
+        "Building project 'FillingUp'",
+        "Built project to FillingUp.rbxlx"
+      ]
+    },
+    {
+      "check": "verify_build (place tree + every script compiles with Luau)",
+      "exit_code": 0,
+      "scripts": 2,
+      "modules": 72,
+      "compiled": 74,
+      "errors": {}
+    },
+    {
+      "check": "stylua --check",
+      "exit_code": 0
+    },
+    {
+      "check": "selene src (std roblox_min: Roblox API dump unavailable offline)",
+      "exit_code": 0,
+      "output_tail": [
+        "Results:",
+        "0 errors",
+        "0 warnings",
+        "0 parse errors"
+      ]
+    }
+  ],
+  "failures": [],
+  "not_run": [
+    "luau-analyze --strict type checking (binary not available in this environment)",
+    "Opening the place in Roblox Studio (Studio not available)"
+  ],
+  "artifact": "build/FillingUp.rbxlx",
+  "scope": "A valid local place file is produced; this is not a gameplay test (Rojo != Studio).",
+  "date_utc": "2026-11-02T10:20:01.071342+00:00",
+  "versions": {
+    "python": "3.13.18",
+    "rojo": "Rojo 7.5.1",
+    "lune": "lune 0.10.1",
+    "stylua": "stylua 2.1.0",
+    "selene": "selene 0.28.0"
+  }
+}

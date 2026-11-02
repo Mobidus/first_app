@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Borne Radar — premier achat</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&amp;family=Nunito:wght@400;600;800&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#203055}a:hover{color:#8855FF}
+</style>
+</helmet>
+<div style="width: 1280px; height: 720px; position: relative; overflow: hidden; background: #DFF7FF; font-family: Nunito, system-ui, sans-serif; color: #203055">
+  <div style="position: absolute; left: 0; top: 0; width: 1280px; height: 60px; background: #203055"></div>
+  <div style="position: absolute; left: 0; bottom: 0; width: 1280px; height: 110px; background: #FFF5DF; border-top: 6px solid #39E68B"></div>
+  <div style="position: absolute; right: 60px; top: 90px; width: 120px; height: 170px; border-radius: 60px; background: #39E68B; border: 5px solid #203055"></div>
+  <div style="position: absolute; right: 48px; top: 270px; font-weight: 800; font-size: 15px">Continuer tout droit →</div>
+  <div style="position: absolute; left: 24px; top: 14px; color: #FFF5DF; font-family: Fredoka, sans-serif; font-weight: 600; font-size: 22px">Sas · zone sûre / Safe room</div>
+  <div style="position: absolute; right: 24px; top: 10px; background: #FFFFFF; border-radius: 22px; padding: 4px 14px; font-weight: 800; font-size: 22px">65 Coins</div>
+
+  <div style="position: absolute; left: 190px; top: 96px; width: 760px; height: 520px; background: #FFFFFF; border: 5px solid #203055; border-radius: 32px; box-sizing: border-box; padding: 28px 34px; display: flex; gap: 30px">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; width: 280px">
+      <div style="width: 240px; height: 240px; border-radius: 40px; background: #DFF7FF; border: 4px solid #203055; display: flex; align-items: center; justify-content: center">
+        <img src="/_blob/60e4883e0390ff54c514bb172bf706e7" alt="Radar POP" width="200" height="200">
+      </div>
+      <svg width="260" height="120" viewBox="0 0 260 120" role="img" aria-label="Démonstration : le Radar surligne trois appuis proches sans déplacer l'avatar">
+        <rect x="0" y="0" width="260" height="120" rx="14" fill="#DFF7FF"/>
+        <circle cx="40" cy="70" r="40" fill="none" stroke="#16D9FF" stroke-width="3" opacity="0.6"/>
+        <rect x="30" y="72" width="20" height="30" rx="5" fill="#8855FF" stroke="#203055" stroke-width="2"/><circle cx="40" cy="64" r="8" fill="#FFD9B8" stroke="#203055" stroke-width="2"/>
+        <rect x="80" y="84" width="50" height="16" rx="3" fill="#F3C969" stroke="#39E68B" stroke-width="4"/>
+        <rect x="140" y="62" width="50" height="16" rx="3" fill="#2ACBC7" stroke="#39E68B" stroke-width="4"/>
+        <rect x="200" y="38" width="50" height="16" rx="3" fill="#FF9B47" stroke="#39E68B" stroke-width="4"/>
+        <text x="130" y="20" text-anchor="middle" font-size="12" font-weight="800" fill="#203055" font-family="Nunito, sans-serif">démo 2 s · 3 appuis surlignés</text>
+      </svg>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 14px; flex-grow: 1">
+      <div style="font-family: Fredoka, sans-serif; font-weight: 700; font-size: 44px; line-height: 1">Radar POP</div>
+      <div style="font-size: 18px; line-height: 1.4">Surligne 3 surfaces proches utilisables.<br><span style="font-size: 15px">Highlights 3 nearby usable surfaces.</span></div>
+      <div style="display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; font-size: 18px; background: #FFF5DF; border-radius: 16px; padding: 14px 18px">
+        <span>Gagné au tutoriel</span><b>65 Coins</b>
+        <span>Prix (permanent)</span><b>50 Coins</b>
+        <span>Solde après achat</span><b>15 Coins</b>
+      </div>
+      <div style="font-size: 14px">Achat permanent, conservé après KO et renaissance. Même prix si tu passes. 4 charges gratuites par salle.</div>
+      <div style="display: flex; gap: 14px; margin-top: auto">
+        <button type="button" style="flex: 1; height: 80px; border-radius: 20px; background: #FFE14D; border: 4px solid #203055; font-family: Fredoka, sans-serif; font-weight: 700; font-size: 21px; white-space: nowrap; color: #203055">Acheter 50 Coins<br><span style="font-family: Nunito, sans-serif; font-size: 13px">Buy for 50 Coins</span></button>
+        <button type="button" style="flex: 1; height: 80px; border-radius: 20px; background: #FFFFFF; border: 4px solid #203055; font-family: Fredoka, sans-serif; font-weight: 700; font-size: 21px; white-space: nowrap; color: #203055">Continuer<br><span style="font-family: Nunito, sans-serif; font-size: 13px">Continue</span></button>
+      </div>
+    </div>
+  </div>
+  <div style="position: absolute; left: 190px; bottom: 34px; font-size: 14px; font-weight: 700">Aucun compte à rebours · aucune offre Robux · la sortie vers la salle suivante reste ouverte</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":720}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

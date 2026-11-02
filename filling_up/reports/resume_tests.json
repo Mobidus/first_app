@@ -1,0 +1,18 @@
+{
+  "date_utc": "2026-11-02T10:16:34.232481+00:00",
+  "logic": {
+    "suite": "checkpoints",
+    "status": "PASS",
+    "checks": [
+      "checkpoints > Checkpoint & resume > resume uses the same seed, depth and config version with the reward mask preserved",
+      "checkpoints > Checkpoint & resume > disconnect mid-room cannot duplicate already claimed milestones",
+      "checkpoints > Checkpoint & resume > session conflict: a second server cannot take the same profile",
+      "checkpoints > Checkpoint & resume > incompatible config version: run closed, goods kept, no record fabricated",
+      "checkpoints > Checkpoint & resume > save failure is never announced as saved"
+    ]
+  },
+  "studio": {
+    "status": "NOT_RUN",
+    "scene": "tests/studio/ResumeLab"
+  }
+}

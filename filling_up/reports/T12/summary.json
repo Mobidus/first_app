@@ -1,0 +1,43 @@
+{
+  "task": "T12",
+  "title": "Livrer le tutoriel et le premier achat",
+  "status": "blocked",
+  "date_utc": "2026-11-02T10:17:13.891156+00:00",
+  "criteria": [
+    {
+      "criterion": "Tranche verticale Radar sans T13/T14 (logique)",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Achat unitaire idempotent via le dépôt",
+      "status": "PASS"
+    },
+    {
+      "criterion": "65 Coins une seule fois",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Radar 50, reste 15",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Usage avant 30 s sur le parcours nominal (logique)",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Aucune limite de temps",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Compréhension évaluée avec de nouveaux joueurs",
+      "status": "NOT_RUN"
+    },
+    {
+      "criterion": "Parcours dans Studio",
+      "status": "NOT_RUN"
+    }
+  ],
+  "blocked_reason": "Critères non vérifiés : Compréhension évaluée avec de nouveaux joueurs; Parcours dans Studio",
+  "note": null,
+  "checks_dir": "reports/checks"
+}

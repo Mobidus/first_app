@@ -1,0 +1,59 @@
+{
+  "task": "T08",
+  "title": "Implémenter vagues physique hybride et peluches déformables",
+  "status": "blocked",
+  "date_utc": "2026-11-02T10:17:13.891156+00:00",
+  "criteria": [
+    {
+      "criterion": "Vagues temporelles continues",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Alertes avant impacts",
+      "status": "PASS"
+    },
+    {
+      "criterion": "≤ 40 objets dynamiques (planificateur + soak simulé)",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Consolidation sans disparition de support occupé",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Objets de pool réinitialisés intégralement",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Déformation depuis impact + pose de référence, sans échelle de bone",
+      "status": "PASS"
+    },
+    {
+      "criterion": "100 chutes de Mallow sans dérive (logique + Blender)",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Six peluches + 40 dynamiques testées ensemble (moteur)",
+      "status": "NOT_RUN"
+    },
+    {
+      "criterion": "Plafonds 0,72 / 1,12 / 0,09-0,18-0,65 ≤ 0,90 respectés",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Dessus visible / collision ≤ 0,25 stud en appui (moteur)",
+      "status": "NOT_RUN"
+    },
+    {
+      "criterion": "Déformation désactivée conserve KO et récompenses",
+      "status": "PASS"
+    },
+    {
+      "criterion": "Profilage moteur",
+      "status": "NOT_RUN"
+    }
+  ],
+  "blocked_reason": "Critères non vérifiés : Six peluches + 40 dynamiques testées ensemble (moteur); Dessus visible / collision ≤ 0,25 stud en appui (moteur); Profilage moteur",
+  "note": null,
+  "checks_dir": "reports/checks"
+}

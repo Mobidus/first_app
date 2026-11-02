@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>parapluie_bonbon_icon — Parapluie bonbon</title>
+  <g stroke="#203055" stroke-width="14" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M56 260 A200 190 0 0 1 456 260 Z" fill="#FF4CB8"/>
+    <path d="M190 260 Q200 110 256 70 Q312 110 322 260 Z" fill="#FFE14D"/>
+    <path d="M56 260 Q90 120 256 70 Q110 140 123 260 Z" fill="#FFE14D"/>
+    <path d="M456 260 Q422 120 256 70 Q402 140 389 260 Z" fill="#FFE14D"/>
+    <path d="M256 260 V410 Q256 460 214 460 Q176 460 176 420" fill="none" stroke="#203055" stroke-width="22"/>
+  </g>
+  <circle cx="256" cy="58" r="16" fill="#203055"/>
+</svg>

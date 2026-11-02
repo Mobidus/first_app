@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "suite": "tools",
+  "passed": 9,
+  "failed": 0,
+  "seconds": 0.12415888399982578,
+  "executed": [
+    "tools > ToolRules > radar: 4 charges per room, cooldown, refused use keeps the charge",
+    "tools > ToolRules > charges refill on a NEW room instance only (reload of the same room keeps them)",
+    "tools > ToolRules > not owned / not equipped / in sas / after KO are refused",
+    "tools > ToolRules > radar highlights at most 3 usable surfaces in range, nearest first",
+    "tools > ToolRules > ventouse: eligible small target in range only; never exit, structure or route support",
+    "tools > ToolRules > umbrella only while descending; never upward",
+    "tools > ToolRules > magnet attracts existing unclaimed tokens only, max 6, never creates any",
+    "tools > ToolRules > one active + one passive at most; companion gives no power",
+    "tools > ToolRules > every main route stays feasible with NO tool (validator has no tool input)"
+  ],
+  "failures": [],
+  "not_run": [],
+  "scope": "Pure Luau logic under Lune (no Roblox engine services).",
+  "date_utc": "2026-11-02T10:12:01.558923+00:00",
+  "versions": {
+    "python": "3.13.18",
+    "rojo": "Rojo 7.5.1",
+    "lune": "lune 0.10.1",
+    "stylua": "stylua 2.1.0",
+    "selene": "selene 0.28.0"
+  }
+}
