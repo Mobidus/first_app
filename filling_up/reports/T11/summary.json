@@ -2,7 +2,7 @@
   "task": "T11",
   "title": "Créer le dépôt de profils et les mutations atomiques",
   "status": "blocked",
-  "date_utc": "2026-11-02T11:04:48.070919+00:00",
+  "date_utc": "2026-11-02T11:30:22.681745+00:00",
   "criteria": [
     {
       "criterion": "Verrouillage et migrations versionnées",
@@ -27,6 +27,10 @@
     {
       "criterion": "DataStore réel d'une expérience de test",
       "status": "NOT_RUN"
+    },
+    {
+      "criterion": "Code serveur réel exécuté sur faux moteur (tests/integration, pas Studio)",
+      "status": "PASS"
     }
   ],
   "blocked_reason": "Critères non vérifiés : DataStore réel d'une expérience de test",

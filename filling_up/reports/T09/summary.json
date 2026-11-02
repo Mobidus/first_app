@@ -2,7 +2,7 @@
   "task": "T09",
   "title": "Détecter les KO physiques sans faux positifs",
   "status": "blocked",
-  "date_utc": "2026-11-02T11:04:48.070919+00:00",
+  "date_utc": "2026-11-02T11:30:22.681745+00:00",
   "criteria": [
     {
       "criterion": "Détection 10 Hz et confirmation 1,2 s (logique)",
@@ -23,6 +23,10 @@
     {
       "criterion": "Scènes de référence dans Roblox",
       "status": "NOT_RUN"
+    },
+    {
+      "criterion": "Code serveur réel exécuté sur faux moteur (tests/integration, pas Studio)",
+      "status": "PASS"
     }
   ],
   "blocked_reason": "Critères non vérifiés : Scènes de référence dans Roblox",

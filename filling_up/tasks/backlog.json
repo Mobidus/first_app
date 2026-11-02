@@ -534,6 +534,10 @@
         {
           "criterion": "Scènes de référence dans Roblox",
           "status": "NOT_RUN"
+        },
+        {
+          "criterion": "Code serveur réel exécuté sur faux moteur (tests/integration, pas Studio)",
+          "status": "PASS"
         }
       ],
       "blocked_reason": "Critères non vérifiés : Scènes de référence dans Roblox",
@@ -590,6 +594,10 @@
         },
         {
           "criterion": "Chargement retardé ne tue jamais",
+          "status": "PASS"
+        },
+        {
+          "criterion": "Code serveur réel exécuté sur faux moteur (tests/integration, pas Studio)",
           "status": "PASS"
         }
       ],
@@ -648,6 +656,10 @@
         {
           "criterion": "DataStore réel d'une expérience de test",
           "status": "NOT_RUN"
+        },
+        {
+          "criterion": "Code serveur réel exécuté sur faux moteur (tests/integration, pas Studio)",
+          "status": "PASS"
         }
       ],
       "blocked_reason": "Critères non vérifiés : DataStore réel d'une expérience de test",
@@ -717,6 +729,10 @@
         {
           "criterion": "Parcours dans Studio",
           "status": "NOT_RUN"
+        },
+        {
+          "criterion": "Code serveur réel exécuté sur faux moteur (tests/integration, pas Studio)",
+          "status": "PASS"
         }
       ],
       "blocked_reason": "Critères non vérifiés : Compréhension évaluée avec de nouveaux joueurs; Parcours dans Studio",
@@ -774,6 +790,10 @@
         {
           "criterion": "Boutique Coins dans Studio",
           "status": "NOT_RUN"
+        },
+        {
+          "criterion": "Code serveur réel exécuté sur faux moteur (tests/integration, pas Studio)",
+          "status": "PASS"
         }
       ],
       "blocked_reason": "Critères non vérifiés : Boutique Coins dans Studio",
@@ -898,6 +918,10 @@
         {
           "criterion": "Renaissance dans Studio",
           "status": "NOT_RUN"
+        },
+        {
+          "criterion": "Code serveur réel exécuté sur faux moteur (tests/integration, pas Studio)",
+          "status": "PASS"
         }
       ],
       "blocked_reason": "Critères non vérifiés : Renaissance dans Studio",
@@ -1072,6 +1096,10 @@
         {
           "criterion": "Reconnexion réelle (ResumeLab)",
           "status": "NOT_RUN"
+        },
+        {
+          "criterion": "Code serveur réel exécuté sur faux moteur (tests/integration, pas Studio)",
+          "status": "PASS"
         }
       ],
       "blocked_reason": "Critères non vérifiés : Reconnexion réelle (ResumeLab)",
@@ -1352,5 +1380,5 @@
       "execution_note": "Livraison préparée (build, rapports, rollback, known_issues). Publication NON demandée : les preuves Studio, mobile et 5 h manquent. Toute publication exige une autorisation explicite."
     }
   ],
-  "last_update_utc": "2026-11-02T11:04:48.070919+00:00"
+  "last_update_utc": "2026-11-02T11:30:22.681745+00:00"
 }

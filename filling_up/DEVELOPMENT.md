@@ -28,6 +28,7 @@ Ouvrir `build/FillingUp.rbxlx` dans Roblox Studio (ou `rojo serve` + plugin Rojo
 | `src/server/RoomTemplates` | six familles (palettes et machines de la config) |
 | `src/client` | contrôleurs : mouvement, caméra, HUD, tutoriel, borne Radar, boutique et renaissance, outils, déformation des peluches, effets, réglages |
 | `tests/unit` + `tests/run.luau` | tests de logique exécutés par Lune (`tests/_harness/Loader.luau` émule `script`/`require`) |
+| `tests/integration` + `tests/_harness/FakeEngine.luau` | le vrai serveur (`Main.server`) exécuté sur un faux moteur : parcours, KO, reprise, renaissance, pannes de sauvegarde (pas de physique) |
 | `tests/studio` | scènes et procédures de recette moteur (non exécutées ici) |
 | `assets/source` / `assets/import` | planches Claude Design, scripts Blender, .blend, générateurs paramétriques ; exports PNG/GLB/FBX |
 | `tools` | préflight, compilateur de config, game_checks, vérification du build, soak, fusion du manifeste, rapports |

@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "suite": "integration",
+  "passed": 10,
+  "failed": 0,
+  "seconds": 10.241786791000038,
+  "executed": [
+    "integration > Server flow on the fake engine (integration) > first session: tutorial 65, Radar 50 -> 15, used in room 1, exit pays band + discovery once",
+    "integration > Server flow on the fake engine (integration) > 30 room transitions: no Heartbeat/instance growth, <= 2 room models + sas resident",
+    "integration > Server flow on the fake engine (integration) > burial KO keeps coins and permits, clears the run, free restart at depth 1",
+    "integration > Server flow on the fake engine (integration) > no KO while standing under an open table (roof only)",
+    "integration > Server flow on the fake engine (integration) > disconnect mid-room then rejoin: same room, milestones not repaid, charges not refilled",
+    "integration > Server flow on the fake engine (integration) > leaving while the profile loads releases the session lock",
+    "integration > Server flow on the fake engine (integration) > save outage at the exit: never announced as saved, no progression until the write succeeds",
+    "integration > Server flow on the fake engine (integration) > voluntary rebirth in the sas keeps coins and tools, restarts at depth 1",
+    "integration > Server flow on the fake engine (integration) > two players: separate world slots, one player's burial never affects the other",
+    "integration > Server flow on the fake engine (integration) > forged client intents are rejected (unknown intent, client price, out-of-sas purchase)"
+  ],
+  "failures": [],
+  "not_run": [],
+  "scope": "Pure Luau logic under Lune (no Roblox engine services).",
+  "date_utc": "2026-11-02T11:27:56.545985+00:00",
+  "versions": {
+    "python": "3.13.18",
+    "rojo": "Rojo 7.5.1",
+    "lune": "lune 0.10.1",
+    "stylua": "stylua 2.1.0",
+    "selene": "selene 0.28.0"
+  }
+}

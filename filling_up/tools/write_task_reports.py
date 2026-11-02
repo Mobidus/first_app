@@ -25,6 +25,7 @@ def exists(p: str) -> str:
 
 
 U = lambda s: check(f"unit_{s}")  # noqa: E731
+FAKE = ("Code serveur réel exécuté sur faux moteur (tests/integration, pas Studio)", None)
 STUDIO = "NOT_RUN"
 
 TASKS = {
@@ -128,12 +129,17 @@ NOTES = {
 }
 
 
+FAKE_TASKS = ("T09", "T10", "T11", "T12", "T13", "T15", "T18")
+
+
 def main() -> None:
     backlog = json.loads((ROOT / "tasks/backlog.json").read_text(encoding="utf-8"))
     summary = {}
     for t in backlog["tasks"]:
         tid = t["id"]
         items = [{"criterion": c, "status": s} for c, s in TASKS.get(tid, [])]
+        if tid in FAKE_TASKS:
+            items.append({"criterion": FAKE[0], "status": U("integration")})
         statuses = {i["status"] for i in items}
         status = "done" if items and statuses == {"PASS"} else "blocked"
         deps_ok = all(summary.get(d, {}).get("status") == "done" for d in t["depends_on"])

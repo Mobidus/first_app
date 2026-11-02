@@ -2,7 +2,7 @@
   "task": "T03",
   "title": "Construire les modèles et collisions du lot initial",
   "status": "blocked",
-  "date_utc": "2026-11-02T11:04:48.070919+00:00",
+  "date_utc": "2026-11-02T11:30:22.681745+00:00",
   "criteria": [
     {
       "criterion": "Pivots gabarits matériaux et noms validés (Blender, réimport)",

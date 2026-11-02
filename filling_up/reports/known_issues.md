@@ -10,8 +10,10 @@
 2. **Le code moteur n'a jamais été exécuté dans Roblox.** Les 74 scripts compilent et Selene ne signale aucune
    erreur. Une relecture indépendante a trouvé 17 défauts, tous corrigés (`reports/engine_review.md`).
    `PropFactory` et les modèles de salle s'exécutent sur de vraies instances `@lune/roblox` (48 exports `.rbxm`).
-   `luau-analyze` n'est toujours pas disponible : sa compilation depuis les sources a été refusée par la politique de
-   permissions. Il faut s'attendre à d'autres corrections au premier lancement dans Studio.
+   Le vrai `Main.server` et tous les services tournent sur un **faux moteur** (`tests/integration`, 10 scénarios PASS,
+   décision 0016), mais sans physique, sans collisions et sans réseau. `luau-analyze` n'est toujours pas disponible :
+   sa compilation depuis les sources a été refusée par la politique de permissions. Il faut s'attendre à des
+   corrections liées à la physique et au rendu au premier lancement dans Studio.
 3. **Contrôleur non mesuré (T06).** Les distances des parcours viennent d'un modèle balistique provisoire (décision
    0009). Après MovementLab, il faudra injecter la table mesurée et relancer la certification.
 4. **Assets non importés (T03).** Mallow, Loppy et Octo existent en GLB/FBX riggés, mais aucun import Studio n'a été

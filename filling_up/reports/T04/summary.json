@@ -2,7 +2,7 @@
   "task": "T04",
   "title": "Créer le projet et les commandes reproductibles",
   "status": "done",
-  "date_utc": "2026-11-02T11:04:48.070919+00:00",
+  "date_utc": "2026-11-02T11:30:22.681745+00:00",
   "criteria": [
     {
       "criterion": "Versions verrouillées à partir du préflight",

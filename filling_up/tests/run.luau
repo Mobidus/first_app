@@ -22,6 +22,7 @@ local SUITES = {
 	plush = { "./unit/PlushPose.spec" },
 	continuity = { "./unit/RoomResidency.spec" },
 	config = { "./unit/Config.spec" },
+	integration = { "./integration/ServerFlow.spec" },
 }
 
 local ORDER = {
@@ -41,6 +42,7 @@ local ORDER = {
 	"burial",
 	"plush",
 	"continuity",
+	"integration",
 }
 
 local suite = process.args[1] or "all"

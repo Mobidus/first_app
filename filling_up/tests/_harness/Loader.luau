@@ -173,7 +173,23 @@ function FakeGame.GetService(_, name: string)
 end
 Loader.game = FakeGame
 
+-- Fake-engine mode (tests/_harness/FakeEngine.luau): overrides `game`, `Instance`, `workspace`...
+local engineEnv: { [string]: any }? = nil
+function Loader.setEngine(env)
+	engineEnv = env
+end
+
 local function makeEnv(node)
+	local env = Loader._baseEnv(node)
+	if engineEnv then
+		for k, v in engineEnv do
+			env[k] = v
+		end
+	end
+	return env
+end
+
+function Loader._baseEnv(node)
 	return {
 		script = node,
 		require = requireNode,
@@ -235,6 +251,16 @@ end
 
 function Loader.require(path: string)
 	return requireNode(Loader.node(path))
+end
+
+-- Execute a Script (e.g. src/server/Main.server) in its own thread; scripts return nothing.
+function Loader.runScript(path: string)
+	local node = Loader.node(path)
+	local file = node.__path
+	local source = FILES[file]
+	assert(source, "no script at " .. path)
+	local chunk = luau.load(source, { debugName = file, environment = makeEnv(node) })
+	return chunk()
 end
 
 function Loader.reset()

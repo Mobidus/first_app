@@ -2,7 +2,7 @@
   "task": "T12",
   "title": "Livrer le tutoriel et le premier achat",
   "status": "blocked",
-  "date_utc": "2026-11-02T11:04:48.070919+00:00",
+  "date_utc": "2026-11-02T11:30:22.681745+00:00",
   "criteria": [
     {
       "criterion": "Tranche verticale Radar sans T13/T14 (logique)",
@@ -35,6 +35,10 @@
     {
       "criterion": "Parcours dans Studio",
       "status": "NOT_RUN"
+    },
+    {
+      "criterion": "Code serveur réel exécuté sur faux moteur (tests/integration, pas Studio)",
+      "status": "PASS"
     }
   ],
   "blocked_reason": "Critères non vérifiés : Compréhension évaluée avec de nouveaux joueurs; Parcours dans Studio",

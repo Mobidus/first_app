@@ -1,9 +1,9 @@
 {
   "status": "PASS",
   "suite": "all",
-  "passed": 175,
+  "passed": 185,
   "failed": 0,
-  "seconds": 150.25087496200013,
+  "seconds": 135.72937118199997,
   "executed": [
     "config > Generated config > matches the canonical JSON values (no manual duplication)",
     "config > Generated config > canonical invariants: no room timer, no room cap, no fill KO",
@@ -179,12 +179,22 @@
     "continuity > RoomResidency & owner-scoped cleanup > 1000 transitions: <= 3 resident modules, one simulating room, previous released",
     "continuity > RoomResidency & owner-scoped cleanup > next room not ready => commit refused, player stays in the safe sas (no KO path)",
     "continuity > RoomResidency & owner-scoped cleanup > two fixed cells are recycled: coordinates never drift away",
-    "continuity > RoomResidency & owner-scoped cleanup > room maids clean every connection: global live count returns to baseline"
+    "continuity > RoomResidency & owner-scoped cleanup > room maids clean every connection: global live count returns to baseline",
+    "integration > Server flow on the fake engine (integration) > first session: tutorial 65, Radar 50 -> 15, used in room 1, exit pays band + discovery once",
+    "integration > Server flow on the fake engine (integration) > 30 room transitions: no Heartbeat/instance growth, <= 2 room models + sas resident",
+    "integration > Server flow on the fake engine (integration) > burial KO keeps coins and permits, clears the run, free restart at depth 1",
+    "integration > Server flow on the fake engine (integration) > no KO while standing under an open table (roof only)",
+    "integration > Server flow on the fake engine (integration) > disconnect mid-room then rejoin: same room, milestones not repaid, charges not refilled",
+    "integration > Server flow on the fake engine (integration) > leaving while the profile loads releases the session lock",
+    "integration > Server flow on the fake engine (integration) > save outage at the exit: never announced as saved, no progression until the write succeeds",
+    "integration > Server flow on the fake engine (integration) > voluntary rebirth in the sas keeps coins and tools, restarts at depth 1",
+    "integration > Server flow on the fake engine (integration) > two players: separate world slots, one player's burial never affects the other",
+    "integration > Server flow on the fake engine (integration) > forged client intents are rejected (unknown intent, client price, out-of-sas purchase)"
   ],
   "failures": [],
   "not_run": [],
   "scope": "Pure Luau logic under Lune (no Roblox engine services).",
-  "date_utc": "2026-11-02T11:03:20.703454+00:00",
+  "date_utc": "2026-11-02T11:30:13.155019+00:00",
   "versions": {
     "python": "3.13.18",
     "rojo": "Rojo 7.5.1",
