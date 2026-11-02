@@ -21,6 +21,10 @@ end
 PropFactory.PROPS = PROPS
 
 local generators = ServerStorage:FindFirstChild("AssetGenerators")
+-- Meshes imported in Studio (Blender GLB/FBX from assets/import/models, see STUDIO_QUICKSTART.md):
+-- ServerStorage.ImportedMeshes.<propId> = Model, pivot at bottom centre, studs. When present it
+-- replaces the generator / proxy visual; the gameplay collider never changes.
+local importedMeshes = ServerStorage:FindFirstChild("ImportedMeshes")
 
 local function v3(t: { number }): Vector3
 	return Vector3.new(t[1], t[2], t[3])
@@ -76,7 +80,28 @@ function PropFactory.create(propId: string, template: any?): Model
 	local gen = generators and generators:FindFirstChild(propId)
 	local visualRoot = Instance.new("Model")
 	visualRoot.Name = if p.deformation_profile == "plush_soft" then "PlushVisual" else "Visual"
-	if gen and gen:IsA("ModuleScript") then
+	local imported = importedMeshes and importedMeshes:FindFirstChild(propId)
+	if imported and imported:IsA("Model") then
+		local clone = imported:Clone()
+		local pivot = clone:GetPivot()
+		for _, part in clone:GetDescendants() do
+			if part:IsA("BasePart") then
+				part.CanCollide = false
+				part.CanQuery = false
+				part.CanTouch = false
+				part.Massless = true
+				local rel = pivot:ToObjectSpace(part.CFrame)
+				part:SetAttribute("LocalOffset", rel.Position - Vector3.new(0, h / 2, 0))
+				local rx, ry, rz = rel:ToEulerAnglesXYZ()
+				part:SetAttribute("LocalRotationDeg", Vector3.new(math.deg(rx), math.deg(ry), math.deg(rz)))
+			end
+		end
+		for _, child in clone:GetChildren() do
+			child.Parent = visualRoot
+		end
+		clone:Destroy()
+		model:SetAttribute("VisualStatus", "imported_mesh")
+	elseif gen and gen:IsA("ModuleScript") then
 		local desc = (require(gen) :: any).build({ size = p.size_studs })
 		for _, spec in desc.parts do
 			local part = Instance.new("Part")

@@ -82,6 +82,30 @@ def main() -> int:
                 if e not in ev:
                     ev.append(e)
             log["applied"].append({"task": task, "id": u["id"], "from": old, "to": a["status"]})
+    # new assets proposed by a modelling pass (reports/T03/manifest_new_*.json, decision 0019)
+    template_keys = list(manifest["assets"][0].keys())
+    for q in sorted((ROOT / "reports/T03").glob("manifest_new_*.json")):
+        for e in json.loads(q.read_text(encoding="utf-8"))["new_assets"]:
+            src = str(q.relative_to(ROOT))
+            if e["id"] in by_id:
+                log["rejected"].append({"task": "T03", "id": e["id"], "reason": "already in manifest", "source": src})
+                continue
+            if e.get("roblox_asset_id") is not None or e.get("status") not in ("planned", "designed", "modeled"):
+                log["rejected"].append({"task": "T03", "id": e["id"], "reason": "new asset must be <= modeled with a null roblox_asset_id"})
+                continue
+            cited = [e.get("source_path"), e.get("export_path"), *e.get("additional_exports", []), *e.get("validation_evidence", [])]
+            missing = [c for c in cited if c and not (ROOT / str(c).split("#")[0]).exists()]
+            if missing:
+                log["rejected"].append({"task": "T03", "id": e["id"], "reason": "missing files", "missing": missing})
+                continue
+            entry = {k: e.get(k) for k in template_keys}
+            for k, v in e.items():
+                if k not in entry:
+                    entry[k] = v
+            entry["roblox_asset_id"] = None
+            manifest["assets"].append(entry)
+            by_id[e["id"]] = entry
+            log["applied"].append({"task": "T03", "id": e["id"], "from": None, "to": entry["status"], "source": src})
     manifest["notice"] = ("Statuses merged from reports/T02 and reports/T03 (tools/merge_manifest_updates.py). "
                           "No Roblox import performed: every roblox_asset_id is null.")
     counts: dict[str, int] = {}

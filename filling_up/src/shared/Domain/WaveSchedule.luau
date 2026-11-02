@@ -11,10 +11,17 @@ local Wave = {}
 
 local SPAWN_GRACE = Config.Runtime.safety.spawn_invulnerability_seconds
 
-local function fillProps(family, depth: number): { any }
+-- Wave fill: stable/bounce props unlocked at this depth, allowed in this room format, and not
+-- flagged support-only (`wave_drop = false`, e.g. the giant plush; decision 0019).
+local function fillProps(family, depth: number, formatId: string?): { any }
 	local out = {}
 	for _, p in family.props do
-		if (p.behavior == "stable" or p.behavior == "bounce") and (p.stage or 1) <= depth then
+		if
+			(p.behavior == "stable" or p.behavior == "bounce")
+			and (p.stage or 1) <= depth
+			and p.wave_drop ~= false
+			and (p.formats == nil or formatId == nil or table.find(p.formats, formatId) ~= nil)
+		then
 			table.insert(out, p)
 		end
 	end
@@ -56,7 +63,7 @@ function Wave.new(room, family, depth: number): Schedule
 		-- the first impact never lands before the spawn grace and its own warning
 		firstImpact = math.max(SPAWN_GRACE + band.warning_seconds, band.wave_interval_seconds * 0.5),
 		params = Difficulty.waveParams(band, room.familyId, room.formatId),
-		props = fillProps(family, math.max(depth, 1)),
+		props = fillProps(family, math.max(depth, 1), room.formatId),
 		structural = structural,
 	}
 end

@@ -120,8 +120,14 @@ def validate(econ, rooms, runtime) -> list[str]:
     for f in rooms["families"]:
         check({"S", "M", "L", "V"} <= set(f["formats"]), f"{f['id']} formats")
         check(set(f["exits"]) <= exits, f"{f['id']} exits")
-        check(len(f["props"]) == 8, f"{f['id']} must have 8 props")
+        # the spec's 8 props per family are a floor; extra props are allowed (decision 0019: plush tiers)
+        check(len(f["props"]) >= 8, f"{f['id']} must have at least 8 props")
+        check(len({p["id"] for p in f["props"]}) == len(f["props"]), f"{f['id']} duplicate prop ids")
         for p in f["props"]:
+            if "formats" in p:
+                check(set(p["formats"]) <= set(f["formats"]), f"{p['id']} formats must belong to the family")
+            if p.get("wave_drop") is False:
+                check(p["behavior"] == "stable", f"{p['id']}: a support-only prop must be stable")
             col = p["collider"]
             check(col["shape"] == "box", f"{p['id']} collider must be box")
             for i in range(3):

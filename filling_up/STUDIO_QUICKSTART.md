@@ -46,6 +46,20 @@ Retire l'attribut `FU_TEST_SUITE`, puis **Jouer (F5)** :
 Note ce qui ne marche pas : erreurs rouges dans Sortie, sauts impossibles, caméra, objets qui traversent. Une capture
 d'écran par problème suffit.
 
+## 3 bis. Mettre les vrais modèles 3D dans le jeu (facultatif)
+
+Les objets et peluches modélisés dans Blender sont dans `filling_up/assets/import/models/` (`<id>.glb`). Tant qu'ils ne
+sont pas importés, le jeu affiche des blocs de remplacement.
+1. Dans ServerStorage, crée un dossier **`ImportedMeshes`** (une seule fois).
+2. Avatar → **Importer 3D** → choisis `<id>.glb`. Échelle : laisse 1 (1 unité Blender = 1 stud). Pour une peluche,
+   coche l'import du rig.
+3. Range le modèle importé dans `ServerStorage/ImportedMeshes` et renomme-le exactement comme l'id, par exemple
+   `toy_plush_bobine`. Son pivot doit être au centre de la base.
+4. Lance le jeu : `PropFactory` utilise ce modèle à la place du bloc. La collision de jeu ne change pas. L'attribut
+   `VisualStatus = imported_mesh` sur l'objet confirme le remplacement.
+
+Rien n'est publié par cette étape : les maillages restent dans ta place locale tant que tu ne publies pas.
+
 ## 4. Laisser Claude piloter ton Studio (facultatif)
 
 Claude ne peut agir sur ton ordinateur qu'à partir d'une session qui y tourne :

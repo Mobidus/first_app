@@ -661,6 +661,242 @@
           },
           "visual": "Pieuvre en peluche menthe à tête large, huit bras courts corail, petites ventouses brodées et grands yeux en couture. Sommet de tête aplati à hauteur 4, bourrelets périphériques doux ; tissu satiné mat sans fourrure. Bras secondaires suivent la chute et s'étalent à la réception, sans collision individuelle.",
           "stage": 3
+        },
+        {
+          "id": "toy_plush_pipou",
+          "name": "Poussin Pipou",
+          "size_studs": [
+            5,
+            5,
+            4
+          ],
+          "behavior": "stable",
+          "deformation_profile": "plush_soft",
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              4,
+              4,
+              3
+            ],
+            "walkable_top": [
+              4,
+              4
+            ],
+            "top_visible": true
+          },
+          "visual": "Poussin rond jaune, petit bec et pattes corail, deux ailerons, houppette de trois plumes sur l'avant. Mini peluche de remplissage : trop petite pour un appui obligatoire.",
+          "stage": 1,
+          "size_tier": "mini"
+        },
+        {
+          "id": "toy_plush_mochi",
+          "name": "Hamster Mochi",
+          "size_studs": [
+            6,
+            5,
+            4
+          ],
+          "behavior": "stable",
+          "deformation_profile": "plush_soft",
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              5,
+              4,
+              3
+            ],
+            "walkable_top": [
+              5,
+              4
+            ],
+            "top_visible": true
+          },
+          "visual": "Hamster caramel et crème en forme de petit pain, oreilles rondes, pattes roses à l'avant, moustaches brodées. Mini peluche de remplissage.",
+          "stage": 1,
+          "size_tier": "mini"
+        },
+        {
+          "id": "toy_plush_bulle",
+          "name": "Poisson Bulle",
+          "size_studs": [
+            6,
+            4,
+            4
+          ],
+          "behavior": "stable",
+          "deformation_profile": "plush_soft",
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              5,
+              3,
+              3
+            ],
+            "walkable_top": [
+              5,
+              3
+            ],
+            "top_visible": true
+          },
+          "visual": "Poisson menthe façon poisson-globe, piquants en tissu courts sur les côtés, nageoires et queue corail. Mini peluche de remplissage.",
+          "stage": 1,
+          "size_tier": "mini"
+        },
+        {
+          "id": "toy_plush_grumf",
+          "name": "Dino Grumf",
+          "size_studs": [
+            12,
+            10,
+            6
+          ],
+          "behavior": "stable",
+          "deformation_profile": "plush_soft",
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              8,
+              8,
+              4
+            ],
+            "walkable_top": [
+              8,
+              8
+            ],
+            "top_visible": true
+          },
+          "visual": "Bébé dinosaure lilas et menthe allongé à plat, plaques arrondies seulement sur la queue, pattes courtes, grosse tête à l'avant. Dos plat jouable à hauteur 4.",
+          "stage": 3,
+          "size_tier": "medium"
+        },
+        {
+          "id": "toy_plush_nuage",
+          "name": "Mouton Nuage",
+          "size_studs": [
+            10,
+            9,
+            6
+          ],
+          "behavior": "bounce",
+          "behavior_params": {
+            "vertical_impulse_multiplier": 1.12
+          },
+          "deformation_profile": "plush_soft",
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              8,
+              7,
+              4
+            ],
+            "walkable_top": [
+              8,
+              7
+            ],
+            "top_visible": true
+          },
+          "visual": "Mouton crème en nuage de pompons matelassés aplatis sur le dessus, visage et pattes marine, petit nœud corail. Rebond moelleux.",
+          "stage": 3,
+          "size_tier": "medium"
+        },
+        {
+          "id": "toy_plush_balto",
+          "name": "Morse Balto",
+          "size_studs": [
+            16,
+            15,
+            8
+          ],
+          "behavior": "stable",
+          "deformation_profile": "plush_soft",
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              12,
+              12,
+              6
+            ],
+            "walkable_top": [
+              12,
+              12
+            ],
+            "top_visible": true
+          },
+          "visual": "Grand morse bleu ciel et gris allongé, défenses en tissu crème vers le bas, moustache brodée, nageoires et queue, écusson cousu sur le flanc. Appui large des grandes salles.",
+          "stage": 4,
+          "size_tier": "large",
+          "formats": [
+            "L",
+            "V",
+            "XL",
+            "XV"
+          ]
+        },
+        {
+          "id": "toy_plush_ronron",
+          "name": "Chat Ronron",
+          "size_studs": [
+            16,
+            13,
+            8
+          ],
+          "behavior": "stable",
+          "deformation_profile": "plush_soft",
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              12,
+              10,
+              6
+            ],
+            "walkable_top": [
+              12,
+              10
+            ],
+            "top_visible": true
+          },
+          "visual": "Chat tigré caramel endormi en position « pain », rayures en texture, yeux fermés brodés, oreilles à l'avant, longue queue le long d'un flanc, collier corail à grelot en tissu.",
+          "stage": 4,
+          "size_tier": "large",
+          "formats": [
+            "L",
+            "V",
+            "XL",
+            "XV"
+          ]
+        },
+        {
+          "id": "toy_plush_bobine",
+          "name": "Baleine Bobine",
+          "size_studs": [
+            24,
+            20,
+            11
+          ],
+          "behavior": "stable",
+          "deformation_profile": "plush_soft",
+          "collider": {
+            "shape": "box",
+            "size_studs": [
+              18,
+              16,
+              8
+            ],
+            "walkable_top": [
+              18,
+              16
+            ],
+            "top_visible": true
+          },
+          "visual": "Baleine géante marine et crème, ventre crème visible sur les côtés, sourire et yeux brodés, nageoires, grande queue relevée à l'arrière, jet d'eau en tissu à l'avant, panneaux matelassés sur le dos. Appui monumental des salles XL/XV ; jamais lâchée par une vague.",
+          "stage": 10,
+          "size_tier": "giant",
+          "formats": [
+            "XL",
+            "XV"
+          ],
+          "wave_drop": false
         }
       ],
       "signature_event": "Mega Canard dans une alcôve latérale libérant de petits canards décoratifs.",
@@ -2310,5 +2546,14 @@
     "max_mouths": 6,
     "dynamic_budget_unchanged": true,
     "rationale": "keep the filling pressure per floor area in very large rooms; excess drops are deferred by the physics budget"
+  },
+  "plush_size_tiers": {
+    "note": "Décision 0019 (demande de l'utilisateur) : peluches de plusieurs tailles. mini = remplissage seulement (dessus < minimum_required_landing_short_side_studs, jamais appui requis) ; large = formats L/V/XL/XV ; giant = XL/XV, appui seulement (wave_drop false). Le budget physique (40 corps dynamiques) ne change pas.",
+    "tiers": {
+      "mini": "4-5 studs",
+      "medium": "8 studs",
+      "large": "12 studs",
+      "giant": "18x16 studs"
+    }
   }
 }

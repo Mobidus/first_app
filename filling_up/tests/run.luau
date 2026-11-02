@@ -22,6 +22,7 @@ local SUITES = {
 	plush = { "./unit/PlushPose.spec" },
 	continuity = { "./unit/RoomResidency.spec" },
 	dressing = { "./unit/SetDressing.spec" },
+	["plush-tiers"] = { "./unit/PlushTiers.spec" },
 	config = { "./unit/Config.spec" },
 	integration = { "./integration/ServerFlow.spec" },
 }
@@ -44,6 +45,7 @@ local ORDER = {
 	"plush",
 	"continuity",
 	"dressing",
+	"plush-tiers",
 	"integration",
 }
 

@@ -163,10 +163,15 @@ end
 ------------------------------------------------------------------------------------------------
 -- Geometry helpers
 ------------------------------------------------------------------------------------------------
-local function stableProps(fam, depth: number, minTop: number?): { any }
+-- Prop allowed in this room format? (rooms.json optional `formats`, decision 0019: large / giant plushes)
+function Plan.propAllowedInFormat(p, formatId: string?): boolean
+	return p.formats == nil or formatId == nil or table.find(p.formats, formatId) ~= nil
+end
+
+local function stableProps(fam, depth: number, minTop: number?, formatId: string?): { any }
 	local out = {}
 	for _, p in fam.props do
-		if p.behavior == "stable" and (p.stage or 1) <= depth then
+		if p.behavior == "stable" and (p.stage or 1) <= depth and Plan.propAllowedInFormat(p, formatId) then
 			local wt = p.collider.walkable_top
 			if minTop == nil or math.min(wt[1], wt[2]) >= minTop then
 				table.insert(out, p)
@@ -189,8 +194,18 @@ end
 
 -- Column = structural pedestal (navy architecture block) + optional lower prop + top prop.
 -- Returns stack list (bottom->top) of { propId?, box, kind } and actual top, or nil.
-local function buildColumn(rng, fam, depth: number, cx: number, cz: number, rotate: boolean, targetTop: number, forcedTopProp: string?)
-	local tops = stableProps(fam, depth, Validator.MIN_LANDING)
+local function buildColumn(
+	rng,
+	fam,
+	depth: number,
+	cx: number,
+	cz: number,
+	rotate: boolean,
+	targetTop: number,
+	forcedTopProp: string?,
+	formatId: string?
+)
+	local tops = stableProps(fam, depth, Validator.MIN_LANDING, formatId)
 	if forcedTopProp then
 		tops = { PROPS[forcedTopProp] }
 	end
@@ -209,7 +224,7 @@ local function buildColumn(rng, fam, depth: number, cx: number, cz: number, rota
 		if rng:nextNumber() < 0.45 then
 			-- a lower prop whose top fully supports the upper collider footprint
 			local cands = {}
-			for _, p in stableProps(fam, depth, nil) do
+			for _, p in stableProps(fam, depth, nil, formatId) do
 				local lw, ld = p.collider.walkable_top[1], p.collider.walkable_top[2]
 				if rotate then
 					lw, ld = ld, lw
@@ -525,7 +540,7 @@ function Plan.generate(spec, depth: number, seed: number, attempt: number?): any
 			local col
 			local isColumn = true
 			if guest == nil and targetTop > 9 and (targetTop > 12 or rng:nextNumber() < 0.65) then
-				local tops = stableProps(fam, depth, Validator.MIN_LANDING)
+				local tops = stableProps(fam, depth, Validator.MIN_LANDING, spec.format)
 				if #tops > 0 then
 					col = shelfAt(rng:pick(tops), targetTop, rotate)
 					isColumn = false
@@ -533,7 +548,7 @@ function Plan.generate(spec, depth: number, seed: number, attempt: number?): any
 			end
 			if col == nil then
 				isColumn = true
-				col = buildColumn(rng, fam, depth, 0, 0, rotate, targetTop, guest and guest.prop_id or nil)
+				col = buildColumn(rng, fam, depth, 0, 0, rotate, targetTop, guest and guest.prop_id or nil, spec.format)
 			end
 			if col == nil then
 				continue
